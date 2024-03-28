@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs;
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs;
+import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -309,6 +310,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
+     * (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    @Import(name="parseNested")
+    private @Nullable Output<Boolean> parseNested;
+
+    /**
+     * @return (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    public Optional<Output<Boolean>> parseNested() {
+        return Optional.ofNullable(this.parseNested);
+    }
+
+    /**
      * (Updatable) Type of fluent parser.
      * 
      */
@@ -339,6 +355,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
+     * (Updatable) record section of openmetrics parser.
+     * 
+     */
+    @Import(name="recordInput")
+    private @Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs> recordInput;
+
+    /**
+     * @return (Updatable) record section of openmetrics parser.
+     * 
+     */
+    public Optional<Output<UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs>> recordInput() {
+        return Optional.ofNullable(this.recordInput);
+    }
+
+    /**
      * (Updatable) RFC 5424 time format.
      * 
      */
@@ -351,6 +382,21 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
      */
     public Optional<Output<String>> rfc5424timeFormat() {
         return Optional.ofNullable(this.rfc5424timeFormat);
+    }
+
+    /**
+     * (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    @Import(name="separator")
+    private @Nullable Output<String> separator;
+
+    /**
+     * @return (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    public Optional<Output<String>> separator() {
+        return Optional.ofNullable(this.separator);
     }
 
     /**
@@ -462,9 +508,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         this.multiLineStartRegexp = $.multiLineStartRegexp;
         this.nestedParser = $.nestedParser;
         this.nullValuePattern = $.nullValuePattern;
+        this.parseNested = $.parseNested;
         this.parserType = $.parserType;
         this.patterns = $.patterns;
+        this.recordInput = $.recordInput;
         this.rfc5424timeFormat = $.rfc5424timeFormat;
+        this.separator = $.separator;
         this.syslogParserType = $.syslogParserType;
         this.timeFormat = $.timeFormat;
         this.timeType = $.timeType;
@@ -910,6 +959,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
+         * @param parseNested (Updatable) If true, a separator parameter can be further defined.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parseNested(@Nullable Output<Boolean> parseNested) {
+            $.parseNested = parseNested;
+            return this;
+        }
+
+        /**
+         * @param parseNested (Updatable) If true, a separator parameter can be further defined.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parseNested(Boolean parseNested) {
+            return parseNested(Output.of(parseNested));
+        }
+
+        /**
          * @param parserType (Updatable) Type of fluent parser.
          * 
          * @return builder
@@ -962,6 +1032,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
+         * @param recordInput (Updatable) record section of openmetrics parser.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordInput(@Nullable Output<UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs> recordInput) {
+            $.recordInput = recordInput;
+            return this;
+        }
+
+        /**
+         * @param recordInput (Updatable) record section of openmetrics parser.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recordInput(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs recordInput) {
+            return recordInput(Output.of(recordInput));
+        }
+
+        /**
          * @param rfc5424timeFormat (Updatable) RFC 5424 time format.
          * 
          * @return builder
@@ -980,6 +1071,27 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
          */
         public Builder rfc5424timeFormat(String rfc5424timeFormat) {
             return rfc5424timeFormat(Output.of(rfc5424timeFormat));
+        }
+
+        /**
+         * @param separator (Updatable) Keys of adjacent levels are joined by the separator.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder separator(@Nullable Output<String> separator) {
+            $.separator = separator;
+            return this;
+        }
+
+        /**
+         * @param separator (Updatable) Keys of adjacent levels are joined by the separator.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder separator(String separator) {
+            return separator(Output.of(separator));
         }
 
         /**

@@ -23,6 +23,11 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     private String id;
     /**
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    private String ruleName;
+    /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
      * 
      */
@@ -57,6 +62,13 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * 
+     */
+    public String ruleName() {
+        return this.ruleName;
     }
     /**
      * @return The perceived type of response required when the alarm is in the &#34;FIRING&#34; state.  Example: `CRITICAL`
@@ -98,6 +110,7 @@ public final class GetAlarmStatusesAlarmStatus {
     public static final class Builder {
         private String displayName;
         private String id;
+        private String ruleName;
         private String severity;
         private String status;
         private List<GetAlarmStatusesAlarmStatusSuppression> suppressions;
@@ -107,6 +120,7 @@ public final class GetAlarmStatusesAlarmStatus {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
+    	      this.ruleName = defaults.ruleName;
     	      this.severity = defaults.severity;
     	      this.status = defaults.status;
     	      this.suppressions = defaults.suppressions;
@@ -127,6 +141,14 @@ public final class GetAlarmStatusesAlarmStatus {
               throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ruleName(String ruleName) {
+            if (ruleName == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "ruleName");
+            }
+            this.ruleName = ruleName;
             return this;
         }
         @CustomType.Setter
@@ -168,6 +190,7 @@ public final class GetAlarmStatusesAlarmStatus {
             final var _resultValue = new GetAlarmStatusesAlarmStatus();
             _resultValue.displayName = displayName;
             _resultValue.id = id;
+            _resultValue.ruleName = ruleName;
             _resultValue.severity = severity;
             _resultValue.status = status;
             _resultValue.suppressions = suppressions;

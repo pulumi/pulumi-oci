@@ -88,12 +88,16 @@ type DeployStage struct {
 	GreenBackendIps DeployStageGreenBackendIpsOutput `pulumi:"greenBackendIps"`
 	// (Updatable) Helm chart artifact OCID.
 	HelmChartDeployArtifactId pulumi.StringOutput `pulumi:"helmChartDeployArtifactId"`
+	// (Updatable) List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds pulumi.StringArrayOutput `pulumi:"helmCommandArtifactIds"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolOutput `pulumi:"isAsync"`
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
 	IsDebugEnabled pulumi.BoolOutput `pulumi:"isDebugEnabled"`
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled pulumi.BoolOutput `pulumi:"isForceEnabled"`
+	// (Updatable) Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete pulumi.BoolOutput `pulumi:"isUninstallOnStageDelete"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolOutput `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -120,6 +124,8 @@ type DeployStage struct {
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigOutput `pulumi:"productionLoadBalancerConfig"`
 	// The OCID of a project.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	// (Updatable) The purpose of running this Helm stage
+	Purpose pulumi.StringOutput `pulumi:"purpose"`
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
 	ReleaseName pulumi.StringOutput `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -263,12 +269,16 @@ type deployStageState struct {
 	GreenBackendIps *DeployStageGreenBackendIps `pulumi:"greenBackendIps"`
 	// (Updatable) Helm chart artifact OCID.
 	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
+	// (Updatable) List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds []string `pulumi:"helmCommandArtifactIds"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
 	IsDebugEnabled *bool `pulumi:"isDebugEnabled"`
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled *bool `pulumi:"isForceEnabled"`
+	// (Updatable) Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete *bool `pulumi:"isUninstallOnStageDelete"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled *bool `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -295,6 +305,8 @@ type deployStageState struct {
 	ProductionLoadBalancerConfig *DeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfig"`
 	// The OCID of a project.
 	ProjectId *string `pulumi:"projectId"`
+	// (Updatable) The purpose of running this Helm stage
+	Purpose *string `pulumi:"purpose"`
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
 	ReleaseName *string `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -400,12 +412,16 @@ type DeployStageState struct {
 	GreenBackendIps DeployStageGreenBackendIpsPtrInput
 	// (Updatable) Helm chart artifact OCID.
 	HelmChartDeployArtifactId pulumi.StringPtrInput
+	// (Updatable) List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds pulumi.StringArrayInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
 	IsDebugEnabled pulumi.BoolPtrInput
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled pulumi.BoolPtrInput
+	// (Updatable) Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolPtrInput
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -432,6 +448,8 @@ type DeployStageState struct {
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigPtrInput
 	// The OCID of a project.
 	ProjectId pulumi.StringPtrInput
+	// (Updatable) The purpose of running this Helm stage
+	Purpose pulumi.StringPtrInput
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
 	ReleaseName pulumi.StringPtrInput
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -539,12 +557,16 @@ type deployStageArgs struct {
 	GreenBackendIps *DeployStageGreenBackendIps `pulumi:"greenBackendIps"`
 	// (Updatable) Helm chart artifact OCID.
 	HelmChartDeployArtifactId *string `pulumi:"helmChartDeployArtifactId"`
+	// (Updatable) List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds []string `pulumi:"helmCommandArtifactIds"`
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync *bool `pulumi:"isAsync"`
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
 	IsDebugEnabled *bool `pulumi:"isDebugEnabled"`
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled *bool `pulumi:"isForceEnabled"`
+	// (Updatable) Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete *bool `pulumi:"isUninstallOnStageDelete"`
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled *bool `pulumi:"isValidationEnabled"`
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -567,6 +589,8 @@ type deployStageArgs struct {
 	OkeClusterDeployEnvironmentId *string `pulumi:"okeClusterDeployEnvironmentId"`
 	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig *DeployStageProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfig"`
+	// (Updatable) The purpose of running this Helm stage
+	Purpose *string `pulumi:"purpose"`
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
 	ReleaseName *string `pulumi:"releaseName"`
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -663,12 +687,16 @@ type DeployStageArgs struct {
 	GreenBackendIps DeployStageGreenBackendIpsPtrInput
 	// (Updatable) Helm chart artifact OCID.
 	HelmChartDeployArtifactId pulumi.StringPtrInput
+	// (Updatable) List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds pulumi.StringArrayInput
 	// (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 	IsAsync pulumi.BoolPtrInput
 	// (Updatable) Enables helm --debug option to stream output to tf stdout. Set to false by default.
 	IsDebugEnabled pulumi.BoolPtrInput
 	// (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled pulumi.BoolPtrInput
+	// (Updatable) Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete pulumi.BoolPtrInput
 	// (Updatable) A boolean flag specifies whether the invoked function should be validated.
 	IsValidationEnabled pulumi.BoolPtrInput
 	// (Updatable) List of Kubernetes manifest artifact OCIDs.
@@ -691,6 +719,8 @@ type DeployStageArgs struct {
 	OkeClusterDeployEnvironmentId pulumi.StringPtrInput
 	// Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	ProductionLoadBalancerConfig DeployStageProductionLoadBalancerConfigPtrInput
+	// (Updatable) The purpose of running this Helm stage
+	Purpose pulumi.StringPtrInput
 	// (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
 	ReleaseName pulumi.StringPtrInput
 	// (Updatable) Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -971,6 +1001,11 @@ func (o DeployStageOutput) HelmChartDeployArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
 }
 
+// (Updatable) List of Helm command artifact OCIDs.
+func (o DeployStageOutput) HelmCommandArtifactIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringArrayOutput { return v.HelmCommandArtifactIds }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) A boolean flag specifies whether this stage executes asynchronously.
 func (o DeployStageOutput) IsAsync() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsAsync }).(pulumi.BoolOutput)
@@ -984,6 +1019,11 @@ func (o DeployStageOutput) IsDebugEnabled() pulumi.BoolOutput {
 // (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
 func (o DeployStageOutput) IsForceEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Uninstall the Helm chart release on deleting the stage.
+func (o DeployStageOutput) IsUninstallOnStageDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.BoolOutput { return v.IsUninstallOnStageDelete }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A boolean flag specifies whether the invoked function should be validated.
@@ -1051,6 +1091,11 @@ func (o DeployStageOutput) ProductionLoadBalancerConfig() DeployStageProductionL
 // The OCID of a project.
 func (o DeployStageOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The purpose of running this Helm stage
+func (o DeployStageOutput) Purpose() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringOutput { return v.Purpose }).(pulumi.StringOutput)
 }
 
 // (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.

@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Monitoring
     public sealed class GetAlarmHistoryCollectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+        /// The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
         /// </summary>
         [Input("alarmHistorytype")]
         public string? AlarmHistorytype { get; set; }
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Monitoring
     public sealed class GetAlarmHistoryCollectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+        /// The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
         /// </summary>
         [Input("alarmHistorytype")]
         public Input<string>? AlarmHistorytype { get; set; }

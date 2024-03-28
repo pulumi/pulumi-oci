@@ -39,6 +39,7 @@ import (
 //					ChartUrl:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_chart_url),
 //					DeployArtifactPath:       pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path),
 //					DeployArtifactVersion:    pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version),
+//					HelmArtifactSourceType:   pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_artifact_source_type),
 //					HelmVerificationKeySource: &devops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{
 //						VerificationKeySourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type),
 //						CurrentPublicKey:          pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key),

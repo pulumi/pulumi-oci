@@ -58,10 +58,23 @@ namespace Pulumi.Oci.Monitoring
     ///         IsNotificationsPerMetricDimensionEnabled = @var.Alarm_is_notifications_per_metric_dimension_enabled,
     ///         MessageFormat = @var.Alarm_message_format,
     ///         MetricCompartmentIdInSubtree = @var.Alarm_metric_compartment_id_in_subtree,
+    ///         NotificationVersion = @var.Alarm_notification_version,
+    ///         Overrides = new[]
+    ///         {
+    ///             new Oci.Monitoring.Inputs.AlarmOverrideArgs
+    ///             {
+    ///                 Body = @var.Alarm_overrides_body,
+    ///                 PendingDuration = @var.Alarm_overrides_pending_duration,
+    ///                 Query = @var.Alarm_overrides_query,
+    ///                 RuleName = oci_events_rule.Test_rule.Name,
+    ///                 Severity = @var.Alarm_overrides_severity,
+    ///             },
+    ///         },
     ///         PendingDuration = @var.Alarm_pending_duration,
     ///         RepeatNotificationDuration = @var.Alarm_repeat_notification_duration,
     ///         Resolution = @var.Alarm_resolution,
     ///         ResourceGroup = @var.Alarm_resource_group,
+    ///         RuleName = oci_events_rule.Test_rule.Name,
     ///         Suppression = new Oci.Monitoring.Inputs.AlarmSuppressionArgs
     ///         {
     ///             TimeSuppressFrom = @var.Alarm_suppression_time_suppress_from,
@@ -162,6 +175,20 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        /// </summary>
+        [Output("notificationVersion")]
+        public Output<string> NotificationVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// 
+        /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        /// </summary>
+        [Output("overrides")]
+        public Output<ImmutableArray<Outputs.AlarmOverride>> Overrides { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
         /// 
         /// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -218,6 +245,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Output("resourceGroup")]
         public Output<string> ResourceGroup { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// </summary>
+        [Output("ruleName")]
+        public Output<string> RuleName { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -390,6 +423,26 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        /// </summary>
+        [Input("notificationVersion")]
+        public Input<string>? NotificationVersion { get; set; }
+
+        [Input("overrides")]
+        private InputList<Inputs.AlarmOverrideArgs>? _overrides;
+
+        /// <summary>
+        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// 
+        /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        /// </summary>
+        public InputList<Inputs.AlarmOverrideArgs> Overrides
+        {
+            get => _overrides ?? (_overrides = new InputList<Inputs.AlarmOverrideArgs>());
+            set => _overrides = value;
+        }
+
+        /// <summary>
         /// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
         /// 
         /// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -446,6 +499,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
 
         /// <summary>
         /// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -562,6 +621,26 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
+        /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        /// </summary>
+        [Input("notificationVersion")]
+        public Input<string>? NotificationVersion { get; set; }
+
+        [Input("overrides")]
+        private InputList<Inputs.AlarmOverrideGetArgs>? _overrides;
+
+        /// <summary>
+        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// 
+        /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        /// </summary>
+        public InputList<Inputs.AlarmOverrideGetArgs> Overrides
+        {
+            get => _overrides ?? (_overrides = new InputList<Inputs.AlarmOverrideGetArgs>());
+            set => _overrides = value;
+        }
+
+        /// <summary>
         /// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
         /// 
         /// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -618,6 +697,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// </summary>
+        [Input("ruleName")]
+        public Input<string>? RuleName { get; set; }
 
         /// <summary>
         /// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeployArtifactDeployArtifactSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Specifies content for the inline artifact.
+        /// (Updatable) The Helm commands to be executed, base 64 encoded
         /// </summary>
         [Input("base64encodedContent")]
         public Input<string>? Base64encodedContent { get; set; }
@@ -41,6 +41,12 @@ namespace Pulumi.Oci.DevOps.Inputs
         /// </summary>
         [Input("deployArtifactVersion")]
         public Input<string>? DeployArtifactVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specifies types of artifact sources.
+        /// </summary>
+        [Input("helmArtifactSourceType")]
+        public Input<string>? HelmArtifactSourceType { get; set; }
 
         /// <summary>
         /// (Updatable) The source of the verification material.

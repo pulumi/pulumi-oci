@@ -64,7 +64,15 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly arePrimaryWhitelistedIpsUsed: boolean;
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     */
+    readonly autoRefreshFrequencyInSeconds: number;
+    /**
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     */
+    readonly autoRefreshPointLagInSeconds: number;
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly autonomousContainerDatabaseId: string;
     readonly autonomousDatabaseBackupId: string;
@@ -464,6 +472,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time when maintenance will end.
      */
     readonly timeMaintenanceEnd: string;
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     */
+    readonly timeOfAutoRefreshStart: string;
     /**
      * The time the member joined the resource pool.
      */

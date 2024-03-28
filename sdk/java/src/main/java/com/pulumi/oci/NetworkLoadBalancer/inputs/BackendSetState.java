@@ -20,14 +20,14 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
     public static final BackendSetState Empty = new BackendSetState();
 
     /**
-     * Array of backends.
+     * (Updatable) An array of backends to be associated with the backend set.
      * 
      */
     @Import(name="backends")
     private @Nullable Output<List<BackendSetBackendArgs>> backends;
 
     /**
-     * @return Array of backends.
+     * @return (Updatable) An array of backends to be associated with the backend set.
      * 
      */
     public Optional<Output<List<BackendSetBackendArgs>>> backends() {
@@ -35,14 +35,14 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     @Import(name="healthChecker")
     private @Nullable Output<BackendSetHealthCheckerArgs> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     public Optional<Output<BackendSetHealthCheckerArgs>> healthChecker() {
@@ -169,7 +169,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backends Array of backends.
+         * @param backends (Updatable) An array of backends to be associated with the backend set.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backends Array of backends.
+         * @param backends (Updatable) An array of backends to be associated with the backend set.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backends Array of backends.
+         * @param backends (Updatable) An array of backends to be associated with the backend set.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
          * 
          * @return builder
          * 

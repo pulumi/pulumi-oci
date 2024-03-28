@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isPreserveSourceDestination(var_.network_load_balancer_is_preserve_source_destination())
  *             .isPrivate(var_.network_load_balancer_is_private())
+ *             .isSymmetricHashEnabled(var_.network_load_balancer_is_symmetric_hash_enabled())
  *             .networkSecurityGroupIds(var_.network_load_balancer_network_security_group_ids())
  *             .nlbIpVersion(var_.network_load_balancer_nlb_ip_version())
  *             .reservedIps(NetworkLoadBalancerReservedIpArgs.builder()
@@ -172,7 +173,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
      * 
-     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
      * 
      * Example: `true`
      * 
@@ -187,13 +188,27 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * 
      * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
      * 
-     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
      * 
      * Example: `true`
      * 
      */
     public Output<Boolean> isPrivate() {
         return this.isPrivate;
+    }
+    /**
+     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    @Export(name="isSymmetricHashEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSymmetricHashEnabled;
+
+    /**
+     * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    public Output<Boolean> isSymmetricHashEnabled() {
+        return this.isSymmetricHashEnabled;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

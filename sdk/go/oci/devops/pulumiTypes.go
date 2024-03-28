@@ -4260,7 +4260,7 @@ func (o ConnectionTlsVerifyConfigPtrOutput) TlsVerifyMode() pulumi.StringPtrOutp
 }
 
 type DeployArtifactDeployArtifactSource struct {
-	// (Updatable) Specifies content for the inline artifact.
+	// (Updatable) The Helm commands to be executed, base 64 encoded
 	Base64encodedContent *string `pulumi:"base64encodedContent"`
 	// (Updatable) The URL of an OCIR repository.
 	ChartUrl *string `pulumi:"chartUrl"`
@@ -4270,6 +4270,8 @@ type DeployArtifactDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion *string `pulumi:"deployArtifactVersion"`
+	// (Updatable) Specifies types of artifact sources.
+	HelmArtifactSourceType *string `pulumi:"helmArtifactSourceType"`
 	// (Updatable) The source of the verification material.
 	HelmVerificationKeySource *DeployArtifactDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySource"`
 	// (Updatable) Specifies image digest for the version of the image.
@@ -4292,7 +4294,7 @@ type DeployArtifactDeployArtifactSourceInput interface {
 }
 
 type DeployArtifactDeployArtifactSourceArgs struct {
-	// (Updatable) Specifies content for the inline artifact.
+	// (Updatable) The Helm commands to be executed, base 64 encoded
 	Base64encodedContent pulumi.StringPtrInput `pulumi:"base64encodedContent"`
 	// (Updatable) The URL of an OCIR repository.
 	ChartUrl pulumi.StringPtrInput `pulumi:"chartUrl"`
@@ -4302,6 +4304,8 @@ type DeployArtifactDeployArtifactSourceArgs struct {
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringPtrInput `pulumi:"deployArtifactVersion"`
+	// (Updatable) Specifies types of artifact sources.
+	HelmArtifactSourceType pulumi.StringPtrInput `pulumi:"helmArtifactSourceType"`
 	// (Updatable) The source of the verification material.
 	HelmVerificationKeySource DeployArtifactDeployArtifactSourceHelmVerificationKeySourcePtrInput `pulumi:"helmVerificationKeySource"`
 	// (Updatable) Specifies image digest for the version of the image.
@@ -4389,7 +4393,7 @@ func (o DeployArtifactDeployArtifactSourceOutput) ToDeployArtifactDeployArtifact
 	}).(DeployArtifactDeployArtifactSourcePtrOutput)
 }
 
-// (Updatable) Specifies content for the inline artifact.
+// (Updatable) The Helm commands to be executed, base 64 encoded
 func (o DeployArtifactDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.Base64encodedContent }).(pulumi.StringPtrOutput)
 }
@@ -4412,6 +4416,11 @@ func (o DeployArtifactDeployArtifactSourceOutput) DeployArtifactSourceType() pul
 // (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 func (o DeployArtifactDeployArtifactSourceOutput) DeployArtifactVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.DeployArtifactVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies types of artifact sources.
+func (o DeployArtifactDeployArtifactSourceOutput) HelmArtifactSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployArtifactDeployArtifactSource) *string { return v.HelmArtifactSourceType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The source of the verification material.
@@ -4460,7 +4469,7 @@ func (o DeployArtifactDeployArtifactSourcePtrOutput) Elem() DeployArtifactDeploy
 	}).(DeployArtifactDeployArtifactSourceOutput)
 }
 
-// (Updatable) Specifies content for the inline artifact.
+// (Updatable) The Helm commands to be executed, base 64 encoded
 func (o DeployArtifactDeployArtifactSourcePtrOutput) Base64encodedContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *string {
 		if v == nil {
@@ -4507,6 +4516,16 @@ func (o DeployArtifactDeployArtifactSourcePtrOutput) DeployArtifactVersion() pul
 			return nil
 		}
 		return v.DeployArtifactVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies types of artifact sources.
+func (o DeployArtifactDeployArtifactSourcePtrOutput) HelmArtifactSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DeployArtifactDeployArtifactSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HelmArtifactSourceType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -20552,7 +20571,7 @@ func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnections
 }
 
 type GetDeployArtifactDeployArtifactSource struct {
-	// Specifies content for the inline artifact.
+	// The Helm commands to be executed, base 64 encoded
 	Base64encodedContent string `pulumi:"base64encodedContent"`
 	// The URL of an OCIR repository.
 	ChartUrl string `pulumi:"chartUrl"`
@@ -20562,6 +20581,8 @@ type GetDeployArtifactDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion string `pulumi:"deployArtifactVersion"`
+	// Specifies types of artifact sources.
+	HelmArtifactSourceType string `pulumi:"helmArtifactSourceType"`
 	// The source of the verification material.
 	HelmVerificationKeySources []GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
@@ -20584,7 +20605,7 @@ type GetDeployArtifactDeployArtifactSourceInput interface {
 }
 
 type GetDeployArtifactDeployArtifactSourceArgs struct {
-	// Specifies content for the inline artifact.
+	// The Helm commands to be executed, base 64 encoded
 	Base64encodedContent pulumi.StringInput `pulumi:"base64encodedContent"`
 	// The URL of an OCIR repository.
 	ChartUrl pulumi.StringInput `pulumi:"chartUrl"`
@@ -20594,6 +20615,8 @@ type GetDeployArtifactDeployArtifactSourceArgs struct {
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringInput `pulumi:"deployArtifactVersion"`
+	// Specifies types of artifact sources.
+	HelmArtifactSourceType pulumi.StringInput `pulumi:"helmArtifactSourceType"`
 	// The source of the verification material.
 	HelmVerificationKeySources GetDeployArtifactDeployArtifactSourceHelmVerificationKeySourceArrayInput `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
@@ -20655,7 +20678,7 @@ func (o GetDeployArtifactDeployArtifactSourceOutput) ToGetDeployArtifactDeployAr
 	return o
 }
 
-// Specifies content for the inline artifact.
+// The Helm commands to be executed, base 64 encoded
 func (o GetDeployArtifactDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.Base64encodedContent }).(pulumi.StringOutput)
 }
@@ -20678,6 +20701,11 @@ func (o GetDeployArtifactDeployArtifactSourceOutput) DeployArtifactSourceType() 
 // Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 func (o GetDeployArtifactDeployArtifactSourceOutput) DeployArtifactVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.DeployArtifactVersion }).(pulumi.StringOutput)
+}
+
+// Specifies types of artifact sources.
+func (o GetDeployArtifactDeployArtifactSourceOutput) HelmArtifactSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactDeployArtifactSource) string { return v.HelmArtifactSourceType }).(pulumi.StringOutput)
 }
 
 // The source of the verification material.
@@ -21174,7 +21202,7 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemArrayOutput) Index(i pulum
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource struct {
-	// Specifies content for the inline artifact.
+	// The Helm commands to be executed, base 64 encoded
 	Base64encodedContent string `pulumi:"base64encodedContent"`
 	// The URL of an OCIR repository.
 	ChartUrl string `pulumi:"chartUrl"`
@@ -21184,6 +21212,8 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource struct {
 	DeployArtifactSourceType string `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion string `pulumi:"deployArtifactVersion"`
+	// Specifies types of artifact sources.
+	HelmArtifactSourceType string `pulumi:"helmArtifactSourceType"`
 	// The source of the verification material.
 	HelmVerificationKeySources []GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
@@ -21206,7 +21236,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceInput int
 }
 
 type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs struct {
-	// Specifies content for the inline artifact.
+	// The Helm commands to be executed, base 64 encoded
 	Base64encodedContent pulumi.StringInput `pulumi:"base64encodedContent"`
 	// The URL of an OCIR repository.
 	ChartUrl pulumi.StringInput `pulumi:"chartUrl"`
@@ -21216,6 +21246,8 @@ type GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs stru
 	DeployArtifactSourceType pulumi.StringInput `pulumi:"deployArtifactSourceType"`
 	// Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
 	DeployArtifactVersion pulumi.StringInput `pulumi:"deployArtifactVersion"`
+	// Specifies types of artifact sources.
+	HelmArtifactSourceType pulumi.StringInput `pulumi:"helmArtifactSourceType"`
 	// The source of the verification material.
 	HelmVerificationKeySources GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySourceArrayInput `pulumi:"helmVerificationKeySources"`
 	// Specifies image digest for the version of the image.
@@ -21277,7 +21309,7 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput
 	return o
 }
 
-// Specifies content for the inline artifact.
+// The Helm commands to be executed, base 64 encoded
 func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) Base64encodedContent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string {
 		return v.Base64encodedContent
@@ -21307,6 +21339,13 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput
 func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) DeployArtifactVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string {
 		return v.DeployArtifactVersion
+	}).(pulumi.StringOutput)
+}
+
+// Specifies types of artifact sources.
+func (o GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceOutput) HelmArtifactSourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource) string {
+		return v.HelmArtifactSourceType
 	}).(pulumi.StringOutput)
 }
 
@@ -27808,6 +27847,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	GreenBackendIps []GetDeployStagesDeployStageCollectionItemGreenBackendIp `pulumi:"greenBackendIps"`
 	// Helm chart artifact OCID.
 	HelmChartDeployArtifactId string `pulumi:"helmChartDeployArtifactId"`
+	// List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds []string `pulumi:"helmCommandArtifactIds"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -27816,6 +27857,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	IsDebugEnabled bool `pulumi:"isDebugEnabled"`
 	// Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled bool `pulumi:"isForceEnabled"`
+	// Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete bool `pulumi:"isUninstallOnStageDelete"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled bool `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -27842,6 +27885,8 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	ProductionLoadBalancerConfigs []GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfig `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId string `pulumi:"projectId"`
+	// The purpose of running this Helm stage
+	Purpose string `pulumi:"purpose"`
 	// Release name of the Helm chart.
 	ReleaseName string `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -27958,6 +28003,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	GreenBackendIps GetDeployStagesDeployStageCollectionItemGreenBackendIpArrayInput `pulumi:"greenBackendIps"`
 	// Helm chart artifact OCID.
 	HelmChartDeployArtifactId pulumi.StringInput `pulumi:"helmChartDeployArtifactId"`
+	// List of Helm command artifact OCIDs.
+	HelmCommandArtifactIds pulumi.StringArrayInput `pulumi:"helmCommandArtifactIds"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag specifies whether this stage executes asynchronously.
@@ -27966,6 +28013,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	IsDebugEnabled pulumi.BoolInput `pulumi:"isDebugEnabled"`
 	// Force resource update through delete; or if required, recreate. Set to false by default.
 	IsForceEnabled pulumi.BoolInput `pulumi:"isForceEnabled"`
+	// Uninstall the Helm chart release on deleting the stage.
+	IsUninstallOnStageDelete pulumi.BoolInput `pulumi:"isUninstallOnStageDelete"`
 	// A boolean flag specifies whether the invoked function must be validated.
 	IsValidationEnabled pulumi.BoolInput `pulumi:"isValidationEnabled"`
 	// List of Kubernetes manifest artifact OCIDs.
@@ -27992,6 +28041,8 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	ProductionLoadBalancerConfigs GetDeployStagesDeployStageCollectionItemProductionLoadBalancerConfigArrayInput `pulumi:"productionLoadBalancerConfigs"`
 	// The OCID of a project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// The purpose of running this Helm stage
+	Purpose pulumi.StringInput `pulumi:"purpose"`
 	// Release name of the Helm chart.
 	ReleaseName pulumi.StringInput `pulumi:"releaseName"`
 	// Specifies the rollback policy. This is initiated on the failure of certain stage types.
@@ -28264,6 +28315,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) HelmChartDeployArtifactI
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.HelmChartDeployArtifactId }).(pulumi.StringOutput)
 }
 
+// List of Helm command artifact OCIDs.
+func (o GetDeployStagesDeployStageCollectionItemOutput) HelmCommandArtifactIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) []string { return v.HelmCommandArtifactIds }).(pulumi.StringArrayOutput)
+}
+
 // Unique identifier or OCID for listing a single resource by ID.
 func (o GetDeployStagesDeployStageCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
@@ -28282,6 +28338,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) IsDebugEnabled() pulumi.
 // Force resource update through delete; or if required, recreate. Set to false by default.
 func (o GetDeployStagesDeployStageCollectionItemOutput) IsForceEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsForceEnabled }).(pulumi.BoolOutput)
+}
+
+// Uninstall the Helm chart release on deleting the stage.
+func (o GetDeployStagesDeployStageCollectionItemOutput) IsUninstallOnStageDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) bool { return v.IsUninstallOnStageDelete }).(pulumi.BoolOutput)
 }
 
 // A boolean flag specifies whether the invoked function must be validated.
@@ -28353,6 +28414,11 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ProductionLoadBalancerCo
 // The OCID of a project.
 func (o GetDeployStagesDeployStageCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// The purpose of running this Helm stage
+func (o GetDeployStagesDeployStageCollectionItemOutput) Purpose() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) string { return v.Purpose }).(pulumi.StringOutput)
 }
 
 // Release name of the Helm chart.

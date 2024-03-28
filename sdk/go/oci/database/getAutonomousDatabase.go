@@ -69,7 +69,11 @@ type LookupAutonomousDatabaseResult struct {
 	ApexDetails []GetAutonomousDatabaseApexDetail `pulumi:"apexDetails"`
 	// This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
 	ArePrimaryWhitelistedIpsUsed bool `pulumi:"arePrimaryWhitelistedIpsUsed"`
-	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+	// The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+	AutoRefreshFrequencyInSeconds int `pulumi:"autoRefreshFrequencyInSeconds"`
+	// The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+	AutoRefreshPointLagInSeconds int `pulumi:"autoRefreshPointLagInSeconds"`
+	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
@@ -278,6 +282,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeMaintenanceBegin string `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
 	TimeMaintenanceEnd string `pulumi:"timeMaintenanceEnd"`
+	// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+	TimeOfAutoRefreshStart string `pulumi:"timeOfAutoRefreshStart"`
 	// The time the member joined the resource pool.
 	TimeOfJoiningResourcePool string `pulumi:"timeOfJoiningResourcePool"`
 	// The timestamp of the last failover operation.
@@ -370,7 +376,17 @@ func (o LookupAutonomousDatabaseResultOutput) ArePrimaryWhitelistedIpsUsed() pul
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.ArePrimaryWhitelistedIpsUsed }).(pulumi.BoolOutput)
 }
 
-// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+// The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+func (o LookupAutonomousDatabaseResultOutput) AutoRefreshFrequencyInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.AutoRefreshFrequencyInSeconds }).(pulumi.IntOutput)
+}
+
+// The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+func (o LookupAutonomousDatabaseResultOutput) AutoRefreshPointLagInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.AutoRefreshPointLagInSeconds }).(pulumi.IntOutput)
+}
+
+// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupAutonomousDatabaseResultOutput) AutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousContainerDatabaseId }).(pulumi.StringOutput)
 }
@@ -915,6 +931,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceBegin() pulumi.Stri
 // The date and time when maintenance will end.
 func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenanceEnd }).(pulumi.StringOutput)
+}
+
+// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+func (o LookupAutonomousDatabaseResultOutput) TimeOfAutoRefreshStart() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfAutoRefreshStart }).(pulumi.StringOutput)
 }
 
 // The time the member joined the resource pool.

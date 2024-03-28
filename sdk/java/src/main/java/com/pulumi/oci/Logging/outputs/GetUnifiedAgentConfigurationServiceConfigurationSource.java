@@ -5,6 +5,7 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParser;
 import java.lang.String;
 import java.util.List;
@@ -13,10 +14,20 @@ import java.util.Objects;
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     /**
+     * @return Advanced options for logging configuration
+     * 
+     */
+    private List<GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption> advancedOptions;
+    /**
      * @return Windows event log channels.
      * 
      */
     private List<String> channels;
+    /**
+     * @return User customized source plugin.
+     * 
+     */
+    private String customPlugin;
     /**
      * @return The name key to tag this Grok pattern.
      * 
@@ -40,11 +51,25 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
 
     private GetUnifiedAgentConfigurationServiceConfigurationSource() {}
     /**
+     * @return Advanced options for logging configuration
+     * 
+     */
+    public List<GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption> advancedOptions() {
+        return this.advancedOptions;
+    }
+    /**
      * @return Windows event log channels.
      * 
      */
     public List<String> channels() {
         return this.channels;
+    }
+    /**
+     * @return User customized source plugin.
+     * 
+     */
+    public String customPlugin() {
+        return this.customPlugin;
     }
     /**
      * @return The name key to tag this Grok pattern.
@@ -84,7 +109,9 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption> advancedOptions;
         private List<String> channels;
+        private String customPlugin;
         private String name;
         private List<GetUnifiedAgentConfigurationServiceConfigurationSourceParser> parsers;
         private List<String> paths;
@@ -92,13 +119,26 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.advancedOptions = defaults.advancedOptions;
     	      this.channels = defaults.channels;
+    	      this.customPlugin = defaults.customPlugin;
     	      this.name = defaults.name;
     	      this.parsers = defaults.parsers;
     	      this.paths = defaults.paths;
     	      this.sourceType = defaults.sourceType;
         }
 
+        @CustomType.Setter
+        public Builder advancedOptions(List<GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption> advancedOptions) {
+            if (advancedOptions == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "advancedOptions");
+            }
+            this.advancedOptions = advancedOptions;
+            return this;
+        }
+        public Builder advancedOptions(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption... advancedOptions) {
+            return advancedOptions(List.of(advancedOptions));
+        }
         @CustomType.Setter
         public Builder channels(List<String> channels) {
             if (channels == null) {
@@ -109,6 +149,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
         public Builder channels(String... channels) {
             return channels(List.of(channels));
+        }
+        @CustomType.Setter
+        public Builder customPlugin(String customPlugin) {
+            if (customPlugin == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSource", "customPlugin");
+            }
+            this.customPlugin = customPlugin;
+            return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
@@ -150,7 +198,9 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSource build() {
             final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationSource();
+            _resultValue.advancedOptions = advancedOptions;
             _resultValue.channels = channels;
+            _resultValue.customPlugin = customPlugin;
             _resultValue.name = name;
             _resultValue.parsers = parsers;
             _resultValue.paths = paths;

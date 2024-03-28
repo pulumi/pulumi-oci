@@ -127,7 +127,7 @@ export interface GetAutonomousDatabasesArgs {
  */
 export interface GetAutonomousDatabasesResult {
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     readonly autonomousContainerDatabaseId?: string;
     /**

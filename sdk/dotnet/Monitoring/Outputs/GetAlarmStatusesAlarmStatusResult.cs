@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// </summary>
+        public readonly string RuleName;
+        /// <summary>
         /// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         /// </summary>
         public readonly string Severity;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             string id,
 
+            string ruleName,
+
             string severity,
 
             string status,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         {
             DisplayName = displayName;
             Id = id;
+            RuleName = ruleName;
             Severity = severity;
             Status = status;
             Suppressions = suppressions;

@@ -139,6 +139,12 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? NullValuePattern { get; set; }
 
         /// <summary>
+        /// (Updatable) If true, a separator parameter can be further defined.
+        /// </summary>
+        [Input("parseNested")]
+        public Input<bool>? ParseNested { get; set; }
+
+        /// <summary>
         /// (Updatable) Type of fluent parser.
         /// </summary>
         [Input("parserType", required: true)]
@@ -157,10 +163,22 @@ namespace Pulumi.Oci.Logging.Inputs
         }
 
         /// <summary>
+        /// (Updatable) record section of openmetrics parser.
+        /// </summary>
+        [Input("recordInput")]
+        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs>? RecordInput { get; set; }
+
+        /// <summary>
         /// (Updatable) RFC 5424 time format.
         /// </summary>
         [Input("rfc5424timeFormat")]
         public Input<string>? Rfc5424timeFormat { get; set; }
+
+        /// <summary>
+        /// (Updatable) Keys of adjacent levels are joined by the separator.
+        /// </summary>
+        [Input("separator")]
+        public Input<string>? Separator { get; set; }
 
         /// <summary>
         /// (Updatable) Syslog parser type.

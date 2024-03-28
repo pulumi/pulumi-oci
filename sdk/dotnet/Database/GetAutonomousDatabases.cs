@@ -298,7 +298,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabasesResult
     {
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? AutonomousContainerDatabaseId;
         /// <summary>

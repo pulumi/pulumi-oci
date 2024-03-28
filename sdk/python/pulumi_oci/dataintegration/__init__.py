@@ -22,6 +22,8 @@ from .get_workspace_import_request import *
 from .get_workspace_import_requests import *
 from .get_workspace_project import *
 from .get_workspace_projects import *
+from .get_workspace_task import *
+from .get_workspace_tasks import *
 from .get_workspaces import *
 from .workspace import *
 from .workspace_application import *
@@ -32,5 +34,6 @@ from .workspace_export_request import *
 from .workspace_folder import *
 from .workspace_import_request import *
 from .workspace_project import *
+from .workspace_task import *
 from ._inputs import *
 from . import outputs

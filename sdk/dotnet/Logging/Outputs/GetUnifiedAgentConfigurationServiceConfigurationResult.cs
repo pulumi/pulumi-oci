@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class GetUnifiedAgentConfigurationServiceConfigurationResult
     {
         /// <summary>
+        /// Unified Agent monitoring application configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationResult> ApplicationConfigurations;
+        /// <summary>
         /// Type of Unified Agent service configuration.
         /// </summary>
         public readonly string ConfigurationType;
@@ -25,18 +29,28 @@ namespace Pulumi.Oci.Logging.Outputs
         /// Logging source object.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult> Sources;
+        /// <summary>
+        /// Logging filter object.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterResult> UnifiedAgentConfigurationFilters;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationResult(
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationResult> applicationConfigurations,
+
             string configurationType,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationResult> destinations,
 
-            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult> sources)
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult> sources,
+
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterResult> unifiedAgentConfigurationFilters)
         {
+            ApplicationConfigurations = applicationConfigurations;
             ConfigurationType = configurationType;
             Destinations = destinations;
             Sources = sources;
+            UnifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
         }
     }
 }

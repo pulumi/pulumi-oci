@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Metrics;
         /// <summary>
-        /// Record section of OperationalMetricsSource object.
+        /// record section of openmetrics parser.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputResult> RecordInputs;
         /// <summary>

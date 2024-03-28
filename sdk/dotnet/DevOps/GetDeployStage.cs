@@ -227,6 +227,10 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string HelmChartDeployArtifactId;
         /// <summary>
+        /// List of Helm command artifact OCIDs.
+        /// </summary>
+        public readonly ImmutableArray<string> HelmCommandArtifactIds;
+        /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
         public readonly string Id;
@@ -242,6 +246,10 @@ namespace Pulumi.Oci.DevOps
         /// Force resource update through delete; or if required, recreate. Set to false by default.
         /// </summary>
         public readonly bool IsForceEnabled;
+        /// <summary>
+        /// Uninstall the Helm chart release on deleting the stage.
+        /// </summary>
+        public readonly bool IsUninstallOnStageDelete;
         /// <summary>
         /// A boolean flag specifies whether the invoked function must be validated.
         /// </summary>
@@ -294,6 +302,10 @@ namespace Pulumi.Oci.DevOps
         /// The OCID of a project.
         /// </summary>
         public readonly string ProjectId;
+        /// <summary>
+        /// The purpose of running this Helm stage
+        /// </summary>
+        public readonly string Purpose;
         /// <summary>
         /// Release name of the Helm chart.
         /// </summary>
@@ -441,6 +453,8 @@ namespace Pulumi.Oci.DevOps
 
             string helmChartDeployArtifactId,
 
+            ImmutableArray<string> helmCommandArtifactIds,
+
             string id,
 
             bool isAsync,
@@ -448,6 +462,8 @@ namespace Pulumi.Oci.DevOps
             bool isDebugEnabled,
 
             bool isForceEnabled,
+
+            bool isUninstallOnStageDelete,
 
             bool isValidationEnabled,
 
@@ -474,6 +490,8 @@ namespace Pulumi.Oci.DevOps
             ImmutableArray<Outputs.GetDeployStageProductionLoadBalancerConfigResult> productionLoadBalancerConfigs,
 
             string projectId,
+
+            string purpose,
 
             string releaseName,
 
@@ -547,10 +565,12 @@ namespace Pulumi.Oci.DevOps
             FunctionTimeoutInSeconds = functionTimeoutInSeconds;
             GreenBackendIps = greenBackendIps;
             HelmChartDeployArtifactId = helmChartDeployArtifactId;
+            HelmCommandArtifactIds = helmCommandArtifactIds;
             Id = id;
             IsAsync = isAsync;
             IsDebugEnabled = isDebugEnabled;
             IsForceEnabled = isForceEnabled;
+            IsUninstallOnStageDelete = isUninstallOnStageDelete;
             IsValidationEnabled = isValidationEnabled;
             KubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             LifecycleDetails = lifecycleDetails;
@@ -564,6 +584,7 @@ namespace Pulumi.Oci.DevOps
             OkeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             ProductionLoadBalancerConfigs = productionLoadBalancerConfigs;
             ProjectId = projectId;
+            Purpose = purpose;
             ReleaseName = releaseName;
             RollbackPolicies = rollbackPolicies;
             RolloutPolicies = rolloutPolicies;

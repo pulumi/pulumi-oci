@@ -130,8 +130,22 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
 
 
     :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_column: The parameter to filter results by key criteria.
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    :param str filter_column: The parameter to filter results by key criteria which include :
+           * AVG_TIMER_WAIT
+           * SUM_TIMER_WAIT
+           * COUNT_STAR
+           * SUM_ERRORS
+           * SUM_ROWS_AFFECTED
+           * SUM_ROWS_SENT
+           * SUM_ROWS_EXAMINED
+           * SUM_CREATED_TMP_TABLES
+           * SUM_NO_INDEX_USED
+           * SUM_NO_GOOD_INDEX_USED
+           * FIRST_SEEN
+           * LAST_SEEN
+           * HEATWAVE_OFFLOADED
+           * HEATWAVE_OUT_OF_MEMORY
+    :param str managed_my_sql_database_id: The OCID of the Managed MySQL Database.
     :param str start_time: The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
     """
     __args__ = dict()
@@ -181,8 +195,22 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
 
 
     :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-    :param str filter_column: The parameter to filter results by key criteria.
-    :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
+    :param str filter_column: The parameter to filter results by key criteria which include :
+           * AVG_TIMER_WAIT
+           * SUM_TIMER_WAIT
+           * COUNT_STAR
+           * SUM_ERRORS
+           * SUM_ROWS_AFFECTED
+           * SUM_ROWS_SENT
+           * SUM_ROWS_EXAMINED
+           * SUM_CREATED_TMP_TABLES
+           * SUM_NO_INDEX_USED
+           * SUM_NO_GOOD_INDEX_USED
+           * FIRST_SEEN
+           * LAST_SEEN
+           * HEATWAVE_OFFLOADED
+           * HEATWAVE_OUT_OF_MEMORY
+    :param str managed_my_sql_database_id: The OCID of the Managed MySQL Database.
     :param str start_time: The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
     """
     ...

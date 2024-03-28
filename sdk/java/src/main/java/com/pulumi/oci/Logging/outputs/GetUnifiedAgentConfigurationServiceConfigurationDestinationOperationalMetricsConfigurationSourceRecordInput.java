@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
     /**
-     * @return Namespace to emit the operational metrics.
+     * @return Namespace to emit metrics.
      * 
      */
     private String namespace;
     /**
-     * @return Resource group to emit the operational metrics.
+     * @return Resource group to emit metrics.
      * 
      */
     private String resourceGroup;
 
     private GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput() {}
     /**
-     * @return Namespace to emit the operational metrics.
+     * @return Namespace to emit metrics.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return Resource group to emit the operational metrics.
+     * @return Resource group to emit metrics.
      * 
      */
     public String resourceGroup() {

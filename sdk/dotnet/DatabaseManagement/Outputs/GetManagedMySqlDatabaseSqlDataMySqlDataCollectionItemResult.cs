@@ -14,131 +14,139 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult
     {
         /// <summary>
-        /// The Average Execution Time.
+        /// The average execution time.
         /// </summary>
         public readonly double AvgTimerWait;
         /// <summary>
-        /// The Number Of Times The Query Has Been Executed.
+        /// The number Of times the query has been executed.
         /// </summary>
         public readonly double CountStar;
         /// <summary>
-        /// The Digest Of The Normalized Query.
+        /// The digest information of the normalized query.
         /// </summary>
         public readonly string Digest;
         /// <summary>
-        /// The Normalized Query.
+        /// The normalized query.
         /// </summary>
         public readonly string DigestText;
         /// <summary>
-        /// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+        /// The date and time the query was first seen. If the table is truncated, the first seen value is reset.
         /// </summary>
         public readonly string FirstSeen;
         /// <summary>
-        /// When The Query Was Seen The Last Time.
+        /// The number of query executions offloaded to HeatWave.
+        /// </summary>
+        public readonly double HeatWaveOffloaded;
+        /// <summary>
+        /// The number of query executions with HeatWave out-of-memory errors.
+        /// </summary>
+        public readonly double HeatWaveOutOfMemory;
+        /// <summary>
+        /// The date and time the query was last seen.
         /// </summary>
         public readonly string LastSeen;
         /// <summary>
-        /// The Slowest The Query Has Been Executed.
+        /// The slowest the query has been executed.
         /// </summary>
         public readonly double MaxTimerWait;
         /// <summary>
-        /// The Fastest The Query Has Been Executed.
+        /// The fastest the query has been executed.
         /// </summary>
         public readonly double MinTimerWait;
         /// <summary>
-        /// The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+        /// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
         /// </summary>
         public readonly double Quantile95;
         /// <summary>
-        /// The 99th Percentile Of The Query Latency.
+        /// The 99th percentile of the query latency.
         /// </summary>
         public readonly double Quantile99;
         /// <summary>
-        /// The 99.9th Percentile Of The Query Latency.
+        /// The 99.9th percentile of the query latency.
         /// </summary>
         public readonly double Quantile999;
         /// <summary>
-        /// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+        /// The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
         /// </summary>
         public readonly string SchemaName;
         /// <summary>
-        /// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+        /// The total number of On-Disk internal temporary tables that have been created by the query.
         /// </summary>
         public readonly double SumCreatedTempDiskTables;
         /// <summary>
-        /// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+        /// The total number of internal temporary tables (in memory or on disk), which have been created by the query.
         /// </summary>
         public readonly double SumCreatedTempTables;
         /// <summary>
-        /// The Total Number Of Errors That Have Been Encountered Executing The Query.
+        /// The total number of errors that have been encountered executing the query.
         /// </summary>
         public readonly double SumErrors;
         /// <summary>
-        /// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+        /// The total amount of time that has been spent waiting for table locks.
         /// </summary>
         public readonly double SumLockTime;
         /// <summary>
-        /// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+        /// The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
         /// </summary>
         public readonly double SumNoGoodIndexUsed;
         /// <summary>
-        /// The Total Number Of Times No Index Was Used To Execute The Query.
+        /// The total number of times no index was used to execute the query.
         /// </summary>
         public readonly double SumNoIndexUsed;
         /// <summary>
-        /// The Total Number Of Rows That Have Been Modified By The Query.
+        /// The total number of rows that have been modified by the query.
         /// </summary>
         public readonly double SumRowsAffected;
         /// <summary>
-        /// The Total Number Of Rows That Have Been Examined By The Query.
+        /// The total number of rows that have been examined by the query.
         /// </summary>
         public readonly double SumRowsExamined;
         /// <summary>
-        /// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+        /// The total number of rows that have been returned (sent) to the client.
         /// </summary>
         public readonly double SumRowsSent;
         /// <summary>
-        /// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+        /// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
         /// </summary>
         public readonly double SumSelectFullJoin;
         /// <summary>
-        /// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+        /// The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
         /// </summary>
         public readonly double SumSelectFullRangeJoin;
         /// <summary>
-        /// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+        /// The total number of times the query has used a range search. This is the same as the select_range status variable.
         /// </summary>
         public readonly double SumSelectRange;
         /// <summary>
-        /// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+        /// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
         /// </summary>
         public readonly double SumSelectRangeCheck;
         /// <summary>
-        /// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+        /// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
         /// </summary>
         public readonly double SumSelectScan;
         /// <summary>
-        /// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+        /// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
         /// </summary>
         public readonly double SumSortMergePasses;
         /// <summary>
-        /// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+        /// The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
         /// </summary>
         public readonly double SumSortRange;
         /// <summary>
-        /// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+        /// The total number of rows sorted. This is the same as the sort_rowsStatus variable.
         /// </summary>
         public readonly double SumSortRows;
         /// <summary>
-        /// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+        /// The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
         /// </summary>
         public readonly double SumSortScan;
         /// <summary>
-        /// The Total Amount Of Time That Has Been Spent Executing The Query.
+        /// The total amount of time that has been spent executing the query.
         /// </summary>
         public readonly double SumTimerWait;
         /// <summary>
-        /// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+        /// The total number of warnings that have been encountered executing the query.
         /// </summary>
         public readonly double SumWarnings;
 
@@ -153,6 +161,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             string digestText,
 
             string firstSeen,
+
+            double heatWaveOffloaded,
+
+            double heatWaveOutOfMemory,
 
             string lastSeen,
 
@@ -213,6 +225,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             Digest = digest;
             DigestText = digestText;
             FirstSeen = firstSeen;
+            HeatWaveOffloaded = heatWaveOffloaded;
+            HeatWaveOutOfMemory = heatWaveOutOfMemory;
             LastSeen = lastSeen;
             MaxTimerWait = maxTimerWait;
             MinTimerWait = minTimerWait;

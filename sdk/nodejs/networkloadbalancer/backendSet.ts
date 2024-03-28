@@ -76,11 +76,11 @@ export class BackendSet extends pulumi.CustomResource {
     }
 
     /**
-     * Array of backends.
+     * (Updatable) An array of backends to be associated with the backend set.
      */
     public /*out*/ readonly backends!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[]>;
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      */
     public readonly healthChecker!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
@@ -161,11 +161,11 @@ export class BackendSet extends pulumi.CustomResource {
  */
 export interface BackendSetState {
     /**
-     * Array of backends.
+     * (Updatable) An array of backends to be associated with the backend set.
      */
     backends?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.BackendSetBackend>[]>;
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      */
     healthChecker?: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
@@ -203,7 +203,7 @@ export interface BackendSetState {
  */
 export interface BackendSetArgs {
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      */
     healthChecker: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**

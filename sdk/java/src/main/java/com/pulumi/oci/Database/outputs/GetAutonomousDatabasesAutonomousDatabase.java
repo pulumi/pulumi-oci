@@ -51,6 +51,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean arePrimaryWhitelistedIpsUsed;
     /**
+     * @return The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     * 
+     */
+    private Integer autoRefreshFrequencyInSeconds;
+    /**
+     * @return The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     * 
+     */
+    private Integer autoRefreshPointLagInSeconds;
+    /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -546,6 +556,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String timeMaintenanceEnd;
     /**
+     * @return The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * 
+     */
+    private String timeOfAutoRefreshStart;
+    /**
      * @return The time the member joined the resource pool.
      * 
      */
@@ -644,6 +659,20 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public Boolean arePrimaryWhitelistedIpsUsed() {
         return this.arePrimaryWhitelistedIpsUsed;
+    }
+    /**
+     * @return The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+     * 
+     */
+    public Integer autoRefreshFrequencyInSeconds() {
+        return this.autoRefreshFrequencyInSeconds;
+    }
+    /**
+     * @return The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+     * 
+     */
+    public Integer autoRefreshPointLagInSeconds() {
+        return this.autoRefreshPointLagInSeconds;
     }
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1357,6 +1386,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.timeMaintenanceEnd;
     }
     /**
+     * @return The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * 
+     */
+    public String timeOfAutoRefreshStart() {
+        return this.timeOfAutoRefreshStart;
+    }
+    /**
      * @return The time the member joined the resource pool.
      * 
      */
@@ -1468,6 +1504,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Double allocatedStorageSizeInTbs;
         private List<GetAutonomousDatabasesAutonomousDatabaseApexDetail> apexDetails;
         private Boolean arePrimaryWhitelistedIpsUsed;
+        private Integer autoRefreshFrequencyInSeconds;
+        private Integer autoRefreshPointLagInSeconds;
         private String autonomousContainerDatabaseId;
         private String autonomousDatabaseBackupId;
         private String autonomousDatabaseId;
@@ -1576,6 +1614,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
+        private String timeOfAutoRefreshStart;
         private String timeOfJoiningResourcePool;
         private String timeOfLastFailover;
         private String timeOfLastRefresh;
@@ -1599,6 +1638,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.allocatedStorageSizeInTbs = defaults.allocatedStorageSizeInTbs;
     	      this.apexDetails = defaults.apexDetails;
     	      this.arePrimaryWhitelistedIpsUsed = defaults.arePrimaryWhitelistedIpsUsed;
+    	      this.autoRefreshFrequencyInSeconds = defaults.autoRefreshFrequencyInSeconds;
+    	      this.autoRefreshPointLagInSeconds = defaults.autoRefreshPointLagInSeconds;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousDatabaseBackupId = defaults.autonomousDatabaseBackupId;
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
@@ -1707,6 +1748,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
+    	      this.timeOfAutoRefreshStart = defaults.timeOfAutoRefreshStart;
     	      this.timeOfJoiningResourcePool = defaults.timeOfJoiningResourcePool;
     	      this.timeOfLastFailover = defaults.timeOfLastFailover;
     	      this.timeOfLastRefresh = defaults.timeOfLastRefresh;
@@ -1765,6 +1807,22 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "arePrimaryWhitelistedIpsUsed");
             }
             this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoRefreshFrequencyInSeconds(Integer autoRefreshFrequencyInSeconds) {
+            if (autoRefreshFrequencyInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autoRefreshFrequencyInSeconds");
+            }
+            this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoRefreshPointLagInSeconds(Integer autoRefreshPointLagInSeconds) {
+            if (autoRefreshPointLagInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "autoRefreshPointLagInSeconds");
+            }
+            this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             return this;
         }
         @CustomType.Setter
@@ -2686,6 +2744,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOfAutoRefreshStart(String timeOfAutoRefreshStart) {
+            if (timeOfAutoRefreshStart == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfAutoRefreshStart");
+            }
+            this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeOfJoiningResourcePool(String timeOfJoiningResourcePool) {
             if (timeOfJoiningResourcePool == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeOfJoiningResourcePool");
@@ -2815,6 +2881,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             _resultValue.apexDetails = apexDetails;
             _resultValue.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+            _resultValue.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+            _resultValue.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             _resultValue.autonomousDatabaseId = autonomousDatabaseId;
@@ -2923,6 +2991,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
             _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
+            _resultValue.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
             _resultValue.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
             _resultValue.timeOfLastFailover = timeOfLastFailover;
             _resultValue.timeOfLastRefresh = timeOfLastRefresh;

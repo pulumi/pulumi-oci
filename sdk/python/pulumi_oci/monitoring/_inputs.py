@@ -10,6 +10,7 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'AlarmOverrideArgs',
     'AlarmSuppressionArgs',
     'AlarmSuppressionAlarmSuppressionTargetArgs',
     'GetAlarmStatusesFilterArgs',
@@ -18,6 +19,141 @@ __all__ = [
     'GetMetricDataFilterArgs',
     'GetMetricsFilterArgs',
 ]
+
+@pulumi.input_type
+class AlarmOverrideArgs:
+    def __init__(__self__, *,
+                 body: Optional[pulumi.Input[str]] = None,
+                 pending_duration: Optional[pulumi.Input[str]] = None,
+                 query: Optional[pulumi.Input[str]] = None,
+                 rule_name: Optional[pulumi.Input[str]] = None,
+                 severity: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] body: (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+               
+               Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+               
+               The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+               
+               Example: `PT5M`
+        :param pulumi.Input[str] query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+               
+               Example of absence alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+               
+               -----
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        """
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+        if severity is not None:
+            pulumi.set(__self__, "severity", severity)
+
+    @property
+    @pulumi.getter
+    def body(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        """
+        return pulumi.get(self, "body")
+
+    @body.setter
+    def body(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "body", value)
+
+    @property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+
+        Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+
+        The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+
+        Example: `PT5M`
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pending_duration", value)
+
+    @property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+
+        Example of absence alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+
+        -----
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query", value)
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        """
+        return pulumi.get(self, "rule_name")
+
+    @rule_name.setter
+    def rule_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_name", value)
+
+    @property
+    @pulumi.getter
+    def severity(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        """
+        return pulumi.get(self, "severity")
+
+    @severity.setter
+    def severity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "severity", value)
+
 
 @pulumi.input_type
 class AlarmSuppressionArgs:

@@ -67,6 +67,85 @@ __all__ = [
     'WorkspaceProjectMetadataCountStatisticObjectTypeCountList',
     'WorkspaceProjectParentRef',
     'WorkspaceProjectRegistryMetadata',
+    'WorkspaceTaskAuthConfig',
+    'WorkspaceTaskAuthConfigParentRef',
+    'WorkspaceTaskCancelRestCallConfig',
+    'WorkspaceTaskCancelRestCallConfigConfigValues',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl',
+    'WorkspaceTaskCancelRestCallConfigConfigValuesParentRef',
+    'WorkspaceTaskConfigProviderDelegate',
+    'WorkspaceTaskConfigProviderDelegateBinding',
+    'WorkspaceTaskConfigProviderDelegateBindingParameterValues',
+    'WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue',
+    'WorkspaceTaskExecuteRestCallConfig',
+    'WorkspaceTaskExecuteRestCallConfigConfigValues',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl',
+    'WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef',
+    'WorkspaceTaskInputPort',
+    'WorkspaceTaskInputPortConfigValues',
+    'WorkspaceTaskInputPortConfigValuesConfigParamValues',
+    'WorkspaceTaskInputPortConfigValuesParentRef',
+    'WorkspaceTaskInputPortParentRef',
+    'WorkspaceTaskMetadata',
+    'WorkspaceTaskMetadataAggregator',
+    'WorkspaceTaskMetadataCountStatistic',
+    'WorkspaceTaskMetadataCountStatisticObjectTypeCountList',
+    'WorkspaceTaskOpConfigValues',
+    'WorkspaceTaskOpConfigValuesConfigParamValues',
+    'WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue',
+    'WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue',
+    'WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue',
+    'WorkspaceTaskOpConfigValuesParentRef',
+    'WorkspaceTaskOutputPort',
+    'WorkspaceTaskOutputPortConfigValues',
+    'WorkspaceTaskOutputPortConfigValuesConfigParamValues',
+    'WorkspaceTaskOutputPortConfigValuesParentRef',
+    'WorkspaceTaskOutputPortParentRef',
+    'WorkspaceTaskParameter',
+    'WorkspaceTaskParameterConfigValues',
+    'WorkspaceTaskParameterConfigValuesConfigParamValues',
+    'WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue',
+    'WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue',
+    'WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue',
+    'WorkspaceTaskParameterConfigValuesParentRef',
+    'WorkspaceTaskParameterParentRef',
+    'WorkspaceTaskParentRef',
+    'WorkspaceTaskPollRestCallConfig',
+    'WorkspaceTaskPollRestCallConfigConfigValues',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam',
+    'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl',
+    'WorkspaceTaskPollRestCallConfigConfigValuesParentRef',
+    'WorkspaceTaskRegistryMetadata',
+    'WorkspaceTaskTypedExpression',
+    'WorkspaceTaskTypedExpressionConfigValues',
+    'WorkspaceTaskTypedExpressionConfigValuesConfigParamValues',
+    'WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength',
+    'WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale',
+    'WorkspaceTaskTypedExpressionConfigValuesParentRef',
+    'WorkspaceTaskTypedExpressionParentRef',
     'GetWorkspaceApplicationDependentObjectMetadataResult',
     'GetWorkspaceApplicationMetadataResult',
     'GetWorkspaceApplicationMetadataAggregatorResult',
@@ -203,6 +282,167 @@ __all__ = [
     'GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult',
     'GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult',
     'GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult',
+    'GetWorkspaceTaskAuthConfigResult',
+    'GetWorkspaceTaskAuthConfigParentRefResult',
+    'GetWorkspaceTaskCancelRestCallConfigResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestUrlResult',
+    'GetWorkspaceTaskCancelRestCallConfigConfigValueParentRefResult',
+    'GetWorkspaceTaskConfigProviderDelegateResult',
+    'GetWorkspaceTaskConfigProviderDelegateBindingResult',
+    'GetWorkspaceTaskConfigProviderDelegateBindingParameterValueResult',
+    'GetWorkspaceTaskConfigProviderDelegateBindingParameterValueRootObjectValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestUrlResult',
+    'GetWorkspaceTaskExecuteRestCallConfigConfigValueParentRefResult',
+    'GetWorkspaceTaskInputPortResult',
+    'GetWorkspaceTaskInputPortConfigValueResult',
+    'GetWorkspaceTaskInputPortConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskInputPortConfigValueParentRefResult',
+    'GetWorkspaceTaskInputPortParentRefResult',
+    'GetWorkspaceTaskMetadataResult',
+    'GetWorkspaceTaskMetadataAggregatorResult',
+    'GetWorkspaceTaskMetadataCountStatisticResult',
+    'GetWorkspaceTaskMetadataCountStatisticObjectTypeCountListResult',
+    'GetWorkspaceTaskOpConfigValueResult',
+    'GetWorkspaceTaskOpConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueResult',
+    'GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRefValueResult',
+    'GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRootObjectValueResult',
+    'GetWorkspaceTaskOpConfigValueParentRefResult',
+    'GetWorkspaceTaskOutputPortResult',
+    'GetWorkspaceTaskOutputPortConfigValueResult',
+    'GetWorkspaceTaskOutputPortConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskOutputPortConfigValueParentRefResult',
+    'GetWorkspaceTaskOutputPortParentRefResult',
+    'GetWorkspaceTaskParameterResult',
+    'GetWorkspaceTaskParameterConfigValueResult',
+    'GetWorkspaceTaskParameterConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueResult',
+    'GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRefValueResult',
+    'GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRootObjectValueResult',
+    'GetWorkspaceTaskParameterConfigValueParentRefResult',
+    'GetWorkspaceTaskParameterParentRefResult',
+    'GetWorkspaceTaskParentRefResult',
+    'GetWorkspaceTaskPollRestCallConfigResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionRefValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalUnitResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationUnitResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestUrlResult',
+    'GetWorkspaceTaskPollRestCallConfigConfigValueParentRefResult',
+    'GetWorkspaceTaskRegistryMetadataResult',
+    'GetWorkspaceTaskTypedExpressionResult',
+    'GetWorkspaceTaskTypedExpressionConfigValueResult',
+    'GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueResult',
+    'GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueLengthResult',
+    'GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueScaleResult',
+    'GetWorkspaceTaskTypedExpressionConfigValueParentRefResult',
+    'GetWorkspaceTaskTypedExpressionParentRefResult',
+    'GetWorkspaceTasksFilterResult',
+    'GetWorkspaceTasksTaskSummaryCollectionResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesRootObjectValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemInputPortResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemInputPortParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemMetadataAggregatorResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParameterParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestUrlResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemRegistryMetadataResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesLengthResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesScaleResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesParentRefResult',
+    'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionParentRefResult',
     'GetWorkspacesFilterResult',
     'GetWorkspacesWorkspaceResult',
 ]
@@ -5256,6 +5496,4909 @@ class WorkspaceProjectRegistryMetadata(dict):
         (Updatable) The registry version.
         """
         return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class WorkspaceTaskAuthConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+        elif key == "resourcePrincipalSource":
+            suggest = "resource_principal_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskAuthConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskAuthConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskAuthConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskAuthConfigParentRef'] = None,
+                 resource_principal_source: Optional[str] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param 'WorkspaceTaskAuthConfigParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str resource_principal_source: (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if resource_principal_source is not None:
+            pulumi.set(__self__, "resource_principal_source", resource_principal_source)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskAuthConfigParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="resourcePrincipalSource")
+    def resource_principal_source(self) -> Optional[str]:
+        """
+        (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        return pulumi.get(self, "resource_principal_source")
+
+
+@pulumi.output_type
+class WorkspaceTaskAuthConfigParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskAuthConfigParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskAuthConfigParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskAuthConfigParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "methodType":
+            suggest = "method_type"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "requestHeaders":
+            suggest = "request_headers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValues'] = None,
+                 key: Optional[str] = None,
+                 method_type: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 request_headers: Optional[Mapping[str, Any]] = None):
+        """
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str method_type: (Updatable) The REST method to use.
+        :param str model_type: (Updatable) The type of the types object.
+        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if method_type is not None:
+            pulumi.set(__self__, "method_type", method_type)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> Optional[str]:
+        """
+        (Updatable) The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestPayload":
+            suggest = "request_payload"
+        elif key == "requestUrl":
+            suggest = "request_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 request_payload: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload'] = None,
+                 request_url: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl'] = None):
+        if request_payload is not None:
+            pulumi.set(__self__, "request_payload", request_payload)
+        if request_url is not None:
+            pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload']:
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl']:
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue'] = None):
+        """
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: (Updatable) The root object reference value.
+        """
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues'] = None,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None):
+        """
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues'] = None):
+        """
+        :param 'WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataParam":
+            suggest = "data_param"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_param: Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam'] = None):
+        if data_param is not None:
+            pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> Optional['outputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam']:
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskCancelRestCallConfigConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskCancelRestCallConfigConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskCancelRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskConfigProviderDelegate(dict):
+    def __init__(__self__, *,
+                 bindings: Optional[Sequence['outputs.WorkspaceTaskConfigProviderDelegateBinding']] = None):
+        """
+        :param Sequence['WorkspaceTaskConfigProviderDelegateBindingArgs'] bindings: bindings
+        """
+        if bindings is not None:
+            pulumi.set(__self__, "bindings", bindings)
+
+    @property
+    @pulumi.getter
+    def bindings(self) -> Optional[Sequence['outputs.WorkspaceTaskConfigProviderDelegateBinding']]:
+        """
+        bindings
+        """
+        return pulumi.get(self, "bindings")
+
+
+@pulumi.output_type
+class WorkspaceTaskConfigProviderDelegateBinding(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterValues":
+            suggest = "parameter_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskConfigProviderDelegateBinding. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskConfigProviderDelegateBinding.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskConfigProviderDelegateBinding.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 parameter_values: Optional['outputs.WorkspaceTaskConfigProviderDelegateBindingParameterValues'] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if parameter_values is not None:
+            pulumi.set(__self__, "parameter_values", parameter_values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="parameterValues")
+    def parameter_values(self) -> Optional['outputs.WorkspaceTaskConfigProviderDelegateBindingParameterValues']:
+        return pulumi.get(self, "parameter_values")
+
+
+@pulumi.output_type
+class WorkspaceTaskConfigProviderDelegateBindingParameterValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootObjectValue":
+            suggest = "root_object_value"
+        elif key == "simpleValue":
+            suggest = "simple_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskConfigProviderDelegateBindingParameterValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskConfigProviderDelegateBindingParameterValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskConfigProviderDelegateBindingParameterValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 root_object_value: Optional['outputs.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue'] = None,
+                 simple_value: Optional[str] = None):
+        """
+        :param 'WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs' root_object_value: (Updatable) The root object value, used in custom parameters.
+        :param str simple_value: A simple value for the parameter.
+        """
+        if root_object_value is not None:
+            pulumi.set(__self__, "root_object_value", root_object_value)
+        if simple_value is not None:
+            pulumi.set(__self__, "simple_value", simple_value)
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> Optional['outputs.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue']:
+        """
+        (Updatable) The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="simpleValue")
+    def simple_value(self) -> Optional[str]:
+        """
+        A simple value for the parameter.
+        """
+        return pulumi.get(self, "simple_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 object_status: Optional[int] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "methodType":
+            suggest = "method_type"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "requestHeaders":
+            suggest = "request_headers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValues'] = None,
+                 key: Optional[str] = None,
+                 method_type: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 request_headers: Optional[Mapping[str, Any]] = None):
+        """
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str method_type: (Updatable) The REST method to use.
+        :param str model_type: (Updatable) The type of the types object.
+        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if method_type is not None:
+            pulumi.set(__self__, "method_type", method_type)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> Optional[str]:
+        """
+        (Updatable) The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestPayload":
+            suggest = "request_payload"
+        elif key == "requestUrl":
+            suggest = "request_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 request_payload: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload'] = None,
+                 request_url: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl'] = None):
+        if request_payload is not None:
+            pulumi.set(__self__, "request_payload", request_payload)
+        if request_url is not None:
+            pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload']:
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl']:
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue'] = None):
+        """
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: (Updatable) The root object reference value.
+        """
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues'] = None,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None):
+        """
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues'] = None):
+        """
+        :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataParam":
+            suggest = "data_param"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_param: Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam'] = None):
+        if data_param is not None:
+            pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> Optional['outputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam']:
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskInputPort(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "configValues":
+            suggest = "config_values"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+        elif key == "portType":
+            suggest = "port_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskInputPort. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskInputPort.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskInputPort.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_type: str,
+                 config_values: Optional['outputs.WorkspaceTaskInputPortConfigValues'] = None,
+                 description: Optional[str] = None,
+                 fields: Optional[Sequence[str]] = None,
+                 key: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskInputPortParentRef'] = None,
+                 port_type: Optional[str] = None):
+        """
+        :param str model_type: (Updatable) The type of the types object.
+        :param 'WorkspaceTaskInputPortConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str description: (Updatable) Detailed description for the object.
+        :param Sequence[str] fields: (Updatable) An array of fields.
+        :param str key: (Updatable) The key of the object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'WorkspaceTaskInputPortParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str port_type: (Updatable) The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "model_type", model_type)
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if port_type is not None:
+            pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskInputPortConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of fields.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskInputPortParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> Optional[str]:
+        """
+        (Updatable) The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class WorkspaceTaskInputPortConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskInputPortConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskInputPortConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskInputPortConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskInputPortConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskInputPortConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskInputPortConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskInputPortConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskInputPortConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskInputPortConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+        elif key == "objectValue":
+            suggest = "object_value"
+        elif key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+        elif key == "rootObjectValue":
+            suggest = "root_object_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskInputPortConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskInputPortConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskInputPortConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None,
+                 object_value: Optional[str] = None,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional[str] = None,
+                 root_object_value: Optional[str] = None,
+                 string_value: Optional[str] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        :param str object_value: (Updatable) An object value of the parameter.
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param str ref_value: (Updatable) The root object reference value.
+        :param str root_object_value: (Updatable) The root object value, used in custom parameters.
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+        if root_object_value is not None:
+            pulumi.set(__self__, "root_object_value", root_object_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[str]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional[str]:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> Optional[str]:
+        """
+        (Updatable) The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskInputPortConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskInputPortConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskInputPortConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskInputPortConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskInputPortParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskInputPortParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskInputPortParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskInputPortParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatorKey":
+            suggest = "aggregator_key"
+        elif key == "countStatistics":
+            suggest = "count_statistics"
+        elif key == "createdBy":
+            suggest = "created_by"
+        elif key == "createdByName":
+            suggest = "created_by_name"
+        elif key == "identifierPath":
+            suggest = "identifier_path"
+        elif key == "infoFields":
+            suggest = "info_fields"
+        elif key == "isFavorite":
+            suggest = "is_favorite"
+        elif key == "registryVersion":
+            suggest = "registry_version"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+        elif key == "updatedBy":
+            suggest = "updated_by"
+        elif key == "updatedByName":
+            suggest = "updated_by_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregator_key: Optional[str] = None,
+                 aggregators: Optional[Sequence['outputs.WorkspaceTaskMetadataAggregator']] = None,
+                 count_statistics: Optional[Sequence['outputs.WorkspaceTaskMetadataCountStatistic']] = None,
+                 created_by: Optional[str] = None,
+                 created_by_name: Optional[str] = None,
+                 identifier_path: Optional[str] = None,
+                 info_fields: Optional[Mapping[str, Any]] = None,
+                 is_favorite: Optional[bool] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None,
+                 time_created: Optional[str] = None,
+                 time_updated: Optional[str] = None,
+                 updated_by: Optional[str] = None,
+                 updated_by_name: Optional[str] = None):
+        """
+        :param str aggregator_key: (Updatable) The owning object's key for this object.
+        :param Sequence['WorkspaceTaskMetadataAggregatorArgs'] aggregators: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['WorkspaceTaskMetadataCountStatisticArgs'] count_statistics: (Updatable) A count statistics.
+        :param str created_by: (Updatable) The user that created the object.
+        :param str created_by_name: (Updatable) The user that created the object.
+        :param str identifier_path: (Updatable) The full path to identify this object.
+        :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
+        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: (Updatable) The registry version.
+        :param str time_created: (Updatable) The date and time that the object was created.
+        :param str time_updated: (Updatable) The date and time that the object was updated.
+        :param str updated_by: (Updatable) The user that updated the object.
+        :param str updated_by_name: (Updatable) The user that updated the object.
+        """
+        if aggregator_key is not None:
+            pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if aggregators is not None:
+            pulumi.set(__self__, "aggregators", aggregators)
+        if count_statistics is not None:
+            pulumi.set(__self__, "count_statistics", count_statistics)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
+        if created_by_name is not None:
+            pulumi.set(__self__, "created_by_name", created_by_name)
+        if identifier_path is not None:
+            pulumi.set(__self__, "identifier_path", identifier_path)
+        if info_fields is not None:
+            pulumi.set(__self__, "info_fields", info_fields)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if updated_by is not None:
+            pulumi.set(__self__, "updated_by", updated_by)
+        if updated_by_name is not None:
+            pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> Optional[str]:
+        """
+        (Updatable) The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Optional[Sequence['outputs.WorkspaceTaskMetadataAggregator']]:
+        """
+        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Optional[Sequence['outputs.WorkspaceTaskMetadataCountStatistic']]:
+        """
+        (Updatable) A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> Optional[str]:
+        """
+        (Updatable) The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[int]:
+        """
+        (Updatable) The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[str]:
+        """
+        (Updatable) The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> Optional[str]:
+        """
+        (Updatable) The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class WorkspaceTaskMetadataAggregator(dict):
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 identifier: Optional[str] = None,
+                 key: Optional[str] = None,
+                 name: Optional[str] = None,
+                 type: Optional[str] = None):
+        """
+        :param str description: (Updatable) Detailed description for the object.
+        :param str identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str key: (Updatable) The key of the object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: (Updatable) The object type.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> Optional[str]:
+        """
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The object type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class WorkspaceTaskMetadataCountStatistic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectTypeCountLists":
+            suggest = "object_type_count_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskMetadataCountStatistic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskMetadataCountStatistic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskMetadataCountStatistic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_type_count_lists: Optional[Sequence['outputs.WorkspaceTaskMetadataCountStatisticObjectTypeCountList']] = None):
+        """
+        :param Sequence['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: (Updatable) The array of statistics.
+        """
+        if object_type_count_lists is not None:
+            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Optional[Sequence['outputs.WorkspaceTaskMetadataCountStatisticObjectTypeCountList']]:
+        """
+        (Updatable) The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class WorkspaceTaskMetadataCountStatisticObjectTypeCountList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectCount":
+            suggest = "object_count"
+        elif key == "objectType":
+            suggest = "object_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskMetadataCountStatisticObjectTypeCountList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskMetadataCountStatisticObjectTypeCountList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskMetadataCountStatisticObjectTypeCountList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_count: Optional[str] = None,
+                 object_type: Optional[str] = None):
+        """
+        :param str object_count: (Updatable) The value for the count statistic object.
+        :param str object_type: (Updatable) The type of object for the count statistic object.
+        """
+        if object_count is not None:
+            pulumi.set(__self__, "object_count", object_count)
+        if object_type is not None:
+            pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> Optional[str]:
+        """
+        (Updatable) The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskOpConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskOpConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskOpConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskOpConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValue":
+            suggest = "config_param_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_value: Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue'] = None,
+                 key: Optional[str] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        """
+        if config_param_value is not None:
+            pulumi.set(__self__, "config_param_value", config_param_value)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValue")
+    def config_param_value(self) -> Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue']:
+        return pulumi.get(self, "config_param_value")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+        elif key == "objectValue":
+            suggest = "object_value"
+        elif key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+        elif key == "rootObjectValue":
+            suggest = "root_object_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None,
+                 object_value: Optional[str] = None,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue'] = None,
+                 root_object_value: Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue'] = None,
+                 string_value: Optional[str] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        :param str object_value: (Updatable) An object value of the parameter.
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs' ref_value: (Updatable) The root object reference value.
+        :param 'WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs' root_object_value: (Updatable) The root object value, used in custom parameters.
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+        if root_object_value is not None:
+            pulumi.set(__self__, "root_object_value", root_object_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[str]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> Optional['outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue']:
+        """
+        (Updatable) The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 object_status: Optional[int] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class WorkspaceTaskOpConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOpConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOpConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOpConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskOutputPort(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "configValues":
+            suggest = "config_values"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+        elif key == "portType":
+            suggest = "port_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOutputPort. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOutputPort.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOutputPort.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_type: str,
+                 config_values: Optional['outputs.WorkspaceTaskOutputPortConfigValues'] = None,
+                 description: Optional[str] = None,
+                 fields: Optional[Sequence[str]] = None,
+                 key: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskOutputPortParentRef'] = None,
+                 port_type: Optional[str] = None):
+        """
+        :param str model_type: (Updatable) The type of the types object.
+        :param 'WorkspaceTaskOutputPortConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str description: (Updatable) Detailed description for the object.
+        :param Sequence[str] fields: (Updatable) An array of fields.
+        :param str key: (Updatable) The key of the object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'WorkspaceTaskOutputPortParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str port_type: (Updatable) The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "model_type", model_type)
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if fields is not None:
+            pulumi.set(__self__, "fields", fields)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if port_type is not None:
+            pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskOutputPortConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array of fields.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskOutputPortParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> Optional[str]:
+        """
+        (Updatable) The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class WorkspaceTaskOutputPortConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOutputPortConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOutputPortConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOutputPortConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskOutputPortConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskOutputPortConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskOutputPortConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskOutputPortConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskOutputPortConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskOutputPortConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+        elif key == "objectValue":
+            suggest = "object_value"
+        elif key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+        elif key == "rootObjectValue":
+            suggest = "root_object_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOutputPortConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOutputPortConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOutputPortConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None,
+                 object_value: Optional[str] = None,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional[str] = None,
+                 root_object_value: Optional[str] = None,
+                 string_value: Optional[str] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        :param str object_value: (Updatable) An object value of the parameter.
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param str ref_value: (Updatable) The root object reference value.
+        :param str root_object_value: (Updatable) The root object value, used in custom parameters.
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+        if root_object_value is not None:
+            pulumi.set(__self__, "root_object_value", root_object_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[str]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional[str]:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> Optional[str]:
+        """
+        (Updatable) The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskOutputPortConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOutputPortConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOutputPortConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOutputPortConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskOutputPortParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskOutputPortParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskOutputPortParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskOutputPortParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "configValues":
+            suggest = "config_values"
+        elif key == "defaultValue":
+            suggest = "default_value"
+        elif key == "isInput":
+            suggest = "is_input"
+        elif key == "isOutput":
+            suggest = "is_output"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "outputAggregationType":
+            suggest = "output_aggregation_type"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+        elif key == "rootObjectDefaultValue":
+            suggest = "root_object_default_value"
+        elif key == "typeName":
+            suggest = "type_name"
+        elif key == "usedFor":
+            suggest = "used_for"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_type: str,
+                 config_values: Optional['outputs.WorkspaceTaskParameterConfigValues'] = None,
+                 default_value: Optional[str] = None,
+                 description: Optional[str] = None,
+                 is_input: Optional[bool] = None,
+                 is_output: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 output_aggregation_type: Optional[str] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskParameterParentRef'] = None,
+                 root_object_default_value: Optional[str] = None,
+                 type: Optional[str] = None,
+                 type_name: Optional[str] = None,
+                 used_for: Optional[str] = None):
+        """
+        :param str model_type: (Updatable) The type of the types object.
+        :param 'WorkspaceTaskParameterConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str default_value: (Updatable) A default value for the vairable.
+        :param str description: (Updatable) Detailed description for the object.
+        :param bool is_input: (Updatable) Specifies whether the parameter is input value.
+        :param bool is_output: (Updatable) Specifies whether the parameter is output value.
+        :param str key: (Updatable) The key of the object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param str output_aggregation_type: (Updatable) The output aggregation type.
+        :param 'WorkspaceTaskParameterParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str root_object_default_value: (Updatable) A base class for all model types, including First Class and its contained objects.
+        :param str type: (Updatable) The object type.
+        :param str type_name: (Updatable) The type of value the parameter was created for.
+        :param str used_for: (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        pulumi.set(__self__, "model_type", model_type)
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_input is not None:
+            pulumi.set(__self__, "is_input", is_input)
+        if is_output is not None:
+            pulumi.set(__self__, "is_output", is_output)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if output_aggregation_type is not None:
+            pulumi.set(__self__, "output_aggregation_type", output_aggregation_type)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if root_object_default_value is not None:
+            pulumi.set(__self__, "root_object_default_value", root_object_default_value)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if type_name is not None:
+            pulumi.set(__self__, "type_name", type_name)
+        if used_for is not None:
+            pulumi.set(__self__, "used_for", used_for)
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskParameterConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> Optional[str]:
+        """
+        (Updatable) A default value for the vairable.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isInput")
+    def is_input(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether the parameter is input value.
+        """
+        return pulumi.get(self, "is_input")
+
+    @property
+    @pulumi.getter(name="isOutput")
+    def is_output(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether the parameter is output value.
+        """
+        return pulumi.get(self, "is_output")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="outputAggregationType")
+    def output_aggregation_type(self) -> Optional[str]:
+        """
+        (Updatable) The output aggregation type.
+        """
+        return pulumi.get(self, "output_aggregation_type")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskParameterParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="rootObjectDefaultValue")
+    def root_object_default_value(self) -> Optional[str]:
+        """
+        (Updatable) A base class for all model types, including First Class and its contained objects.
+        """
+        return pulumi.get(self, "root_object_default_value")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The object type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeName")
+    def type_name(self) -> Optional[str]:
+        """
+        (Updatable) The type of value the parameter was created for.
+        """
+        return pulumi.get(self, "type_name")
+
+    @property
+    @pulumi.getter(name="usedFor")
+    def used_for(self) -> Optional[str]:
+        """
+        (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        return pulumi.get(self, "used_for")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskParameterConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskParameterConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskParameterConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskParameterConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValue":
+            suggest = "config_param_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_value: Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue'] = None,
+                 key: Optional[str] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        """
+        if config_param_value is not None:
+            pulumi.set(__self__, "config_param_value", config_param_value)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValue")
+    def config_param_value(self) -> Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue']:
+        return pulumi.get(self, "config_param_value")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+        elif key == "objectValue":
+            suggest = "object_value"
+        elif key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+        elif key == "rootObjectValue":
+            suggest = "root_object_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None,
+                 object_value: Optional[str] = None,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue'] = None,
+                 root_object_value: Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue'] = None,
+                 string_value: Optional[str] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        :param str object_value: (Updatable) An object value of the parameter.
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs' ref_value: (Updatable) The root object reference value.
+        :param 'WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs' root_object_value: (Updatable) The root object value, used in custom parameters.
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+        if root_object_value is not None:
+            pulumi.set(__self__, "root_object_value", root_object_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[str]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> Optional['outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue']:
+        """
+        (Updatable) The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 object_status: Optional[int] = None):
+        """
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskParameterParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParameterParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParameterParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParameterParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "methodType":
+            suggest = "method_type"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "requestHeaders":
+            suggest = "request_headers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValues'] = None,
+                 key: Optional[str] = None,
+                 method_type: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 request_headers: Optional[Mapping[str, Any]] = None):
+        """
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str method_type: (Updatable) The REST method to use.
+        :param str model_type: (Updatable) The type of the types object.
+        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if method_type is not None:
+            pulumi.set(__self__, "method_type", method_type)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if request_headers is not None:
+            pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> Optional[str]:
+        """
+        (Updatable) The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "pollCondition":
+            suggest = "poll_condition"
+        elif key == "pollInterval":
+            suggest = "poll_interval"
+        elif key == "pollIntervalUnit":
+            suggest = "poll_interval_unit"
+        elif key == "pollMaxDuration":
+            suggest = "poll_max_duration"
+        elif key == "pollMaxDurationUnit":
+            suggest = "poll_max_duration_unit"
+        elif key == "requestPayload":
+            suggest = "request_payload"
+        elif key == "requestUrl":
+            suggest = "request_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 poll_condition: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition'] = None,
+                 poll_interval: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval'] = None,
+                 poll_interval_unit: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit'] = None,
+                 poll_max_duration: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration'] = None,
+                 poll_max_duration_unit: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit'] = None,
+                 request_payload: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload'] = None,
+                 request_url: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl'] = None):
+        if poll_condition is not None:
+            pulumi.set(__self__, "poll_condition", poll_condition)
+        if poll_interval is not None:
+            pulumi.set(__self__, "poll_interval", poll_interval)
+        if poll_interval_unit is not None:
+            pulumi.set(__self__, "poll_interval_unit", poll_interval_unit)
+        if poll_max_duration is not None:
+            pulumi.set(__self__, "poll_max_duration", poll_max_duration)
+        if poll_max_duration_unit is not None:
+            pulumi.set(__self__, "poll_max_duration_unit", poll_max_duration_unit)
+        if request_payload is not None:
+            pulumi.set(__self__, "request_payload", request_payload)
+        if request_url is not None:
+            pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="pollCondition")
+    def poll_condition(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition']:
+        return pulumi.get(self, "poll_condition")
+
+    @property
+    @pulumi.getter(name="pollInterval")
+    def poll_interval(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval']:
+        return pulumi.get(self, "poll_interval")
+
+    @property
+    @pulumi.getter(name="pollIntervalUnit")
+    def poll_interval_unit(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit']:
+        return pulumi.get(self, "poll_interval_unit")
+
+    @property
+    @pulumi.getter(name="pollMaxDuration")
+    def poll_max_duration(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration']:
+        return pulumi.get(self, "poll_max_duration")
+
+    @property
+    @pulumi.getter(name="pollMaxDurationUnit")
+    def poll_max_duration_unit(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit']:
+        return pulumi.get(self, "poll_max_duration_unit")
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload']:
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl']:
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue'] = None):
+        """
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs' ref_value: (Updatable) The root object reference value.
+        """
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "exprString":
+            suggest = "expr_string"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 expr_string: Optional[str] = None,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        """
+        :param str expr_string: (Updatable) The expression string for the object.
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        if expr_string is not None:
+            pulumi.set(__self__, "expr_string", expr_string)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="exprString")
+    def expr_string(self) -> Optional[str]:
+        """
+        (Updatable) The expression string for the object.
+        """
+        return pulumi.get(self, "expr_string")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectValue":
+            suggest = "object_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_value: Optional[float] = None):
+        """
+        :param float object_value: (Updatable) An object value of the parameter.
+        """
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[float]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "objectValue":
+            suggest = "object_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 object_value: Optional[float] = None):
+        """
+        :param float object_value: (Updatable) An object value of the parameter.
+        """
+        if object_value is not None:
+            pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> Optional[float]:
+        """
+        (Updatable) An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "parameterValue":
+            suggest = "parameter_value"
+        elif key == "refValue":
+            suggest = "ref_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parameter_value: Optional[str] = None,
+                 ref_value: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue'] = None):
+        """
+        :param str parameter_value: (Updatable) Reference to the parameter by its key.
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: (Updatable) The root object reference value.
+        """
+        if parameter_value is not None:
+            pulumi.set(__self__, "parameter_value", parameter_value)
+        if ref_value is not None:
+            pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> Optional[str]:
+        """
+        (Updatable) Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue']:
+        """
+        (Updatable) The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues'] = None,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 name: Optional[str] = None):
+        """
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues'] = None):
+        """
+        :param 'WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataParam":
+            suggest = "data_param"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_param: Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam'] = None):
+        if data_param is not None:
+            pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> Optional['outputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam']:
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 string_value: Optional[str] = None):
+        """
+        :param str string_value: (Updatable) A string value of the parameter.
+        """
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        (Updatable) A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskPollRestCallConfigConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskPollRestCallConfigConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskPollRestCallConfigConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskRegistryMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "aggregatorKey":
+            suggest = "aggregator_key"
+        elif key == "isFavorite":
+            suggest = "is_favorite"
+        elif key == "registryVersion":
+            suggest = "registry_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskRegistryMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskRegistryMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskRegistryMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 is_favorite: Optional[bool] = None,
+                 key: Optional[str] = None,
+                 labels: Optional[Sequence[str]] = None,
+                 registry_version: Optional[int] = None):
+        """
+        :param str aggregator_key: (Updatable) The owning object's key for this object.
+        :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
+        :param str key: (Updatable) The key of the object.
+        :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: (Updatable) The registry version.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        if is_favorite is not None:
+            pulumi.set(__self__, "is_favorite", is_favorite)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+        if registry_version is not None:
+            pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        (Updatable) The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> Optional[int]:
+        """
+        (Updatable) The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpression(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configValues":
+            suggest = "config_values"
+        elif key == "modelType":
+            suggest = "model_type"
+        elif key == "modelVersion":
+            suggest = "model_version"
+        elif key == "objectStatus":
+            suggest = "object_status"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpression. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpression.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpression.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_values: Optional['outputs.WorkspaceTaskTypedExpressionConfigValues'] = None,
+                 description: Optional[str] = None,
+                 expression: Optional[str] = None,
+                 key: Optional[str] = None,
+                 model_type: Optional[str] = None,
+                 model_version: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_status: Optional[int] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskTypedExpressionParentRef'] = None,
+                 type: Optional[str] = None):
+        """
+        :param 'WorkspaceTaskTypedExpressionConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
+        :param str description: (Updatable) Detailed description for the object.
+        :param str expression: (Updatable) The expression string for the object.
+        :param str key: (Updatable) The key of the object.
+        :param str model_type: (Updatable) The type of the types object.
+        :param str model_version: (Updatable) The model version of an object.
+        :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'WorkspaceTaskTypedExpressionParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        :param str type: (Updatable) The object type.
+        """
+        if config_values is not None:
+            pulumi.set(__self__, "config_values", config_values)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+        if model_version is not None:
+            pulumi.set(__self__, "model_version", model_version)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if object_status is not None:
+            pulumi.set(__self__, "object_status", object_status)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Optional['outputs.WorkspaceTaskTypedExpressionConfigValues']:
+        """
+        (Updatable) Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        (Updatable) Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def expression(self) -> Optional[str]:
+        """
+        (Updatable) The expression string for the object.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[str]:
+        """
+        (Updatable) The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> Optional[str]:
+        """
+        (Updatable) The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> Optional[int]:
+        """
+        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskTypedExpressionParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        (Updatable) The object type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionConfigValues(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configParamValues":
+            suggest = "config_param_values"
+        elif key == "parentRef":
+            suggest = "parent_ref"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpressionConfigValues. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpressionConfigValues.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpressionConfigValues.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_param_values: Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValues'] = None,
+                 parent_ref: Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesParentRef'] = None):
+        """
+        :param 'WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs' config_param_values: (Updatable) The configuration parameter values.
+        :param 'WorkspaceTaskTypedExpressionConfigValuesParentRefArgs' parent_ref: (Updatable) A reference to the object's parent.
+        """
+        if config_param_values is not None:
+            pulumi.set(__self__, "config_param_values", config_param_values)
+        if parent_ref is not None:
+            pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValues']:
+        """
+        (Updatable) The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesParentRef']:
+        """
+        (Updatable) A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValues(dict):
+    def __init__(__self__, *,
+                 length: Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength'] = None,
+                 scale: Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale'] = None):
+        if length is not None:
+            pulumi.set(__self__, "length", length)
+        if scale is not None:
+            pulumi.set(__self__, "scale", scale)
+
+    @property
+    @pulumi.getter
+    def length(self) -> Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength']:
+        return pulumi.get(self, "length")
+
+    @property
+    @pulumi.getter
+    def scale(self) -> Optional['outputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale']:
+        return pulumi.get(self, "scale")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "intValue":
+            suggest = "int_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 int_value: Optional[int] = None):
+        """
+        :param int int_value: (Updatable) An integer value of the parameter.
+        """
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        """
+        (Updatable) An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionConfigValuesParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpressionConfigValuesParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpressionConfigValuesParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class WorkspaceTaskTypedExpressionParentRef(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rootDocId":
+            suggest = "root_doc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WorkspaceTaskTypedExpressionParentRef. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WorkspaceTaskTypedExpressionParentRef.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WorkspaceTaskTypedExpressionParentRef.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 parent: Optional[str] = None,
+                 root_doc_id: Optional[str] = None):
+        """
+        :param str parent: (Updatable) Key of the parent object.
+        :param str root_doc_id: (Updatable) Key of the root document object.
+        """
+        if parent is not None:
+            pulumi.set(__self__, "parent", parent)
+        if root_doc_id is not None:
+            pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> Optional[str]:
+        """
+        (Updatable) Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> Optional[str]:
+        """
+        (Updatable) Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type
@@ -14708,6 +19851,6651 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult(dic
         The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskAuthConfigParentRefResult'],
+                 resource_principal_source: str):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param Sequence['GetWorkspaceTaskAuthConfigParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str resource_principal_source: The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "resource_principal_source", resource_principal_source)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskAuthConfigParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter(name="resourcePrincipalSource")
+    def resource_principal_source(self) -> str:
+        """
+        The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        return pulumi.get(self, "resource_principal_source")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskAuthConfigParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueResult'],
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 request_payloads: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadResult'],
+                 request_urls: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestUrlResult']):
+        pulumi.set(__self__, "request_payloads", request_payloads)
+        pulumi.set(__self__, "request_urls", request_urls)
+
+    @property
+    @pulumi.getter(name="requestPayloads")
+    def request_payloads(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadResult']:
+        return pulumi.get(self, "request_payloads")
+
+    @property
+    @pulumi.getter(name="requestUrls")
+    def request_urls(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestUrlResult']:
+        return pulumi.get(self, "request_urls")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueArgs'] ref_values: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult'],
+                 key: str,
+                 model_type: str):
+        """
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']):
+        """
+        :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 data_params: Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']):
+        pulumi.set(__self__, "data_params", data_params)
+
+    @property
+    @pulumi.getter(name="dataParams")
+    def data_params(self) -> Sequence['outputs.GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']:
+        return pulumi.get(self, "data_params")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueConfigParamValueRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskCancelRestCallConfigConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskConfigProviderDelegateResult(dict):
+    def __init__(__self__, *,
+                 bindings: Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingResult']):
+        pulumi.set(__self__, "bindings", bindings)
+
+    @property
+    @pulumi.getter
+    def bindings(self) -> Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingResult']:
+        return pulumi.get(self, "bindings")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskConfigProviderDelegateBindingResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 parameter_values: Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingParameterValueResult']):
+        """
+        :param str key: The key of the object.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parameter_values", parameter_values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="parameterValues")
+    def parameter_values(self) -> Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingParameterValueResult']:
+        return pulumi.get(self, "parameter_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskConfigProviderDelegateBindingParameterValueResult(dict):
+    def __init__(__self__, *,
+                 root_object_values: Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingParameterValueRootObjectValueResult'],
+                 simple_value: str):
+        """
+        :param Sequence['GetWorkspaceTaskConfigProviderDelegateBindingParameterValueRootObjectValueArgs'] root_object_values: The root object value, used in custom parameters.
+        """
+        pulumi.set(__self__, "root_object_values", root_object_values)
+        pulumi.set(__self__, "simple_value", simple_value)
+
+    @property
+    @pulumi.getter(name="rootObjectValues")
+    def root_object_values(self) -> Sequence['outputs.GetWorkspaceTaskConfigProviderDelegateBindingParameterValueRootObjectValueResult']:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_values")
+
+    @property
+    @pulumi.getter(name="simpleValue")
+    def simple_value(self) -> str:
+        return pulumi.get(self, "simple_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskConfigProviderDelegateBindingParameterValueRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueResult'],
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 request_payloads: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadResult'],
+                 request_urls: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestUrlResult']):
+        pulumi.set(__self__, "request_payloads", request_payloads)
+        pulumi.set(__self__, "request_urls", request_urls)
+
+    @property
+    @pulumi.getter(name="requestPayloads")
+    def request_payloads(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadResult']:
+        return pulumi.get(self, "request_payloads")
+
+    @property
+    @pulumi.getter(name="requestUrls")
+    def request_urls(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestUrlResult']:
+        return pulumi.get(self, "request_urls")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueArgs'] ref_values: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult'],
+                 key: str,
+                 model_type: str):
+        """
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']):
+        """
+        :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 data_params: Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']):
+        pulumi.set(__self__, "data_params", data_params)
+
+    @property
+    @pulumi.getter(name="dataParams")
+    def data_params(self) -> Sequence['outputs.GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']:
+        return pulumi.get(self, "data_params")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueConfigParamValueRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskExecuteRestCallConfigConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskInputPortResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskInputPortConfigValueResult'],
+                 description: str,
+                 fields: Sequence[str],
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskInputPortParentRefResult'],
+                 port_type: str):
+        """
+        :param Sequence['GetWorkspaceTaskInputPortConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param Sequence[str] fields: An array of fields.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param Sequence['GetWorkspaceTaskInputPortParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str port_type: The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskInputPortConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Sequence[str]:
+        """
+        An array of fields.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskInputPortParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> str:
+        """
+        The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskInputPortConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskInputPortConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskInputPortConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskInputPortConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskInputPortConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskInputPortConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskInputPortConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskInputPortConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: str,
+                 root_object_value: str,
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param str ref_value: The root object reference value.
+        :param str root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> str:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> str:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskInputPortConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskInputPortParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 aggregators: Sequence['outputs.GetWorkspaceTaskMetadataAggregatorResult'],
+                 count_statistics: Sequence['outputs.GetWorkspaceTaskMetadataCountStatisticResult'],
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param str aggregator_key: The owning object's key for this object.
+        :param Sequence['GetWorkspaceTaskMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetWorkspaceTaskMetadataCountStatisticArgs'] count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Sequence['outputs.GetWorkspaceTaskMetadataAggregatorResult']:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Sequence['outputs.GetWorkspaceTaskMetadataCountStatisticResult']:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: Detailed description for the object.
+        :param str identifier: Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param str key: The key of the object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param str type: The object type.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The object type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskMetadataCountStatisticResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceTaskMetadataCountStatisticObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceTaskMetadataCountStatisticObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskMetadataCountStatisticObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskOpConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskOpConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskOpConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskOpConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueResult'],
+                 key: str):
+        """
+        :param str key: The key of the object.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueResult']:
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRefValueResult'],
+                 root_object_values: Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRootObjectValueResult'],
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRefValueArgs'] ref_values: The root object reference value.
+        :param Sequence['GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRootObjectValueArgs'] root_object_values: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+        pulumi.set(__self__, "root_object_values", root_object_values)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+    @property
+    @pulumi.getter(name="rootObjectValues")
+    def root_object_values(self) -> Sequence['outputs.GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRootObjectValueResult']:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_values")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRefValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueConfigParamValueConfigParamValueRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOpConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOutputPortResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueResult'],
+                 description: str,
+                 fields: Sequence[str],
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskOutputPortParentRefResult'],
+                 port_type: str):
+        """
+        :param Sequence['GetWorkspaceTaskOutputPortConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param Sequence[str] fields: An array of fields.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param Sequence['GetWorkspaceTaskOutputPortParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str port_type: The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Sequence[str]:
+        """
+        An array of fields.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskOutputPortParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> str:
+        """
+        The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOutputPortConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskOutputPortConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskOutputPortConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskOutputPortConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOutputPortConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: str,
+                 root_object_value: str,
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param str ref_value: The root object reference value.
+        :param str root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> str:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> str:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOutputPortConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskOutputPortParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskParameterConfigValueResult'],
+                 default_value: str,
+                 description: str,
+                 is_input: bool,
+                 is_output: bool,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 output_aggregation_type: str,
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskParameterParentRefResult'],
+                 root_object_default_value: str,
+                 type: str,
+                 type_name: str,
+                 used_for: str):
+        """
+        :param Sequence['GetWorkspaceTaskParameterConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str default_value: A default value for the vairable.
+        :param str description: Detailed description for the object.
+        :param bool is_input: Specifies whether the parameter is input value.
+        :param bool is_output: Specifies whether the parameter is output value.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param str output_aggregation_type: The output aggregation type.
+        :param Sequence['GetWorkspaceTaskParameterParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str root_object_default_value: A base class for all model types, including First Class and its contained objects.
+        :param str type: The object type.
+        :param str type_name: The type of value the parameter was created for.
+        :param str used_for: The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_input", is_input)
+        pulumi.set(__self__, "is_output", is_output)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "output_aggregation_type", output_aggregation_type)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "root_object_default_value", root_object_default_value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_name", type_name)
+        pulumi.set(__self__, "used_for", used_for)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        A default value for the vairable.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isInput")
+    def is_input(self) -> bool:
+        """
+        Specifies whether the parameter is input value.
+        """
+        return pulumi.get(self, "is_input")
+
+    @property
+    @pulumi.getter(name="isOutput")
+    def is_output(self) -> bool:
+        """
+        Specifies whether the parameter is output value.
+        """
+        return pulumi.get(self, "is_output")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="outputAggregationType")
+    def output_aggregation_type(self) -> str:
+        """
+        The output aggregation type.
+        """
+        return pulumi.get(self, "output_aggregation_type")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskParameterParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter(name="rootObjectDefaultValue")
+    def root_object_default_value(self) -> str:
+        """
+        A base class for all model types, including First Class and its contained objects.
+        """
+        return pulumi.get(self, "root_object_default_value")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The object type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeName")
+    def type_name(self) -> str:
+        """
+        The type of value the parameter was created for.
+        """
+        return pulumi.get(self, "type_name")
+
+    @property
+    @pulumi.getter(name="usedFor")
+    def used_for(self) -> str:
+        """
+        The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        return pulumi.get(self, "used_for")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskParameterConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskParameterConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskParameterConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueResult'],
+                 key: str):
+        """
+        :param str key: The key of the object.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueResult']:
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRefValueResult'],
+                 root_object_values: Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRootObjectValueResult'],
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRefValueArgs'] ref_values: The root object reference value.
+        :param Sequence['GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRootObjectValueArgs'] root_object_values: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+        pulumi.set(__self__, "root_object_values", root_object_values)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+    @property
+    @pulumi.getter(name="rootObjectValues")
+    def root_object_values(self) -> Sequence['outputs.GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRootObjectValueResult']:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_values")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRefValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueConfigParamValueConfigParamValueRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParameterParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueResult'],
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 poll_conditions: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionResult'],
+                 poll_interval_units: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalUnitResult'],
+                 poll_intervals: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalResult'],
+                 poll_max_duration_units: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationUnitResult'],
+                 poll_max_durations: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationResult'],
+                 request_payloads: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadResult'],
+                 request_urls: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestUrlResult']):
+        pulumi.set(__self__, "poll_conditions", poll_conditions)
+        pulumi.set(__self__, "poll_interval_units", poll_interval_units)
+        pulumi.set(__self__, "poll_intervals", poll_intervals)
+        pulumi.set(__self__, "poll_max_duration_units", poll_max_duration_units)
+        pulumi.set(__self__, "poll_max_durations", poll_max_durations)
+        pulumi.set(__self__, "request_payloads", request_payloads)
+        pulumi.set(__self__, "request_urls", request_urls)
+
+    @property
+    @pulumi.getter(name="pollConditions")
+    def poll_conditions(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionResult']:
+        return pulumi.get(self, "poll_conditions")
+
+    @property
+    @pulumi.getter(name="pollIntervalUnits")
+    def poll_interval_units(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalUnitResult']:
+        return pulumi.get(self, "poll_interval_units")
+
+    @property
+    @pulumi.getter(name="pollIntervals")
+    def poll_intervals(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalResult']:
+        return pulumi.get(self, "poll_intervals")
+
+    @property
+    @pulumi.getter(name="pollMaxDurationUnits")
+    def poll_max_duration_units(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationUnitResult']:
+        return pulumi.get(self, "poll_max_duration_units")
+
+    @property
+    @pulumi.getter(name="pollMaxDurations")
+    def poll_max_durations(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationResult']:
+        return pulumi.get(self, "poll_max_durations")
+
+    @property
+    @pulumi.getter(name="requestPayloads")
+    def request_payloads(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadResult']:
+        return pulumi.get(self, "request_payloads")
+
+    @property
+    @pulumi.getter(name="requestUrls")
+    def request_urls(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestUrlResult']:
+        return pulumi.get(self, "request_urls")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionRefValueResult']):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionRefValueArgs'] ref_values: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollConditionRefValueResult(dict):
+    def __init__(__self__, *,
+                 expr_string: str,
+                 key: str,
+                 model_type: str,
+                 name: str):
+        """
+        :param str expr_string: The expression string for the object.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        pulumi.set(__self__, "expr_string", expr_string)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="exprString")
+    def expr_string(self) -> str:
+        """
+        The expression string for the object.
+        """
+        return pulumi.get(self, "expr_string")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalResult(dict):
+    def __init__(__self__, *,
+                 object_value: float):
+        """
+        :param float object_value: An object value of the parameter.
+        """
+        pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> float:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollIntervalUnitResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationResult(dict):
+    def __init__(__self__, *,
+                 object_value: float):
+        """
+        :param float object_value: An object value of the parameter.
+        """
+        pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> float:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValuePollMaxDurationUnitResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueArgs'] ref_values: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_values", ref_values)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValues")
+    def ref_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult']:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult'],
+                 key: str,
+                 model_type: str,
+                 name: str):
+        """
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']):
+        """
+        :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 data_params: Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']):
+        pulumi.set(__self__, "data_params", data_params)
+
+    @property
+    @pulumi.getter(name="dataParams")
+    def data_params(self) -> Sequence['outputs.GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult']:
+        return pulumi.get(self, "data_params")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestPayloadRefValueConfigValueConfigParamValueDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueConfigParamValueRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskPollRestCallConfigConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskRegistryMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 is_favorite: bool,
+                 key: str,
+                 labels: Sequence[str],
+                 registry_version: int):
+        """
+        :param str aggregator_key: The owning object's key for this object.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param str key: The key of the object.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionResult(dict):
+    def __init__(__self__, *,
+                 config_values: Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueResult'],
+                 description: str,
+                 expression: str,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskTypedExpressionParentRefResult'],
+                 type: str):
+        """
+        :param Sequence['GetWorkspaceTaskTypedExpressionConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param str expression: The expression string for the object.
+        :param str key: The key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param Sequence['GetWorkspaceTaskTypedExpressionParentRefArgs'] parent_reves: A reference to the object's parent.
+        :param str type: The object type.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueResult']:
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        """
+        The expression string for the object.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The object type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionConfigValueResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueResult'],
+                 parent_reves: Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueParentRefResult']):
+        """
+        :param Sequence['GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueArgs'] config_param_values: The configuration parameter values.
+        :param Sequence['GetWorkspaceTaskTypedExpressionConfigValueParentRefArgs'] parent_reves: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_reves", parent_reves)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueResult']:
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentReves")
+    def parent_reves(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueParentRefResult']:
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_reves")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 lengths: Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueLengthResult'],
+                 scales: Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueScaleResult']):
+        pulumi.set(__self__, "lengths", lengths)
+        pulumi.set(__self__, "scales", scales)
+
+    @property
+    @pulumi.getter
+    def lengths(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueLengthResult']:
+        return pulumi.get(self, "lengths")
+
+    @property
+    @pulumi.getter
+    def scales(self) -> Sequence['outputs.GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueScaleResult']:
+        return pulumi.get(self, "scales")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueLengthResult(dict):
+    def __init__(__self__, *,
+                 int_value: int):
+        """
+        :param int int_value: An integer value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionConfigValueConfigParamValueScaleResult(dict):
+    def __init__(__self__, *,
+                 int_value: int):
+        """
+        :param int int_value: An integer value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionConfigValueParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTaskTypedExpressionParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Used to filter by the name of the object.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 api_call_mode: str,
+                 auth_config: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigResult',
+                 cancel_rest_call_config: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult',
+                 config_provider_delegate: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateResult',
+                 description: str,
+                 execute_rest_call_config: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult',
+                 identifier: str,
+                 input_ports: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortResult'],
+                 is_single_load: bool,
+                 key: str,
+                 key_map: Mapping[str, Any],
+                 metadatas: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult'],
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 object_version: int,
+                 op_config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesResult',
+                 operation: str,
+                 output_ports: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortResult'],
+                 parallel_load_limit: int,
+                 parameters: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterResult'],
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParentRefResult',
+                 poll_rest_call_config: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult',
+                 registry_metadata: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemRegistryMetadataResult',
+                 typed_expressions: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionResult'],
+                 workspace_id: str):
+        """
+        :param str api_call_mode: The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigArgs' auth_config: Authentication configuration for Generic REST invocation.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigArgs' cancel_rest_call_config: The REST API configuration for cancelling the task.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateArgs' config_provider_delegate: The information about the configuration provider.
+        :param str description: Detailed description for the object.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigArgs' execute_rest_call_config: The REST API configuration for execution.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemInputPortArgs'] input_ports: An array of input ports.
+        :param bool is_single_load: Defines whether Data Loader task is used for single load or multiple
+        :param str key: Used to filter by the key of the object.
+        :param Mapping[str, Any] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param int object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesArgs' op_config_values: Configuration values can be string, objects, or parameters.
+        :param str operation: Describes the shape of the execution result
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemOutputPortArgs'] output_ports: An array of output ports.
+        :param int parallel_load_limit: Defines the number of entities being loaded in parallel at a time for a Data Loader task
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemParameterArgs'] parameters: A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParentRefArgs' parent_ref: A reference to the object's parent.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigArgs' poll_rest_call_config: The REST API configuration for polling.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemRegistryMetadataArgs' registry_metadata: Information about the object and its parent.
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionArgs'] typed_expressions: List of typed expressions.
+        :param str workspace_id: The workspace ID.
+        """
+        pulumi.set(__self__, "api_call_mode", api_call_mode)
+        pulumi.set(__self__, "auth_config", auth_config)
+        pulumi.set(__self__, "cancel_rest_call_config", cancel_rest_call_config)
+        pulumi.set(__self__, "config_provider_delegate", config_provider_delegate)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "execute_rest_call_config", execute_rest_call_config)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "input_ports", input_ports)
+        pulumi.set(__self__, "is_single_load", is_single_load)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "key_map", key_map)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "object_version", object_version)
+        pulumi.set(__self__, "op_config_values", op_config_values)
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "output_ports", output_ports)
+        pulumi.set(__self__, "parallel_load_limit", parallel_load_limit)
+        pulumi.set(__self__, "parameters", parameters)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "poll_rest_call_config", poll_rest_call_config)
+        pulumi.set(__self__, "registry_metadata", registry_metadata)
+        pulumi.set(__self__, "typed_expressions", typed_expressions)
+        pulumi.set(__self__, "workspace_id", workspace_id)
+
+    @property
+    @pulumi.getter(name="apiCallMode")
+    def api_call_mode(self) -> str:
+        """
+        The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
+        """
+        return pulumi.get(self, "api_call_mode")
+
+    @property
+    @pulumi.getter(name="authConfig")
+    def auth_config(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigResult':
+        """
+        Authentication configuration for Generic REST invocation.
+        """
+        return pulumi.get(self, "auth_config")
+
+    @property
+    @pulumi.getter(name="cancelRestCallConfig")
+    def cancel_rest_call_config(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult':
+        """
+        The REST API configuration for cancelling the task.
+        """
+        return pulumi.get(self, "cancel_rest_call_config")
+
+    @property
+    @pulumi.getter(name="configProviderDelegate")
+    def config_provider_delegate(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateResult':
+        """
+        The information about the configuration provider.
+        """
+        return pulumi.get(self, "config_provider_delegate")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="executeRestCallConfig")
+    def execute_rest_call_config(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult':
+        """
+        The REST API configuration for execution.
+        """
+        return pulumi.get(self, "execute_rest_call_config")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter(name="inputPorts")
+    def input_ports(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortResult']:
+        """
+        An array of input ports.
+        """
+        return pulumi.get(self, "input_ports")
+
+    @property
+    @pulumi.getter(name="isSingleLoad")
+    def is_single_load(self) -> bool:
+        """
+        Defines whether Data Loader task is used for single load or multiple
+        """
+        return pulumi.get(self, "is_single_load")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="keyMap")
+    def key_map(self) -> Mapping[str, Any]:
+        """
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        """
+        return pulumi.get(self, "key_map")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult']:
+        """
+        A summary type containing information about the object including its key, name and when/who created/updated it.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="objectVersion")
+    def object_version(self) -> int:
+        """
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        """
+        return pulumi.get(self, "object_version")
+
+    @property
+    @pulumi.getter(name="opConfigValues")
+    def op_config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "op_config_values")
+
+    @property
+    @pulumi.getter
+    def operation(self) -> str:
+        """
+        Describes the shape of the execution result
+        """
+        return pulumi.get(self, "operation")
+
+    @property
+    @pulumi.getter(name="outputPorts")
+    def output_ports(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortResult']:
+        """
+        An array of output ports.
+        """
+        return pulumi.get(self, "output_ports")
+
+    @property
+    @pulumi.getter(name="parallelLoadLimit")
+    def parallel_load_limit(self) -> int:
+        """
+        Defines the number of entities being loaded in parallel at a time for a Data Loader task
+        """
+        return pulumi.get(self, "parallel_load_limit")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterResult']:
+        """
+        A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        """
+        return pulumi.get(self, "parameters")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="pollRestCallConfig")
+    def poll_rest_call_config(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult':
+        """
+        The REST API configuration for polling.
+        """
+        return pulumi.get(self, "poll_rest_call_config")
+
+    @property
+    @pulumi.getter(name="registryMetadata")
+    def registry_metadata(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemRegistryMetadataResult':
+        """
+        Information about the object and its parent.
+        """
+        return pulumi.get(self, "registry_metadata")
+
+    @property
+    @pulumi.getter(name="typedExpressions")
+    def typed_expressions(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionResult']:
+        """
+        List of typed expressions.
+        """
+        return pulumi.get(self, "typed_expressions")
+
+    @property
+    @pulumi.getter(name="workspaceId")
+    def workspace_id(self) -> str:
+        """
+        The workspace ID.
+        """
+        return pulumi.get(self, "workspace_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigParentRefResult',
+                 resource_principal_source: str):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str resource_principal_source: The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "resource_principal_source", resource_principal_source)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="resourcePrincipalSource")
+    def resource_principal_source(self) -> str:
+        """
+        The Oracle Cloud Infrastructure resource type that will supply the authentication token
+        """
+        return pulumi.get(self, "resource_principal_source")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemAuthConfigParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesResult',
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 request_payload: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+                 request_url: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlResult'):
+        pulumi.set(__self__, "request_payload", request_payload)
+        pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult':
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlResult':
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult'):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+                 key: str,
+                 model_type: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 data_param: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult'):
+        pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult':
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateResult(dict):
+    def __init__(__self__, *,
+                 bindings: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingResult']):
+        pulumi.set(__self__, "bindings", bindings)
+
+    @property
+    @pulumi.getter
+    def bindings(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingResult']:
+        return pulumi.get(self, "bindings")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 parameter_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesResult'):
+        """
+        :param str key: Used to filter by the key of the object.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "parameter_values", parameter_values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="parameterValues")
+    def parameter_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesResult':
+        return pulumi.get(self, "parameter_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesResult(dict):
+    def __init__(__self__, *,
+                 root_object_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesRootObjectValueResult',
+                 simple_value: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesRootObjectValueArgs' root_object_value: The root object value, used in custom parameters.
+        """
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "simple_value", simple_value)
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesRootObjectValueResult':
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="simpleValue")
+    def simple_value(self) -> str:
+        return pulumi.get(self, "simple_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemConfigProviderDelegateBindingParameterValuesRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesResult',
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 request_payload: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+                 request_url: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlResult'):
+        pulumi.set(__self__, "request_payload", request_payload)
+        pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult':
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlResult':
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult'):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+                 key: str,
+                 model_type: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 data_param: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult'):
+        pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult':
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemInputPortResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesResult',
+                 description: str,
+                 fields: Sequence[str],
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortParentRefResult',
+                 port_type: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param Sequence[str] fields: Specifies the fields to get for an object.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemInputPortParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str port_type: The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Sequence[str]:
+        """
+        Specifies the fields to get for an object.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> str:
+        """
+        The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: str,
+                 root_object_value: str,
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param str ref_value: The root object reference value.
+        :param str root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> str:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> str:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemInputPortConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemInputPortParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 aggregators: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataAggregatorResult'],
+                 count_statistics: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticResult'],
+                 created_by: str,
+                 created_by_name: str,
+                 identifier_path: str,
+                 info_fields: Mapping[str, Any],
+                 is_favorite: bool,
+                 labels: Sequence[str],
+                 registry_version: int,
+                 time_created: str,
+                 time_updated: str,
+                 updated_by: str,
+                 updated_by_name: str):
+        """
+        :param str aggregator_key: The owning object's key for this object.
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemMetadataAggregatorArgs'] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticArgs'] count_statistics: A count statistics.
+        :param str created_by: The user that created the object.
+        :param str created_by_name: The user that created the object.
+        :param str identifier_path: The full path to identify this object.
+        :param Mapping[str, Any] info_fields: Information property fields.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version.
+        :param str time_created: The date and time that the object was created.
+        :param str time_updated: The date and time that the object was updated.
+        :param str updated_by: The user that updated the object.
+        :param str updated_by_name: The user that updated the object.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "aggregators", aggregators)
+        pulumi.set(__self__, "count_statistics", count_statistics)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_by_name", created_by_name)
+        pulumi.set(__self__, "identifier_path", identifier_path)
+        pulumi.set(__self__, "info_fields", info_fields)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "updated_by", updated_by)
+        pulumi.set(__self__, "updated_by_name", updated_by_name)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter
+    def aggregators(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataAggregatorResult']:
+        """
+        A summary type containing information about the object's aggregator including its type, key, name and description.
+        """
+        return pulumi.get(self, "aggregators")
+
+    @property
+    @pulumi.getter(name="countStatistics")
+    def count_statistics(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticResult']:
+        """
+        A count statistics.
+        """
+        return pulumi.get(self, "count_statistics")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="createdByName")
+    def created_by_name(self) -> str:
+        """
+        The user that created the object.
+        """
+        return pulumi.get(self, "created_by_name")
+
+    @property
+    @pulumi.getter(name="identifierPath")
+    def identifier_path(self) -> str:
+        """
+        The full path to identify this object.
+        """
+        return pulumi.get(self, "identifier_path")
+
+    @property
+    @pulumi.getter(name="infoFields")
+    def info_fields(self) -> Mapping[str, Any]:
+        """
+        Information property fields.
+        """
+        return pulumi.get(self, "info_fields")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the object was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the object was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="updatedBy")
+    def updated_by(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by")
+
+    @property
+    @pulumi.getter(name="updatedByName")
+    def updated_by_name(self) -> str:
+        """
+        The user that updated the object.
+        """
+        return pulumi.get(self, "updated_by_name")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemMetadataAggregatorResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 identifier: str,
+                 key: str,
+                 name: str,
+                 type: str):
+        """
+        :param str description: Detailed description for the object.
+        :param str identifier: Used to filter by the identifier of the object.
+        :param str key: Used to filter by the key of the object.
+        :param str name: Used to filter by the name of the object.
+        :param str type: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def identifier(self) -> str:
+        """
+        Used to filter by the identifier of the object.
+        """
+        return pulumi.get(self, "identifier")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticResult(dict):
+    def __init__(__self__, *,
+                 object_type_count_lists: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']):
+        """
+        :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
+        """
+        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+
+    @property
+    @pulumi.getter(name="objectTypeCountLists")
+    def object_type_count_lists(self) -> Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult']:
+        """
+        The array of statistics.
+        """
+        return pulumi.get(self, "object_type_count_lists")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult(dict):
+    def __init__(__self__, *,
+                 object_count: str,
+                 object_type: str):
+        """
+        :param str object_count: The value for the count statistic object.
+        :param str object_type: The type of object for the count statistic object.
+        """
+        pulumi.set(__self__, "object_count", object_count)
+        pulumi.set(__self__, "object_type", object_type)
+
+    @property
+    @pulumi.getter(name="objectCount")
+    def object_count(self) -> str:
+        """
+        The value for the count statistic object.
+        """
+        return pulumi.get(self, "object_count")
+
+    @property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> str:
+        """
+        The type of object for the count statistic object.
+        """
+        return pulumi.get(self, "object_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueResult',
+                 key: str):
+        """
+        :param str key: Used to filter by the key of the object.
+        """
+        pulumi.set(__self__, "config_param_value", config_param_value)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValue")
+    def config_param_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueResult':
+        return pulumi.get(self, "config_param_value")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRefValueResult',
+                 root_object_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult',
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs' ref_value: The root object reference value.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs' root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult':
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRefValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOpConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOutputPortResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesResult',
+                 description: str,
+                 fields: Sequence[str],
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortParentRefResult',
+                 port_type: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param Sequence[str] fields: Specifies the fields to get for an object.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str port_type: The port details for the data asset.Type.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "fields", fields)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "port_type", port_type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def fields(self) -> Sequence[str]:
+        """
+        Specifies the fields to get for an object.
+        """
+        return pulumi.get(self, "fields")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="portType")
+    def port_type(self) -> str:
+        """
+        The port details for the data asset.Type.
+        """
+        return pulumi.get(self, "port_type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: str,
+                 root_object_value: str,
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param str ref_value: The root object reference value.
+        :param str root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> str:
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> str:
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOutputPortConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemOutputPortParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesResult',
+                 default_value: str,
+                 description: str,
+                 is_input: bool,
+                 is_output: bool,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 output_aggregation_type: str,
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterParentRefResult',
+                 root_object_default_value: str,
+                 type: str,
+                 type_name: str,
+                 used_for: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str default_value: A default value for the vairable.
+        :param str description: Detailed description for the object.
+        :param bool is_input: Specifies whether the parameter is input value.
+        :param bool is_output: Specifies whether the parameter is output value.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param str output_aggregation_type: The output aggregation type.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str root_object_default_value: A base class for all model types, including First Class and its contained objects.
+        :param str type: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        :param str type_name: The type of value the parameter was created for.
+        :param str used_for: The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_input", is_input)
+        pulumi.set(__self__, "is_output", is_output)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "output_aggregation_type", output_aggregation_type)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "root_object_default_value", root_object_default_value)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "type_name", type_name)
+        pulumi.set(__self__, "used_for", used_for)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> str:
+        """
+        A default value for the vairable.
+        """
+        return pulumi.get(self, "default_value")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="isInput")
+    def is_input(self) -> bool:
+        """
+        Specifies whether the parameter is input value.
+        """
+        return pulumi.get(self, "is_input")
+
+    @property
+    @pulumi.getter(name="isOutput")
+    def is_output(self) -> bool:
+        """
+        Specifies whether the parameter is output value.
+        """
+        return pulumi.get(self, "is_output")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="outputAggregationType")
+    def output_aggregation_type(self) -> str:
+        """
+        The output aggregation type.
+        """
+        return pulumi.get(self, "output_aggregation_type")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter(name="rootObjectDefaultValue")
+    def root_object_default_value(self) -> str:
+        """
+        A base class for all model types, including First Class and its contained objects.
+        """
+        return pulumi.get(self, "root_object_default_value")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="typeName")
+    def type_name(self) -> str:
+        """
+        The type of value the parameter was created for.
+        """
+        return pulumi.get(self, "type_name")
+
+    @property
+    @pulumi.getter(name="usedFor")
+    def used_for(self) -> str:
+        """
+        The param name for which parameter is created for for eg. driver Shape, Operation etc.
+        """
+        return pulumi.get(self, "used_for")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueResult',
+                 key: str):
+        """
+        :param str key: Used to filter by the key of the object.
+        """
+        pulumi.set(__self__, "config_param_value", config_param_value)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="configParamValue")
+    def config_param_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueResult':
+        return pulumi.get(self, "config_param_value")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueResult(dict):
+    def __init__(__self__, *,
+                 int_value: int,
+                 object_value: str,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRefValueResult',
+                 root_object_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult',
+                 string_value: str):
+        """
+        :param int int_value: An integer value of the parameter.
+        :param str object_value: An object value of the parameter.
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs' ref_value: The root object reference value.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs' root_object_value: The root object value, used in custom parameters.
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+        pulumi.set(__self__, "object_value", object_value)
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+        pulumi.set(__self__, "root_object_value", root_object_value)
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> str:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+    @property
+    @pulumi.getter(name="rootObjectValue")
+    def root_object_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult':
+        """
+        The root object value, used in custom parameters.
+        """
+        return pulumi.get(self, "root_object_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRefValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 object_status: int):
+        """
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "object_status", object_status)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParameterParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesResult',
+                 key: str,
+                 method_type: str,
+                 model_type: str,
+                 request_headers: Mapping[str, Any]):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str method_type: The REST method to use.
+        :param str model_type: The type of the types object.
+        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "method_type", method_type)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "request_headers", request_headers)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="methodType")
+    def method_type(self) -> str:
+        """
+        The REST method to use.
+        """
+        return pulumi.get(self, "method_type")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="requestHeaders")
+    def request_headers(self) -> Mapping[str, Any]:
+        """
+        The headers for the REST call.
+        """
+        return pulumi.get(self, "request_headers")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 poll_condition: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionResult',
+                 poll_interval: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalResult',
+                 poll_interval_unit: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitResult',
+                 poll_max_duration: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationResult',
+                 poll_max_duration_unit: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitResult',
+                 request_payload: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult',
+                 request_url: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestUrlResult'):
+        pulumi.set(__self__, "poll_condition", poll_condition)
+        pulumi.set(__self__, "poll_interval", poll_interval)
+        pulumi.set(__self__, "poll_interval_unit", poll_interval_unit)
+        pulumi.set(__self__, "poll_max_duration", poll_max_duration)
+        pulumi.set(__self__, "poll_max_duration_unit", poll_max_duration_unit)
+        pulumi.set(__self__, "request_payload", request_payload)
+        pulumi.set(__self__, "request_url", request_url)
+
+    @property
+    @pulumi.getter(name="pollCondition")
+    def poll_condition(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionResult':
+        return pulumi.get(self, "poll_condition")
+
+    @property
+    @pulumi.getter(name="pollInterval")
+    def poll_interval(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalResult':
+        return pulumi.get(self, "poll_interval")
+
+    @property
+    @pulumi.getter(name="pollIntervalUnit")
+    def poll_interval_unit(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitResult':
+        return pulumi.get(self, "poll_interval_unit")
+
+    @property
+    @pulumi.getter(name="pollMaxDuration")
+    def poll_max_duration(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationResult':
+        return pulumi.get(self, "poll_max_duration")
+
+    @property
+    @pulumi.getter(name="pollMaxDurationUnit")
+    def poll_max_duration_unit(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitResult':
+        return pulumi.get(self, "poll_max_duration_unit")
+
+    @property
+    @pulumi.getter(name="requestPayload")
+    def request_payload(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult':
+        return pulumi.get(self, "request_payload")
+
+    @property
+    @pulumi.getter(name="requestUrl")
+    def request_url(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestUrlResult':
+        return pulumi.get(self, "request_url")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueResult'):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs' ref_value: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueResult(dict):
+    def __init__(__self__, *,
+                 expr_string: str,
+                 key: str,
+                 model_type: str,
+                 name: str):
+        """
+        :param str expr_string: The expression string for the object.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str name: Used to filter by the name of the object.
+        """
+        pulumi.set(__self__, "expr_string", expr_string)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="exprString")
+    def expr_string(self) -> str:
+        """
+        The expression string for the object.
+        """
+        return pulumi.get(self, "expr_string")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalResult(dict):
+    def __init__(__self__, *,
+                 object_value: float):
+        """
+        :param float object_value: An object value of the parameter.
+        """
+        pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> float:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationResult(dict):
+    def __init__(__self__, *,
+                 object_value: float):
+        """
+        :param float object_value: An object value of the parameter.
+        """
+        pulumi.set(__self__, "object_value", object_value)
+
+    @property
+    @pulumi.getter(name="objectValue")
+    def object_value(self) -> float:
+        """
+        An object value of the parameter.
+        """
+        return pulumi.get(self, "object_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadResult(dict):
+    def __init__(__self__, *,
+                 parameter_value: str,
+                 ref_value: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult'):
+        """
+        :param str parameter_value: Reference to the parameter by its key.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs' ref_value: The root object reference value.
+        """
+        pulumi.set(__self__, "parameter_value", parameter_value)
+        pulumi.set(__self__, "ref_value", ref_value)
+
+    @property
+    @pulumi.getter(name="parameterValue")
+    def parameter_value(self) -> str:
+        """
+        Reference to the parameter by its key.
+        """
+        return pulumi.get(self, "parameter_value")
+
+    @property
+    @pulumi.getter(name="refValue")
+    def ref_value(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult':
+        """
+        The root object reference value.
+        """
+        return pulumi.get(self, "ref_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult',
+                 key: str,
+                 model_type: str,
+                 name: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str name: Used to filter by the name of the object.
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 data_param: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult'):
+        pulumi.set(__self__, "data_param", data_param)
+
+    @property
+    @pulumi.getter(name="dataParam")
+    def data_param(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult':
+        return pulumi.get(self, "data_param")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesConfigParamValuesRequestUrlResult(dict):
+    def __init__(__self__, *,
+                 string_value: str):
+        """
+        :param str string_value: A string value of the parameter.
+        """
+        pulumi.set(__self__, "string_value", string_value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> str:
+        """
+        A string value of the parameter.
+        """
+        return pulumi.get(self, "string_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemRegistryMetadataResult(dict):
+    def __init__(__self__, *,
+                 aggregator_key: str,
+                 is_favorite: bool,
+                 key: str,
+                 labels: Sequence[str],
+                 registry_version: int):
+        """
+        :param str aggregator_key: The owning object's key for this object.
+        :param bool is_favorite: Specifies whether this object is a favorite or not.
+        :param str key: Used to filter by the key of the object.
+        :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param int registry_version: The registry version.
+        """
+        pulumi.set(__self__, "aggregator_key", aggregator_key)
+        pulumi.set(__self__, "is_favorite", is_favorite)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "registry_version", registry_version)
+
+    @property
+    @pulumi.getter(name="aggregatorKey")
+    def aggregator_key(self) -> str:
+        """
+        The owning object's key for this object.
+        """
+        return pulumi.get(self, "aggregator_key")
+
+    @property
+    @pulumi.getter(name="isFavorite")
+    def is_favorite(self) -> bool:
+        """
+        Specifies whether this object is a favorite or not.
+        """
+        return pulumi.get(self, "is_favorite")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def labels(self) -> Sequence[str]:
+        """
+        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        """
+        return pulumi.get(self, "labels")
+
+    @property
+    @pulumi.getter(name="registryVersion")
+    def registry_version(self) -> int:
+        """
+        The registry version.
+        """
+        return pulumi.get(self, "registry_version")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionResult(dict):
+    def __init__(__self__, *,
+                 config_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesResult',
+                 description: str,
+                 expression: str,
+                 key: str,
+                 model_type: str,
+                 model_version: str,
+                 name: str,
+                 object_status: int,
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionParentRefResult',
+                 type: str):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
+        :param str description: Detailed description for the object.
+        :param str expression: The expression string for the object.
+        :param str key: Used to filter by the key of the object.
+        :param str model_type: The type of the types object.
+        :param str model_version: The model version of an object.
+        :param str name: Used to filter by the name of the object.
+        :param int object_status: The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionParentRefArgs' parent_ref: A reference to the object's parent.
+        :param str type: Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        pulumi.set(__self__, "config_values", config_values)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "model_type", model_type)
+        pulumi.set(__self__, "model_version", model_version)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "object_status", object_status)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configValues")
+    def config_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesResult':
+        """
+        Configuration values can be string, objects, or parameters.
+        """
+        return pulumi.get(self, "config_values")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Detailed description for the object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        """
+        The expression string for the object.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Used to filter by the key of the object.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> str:
+        """
+        The type of the types object.
+        """
+        return pulumi.get(self, "model_type")
+
+    @property
+    @pulumi.getter(name="modelVersion")
+    def model_version(self) -> str:
+        """
+        The model version of an object.
+        """
+        return pulumi.get(self, "model_version")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Used to filter by the name of the object.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStatus")
+    def object_status(self) -> int:
+        """
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+        """
+        return pulumi.get(self, "object_status")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesResult(dict):
+    def __init__(__self__, *,
+                 config_param_values: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesResult',
+                 parent_ref: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesParentRefResult'):
+        """
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesArgs' config_param_values: The configuration parameter values.
+        :param 'GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesParentRefArgs' parent_ref: A reference to the object's parent.
+        """
+        pulumi.set(__self__, "config_param_values", config_param_values)
+        pulumi.set(__self__, "parent_ref", parent_ref)
+
+    @property
+    @pulumi.getter(name="configParamValues")
+    def config_param_values(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesResult':
+        """
+        The configuration parameter values.
+        """
+        return pulumi.get(self, "config_param_values")
+
+    @property
+    @pulumi.getter(name="parentRef")
+    def parent_ref(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesParentRefResult':
+        """
+        A reference to the object's parent.
+        """
+        return pulumi.get(self, "parent_ref")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesResult(dict):
+    def __init__(__self__, *,
+                 length: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesLengthResult',
+                 scale: 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesScaleResult'):
+        pulumi.set(__self__, "length", length)
+        pulumi.set(__self__, "scale", scale)
+
+    @property
+    @pulumi.getter
+    def length(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesLengthResult':
+        return pulumi.get(self, "length")
+
+    @property
+    @pulumi.getter
+    def scale(self) -> 'outputs.GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesScaleResult':
+        return pulumi.get(self, "scale")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesLengthResult(dict):
+    def __init__(__self__, *,
+                 int_value: int):
+        """
+        :param int int_value: An integer value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesConfigParamValuesScaleResult(dict):
+    def __init__(__self__, *,
+                 int_value: int):
+        """
+        :param int int_value: An integer value of the parameter.
+        """
+        pulumi.set(__self__, "int_value", int_value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> int:
+        """
+        An integer value of the parameter.
+        """
+        return pulumi.get(self, "int_value")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionConfigValuesParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
+
+
+@pulumi.output_type
+class GetWorkspaceTasksTaskSummaryCollectionItemTypedExpressionParentRefResult(dict):
+    def __init__(__self__, *,
+                 parent: str,
+                 root_doc_id: str):
+        """
+        :param str parent: Key of the parent object.
+        :param str root_doc_id: Key of the root document object.
+        """
+        pulumi.set(__self__, "parent", parent)
+        pulumi.set(__self__, "root_doc_id", root_doc_id)
+
+    @property
+    @pulumi.getter
+    def parent(self) -> str:
+        """
+        Key of the parent object.
+        """
+        return pulumi.get(self, "parent")
+
+    @property
+    @pulumi.getter(name="rootDocId")
+    def root_doc_id(self) -> str:
+        """
+        Key of the root document object.
+        """
+        return pulumi.get(self, "root_doc_id")
 
 
 @pulumi.output_type

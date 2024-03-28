@@ -52235,6 +52235,121 @@ func (o GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection
 	}).(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput)
 }
 
+type GetManagedMySqlDatabaseHeatWaveNode struct {
+	// The ID associated with the HeatWave node.
+	Id string `pulumi:"id"`
+	// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+	Status string `pulumi:"status"`
+	// The date and time the node was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetManagedMySqlDatabaseHeatWaveNodeInput is an input type that accepts GetManagedMySqlDatabaseHeatWaveNodeArgs and GetManagedMySqlDatabaseHeatWaveNodeOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseHeatWaveNodeInput` via:
+//
+//	GetManagedMySqlDatabaseHeatWaveNodeArgs{...}
+type GetManagedMySqlDatabaseHeatWaveNodeInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseHeatWaveNodeOutput() GetManagedMySqlDatabaseHeatWaveNodeOutput
+	ToGetManagedMySqlDatabaseHeatWaveNodeOutputWithContext(context.Context) GetManagedMySqlDatabaseHeatWaveNodeOutput
+}
+
+type GetManagedMySqlDatabaseHeatWaveNodeArgs struct {
+	// The ID associated with the HeatWave node.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The date and time the node was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetManagedMySqlDatabaseHeatWaveNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseHeatWaveNode)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseHeatWaveNodeArgs) ToGetManagedMySqlDatabaseHeatWaveNodeOutput() GetManagedMySqlDatabaseHeatWaveNodeOutput {
+	return i.ToGetManagedMySqlDatabaseHeatWaveNodeOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseHeatWaveNodeArgs) ToGetManagedMySqlDatabaseHeatWaveNodeOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseHeatWaveNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseHeatWaveNodeOutput)
+}
+
+// GetManagedMySqlDatabaseHeatWaveNodeArrayInput is an input type that accepts GetManagedMySqlDatabaseHeatWaveNodeArray and GetManagedMySqlDatabaseHeatWaveNodeArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabaseHeatWaveNodeArrayInput` via:
+//
+//	GetManagedMySqlDatabaseHeatWaveNodeArray{ GetManagedMySqlDatabaseHeatWaveNodeArgs{...} }
+type GetManagedMySqlDatabaseHeatWaveNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutput() GetManagedMySqlDatabaseHeatWaveNodeArrayOutput
+	ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutputWithContext(context.Context) GetManagedMySqlDatabaseHeatWaveNodeArrayOutput
+}
+
+type GetManagedMySqlDatabaseHeatWaveNodeArray []GetManagedMySqlDatabaseHeatWaveNodeInput
+
+func (GetManagedMySqlDatabaseHeatWaveNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseHeatWaveNode)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabaseHeatWaveNodeArray) ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutput() GetManagedMySqlDatabaseHeatWaveNodeArrayOutput {
+	return i.ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabaseHeatWaveNodeArray) ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseHeatWaveNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabaseHeatWaveNodeArrayOutput)
+}
+
+type GetManagedMySqlDatabaseHeatWaveNodeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseHeatWaveNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabaseHeatWaveNode)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseHeatWaveNodeOutput) ToGetManagedMySqlDatabaseHeatWaveNodeOutput() GetManagedMySqlDatabaseHeatWaveNodeOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseHeatWaveNodeOutput) ToGetManagedMySqlDatabaseHeatWaveNodeOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseHeatWaveNodeOutput {
+	return o
+}
+
+// The ID associated with the HeatWave node.
+func (o GetManagedMySqlDatabaseHeatWaveNodeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseHeatWaveNode) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+func (o GetManagedMySqlDatabaseHeatWaveNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseHeatWaveNode) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The date and time the node was created.
+func (o GetManagedMySqlDatabaseHeatWaveNodeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseHeatWaveNode) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetManagedMySqlDatabaseHeatWaveNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabaseHeatWaveNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabaseHeatWaveNode)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabaseHeatWaveNodeArrayOutput) ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutput() GetManagedMySqlDatabaseHeatWaveNodeArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseHeatWaveNodeArrayOutput) ToGetManagedMySqlDatabaseHeatWaveNodeArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseHeatWaveNodeArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabaseHeatWaveNodeArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabaseHeatWaveNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabaseHeatWaveNode {
+		return vs[0].([]GetManagedMySqlDatabaseHeatWaveNode)[vs[1].(int)]
+	}).(GetManagedMySqlDatabaseHeatWaveNodeOutput)
+}
+
 type GetManagedMySqlDatabaseSqlDataFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -52342,7 +52457,7 @@ func (o GetManagedMySqlDatabaseSqlDataFilterArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetManagedMySqlDatabaseSqlDataMySqlDataCollection struct {
-	// List of SQLDataSummary.
+	// The list of SQLDataSummary records.
 	Items []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem `pulumi:"items"`
 }
 
@@ -52358,7 +52473,7 @@ type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput interface {
 }
 
 type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs struct {
-	// List of SQLDataSummary.
+	// The list of SQLDataSummary records.
 	Items GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -52413,7 +52528,7 @@ func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) ToGetManagedMyS
 	return o
 }
 
-// List of SQLDataSummary.
+// The list of SQLDataSummary records.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput) Items() GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollection) []GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
 		return v.Items
@@ -52441,69 +52556,73 @@ func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArrayOutput) Index(i pu
 }
 
 type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem struct {
-	// The Average Execution Time.
+	// The average execution time.
 	AvgTimerWait float64 `pulumi:"avgTimerWait"`
-	// The Number Of Times The Query Has Been Executed.
+	// The number Of times the query has been executed.
 	CountStar float64 `pulumi:"countStar"`
-	// The Digest Of The Normalized Query.
+	// The digest information of the normalized query.
 	Digest string `pulumi:"digest"`
-	// The Normalized Query.
+	// The normalized query.
 	DigestText string `pulumi:"digestText"`
-	// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+	// The date and time the query was first seen. If the table is truncated, the first seen value is reset.
 	FirstSeen string `pulumi:"firstSeen"`
-	// When The Query Was Seen The Last Time.
+	// The number of query executions offloaded to HeatWave.
+	HeatWaveOffloaded float64 `pulumi:"heatWaveOffloaded"`
+	// The number of query executions with HeatWave out-of-memory errors.
+	HeatWaveOutOfMemory float64 `pulumi:"heatWaveOutOfMemory"`
+	// The date and time the query was last seen.
 	LastSeen string `pulumi:"lastSeen"`
-	// The Slowest The Query Has Been Executed.
+	// The slowest the query has been executed.
 	MaxTimerWait float64 `pulumi:"maxTimerWait"`
-	// The Fastest The Query Has Been Executed.
+	// The fastest the query has been executed.
 	MinTimerWait float64 `pulumi:"minTimerWait"`
-	// The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+	// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
 	Quantile95 float64 `pulumi:"quantile95"`
-	// The 99th Percentile Of The Query Latency.
+	// The 99th percentile of the query latency.
 	Quantile99 float64 `pulumi:"quantile99"`
-	// The 99.9th Percentile Of The Query Latency.
+	// The 99.9th percentile of the query latency.
 	Quantile999 float64 `pulumi:"quantile999"`
-	// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+	// The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
 	SchemaName string `pulumi:"schemaName"`
-	// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+	// The total number of On-Disk internal temporary tables that have been created by the query.
 	SumCreatedTempDiskTables float64 `pulumi:"sumCreatedTempDiskTables"`
-	// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+	// The total number of internal temporary tables (in memory or on disk), which have been created by the query.
 	SumCreatedTempTables float64 `pulumi:"sumCreatedTempTables"`
-	// The Total Number Of Errors That Have Been Encountered Executing The Query.
+	// The total number of errors that have been encountered executing the query.
 	SumErrors float64 `pulumi:"sumErrors"`
-	// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+	// The total amount of time that has been spent waiting for table locks.
 	SumLockTime float64 `pulumi:"sumLockTime"`
-	// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+	// The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
 	SumNoGoodIndexUsed float64 `pulumi:"sumNoGoodIndexUsed"`
-	// The Total Number Of Times No Index Was Used To Execute The Query.
+	// The total number of times no index was used to execute the query.
 	SumNoIndexUsed float64 `pulumi:"sumNoIndexUsed"`
-	// The Total Number Of Rows That Have Been Modified By The Query.
+	// The total number of rows that have been modified by the query.
 	SumRowsAffected float64 `pulumi:"sumRowsAffected"`
-	// The Total Number Of Rows That Have Been Examined By The Query.
+	// The total number of rows that have been examined by the query.
 	SumRowsExamined float64 `pulumi:"sumRowsExamined"`
-	// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+	// The total number of rows that have been returned (sent) to the client.
 	SumRowsSent float64 `pulumi:"sumRowsSent"`
-	// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+	// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the selectFullJoin status variable.
 	SumSelectFullJoin float64 `pulumi:"sumSelectFullJoin"`
-	// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+	// The total number of joins that use a full range search. This is the same as the selectFullRangeJoin status variable.
 	SumSelectFullRangeJoin float64 `pulumi:"sumSelectFullRangeJoin"`
-	// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+	// The total number of times the query has used a range search. This is the same as the selectRange status variable.
 	SumSelectRange float64 `pulumi:"sumSelectRange"`
-	// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+	// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the selectRangeCheck status variable.
 	SumSelectRangeCheck float64 `pulumi:"sumSelectRangeCheck"`
-	// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+	// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the selectScan status variable.
 	SumSelectScan float64 `pulumi:"sumSelectScan"`
-	// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+	// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sortMergePasses status variable.
 	SumSortMergePasses float64 `pulumi:"sumSortMergePasses"`
-	// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+	// The total number of times a sort was done using ranges. This is the same as the sortRange status variable.
 	SumSortRange float64 `pulumi:"sumSortRange"`
-	// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+	// The total number of rows sorted. This is the same as the sort_rowsStatus variable.
 	SumSortRows float64 `pulumi:"sumSortRows"`
-	// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+	// The total number of times a sort was done by scanning the table. This is the same as the sortScan status variable.
 	SumSortScan float64 `pulumi:"sumSortScan"`
-	// The Total Amount Of Time That Has Been Spent Executing The Query.
+	// The total amount of time that has been spent executing the query.
 	SumTimerWait float64 `pulumi:"sumTimerWait"`
-	// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+	// The total number of warnings that have been encountered executing the query.
 	SumWarnings float64 `pulumi:"sumWarnings"`
 }
 
@@ -52519,69 +52638,73 @@ type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemInput interface {
 }
 
 type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs struct {
-	// The Average Execution Time.
+	// The average execution time.
 	AvgTimerWait pulumi.Float64Input `pulumi:"avgTimerWait"`
-	// The Number Of Times The Query Has Been Executed.
+	// The number Of times the query has been executed.
 	CountStar pulumi.Float64Input `pulumi:"countStar"`
-	// The Digest Of The Normalized Query.
+	// The digest information of the normalized query.
 	Digest pulumi.StringInput `pulumi:"digest"`
-	// The Normalized Query.
+	// The normalized query.
 	DigestText pulumi.StringInput `pulumi:"digestText"`
-	// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+	// The date and time the query was first seen. If the table is truncated, the first seen value is reset.
 	FirstSeen pulumi.StringInput `pulumi:"firstSeen"`
-	// When The Query Was Seen The Last Time.
+	// The number of query executions offloaded to HeatWave.
+	HeatWaveOffloaded pulumi.Float64Input `pulumi:"heatWaveOffloaded"`
+	// The number of query executions with HeatWave out-of-memory errors.
+	HeatWaveOutOfMemory pulumi.Float64Input `pulumi:"heatWaveOutOfMemory"`
+	// The date and time the query was last seen.
 	LastSeen pulumi.StringInput `pulumi:"lastSeen"`
-	// The Slowest The Query Has Been Executed.
+	// The slowest the query has been executed.
 	MaxTimerWait pulumi.Float64Input `pulumi:"maxTimerWait"`
-	// The Fastest The Query Has Been Executed.
+	// The fastest the query has been executed.
 	MinTimerWait pulumi.Float64Input `pulumi:"minTimerWait"`
-	// The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+	// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
 	Quantile95 pulumi.Float64Input `pulumi:"quantile95"`
-	// The 99th Percentile Of The Query Latency.
+	// The 99th percentile of the query latency.
 	Quantile99 pulumi.Float64Input `pulumi:"quantile99"`
-	// The 99.9th Percentile Of The Query Latency.
+	// The 99.9th percentile of the query latency.
 	Quantile999 pulumi.Float64Input `pulumi:"quantile999"`
-	// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+	// The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
 	SchemaName pulumi.StringInput `pulumi:"schemaName"`
-	// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+	// The total number of On-Disk internal temporary tables that have been created by the query.
 	SumCreatedTempDiskTables pulumi.Float64Input `pulumi:"sumCreatedTempDiskTables"`
-	// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+	// The total number of internal temporary tables (in memory or on disk), which have been created by the query.
 	SumCreatedTempTables pulumi.Float64Input `pulumi:"sumCreatedTempTables"`
-	// The Total Number Of Errors That Have Been Encountered Executing The Query.
+	// The total number of errors that have been encountered executing the query.
 	SumErrors pulumi.Float64Input `pulumi:"sumErrors"`
-	// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+	// The total amount of time that has been spent waiting for table locks.
 	SumLockTime pulumi.Float64Input `pulumi:"sumLockTime"`
-	// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+	// The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
 	SumNoGoodIndexUsed pulumi.Float64Input `pulumi:"sumNoGoodIndexUsed"`
-	// The Total Number Of Times No Index Was Used To Execute The Query.
+	// The total number of times no index was used to execute the query.
 	SumNoIndexUsed pulumi.Float64Input `pulumi:"sumNoIndexUsed"`
-	// The Total Number Of Rows That Have Been Modified By The Query.
+	// The total number of rows that have been modified by the query.
 	SumRowsAffected pulumi.Float64Input `pulumi:"sumRowsAffected"`
-	// The Total Number Of Rows That Have Been Examined By The Query.
+	// The total number of rows that have been examined by the query.
 	SumRowsExamined pulumi.Float64Input `pulumi:"sumRowsExamined"`
-	// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+	// The total number of rows that have been returned (sent) to the client.
 	SumRowsSent pulumi.Float64Input `pulumi:"sumRowsSent"`
-	// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+	// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the selectFullJoin status variable.
 	SumSelectFullJoin pulumi.Float64Input `pulumi:"sumSelectFullJoin"`
-	// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+	// The total number of joins that use a full range search. This is the same as the selectFullRangeJoin status variable.
 	SumSelectFullRangeJoin pulumi.Float64Input `pulumi:"sumSelectFullRangeJoin"`
-	// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+	// The total number of times the query has used a range search. This is the same as the selectRange status variable.
 	SumSelectRange pulumi.Float64Input `pulumi:"sumSelectRange"`
-	// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+	// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the selectRangeCheck status variable.
 	SumSelectRangeCheck pulumi.Float64Input `pulumi:"sumSelectRangeCheck"`
-	// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+	// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the selectScan status variable.
 	SumSelectScan pulumi.Float64Input `pulumi:"sumSelectScan"`
-	// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+	// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sortMergePasses status variable.
 	SumSortMergePasses pulumi.Float64Input `pulumi:"sumSortMergePasses"`
-	// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+	// The total number of times a sort was done using ranges. This is the same as the sortRange status variable.
 	SumSortRange pulumi.Float64Input `pulumi:"sumSortRange"`
-	// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+	// The total number of rows sorted. This is the same as the sort_rowsStatus variable.
 	SumSortRows pulumi.Float64Input `pulumi:"sumSortRows"`
-	// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+	// The total number of times a sort was done by scanning the table. This is the same as the sortScan status variable.
 	SumSortScan pulumi.Float64Input `pulumi:"sumSortScan"`
-	// The Total Amount Of Time That Has Been Spent Executing The Query.
+	// The total amount of time that has been spent executing the query.
 	SumTimerWait pulumi.Float64Input `pulumi:"sumTimerWait"`
-	// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+	// The total number of warnings that have been encountered executing the query.
 	SumWarnings pulumi.Float64Input `pulumi:"sumWarnings"`
 }
 
@@ -52636,164 +52759,174 @@ func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) ToGetManage
 	return o
 }
 
-// The Average Execution Time.
+// The average execution time.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) AvgTimerWait() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.AvgTimerWait }).(pulumi.Float64Output)
 }
 
-// The Number Of Times The Query Has Been Executed.
+// The number Of times the query has been executed.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) CountStar() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.CountStar }).(pulumi.Float64Output)
 }
 
-// The Digest Of The Normalized Query.
+// The digest information of the normalized query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Digest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.Digest }).(pulumi.StringOutput)
 }
 
-// The Normalized Query.
+// The normalized query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) DigestText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.DigestText }).(pulumi.StringOutput)
 }
 
-// When The Query Was First Seen. When The Table Is Truncated, The First Seen Value Is Also Reset.
+// The date and time the query was first seen. If the table is truncated, the first seen value is reset.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) FirstSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.FirstSeen }).(pulumi.StringOutput)
 }
 
-// When The Query Was Seen The Last Time.
+// The number of query executions offloaded to HeatWave.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) HeatWaveOffloaded() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.HeatWaveOffloaded }).(pulumi.Float64Output)
+}
+
+// The number of query executions with HeatWave out-of-memory errors.
+func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) HeatWaveOutOfMemory() pulumi.Float64Output {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.HeatWaveOutOfMemory }).(pulumi.Float64Output)
+}
+
+// The date and time the query was last seen.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) LastSeen() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.LastSeen }).(pulumi.StringOutput)
 }
 
-// The Slowest The Query Has Been Executed.
+// The slowest the query has been executed.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) MaxTimerWait() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.MaxTimerWait }).(pulumi.Float64Output)
 }
 
-// The Fastest The Query Has Been Executed.
+// The fastest the query has been executed.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) MinTimerWait() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.MinTimerWait }).(pulumi.Float64Output)
 }
 
-// The 95th Percentile Of The Query Latency. That Is, 95%!O(MISSING)f The Queries Complete In The Time Given Or In Less Time.
+// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile95() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile95 }).(pulumi.Float64Output)
 }
 
-// The 99th Percentile Of The Query Latency.
+// The 99th percentile of the query latency.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile99() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile99 }).(pulumi.Float64Output)
 }
 
-// The 99.9th Percentile Of The Query Latency.
+// The 99.9th percentile of the query latency.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile999() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile999 }).(pulumi.Float64Output)
 }
 
-// The Schema That Was The Default Schema When Executing The Query. If No Schema Was The Default, The Value Is NULL.
+// The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SchemaName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) string { return v.SchemaName }).(pulumi.StringOutput)
 }
 
-// The Total Number Of On-Disk Internal Temporary Tables That Have Been Created By The Query.
+// The total number of On-Disk internal temporary tables that have been created by the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumCreatedTempDiskTables() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 {
 		return v.SumCreatedTempDiskTables
 	}).(pulumi.Float64Output)
 }
 
-// The Total Number Of Internal Temporary Tables – Whether Created In Memory Or On Disk – That Have Been Created By The Query.
+// The total number of internal temporary tables (in memory or on disk), which have been created by the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumCreatedTempTables() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumCreatedTempTables }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Errors That Have Been Encountered Executing The Query.
+// The total number of errors that have been encountered executing the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumErrors() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumErrors }).(pulumi.Float64Output)
 }
 
-// The Total Amount Of Time That Has Been Spent Waiting For Table Locks.
+// The total amount of time that has been spent waiting for table locks.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumLockTime() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumLockTime }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times No Good Index Was Used. This Means That The ExtraColumn In The EXPLAIN Output Includes “Range Checked For Each Record.”
+// The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes “Range Checked For Each Record.”
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumNoGoodIndexUsed() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumNoGoodIndexUsed }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times No Index Was Used To Execute The Query.
+// The total number of times no index was used to execute the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumNoIndexUsed() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumNoIndexUsed }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Rows That Have Been Modified By The Query.
+// The total number of rows that have been modified by the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsAffected() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsAffected }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Rows That Have Been Examined By The Query.
+// The total number of rows that have been examined by the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsExamined() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsExamined }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Rows That Have Been Returned (Sent) To The Client.
+// The total number of rows that have been returned (sent) to the client.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumRowsSent() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumRowsSent }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Joins That Have Performed Full Table Scans As There Is No Index For The Join Condition Or There Is No Join Condition. This Is The Same That Increments The Select_full_join Status Variable.
+// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the selectFullJoin status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectFullJoin() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectFullJoin }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Joins That Use A Full Range Search. This Is The Same That Increments The Select_full_range_join Status Variable.
+// The total number of joins that use a full range search. This is the same as the selectFullRangeJoin status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectFullRangeJoin() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectFullRangeJoin }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times The Query Has Used A Range Search. This Is The Same That Increments The Select_range Status Variable.
+// The total number of times the query has used a range search. This is the same as the selectRange status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectRange() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectRange }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Joins By The Query Where The Join Does Not Have An Index That Checks For The Index Usage After Each Row. This Is The Same That Increments The Select_range_check Status Variable.
+// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the selectRangeCheck status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectRangeCheck() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectRangeCheck }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times The Query Has Performed A Full Table Scan On The First Table In The Join. This Is The Same That Increments The Select_scan Status Variable.
+// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the selectScan status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSelectScan() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSelectScan }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Sort Merge Passes That Have Been Done To Sort The Result Of The Query. This Is The Same That Increments The Sort_merge_passes Status Variable.
+// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sortMergePasses status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortMergePasses() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortMergePasses }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times A Sort Was Done Using Ranges. This Is The Same That Increments The Sort_range Status Variable.
+// The total number of times a sort was done using ranges. This is the same as the sortRange status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortRange() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortRange }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Rows Sorted. This Is The Same That Increments The Sort_rowsStatus Variable.
+// The total number of rows sorted. This is the same as the sort_rowsStatus variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortRows() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortRows }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Times A Sort Was Done By Scanning The Table. This Is The Same That Increments The Sort_scan Status Variable.
+// The total number of times a sort was done by scanning the table. This is the same as the sortScan status variable.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumSortScan() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumSortScan }).(pulumi.Float64Output)
 }
 
-// The Total Amount Of Time That Has Been Spent Executing The Query.
+// The total amount of time that has been spent executing the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumTimerWait() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumTimerWait }).(pulumi.Float64Output)
 }
 
-// The Total Number Of Warnings That Have Been Encountered Executing The Query.
+// The total number of warnings that have been encountered executing the query.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) SumWarnings() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.SumWarnings }).(pulumi.Float64Output)
 }
@@ -53026,16 +53159,32 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput) Index
 type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// MySQL Database Name
+	// The name of the MySQL Database.
 	DbName string `pulumi:"dbName"`
-	// MySQL Database Version
+	// The version of the MySQL Database.
 	DbVersion string `pulumi:"dbVersion"`
-	// The OCID of the Managed MySql Database.
+	// The name of the HeatWave cluster.
+	HeatWaveClusterDisplayName string `pulumi:"heatWaveClusterDisplayName"`
+	// The total memory belonging to the HeatWave cluster in GBs.
+	HeatWaveMemorySize int `pulumi:"heatWaveMemorySize"`
+	// Shape of the nodes in the HeatWave cluster.
+	HeatWaveNodeShape string `pulumi:"heatWaveNodeShape"`
+	// The information about an individual HeatWave nodes in the cluster.
+	HeatWaveNodes []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode `pulumi:"heatWaveNodes"`
+	// The ID associated with the HeatWave node.
 	Id string `pulumi:"id"`
+	// If the HeatWave cluster is active or not.
+	IsHeatWaveActive bool `pulumi:"isHeatWaveActive"`
+	// If HeatWave is enabled for this db system or not.
+	IsHeatWaveEnabled bool `pulumi:"isHeatWaveEnabled"`
+	// If HeatWave Lakehouse is enabled for the db system or not.
+	IsLakehouseEnabled bool `pulumi:"isLakehouseEnabled"`
 	// The name of the Managed MySQL Database.
 	Name string `pulumi:"name"`
-	// The date and time the Managed Database was created.
+	// The date and time the node was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Managed MySQL Database was created.
+	TimeCreatedHeatWave string `pulumi:"timeCreatedHeatWave"`
 }
 
 // GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput values.
@@ -53052,16 +53201,32 @@ type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput interface {
 type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// MySQL Database Name
+	// The name of the MySQL Database.
 	DbName pulumi.StringInput `pulumi:"dbName"`
-	// MySQL Database Version
+	// The version of the MySQL Database.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
-	// The OCID of the Managed MySql Database.
+	// The name of the HeatWave cluster.
+	HeatWaveClusterDisplayName pulumi.StringInput `pulumi:"heatWaveClusterDisplayName"`
+	// The total memory belonging to the HeatWave cluster in GBs.
+	HeatWaveMemorySize pulumi.IntInput `pulumi:"heatWaveMemorySize"`
+	// Shape of the nodes in the HeatWave cluster.
+	HeatWaveNodeShape pulumi.StringInput `pulumi:"heatWaveNodeShape"`
+	// The information about an individual HeatWave nodes in the cluster.
+	HeatWaveNodes GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayInput `pulumi:"heatWaveNodes"`
+	// The ID associated with the HeatWave node.
 	Id pulumi.StringInput `pulumi:"id"`
+	// If the HeatWave cluster is active or not.
+	IsHeatWaveActive pulumi.BoolInput `pulumi:"isHeatWaveActive"`
+	// If HeatWave is enabled for this db system or not.
+	IsHeatWaveEnabled pulumi.BoolInput `pulumi:"isHeatWaveEnabled"`
+	// If HeatWave Lakehouse is enabled for the db system or not.
+	IsLakehouseEnabled pulumi.BoolInput `pulumi:"isLakehouseEnabled"`
 	// The name of the Managed MySQL Database.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The date and time the Managed Database was created.
+	// The date and time the node was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Managed MySQL Database was created.
+	TimeCreatedHeatWave pulumi.StringInput `pulumi:"timeCreatedHeatWave"`
 }
 
 func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs) ElementType() reflect.Type {
@@ -53120,19 +53285,58 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) Compar
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// MySQL Database Name
+// The name of the MySQL Database.
 func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.DbName }).(pulumi.StringOutput)
 }
 
-// MySQL Database Version
+// The version of the MySQL Database.
 func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
 }
 
-// The OCID of the Managed MySql Database.
+// The name of the HeatWave cluster.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWaveClusterDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string {
+		return v.HeatWaveClusterDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The total memory belonging to the HeatWave cluster in GBs.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWaveMemorySize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) int { return v.HeatWaveMemorySize }).(pulumi.IntOutput)
+}
+
+// Shape of the nodes in the HeatWave cluster.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWaveNodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.HeatWaveNodeShape }).(pulumi.StringOutput)
+}
+
+// The information about an individual HeatWave nodes in the cluster.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) HeatWaveNodes() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode {
+		return v.HeatWaveNodes
+	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput)
+}
+
+// The ID associated with the HeatWave node.
 func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// If the HeatWave cluster is active or not.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) IsHeatWaveActive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) bool { return v.IsHeatWaveActive }).(pulumi.BoolOutput)
+}
+
+// If HeatWave is enabled for this db system or not.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) IsHeatWaveEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) bool { return v.IsHeatWaveEnabled }).(pulumi.BoolOutput)
+}
+
+// If HeatWave Lakehouse is enabled for the db system or not.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) IsLakehouseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) bool { return v.IsLakehouseEnabled }).(pulumi.BoolOutput)
 }
 
 // The name of the Managed MySQL Database.
@@ -53140,9 +53344,16 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) Name()
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The date and time the Managed Database was created.
+// The date and time the node was created.
 func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Managed MySQL Database was created.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput) TimeCreatedHeatWave() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem) string {
+		return v.TimeCreatedHeatWave
+	}).(pulumi.StringOutput)
 }
 
 type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -53163,6 +53374,123 @@ func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
 		return vs[0].([]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem)[vs[1].(int)]
 	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode struct {
+	// The ID associated with the HeatWave node.
+	Id string `pulumi:"id"`
+	// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+	Status string `pulumi:"status"`
+	// The date and time the node was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs{...}
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs struct {
+	// The ID associated with the HeatWave node.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The date and time the node was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput)
+}
+
+// GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayInput is an input type that accepts GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray and GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput values.
+// You can construct a concrete instance of `GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayInput` via:
+//
+//	GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray{ GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs{...} }
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput
+	ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutputWithContext(context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray []GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeInput
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode)(nil)).Elem()
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput {
+	return i.ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput {
+	return o
+}
+
+// The ID associated with the HeatWave node.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The date and time the node was created.
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode)(nil)).Elem()
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput() GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput) ToGetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutputWithContext(ctx context.Context) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput {
+	return o
+}
+
+func (o GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput) Index(i pulumi.IntInput) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode {
+		return vs[0].([]GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNode)[vs[1].(int)]
+	}).(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput)
 }
 
 type GetNamedCredentialContent struct {
@@ -54575,6 +54903,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseHeatWaveNodeInput)(nil)).Elem(), GetManagedMySqlDatabaseHeatWaveNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseHeatWaveNodeArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseHeatWaveNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilterInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataFilterArrayInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabaseSqlDataMySqlDataCollectionInput)(nil)).Elem(), GetManagedMySqlDatabaseSqlDataMySqlDataCollectionArgs{})
@@ -54587,6 +54917,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayInput)(nil)).Elem(), GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialContentInput)(nil)).Elem(), GetNamedCredentialContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialContentArrayInput)(nil)).Elem(), GetNamedCredentialContentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsFilterInput)(nil)).Elem(), GetNamedCredentialsFilterArgs{})
@@ -55317,6 +55649,8 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseHeatWaveNodeOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabaseHeatWaveNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataFilterOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabaseSqlDataMySqlDataCollectionOutput{})
@@ -55329,6 +55663,8 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeOutput{})
+	pulumi.RegisterOutputType(GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItemHeatWaveNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetNamedCredentialContentOutput{})
 	pulumi.RegisterOutputType(GetNamedCredentialContentArrayOutput{})
 	pulumi.RegisterOutputType(GetNamedCredentialsFilterOutput{})

@@ -41,6 +41,10 @@ import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsPlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskPlainArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksPlainArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
 import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesPlainArgs;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchResult;
@@ -60,6 +64,8 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectsResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceTaskResult;
+import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceTasksResult;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspacesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -3116,6 +3122,374 @@ public final class DataIntegrationFunctions {
      */
     public static CompletableFuture<GetWorkspaceProjectsResult> getWorkspaceProjectsPlain(GetWorkspaceProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceProjects:getWorkspaceProjects", TypeShape.of(GetWorkspaceProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
+     *             .taskKey(var_.workspace_task_task_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args) {
+        return getWorkspaceTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
+     *             .taskKey(var_.workspace_task_task_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceTaskResult> getWorkspaceTaskPlain(GetWorkspaceTaskPlainArgs args) {
+        return getWorkspaceTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
+     *             .taskKey(var_.workspace_task_task_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
+     *             .taskKey(var_.workspace_task_task_key())
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceTaskResult> getWorkspaceTaskPlain(GetWorkspaceTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of all tasks in a specified project or folder.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_task_fields())
+     *             .folderId(oci_dataintegration_folder.test_folder().id())
+     *             .identifiers(var_.workspace_task_identifier())
+     *             .keys(var_.workspace_task_key())
+     *             .name(var_.workspace_task_name())
+     *             .types(var_.workspace_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceTasksResult> getWorkspaceTasks(GetWorkspaceTasksArgs args) {
+        return getWorkspaceTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of all tasks in a specified project or folder.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_task_fields())
+     *             .folderId(oci_dataintegration_folder.test_folder().id())
+     *             .identifiers(var_.workspace_task_identifier())
+     *             .keys(var_.workspace_task_key())
+     *             .name(var_.workspace_task_name())
+     *             .types(var_.workspace_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceTasksResult> getWorkspaceTasksPlain(GetWorkspaceTasksPlainArgs args) {
+        return getWorkspaceTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of all tasks in a specified project or folder.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_task_fields())
+     *             .folderId(oci_dataintegration_folder.test_folder().id())
+     *             .identifiers(var_.workspace_task_identifier())
+     *             .keys(var_.workspace_task_key())
+     *             .name(var_.workspace_task_name())
+     *             .types(var_.workspace_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetWorkspaceTasksResult> getWorkspaceTasks(GetWorkspaceTasksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", TypeShape.of(GetWorkspaceTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
+     * 
+     * Retrieves a list of all tasks in a specified project or folder.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
+     * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
+     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .fields(var_.workspace_task_fields())
+     *             .folderId(oci_dataintegration_folder.test_folder().id())
+     *             .identifiers(var_.workspace_task_identifier())
+     *             .keys(var_.workspace_task_key())
+     *             .name(var_.workspace_task_name())
+     *             .types(var_.workspace_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetWorkspaceTasksResult> getWorkspaceTasksPlain(GetWorkspaceTasksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataIntegration/getWorkspaceTasks:getWorkspaceTasks", TypeShape.of(GetWorkspaceTasksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.

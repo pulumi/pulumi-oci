@@ -22,7 +22,7 @@ class GetDeployStageResult:
     """
     A collection of values returned by getDeployStage.
     """
-    def __init__(__self__, approval_policies=None, are_hooks_enabled=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, command_spec_deploy_artifact_id=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, container_configs=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, id=None, is_async=None, is_debug_enabled=None, is_force_enabled=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_history=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, release_name=None, rollback_policies=None, rollout_policies=None, set_strings=None, set_values=None, should_cleanup_on_fail=None, should_not_wait=None, should_reset_values=None, should_reuse_values=None, should_skip_crds=None, should_skip_render_subchart_notes=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
+    def __init__(__self__, approval_policies=None, are_hooks_enabled=None, blue_backend_ips=None, blue_green_strategies=None, canary_strategies=None, command_spec_deploy_artifact_id=None, compartment_id=None, compute_instance_group_blue_green_deployment_deploy_stage_id=None, compute_instance_group_canary_deploy_stage_id=None, compute_instance_group_canary_traffic_shift_deploy_stage_id=None, compute_instance_group_deploy_environment_id=None, config=None, container_configs=None, defined_tags=None, deploy_artifact_id=None, deploy_artifact_ids=None, deploy_environment_id_a=None, deploy_environment_id_b=None, deploy_pipeline_id=None, deploy_stage_id=None, deploy_stage_predecessor_collections=None, deploy_stage_type=None, deployment_spec_deploy_artifact_id=None, description=None, display_name=None, docker_image_deploy_artifact_id=None, failure_policies=None, freeform_tags=None, function_deploy_environment_id=None, function_timeout_in_seconds=None, green_backend_ips=None, helm_chart_deploy_artifact_id=None, helm_command_artifact_ids=None, id=None, is_async=None, is_debug_enabled=None, is_force_enabled=None, is_uninstall_on_stage_delete=None, is_validation_enabled=None, kubernetes_manifest_deploy_artifact_ids=None, lifecycle_details=None, load_balancer_configs=None, max_history=None, max_memory_in_mbs=None, namespace=None, oke_blue_green_deploy_stage_id=None, oke_canary_deploy_stage_id=None, oke_canary_traffic_shift_deploy_stage_id=None, oke_cluster_deploy_environment_id=None, production_load_balancer_configs=None, project_id=None, purpose=None, release_name=None, rollback_policies=None, rollout_policies=None, set_strings=None, set_values=None, should_cleanup_on_fail=None, should_not_wait=None, should_reset_values=None, should_reuse_values=None, should_skip_crds=None, should_skip_render_subchart_notes=None, state=None, system_tags=None, test_load_balancer_configs=None, time_created=None, time_updated=None, timeout_in_seconds=None, traffic_shift_target=None, values_artifact_ids=None, wait_criterias=None):
         if approval_policies and not isinstance(approval_policies, list):
             raise TypeError("Expected argument 'approval_policies' to be a list")
         pulumi.set(__self__, "approval_policies", approval_policies)
@@ -119,6 +119,9 @@ class GetDeployStageResult:
         if helm_chart_deploy_artifact_id and not isinstance(helm_chart_deploy_artifact_id, str):
             raise TypeError("Expected argument 'helm_chart_deploy_artifact_id' to be a str")
         pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
+        if helm_command_artifact_ids and not isinstance(helm_command_artifact_ids, list):
+            raise TypeError("Expected argument 'helm_command_artifact_ids' to be a list")
+        pulumi.set(__self__, "helm_command_artifact_ids", helm_command_artifact_ids)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -131,6 +134,9 @@ class GetDeployStageResult:
         if is_force_enabled and not isinstance(is_force_enabled, bool):
             raise TypeError("Expected argument 'is_force_enabled' to be a bool")
         pulumi.set(__self__, "is_force_enabled", is_force_enabled)
+        if is_uninstall_on_stage_delete and not isinstance(is_uninstall_on_stage_delete, bool):
+            raise TypeError("Expected argument 'is_uninstall_on_stage_delete' to be a bool")
+        pulumi.set(__self__, "is_uninstall_on_stage_delete", is_uninstall_on_stage_delete)
         if is_validation_enabled and not isinstance(is_validation_enabled, bool):
             raise TypeError("Expected argument 'is_validation_enabled' to be a bool")
         pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
@@ -170,6 +176,9 @@ class GetDeployStageResult:
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
+        if purpose and not isinstance(purpose, str):
+            raise TypeError("Expected argument 'purpose' to be a str")
+        pulumi.set(__self__, "purpose", purpose)
         if release_name and not isinstance(release_name, str):
             raise TypeError("Expected argument 'release_name' to be a str")
         pulumi.set(__self__, "release_name", release_name)
@@ -485,6 +494,14 @@ class GetDeployStageResult:
         return pulumi.get(self, "helm_chart_deploy_artifact_id")
 
     @property
+    @pulumi.getter(name="helmCommandArtifactIds")
+    def helm_command_artifact_ids(self) -> Sequence[str]:
+        """
+        List of Helm command artifact OCIDs.
+        """
+        return pulumi.get(self, "helm_command_artifact_ids")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -515,6 +532,14 @@ class GetDeployStageResult:
         Force resource update through delete; or if required, recreate. Set to false by default.
         """
         return pulumi.get(self, "is_force_enabled")
+
+    @property
+    @pulumi.getter(name="isUninstallOnStageDelete")
+    def is_uninstall_on_stage_delete(self) -> bool:
+        """
+        Uninstall the Helm chart release on deleting the stage.
+        """
+        return pulumi.get(self, "is_uninstall_on_stage_delete")
 
     @property
     @pulumi.getter(name="isValidationEnabled")
@@ -619,6 +644,14 @@ class GetDeployStageResult:
         The OCID of a project.
         """
         return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def purpose(self) -> str:
+        """
+        The purpose of running this Helm stage
+        """
+        return pulumi.get(self, "purpose")
 
     @property
     @pulumi.getter(name="releaseName")
@@ -819,10 +852,12 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             function_timeout_in_seconds=self.function_timeout_in_seconds,
             green_backend_ips=self.green_backend_ips,
             helm_chart_deploy_artifact_id=self.helm_chart_deploy_artifact_id,
+            helm_command_artifact_ids=self.helm_command_artifact_ids,
             id=self.id,
             is_async=self.is_async,
             is_debug_enabled=self.is_debug_enabled,
             is_force_enabled=self.is_force_enabled,
+            is_uninstall_on_stage_delete=self.is_uninstall_on_stage_delete,
             is_validation_enabled=self.is_validation_enabled,
             kubernetes_manifest_deploy_artifact_ids=self.kubernetes_manifest_deploy_artifact_ids,
             lifecycle_details=self.lifecycle_details,
@@ -836,6 +871,7 @@ class AwaitableGetDeployStageResult(GetDeployStageResult):
             oke_cluster_deploy_environment_id=self.oke_cluster_deploy_environment_id,
             production_load_balancer_configs=self.production_load_balancer_configs,
             project_id=self.project_id,
+            purpose=self.purpose,
             release_name=self.release_name,
             rollback_policies=self.rollback_policies,
             rollout_policies=self.rollout_policies,
@@ -917,10 +953,12 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         function_timeout_in_seconds=pulumi.get(__ret__, 'function_timeout_in_seconds'),
         green_backend_ips=pulumi.get(__ret__, 'green_backend_ips'),
         helm_chart_deploy_artifact_id=pulumi.get(__ret__, 'helm_chart_deploy_artifact_id'),
+        helm_command_artifact_ids=pulumi.get(__ret__, 'helm_command_artifact_ids'),
         id=pulumi.get(__ret__, 'id'),
         is_async=pulumi.get(__ret__, 'is_async'),
         is_debug_enabled=pulumi.get(__ret__, 'is_debug_enabled'),
         is_force_enabled=pulumi.get(__ret__, 'is_force_enabled'),
+        is_uninstall_on_stage_delete=pulumi.get(__ret__, 'is_uninstall_on_stage_delete'),
         is_validation_enabled=pulumi.get(__ret__, 'is_validation_enabled'),
         kubernetes_manifest_deploy_artifact_ids=pulumi.get(__ret__, 'kubernetes_manifest_deploy_artifact_ids'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -934,6 +972,7 @@ def get_deploy_stage(deploy_stage_id: Optional[str] = None,
         oke_cluster_deploy_environment_id=pulumi.get(__ret__, 'oke_cluster_deploy_environment_id'),
         production_load_balancer_configs=pulumi.get(__ret__, 'production_load_balancer_configs'),
         project_id=pulumi.get(__ret__, 'project_id'),
+        purpose=pulumi.get(__ret__, 'purpose'),
         release_name=pulumi.get(__ret__, 'release_name'),
         rollback_policies=pulumi.get(__ret__, 'rollback_policies'),
         rollout_policies=pulumi.get(__ret__, 'rollout_policies'),

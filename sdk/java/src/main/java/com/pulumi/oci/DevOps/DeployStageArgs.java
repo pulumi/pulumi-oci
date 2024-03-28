@@ -488,6 +488,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) List of Helm command artifact OCIDs.
+     * 
+     */
+    @Import(name="helmCommandArtifactIds")
+    private @Nullable Output<List<String>> helmCommandArtifactIds;
+
+    /**
+     * @return (Updatable) List of Helm command artifact OCIDs.
+     * 
+     */
+    public Optional<Output<List<String>>> helmCommandArtifactIds() {
+        return Optional.ofNullable(this.helmCommandArtifactIds);
+    }
+
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      * 
      */
@@ -530,6 +545,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isForceEnabled() {
         return Optional.ofNullable(this.isForceEnabled);
+    }
+
+    /**
+     * (Updatable) Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    @Import(name="isUninstallOnStageDelete")
+    private @Nullable Output<Boolean> isUninstallOnStageDelete;
+
+    /**
+     * @return (Updatable) Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    public Optional<Output<Boolean>> isUninstallOnStageDelete() {
+        return Optional.ofNullable(this.isUninstallOnStageDelete);
     }
 
     /**
@@ -695,6 +725,21 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<DeployStageProductionLoadBalancerConfigArgs>> productionLoadBalancerConfig() {
         return Optional.ofNullable(this.productionLoadBalancerConfig);
+    }
+
+    /**
+     * (Updatable) The purpose of running this Helm stage
+     * 
+     */
+    @Import(name="purpose")
+    private @Nullable Output<String> purpose;
+
+    /**
+     * @return (Updatable) The purpose of running this Helm stage
+     * 
+     */
+    public Optional<Output<String>> purpose() {
+        return Optional.ofNullable(this.purpose);
     }
 
     /**
@@ -970,9 +1015,11 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.functionTimeoutInSeconds = $.functionTimeoutInSeconds;
         this.greenBackendIps = $.greenBackendIps;
         this.helmChartDeployArtifactId = $.helmChartDeployArtifactId;
+        this.helmCommandArtifactIds = $.helmCommandArtifactIds;
         this.isAsync = $.isAsync;
         this.isDebugEnabled = $.isDebugEnabled;
         this.isForceEnabled = $.isForceEnabled;
+        this.isUninstallOnStageDelete = $.isUninstallOnStageDelete;
         this.isValidationEnabled = $.isValidationEnabled;
         this.kubernetesManifestDeployArtifactIds = $.kubernetesManifestDeployArtifactIds;
         this.loadBalancerConfig = $.loadBalancerConfig;
@@ -984,6 +1031,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         this.okeCanaryTrafficShiftDeployStageId = $.okeCanaryTrafficShiftDeployStageId;
         this.okeClusterDeployEnvironmentId = $.okeClusterDeployEnvironmentId;
         this.productionLoadBalancerConfig = $.productionLoadBalancerConfig;
+        this.purpose = $.purpose;
         this.releaseName = $.releaseName;
         this.rollbackPolicy = $.rollbackPolicy;
         this.rolloutPolicy = $.rolloutPolicy;
@@ -1661,6 +1709,37 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param helmCommandArtifactIds (Updatable) List of Helm command artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmCommandArtifactIds(@Nullable Output<List<String>> helmCommandArtifactIds) {
+            $.helmCommandArtifactIds = helmCommandArtifactIds;
+            return this;
+        }
+
+        /**
+         * @param helmCommandArtifactIds (Updatable) List of Helm command artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmCommandArtifactIds(List<String> helmCommandArtifactIds) {
+            return helmCommandArtifactIds(Output.of(helmCommandArtifactIds));
+        }
+
+        /**
+         * @param helmCommandArtifactIds (Updatable) List of Helm command artifact OCIDs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder helmCommandArtifactIds(String... helmCommandArtifactIds) {
+            return helmCommandArtifactIds(List.of(helmCommandArtifactIds));
+        }
+
+        /**
          * @param isAsync (Updatable) A boolean flag specifies whether this stage executes asynchronously.
          * 
          * @return builder
@@ -1721,6 +1800,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isForceEnabled(Boolean isForceEnabled) {
             return isForceEnabled(Output.of(isForceEnabled));
+        }
+
+        /**
+         * @param isUninstallOnStageDelete (Updatable) Uninstall the Helm chart release on deleting the stage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUninstallOnStageDelete(@Nullable Output<Boolean> isUninstallOnStageDelete) {
+            $.isUninstallOnStageDelete = isUninstallOnStageDelete;
+            return this;
+        }
+
+        /**
+         * @param isUninstallOnStageDelete (Updatable) Uninstall the Helm chart release on deleting the stage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUninstallOnStageDelete(Boolean isUninstallOnStageDelete) {
+            return isUninstallOnStageDelete(Output.of(isUninstallOnStageDelete));
         }
 
         /**
@@ -1962,6 +2062,27 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder productionLoadBalancerConfig(DeployStageProductionLoadBalancerConfigArgs productionLoadBalancerConfig) {
             return productionLoadBalancerConfig(Output.of(productionLoadBalancerConfig));
+        }
+
+        /**
+         * @param purpose (Updatable) The purpose of running this Helm stage
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purpose(@Nullable Output<String> purpose) {
+            $.purpose = purpose;
+            return this;
+        }
+
+        /**
+         * @param purpose (Updatable) The purpose of running this Helm stage
+         * 
+         * @return builder
+         * 
+         */
+        public Builder purpose(String purpose) {
+            return purpose(Output.of(purpose));
         }
 
         /**

@@ -524,12 +524,16 @@ func (o UnifiedAgentConfigurationGroupAssociationPtrOutput) GroupLists() pulumi.
 }
 
 type UnifiedAgentConfigurationServiceConfiguration struct {
+	// (Updatable) Unified Agent monitoring application configuration details.
+	ApplicationConfigurations []UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration `pulumi:"applicationConfigurations"`
 	// (Updatable) Type of Unified Agent service configuration.
 	ConfigurationType string `pulumi:"configurationType"`
 	// (Updatable) Unified monitoring agent operational metrics destination object.
-	Destination UnifiedAgentConfigurationServiceConfigurationDestination `pulumi:"destination"`
+	Destination *UnifiedAgentConfigurationServiceConfigurationDestination `pulumi:"destination"`
 	// (Updatable) Logging source object.
 	Sources []UnifiedAgentConfigurationServiceConfigurationSource `pulumi:"sources"`
+	// (Updatable) Logging filter object.
+	UnifiedAgentConfigurationFilters []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter `pulumi:"unifiedAgentConfigurationFilters"`
 }
 
 // UnifiedAgentConfigurationServiceConfigurationInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationArgs and UnifiedAgentConfigurationServiceConfigurationOutput values.
@@ -544,12 +548,16 @@ type UnifiedAgentConfigurationServiceConfigurationInput interface {
 }
 
 type UnifiedAgentConfigurationServiceConfigurationArgs struct {
+	// (Updatable) Unified Agent monitoring application configuration details.
+	ApplicationConfigurations UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput `pulumi:"applicationConfigurations"`
 	// (Updatable) Type of Unified Agent service configuration.
 	ConfigurationType pulumi.StringInput `pulumi:"configurationType"`
 	// (Updatable) Unified monitoring agent operational metrics destination object.
-	Destination UnifiedAgentConfigurationServiceConfigurationDestinationInput `pulumi:"destination"`
+	Destination UnifiedAgentConfigurationServiceConfigurationDestinationPtrInput `pulumi:"destination"`
 	// (Updatable) Logging source object.
 	Sources UnifiedAgentConfigurationServiceConfigurationSourceArrayInput `pulumi:"sources"`
+	// (Updatable) Logging filter object.
+	UnifiedAgentConfigurationFilters UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput `pulumi:"unifiedAgentConfigurationFilters"`
 }
 
 func (UnifiedAgentConfigurationServiceConfigurationArgs) ElementType() reflect.Type {
@@ -629,16 +637,23 @@ func (o UnifiedAgentConfigurationServiceConfigurationOutput) ToUnifiedAgentConfi
 	}).(UnifiedAgentConfigurationServiceConfigurationPtrOutput)
 }
 
+// (Updatable) Unified Agent monitoring application configuration details.
+func (o UnifiedAgentConfigurationServiceConfigurationOutput) ApplicationConfigurations() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+		return v.ApplicationConfigurations
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput)
+}
+
 // (Updatable) Type of Unified Agent service configuration.
 func (o UnifiedAgentConfigurationServiceConfigurationOutput) ConfigurationType() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) string { return v.ConfigurationType }).(pulumi.StringOutput)
 }
 
 // (Updatable) Unified monitoring agent operational metrics destination object.
-func (o UnifiedAgentConfigurationServiceConfigurationOutput) Destination() UnifiedAgentConfigurationServiceConfigurationDestinationOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) UnifiedAgentConfigurationServiceConfigurationDestination {
+func (o UnifiedAgentConfigurationServiceConfigurationOutput) Destination() UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) *UnifiedAgentConfigurationServiceConfigurationDestination {
 		return v.Destination
-	}).(UnifiedAgentConfigurationServiceConfigurationDestinationOutput)
+	}).(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput)
 }
 
 // (Updatable) Logging source object.
@@ -646,6 +661,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationOutput) Sources() UnifiedAg
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationSource {
 		return v.Sources
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput)
+}
+
+// (Updatable) Logging filter object.
+func (o UnifiedAgentConfigurationServiceConfigurationOutput) UnifiedAgentConfigurationFilters() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+		return v.UnifiedAgentConfigurationFilters
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationPtrOutput struct{ *pulumi.OutputState }
@@ -672,6 +694,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Elem() UnifiedAg
 	}).(UnifiedAgentConfigurationServiceConfigurationOutput)
 }
 
+// (Updatable) Unified Agent monitoring application configuration details.
+func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) ApplicationConfigurations() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+		if v == nil {
+			return nil
+		}
+		return v.ApplicationConfigurations
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput)
+}
+
 // (Updatable) Type of Unified Agent service configuration.
 func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) ConfigurationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfiguration) *string {
@@ -688,7 +720,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Destination() Un
 		if v == nil {
 			return nil
 		}
-		return &v.Destination
+		return v.Destination
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput)
 }
 
@@ -700,6 +732,2282 @@ func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) Sources() Unifie
 		}
 		return v.Sources
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput)
+}
+
+// (Updatable) Logging filter object.
+func (o UnifiedAgentConfigurationServiceConfigurationPtrOutput) UnifiedAgentConfigurationFilters() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfiguration) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+		if v == nil {
+			return nil
+		}
+		return v.UnifiedAgentConfigurationFilters
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration struct {
+	// (Updatable) Unified monitoring agent operational metrics destination object.
+	Destination UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination `pulumi:"destination"`
+	// (Updatable) Unified monitoring agent operational metrics source object.
+	Source *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource `pulumi:"source"`
+	// (Updatable) Unified schema logging source type.
+	SourceType string `pulumi:"sourceType"`
+	// (Updatable) Logging source object.
+	Sources []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource `pulumi:"sources"`
+	// (Updatable) Logging filter object.
+	UnifiedAgentConfigurationFilter *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter `pulumi:"unifiedAgentConfigurationFilter"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs struct {
+	// (Updatable) Unified monitoring agent operational metrics destination object.
+	Destination UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput `pulumi:"destination"`
+	// (Updatable) Unified monitoring agent operational metrics source object.
+	Source UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput `pulumi:"source"`
+	// (Updatable) Unified schema logging source type.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// (Updatable) Logging source object.
+	Sources UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput `pulumi:"sources"`
+	// (Updatable) Logging filter object.
+	UnifiedAgentConfigurationFilter UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput `pulumi:"unifiedAgentConfigurationFilter"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray{ UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return o
+}
+
+// (Updatable) Unified monitoring agent operational metrics destination object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Destination() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination {
+		return v.Destination
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput)
+}
+
+// (Updatable) Unified monitoring agent operational metrics source object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Source() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return v.Source
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput)
+}
+
+// (Updatable) Unified schema logging source type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Logging source object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Sources() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return v.Sources
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput)
+}
+
+// (Updatable) Logging filter object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) UnifiedAgentConfigurationFilter() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+		return v.UnifiedAgentConfigurationFilter
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination struct {
+	// (Updatable) The OCID of the compartment that the resource belongs to.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Namespace to which metrics will be emitted.
+	MetricsNamespace *string `pulumi:"metricsNamespace"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs struct {
+	// (Updatable) The OCID of the compartment that the resource belongs to.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Namespace to which metrics will be emitted.
+	MetricsNamespace pulumi.StringPtrInput `pulumi:"metricsNamespace"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return o
+}
+
+// (Updatable) The OCID of the compartment that the resource belongs to.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination) *string {
+		return v.CompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace to which metrics will be emitted.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) MetricsNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination) *string {
+		return v.MetricsNamespace
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource struct {
+	// (Updatable) Advanced options for logging configuration
+	AdvancedOptions *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions `pulumi:"advancedOptions"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+	// (Updatable) Source parser object.
+	Parser *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser `pulumi:"parser"`
+	// (Updatable) Absolute paths for log source files. Wildcards can be used.
+	Paths []string `pulumi:"paths"`
+	// (Updatable) Unified schema logging source type.
+	SourceType *string `pulumi:"sourceType"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs struct {
+	// (Updatable) Advanced options for logging configuration
+	AdvancedOptions UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput `pulumi:"advancedOptions"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Source parser object.
+	Parser UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput `pulumi:"parser"`
+	// (Updatable) Absolute paths for log source files. Wildcards can be used.
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// (Updatable) Unified schema logging source type.
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray{ UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput)
+}
+
+// (Updatable) Advanced options for logging configuration
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) AdvancedOptions() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions {
+		return v.AdvancedOptions
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Source parser object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Parser() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		return v.Parser
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput)
+}
+
+// (Updatable) Absolute paths for log source files. Wildcards can be used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) []string {
+		return v.Paths
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Unified schema logging source type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *string {
+		return v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput)
+}
+
+// (Updatable) Advanced options for logging configuration
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) AdvancedOptions() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions {
+		if v == nil {
+			return nil
+		}
+		return v.AdvancedOptions
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Source parser object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) Parser() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		if v == nil {
+			return nil
+		}
+		return v.Parser
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput)
+}
+
+// (Updatable) Absolute paths for log source files. Wildcards can be used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Paths
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Unified schema logging source type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions struct {
+	// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead *bool `pulumi:"isReadFromHead"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs struct {
+	// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead pulumi.BoolPtrInput `pulumi:"isReadFromHead"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput) IsReadFromHead() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions) *bool {
+		return v.IsReadFromHead
+	}).(pulumi.BoolPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput)
+}
+
+// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput) IsReadFromHead() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsReadFromHead
+	}).(pulumi.BoolPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser struct {
+	// (Updatable) CSV delimiter.
+	Delimiter *string `pulumi:"delimiter"`
+	// (Updatable) Regex pattern.
+	Expression *string `pulumi:"expression"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) First line pattern format.
+	FormatFirstline *string `pulumi:"formatFirstline"`
+	// (Updatable) Mutiline pattern format.
+	Formats []string `pulumi:"formats"`
+	// (Updatable) Grok failure key.
+	GrokFailureKey *string `pulumi:"grokFailureKey"`
+	// (Updatable) Grok name key.
+	GrokNameKey *string `pulumi:"grokNameKey"`
+	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent *bool `pulumi:"isEstimateCurrentEvent"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields *bool `pulumi:"isMergeCriFields"`
+	// (Updatable) If true, an empty string field is replaced with a null value.
+	IsNullEmptyString *bool `pulumi:"isNullEmptyString"`
+	// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent *bool `pulumi:"isSupportColonlessIdent"`
+	// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority *bool `pulumi:"isWithPriority"`
+	// (Updatable) CSV keys.
+	Keys []string `pulumi:"keys"`
+	// (Updatable) Syslog message format.
+	MessageFormat *string `pulumi:"messageFormat"`
+	// (Updatable) Specifies the field name to contain logs.
+	MessageKey *string `pulumi:"messageKey"`
+	// (Updatable) Multiline start regexp pattern.
+	MultiLineStartRegexp *string `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser `pulumi:"nestedParser"`
+	// (Updatable) Specify the null value pattern.
+	NullValuePattern *string `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
+	// (Updatable) Type of fluent parser.
+	ParserType string `pulumi:"parserType"`
+	// (Updatable) Grok pattern object.
+	Patterns []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput `pulumi:"recordInput"`
+	// (Updatable) RFC 5424 time format.
+	Rfc5424timeFormat *string `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
+	// (Updatable) Syslog parser type.
+	SyslogParserType *string `pulumi:"syslogParserType"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType *string `pulumi:"timeType"`
+	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds *int `pulumi:"timeoutInMilliseconds"`
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+	Types map[string]interface{} `pulumi:"types"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs struct {
+	// (Updatable) CSV delimiter.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// (Updatable) Regex pattern.
+	Expression pulumi.StringPtrInput `pulumi:"expression"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) First line pattern format.
+	FormatFirstline pulumi.StringPtrInput `pulumi:"formatFirstline"`
+	// (Updatable) Mutiline pattern format.
+	Formats pulumi.StringArrayInput `pulumi:"formats"`
+	// (Updatable) Grok failure key.
+	GrokFailureKey pulumi.StringPtrInput `pulumi:"grokFailureKey"`
+	// (Updatable) Grok name key.
+	GrokNameKey pulumi.StringPtrInput `pulumi:"grokNameKey"`
+	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent pulumi.BoolPtrInput `pulumi:"isEstimateCurrentEvent"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields pulumi.BoolPtrInput `pulumi:"isMergeCriFields"`
+	// (Updatable) If true, an empty string field is replaced with a null value.
+	IsNullEmptyString pulumi.BoolPtrInput `pulumi:"isNullEmptyString"`
+	// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent pulumi.BoolPtrInput `pulumi:"isSupportColonlessIdent"`
+	// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority pulumi.BoolPtrInput `pulumi:"isWithPriority"`
+	// (Updatable) CSV keys.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// (Updatable) Syslog message format.
+	MessageFormat pulumi.StringPtrInput `pulumi:"messageFormat"`
+	// (Updatable) Specifies the field name to contain logs.
+	MessageKey pulumi.StringPtrInput `pulumi:"messageKey"`
+	// (Updatable) Multiline start regexp pattern.
+	MultiLineStartRegexp pulumi.StringPtrInput `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput `pulumi:"nestedParser"`
+	// (Updatable) Specify the null value pattern.
+	NullValuePattern pulumi.StringPtrInput `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
+	// (Updatable) Type of fluent parser.
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+	// (Updatable) Grok pattern object.
+	Patterns UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput `pulumi:"recordInput"`
+	// (Updatable) RFC 5424 time format.
+	Rfc5424timeFormat pulumi.StringPtrInput `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
+	// (Updatable) Syslog parser type.
+	SyslogParserType pulumi.StringPtrInput `pulumi:"syslogParserType"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
+	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds pulumi.IntPtrInput `pulumi:"timeoutInMilliseconds"`
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+	Types pulumi.MapInput `pulumi:"types"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput)
+}
+
+// (Updatable) CSV delimiter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Regex pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.Expression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) First line pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) FormatFirstline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.FormatFirstline
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Mutiline pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Grok failure key.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) GrokFailureKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.GrokFailureKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok name key.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) GrokNameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.GrokNameKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsEstimateCurrentEvent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If you don't need stream or logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsMergeCriFields
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, an empty string field is replaced with a null value.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsNullEmptyString
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsWithPriority() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.IsWithPriority
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) CSV keys.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Syslog message format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.MessageFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the field name to contain logs.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MessageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.MessageKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Multiline start regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the null value pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) NullValuePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.NullValuePattern
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Type of fluent parser.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.ParserType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Grok pattern object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+		return v.Patterns
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput)
+}
+
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput)
+}
+
+// (Updatable) RFC 5424 time format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Syslog parser type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) SyslogParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.SyslogParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeoutInMilliseconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *int {
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput)
+}
+
+// (Updatable) CSV delimiter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Regex pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Expression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) First line pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) FormatFirstline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FormatFirstline
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Mutiline pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Grok failure key.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) GrokFailureKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GrokFailureKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok name key.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) GrokNameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GrokNameKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsEstimateCurrentEvent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If you don't need stream or logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMergeCriFields
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, an empty string field is replaced with a null value.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNullEmptyString
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) IsWithPriority() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsWithPriority
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) CSV keys.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Syslog message format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MessageFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the field name to contain logs.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) MessageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MessageKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Multiline start regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		if v == nil {
+			return nil
+		}
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the null value pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) NullValuePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NullValuePattern
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Type of fluent parser.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) ParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok pattern object.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+		if v == nil {
+			return nil
+		}
+		return v.Patterns
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput)
+}
+
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		if v == nil {
+			return nil
+		}
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput)
+}
+
+// (Updatable) RFC 5424 time format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Syslog parser type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) SyslogParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SyslogParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) TimeoutInMilliseconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType *string `pulumi:"timeType"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *bool {
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern struct {
+	// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat *string `pulumi:"fieldTimeFormat"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone *string `pulumi:"fieldTimeZone"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+	// (Updatable) The Grok pattern.
+	Pattern *string `pulumi:"pattern"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs struct {
+	// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat pulumi.StringPtrInput `pulumi:"fieldTimeFormat"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone pulumi.StringPtrInput `pulumi:"fieldTimeZone"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The Grok pattern.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray{ UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray []UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return o
+}
+
+// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) *string {
+		return v.FieldTimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) *string {
+		return v.FieldTimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) *string {
+		return v.Pattern
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) *string {
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) *string {
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget struct {
+	// (Updatable) K8s namespace of the resource.
+	K8sNamespace *string `pulumi:"k8sNamespace"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Type of resource to scrape metrics.
+	ResourceType *string `pulumi:"resourceType"`
+	// (Updatable) Name of the service prepended to the endpoints.
+	ServiceName *string `pulumi:"serviceName"`
+	// (Updatable) URL from which the metrics are fetched.
+	Url *string `pulumi:"url"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs struct {
+	// (Updatable) K8s namespace of the resource.
+	K8sNamespace pulumi.StringPtrInput `pulumi:"k8sNamespace"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// (Updatable) Type of resource to scrape metrics.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// (Updatable) Name of the service prepended to the endpoints.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// (Updatable) URL from which the metrics are fetched.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return o
+}
+
+// (Updatable) K8s namespace of the resource.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) K8sNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.K8sNamespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of resource to scrape metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.ResourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of the service prepended to the endpoints.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.ServiceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) URL from which the metrics are fetched.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) *string {
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter struct {
+	// (Updatable) A list of filtering rules to include logs
+	AllowLists []string `pulumi:"allowLists"`
+	// (Updatable) A list of filtering rules to reject logs
+	DenyLists []string `pulumi:"denyLists"`
+	// (Updatable) Unified schema logging filter type.
+	FilterType *string `pulumi:"filterType"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs struct {
+	// (Updatable) A list of filtering rules to include logs
+	AllowLists pulumi.StringArrayInput `pulumi:"allowLists"`
+	// (Updatable) A list of filtering rules to reject logs
+	DenyLists pulumi.StringArrayInput `pulumi:"denyLists"`
+	// (Updatable) Unified schema logging filter type.
+	FilterType pulumi.StringPtrInput `pulumi:"filterType"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput).ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs, UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtr and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrType UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs
+
+func UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtr(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrType) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput)
+}
+
+// (Updatable) A list of filtering rules to include logs
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) AllowLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.AllowLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A list of filtering rules to reject logs
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) DenyLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.DenyLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Unified schema logging filter type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.FilterType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+// (Updatable) A list of filtering rules to include logs
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) AllowLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) A list of filtering rules to reject logs
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) DenyLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DenyLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Unified schema logging filter type.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) FilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FilterType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationDestination struct {
@@ -1162,7 +3470,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource struct {
 	// (Updatable) List of unified monitoring agent operational metrics.
 	Metrics []string `pulumi:"metrics"`
-	// (Updatable) Record section of OperationalMetricsSource object.
+	// (Updatable) record section of openmetrics parser.
 	RecordInput UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput `pulumi:"recordInput"`
 	// (Updatable) Type of the unified monitoring agent operational metrics source object.
 	Type string `pulumi:"type"`
@@ -1182,7 +3490,7 @@ type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsC
 type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs struct {
 	// (Updatable) List of unified monitoring agent operational metrics.
 	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
-	// (Updatable) Record section of OperationalMetricsSource object.
+	// (Updatable) record section of openmetrics parser.
 	RecordInput UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputInput `pulumi:"recordInput"`
 	// (Updatable) Type of the unified monitoring agent operational metrics source object.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1272,7 +3580,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Record section of OperationalMetricsSource object.
+// (Updatable) record section of openmetrics parser.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource) UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
 		return v.RecordInput
@@ -1320,7 +3628,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Record section of OperationalMetricsSource object.
+// (Updatable) record section of openmetrics parser.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourcePtrOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
 		if v == nil {
@@ -1341,9 +3649,9 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 }
 
 type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput struct {
-	// (Updatable) Namespace to emit the operational metrics.
+	// (Updatable) Namespace to emit metrics.
 	Namespace string `pulumi:"namespace"`
-	// (Updatable) Resource group to emit the operational metrics.
+	// (Updatable) Resource group to emit metrics.
 	ResourceGroup *string `pulumi:"resourceGroup"`
 }
 
@@ -1359,9 +3667,9 @@ type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsC
 }
 
 type UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs struct {
-	// (Updatable) Namespace to emit the operational metrics.
+	// (Updatable) Namespace to emit metrics.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// (Updatable) Resource group to emit the operational metrics.
+	// (Updatable) Resource group to emit metrics.
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
 }
 
@@ -1442,14 +3750,14 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrOutput)
 }
 
-// (Updatable) Namespace to emit the operational metrics.
+// (Updatable) Namespace to emit metrics.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) string {
 		return v.Namespace
 	}).(pulumi.StringOutput)
 }
 
-// (Updatable) Resource group to emit the operational metrics.
+// (Updatable) Resource group to emit metrics.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput) ResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) *string {
 		return v.ResourceGroup
@@ -1480,7 +3788,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 	}).(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput)
 }
 
-// (Updatable) Namespace to emit the operational metrics.
+// (Updatable) Namespace to emit metrics.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) *string {
 		if v == nil {
@@ -1490,7 +3798,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Resource group to emit the operational metrics.
+// (Updatable) Resource group to emit metrics.
 func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) *string {
 		if v == nil {
@@ -1501,8 +3809,12 @@ func (o UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSource struct {
+	// (Updatable) Advanced options for logging configuration
+	AdvancedOptions *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions `pulumi:"advancedOptions"`
 	// (Updatable) Windows event log channels.
 	Channels []string `pulumi:"channels"`
+	// (Updatable) User customized source plugin.
+	CustomPlugin *string `pulumi:"customPlugin"`
 	// (Updatable) The name key to tag this Grok pattern.
 	Name *string `pulumi:"name"`
 	// (Updatable) Source parser object.
@@ -1510,9 +3822,6 @@ type UnifiedAgentConfigurationServiceConfigurationSource struct {
 	// (Updatable) Absolute paths for log source files. Wildcards can be used.
 	Paths []string `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1528,8 +3837,12 @@ type UnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
+	// (Updatable) Advanced options for logging configuration
+	AdvancedOptions UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput `pulumi:"advancedOptions"`
 	// (Updatable) Windows event log channels.
 	Channels pulumi.StringArrayInput `pulumi:"channels"`
+	// (Updatable) User customized source plugin.
+	CustomPlugin pulumi.StringPtrInput `pulumi:"customPlugin"`
 	// (Updatable) The name key to tag this Grok pattern.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Source parser object.
@@ -1537,9 +3850,6 @@ type UnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
 	// (Updatable) Absolute paths for log source files. Wildcards can be used.
 	Paths pulumi.StringArrayInput `pulumi:"paths"`
 	// (Updatable) Unified schema logging source type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -1594,9 +3904,21 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) ToUnifiedAgen
 	return o
 }
 
+// (Updatable) Advanced options for logging configuration
+func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) AdvancedOptions() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions {
+		return v.AdvancedOptions
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
 // (Updatable) Windows event log channels.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Channels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Channels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) User customized source plugin.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) CustomPlugin() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) *string { return v.CustomPlugin }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The name key to tag this Grok pattern.
@@ -1617,9 +3939,6 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) Paths() pulum
 }
 
 // (Updatable) Unified schema logging source type.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o UnifiedAgentConfigurationServiceConfigurationSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSource) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -1642,6 +3961,145 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationSource {
 		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationSource)[vs[1].(int)]
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions struct {
+	// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead *bool `pulumi:"isReadFromHead"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs and UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs struct {
+	// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead pulumi.BoolPtrInput `pulumi:"isReadFromHead"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput).ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs, UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtr and UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrType UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs
+
+func UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtr(v *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions) *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput)
+}
+
+// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput) IsReadFromHead() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions) *bool {
+		return v.IsReadFromHead
+	}).(pulumi.BoolPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions) UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput)
+}
+
+// (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput) IsReadFromHead() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsReadFromHead
+	}).(pulumi.BoolPtrOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParser struct {
@@ -1683,12 +4141,18 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 	NestedParser *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser `pulumi:"nestedParser"`
 	// (Updatable) Specify the null value pattern.
 	NullValuePattern *string `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
 	// (Updatable) Type of fluent parser.
 	ParserType string `pulumi:"parserType"`
 	// (Updatable) Grok pattern object.
 	Patterns []UnifiedAgentConfigurationServiceConfigurationSourceParserPattern `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput `pulumi:"recordInput"`
 	// (Updatable) RFC 5424 time format.
 	Rfc5424timeFormat *string `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
 	// (Updatable) Syslog parser type.
 	SyslogParserType *string `pulumi:"syslogParserType"`
 	// (Updatable) Process time value using the specified format.
@@ -1757,12 +4221,18 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
 	NestedParser UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput `pulumi:"nestedParser"`
 	// (Updatable) Specify the null value pattern.
 	NullValuePattern pulumi.StringPtrInput `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
 	// (Updatable) Type of fluent parser.
 	ParserType pulumi.StringInput `pulumi:"parserType"`
 	// (Updatable) Grok pattern object.
 	Patterns UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput `pulumi:"recordInput"`
 	// (Updatable) RFC 5424 time format.
 	Rfc5424timeFormat pulumi.StringPtrInput `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
 	// (Updatable) Syslog parser type.
 	SyslogParserType pulumi.StringPtrInput `pulumi:"syslogParserType"`
 	// (Updatable) Process time value using the specified format.
@@ -1961,6 +4431,11 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) NullVal
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.NullValuePattern }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool { return v.ParseNested }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Type of fluent parser.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ParserType() pulumi.StringOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.ParserType }).(pulumi.StringOutput)
@@ -1973,9 +4448,21 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Pattern
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput)
+}
+
 // (Updatable) RFC 5424 time format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.Rfc5424timeFormat }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) *string { return v.Separator }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Syslog parser type.
@@ -2225,6 +4712,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Null
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Type of fluent parser.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) ParserType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
@@ -2245,6 +4742,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Patt
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		if v == nil {
+			return nil
+		}
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput)
+}
+
 // (Updatable) RFC 5424 time format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
@@ -2252,6 +4759,16 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Rfc5
 			return nil
 		}
 		return v.Rfc5424timeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2316,6 +4833,10 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser struc
 	FieldTimeKey *string `pulumi:"fieldTimeKey"`
 	// (Updatable) If true, keep the time field in the record.
 	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
 	// (Updatable) Process time value using the specified format.
 	TimeFormat *string `pulumi:"timeFormat"`
 	// (Updatable) JSON parser time type.
@@ -2338,6 +4859,10 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs s
 	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
 	// (Updatable) If true, keep the time field in the record.
 	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
 	// (Updatable) Process time value using the specified format.
 	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
 	// (Updatable) JSON parser time type.
@@ -2435,6 +4960,20 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOut
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *bool {
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Process time value using the specified format.
 func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) TimeFormat() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
@@ -2491,6 +5030,26 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtr
 		}
 		return v.IsKeepTimeKey
 	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Process time value using the specified format.
@@ -2650,6 +5209,2317 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOut
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationSourceParserPattern)[vs[1].(int)]
 	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs and UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput).ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs, UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtr and UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrType UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs
+
+func UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtr(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) *string {
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) *string {
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter struct {
+	// (Updatable) A list of filtering rules to include logs
+	AllowLists []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList `pulumi:"allowLists"`
+	// (Updatable) Type of the custom filter
+	CustomFilterType *string `pulumi:"customFilterType"`
+	// (Updatable) List of custom sections in custom filter
+	CustomSections []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection `pulumi:"customSections"`
+	// (Updatable) A list of filtering rules to reject logs
+	DenyLists []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList `pulumi:"denyLists"`
+	// (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+	EmitInvalidRecordToError *bool `pulumi:"emitInvalidRecordToError"`
+	// (Updatable) Unified schema logging filter type.
+	FilterType string `pulumi:"filterType"`
+	// (Updatable) Store the parsed values as a hash value in a field.
+	HashValueField *string `pulumi:"hashValueField"`
+	// (Updatable) Store the parsed values with the specified key name prefix.
+	InjectKeyPrefix *string `pulumi:"injectKeyPrefix"`
+	// (Updatable) If true, automatically casts the field types.
+	IsAutoTypecastEnabled *bool `pulumi:"isAutoTypecastEnabled"`
+	// (Updatable) If true, it modifies a new empty hash
+	IsRenewRecordEnabled *bool `pulumi:"isRenewRecordEnabled"`
+	// (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
+	IsRubyEnabled *bool `pulumi:"isRubyEnabled"`
+	// (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+	KeepKeys []string `pulumi:"keepKeys"`
+	// (Updatable) The field name in the record to parse.
+	KeyName *string `pulumi:"keyName"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// (Updatable) Parameters of the custom filter
+	Params map[string]interface{} `pulumi:"params"`
+	// (Updatable) Source parser object.
+	Parser *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser `pulumi:"parser"`
+	// (Updatable) Add new key-value pairs in logs
+	RecordLists []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList `pulumi:"recordLists"`
+	// (Updatable) If true, remove the keyName field when parsing is succeeded.
+	RemoveKeyNameField *bool `pulumi:"removeKeyNameField"`
+	// (Updatable) A list of keys to delete
+	RemoveKeys []string `pulumi:"removeKeys"`
+	// (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
+	RenewTimeKey *string `pulumi:"renewTimeKey"`
+	// (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
+	ReplaceInvalidSequence *bool `pulumi:"replaceInvalidSequence"`
+	// (Updatable) If true, keep the original key-value pair in the parsed result.
+	ReserveData *bool `pulumi:"reserveData"`
+	// (Updatable) If true, keep the original event time in the parsed result.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ReserveTime *bool `pulumi:"reserveTime"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs struct {
+	// (Updatable) A list of filtering rules to include logs
+	AllowLists UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput `pulumi:"allowLists"`
+	// (Updatable) Type of the custom filter
+	CustomFilterType pulumi.StringPtrInput `pulumi:"customFilterType"`
+	// (Updatable) List of custom sections in custom filter
+	CustomSections UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput `pulumi:"customSections"`
+	// (Updatable) A list of filtering rules to reject logs
+	DenyLists UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput `pulumi:"denyLists"`
+	// (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+	EmitInvalidRecordToError pulumi.BoolPtrInput `pulumi:"emitInvalidRecordToError"`
+	// (Updatable) Unified schema logging filter type.
+	FilterType pulumi.StringInput `pulumi:"filterType"`
+	// (Updatable) Store the parsed values as a hash value in a field.
+	HashValueField pulumi.StringPtrInput `pulumi:"hashValueField"`
+	// (Updatable) Store the parsed values with the specified key name prefix.
+	InjectKeyPrefix pulumi.StringPtrInput `pulumi:"injectKeyPrefix"`
+	// (Updatable) If true, automatically casts the field types.
+	IsAutoTypecastEnabled pulumi.BoolPtrInput `pulumi:"isAutoTypecastEnabled"`
+	// (Updatable) If true, it modifies a new empty hash
+	IsRenewRecordEnabled pulumi.BoolPtrInput `pulumi:"isRenewRecordEnabled"`
+	// (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
+	IsRubyEnabled pulumi.BoolPtrInput `pulumi:"isRubyEnabled"`
+	// (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+	KeepKeys pulumi.StringArrayInput `pulumi:"keepKeys"`
+	// (Updatable) The field name in the record to parse.
+	KeyName pulumi.StringPtrInput `pulumi:"keyName"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Parameters of the custom filter
+	Params pulumi.MapInput `pulumi:"params"`
+	// (Updatable) Source parser object.
+	Parser UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput `pulumi:"parser"`
+	// (Updatable) Add new key-value pairs in logs
+	RecordLists UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput `pulumi:"recordLists"`
+	// (Updatable) If true, remove the keyName field when parsing is succeeded.
+	RemoveKeyNameField pulumi.BoolPtrInput `pulumi:"removeKeyNameField"`
+	// (Updatable) A list of keys to delete
+	RemoveKeys pulumi.StringArrayInput `pulumi:"removeKeys"`
+	// (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
+	RenewTimeKey pulumi.StringPtrInput `pulumi:"renewTimeKey"`
+	// (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
+	ReplaceInvalidSequence pulumi.BoolPtrInput `pulumi:"replaceInvalidSequence"`
+	// (Updatable) If true, keep the original key-value pair in the parsed result.
+	ReserveData pulumi.BoolPtrInput `pulumi:"reserveData"`
+	// (Updatable) If true, keep the original event time in the parsed result.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ReserveTime pulumi.BoolPtrInput `pulumi:"reserveTime"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+// (Updatable) A list of filtering rules to include logs
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) AllowLists() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
+		return v.AllowLists
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput)
+}
+
+// (Updatable) Type of the custom filter
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) CustomFilterType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.CustomFilterType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) List of custom sections in custom filter
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) CustomSections() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
+		return v.CustomSections
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput)
+}
+
+// (Updatable) A list of filtering rules to reject logs
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) DenyLists() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
+		return v.DenyLists
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput)
+}
+
+// (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) EmitInvalidRecordToError() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.EmitInvalidRecordToError
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Unified schema logging filter type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) FilterType() pulumi.StringOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.FilterType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Store the parsed values as a hash value in a field.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) HashValueField() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.HashValueField
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Store the parsed values with the specified key name prefix.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) InjectKeyPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.InjectKeyPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, automatically casts the field types.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsAutoTypecastEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.IsAutoTypecastEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, it modifies a new empty hash
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsRenewRecordEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.IsRenewRecordEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsRubyEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.IsRubyEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) KeepKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.KeepKeys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The field name in the record to parse.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.KeyName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Parameters of the custom filter
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]interface{} {
+		return v.Params
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Source parser object.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Parser() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+		return v.Parser
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput)
+}
+
+// (Updatable) Add new key-value pairs in logs
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RecordLists() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList {
+		return v.RecordLists
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput)
+}
+
+// (Updatable) If true, remove the keyName field when parsing is succeeded.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RemoveKeyNameField() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.RemoveKeyNameField
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) A list of keys to delete
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RemoveKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.RemoveKeys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RenewTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *string {
+		return v.RenewTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReplaceInvalidSequence() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.ReplaceInvalidSequence
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the original key-value pair in the parsed result.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReserveData() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.ReserveData
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the original event time in the parsed result.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReserveTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) *bool {
+		return v.ReserveTime
+	}).(pulumi.BoolPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList struct {
+	// (Updatable) A new key
+	Key *string `pulumi:"key"`
+	// (Updatable) The Grok pattern.
+	Pattern *string `pulumi:"pattern"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs struct {
+	// (Updatable) A new key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The Grok pattern.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return o
+}
+
+// (Updatable) A new key
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList) *string {
+		return v.Pattern
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection struct {
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+	// (Updatable) Parameters of the custom filter
+	Params map[string]interface{} `pulumi:"params"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs struct {
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Parameters of the custom filter
+	Params pulumi.MapInput `pulumi:"params"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return o
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameters of the custom filter
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]interface{} {
+		return v.Params
+	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList struct {
+	// (Updatable) A new key
+	Key *string `pulumi:"key"`
+	// (Updatable) The Grok pattern.
+	Pattern *string `pulumi:"pattern"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs struct {
+	// (Updatable) A new key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The Grok pattern.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return o
+}
+
+// (Updatable) A new key
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList) *string {
+		return v.Pattern
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser struct {
+	// (Updatable) CSV delimiter.
+	Delimiter *string `pulumi:"delimiter"`
+	// (Updatable) Regex pattern.
+	Expression *string `pulumi:"expression"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) First line pattern format.
+	FormatFirstline *string `pulumi:"formatFirstline"`
+	// (Updatable) Mutiline pattern format.
+	Formats []string `pulumi:"formats"`
+	// (Updatable) Grok failure key.
+	GrokFailureKey *string `pulumi:"grokFailureKey"`
+	// (Updatable) Grok name key.
+	GrokNameKey *string `pulumi:"grokNameKey"`
+	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent *bool `pulumi:"isEstimateCurrentEvent"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields *bool `pulumi:"isMergeCriFields"`
+	// (Updatable) If true, an empty string field is replaced with a null value.
+	IsNullEmptyString *bool `pulumi:"isNullEmptyString"`
+	// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent *bool `pulumi:"isSupportColonlessIdent"`
+	// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority *bool `pulumi:"isWithPriority"`
+	// (Updatable) CSV keys.
+	Keys []string `pulumi:"keys"`
+	// (Updatable) Syslog message format.
+	MessageFormat *string `pulumi:"messageFormat"`
+	// (Updatable) Specifies the field name to contain logs.
+	MessageKey *string `pulumi:"messageKey"`
+	// (Updatable) Multiline start regexp pattern.
+	MultiLineStartRegexp *string `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser `pulumi:"nestedParser"`
+	// (Updatable) Specify the null value pattern.
+	NullValuePattern *string `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
+	// (Updatable) Type of fluent parser.
+	ParserType string `pulumi:"parserType"`
+	// (Updatable) Grok pattern object.
+	Patterns []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput `pulumi:"recordInput"`
+	// (Updatable) RFC 5424 time format.
+	Rfc5424timeFormat *string `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
+	// (Updatable) Syslog parser type.
+	SyslogParserType *string `pulumi:"syslogParserType"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType *string `pulumi:"timeType"`
+	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds *int `pulumi:"timeoutInMilliseconds"`
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+	Types map[string]interface{} `pulumi:"types"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs struct {
+	// (Updatable) CSV delimiter.
+	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
+	// (Updatable) Regex pattern.
+	Expression pulumi.StringPtrInput `pulumi:"expression"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) First line pattern format.
+	FormatFirstline pulumi.StringPtrInput `pulumi:"formatFirstline"`
+	// (Updatable) Mutiline pattern format.
+	Formats pulumi.StringArrayInput `pulumi:"formats"`
+	// (Updatable) Grok failure key.
+	GrokFailureKey pulumi.StringPtrInput `pulumi:"grokFailureKey"`
+	// (Updatable) Grok name key.
+	GrokNameKey pulumi.StringPtrInput `pulumi:"grokNameKey"`
+	// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent pulumi.BoolPtrInput `pulumi:"isEstimateCurrentEvent"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields pulumi.BoolPtrInput `pulumi:"isMergeCriFields"`
+	// (Updatable) If true, an empty string field is replaced with a null value.
+	IsNullEmptyString pulumi.BoolPtrInput `pulumi:"isNullEmptyString"`
+	// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent pulumi.BoolPtrInput `pulumi:"isSupportColonlessIdent"`
+	// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority pulumi.BoolPtrInput `pulumi:"isWithPriority"`
+	// (Updatable) CSV keys.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// (Updatable) Syslog message format.
+	MessageFormat pulumi.StringPtrInput `pulumi:"messageFormat"`
+	// (Updatable) Specifies the field name to contain logs.
+	MessageKey pulumi.StringPtrInput `pulumi:"messageKey"`
+	// (Updatable) Multiline start regexp pattern.
+	MultiLineStartRegexp pulumi.StringPtrInput `pulumi:"multiLineStartRegexp"`
+	// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParser UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput `pulumi:"nestedParser"`
+	// (Updatable) Specify the null value pattern.
+	NullValuePattern pulumi.StringPtrInput `pulumi:"nullValuePattern"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
+	// (Updatable) Type of fluent parser.
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+	// (Updatable) Grok pattern object.
+	Patterns UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput `pulumi:"patterns"`
+	// (Updatable) record section of openmetrics parser.
+	RecordInput UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput `pulumi:"recordInput"`
+	// (Updatable) RFC 5424 time format.
+	Rfc5424timeFormat pulumi.StringPtrInput `pulumi:"rfc5424timeFormat"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
+	// (Updatable) Syslog parser type.
+	SyslogParserType pulumi.StringPtrInput `pulumi:"syslogParserType"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
+	// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds pulumi.IntPtrInput `pulumi:"timeoutInMilliseconds"`
+	// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	//
+	// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+	//
+	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+	//
+	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+	Types pulumi.MapInput `pulumi:"types"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput).ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs, UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtr and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrType UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs
+
+func UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtr(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput)
+}
+
+// (Updatable) CSV delimiter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Regex pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.Expression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) First line pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) FormatFirstline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.FormatFirstline
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Mutiline pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Grok failure key.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) GrokFailureKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.GrokFailureKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok name key.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) GrokNameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.GrokNameKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsEstimateCurrentEvent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If you don't need stream or logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsMergeCriFields
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, an empty string field is replaced with a null value.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsNullEmptyString
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsWithPriority() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.IsWithPriority
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) CSV keys.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Syslog message format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.MessageFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the field name to contain logs.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MessageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.MessageKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Multiline start regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the null value pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) NullValuePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.NullValuePattern
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Type of fluent parser.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.ParserType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Grok pattern object.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+		return v.Patterns
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput)
+}
+
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput)
+}
+
+// (Updatable) RFC 5424 time format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Syslog parser type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) SyslogParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.SyslogParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeoutInMilliseconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *int {
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput)
+}
+
+// (Updatable) CSV delimiter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Delimiter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Delimiter
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Regex pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Expression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Expression
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) First line pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) FormatFirstline() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FormatFirstline
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Mutiline pattern format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Grok failure key.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) GrokFailureKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GrokFailureKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok name key.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) GrokNameKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GrokNameKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsEstimateCurrentEvent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If you don't need stream or logtag fields, set this to false.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsMergeCriFields() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMergeCriFields
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, an empty string field is replaced with a null value.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsNullEmptyString() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsNullEmptyString
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsSupportColonlessIdent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) IsWithPriority() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsWithPriority
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) CSV keys.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Syslog message format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) MessageFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MessageFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the field name to contain logs.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) MessageKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MessageKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Multiline start regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) MultiLineStartRegexp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) NestedParser() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		if v == nil {
+			return nil
+		}
+		return v.NestedParser
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the null value pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) NullValuePattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NullValuePattern
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Type of fluent parser.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) ParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Grok pattern object.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Patterns() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+		if v == nil {
+			return nil
+		}
+		return v.Patterns
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput)
+}
+
+// (Updatable) record section of openmetrics parser.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) RecordInput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		if v == nil {
+			return nil
+		}
+		return v.RecordInput
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput)
+}
+
+// (Updatable) RFC 5424 time format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Rfc5424timeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Syslog parser type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) SyslogParserType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SyslogParserType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) TimeoutInMilliseconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+//
+// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+//
+// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+//
+// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey *bool `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested *bool `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator *string `pulumi:"separator"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat *string `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType *string `pulumi:"timeType"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs struct {
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolPtrInput `pulumi:"isKeepTimeKey"`
+	// (Updatable) If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolPtrInput `pulumi:"parseNested"`
+	// (Updatable) Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringPtrInput `pulumi:"separator"`
+	// (Updatable) Process time value using the specified format.
+	TimeFormat pulumi.StringPtrInput `pulumi:"timeFormat"`
+	// (Updatable) JSON parser time type.
+	TimeType pulumi.StringPtrInput `pulumi:"timeType"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput).ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs, UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtr and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrType UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs
+
+func UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtr(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *bool {
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If true, keep the time field in the record.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) IsKeepTimeKey() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) If true, a separator parameter can be further defined.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) ParseNested() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ParseNested
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Keys of adjacent levels are joined by the separator.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) Separator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Separator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Process time value using the specified format.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) TimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) JSON parser time type.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput) TimeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern struct {
+	// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat *string `pulumi:"fieldTimeFormat"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey *string `pulumi:"fieldTimeKey"`
+	// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone *string `pulumi:"fieldTimeZone"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name *string `pulumi:"name"`
+	// (Updatable) The Grok pattern.
+	Pattern *string `pulumi:"pattern"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs struct {
+	// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat pulumi.StringPtrInput `pulumi:"fieldTimeFormat"`
+	// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringPtrInput `pulumi:"fieldTimeKey"`
+	// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone pulumi.StringPtrInput `pulumi:"fieldTimeZone"`
+	// (Updatable) The name key to tag this Grok pattern.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The Grok pattern.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return o
+}
+
+// (Updatable) Process value using the specified format. This is available only when timeType is a string.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeFormat() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) *string {
+		return v.FieldTimeFormat
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) *string {
+		return v.FieldTimeKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) *string {
+		return v.FieldTimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name key to tag this Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Grok pattern.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) *string {
+		return v.Pattern
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs struct {
+	// (Updatable) Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// (Updatable) Namespace to emit metrics.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Resource group to emit metrics.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput)
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput).ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(ctx)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs, UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtr and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput` via:
+//
+//	        UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{...}
+//
+//	or:
+//
+//	        nil
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput
+}
+
+type unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrType UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs
+
+func UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtr(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput {
+	return (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrType)(v)
+}
+
+func (*unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (i *unifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrType) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(context.Background())
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		return &v
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) *string {
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) *string {
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) Elem() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		if v != nil {
+			return *v
+		}
+		var ret UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput
+		return ret
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput)
+}
+
+// (Updatable) Dimensions to be added for metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// (Updatable) Namespace to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource group to emit metrics.
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList struct {
+	// (Updatable) A new key
+	Key *string `pulumi:"key"`
+	// (Updatable) A new value
+	Value *string `pulumi:"value"`
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{...}
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs struct {
+	// (Updatable) A new key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) A new value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput)
+}
+
+// UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput values.
+// You can construct a concrete instance of `UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput` via:
+//
+//	UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray{ UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{...} }
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput interface {
+	pulumi.Input
+
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput
+	ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray []UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return i.ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(context.Background())
+}
+
+func (i UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return o
+}
+
+// (Updatable) A new key
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A new value
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput struct{ *pulumi.OutputState }
+
+func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ToUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(ctx context.Context) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o
+}
+
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) Index(i pulumi.IntInput) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList {
+		return vs[0].([]UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)[vs[1].(int)]
+	}).(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput)
 }
 
 type GetLogConfiguration struct {
@@ -4216,12 +9086,16 @@ func (o GetUnifiedAgentConfigurationGroupAssociationArrayOutput) Index(i pulumi.
 }
 
 type GetUnifiedAgentConfigurationServiceConfiguration struct {
+	// Unified Agent monitoring application configuration details.
+	ApplicationConfigurations []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration `pulumi:"applicationConfigurations"`
 	// Type of Unified Agent service configuration.
 	ConfigurationType string `pulumi:"configurationType"`
 	// Unified monitoring agent operational metrics destination object.
 	Destinations []GetUnifiedAgentConfigurationServiceConfigurationDestination `pulumi:"destinations"`
 	// Logging source object.
 	Sources []GetUnifiedAgentConfigurationServiceConfigurationSource `pulumi:"sources"`
+	// Logging filter object.
+	UnifiedAgentConfigurationFilters []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter `pulumi:"unifiedAgentConfigurationFilters"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationArgs and GetUnifiedAgentConfigurationServiceConfigurationOutput values.
@@ -4236,12 +9110,16 @@ type GetUnifiedAgentConfigurationServiceConfigurationInput interface {
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationArgs struct {
+	// Unified Agent monitoring application configuration details.
+	ApplicationConfigurations GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput `pulumi:"applicationConfigurations"`
 	// Type of Unified Agent service configuration.
 	ConfigurationType pulumi.StringInput `pulumi:"configurationType"`
 	// Unified monitoring agent operational metrics destination object.
 	Destinations GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput `pulumi:"destinations"`
 	// Logging source object.
 	Sources GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput `pulumi:"sources"`
+	// Logging filter object.
+	UnifiedAgentConfigurationFilters GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput `pulumi:"unifiedAgentConfigurationFilters"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationArgs) ElementType() reflect.Type {
@@ -4295,6 +9173,13 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ToGetUnifiedAgen
 	return o
 }
 
+// Unified Agent monitoring application configuration details.
+func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ApplicationConfigurations() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+		return v.ApplicationConfigurations
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput)
+}
+
 // Type of Unified Agent service configuration.
 func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) ConfigurationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfiguration) string { return v.ConfigurationType }).(pulumi.StringOutput)
@@ -4312,6 +9197,13 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) Sources() GetUni
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationSource {
 		return v.Sources
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput)
+}
+
+// Logging filter object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationOutput) UnifiedAgentConfigurationFilters() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+		return v.UnifiedAgentConfigurationFilters
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationArrayOutput struct{ *pulumi.OutputState }
@@ -4332,6 +9224,1578 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfiguration {
 		return vs[0].([]GetUnifiedAgentConfigurationServiceConfiguration)[vs[1].(int)]
 	}).(GetUnifiedAgentConfigurationServiceConfigurationOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration struct {
+	// Unified monitoring agent operational metrics destination object.
+	Destinations []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination `pulumi:"destinations"`
+	// Unified monitoring agent operational metrics source object.
+	Source []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource `pulumi:"source"`
+	// Unified schema logging source type.
+	SourceType string `pulumi:"sourceType"`
+	// Logging source object.
+	Sources []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource `pulumi:"sources"`
+	// Logging filter object.
+	UnifiedAgentConfigurationFilters []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter `pulumi:"unifiedAgentConfigurationFilters"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs struct {
+	// Unified monitoring agent operational metrics destination object.
+	Destinations GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayInput `pulumi:"destinations"`
+	// Unified monitoring agent operational metrics source object.
+	Source GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput `pulumi:"source"`
+	// Unified schema logging source type.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// Logging source object.
+	Sources GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput `pulumi:"sources"`
+	// Logging filter object.
+	UnifiedAgentConfigurationFilters GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayInput `pulumi:"unifiedAgentConfigurationFilters"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return o
+}
+
+// Unified monitoring agent operational metrics destination object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Destinations() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination {
+		return v.Destinations
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput)
+}
+
+// Unified monitoring agent operational metrics source object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Source() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return v.Source
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput)
+}
+
+// Unified schema logging source type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+// Logging source object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) Sources() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return v.Sources
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput)
+}
+
+// Logging filter object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput) UnifiedAgentConfigurationFilters() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+		return v.UnifiedAgentConfigurationFilters
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination struct {
+	// The OCID of the compartment that the resource belongs to.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Namespace to which metrics will be emitted.
+	MetricsNamespace string `pulumi:"metricsNamespace"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs struct {
+	// The OCID of the compartment that the resource belongs to.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Namespace to which metrics will be emitted.
+	MetricsNamespace pulumi.StringInput `pulumi:"metricsNamespace"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return o
+}
+
+// The OCID of the compartment that the resource belongs to.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Namespace to which metrics will be emitted.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput) MetricsNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination) string {
+		return v.MetricsNamespace
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource struct {
+	// Advanced options for logging configuration
+	AdvancedOptions []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption `pulumi:"advancedOptions"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// Source parser object.
+	Parsers []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser `pulumi:"parsers"`
+	// Absolute paths for log source files. Wildcards can be used.
+	Paths []string `pulumi:"paths"`
+	// Unified schema logging source type.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs struct {
+	// Advanced options for logging configuration
+	AdvancedOptions GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayInput `pulumi:"advancedOptions"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Source parser object.
+	Parsers GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayInput `pulumi:"parsers"`
+	// Absolute paths for log source files. Wildcards can be used.
+	Paths pulumi.StringArrayInput `pulumi:"paths"`
+	// Unified schema logging source type.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return o
+}
+
+// Advanced options for logging configuration
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) AdvancedOptions() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption {
+		return v.AdvancedOptions
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Source parser object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Parsers() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		return v.Parsers
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput)
+}
+
+// Absolute paths for log source files. Wildcards can be used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) Paths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) []string {
+		return v.Paths
+	}).(pulumi.StringArrayOutput)
+}
+
+// Unified schema logging source type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption struct {
+	// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead bool `pulumi:"isReadFromHead"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs struct {
+	// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead pulumi.BoolInput `pulumi:"isReadFromHead"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput {
+	return o
+}
+
+// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput) IsReadFromHead() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption) bool {
+		return v.IsReadFromHead
+	}).(pulumi.BoolOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOption)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser struct {
+	// CSV delimiter.
+	Delimiter string `pulumi:"delimiter"`
+	// Regex pattern.
+	Expression string `pulumi:"expression"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline string `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats []string `pulumi:"formats"`
+	// Grok failure key.
+	GrokFailureKey string `pulumi:"grokFailureKey"`
+	// Grok name key.
+	GrokNameKey string `pulumi:"grokNameKey"`
+	// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent bool `pulumi:"isEstimateCurrentEvent"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields bool `pulumi:"isMergeCriFields"`
+	// If true, an empty string field is replaced with a null value.
+	IsNullEmptyString bool `pulumi:"isNullEmptyString"`
+	// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent bool `pulumi:"isSupportColonlessIdent"`
+	// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority bool `pulumi:"isWithPriority"`
+	// CSV keys.
+	Keys []string `pulumi:"keys"`
+	// Syslog message format.
+	MessageFormat string `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey string `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp string `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser `pulumi:"nestedParsers"`
+	// Specify the null value pattern.
+	NullValuePattern string `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
+	// Type of fluent parser.
+	ParserType string `pulumi:"parserType"`
+	// Grok pattern object.
+	Patterns []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput `pulumi:"recordInputs"`
+	// RFC 5424 time format.
+	Rfc5424timeFormat string `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
+	// Syslog parser type.
+	SyslogParserType string `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType string `pulumi:"timeType"`
+	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	Types map[string]interface{} `pulumi:"types"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs struct {
+	// CSV delimiter.
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Regex pattern.
+	Expression pulumi.StringInput `pulumi:"expression"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline pulumi.StringInput `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats pulumi.StringArrayInput `pulumi:"formats"`
+	// Grok failure key.
+	GrokFailureKey pulumi.StringInput `pulumi:"grokFailureKey"`
+	// Grok name key.
+	GrokNameKey pulumi.StringInput `pulumi:"grokNameKey"`
+	// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent pulumi.BoolInput `pulumi:"isEstimateCurrentEvent"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields pulumi.BoolInput `pulumi:"isMergeCriFields"`
+	// If true, an empty string field is replaced with a null value.
+	IsNullEmptyString pulumi.BoolInput `pulumi:"isNullEmptyString"`
+	// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent pulumi.BoolInput `pulumi:"isSupportColonlessIdent"`
+	// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority pulumi.BoolInput `pulumi:"isWithPriority"`
+	// CSV keys.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Syslog message format.
+	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey pulumi.StringInput `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp pulumi.StringInput `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayInput `pulumi:"nestedParsers"`
+	// Specify the null value pattern.
+	NullValuePattern pulumi.StringInput `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
+	// Type of fluent parser.
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+	// Grok pattern object.
+	Patterns GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayInput `pulumi:"recordInputs"`
+	// RFC 5424 time format.
+	Rfc5424timeFormat pulumi.StringInput `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
+	// Syslog parser type.
+	SyslogParserType pulumi.StringInput `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
+	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	Types pulumi.MapInput `pulumi:"types"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return o
+}
+
+// CSV delimiter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.Delimiter
+	}).(pulumi.StringOutput)
+}
+
+// Regex pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.Expression
+	}).(pulumi.StringOutput)
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// First line pattern format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) FormatFirstline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.FormatFirstline
+	}).(pulumi.StringOutput)
+}
+
+// Mutiline pattern format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// Grok failure key.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) GrokFailureKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.GrokFailureKey
+	}).(pulumi.StringOutput)
+}
+
+// Grok name key.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) GrokNameKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.GrokNameKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsEstimateCurrentEvent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolOutput)
+}
+
+// If true, keep the time field in the record.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsKeepTimeKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolOutput)
+}
+
+// If you don't need stream or logtag fields, set this to false.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsMergeCriFields() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsMergeCriFields
+	}).(pulumi.BoolOutput)
+}
+
+// If true, an empty string field is replaced with a null value.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsNullEmptyString() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsNullEmptyString
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsSupportColonlessIdent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) IsWithPriority() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.IsWithPriority
+	}).(pulumi.BoolOutput)
+}
+
+// CSV keys.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []string {
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// Syslog message format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MessageFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.MessageFormat
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the field name to contain logs.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MessageKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.MessageKey
+	}).(pulumi.StringOutput)
+}
+
+// Multiline start regexp pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) MultiLineStartRegexp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringOutput)
+}
+
+// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) NestedParsers() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		return v.NestedParsers
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput)
+}
+
+// Specify the null value pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) NullValuePattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.NullValuePattern
+	}).(pulumi.StringOutput)
+}
+
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) bool {
+		return v.ParseNested
+	}).(pulumi.BoolOutput)
+}
+
+// Type of fluent parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) ParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.ParserType
+	}).(pulumi.StringOutput)
+}
+
+// Grok pattern object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Patterns() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+		return v.Patterns
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput)
+}
+
+// record section of openmetrics parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) RecordInputs() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		return v.RecordInputs
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput)
+}
+
+// RFC 5424 time format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.Separator
+	}).(pulumi.StringOutput)
+}
+
+// Syslog parser type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) SyslogParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.SyslogParserType
+	}).(pulumi.StringOutput)
+}
+
+// Process time value using the specified format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.TimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// JSON parser time type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) string {
+		return v.TimeType
+	}).(pulumi.StringOutput)
+}
+
+// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) TimeoutInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) int {
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntOutput)
+}
+
+// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType string `pulumi:"timeType"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return o
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, keep the time field in the record.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolOutput)
+}
+
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) bool {
+		return v.ParseNested
+	}).(pulumi.BoolOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) string {
+		return v.Separator
+	}).(pulumi.StringOutput)
+}
+
+// Process time value using the specified format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) string {
+		return v.TimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// JSON parser time type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput) TimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser) string {
+		return v.TimeType
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern struct {
+	// Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat string `pulumi:"fieldTimeFormat"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone string `pulumi:"fieldTimeZone"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// The Grok pattern.
+	Pattern string `pulumi:"pattern"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs struct {
+	// Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat pulumi.StringInput `pulumi:"fieldTimeFormat"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone pulumi.StringInput `pulumi:"fieldTimeZone"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The Grok pattern.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return o
+}
+
+// Process value using the specified format. This is available only when timeType is a string.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) string {
+		return v.FieldTimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) FieldTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) string {
+		return v.FieldTimeZone
+	}).(pulumi.StringOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern) string {
+		return v.Pattern
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput struct {
+	// Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace string `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup string `pulumi:"resourceGroup"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs struct {
+	// Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+// Dimensions to be added for metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// Namespace to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Resource group to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget struct {
+	// K8s namespace of the resource.
+	K8sNamespace string `pulumi:"k8sNamespace"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// Resource group to emit metrics.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Type of resource to scrape metrics.
+	ResourceType string `pulumi:"resourceType"`
+	// Name of the service prepended to the endpoints.
+	ServiceName string `pulumi:"serviceName"`
+	// URL from which the metrics are fetched.
+	Url string `pulumi:"url"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs struct {
+	// K8s namespace of the resource.
+	K8sNamespace pulumi.StringInput `pulumi:"k8sNamespace"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Resource group to emit metrics.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Type of resource to scrape metrics.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Name of the service prepended to the endpoints.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// URL from which the metrics are fetched.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput {
+	return o
+}
+
+// K8s namespace of the resource.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) K8sNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.K8sNamespace
+	}).(pulumi.StringOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Resource group to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Type of resource to scrape metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// Name of the service prepended to the endpoints.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// URL from which the metrics are fetched.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTarget) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter struct {
+	// A list of filtering rules to include logs
+	AllowLists []string `pulumi:"allowLists"`
+	// A list of filtering rules to reject logs
+	DenyLists []string `pulumi:"denyLists"`
+	// Unified schema logging filter type.
+	FilterType string `pulumi:"filterType"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs struct {
+	// A list of filtering rules to include logs
+	AllowLists pulumi.StringArrayInput `pulumi:"allowLists"`
+	// A list of filtering rules to reject logs
+	DenyLists pulumi.StringArrayInput `pulumi:"denyLists"`
+	// Unified schema logging filter type.
+	FilterType pulumi.StringInput `pulumi:"filterType"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray{ GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray []GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+// A list of filtering rules to include logs
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) AllowLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.AllowLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// A list of filtering rules to reject logs
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) DenyLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.DenyLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// Unified schema logging filter type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) FilterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.FilterType
+	}).(pulumi.StringOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationDestination struct {
@@ -4654,7 +11118,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMe
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource struct {
 	// List of unified monitoring agent operational metrics.
 	Metrics []string `pulumi:"metrics"`
-	// Record section of OperationalMetricsSource object.
+	// record section of openmetrics parser.
 	RecordInputs []GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput `pulumi:"recordInputs"`
 	// Type of the unified monitoring agent operational metrics source object.
 	Type string `pulumi:"type"`
@@ -4674,7 +11138,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs struct {
 	// List of unified monitoring agent operational metrics.
 	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
-	// Record section of OperationalMetricsSource object.
+	// record section of openmetrics parser.
 	RecordInputs GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArrayInput `pulumi:"recordInputs"`
 	// Type of the unified monitoring agent operational metrics source object.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -4738,7 +11202,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMe
 	}).(pulumi.StringArrayOutput)
 }
 
-// Record section of OperationalMetricsSource object.
+// record section of openmetrics parser.
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceOutput) RecordInputs() GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource) []GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
 		return v.RecordInputs
@@ -4773,9 +11237,9 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMe
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput struct {
-	// Namespace to emit the operational metrics.
+	// Namespace to emit metrics.
 	Namespace string `pulumi:"namespace"`
-	// Resource group to emit the operational metrics.
+	// Resource group to emit metrics.
 	ResourceGroup string `pulumi:"resourceGroup"`
 }
 
@@ -4791,9 +11255,9 @@ type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetri
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs struct {
-	// Namespace to emit the operational metrics.
+	// Namespace to emit metrics.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Resource group to emit the operational metrics.
+	// Resource group to emit metrics.
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
 }
 
@@ -4848,14 +11312,14 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMe
 	return o
 }
 
-// Namespace to emit the operational metrics.
+// Namespace to emit metrics.
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) string {
 		return v.Namespace
 	}).(pulumi.StringOutput)
 }
 
-// Resource group to emit the operational metrics.
+// Resource group to emit metrics.
 func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput) string {
 		return v.ResourceGroup
@@ -4883,8 +11347,12 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMe
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSource struct {
+	// Advanced options for logging configuration
+	AdvancedOptions []GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption `pulumi:"advancedOptions"`
 	// Windows event log channels.
 	Channels []string `pulumi:"channels"`
+	// User customized source plugin.
+	CustomPlugin string `pulumi:"customPlugin"`
 	// The name key to tag this Grok pattern.
 	Name string `pulumi:"name"`
 	// Source parser object.
@@ -4907,8 +11375,12 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceInput interface {
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceArgs struct {
+	// Advanced options for logging configuration
+	AdvancedOptions GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayInput `pulumi:"advancedOptions"`
 	// Windows event log channels.
 	Channels pulumi.StringArrayInput `pulumi:"channels"`
+	// User customized source plugin.
+	CustomPlugin pulumi.StringInput `pulumi:"customPlugin"`
 	// The name key to tag this Grok pattern.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Source parser object.
@@ -4970,9 +11442,21 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) ToGetUnifi
 	return o
 }
 
+// Advanced options for logging configuration
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) AdvancedOptions() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSource) []GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption {
+		return v.AdvancedOptions
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput)
+}
+
 // Windows event log channels.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) Channels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSource) []string { return v.Channels }).(pulumi.StringArrayOutput)
+}
+
+// User customized source plugin.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceOutput) CustomPlugin() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSource) string { return v.CustomPlugin }).(pulumi.StringOutput)
 }
 
 // The name key to tag this Grok pattern.
@@ -5017,6 +11501,105 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput) Index
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceOutput)
 }
 
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption struct {
+	// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead bool `pulumi:"isReadFromHead"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs struct {
+	// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+	IsReadFromHead pulumi.BoolInput `pulumi:"isReadFromHead"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray and GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray []GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput {
+	return o
+}
+
+// Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput) IsReadFromHead() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption) bool {
+		return v.IsReadFromHead
+	}).(pulumi.BoolOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOption)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput)
+}
+
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 	// CSV delimiter.
 	Delimiter string `pulumi:"delimiter"`
@@ -5056,12 +11639,18 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 	NestedParsers []GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser `pulumi:"nestedParsers"`
 	// Specify the null value pattern.
 	NullValuePattern string `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
 	// Type of fluent parser.
 	ParserType string `pulumi:"parserType"`
 	// Grok pattern object.
 	Patterns []GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs []GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput `pulumi:"recordInputs"`
 	// RFC 5424 time format.
 	Rfc5424timeFormat string `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
 	// Syslog parser type.
 	SyslogParserType string `pulumi:"syslogParserType"`
 	// Process time value using the specified format.
@@ -5124,12 +11713,18 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
 	NestedParsers GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput `pulumi:"nestedParsers"`
 	// Specify the null value pattern.
 	NullValuePattern pulumi.StringInput `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
 	// Type of fluent parser.
 	ParserType pulumi.StringInput `pulumi:"parserType"`
 	// Grok pattern object.
 	Patterns GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayInput `pulumi:"recordInputs"`
 	// RFC 5424 time format.
 	Rfc5424timeFormat pulumi.StringInput `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
 	// Syslog parser type.
 	SyslogParserType pulumi.StringInput `pulumi:"syslogParserType"`
 	// Process time value using the specified format.
@@ -5296,6 +11891,11 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Null
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.NullValuePattern }).(pulumi.StringOutput)
 }
 
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) bool { return v.ParseNested }).(pulumi.BoolOutput)
+}
+
 // Type of fluent parser.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) ParserType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.ParserType }).(pulumi.StringOutput)
@@ -5308,11 +11908,23 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Patt
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput)
 }
 
+// record section of openmetrics parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) RecordInputs() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) []GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		return v.RecordInputs
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput)
+}
+
 // RFC 5424 time format.
 func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Rfc5424timeFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string {
 		return v.Rfc5424timeFormat
 	}).(pulumi.StringOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) string { return v.Separator }).(pulumi.StringOutput)
 }
 
 // Syslog parser type.
@@ -5369,6 +11981,10 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser st
 	FieldTimeKey string `pulumi:"fieldTimeKey"`
 	// If true, keep the time field in the record.
 	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
 	// Process time value using the specified format.
 	TimeFormat string `pulumi:"timeFormat"`
 	// JSON parser time type.
@@ -5391,6 +12007,10 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArg
 	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
 	// If true, keep the time field in the record.
 	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
 	// Process time value using the specified format.
 	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
 	// JSON parser time type.
@@ -5460,6 +12080,20 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser
 	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) bool {
 		return v.IsKeepTimeKey
 	}).(pulumi.BoolOutput)
+}
+
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) bool {
+		return v.ParseNested
+	}).(pulumi.BoolOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser) string {
+		return v.Separator
+	}).(pulumi.StringOutput)
 }
 
 // Process time value using the specified format.
@@ -5633,6 +12267,1744 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
 		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern)[vs[1].(int)]
 	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput struct {
+	// Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace string `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup string `pulumi:"resourceGroup"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs struct {
+	// Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray and GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray{ GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray []GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return o
+}
+
+// Dimensions to be added for metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// Namespace to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Resource group to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter struct {
+	// A list of filtering rules to include logs
+	AllowLists []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList `pulumi:"allowLists"`
+	// Type of the custom filter
+	CustomFilterType string `pulumi:"customFilterType"`
+	// List of custom sections in custom filter
+	CustomSections []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection `pulumi:"customSections"`
+	// A list of filtering rules to reject logs
+	DenyLists []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList `pulumi:"denyLists"`
+	// If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+	EmitInvalidRecordToError bool `pulumi:"emitInvalidRecordToError"`
+	// Unified schema logging filter type.
+	FilterType string `pulumi:"filterType"`
+	// Store the parsed values as a hash value in a field.
+	HashValueField string `pulumi:"hashValueField"`
+	// Store the parsed values with the specified key name prefix.
+	InjectKeyPrefix string `pulumi:"injectKeyPrefix"`
+	// If true, automatically casts the field types.
+	IsAutoTypecastEnabled bool `pulumi:"isAutoTypecastEnabled"`
+	// If true, it modifies a new empty hash
+	IsRenewRecordEnabled bool `pulumi:"isRenewRecordEnabled"`
+	// When set to true, the full Ruby syntax is enabled in the ${} expression.
+	IsRubyEnabled bool `pulumi:"isRubyEnabled"`
+	// A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+	KeepKeys []string `pulumi:"keepKeys"`
+	// The field name in the record to parse.
+	KeyName string `pulumi:"keyName"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// Parameters of the custom filter
+	Params map[string]interface{} `pulumi:"params"`
+	// Source parser object.
+	Parsers []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser `pulumi:"parsers"`
+	// Add new key-value pairs in logs
+	RecordLists []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList `pulumi:"recordLists"`
+	// If true, remove the keyName field when parsing is succeeded.
+	RemoveKeyNameField bool `pulumi:"removeKeyNameField"`
+	// A list of keys to delete
+	RemoveKeys []string `pulumi:"removeKeys"`
+	// Overwrites the time of logs with this value, this value must be a Unix timestamp.
+	RenewTimeKey string `pulumi:"renewTimeKey"`
+	// If true, the invalid string is replaced with safe characters and is re-parsed.
+	ReplaceInvalidSequence bool `pulumi:"replaceInvalidSequence"`
+	// If true, keep the original key-value pair in the parsed result.
+	ReserveData bool `pulumi:"reserveData"`
+	// If true, keep the original event time in the parsed result.
+	ReserveTime bool `pulumi:"reserveTime"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs struct {
+	// A list of filtering rules to include logs
+	AllowLists GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput `pulumi:"allowLists"`
+	// Type of the custom filter
+	CustomFilterType pulumi.StringInput `pulumi:"customFilterType"`
+	// List of custom sections in custom filter
+	CustomSections GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput `pulumi:"customSections"`
+	// A list of filtering rules to reject logs
+	DenyLists GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput `pulumi:"denyLists"`
+	// If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+	EmitInvalidRecordToError pulumi.BoolInput `pulumi:"emitInvalidRecordToError"`
+	// Unified schema logging filter type.
+	FilterType pulumi.StringInput `pulumi:"filterType"`
+	// Store the parsed values as a hash value in a field.
+	HashValueField pulumi.StringInput `pulumi:"hashValueField"`
+	// Store the parsed values with the specified key name prefix.
+	InjectKeyPrefix pulumi.StringInput `pulumi:"injectKeyPrefix"`
+	// If true, automatically casts the field types.
+	IsAutoTypecastEnabled pulumi.BoolInput `pulumi:"isAutoTypecastEnabled"`
+	// If true, it modifies a new empty hash
+	IsRenewRecordEnabled pulumi.BoolInput `pulumi:"isRenewRecordEnabled"`
+	// When set to true, the full Ruby syntax is enabled in the ${} expression.
+	IsRubyEnabled pulumi.BoolInput `pulumi:"isRubyEnabled"`
+	// A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+	KeepKeys pulumi.StringArrayInput `pulumi:"keepKeys"`
+	// The field name in the record to parse.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Parameters of the custom filter
+	Params pulumi.MapInput `pulumi:"params"`
+	// Source parser object.
+	Parsers GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput `pulumi:"parsers"`
+	// Add new key-value pairs in logs
+	RecordLists GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput `pulumi:"recordLists"`
+	// If true, remove the keyName field when parsing is succeeded.
+	RemoveKeyNameField pulumi.BoolInput `pulumi:"removeKeyNameField"`
+	// A list of keys to delete
+	RemoveKeys pulumi.StringArrayInput `pulumi:"removeKeys"`
+	// Overwrites the time of logs with this value, this value must be a Unix timestamp.
+	RenewTimeKey pulumi.StringInput `pulumi:"renewTimeKey"`
+	// If true, the invalid string is replaced with safe characters and is re-parsed.
+	ReplaceInvalidSequence pulumi.BoolInput `pulumi:"replaceInvalidSequence"`
+	// If true, keep the original key-value pair in the parsed result.
+	ReserveData pulumi.BoolInput `pulumi:"reserveData"`
+	// If true, keep the original event time in the parsed result.
+	ReserveTime pulumi.BoolInput `pulumi:"reserveTime"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return o
+}
+
+// A list of filtering rules to include logs
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) AllowLists() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
+		return v.AllowLists
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput)
+}
+
+// Type of the custom filter
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) CustomFilterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.CustomFilterType
+	}).(pulumi.StringOutput)
+}
+
+// List of custom sections in custom filter
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) CustomSections() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
+		return v.CustomSections
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput)
+}
+
+// A list of filtering rules to reject logs
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) DenyLists() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
+		return v.DenyLists
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput)
+}
+
+// If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) EmitInvalidRecordToError() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.EmitInvalidRecordToError
+	}).(pulumi.BoolOutput)
+}
+
+// Unified schema logging filter type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) FilterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.FilterType
+	}).(pulumi.StringOutput)
+}
+
+// Store the parsed values as a hash value in a field.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) HashValueField() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.HashValueField
+	}).(pulumi.StringOutput)
+}
+
+// Store the parsed values with the specified key name prefix.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) InjectKeyPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.InjectKeyPrefix
+	}).(pulumi.StringOutput)
+}
+
+// If true, automatically casts the field types.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsAutoTypecastEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.IsAutoTypecastEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// If true, it modifies a new empty hash
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsRenewRecordEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.IsRenewRecordEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// When set to true, the full Ruby syntax is enabled in the ${} expression.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) IsRubyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.IsRubyEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) KeepKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.KeepKeys
+	}).(pulumi.StringArrayOutput)
+}
+
+// The field name in the record to parse.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Parameters of the custom filter
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]interface{} {
+		return v.Params
+	}).(pulumi.MapOutput)
+}
+
+// Source parser object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Parsers() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+		return v.Parsers
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput)
+}
+
+// Add new key-value pairs in logs
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RecordLists() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList {
+		return v.RecordLists
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput)
+}
+
+// If true, remove the keyName field when parsing is succeeded.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RemoveKeyNameField() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.RemoveKeyNameField
+	}).(pulumi.BoolOutput)
+}
+
+// A list of keys to delete
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RemoveKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) []string {
+		return v.RemoveKeys
+	}).(pulumi.StringArrayOutput)
+}
+
+// Overwrites the time of logs with this value, this value must be a Unix timestamp.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) RenewTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) string {
+		return v.RenewTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, the invalid string is replaced with safe characters and is re-parsed.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReplaceInvalidSequence() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.ReplaceInvalidSequence
+	}).(pulumi.BoolOutput)
+}
+
+// If true, keep the original key-value pair in the parsed result.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReserveData() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.ReserveData
+	}).(pulumi.BoolOutput)
+}
+
+// If true, keep the original event time in the parsed result.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) ReserveTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) bool {
+		return v.ReserveTime
+	}).(pulumi.BoolOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList struct {
+	// A new key
+	Key string `pulumi:"key"`
+	// The Grok pattern.
+	Pattern string `pulumi:"pattern"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs struct {
+	// A new key
+	Key pulumi.StringInput `pulumi:"key"`
+	// The Grok pattern.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return o
+}
+
+// A new key
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList) string {
+		return v.Pattern
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection struct {
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// Parameters of the custom filter
+	Params map[string]interface{} `pulumi:"params"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs struct {
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Parameters of the custom filter
+	Params pulumi.MapInput `pulumi:"params"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return o
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Parameters of the custom filter
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]interface{} {
+		return v.Params
+	}).(pulumi.MapOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList struct {
+	// A new key
+	Key string `pulumi:"key"`
+	// The Grok pattern.
+	Pattern string `pulumi:"pattern"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs struct {
+	// A new key
+	Key pulumi.StringInput `pulumi:"key"`
+	// The Grok pattern.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return o
+}
+
+// A new key
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList) string {
+		return v.Pattern
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser struct {
+	// CSV delimiter.
+	Delimiter string `pulumi:"delimiter"`
+	// Regex pattern.
+	Expression string `pulumi:"expression"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline string `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats []string `pulumi:"formats"`
+	// Grok failure key.
+	GrokFailureKey string `pulumi:"grokFailureKey"`
+	// Grok name key.
+	GrokNameKey string `pulumi:"grokNameKey"`
+	// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent bool `pulumi:"isEstimateCurrentEvent"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields bool `pulumi:"isMergeCriFields"`
+	// If true, an empty string field is replaced with a null value.
+	IsNullEmptyString bool `pulumi:"isNullEmptyString"`
+	// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent bool `pulumi:"isSupportColonlessIdent"`
+	// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority bool `pulumi:"isWithPriority"`
+	// CSV keys.
+	Keys []string `pulumi:"keys"`
+	// Syslog message format.
+	MessageFormat string `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey string `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp string `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser `pulumi:"nestedParsers"`
+	// Specify the null value pattern.
+	NullValuePattern string `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
+	// Type of fluent parser.
+	ParserType string `pulumi:"parserType"`
+	// Grok pattern object.
+	Patterns []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput `pulumi:"recordInputs"`
+	// RFC 5424 time format.
+	Rfc5424timeFormat string `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
+	// Syslog parser type.
+	SyslogParserType string `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType string `pulumi:"timeType"`
+	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	Types map[string]interface{} `pulumi:"types"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs struct {
+	// CSV delimiter.
+	Delimiter pulumi.StringInput `pulumi:"delimiter"`
+	// Regex pattern.
+	Expression pulumi.StringInput `pulumi:"expression"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// First line pattern format.
+	FormatFirstline pulumi.StringInput `pulumi:"formatFirstline"`
+	// Mutiline pattern format.
+	Formats pulumi.StringArrayInput `pulumi:"formats"`
+	// Grok failure key.
+	GrokFailureKey pulumi.StringInput `pulumi:"grokFailureKey"`
+	// Grok name key.
+	GrokNameKey pulumi.StringInput `pulumi:"grokNameKey"`
+	// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+	IsEstimateCurrentEvent pulumi.BoolInput `pulumi:"isEstimateCurrentEvent"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If you don't need stream or logtag fields, set this to false.
+	IsMergeCriFields pulumi.BoolInput `pulumi:"isMergeCriFields"`
+	// If true, an empty string field is replaced with a null value.
+	IsNullEmptyString pulumi.BoolInput `pulumi:"isNullEmptyString"`
+	// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+	IsSupportColonlessIdent pulumi.BoolInput `pulumi:"isSupportColonlessIdent"`
+	// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+	IsWithPriority pulumi.BoolInput `pulumi:"isWithPriority"`
+	// CSV keys.
+	Keys pulumi.StringArrayInput `pulumi:"keys"`
+	// Syslog message format.
+	MessageFormat pulumi.StringInput `pulumi:"messageFormat"`
+	// Specifies the field name to contain logs.
+	MessageKey pulumi.StringInput `pulumi:"messageKey"`
+	// Multiline start regexp pattern.
+	MultiLineStartRegexp pulumi.StringInput `pulumi:"multiLineStartRegexp"`
+	// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+	NestedParsers GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayInput `pulumi:"nestedParsers"`
+	// Specify the null value pattern.
+	NullValuePattern pulumi.StringInput `pulumi:"nullValuePattern"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
+	// Type of fluent parser.
+	ParserType pulumi.StringInput `pulumi:"parserType"`
+	// Grok pattern object.
+	Patterns GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput `pulumi:"patterns"`
+	// record section of openmetrics parser.
+	RecordInputs GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayInput `pulumi:"recordInputs"`
+	// RFC 5424 time format.
+	Rfc5424timeFormat pulumi.StringInput `pulumi:"rfc5424timeFormat"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
+	// Syslog parser type.
+	SyslogParserType pulumi.StringInput `pulumi:"syslogParserType"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
+	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
+	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+	Types pulumi.MapInput `pulumi:"types"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return o
+}
+
+// CSV delimiter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Delimiter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.Delimiter
+	}).(pulumi.StringOutput)
+}
+
+// Regex pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Expression() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.Expression
+	}).(pulumi.StringOutput)
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// First line pattern format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) FormatFirstline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.FormatFirstline
+	}).(pulumi.StringOutput)
+}
+
+// Mutiline pattern format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Formats() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		return v.Formats
+	}).(pulumi.StringArrayOutput)
+}
+
+// Grok failure key.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) GrokFailureKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.GrokFailureKey
+	}).(pulumi.StringOutput)
+}
+
+// Grok name key.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) GrokNameKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.GrokNameKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsEstimateCurrentEvent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsEstimateCurrentEvent
+	}).(pulumi.BoolOutput)
+}
+
+// If true, keep the time field in the record.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsKeepTimeKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolOutput)
+}
+
+// If you don't need stream or logtag fields, set this to false.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsMergeCriFields() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsMergeCriFields
+	}).(pulumi.BoolOutput)
+}
+
+// If true, an empty string field is replaced with a null value.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsNullEmptyString() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsNullEmptyString
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsSupportColonlessIdent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsSupportColonlessIdent
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) IsWithPriority() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.IsWithPriority
+	}).(pulumi.BoolOutput)
+}
+
+// CSV keys.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Keys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []string {
+		return v.Keys
+	}).(pulumi.StringArrayOutput)
+}
+
+// Syslog message format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MessageFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.MessageFormat
+	}).(pulumi.StringOutput)
+}
+
+// Specifies the field name to contain logs.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MessageKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.MessageKey
+	}).(pulumi.StringOutput)
+}
+
+// Multiline start regexp pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) MultiLineStartRegexp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.MultiLineStartRegexp
+	}).(pulumi.StringOutput)
+}
+
+// Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) NestedParsers() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		return v.NestedParsers
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput)
+}
+
+// Specify the null value pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) NullValuePattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.NullValuePattern
+	}).(pulumi.StringOutput)
+}
+
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) bool {
+		return v.ParseNested
+	}).(pulumi.BoolOutput)
+}
+
+// Type of fluent parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) ParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.ParserType
+	}).(pulumi.StringOutput)
+}
+
+// Grok pattern object.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Patterns() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+		return v.Patterns
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput)
+}
+
+// record section of openmetrics parser.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) RecordInputs() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		return v.RecordInputs
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput)
+}
+
+// RFC 5424 time format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Rfc5424timeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.Rfc5424timeFormat
+	}).(pulumi.StringOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.Separator
+	}).(pulumi.StringOutput)
+}
+
+// Syslog parser type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) SyslogParserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.SyslogParserType
+	}).(pulumi.StringOutput)
+}
+
+// Process time value using the specified format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.TimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// JSON parser time type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) string {
+		return v.TimeType
+	}).(pulumi.StringOutput)
+}
+
+// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) TimeoutInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) int {
+		return v.TimeoutInMilliseconds
+	}).(pulumi.IntOutput)
+}
+
+// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+		return v.Types
+	}).(pulumi.MapOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey bool `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested bool `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator string `pulumi:"separator"`
+	// Process time value using the specified format.
+	TimeFormat string `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType string `pulumi:"timeType"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs struct {
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// If true, keep the time field in the record.
+	IsKeepTimeKey pulumi.BoolInput `pulumi:"isKeepTimeKey"`
+	// If true, a separator parameter can be further defined.
+	ParseNested pulumi.BoolInput `pulumi:"parseNested"`
+	// Keys of adjacent levels are joined by the separator.
+	Separator pulumi.StringInput `pulumi:"separator"`
+	// Process time value using the specified format.
+	TimeFormat pulumi.StringInput `pulumi:"timeFormat"`
+	// JSON parser time type.
+	TimeType pulumi.StringInput `pulumi:"timeType"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return o
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// If true, keep the time field in the record.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) IsKeepTimeKey() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) bool {
+		return v.IsKeepTimeKey
+	}).(pulumi.BoolOutput)
+}
+
+// If true, a separator parameter can be further defined.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) ParseNested() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) bool {
+		return v.ParseNested
+	}).(pulumi.BoolOutput)
+}
+
+// Keys of adjacent levels are joined by the separator.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) Separator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) string {
+		return v.Separator
+	}).(pulumi.StringOutput)
+}
+
+// Process time value using the specified format.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) TimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) string {
+		return v.TimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// JSON parser time type.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput) TimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser) string {
+		return v.TimeType
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern struct {
+	// Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat string `pulumi:"fieldTimeFormat"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey string `pulumi:"fieldTimeKey"`
+	// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone string `pulumi:"fieldTimeZone"`
+	// The name key to tag this Grok pattern.
+	Name string `pulumi:"name"`
+	// The Grok pattern.
+	Pattern string `pulumi:"pattern"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs struct {
+	// Process value using the specified format. This is available only when timeType is a string.
+	FieldTimeFormat pulumi.StringInput `pulumi:"fieldTimeFormat"`
+	// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+	FieldTimeKey pulumi.StringInput `pulumi:"fieldTimeKey"`
+	// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+	FieldTimeZone pulumi.StringInput `pulumi:"fieldTimeZone"`
+	// The name key to tag this Grok pattern.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The Grok pattern.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return o
+}
+
+// Process value using the specified format. This is available only when timeType is a string.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) string {
+		return v.FieldTimeFormat
+	}).(pulumi.StringOutput)
+}
+
+// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) string {
+		return v.FieldTimeKey
+	}).(pulumi.StringOutput)
+}
+
+// Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) FieldTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) string {
+		return v.FieldTimeZone
+	}).(pulumi.StringOutput)
+}
+
+// The name key to tag this Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The Grok pattern.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern) string {
+		return v.Pattern
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput struct {
+	// Dimensions to be added for metrics.
+	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace string `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup string `pulumi:"resourceGroup"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs struct {
+	// Dimensions to be added for metrics.
+	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	// Namespace to emit metrics.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource group to emit metrics.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return o
+}
+
+// Dimensions to be added for metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.MapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+		return v.Dimensions
+	}).(pulumi.MapOutput)
+}
+
+// Namespace to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Resource group to emit metrics.
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList struct {
+	// A new key
+	Key string `pulumi:"key"`
+	// A new value
+	Value string `pulumi:"value"`
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{...}
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs struct {
+	// A new key
+	Key pulumi.StringInput `pulumi:"key"`
+	// A new value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput)
+}
+
+// GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput` via:
+//
+//	GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray{ GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{...} }
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput
+	ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return i.ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return o
+}
+
+// A new key
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// A new value
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)(nil)).Elem()
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput() GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) ToGetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutputWithContext(ctx context.Context) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput) Index(i pulumi.IntInput) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList {
+		return vs[0].([]GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList)[vs[1].(int)]
+	}).(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput)
 }
 
 type GetUnifiedAgentConfigurationsFilter struct {
@@ -6063,6 +14435,25 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationGroupAssociationPtrInput)(nil)).Elem(), UnifiedAgentConfigurationGroupAssociationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationDestinationInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationDestinationPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs{})
@@ -6075,12 +14466,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput)(nil)).Elem(), UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogConfigurationInput)(nil)).Elem(), GetLogConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogConfigurationArrayInput)(nil)).Elem(), GetLogConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogConfigurationSourceInput)(nil)).Elem(), GetLogConfigurationSourceArgs{})
@@ -6107,6 +14520,25 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationGroupAssociationArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationGroupAssociationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationDestinationInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationDestinationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs{})
@@ -6119,12 +14551,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationsFilterInput)(nil)).Elem(), GetUnifiedAgentConfigurationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationsFilterArrayInput)(nil)).Elem(), GetUnifiedAgentConfigurationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionInput)(nil)).Elem(), GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionArgs{})
@@ -6139,6 +14593,25 @@ func init() {
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationGroupAssociationPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourcePtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationDestinationOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationDestinationPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationOutput{})
@@ -6151,12 +14624,34 @@ func init() {
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserPtrOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput{})
 	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput{})
+	pulumi.RegisterOutputType(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput{})
 	pulumi.RegisterOutputType(GetLogConfigurationOutput{})
 	pulumi.RegisterOutputType(GetLogConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetLogConfigurationSourceOutput{})
@@ -6183,6 +14678,25 @@ func init() {
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationGroupAssociationArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceScrapeTargetOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationDestinationOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationDestinationArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationOutput{})
@@ -6195,12 +14709,34 @@ func init() {
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationsFilterOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionOutput{})

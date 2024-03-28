@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *         chartUrl: _var.deploy_artifact_deploy_artifact_source_chart_url,
  *         deployArtifactPath: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_path,
  *         deployArtifactVersion: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+ *         helmArtifactSourceType: _var.deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
  *         helmVerificationKeySource: {
  *             verificationKeySourceType: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
  *             currentPublicKey: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,

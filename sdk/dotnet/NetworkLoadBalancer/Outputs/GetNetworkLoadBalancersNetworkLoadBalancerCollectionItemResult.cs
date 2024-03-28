@@ -45,6 +45,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
         /// </summary>
         public readonly bool IsPrivate;
+        public readonly bool IsSymmetricHashEnabled;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -97,6 +98,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             bool isPrivate,
 
+            bool isSymmetricHashEnabled,
+
             string lifecycleDetails,
 
             ImmutableArray<string> networkSecurityGroupIds,
@@ -123,6 +126,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
             IpAddresses = ipAddresses;
             IsPreserveSourceDestination = isPreserveSourceDestination;
             IsPrivate = isPrivate;
+            IsSymmetricHashEnabled = isSymmetricHashEnabled;
             LifecycleDetails = lifecycleDetails;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             NlbIpVersion = nlbIpVersion;

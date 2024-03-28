@@ -17251,6 +17251,24 @@ export namespace DataIntegration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetWorkspaceTasksFilter {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetWorkspaceTasksFilterArgs {
+        /**
+         * Used to filter by the name of the object.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWorkspacesFilter {
         /**
          * Used to filter by the name of the object.
@@ -18635,6 +18653,1166 @@ export namespace DataIntegration {
          * (Updatable) The registry version.
          */
         registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskAuthConfig {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskAuthConfigParentRef>;
+        /**
+         * (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
+         */
+        resourcePrincipalSource?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskAuthConfigParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfig {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The REST method to use.
+         */
+        methodType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The headers for the REST call.
+         */
+        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues {
+        requestPayload?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload>;
+        requestUrl?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload {
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
+        dataParam?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskCancelRestCallConfigConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskConfigProviderDelegate {
+        /**
+         * bindings
+         */
+        bindings?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegateBinding>[]>;
+    }
+
+    export interface WorkspaceTaskConfigProviderDelegateBinding {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        parameterValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegateBindingParameterValues>;
+    }
+
+    export interface WorkspaceTaskConfigProviderDelegateBindingParameterValues {
+        /**
+         * (Updatable) The root object value, used in custom parameters.
+         */
+        rootObjectValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue>;
+        /**
+         * A simple value for the parameter.
+         */
+        simpleValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfig {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The REST method to use.
+         */
+        methodType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The headers for the REST call.
+         */
+        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues {
+        requestPayload?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload>;
+        requestUrl?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload {
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
+        dataParam?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskExecuteRestCallConfigConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskInputPort {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPortConfigValues>;
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) An array of fields.
+         */
+        fields?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPortParentRef>;
+        /**
+         * (Updatable) The port details for the data asset.Type.
+         */
+        portType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskInputPortConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPortConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPortConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskInputPortConfigValuesConfigParamValues {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object value, used in custom parameters.
+         */
+        rootObjectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskInputPortConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskInputPortParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskMetadata {
+        /**
+         * (Updatable) The owning object's key for this object.
+         */
+        aggregatorKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+         */
+        aggregators?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadataAggregator>[]>;
+        /**
+         * (Updatable) A count statistics.
+         */
+        countStatistics?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadataCountStatistic>[]>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that created the object.
+         */
+        createdByName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The full path to identify this object.
+         */
+        identifierPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) Information property fields.
+         */
+        infoFields?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+        /**
+         * (Updatable) The date and time that the object was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The date and time that the object was updated.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedBy?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user that updated the object.
+         */
+        updatedByName?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskMetadataAggregator {
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         */
+        identifier?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskMetadataCountStatistic {
+        /**
+         * (Updatable) The array of statistics.
+         */
+        objectTypeCountLists?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadataCountStatisticObjectTypeCountList>[]>;
+    }
+
+    export interface WorkspaceTaskMetadataCountStatisticObjectTypeCountList {
+        /**
+         * (Updatable) The value for the count statistic object.
+         */
+        objectCount?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of object for the count statistic object.
+         */
+        objectType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOpConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskOpConfigValuesConfigParamValues {
+        configParamValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue>;
+        /**
+         * (Updatable) The root object value, used in custom parameters.
+         */
+        rootObjectValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue>;
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskOpConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOutputPort {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPortConfigValues>;
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) An array of fields.
+         */
+        fields?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPortParentRef>;
+        /**
+         * (Updatable) The port details for the data asset.Type.
+         */
+        portType?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOutputPortConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPortConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPortConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskOutputPortConfigValuesConfigParamValues {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object value, used in custom parameters.
+         */
+        rootObjectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOutputPortConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskOutputPortParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParameter {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValues>;
+        /**
+         * (Updatable) A default value for the vairable.
+         */
+        defaultValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether the parameter is input value.
+         */
+        isInput?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies whether the parameter is output value.
+         */
+        isOutput?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) The output aggregation type.
+         */
+        outputAggregationType?: pulumi.Input<string>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterParentRef>;
+        /**
+         * (Updatable) A base class for all model types, including First Class and its contained objects.
+         */
+        rootObjectDefaultValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The object type.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of value the parameter was created for.
+         */
+        typeName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
+         */
+        usedFor?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValuesConfigParamValues {
+        configParamValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue>;
+        /**
+         * (Updatable) The root object value, used in custom parameters.
+         */
+        rootObjectValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue>;
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue {
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskParameterConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParameterParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfig {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The REST method to use.
+         */
+        methodType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The headers for the REST call.
+         */
+        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues {
+        pollCondition?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition>;
+        pollInterval?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval>;
+        pollIntervalUnit?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit>;
+        pollMaxDuration?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration>;
+        pollMaxDurationUnit?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit>;
+        requestPayload?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload>;
+        requestUrl?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition {
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue {
+        /**
+         * (Updatable) The expression string for the object.
+         */
+        exprString?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval {
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration {
+        /**
+         * (Updatable) An object value of the parameter.
+         */
+        objectValue?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload {
+        /**
+         * (Updatable) Reference to the parameter by its key.
+         */
+        parameterValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) The root object reference value.
+         */
+        refValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
+        dataParam?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl {
+        /**
+         * (Updatable) A string value of the parameter.
+         */
+        stringValue?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskPollRestCallConfigConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskRegistryMetadata {
+        /**
+         * (Updatable) The owning object's key for this object.
+         */
+        aggregatorKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether this object is a favorite or not.
+         */
+        isFavorite?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+         */
+        labels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The registry version.
+         */
+        registryVersion?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskTypedExpression {
+        /**
+         * (Updatable) Configuration values can be string, objects, or parameters.
+         */
+        configValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionConfigValues>;
+        /**
+         * (Updatable) Detailed description for the object.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The expression string for the object.
+         */
+        expression?: pulumi.Input<string>;
+        /**
+         * (Updatable) The key of the object.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the types object.
+         */
+        modelType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The model version of an object.
+         */
+        modelVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         */
+        objectStatus?: pulumi.Input<number>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionParentRef>;
+        /**
+         * (Updatable) The object type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionConfigValues {
+        /**
+         * (Updatable) The configuration parameter values.
+         */
+        configParamValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionConfigValuesConfigParamValues>;
+        /**
+         * (Updatable) A reference to the object's parent.
+         */
+        parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionConfigValuesParentRef>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionConfigValuesConfigParamValues {
+        length?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength>;
+        scale?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScale {
+        /**
+         * (Updatable) An integer value of the parameter.
+         */
+        intValue?: pulumi.Input<number>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionConfigValuesParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
+    }
+
+    export interface WorkspaceTaskTypedExpressionParentRef {
+        /**
+         * (Updatable) Key of the parent object.
+         */
+        parent?: pulumi.Input<string>;
+        /**
+         * (Updatable) Key of the root document object.
+         */
+        rootDocId?: pulumi.Input<string>;
     }
 }
 
@@ -29471,7 +30649,7 @@ export namespace DevOps {
 
     export interface DeployArtifactDeployArtifactSource {
         /**
-         * (Updatable) Specifies content for the inline artifact.
+         * (Updatable) The Helm commands to be executed, base 64 encoded
          */
         base64encodedContent?: pulumi.Input<string>;
         /**
@@ -29490,6 +30668,10 @@ export namespace DevOps {
          * (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
          */
         deployArtifactVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies types of artifact sources.
+         */
+        helmArtifactSourceType?: pulumi.Input<string>;
         /**
          * (Updatable) The source of the verification material.
          */
@@ -62910,17 +64092,302 @@ export namespace Logging {
 
     export interface UnifiedAgentConfigurationServiceConfiguration {
         /**
+         * (Updatable) Unified Agent monitoring application configuration details.
+         */
+        applicationConfigurations?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration>[]>;
+        /**
          * (Updatable) Type of Unified Agent service configuration.
          */
         configurationType: pulumi.Input<string>;
         /**
          * (Updatable) Unified monitoring agent operational metrics destination object.
          */
-        destination: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestination>;
+        destination?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestination>;
         /**
          * (Updatable) Logging source object.
          */
-        sources: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSource>[]>;
+        sources?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSource>[]>;
+        /**
+         * (Updatable) Logging filter object.
+         */
+        unifiedAgentConfigurationFilters?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter>[]>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
+        /**
+         * (Updatable) Unified monitoring agent operational metrics destination object.
+         */
+        destination: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination>;
+        /**
+         * (Updatable) Unified monitoring agent operational metrics source object.
+         */
+        source?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource>;
+        /**
+         * (Updatable) Unified schema logging source type.
+         */
+        sourceType: pulumi.Input<string>;
+        /**
+         * (Updatable) Logging source object.
+         */
+        sources?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource>[]>;
+        /**
+         * (Updatable) Logging filter object.
+         */
+        unifiedAgentConfigurationFilter?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination {
+        /**
+         * (Updatable) The OCID of the compartment that the resource belongs to.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Namespace to which metrics will be emitted.
+         */
+        metricsNamespace?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource {
+        /**
+         * (Updatable) Advanced options for logging configuration
+         */
+        advancedOptions?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions>;
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Source parser object.
+         */
+        parser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser>;
+        /**
+         * (Updatable) Absolute paths for log source files. Wildcards can be used.
+         */
+        paths?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Unified schema logging source type.
+         */
+        sourceType?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions {
+        /**
+         * (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+         */
+        isReadFromHead?: pulumi.Input<boolean>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser {
+        /**
+         * (Updatable) CSV delimiter.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * (Updatable) Regex pattern.
+         */
+        expression?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) First line pattern format.
+         */
+        formatFirstline?: pulumi.Input<string>;
+        /**
+         * (Updatable) Mutiline pattern format.
+         */
+        formats?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Grok failure key.
+         */
+        grokFailureKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Grok name key.
+         */
+        grokNameKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+         */
+        isEstimateCurrentEvent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, keep the time field in the record.
+         */
+        isKeepTimeKey?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If you don't need stream or logtag fields, set this to false.
+         */
+        isMergeCriFields?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, an empty string field is replaced with a null value.
+         */
+        isNullEmptyString?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+         */
+        isSupportColonlessIdent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+         */
+        isWithPriority?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) CSV keys.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Syslog message format.
+         */
+        messageFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the field name to contain logs.
+         */
+        messageKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Multiline start regexp pattern.
+         */
+        multiLineStartRegexp?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         */
+        nestedParser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser>;
+        /**
+         * (Updatable) Specify the null value pattern.
+         */
+        nullValuePattern?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Type of fluent parser.
+         */
+        parserType: pulumi.Input<string>;
+        /**
+         * (Updatable) Grok pattern object.
+         */
+        patterns?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern>[]>;
+        /**
+         * (Updatable) record section of openmetrics parser.
+         */
+        recordInput?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput>;
+        /**
+         * (Updatable) RFC 5424 time format.
+         */
+        rfc5424timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
+        /**
+         * (Updatable) Syslog parser type.
+         */
+        syslogParserType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Process time value using the specified format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) JSON parser time type.
+         */
+        timeType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+         */
+        timeoutInMilliseconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+         *
+         * This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+         *
+         * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+         *
+         * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+         */
+        types?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, keep the time field in the record.
+         */
+        isKeepTimeKey?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
+        /**
+         * (Updatable) Process time value using the specified format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) JSON parser time type.
+         */
+        timeType?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
+        /**
+         * (Updatable) Process value using the specified format. This is available only when timeType is a string.
+         */
+        fieldTimeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+         */
+        fieldTimeZone?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Grok pattern.
+         */
+        pattern?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput {
+        /**
+         * (Updatable) Dimensions to be added for metrics.
+         */
+        dimensions?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Namespace to emit metrics.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Resource group to emit metrics.
+         */
+        resourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter {
+        /**
+         * (Updatable) A list of filtering rules to include logs
+         */
+        allowLists?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) A list of filtering rules to reject logs
+         */
+        denyLists?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Unified schema logging filter type.
+         */
+        filterType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name?: pulumi.Input<string>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationDestination {
@@ -62958,7 +64425,7 @@ export namespace Logging {
          */
         metrics?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * (Updatable) Record section of OperationalMetricsSource object.
+         * (Updatable) record section of openmetrics parser.
          */
         recordInput: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput>;
         /**
@@ -62969,20 +64436,28 @@ export namespace Logging {
 
     export interface UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput {
         /**
-         * (Updatable) Namespace to emit the operational metrics.
+         * (Updatable) Namespace to emit metrics.
          */
         namespace: pulumi.Input<string>;
         /**
-         * (Updatable) Resource group to emit the operational metrics.
+         * (Updatable) Resource group to emit metrics.
          */
         resourceGroup?: pulumi.Input<string>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationSource {
         /**
+         * (Updatable) Advanced options for logging configuration
+         */
+        advancedOptions?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions>;
+        /**
          * (Updatable) Windows event log channels.
          */
         channels?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) User customized source plugin.
+         */
+        customPlugin?: pulumi.Input<string>;
         /**
          * (Updatable) The name key to tag this Grok pattern.
          */
@@ -62997,12 +64472,15 @@ export namespace Logging {
         paths?: pulumi.Input<pulumi.Input<string>[]>;
         /**
          * (Updatable) Unified schema logging source type.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptions {
+        /**
+         * (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
+         */
+        isReadFromHead?: pulumi.Input<boolean>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationSourceParser {
@@ -63083,6 +64561,10 @@ export namespace Logging {
          */
         nullValuePattern?: pulumi.Input<string>;
         /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Type of fluent parser.
          */
         parserType: pulumi.Input<string>;
@@ -63091,9 +64573,17 @@ export namespace Logging {
          */
         patterns?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern>[]>;
         /**
+         * (Updatable) record section of openmetrics parser.
+         */
+        recordInput?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput>;
+        /**
          * (Updatable) RFC 5424 time format.
          */
         rfc5424timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
         /**
          * (Updatable) Syslog parser type.
          */
@@ -63132,6 +64622,14 @@ export namespace Logging {
          */
         isKeepTimeKey?: pulumi.Input<boolean>;
         /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
+        /**
          * (Updatable) Process time value using the specified format.
          */
         timeFormat?: pulumi.Input<string>;
@@ -63162,6 +64660,358 @@ export namespace Logging {
          * (Updatable) The Grok pattern.
          */
         pattern?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput {
+        /**
+         * (Updatable) Dimensions to be added for metrics.
+         */
+        dimensions?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Namespace to emit metrics.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Resource group to emit metrics.
+         */
+        resourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter {
+        /**
+         * (Updatable) A list of filtering rules to include logs
+         */
+        allowLists?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList>[]>;
+        /**
+         * (Updatable) Type of the custom filter
+         */
+        customFilterType?: pulumi.Input<string>;
+        /**
+         * (Updatable) List of custom sections in custom filter
+         */
+        customSections?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection>[]>;
+        /**
+         * (Updatable) A list of filtering rules to reject logs
+         */
+        denyLists?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList>[]>;
+        /**
+         * (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
+         */
+        emitInvalidRecordToError?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Unified schema logging filter type.
+         */
+        filterType: pulumi.Input<string>;
+        /**
+         * (Updatable) Store the parsed values as a hash value in a field.
+         */
+        hashValueField?: pulumi.Input<string>;
+        /**
+         * (Updatable) Store the parsed values with the specified key name prefix.
+         */
+        injectKeyPrefix?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, automatically casts the field types.
+         */
+        isAutoTypecastEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, it modifies a new empty hash
+         */
+        isRenewRecordEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
+         */
+        isRubyEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
+         */
+        keepKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The field name in the record to parse.
+         */
+        keyName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameters of the custom filter
+         */
+        params?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Source parser object.
+         */
+        parser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser>;
+        /**
+         * (Updatable) Add new key-value pairs in logs
+         */
+        recordLists?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList>[]>;
+        /**
+         * (Updatable) If true, remove the keyName field when parsing is succeeded.
+         */
+        removeKeyNameField?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A list of keys to delete
+         */
+        removeKeys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
+         */
+        renewTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
+         */
+        replaceInvalidSequence?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, keep the original key-value pair in the parsed result.
+         */
+        reserveData?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, keep the original event time in the parsed result.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        reserveTime?: pulumi.Input<boolean>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
+        /**
+         * (Updatable) A new key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Grok pattern.
+         */
+        pattern?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection {
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameters of the custom filter
+         */
+        params?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
+        /**
+         * (Updatable) A new key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Grok pattern.
+         */
+        pattern?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser {
+        /**
+         * (Updatable) CSV delimiter.
+         */
+        delimiter?: pulumi.Input<string>;
+        /**
+         * (Updatable) Regex pattern.
+         */
+        expression?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) First line pattern format.
+         */
+        formatFirstline?: pulumi.Input<string>;
+        /**
+         * (Updatable) Mutiline pattern format.
+         */
+        formats?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Grok failure key.
+         */
+        grokFailureKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Grok name key.
+         */
+        grokNameKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
+         */
+        isEstimateCurrentEvent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, keep the time field in the record.
+         */
+        isKeepTimeKey?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If you don't need stream or logtag fields, set this to false.
+         */
+        isMergeCriFields?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, an empty string field is replaced with a null value.
+         */
+        isNullEmptyString?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
+         */
+        isSupportColonlessIdent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
+         */
+        isWithPriority?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) CSV keys.
+         */
+        keys?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Syslog message format.
+         */
+        messageFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the field name to contain logs.
+         */
+        messageKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Multiline start regexp pattern.
+         */
+        multiLineStartRegexp?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+         */
+        nestedParser?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser>;
+        /**
+         * (Updatable) Specify the null value pattern.
+         */
+        nullValuePattern?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Type of fluent parser.
+         */
+        parserType: pulumi.Input<string>;
+        /**
+         * (Updatable) Grok pattern object.
+         */
+        patterns?: pulumi.Input<pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern>[]>;
+        /**
+         * (Updatable) record section of openmetrics parser.
+         */
+        recordInput?: pulumi.Input<inputs.Logging.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput>;
+        /**
+         * (Updatable) RFC 5424 time format.
+         */
+        rfc5424timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
+        /**
+         * (Updatable) Syslog parser type.
+         */
+        syslogParserType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Process time value using the specified format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) JSON parser time type.
+         */
+        timeType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
+         */
+        timeoutInMilliseconds?: pulumi.Input<number>;
+        /**
+         * (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
+         *
+         * This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
+         *
+         * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
+         *
+         * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
+         */
+        types?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, keep the time field in the record.
+         */
+        isKeepTimeKey?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) If true, a separator parameter can be further defined.
+         */
+        parseNested?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Keys of adjacent levels are joined by the separator.
+         */
+        separator?: pulumi.Input<string>;
+        /**
+         * (Updatable) Process time value using the specified format.
+         */
+        timeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) JSON parser time type.
+         */
+        timeType?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPattern {
+        /**
+         * (Updatable) Process value using the specified format. This is available only when timeType is a string.
+         */
+        fieldTimeFormat?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         */
+        fieldTimeKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+         */
+        fieldTimeZone?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name key to tag this Grok pattern.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Grok pattern.
+         */
+        pattern?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput {
+        /**
+         * (Updatable) Dimensions to be added for metrics.
+         */
+        dimensions?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * (Updatable) Namespace to emit metrics.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) Resource group to emit metrics.
+         */
+        resourceGroup?: pulumi.Input<string>;
+    }
+
+    export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList {
+        /**
+         * (Updatable) A new key
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) A new value
+         */
+        value?: pulumi.Input<string>;
     }
 }
 
@@ -64833,6 +66683,53 @@ export namespace MeteringComputation {
 }
 
 export namespace Monitoring {
+    export interface AlarmOverride {
+        /**
+         * (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+         */
+        body?: pulumi.Input<string>;
+        /**
+         * (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+         *
+         * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+         *
+         * Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+         *
+         * The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+         *
+         * Example: `PT5M`
+         */
+        pendingDuration?: pulumi.Input<string>;
+        /**
+         * (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         *
+         * Example of threshold alarm:
+         *
+         * -----
+         *
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+         *
+         * -----
+         *
+         * Example of absence alarm:
+         *
+         * -----
+         *
+         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * -----
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+         */
+        ruleName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+         */
+        severity?: pulumi.Input<string>;
+    }
+
     export interface AlarmSuppression {
         /**
          * (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -66492,19 +68389,19 @@ export namespace NetworkFirewall {
 export namespace NetworkLoadBalancer {
     export interface BackendSetBackend {
         /**
-         * The IP address of the backend server. Example: `10.0.0.3`
+         * (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+         * (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
          */
         isBackup?: pulumi.Input<boolean>;
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
          */
         isDrain?: pulumi.Input<boolean>;
         /**
-         * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+         * (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
          */
         isOffline?: pulumi.Input<boolean>;
         /**
@@ -66520,11 +68417,11 @@ export namespace NetworkLoadBalancer {
          */
         port: pulumi.Input<number>;
         /**
-         * The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+         * (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
          */
         targetId?: pulumi.Input<string>;
         /**
-         * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }
@@ -66664,11 +68561,11 @@ export namespace NetworkLoadBalancer {
 
     export interface NetworkLoadBalancerIpAddress {
         /**
-         * An IP address.  Example: `192.168.0.3`
+         * The IP address of the backend server. Example: `10.0.0.3`
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * IP version associated with this IP address.
+         * IP version associated with the backend set.
          */
         ipVersion?: pulumi.Input<string>;
         /**
@@ -66721,7 +68618,7 @@ export namespace NetworkLoadBalancer {
          */
         isBackup?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+         * (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
          */
         isDrain?: pulumi.Input<boolean>;
         /**
@@ -66745,7 +68642,7 @@ export namespace NetworkLoadBalancer {
          */
         targetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }

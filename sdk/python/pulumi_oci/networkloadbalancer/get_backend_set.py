@@ -68,7 +68,7 @@ class GetBackendSetResult:
     @pulumi.getter(name="healthCheckers")
     def health_checkers(self) -> Sequence['outputs.GetBackendSetHealthCheckerResult']:
         """
-        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         """
         return pulumi.get(self, "health_checkers")
 

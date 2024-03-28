@@ -47,6 +47,36 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     }
 
     /**
+     * (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    @Import(name="parseNested")
+    private @Nullable Output<Boolean> parseNested;
+
+    /**
+     * @return (Updatable) If true, a separator parameter can be further defined.
+     * 
+     */
+    public Optional<Output<Boolean>> parseNested() {
+        return Optional.ofNullable(this.parseNested);
+    }
+
+    /**
+     * (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    @Import(name="separator")
+    private @Nullable Output<String> separator;
+
+    /**
+     * @return (Updatable) Keys of adjacent levels are joined by the separator.
+     * 
+     */
+    public Optional<Output<String>> separator() {
+        return Optional.ofNullable(this.separator);
+    }
+
+    /**
      * (Updatable) Process time value using the specified format.
      * 
      */
@@ -81,6 +111,8 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
     private UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs $) {
         this.fieldTimeKey = $.fieldTimeKey;
         this.isKeepTimeKey = $.isKeepTimeKey;
+        this.parseNested = $.parseNested;
+        this.separator = $.separator;
         this.timeFormat = $.timeFormat;
         this.timeType = $.timeType;
     }
@@ -143,6 +175,48 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
          */
         public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
             return isKeepTimeKey(Output.of(isKeepTimeKey));
+        }
+
+        /**
+         * @param parseNested (Updatable) If true, a separator parameter can be further defined.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parseNested(@Nullable Output<Boolean> parseNested) {
+            $.parseNested = parseNested;
+            return this;
+        }
+
+        /**
+         * @param parseNested (Updatable) If true, a separator parameter can be further defined.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parseNested(Boolean parseNested) {
+            return parseNested(Output.of(parseNested));
+        }
+
+        /**
+         * @param separator (Updatable) Keys of adjacent levels are joined by the separator.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder separator(@Nullable Output<String> separator) {
+            $.separator = separator;
+            return this;
+        }
+
+        /**
+         * @param separator (Updatable) Keys of adjacent levels are joined by the separator.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder separator(String separator) {
+            return separator(Output.of(separator));
         }
 
         /**

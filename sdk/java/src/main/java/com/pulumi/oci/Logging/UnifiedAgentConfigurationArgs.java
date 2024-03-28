@@ -55,30 +55,30 @@ public final class UnifiedAgentConfigurationArgs extends com.pulumi.resources.Re
      * (Updatable) Description for this resource.
      * 
      */
-    @Import(name="description")
-    private @Nullable Output<String> description;
+    @Import(name="description", required=true)
+    private Output<String> description;
 
     /**
      * @return (Updatable) Description for this resource.
      * 
      */
-    public Optional<Output<String>> description() {
-        return Optional.ofNullable(this.description);
+    public Output<String> description() {
+        return this.description;
     }
 
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    @Import(name="displayName")
-    private @Nullable Output<String> displayName;
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
 
     /**
      * @return (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
-    public Optional<Output<String>> displayName() {
-        return Optional.ofNullable(this.displayName);
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     /**
@@ -220,7 +220,7 @@ public final class UnifiedAgentConfigurationArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder description(@Nullable Output<String> description) {
+        public Builder description(Output<String> description) {
             $.description = description;
             return this;
         }
@@ -241,7 +241,7 @@ public final class UnifiedAgentConfigurationArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder displayName(@Nullable Output<String> displayName) {
+        public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
@@ -343,6 +343,12 @@ public final class UnifiedAgentConfigurationArgs extends com.pulumi.resources.Re
         public UnifiedAgentConfigurationArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "description");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "displayName");
             }
             if ($.isEnabled == null) {
                 throw new MissingRequiredPropertyException("UnifiedAgentConfigurationArgs", "isEnabled");

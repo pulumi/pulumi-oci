@@ -15524,6 +15524,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  allocated_storage_size_in_tbs: float,
                  apex_details: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseApexDetailResult'],
                  are_primary_whitelisted_ips_used: bool,
+                 auto_refresh_frequency_in_seconds: int,
+                 auto_refresh_point_lag_in_seconds: int,
                  autonomous_container_database_id: str,
                  autonomous_database_backup_id: str,
                  autonomous_database_id: str,
@@ -15632,6 +15634,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_local_data_guard_enabled: str,
                  time_maintenance_begin: str,
                  time_maintenance_end: str,
+                 time_of_auto_refresh_start: str,
                  time_of_joining_resource_pool: str,
                  time_of_last_failover: str,
                  time_of_last_refresh: str,
@@ -15652,6 +15655,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
         :param bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        :param int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        :param int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -15748,6 +15753,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param str time_maintenance_begin: The date and time when maintenance will begin.
         :param str time_maintenance_end: The date and time when maintenance will end.
+        :param str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param str time_of_joining_resource_pool: The time the member joined the resource pool.
         :param str time_of_last_failover: The timestamp of the last failover operation.
         :param str time_of_last_refresh: The date and time when last refresh happened.
@@ -15767,6 +15773,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
         pulumi.set(__self__, "apex_details", apex_details)
         pulumi.set(__self__, "are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
+        pulumi.set(__self__, "auto_refresh_frequency_in_seconds", auto_refresh_frequency_in_seconds)
+        pulumi.set(__self__, "auto_refresh_point_lag_in_seconds", auto_refresh_point_lag_in_seconds)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -15875,6 +15883,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+        pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         pulumi.set(__self__, "time_of_joining_resource_pool", time_of_joining_resource_pool)
         pulumi.set(__self__, "time_of_last_failover", time_of_last_failover)
         pulumi.set(__self__, "time_of_last_refresh", time_of_last_refresh)
@@ -15927,6 +15936,22 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
+
+    @property
+    @pulumi.getter(name="autoRefreshFrequencyInSeconds")
+    def auto_refresh_frequency_in_seconds(self) -> int:
+        """
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        """
+        return pulumi.get(self, "auto_refresh_frequency_in_seconds")
+
+    @property
+    @pulumi.getter(name="autoRefreshPointLagInSeconds")
+    def auto_refresh_point_lag_in_seconds(self) -> int:
+        """
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        """
+        return pulumi.get(self, "auto_refresh_point_lag_in_seconds")
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
@@ -16756,6 +16781,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
+
+    @property
+    @pulumi.getter(name="timeOfAutoRefreshStart")
+    def time_of_auto_refresh_start(self) -> str:
+        """
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        """
+        return pulumi.get(self, "time_of_auto_refresh_start")
 
     @property
     @pulumi.getter(name="timeOfJoiningResourcePool")
@@ -17636,6 +17669,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  allocated_storage_size_in_tbs: float,
                  apex_details: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult'],
                  are_primary_whitelisted_ips_used: bool,
+                 auto_refresh_frequency_in_seconds: int,
+                 auto_refresh_point_lag_in_seconds: int,
                  autonomous_container_database_id: str,
                  autonomous_maintenance_schedule_type: str,
                  available_upgrade_versions: Sequence[str],
@@ -17728,6 +17763,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_local_data_guard_enabled: str,
                  time_maintenance_begin: str,
                  time_maintenance_end: str,
+                 time_of_auto_refresh_start: str,
                  time_of_joining_resource_pool: str,
                  time_of_last_failover: str,
                  time_of_last_refresh: str,
@@ -17746,7 +17782,9 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
         :param bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
-        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        :param int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigArgs'] backup_configs: Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
@@ -17843,6 +17881,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         :param str time_maintenance_begin: The date and time when maintenance will begin.
         :param str time_maintenance_end: The date and time when maintenance will end.
+        :param str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param str time_of_last_failover: The timestamp of the last failover operation.
         :param str time_of_last_refresh: The date and time when last refresh happened.
         :param str time_of_last_refresh_point: The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
@@ -17860,6 +17899,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "allocated_storage_size_in_tbs", allocated_storage_size_in_tbs)
         pulumi.set(__self__, "apex_details", apex_details)
         pulumi.set(__self__, "are_primary_whitelisted_ips_used", are_primary_whitelisted_ips_used)
+        pulumi.set(__self__, "auto_refresh_frequency_in_seconds", auto_refresh_frequency_in_seconds)
+        pulumi.set(__self__, "auto_refresh_point_lag_in_seconds", auto_refresh_point_lag_in_seconds)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
@@ -17952,6 +17993,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+        pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         pulumi.set(__self__, "time_of_joining_resource_pool", time_of_joining_resource_pool)
         pulumi.set(__self__, "time_of_last_failover", time_of_last_failover)
         pulumi.set(__self__, "time_of_last_refresh", time_of_last_refresh)
@@ -17999,10 +18041,26 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
     @property
+    @pulumi.getter(name="autoRefreshFrequencyInSeconds")
+    def auto_refresh_frequency_in_seconds(self) -> int:
+        """
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        """
+        return pulumi.get(self, "auto_refresh_frequency_in_seconds")
+
+    @property
+    @pulumi.getter(name="autoRefreshPointLagInSeconds")
+    def auto_refresh_point_lag_in_seconds(self) -> int:
+        """
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        """
+        return pulumi.get(self, "auto_refresh_point_lag_in_seconds")
+
+    @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> str:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -18738,6 +18796,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
+
+    @property
+    @pulumi.getter(name="timeOfAutoRefreshStart")
+    def time_of_auto_refresh_start(self) -> str:
+        """
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        """
+        return pulumi.get(self, "time_of_auto_refresh_start")
 
     @property
     @pulumi.getter(name="timeOfJoiningResourcePool")

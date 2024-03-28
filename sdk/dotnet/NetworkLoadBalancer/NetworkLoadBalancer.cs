@@ -40,6 +40,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     ///         },
     ///         IsPreserveSourceDestination = @var.Network_load_balancer_is_preserve_source_destination,
     ///         IsPrivate = @var.Network_load_balancer_is_private,
+    ///         IsSymmetricHashEnabled = @var.Network_load_balancer_is_symmetric_hash_enabled,
     ///         NetworkSecurityGroupIds = @var.Network_load_balancer_network_security_group_ids,
     ///         NlbIpVersion = @var.Network_load_balancer_nlb_ip_version,
     ///         ReservedIps = new[]
@@ -109,12 +110,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// If "false", then the service assigns a public IP address to the network load balancer.
         /// 
-        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
         /// 
         /// Example: `true`
         /// </summary>
         [Output("isPrivate")]
         public Output<bool> IsPrivate { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        /// </summary>
+        [Output("isSymmetricHashEnabled")]
+        public Output<bool> IsSymmetricHashEnabled { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -277,12 +284,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// If "false", then the service assigns a public IP address to the network load balancer.
         /// 
-        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
         /// 
         /// Example: `true`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
+
+        /// <summary>
+        /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        /// </summary>
+        [Input("isSymmetricHashEnabled")]
+        public Input<bool>? IsSymmetricHashEnabled { get; set; }
 
         [Input("networkSecurityGroupIds")]
         private InputList<string>? _networkSecurityGroupIds;
@@ -401,12 +414,18 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// If "false", then the service assigns a public IP address to the network load balancer.
         /// 
-        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+        /// A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
         /// 
         /// Example: `true`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
+
+        /// <summary>
+        /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        /// </summary>
+        [Input("isSymmetricHashEnabled")]
+        public Input<bool>? IsSymmetricHashEnabled { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

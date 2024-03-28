@@ -60,10 +60,21 @@ import (
 //				IsNotificationsPerMetricDimensionEnabled: pulumi.Any(_var.Alarm_is_notifications_per_metric_dimension_enabled),
 //				MessageFormat:                            pulumi.Any(_var.Alarm_message_format),
 //				MetricCompartmentIdInSubtree:             pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
-//				PendingDuration:                          pulumi.Any(_var.Alarm_pending_duration),
-//				RepeatNotificationDuration:               pulumi.Any(_var.Alarm_repeat_notification_duration),
-//				Resolution:                               pulumi.Any(_var.Alarm_resolution),
-//				ResourceGroup:                            pulumi.Any(_var.Alarm_resource_group),
+//				NotificationVersion:                      pulumi.Any(_var.Alarm_notification_version),
+//				Overrides: monitoring.AlarmOverrideArray{
+//					&monitoring.AlarmOverrideArgs{
+//						Body:            pulumi.Any(_var.Alarm_overrides_body),
+//						PendingDuration: pulumi.Any(_var.Alarm_overrides_pending_duration),
+//						Query:           pulumi.Any(_var.Alarm_overrides_query),
+//						RuleName:        pulumi.Any(oci_events_rule.Test_rule.Name),
+//						Severity:        pulumi.Any(_var.Alarm_overrides_severity),
+//					},
+//				},
+//				PendingDuration:            pulumi.Any(_var.Alarm_pending_duration),
+//				RepeatNotificationDuration: pulumi.Any(_var.Alarm_repeat_notification_duration),
+//				Resolution:                 pulumi.Any(_var.Alarm_resolution),
+//				ResourceGroup:              pulumi.Any(_var.Alarm_resource_group),
+//				RuleName:                   pulumi.Any(oci_events_rule.Test_rule.Name),
 //				Suppression: &monitoring.AlarmSuppressionTypeArgs{
 //					TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
 //					TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
@@ -118,6 +129,12 @@ type Alarm struct {
 	MetricCompartmentIdInSubtree pulumi.BoolOutput `pulumi:"metricCompartmentIdInSubtree"`
 	// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion pulumi.StringOutput `pulumi:"notificationVersion"`
+	// (Updatable) A set of overrides that control evaluations of the alarm.
+	//
+	// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+	Overrides AlarmOverrideArrayOutput `pulumi:"overrides"`
 	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	//
 	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -156,6 +173,8 @@ type Alarm struct {
 	Resolution pulumi.StringOutput `pulumi:"resolution"`
 	// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringOutput `pulumi:"resourceGroup"`
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringOutput `pulumi:"ruleName"`
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringOutput `pulumi:"severity"`
 	// The current lifecycle state of the alarm.  Example: `DELETED`
@@ -250,6 +269,12 @@ type alarmState struct {
 	MetricCompartmentIdInSubtree *bool `pulumi:"metricCompartmentIdInSubtree"`
 	// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion *string `pulumi:"notificationVersion"`
+	// (Updatable) A set of overrides that control evaluations of the alarm.
+	//
+	// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+	Overrides []AlarmOverride `pulumi:"overrides"`
 	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	//
 	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -288,6 +313,8 @@ type alarmState struct {
 	Resolution *string `pulumi:"resolution"`
 	// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName *string `pulumi:"ruleName"`
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity *string `pulumi:"severity"`
 	// The current lifecycle state of the alarm.  Example: `DELETED`
@@ -329,6 +356,12 @@ type AlarmState struct {
 	MetricCompartmentIdInSubtree pulumi.BoolPtrInput
 	// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace pulumi.StringPtrInput
+	// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion pulumi.StringPtrInput
+	// (Updatable) A set of overrides that control evaluations of the alarm.
+	//
+	// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+	Overrides AlarmOverrideArrayInput
 	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	//
 	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -367,6 +400,8 @@ type AlarmState struct {
 	Resolution pulumi.StringPtrInput
 	// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringPtrInput
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringPtrInput
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringPtrInput
 	// The current lifecycle state of the alarm.  Example: `DELETED`
@@ -412,6 +447,12 @@ type alarmArgs struct {
 	MetricCompartmentIdInSubtree *bool `pulumi:"metricCompartmentIdInSubtree"`
 	// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
+	// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion *string `pulumi:"notificationVersion"`
+	// (Updatable) A set of overrides that control evaluations of the alarm.
+	//
+	// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+	Overrides []AlarmOverride `pulumi:"overrides"`
 	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	//
 	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -450,6 +491,8 @@ type alarmArgs struct {
 	Resolution *string `pulumi:"resolution"`
 	// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName *string `pulumi:"ruleName"`
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity string `pulumi:"severity"`
 	// (Updatable) The configuration details for suppressing an alarm.
@@ -486,6 +529,12 @@ type AlarmArgs struct {
 	MetricCompartmentIdInSubtree pulumi.BoolPtrInput
 	// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput
+	// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion pulumi.StringPtrInput
+	// (Updatable) A set of overrides that control evaluations of the alarm.
+	//
+	// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+	Overrides AlarmOverrideArrayInput
 	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	//
 	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -524,6 +573,8 @@ type AlarmArgs struct {
 	Resolution pulumi.StringPtrInput
 	// (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringPtrInput
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringPtrInput
 	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringInput
 	// (Updatable) The configuration details for suppressing an alarm.
@@ -681,6 +732,18 @@ func (o AlarmOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+func (o AlarmOutput) NotificationVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.NotificationVersion }).(pulumi.StringOutput)
+}
+
+// (Updatable) A set of overrides that control evaluations of the alarm.
+//
+// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+func (o AlarmOutput) Overrides() AlarmOverrideArrayOutput {
+	return o.ApplyT(func(v *Alarm) AlarmOverrideArrayOutput { return v.Overrides }).(AlarmOverrideArrayOutput)
+}
+
 // (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 //
 // The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -732,6 +795,11 @@ func (o AlarmOutput) Resolution() pulumi.StringOutput {
 // (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
 func (o AlarmOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o AlarmOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
 }
 
 // (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`

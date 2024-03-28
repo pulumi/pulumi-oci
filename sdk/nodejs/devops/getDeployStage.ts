@@ -172,6 +172,10 @@ export interface GetDeployStageResult {
      */
     readonly helmChartDeployArtifactId: string;
     /**
+     * List of Helm command artifact OCIDs.
+     */
+    readonly helmCommandArtifactIds: string[];
+    /**
      * Unique identifier that is immutable on creation.
      */
     readonly id: string;
@@ -187,6 +191,10 @@ export interface GetDeployStageResult {
      * Force resource update through delete; or if required, recreate. Set to false by default.
      */
     readonly isForceEnabled: boolean;
+    /**
+     * Uninstall the Helm chart release on deleting the stage.
+     */
+    readonly isUninstallOnStageDelete: boolean;
     /**
      * A boolean flag specifies whether the invoked function must be validated.
      */
@@ -239,6 +247,10 @@ export interface GetDeployStageResult {
      * The OCID of a project.
      */
     readonly projectId: string;
+    /**
+     * The purpose of running this Helm stage
+     */
+    readonly purpose: string;
     /**
      * Release name of the Helm chart.
      */

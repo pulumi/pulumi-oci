@@ -66,6 +66,14 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
+        /// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        /// </summary>
+        public readonly string NotificationVersion;
+        /// <summary>
+        /// A set of overrides that control evaluations of the alarm.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAlarmsAlarmOverrideResult> Overrides;
+        /// <summary>
         /// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
         /// </summary>
         public readonly string PendingDuration;
@@ -85,6 +93,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         /// </summary>
         public readonly string ResourceGroup;
+        /// <summary>
+        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// </summary>
+        public readonly string RuleName;
         /// <summary>
         /// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         /// </summary>
@@ -134,6 +146,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             string @namespace,
 
+            string notificationVersion,
+
+            ImmutableArray<Outputs.GetAlarmsAlarmOverrideResult> overrides,
+
             string pendingDuration,
 
             string query,
@@ -143,6 +159,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
             string resolution,
 
             string resourceGroup,
+
+            string ruleName,
 
             string severity,
 
@@ -167,11 +185,14 @@ namespace Pulumi.Oci.Monitoring.Outputs
             MetricCompartmentId = metricCompartmentId;
             MetricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             Namespace = @namespace;
+            NotificationVersion = notificationVersion;
+            Overrides = overrides;
             PendingDuration = pendingDuration;
             Query = query;
             RepeatNotificationDuration = repeatNotificationDuration;
             Resolution = resolution;
             ResourceGroup = resourceGroup;
+            RuleName = ruleName;
             Severity = severity;
             State = state;
             Suppressions = suppressions;

@@ -30,10 +30,13 @@ class AlarmArgs:
                  is_notifications_per_metric_dimension_enabled: Optional[pulumi.Input[bool]] = None,
                  message_format: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
+                 notification_version: Optional[pulumi.Input[str]] = None,
+                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
                  pending_duration: Optional[pulumi.Input[str]] = None,
                  repeat_notification_duration: Optional[pulumi.Input[str]] = None,
                  resolution: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 rule_name: Optional[pulumi.Input[str]] = None,
                  suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None):
         """
         The set of arguments for constructing a Alarm resource.
@@ -71,6 +74,10 @@ class AlarmArgs:
         :param pulumi.Input[bool] is_notifications_per_metric_dimension_enabled: (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
         :param pulumi.Input[str] message_format: (Updatable) The format to use for alarm notifications. The formats are:
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
+        :param pulumi.Input[str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+               
+               Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
                
                The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -87,6 +94,7 @@ class AlarmArgs:
                Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input['AlarmSuppressionArgs'] suppression: (Updatable) The configuration details for suppressing an alarm.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -109,6 +117,10 @@ class AlarmArgs:
             pulumi.set(__self__, "message_format", message_format)
         if metric_compartment_id_in_subtree is not None:
             pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+        if notification_version is not None:
+            pulumi.set(__self__, "notification_version", notification_version)
+        if overrides is not None:
+            pulumi.set(__self__, "overrides", overrides)
         if pending_duration is not None:
             pulumi.set(__self__, "pending_duration", pending_duration)
         if repeat_notification_duration is not None:
@@ -117,6 +129,8 @@ class AlarmArgs:
             pulumi.set(__self__, "resolution", resolution)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
         if suppression is not None:
             pulumi.set(__self__, "suppression", suppression)
 
@@ -309,6 +323,32 @@ class AlarmArgs:
         pulumi.set(self, "metric_compartment_id_in_subtree", value)
 
     @property
+    @pulumi.getter(name="notificationVersion")
+    def notification_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        """
+        return pulumi.get(self, "notification_version")
+
+    @notification_version.setter
+    def notification_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notification_version", value)
+
+    @property
+    @pulumi.getter
+    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
+        """
+        (Updatable) A set of overrides that control evaluations of the alarm. 
+
+        Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        """
+        return pulumi.get(self, "overrides")
+
+    @overrides.setter
+    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
+        pulumi.set(self, "overrides", value)
+
+    @property
     @pulumi.getter(name="pendingDuration")
     def pending_duration(self) -> Optional[pulumi.Input[str]]:
         """
@@ -369,6 +409,18 @@ class AlarmArgs:
         pulumi.set(self, "resource_group", value)
 
     @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        """
+        return pulumi.get(self, "rule_name")
+
+    @rule_name.setter
+    def rule_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_name", value)
+
+    @property
     @pulumi.getter
     def suppression(self) -> Optional[pulumi.Input['AlarmSuppressionArgs']]:
         """
@@ -396,11 +448,14 @@ class _AlarmState:
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
+                 notification_version: Optional[pulumi.Input[str]] = None,
+                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]] = None,
                  pending_duration: Optional[pulumi.Input[str]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  repeat_notification_duration: Optional[pulumi.Input[str]] = None,
                  resolution: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 rule_name: Optional[pulumi.Input[str]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  suppression: Optional[pulumi.Input['AlarmSuppressionArgs']] = None,
@@ -424,6 +479,10 @@ class _AlarmState:
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        :param pulumi.Input[str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+               
+               Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
                
                The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -457,6 +516,7 @@ class _AlarmState:
                Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm.  Example: `DELETED`
         :param pulumi.Input['AlarmSuppressionArgs'] suppression: (Updatable) The configuration details for suppressing an alarm.
@@ -487,6 +547,10 @@ class _AlarmState:
             pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
+        if notification_version is not None:
+            pulumi.set(__self__, "notification_version", notification_version)
+        if overrides is not None:
+            pulumi.set(__self__, "overrides", overrides)
         if pending_duration is not None:
             pulumi.set(__self__, "pending_duration", pending_duration)
         if query is not None:
@@ -497,6 +561,8 @@ class _AlarmState:
             pulumi.set(__self__, "resolution", resolution)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
         if severity is not None:
             pulumi.set(__self__, "severity", severity)
         if state is not None:
@@ -657,6 +723,32 @@ class _AlarmState:
         pulumi.set(self, "namespace", value)
 
     @property
+    @pulumi.getter(name="notificationVersion")
+    def notification_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        """
+        return pulumi.get(self, "notification_version")
+
+    @notification_version.setter
+    def notification_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "notification_version", value)
+
+    @property
+    @pulumi.getter
+    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
+        """
+        (Updatable) A set of overrides that control evaluations of the alarm. 
+
+        Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        """
+        return pulumi.get(self, "overrides")
+
+    @overrides.setter
+    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]]]):
+        pulumi.set(self, "overrides", value)
+
+    @property
     @pulumi.getter(name="pendingDuration")
     def pending_duration(self) -> Optional[pulumi.Input[str]]:
         """
@@ -745,6 +837,18 @@ class _AlarmState:
         pulumi.set(self, "resource_group", value)
 
     @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        """
+        return pulumi.get(self, "rule_name")
+
+    @rule_name.setter
+    def rule_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "rule_name", value)
+
+    @property
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
@@ -822,11 +926,14 @@ class Alarm(pulumi.CustomResource):
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
+                 notification_version: Optional[pulumi.Input[str]] = None,
+                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlarmOverrideArgs']]]]] = None,
                  pending_duration: Optional[pulumi.Input[str]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  repeat_notification_duration: Optional[pulumi.Input[str]] = None,
                  resolution: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 rule_name: Optional[pulumi.Input[str]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  suppression: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionArgs']]] = None,
                  __props__=None):
@@ -869,10 +976,19 @@ class Alarm(pulumi.CustomResource):
             is_notifications_per_metric_dimension_enabled=var["alarm_is_notifications_per_metric_dimension_enabled"],
             message_format=var["alarm_message_format"],
             metric_compartment_id_in_subtree=var["alarm_metric_compartment_id_in_subtree"],
+            notification_version=var["alarm_notification_version"],
+            overrides=[oci.monitoring.AlarmOverrideArgs(
+                body=var["alarm_overrides_body"],
+                pending_duration=var["alarm_overrides_pending_duration"],
+                query=var["alarm_overrides_query"],
+                rule_name=oci_events_rule["test_rule"]["name"],
+                severity=var["alarm_overrides_severity"],
+            )],
             pending_duration=var["alarm_pending_duration"],
             repeat_notification_duration=var["alarm_repeat_notification_duration"],
             resolution=var["alarm_resolution"],
             resource_group=var["alarm_resource_group"],
+            rule_name=oci_events_rule["test_rule"]["name"],
             suppression=oci.monitoring.AlarmSuppressionArgs(
                 time_suppress_from=var["alarm_suppression_time_suppress_from"],
                 time_suppress_until=var["alarm_suppression_time_suppress_until"],
@@ -907,6 +1023,10 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        :param pulumi.Input[str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlarmOverrideArgs']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+               
+               Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
                
                The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -940,6 +1060,7 @@ class Alarm(pulumi.CustomResource):
                Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         :param pulumi.Input[pulumi.InputType['AlarmSuppressionArgs']] suppression: (Updatable) The configuration details for suppressing an alarm.
         """
@@ -988,10 +1109,19 @@ class Alarm(pulumi.CustomResource):
             is_notifications_per_metric_dimension_enabled=var["alarm_is_notifications_per_metric_dimension_enabled"],
             message_format=var["alarm_message_format"],
             metric_compartment_id_in_subtree=var["alarm_metric_compartment_id_in_subtree"],
+            notification_version=var["alarm_notification_version"],
+            overrides=[oci.monitoring.AlarmOverrideArgs(
+                body=var["alarm_overrides_body"],
+                pending_duration=var["alarm_overrides_pending_duration"],
+                query=var["alarm_overrides_query"],
+                rule_name=oci_events_rule["test_rule"]["name"],
+                severity=var["alarm_overrides_severity"],
+            )],
             pending_duration=var["alarm_pending_duration"],
             repeat_notification_duration=var["alarm_repeat_notification_duration"],
             resolution=var["alarm_resolution"],
             resource_group=var["alarm_resource_group"],
+            rule_name=oci_events_rule["test_rule"]["name"],
             suppression=oci.monitoring.AlarmSuppressionArgs(
                 time_suppress_from=var["alarm_suppression_time_suppress_from"],
                 time_suppress_until=var["alarm_suppression_time_suppress_until"],
@@ -1035,11 +1165,14 @@ class Alarm(pulumi.CustomResource):
                  metric_compartment_id: Optional[pulumi.Input[str]] = None,
                  metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
+                 notification_version: Optional[pulumi.Input[str]] = None,
+                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlarmOverrideArgs']]]]] = None,
                  pending_duration: Optional[pulumi.Input[str]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  repeat_notification_duration: Optional[pulumi.Input[str]] = None,
                  resolution: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None,
+                 rule_name: Optional[pulumi.Input[str]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  suppression: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionArgs']]] = None,
                  __props__=None):
@@ -1075,6 +1208,8 @@ class Alarm(pulumi.CustomResource):
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
+            __props__.__dict__["notification_version"] = notification_version
+            __props__.__dict__["overrides"] = overrides
             __props__.__dict__["pending_duration"] = pending_duration
             if query is None and not opts.urn:
                 raise TypeError("Missing required property 'query'")
@@ -1082,6 +1217,7 @@ class Alarm(pulumi.CustomResource):
             __props__.__dict__["repeat_notification_duration"] = repeat_notification_duration
             __props__.__dict__["resolution"] = resolution
             __props__.__dict__["resource_group"] = resource_group
+            __props__.__dict__["rule_name"] = rule_name
             if severity is None and not opts.urn:
                 raise TypeError("Missing required property 'severity'")
             __props__.__dict__["severity"] = severity
@@ -1111,11 +1247,14 @@ class Alarm(pulumi.CustomResource):
             metric_compartment_id: Optional[pulumi.Input[str]] = None,
             metric_compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
+            notification_version: Optional[pulumi.Input[str]] = None,
+            overrides: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlarmOverrideArgs']]]]] = None,
             pending_duration: Optional[pulumi.Input[str]] = None,
             query: Optional[pulumi.Input[str]] = None,
             repeat_notification_duration: Optional[pulumi.Input[str]] = None,
             resolution: Optional[pulumi.Input[str]] = None,
             resource_group: Optional[pulumi.Input[str]] = None,
+            rule_name: Optional[pulumi.Input[str]] = None,
             severity: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             suppression: Optional[pulumi.Input[pulumi.InputType['AlarmSuppressionArgs']]] = None,
@@ -1144,6 +1283,10 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[str] metric_compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param pulumi.Input[bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        :param pulumi.Input[str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AlarmOverrideArgs']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+               
+               Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
                
                The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
@@ -1177,6 +1320,7 @@ class Alarm(pulumi.CustomResource):
                Example: `PT2H`
         :param pulumi.Input[str] resolution: (Updatable) The time between calculated aggregation windows for the alarm. Supported value: `1m`
         :param pulumi.Input[str] resource_group: (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
+        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm.  Example: `DELETED`
         :param pulumi.Input[pulumi.InputType['AlarmSuppressionArgs']] suppression: (Updatable) The configuration details for suppressing an alarm.
@@ -1199,11 +1343,14 @@ class Alarm(pulumi.CustomResource):
         __props__.__dict__["metric_compartment_id"] = metric_compartment_id
         __props__.__dict__["metric_compartment_id_in_subtree"] = metric_compartment_id_in_subtree
         __props__.__dict__["namespace"] = namespace
+        __props__.__dict__["notification_version"] = notification_version
+        __props__.__dict__["overrides"] = overrides
         __props__.__dict__["pending_duration"] = pending_duration
         __props__.__dict__["query"] = query
         __props__.__dict__["repeat_notification_duration"] = repeat_notification_duration
         __props__.__dict__["resolution"] = resolution
         __props__.__dict__["resource_group"] = resource_group
+        __props__.__dict__["rule_name"] = rule_name
         __props__.__dict__["severity"] = severity
         __props__.__dict__["state"] = state
         __props__.__dict__["suppression"] = suppression
@@ -1312,6 +1459,24 @@ class Alarm(pulumi.CustomResource):
         return pulumi.get(self, "namespace")
 
     @property
+    @pulumi.getter(name="notificationVersion")
+    def notification_version(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        """
+        return pulumi.get(self, "notification_version")
+
+    @property
+    @pulumi.getter
+    def overrides(self) -> pulumi.Output[Sequence['outputs.AlarmOverride']]:
+        """
+        (Updatable) A set of overrides that control evaluations of the alarm. 
+
+        Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+        """
+        return pulumi.get(self, "overrides")
+
+    @property
     @pulumi.getter(name="pendingDuration")
     def pending_duration(self) -> pulumi.Output[str]:
         """
@@ -1378,6 +1543,14 @@ class Alarm(pulumi.CustomResource):
         (Updatable) Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($). Avoid entering confidential information.  Example: `frontend-fleet`
         """
         return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        """
+        return pulumi.get(self, "rule_name")
 
     @property
     @pulumi.getter

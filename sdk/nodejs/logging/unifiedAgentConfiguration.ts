@@ -11,95 +11,6 @@ import * as utilities from "../utilities";
  *
  * Create unified agent configuration registration.
  *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testUnifiedAgentConfiguration = new oci.logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration", {
- *     compartmentId: _var.compartment_id,
- *     isEnabled: _var.unified_agent_configuration_is_enabled,
- *     description: _var.unified_agent_configuration_description,
- *     displayName: _var.unified_agent_configuration_display_name,
- *     serviceConfiguration: {
- *         configurationType: _var.unified_agent_configuration_service_configuration_configuration_type,
- *         destination: {
- *             logObjectId: oci_objectstorage_object.test_object.id,
- *             operationalMetricsConfiguration: {
- *                 destination: {
- *                     compartmentId: _var.compartment_id,
- *                 },
- *                 source: {
- *                     type: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type,
- *                     metrics: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics,
- *                     recordInput: {
- *                         namespace: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace,
- *                         resourceGroup: _var.unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group,
- *                     },
- *                 },
- *             },
- *         },
- *         sources: [{
- *             sourceType: _var.unified_agent_configuration_service_configuration_sources_source_type,
- *             channels: _var.unified_agent_configuration_service_configuration_sources_channels,
- *             name: _var.unified_agent_configuration_service_configuration_sources_name,
- *             parser: {
- *                 parserType: _var.unified_agent_configuration_service_configuration_sources_parser_parser_type,
- *                 delimiter: _var.unified_agent_configuration_service_configuration_sources_parser_delimiter,
- *                 expression: _var.unified_agent_configuration_service_configuration_sources_parser_expression,
- *                 fieldTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_field_time_key,
- *                 formats: _var.unified_agent_configuration_service_configuration_sources_parser_format,
- *                 formatFirstline: _var.unified_agent_configuration_service_configuration_sources_parser_format_firstline,
- *                 grokFailureKey: _var.unified_agent_configuration_service_configuration_sources_parser_grok_failure_key,
- *                 grokNameKey: _var.unified_agent_configuration_service_configuration_sources_parser_grok_name_key,
- *                 isEstimateCurrentEvent: _var.unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event,
- *                 isKeepTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key,
- *                 isMergeCriFields: _var.unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields,
- *                 isNullEmptyString: _var.unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string,
- *                 isSupportColonlessIdent: _var.unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident,
- *                 isWithPriority: _var.unified_agent_configuration_service_configuration_sources_parser_is_with_priority,
- *                 keys: _var.unified_agent_configuration_service_configuration_sources_parser_keys,
- *                 messageFormat: _var.unified_agent_configuration_service_configuration_sources_parser_message_format,
- *                 messageKey: _var.unified_agent_configuration_service_configuration_sources_parser_message_key,
- *                 multiLineStartRegexp: _var.unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp,
- *                 nestedParser: {
- *                     timeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format,
- *                     fieldTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key,
- *                     isKeepTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key,
- *                 },
- *                 nullValuePattern: _var.unified_agent_configuration_service_configuration_sources_parser_null_value_pattern,
- *                 patterns: [{
- *                     fieldTimeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format,
- *                     fieldTimeKey: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key,
- *                     fieldTimeZone: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone,
- *                     name: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_name,
- *                     pattern: _var.unified_agent_configuration_service_configuration_sources_parser_patterns_pattern,
- *                 }],
- *                 rfc5424timeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format,
- *                 syslogParserType: _var.unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type,
- *                 timeFormat: _var.unified_agent_configuration_service_configuration_sources_parser_time_format,
- *                 timeType: _var.unified_agent_configuration_service_configuration_sources_parser_time_type,
- *                 timeoutInMilliseconds: _var.unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds,
- *                 types: _var.unified_agent_configuration_service_configuration_sources_parser_types,
- *             },
- *             paths: _var.unified_agent_configuration_service_configuration_sources_paths,
- *         }],
- *     },
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     groupAssociation: {
- *         groupLists: _var.unified_agent_configuration_group_association_group_list,
- *     },
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
  * ## Import
  *
  * UnifiedAgentConfigurations can be imported using the `id`, e.g.
@@ -215,6 +126,12 @@ export class UnifiedAgentConfiguration extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.description === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'description'");
+            }
+            if ((!args || args.displayName === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'displayName'");
+            }
             if ((!args || args.isEnabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'isEnabled'");
             }
@@ -308,11 +225,11 @@ export interface UnifiedAgentConfigurationArgs {
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description: pulumi.Input<string>;
     /**
      * (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName: pulumi.Input<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */

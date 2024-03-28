@@ -427,6 +427,7 @@ class DeployArtifact(pulumi.CustomResource):
                 chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
                 deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
                 deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
+                helm_artifact_source_type=var["deploy_artifact_deploy_artifact_source_helm_artifact_source_type"],
                 helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
                     verification_key_source_type=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type"],
                     current_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key"],
@@ -499,6 +500,7 @@ class DeployArtifact(pulumi.CustomResource):
                 chart_url=var["deploy_artifact_deploy_artifact_source_chart_url"],
                 deploy_artifact_path=var["deploy_artifact_deploy_artifact_source_deploy_artifact_path"],
                 deploy_artifact_version=var["deploy_artifact_deploy_artifact_source_deploy_artifact_version"],
+                helm_artifact_source_type=var["deploy_artifact_deploy_artifact_source_helm_artifact_source_type"],
                 helm_verification_key_source=oci.dev_ops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs(
                     verification_key_source_type=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type"],
                     current_public_key=var["deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key"],

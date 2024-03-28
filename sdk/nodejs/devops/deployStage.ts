@@ -172,6 +172,10 @@ export class DeployStage extends pulumi.CustomResource {
      */
     public readonly helmChartDeployArtifactId!: pulumi.Output<string>;
     /**
+     * (Updatable) List of Helm command artifact OCIDs.
+     */
+    public readonly helmCommandArtifactIds!: pulumi.Output<string[] | undefined>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     public readonly isAsync!: pulumi.Output<boolean>;
@@ -183,6 +187,10 @@ export class DeployStage extends pulumi.CustomResource {
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      */
     public readonly isForceEnabled!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Uninstall the Helm chart release on deleting the stage.
+     */
+    public readonly isUninstallOnStageDelete!: pulumi.Output<boolean>;
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
@@ -235,6 +243,10 @@ export class DeployStage extends pulumi.CustomResource {
      * The OCID of a project.
      */
     public /*out*/ readonly projectId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The purpose of running this Helm stage
+     */
+    public readonly purpose!: pulumi.Output<string>;
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      */
@@ -360,9 +372,11 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["functionTimeoutInSeconds"] = state ? state.functionTimeoutInSeconds : undefined;
             resourceInputs["greenBackendIps"] = state ? state.greenBackendIps : undefined;
             resourceInputs["helmChartDeployArtifactId"] = state ? state.helmChartDeployArtifactId : undefined;
+            resourceInputs["helmCommandArtifactIds"] = state ? state.helmCommandArtifactIds : undefined;
             resourceInputs["isAsync"] = state ? state.isAsync : undefined;
             resourceInputs["isDebugEnabled"] = state ? state.isDebugEnabled : undefined;
             resourceInputs["isForceEnabled"] = state ? state.isForceEnabled : undefined;
+            resourceInputs["isUninstallOnStageDelete"] = state ? state.isUninstallOnStageDelete : undefined;
             resourceInputs["isValidationEnabled"] = state ? state.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = state ? state.kubernetesManifestDeployArtifactIds : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -376,6 +390,7 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["okeClusterDeployEnvironmentId"] = state ? state.okeClusterDeployEnvironmentId : undefined;
             resourceInputs["productionLoadBalancerConfig"] = state ? state.productionLoadBalancerConfig : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
+            resourceInputs["purpose"] = state ? state.purpose : undefined;
             resourceInputs["releaseName"] = state ? state.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = state ? state.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = state ? state.rolloutPolicy : undefined;
@@ -437,9 +452,11 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["functionTimeoutInSeconds"] = args ? args.functionTimeoutInSeconds : undefined;
             resourceInputs["greenBackendIps"] = args ? args.greenBackendIps : undefined;
             resourceInputs["helmChartDeployArtifactId"] = args ? args.helmChartDeployArtifactId : undefined;
+            resourceInputs["helmCommandArtifactIds"] = args ? args.helmCommandArtifactIds : undefined;
             resourceInputs["isAsync"] = args ? args.isAsync : undefined;
             resourceInputs["isDebugEnabled"] = args ? args.isDebugEnabled : undefined;
             resourceInputs["isForceEnabled"] = args ? args.isForceEnabled : undefined;
+            resourceInputs["isUninstallOnStageDelete"] = args ? args.isUninstallOnStageDelete : undefined;
             resourceInputs["isValidationEnabled"] = args ? args.isValidationEnabled : undefined;
             resourceInputs["kubernetesManifestDeployArtifactIds"] = args ? args.kubernetesManifestDeployArtifactIds : undefined;
             resourceInputs["loadBalancerConfig"] = args ? args.loadBalancerConfig : undefined;
@@ -451,6 +468,7 @@ export class DeployStage extends pulumi.CustomResource {
             resourceInputs["okeCanaryTrafficShiftDeployStageId"] = args ? args.okeCanaryTrafficShiftDeployStageId : undefined;
             resourceInputs["okeClusterDeployEnvironmentId"] = args ? args.okeClusterDeployEnvironmentId : undefined;
             resourceInputs["productionLoadBalancerConfig"] = args ? args.productionLoadBalancerConfig : undefined;
+            resourceInputs["purpose"] = args ? args.purpose : undefined;
             resourceInputs["releaseName"] = args ? args.releaseName : undefined;
             resourceInputs["rollbackPolicy"] = args ? args.rollbackPolicy : undefined;
             resourceInputs["rolloutPolicy"] = args ? args.rolloutPolicy : undefined;
@@ -609,6 +627,10 @@ export interface DeployStageState {
      */
     helmChartDeployArtifactId?: pulumi.Input<string>;
     /**
+     * (Updatable) List of Helm command artifact OCIDs.
+     */
+    helmCommandArtifactIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     isAsync?: pulumi.Input<boolean>;
@@ -620,6 +642,10 @@ export interface DeployStageState {
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      */
     isForceEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Uninstall the Helm chart release on deleting the stage.
+     */
+    isUninstallOnStageDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
@@ -672,6 +698,10 @@ export interface DeployStageState {
      * The OCID of a project.
      */
     projectId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The purpose of running this Helm stage
+     */
+    purpose?: pulumi.Input<string>;
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      */
@@ -879,6 +909,10 @@ export interface DeployStageArgs {
      */
     helmChartDeployArtifactId?: pulumi.Input<string>;
     /**
+     * (Updatable) List of Helm command artifact OCIDs.
+     */
+    helmCommandArtifactIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) A boolean flag specifies whether this stage executes asynchronously.
      */
     isAsync?: pulumi.Input<boolean>;
@@ -890,6 +924,10 @@ export interface DeployStageArgs {
      * (Updatable) Force resource update through delete; or if required, recreate. Set to false by default.
      */
     isForceEnabled?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Uninstall the Helm chart release on deleting the stage.
+     */
+    isUninstallOnStageDelete?: pulumi.Input<boolean>;
     /**
      * (Updatable) A boolean flag specifies whether the invoked function should be validated.
      */
@@ -934,6 +972,10 @@ export interface DeployStageArgs {
      * Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
      */
     productionLoadBalancerConfig?: pulumi.Input<inputs.DevOps.DeployStageProductionLoadBalancerConfig>;
+    /**
+     * (Updatable) The purpose of running this Helm stage
+     */
+    purpose?: pulumi.Input<string>;
     /**
      * (Updatable) Default name of the chart instance. Must be unique within a Kubernetes namespace.
      */

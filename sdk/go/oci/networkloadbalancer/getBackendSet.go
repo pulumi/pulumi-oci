@@ -37,7 +37,7 @@ type LookupBackendSetResult struct {
 	BackendSetName string `pulumi:"backendSetName"`
 	// Array of backends.
 	Backends []GetBackendSetBackend `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 	HealthCheckers []GetBackendSetHealthChecker `pulumi:"healthCheckers"`
 	Id             string                       `pulumi:"id"`
 	// IP version associated with the backend set.
@@ -100,7 +100,7 @@ func (o LookupBackendSetResultOutput) Backends() GetBackendSetBackendArrayOutput
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetBackend { return v.Backends }).(GetBackendSetBackendArrayOutput)
 }
 
-// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
 func (o LookupBackendSetResultOutput) HealthCheckers() GetBackendSetHealthCheckerArrayOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) []GetBackendSetHealthChecker { return v.HealthCheckers }).(GetBackendSetHealthCheckerArrayOutput)
 }

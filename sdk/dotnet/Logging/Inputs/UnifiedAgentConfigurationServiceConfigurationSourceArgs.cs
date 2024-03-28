@@ -12,6 +12,12 @@ namespace Pulumi.Oci.Logging.Inputs
 
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Advanced options for logging configuration
+        /// </summary>
+        [Input("advancedOptions")]
+        public Input<Inputs.UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs>? AdvancedOptions { get; set; }
+
         [Input("channels")]
         private InputList<string>? _channels;
 
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.Logging.Inputs
             get => _channels ?? (_channels = new InputList<string>());
             set => _channels = value;
         }
+
+        /// <summary>
+        /// (Updatable) User customized source plugin.
+        /// </summary>
+        [Input("customPlugin")]
+        public Input<string>? CustomPlugin { get; set; }
 
         /// <summary>
         /// (Updatable) The name key to tag this Grok pattern.
@@ -50,10 +62,6 @@ namespace Pulumi.Oci.Logging.Inputs
 
         /// <summary>
         /// (Updatable) Unified schema logging source type.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

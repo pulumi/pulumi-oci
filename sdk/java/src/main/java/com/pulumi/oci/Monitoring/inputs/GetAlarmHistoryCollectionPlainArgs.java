@@ -16,14 +16,14 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
     public static final GetAlarmHistoryCollectionPlainArgs Empty = new GetAlarmHistoryCollectionPlainArgs();
 
     /**
-     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+     * The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
      * 
      */
     @Import(name="alarmHistorytype")
     private @Nullable String alarmHistorytype;
 
     /**
-     * @return The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+     * @return The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
      * 
      */
     public Optional<String> alarmHistorytype() {
@@ -103,7 +103,7 @@ public final class GetAlarmHistoryCollectionPlainArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
+         * @param alarmHistorytype The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
          * 
          * @return builder
          * 

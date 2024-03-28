@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeployArtifactDeployArtifactSource {
     /**
-     * @return Specifies content for the inline artifact.
+     * @return The Helm commands to be executed, base 64 encoded
      * 
      */
     private String base64encodedContent;
@@ -38,6 +38,11 @@ public final class GetDeployArtifactDeployArtifactSource {
      */
     private String deployArtifactVersion;
     /**
+     * @return Specifies types of artifact sources.
+     * 
+     */
+    private String helmArtifactSourceType;
+    /**
      * @return The source of the verification material.
      * 
      */
@@ -60,7 +65,7 @@ public final class GetDeployArtifactDeployArtifactSource {
 
     private GetDeployArtifactDeployArtifactSource() {}
     /**
-     * @return Specifies content for the inline artifact.
+     * @return The Helm commands to be executed, base 64 encoded
      * 
      */
     public String base64encodedContent() {
@@ -93,6 +98,13 @@ public final class GetDeployArtifactDeployArtifactSource {
      */
     public String deployArtifactVersion() {
         return this.deployArtifactVersion;
+    }
+    /**
+     * @return Specifies types of artifact sources.
+     * 
+     */
+    public String helmArtifactSourceType() {
+        return this.helmArtifactSourceType;
     }
     /**
      * @return The source of the verification material.
@@ -137,6 +149,7 @@ public final class GetDeployArtifactDeployArtifactSource {
         private String deployArtifactPath;
         private String deployArtifactSourceType;
         private String deployArtifactVersion;
+        private String helmArtifactSourceType;
         private List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources;
         private String imageDigest;
         private String imageUri;
@@ -149,6 +162,7 @@ public final class GetDeployArtifactDeployArtifactSource {
     	      this.deployArtifactPath = defaults.deployArtifactPath;
     	      this.deployArtifactSourceType = defaults.deployArtifactSourceType;
     	      this.deployArtifactVersion = defaults.deployArtifactVersion;
+    	      this.helmArtifactSourceType = defaults.helmArtifactSourceType;
     	      this.helmVerificationKeySources = defaults.helmVerificationKeySources;
     	      this.imageDigest = defaults.imageDigest;
     	      this.imageUri = defaults.imageUri;
@@ -196,6 +210,14 @@ public final class GetDeployArtifactDeployArtifactSource {
             return this;
         }
         @CustomType.Setter
+        public Builder helmArtifactSourceType(String helmArtifactSourceType) {
+            if (helmArtifactSourceType == null) {
+              throw new MissingRequiredPropertyException("GetDeployArtifactDeployArtifactSource", "helmArtifactSourceType");
+            }
+            this.helmArtifactSourceType = helmArtifactSourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder helmVerificationKeySources(List<GetDeployArtifactDeployArtifactSourceHelmVerificationKeySource> helmVerificationKeySources) {
             if (helmVerificationKeySources == null) {
               throw new MissingRequiredPropertyException("GetDeployArtifactDeployArtifactSource", "helmVerificationKeySources");
@@ -237,6 +259,7 @@ public final class GetDeployArtifactDeployArtifactSource {
             _resultValue.deployArtifactPath = deployArtifactPath;
             _resultValue.deployArtifactSourceType = deployArtifactSourceType;
             _resultValue.deployArtifactVersion = deployArtifactVersion;
+            _resultValue.helmArtifactSourceType = helmArtifactSourceType;
             _resultValue.helmVerificationKeySources = helmVerificationKeySources;
             _resultValue.imageDigest = imageDigest;
             _resultValue.imageUri = imageUri;

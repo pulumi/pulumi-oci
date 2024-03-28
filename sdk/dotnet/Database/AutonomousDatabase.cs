@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Database
         public Output<double> ActualUsedDataStorageSizeInTbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
         [Output("adminPassword")]
         public Output<string> AdminPassword { get; private set; } = null!;
@@ -58,7 +58,19 @@ namespace Pulumi.Oci.Database
         public Output<bool> ArePrimaryWhitelistedIpsUsed { get; private set; } = null!;
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        /// </summary>
+        [Output("autoRefreshFrequencyInSeconds")]
+        public Output<int> AutoRefreshFrequencyInSeconds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        /// </summary>
+        [Output("autoRefreshPointLagInSeconds")]
+        public Output<int> AutoRefreshPointLagInSeconds { get; private set; } = null!;
+
+        /// <summary>
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("autonomousContainerDatabaseId")]
         public Output<string> AutonomousContainerDatabaseId { get; private set; } = null!;
@@ -767,6 +779,12 @@ namespace Pulumi.Oci.Database
         [Output("timeMaintenanceEnd")]
         public Output<string> TimeMaintenanceEnd { get; private set; } = null!;
 
+        /// <summary>
+        /// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        /// </summary>
+        [Output("timeOfAutoRefreshStart")]
+        public Output<string> TimeOfAutoRefreshStart { get; private set; } = null!;
+
         [Output("timeOfJoiningResourcePool")]
         public Output<string> TimeOfJoiningResourcePool { get; private set; } = null!;
 
@@ -914,7 +932,7 @@ namespace Pulumi.Oci.Database
         private Input<string>? _adminPassword;
 
         /// <summary>
-        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
         public Input<string>? AdminPassword
         {
@@ -933,7 +951,19 @@ namespace Pulumi.Oci.Database
         public Input<bool>? ArePrimaryWhitelistedIpsUsed { get; set; }
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        /// </summary>
+        [Input("autoRefreshFrequencyInSeconds")]
+        public Input<int>? AutoRefreshFrequencyInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        /// </summary>
+        [Input("autoRefreshPointLagInSeconds")]
+        public Input<int>? AutoRefreshPointLagInSeconds { get; set; }
+
+        /// <summary>
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("autonomousContainerDatabaseId")]
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
@@ -1451,6 +1481,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? SwitchoverToRemotePeerId { get; set; }
 
         /// <summary>
+        /// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        /// </summary>
+        [Input("timeOfAutoRefreshStart")]
+        public Input<string>? TimeOfAutoRefreshStart { get; set; }
+
+        /// <summary>
         /// The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         /// </summary>
         [Input("timestamp")]
@@ -1504,7 +1540,7 @@ namespace Pulumi.Oci.Database
         private Input<string>? _adminPassword;
 
         /// <summary>
-        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE" and for new, full and metadata clone databases. This parameter is optional only if you are cloning or using a secret for the password. Not allowed for ADG and refreshable clones.
+        /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
         public Input<string>? AdminPassword
         {
@@ -1541,7 +1577,19 @@ namespace Pulumi.Oci.Database
         public Input<bool>? ArePrimaryWhitelistedIpsUsed { get; set; }
 
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// (Updatable) The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        /// </summary>
+        [Input("autoRefreshFrequencyInSeconds")]
+        public Input<int>? AutoRefreshFrequencyInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        /// </summary>
+        [Input("autoRefreshPointLagInSeconds")]
+        public Input<int>? AutoRefreshPointLagInSeconds { get; set; }
+
+        /// <summary>
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("autonomousContainerDatabaseId")]
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
@@ -2369,6 +2417,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeMaintenanceEnd")]
         public Input<string>? TimeMaintenanceEnd { get; set; }
+
+        /// <summary>
+        /// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        /// </summary>
+        [Input("timeOfAutoRefreshStart")]
+        public Input<string>? TimeOfAutoRefreshStart { get; set; }
 
         [Input("timeOfJoiningResourcePool")]
         public Input<string>? TimeOfJoiningResourcePool { get; set; }

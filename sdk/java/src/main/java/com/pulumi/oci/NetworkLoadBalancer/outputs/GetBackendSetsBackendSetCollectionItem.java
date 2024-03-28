@@ -20,7 +20,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
      */
     private List<GetBackendSetsBackendSetCollectionItemBackend> backends;
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     private List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers;
@@ -60,7 +60,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
         return this.backends;
     }
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      * 
      */
     public List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers() {

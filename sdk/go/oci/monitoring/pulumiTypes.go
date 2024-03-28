@@ -13,6 +13,211 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type AlarmOverride struct {
+	// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body *string `pulumi:"body"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+	//
+	// Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+	//
+	// The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+	//
+	// Example: `PT5M`
+	PendingDuration *string `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+	//
+	// ***
+	//
+	// Example of absence alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+	//
+	// ***
+	Query *string `pulumi:"query"`
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName *string `pulumi:"ruleName"`
+	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity *string `pulumi:"severity"`
+}
+
+// AlarmOverrideInput is an input type that accepts AlarmOverrideArgs and AlarmOverrideOutput values.
+// You can construct a concrete instance of `AlarmOverrideInput` via:
+//
+//	AlarmOverrideArgs{...}
+type AlarmOverrideInput interface {
+	pulumi.Input
+
+	ToAlarmOverrideOutput() AlarmOverrideOutput
+	ToAlarmOverrideOutputWithContext(context.Context) AlarmOverrideOutput
+}
+
+type AlarmOverrideArgs struct {
+	// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body pulumi.StringPtrInput `pulumi:"body"`
+	// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+	//
+	// Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+	//
+	// The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+	//
+	// Example: `PT5M`
+	PendingDuration pulumi.StringPtrInput `pulumi:"pendingDuration"`
+	// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+	//
+	// ***
+	//
+	// Example of absence alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+	//
+	// ***
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
+	// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity pulumi.StringPtrInput `pulumi:"severity"`
+}
+
+func (AlarmOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmOverride)(nil)).Elem()
+}
+
+func (i AlarmOverrideArgs) ToAlarmOverrideOutput() AlarmOverrideOutput {
+	return i.ToAlarmOverrideOutputWithContext(context.Background())
+}
+
+func (i AlarmOverrideArgs) ToAlarmOverrideOutputWithContext(ctx context.Context) AlarmOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmOverrideOutput)
+}
+
+// AlarmOverrideArrayInput is an input type that accepts AlarmOverrideArray and AlarmOverrideArrayOutput values.
+// You can construct a concrete instance of `AlarmOverrideArrayInput` via:
+//
+//	AlarmOverrideArray{ AlarmOverrideArgs{...} }
+type AlarmOverrideArrayInput interface {
+	pulumi.Input
+
+	ToAlarmOverrideArrayOutput() AlarmOverrideArrayOutput
+	ToAlarmOverrideArrayOutputWithContext(context.Context) AlarmOverrideArrayOutput
+}
+
+type AlarmOverrideArray []AlarmOverrideInput
+
+func (AlarmOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmOverride)(nil)).Elem()
+}
+
+func (i AlarmOverrideArray) ToAlarmOverrideArrayOutput() AlarmOverrideArrayOutput {
+	return i.ToAlarmOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i AlarmOverrideArray) ToAlarmOverrideArrayOutputWithContext(ctx context.Context) AlarmOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmOverrideArrayOutput)
+}
+
+type AlarmOverrideOutput struct{ *pulumi.OutputState }
+
+func (AlarmOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmOverride)(nil)).Elem()
+}
+
+func (o AlarmOverrideOutput) ToAlarmOverrideOutput() AlarmOverrideOutput {
+	return o
+}
+
+func (o AlarmOverrideOutput) ToAlarmOverrideOutputWithContext(ctx context.Context) AlarmOverrideOutput {
+	return o
+}
+
+// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+func (o AlarmOverrideOutput) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmOverride) *string { return v.Body }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+//
+// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
+//
+// Under the default value of PT1M, the first evaluation that breaches the alarm updates the state to "FIRING".
+//
+// The alarm updates its status to "OK" when the breaching condition has been clear for the most recent minute.
+//
+// Example: `PT5M`
+func (o AlarmOverrideOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmOverride) *string { return v.PendingDuration }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+//
+// Example of threshold alarm:
+//
+// ***
+//
+// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+//
+// ***
+//
+// Example of absence alarm:
+//
+// ***
+//
+// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+//
+// ***
+func (o AlarmOverrideOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmOverride) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o AlarmOverrideOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmOverride) *string { return v.RuleName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+func (o AlarmOverrideOutput) Severity() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmOverride) *string { return v.Severity }).(pulumi.StringPtrOutput)
+}
+
+type AlarmOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (AlarmOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AlarmOverride)(nil)).Elem()
+}
+
+func (o AlarmOverrideArrayOutput) ToAlarmOverrideArrayOutput() AlarmOverrideArrayOutput {
+	return o
+}
+
+func (o AlarmOverrideArrayOutput) ToAlarmOverrideArrayOutputWithContext(ctx context.Context) AlarmOverrideArrayOutput {
+	return o
+}
+
+func (o AlarmOverrideArrayOutput) Index(i pulumi.IntInput) AlarmOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AlarmOverride {
+		return vs[0].([]AlarmOverride)[vs[1].(int)]
+	}).(AlarmOverrideOutput)
+}
+
 type AlarmSuppressionType struct {
 	// (Updatable) Human-readable reason for suppressing alarm notifications. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
@@ -487,11 +692,146 @@ func (o GetAlarmHistoryCollectionEntryArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAlarmHistoryCollectionEntryOutput)
 }
 
+type GetAlarmOverride struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body string `pulumi:"body"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	Query string `pulumi:"query"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName string `pulumi:"ruleName"`
+	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity string `pulumi:"severity"`
+}
+
+// GetAlarmOverrideInput is an input type that accepts GetAlarmOverrideArgs and GetAlarmOverrideOutput values.
+// You can construct a concrete instance of `GetAlarmOverrideInput` via:
+//
+//	GetAlarmOverrideArgs{...}
+type GetAlarmOverrideInput interface {
+	pulumi.Input
+
+	ToGetAlarmOverrideOutput() GetAlarmOverrideOutput
+	ToGetAlarmOverrideOutputWithContext(context.Context) GetAlarmOverrideOutput
+}
+
+type GetAlarmOverrideArgs struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body pulumi.StringInput `pulumi:"body"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	Query pulumi.StringInput `pulumi:"query"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity pulumi.StringInput `pulumi:"severity"`
+}
+
+func (GetAlarmOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmOverride)(nil)).Elem()
+}
+
+func (i GetAlarmOverrideArgs) ToGetAlarmOverrideOutput() GetAlarmOverrideOutput {
+	return i.ToGetAlarmOverrideOutputWithContext(context.Background())
+}
+
+func (i GetAlarmOverrideArgs) ToGetAlarmOverrideOutputWithContext(ctx context.Context) GetAlarmOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmOverrideOutput)
+}
+
+// GetAlarmOverrideArrayInput is an input type that accepts GetAlarmOverrideArray and GetAlarmOverrideArrayOutput values.
+// You can construct a concrete instance of `GetAlarmOverrideArrayInput` via:
+//
+//	GetAlarmOverrideArray{ GetAlarmOverrideArgs{...} }
+type GetAlarmOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmOverrideArrayOutput() GetAlarmOverrideArrayOutput
+	ToGetAlarmOverrideArrayOutputWithContext(context.Context) GetAlarmOverrideArrayOutput
+}
+
+type GetAlarmOverrideArray []GetAlarmOverrideInput
+
+func (GetAlarmOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmOverride)(nil)).Elem()
+}
+
+func (i GetAlarmOverrideArray) ToGetAlarmOverrideArrayOutput() GetAlarmOverrideArrayOutput {
+	return i.ToGetAlarmOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmOverrideArray) ToGetAlarmOverrideArrayOutputWithContext(ctx context.Context) GetAlarmOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmOverrideArrayOutput)
+}
+
+type GetAlarmOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmOverride)(nil)).Elem()
+}
+
+func (o GetAlarmOverrideOutput) ToGetAlarmOverrideOutput() GetAlarmOverrideOutput {
+	return o
+}
+
+func (o GetAlarmOverrideOutput) ToGetAlarmOverrideOutputWithContext(ctx context.Context) GetAlarmOverrideOutput {
+	return o
+}
+
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+func (o GetAlarmOverrideOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmOverride) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+func (o GetAlarmOverrideOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmOverride) string { return v.PendingDuration }).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+func (o GetAlarmOverrideOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmOverride) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o GetAlarmOverrideOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmOverride) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+func (o GetAlarmOverrideOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmOverride) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+type GetAlarmOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmOverride)(nil)).Elem()
+}
+
+func (o GetAlarmOverrideArrayOutput) ToGetAlarmOverrideArrayOutput() GetAlarmOverrideArrayOutput {
+	return o
+}
+
+func (o GetAlarmOverrideArrayOutput) ToGetAlarmOverrideArrayOutputWithContext(ctx context.Context) GetAlarmOverrideArrayOutput {
+	return o
+}
+
+func (o GetAlarmOverrideArrayOutput) Index(i pulumi.IntInput) GetAlarmOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmOverride {
+		return vs[0].([]GetAlarmOverride)[vs[1].(int)]
+	}).(GetAlarmOverrideOutput)
+}
+
 type GetAlarmStatusesAlarmStatus struct {
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 	Id string `pulumi:"id"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName string `pulumi:"ruleName"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity string `pulumi:"severity"`
 	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
@@ -518,6 +858,8 @@ type GetAlarmStatusesAlarmStatusArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
@@ -587,6 +929,11 @@ func (o GetAlarmStatusesAlarmStatusOutput) DisplayName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 func (o GetAlarmStatusesAlarmStatusOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o GetAlarmStatusesAlarmStatusOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmStatusesAlarmStatus) string { return v.RuleName }).(pulumi.StringOutput)
 }
 
 // The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -1621,6 +1968,10 @@ type GetAlarmsAlarm struct {
 	MetricCompartmentIdInSubtree bool `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
+	// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion string `pulumi:"notificationVersion"`
+	// A set of overrides that control evaluations of the alarm.
+	Overrides []GetAlarmsAlarmOverride `pulumi:"overrides"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	PendingDuration string `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -1631,6 +1982,8 @@ type GetAlarmsAlarm struct {
 	Resolution string `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName string `pulumi:"ruleName"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity string `pulumi:"severity"`
 	// A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
@@ -1681,6 +2034,10 @@ type GetAlarmsAlarmArgs struct {
 	MetricCompartmentIdInSubtree pulumi.BoolInput `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion pulumi.StringInput `pulumi:"notificationVersion"`
+	// A set of overrides that control evaluations of the alarm.
+	Overrides GetAlarmsAlarmOverrideArrayInput `pulumi:"overrides"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -1691,6 +2048,8 @@ type GetAlarmsAlarmArgs struct {
 	Resolution pulumi.StringInput `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity pulumi.StringInput `pulumi:"severity"`
 	// A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
@@ -1819,6 +2178,16 @@ func (o GetAlarmsAlarmOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+func (o GetAlarmsAlarmOutput) NotificationVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.NotificationVersion }).(pulumi.StringOutput)
+}
+
+// A set of overrides that control evaluations of the alarm.
+func (o GetAlarmsAlarmOutput) Overrides() GetAlarmsAlarmOverrideArrayOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) []GetAlarmsAlarmOverride { return v.Overrides }).(GetAlarmsAlarmOverrideArrayOutput)
+}
+
 // The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 func (o GetAlarmsAlarmOutput) PendingDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.PendingDuration }).(pulumi.StringOutput)
@@ -1842,6 +2211,11 @@ func (o GetAlarmsAlarmOutput) Resolution() pulumi.StringOutput {
 // Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 func (o GetAlarmsAlarmOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o GetAlarmsAlarmOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) string { return v.RuleName }).(pulumi.StringOutput)
 }
 
 // The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
@@ -1887,6 +2261,139 @@ func (o GetAlarmsAlarmArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmsAlarm {
 		return vs[0].([]GetAlarmsAlarm)[vs[1].(int)]
 	}).(GetAlarmsAlarmOutput)
+}
+
+type GetAlarmsAlarmOverride struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body string `pulumi:"body"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	Query string `pulumi:"query"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName string `pulumi:"ruleName"`
+	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity string `pulumi:"severity"`
+}
+
+// GetAlarmsAlarmOverrideInput is an input type that accepts GetAlarmsAlarmOverrideArgs and GetAlarmsAlarmOverrideOutput values.
+// You can construct a concrete instance of `GetAlarmsAlarmOverrideInput` via:
+//
+//	GetAlarmsAlarmOverrideArgs{...}
+type GetAlarmsAlarmOverrideInput interface {
+	pulumi.Input
+
+	ToGetAlarmsAlarmOverrideOutput() GetAlarmsAlarmOverrideOutput
+	ToGetAlarmsAlarmOverrideOutputWithContext(context.Context) GetAlarmsAlarmOverrideOutput
+}
+
+type GetAlarmsAlarmOverrideArgs struct {
+	// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+	Body pulumi.StringInput `pulumi:"body"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+	Query pulumi.StringInput `pulumi:"query"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+	Severity pulumi.StringInput `pulumi:"severity"`
+}
+
+func (GetAlarmsAlarmOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmsAlarmOverride)(nil)).Elem()
+}
+
+func (i GetAlarmsAlarmOverrideArgs) ToGetAlarmsAlarmOverrideOutput() GetAlarmsAlarmOverrideOutput {
+	return i.ToGetAlarmsAlarmOverrideOutputWithContext(context.Background())
+}
+
+func (i GetAlarmsAlarmOverrideArgs) ToGetAlarmsAlarmOverrideOutputWithContext(ctx context.Context) GetAlarmsAlarmOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmOverrideOutput)
+}
+
+// GetAlarmsAlarmOverrideArrayInput is an input type that accepts GetAlarmsAlarmOverrideArray and GetAlarmsAlarmOverrideArrayOutput values.
+// You can construct a concrete instance of `GetAlarmsAlarmOverrideArrayInput` via:
+//
+//	GetAlarmsAlarmOverrideArray{ GetAlarmsAlarmOverrideArgs{...} }
+type GetAlarmsAlarmOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetAlarmsAlarmOverrideArrayOutput() GetAlarmsAlarmOverrideArrayOutput
+	ToGetAlarmsAlarmOverrideArrayOutputWithContext(context.Context) GetAlarmsAlarmOverrideArrayOutput
+}
+
+type GetAlarmsAlarmOverrideArray []GetAlarmsAlarmOverrideInput
+
+func (GetAlarmsAlarmOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmsAlarmOverride)(nil)).Elem()
+}
+
+func (i GetAlarmsAlarmOverrideArray) ToGetAlarmsAlarmOverrideArrayOutput() GetAlarmsAlarmOverrideArrayOutput {
+	return i.ToGetAlarmsAlarmOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetAlarmsAlarmOverrideArray) ToGetAlarmsAlarmOverrideArrayOutputWithContext(ctx context.Context) GetAlarmsAlarmOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmsAlarmOverrideArrayOutput)
+}
+
+type GetAlarmsAlarmOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmsAlarmOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmsAlarmOverride)(nil)).Elem()
+}
+
+func (o GetAlarmsAlarmOverrideOutput) ToGetAlarmsAlarmOverrideOutput() GetAlarmsAlarmOverrideOutput {
+	return o
+}
+
+func (o GetAlarmsAlarmOverrideOutput) ToGetAlarmsAlarmOverrideOutputWithContext(ctx context.Context) GetAlarmsAlarmOverrideOutput {
+	return o
+}
+
+// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+func (o GetAlarmsAlarmOverrideOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmOverride) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
+func (o GetAlarmsAlarmOverrideOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmOverride) string { return v.PendingDuration }).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+func (o GetAlarmsAlarmOverrideOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmOverride) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o GetAlarmsAlarmOverrideOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmOverride) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+func (o GetAlarmsAlarmOverrideOutput) Severity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmsAlarmOverride) string { return v.Severity }).(pulumi.StringOutput)
+}
+
+type GetAlarmsAlarmOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmsAlarmOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAlarmsAlarmOverride)(nil)).Elem()
+}
+
+func (o GetAlarmsAlarmOverrideArrayOutput) ToGetAlarmsAlarmOverrideArrayOutput() GetAlarmsAlarmOverrideArrayOutput {
+	return o
+}
+
+func (o GetAlarmsAlarmOverrideArrayOutput) ToGetAlarmsAlarmOverrideArrayOutputWithContext(ctx context.Context) GetAlarmsAlarmOverrideArrayOutput {
+	return o
+}
+
+func (o GetAlarmsAlarmOverrideArrayOutput) Index(i pulumi.IntInput) GetAlarmsAlarmOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmsAlarmOverride {
+		return vs[0].([]GetAlarmsAlarmOverride)[vs[1].(int)]
+	}).(GetAlarmsAlarmOverrideOutput)
 }
 
 type GetAlarmsAlarmSuppression struct {
@@ -2823,12 +3330,16 @@ func (o GetMetricsMetricArrayOutput) Index(i pulumi.IntInput) GetMetricsMetricOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmOverrideInput)(nil)).Elem(), AlarmOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmOverrideArrayInput)(nil)).Elem(), AlarmOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionTypeInput)(nil)).Elem(), AlarmSuppressionTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionTypePtrInput)(nil)).Elem(), AlarmSuppressionTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionAlarmSuppressionTargetInput)(nil)).Elem(), AlarmSuppressionAlarmSuppressionTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmSuppressionAlarmSuppressionTargetPtrInput)(nil)).Elem(), AlarmSuppressionAlarmSuppressionTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmHistoryCollectionEntryInput)(nil)).Elem(), GetAlarmHistoryCollectionEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmHistoryCollectionEntryArrayInput)(nil)).Elem(), GetAlarmHistoryCollectionEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmOverrideInput)(nil)).Elem(), GetAlarmOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmOverrideArrayInput)(nil)).Elem(), GetAlarmOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmStatusesAlarmStatusInput)(nil)).Elem(), GetAlarmStatusesAlarmStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmStatusesAlarmStatusArrayInput)(nil)).Elem(), GetAlarmStatusesAlarmStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmStatusesAlarmStatusSuppressionInput)(nil)).Elem(), GetAlarmStatusesAlarmStatusSuppressionArgs{})
@@ -2849,6 +3360,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmSuppressionsFilterArrayInput)(nil)).Elem(), GetAlarmSuppressionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmInput)(nil)).Elem(), GetAlarmsAlarmArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmArrayInput)(nil)).Elem(), GetAlarmsAlarmArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmOverrideInput)(nil)).Elem(), GetAlarmsAlarmOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmOverrideArrayInput)(nil)).Elem(), GetAlarmsAlarmOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmSuppressionInput)(nil)).Elem(), GetAlarmsAlarmSuppressionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsAlarmSuppressionArrayInput)(nil)).Elem(), GetAlarmsAlarmSuppressionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmsFilterInput)(nil)).Elem(), GetAlarmsFilterArgs{})
@@ -2863,12 +3376,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsFilterArrayInput)(nil)).Elem(), GetMetricsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsMetricInput)(nil)).Elem(), GetMetricsMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetricsMetricArrayInput)(nil)).Elem(), GetMetricsMetricArray{})
+	pulumi.RegisterOutputType(AlarmOverrideOutput{})
+	pulumi.RegisterOutputType(AlarmOverrideArrayOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionTypeOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionTypePtrOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionAlarmSuppressionTargetOutput{})
 	pulumi.RegisterOutputType(AlarmSuppressionAlarmSuppressionTargetPtrOutput{})
 	pulumi.RegisterOutputType(GetAlarmHistoryCollectionEntryOutput{})
 	pulumi.RegisterOutputType(GetAlarmHistoryCollectionEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmOverrideOutput{})
+	pulumi.RegisterOutputType(GetAlarmOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmStatusesAlarmStatusOutput{})
 	pulumi.RegisterOutputType(GetAlarmStatusesAlarmStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmStatusesAlarmStatusSuppressionOutput{})
@@ -2889,6 +3406,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmSuppressionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmsAlarmOutput{})
 	pulumi.RegisterOutputType(GetAlarmsAlarmArrayOutput{})
+	pulumi.RegisterOutputType(GetAlarmsAlarmOverrideOutput{})
+	pulumi.RegisterOutputType(GetAlarmsAlarmOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmsAlarmSuppressionOutput{})
 	pulumi.RegisterOutputType(GetAlarmsAlarmSuppressionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmsFilterOutput{})

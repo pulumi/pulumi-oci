@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DevOps
     ///             ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
     ///             DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
     ///             DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
+    ///             HelmArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
     ///             HelmVerificationKeySource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs
     ///             {
     ///                 VerificationKeySourceType = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,

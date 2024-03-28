@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -49,26 +51,58 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly compartmentId: string;
     /**
-     * MySQL Database Name
+     * The name of the MySQL Database.
      */
     readonly dbName: string;
     /**
-     * MySQL Database Version
+     * The version of the MySQL Database.
      */
     readonly dbVersion: string;
+    /**
+     * The name of the HeatWave cluster.
+     */
+    readonly heatWaveClusterDisplayName: string;
+    /**
+     * The total memory belonging to the HeatWave cluster in GBs.
+     */
+    readonly heatWaveMemorySize: number;
+    /**
+     * Shape of the nodes in the HeatWave cluster.
+     */
+    readonly heatWaveNodeShape: string;
+    /**
+     * The information about an individual HeatWave nodes in the cluster.
+     */
+    readonly heatWaveNodes: outputs.DatabaseManagement.GetManagedMySqlDatabaseHeatWaveNode[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * If the HeatWave cluster is active or not.
+     */
+    readonly isHeatWaveActive: boolean;
+    /**
+     * If HeatWave is enabled for this db system or not.
+     */
+    readonly isHeatWaveEnabled: boolean;
+    /**
+     * If HeatWave Lakehouse is enabled for the db system or not.
+     */
+    readonly isLakehouseEnabled: boolean;
     readonly managedMySqlDatabaseId: string;
     /**
      * The name of the Managed MySQL Database.
      */
     readonly name: string;
     /**
-     * The date and time the Managed Database was created.
+     * The date and time the node was created.
      */
     readonly timeCreated: string;
+    /**
+     * The date and time the Managed MySQL Database was created.
+     */
+    readonly timeCreatedHeatWave: string;
 }
 /**
  * This data source provides details about a specific Managed My Sql Database resource in Oracle Cloud Infrastructure Database Management service.

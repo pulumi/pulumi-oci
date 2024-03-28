@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetManagedMySqlDatabaseResult',
@@ -21,7 +22,7 @@ class GetManagedMySqlDatabaseResult:
     """
     A collection of values returned by getManagedMySqlDatabase.
     """
-    def __init__(__self__, compartment_id=None, db_name=None, db_version=None, id=None, managed_my_sql_database_id=None, name=None, time_created=None):
+    def __init__(__self__, compartment_id=None, db_name=None, db_version=None, heat_wave_cluster_display_name=None, heat_wave_memory_size=None, heat_wave_node_shape=None, heat_wave_nodes=None, id=None, is_heat_wave_active=None, is_heat_wave_enabled=None, is_lakehouse_enabled=None, managed_my_sql_database_id=None, name=None, time_created=None, time_created_heat_wave=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -31,9 +32,30 @@ class GetManagedMySqlDatabaseResult:
         if db_version and not isinstance(db_version, str):
             raise TypeError("Expected argument 'db_version' to be a str")
         pulumi.set(__self__, "db_version", db_version)
+        if heat_wave_cluster_display_name and not isinstance(heat_wave_cluster_display_name, str):
+            raise TypeError("Expected argument 'heat_wave_cluster_display_name' to be a str")
+        pulumi.set(__self__, "heat_wave_cluster_display_name", heat_wave_cluster_display_name)
+        if heat_wave_memory_size and not isinstance(heat_wave_memory_size, int):
+            raise TypeError("Expected argument 'heat_wave_memory_size' to be a int")
+        pulumi.set(__self__, "heat_wave_memory_size", heat_wave_memory_size)
+        if heat_wave_node_shape and not isinstance(heat_wave_node_shape, str):
+            raise TypeError("Expected argument 'heat_wave_node_shape' to be a str")
+        pulumi.set(__self__, "heat_wave_node_shape", heat_wave_node_shape)
+        if heat_wave_nodes and not isinstance(heat_wave_nodes, list):
+            raise TypeError("Expected argument 'heat_wave_nodes' to be a list")
+        pulumi.set(__self__, "heat_wave_nodes", heat_wave_nodes)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_heat_wave_active and not isinstance(is_heat_wave_active, bool):
+            raise TypeError("Expected argument 'is_heat_wave_active' to be a bool")
+        pulumi.set(__self__, "is_heat_wave_active", is_heat_wave_active)
+        if is_heat_wave_enabled and not isinstance(is_heat_wave_enabled, bool):
+            raise TypeError("Expected argument 'is_heat_wave_enabled' to be a bool")
+        pulumi.set(__self__, "is_heat_wave_enabled", is_heat_wave_enabled)
+        if is_lakehouse_enabled and not isinstance(is_lakehouse_enabled, bool):
+            raise TypeError("Expected argument 'is_lakehouse_enabled' to be a bool")
+        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
         if managed_my_sql_database_id and not isinstance(managed_my_sql_database_id, str):
             raise TypeError("Expected argument 'managed_my_sql_database_id' to be a str")
         pulumi.set(__self__, "managed_my_sql_database_id", managed_my_sql_database_id)
@@ -43,6 +65,9 @@ class GetManagedMySqlDatabaseResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_created_heat_wave and not isinstance(time_created_heat_wave, str):
+            raise TypeError("Expected argument 'time_created_heat_wave' to be a str")
+        pulumi.set(__self__, "time_created_heat_wave", time_created_heat_wave)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -56,7 +81,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
-        MySQL Database Name
+        The name of the MySQL Database.
         """
         return pulumi.get(self, "db_name")
 
@@ -64,9 +89,41 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> str:
         """
-        MySQL Database Version
+        The version of the MySQL Database.
         """
         return pulumi.get(self, "db_version")
+
+    @property
+    @pulumi.getter(name="heatWaveClusterDisplayName")
+    def heat_wave_cluster_display_name(self) -> str:
+        """
+        The name of the HeatWave cluster.
+        """
+        return pulumi.get(self, "heat_wave_cluster_display_name")
+
+    @property
+    @pulumi.getter(name="heatWaveMemorySize")
+    def heat_wave_memory_size(self) -> int:
+        """
+        The total memory belonging to the HeatWave cluster in GBs.
+        """
+        return pulumi.get(self, "heat_wave_memory_size")
+
+    @property
+    @pulumi.getter(name="heatWaveNodeShape")
+    def heat_wave_node_shape(self) -> str:
+        """
+        Shape of the nodes in the HeatWave cluster.
+        """
+        return pulumi.get(self, "heat_wave_node_shape")
+
+    @property
+    @pulumi.getter(name="heatWaveNodes")
+    def heat_wave_nodes(self) -> Sequence['outputs.GetManagedMySqlDatabaseHeatWaveNodeResult']:
+        """
+        The information about an individual HeatWave nodes in the cluster.
+        """
+        return pulumi.get(self, "heat_wave_nodes")
 
     @property
     @pulumi.getter
@@ -75,6 +132,30 @@ class GetManagedMySqlDatabaseResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isHeatWaveActive")
+    def is_heat_wave_active(self) -> bool:
+        """
+        If the HeatWave cluster is active or not.
+        """
+        return pulumi.get(self, "is_heat_wave_active")
+
+    @property
+    @pulumi.getter(name="isHeatWaveEnabled")
+    def is_heat_wave_enabled(self) -> bool:
+        """
+        If HeatWave is enabled for this db system or not.
+        """
+        return pulumi.get(self, "is_heat_wave_enabled")
+
+    @property
+    @pulumi.getter(name="isLakehouseEnabled")
+    def is_lakehouse_enabled(self) -> bool:
+        """
+        If HeatWave Lakehouse is enabled for the db system or not.
+        """
+        return pulumi.get(self, "is_lakehouse_enabled")
 
     @property
     @pulumi.getter(name="managedMySqlDatabaseId")
@@ -93,9 +174,17 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the Managed Database was created.
+        The date and time the node was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeCreatedHeatWave")
+    def time_created_heat_wave(self) -> str:
+        """
+        The date and time the Managed MySQL Database was created.
+        """
+        return pulumi.get(self, "time_created_heat_wave")
 
 
 class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
@@ -107,10 +196,18 @@ class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
             compartment_id=self.compartment_id,
             db_name=self.db_name,
             db_version=self.db_version,
+            heat_wave_cluster_display_name=self.heat_wave_cluster_display_name,
+            heat_wave_memory_size=self.heat_wave_memory_size,
+            heat_wave_node_shape=self.heat_wave_node_shape,
+            heat_wave_nodes=self.heat_wave_nodes,
             id=self.id,
+            is_heat_wave_active=self.is_heat_wave_active,
+            is_heat_wave_enabled=self.is_heat_wave_enabled,
+            is_lakehouse_enabled=self.is_lakehouse_enabled,
             managed_my_sql_database_id=self.managed_my_sql_database_id,
             name=self.name,
-            time_created=self.time_created)
+            time_created=self.time_created,
+            time_created_heat_wave=self.time_created_heat_wave)
 
 
 def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None,
@@ -143,10 +240,18 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[str] = None
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         db_name=pulumi.get(__ret__, 'db_name'),
         db_version=pulumi.get(__ret__, 'db_version'),
+        heat_wave_cluster_display_name=pulumi.get(__ret__, 'heat_wave_cluster_display_name'),
+        heat_wave_memory_size=pulumi.get(__ret__, 'heat_wave_memory_size'),
+        heat_wave_node_shape=pulumi.get(__ret__, 'heat_wave_node_shape'),
+        heat_wave_nodes=pulumi.get(__ret__, 'heat_wave_nodes'),
         id=pulumi.get(__ret__, 'id'),
+        is_heat_wave_active=pulumi.get(__ret__, 'is_heat_wave_active'),
+        is_heat_wave_enabled=pulumi.get(__ret__, 'is_heat_wave_enabled'),
+        is_lakehouse_enabled=pulumi.get(__ret__, 'is_lakehouse_enabled'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         name=pulumi.get(__ret__, 'name'),
-        time_created=pulumi.get(__ret__, 'time_created'))
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_created_heat_wave=pulumi.get(__ret__, 'time_created_heat_wave'))
 
 
 @_utilities.lift_output_func(get_managed_my_sql_database)

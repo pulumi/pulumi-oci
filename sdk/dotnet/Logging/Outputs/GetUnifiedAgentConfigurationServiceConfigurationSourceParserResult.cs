@@ -90,6 +90,10 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string NullValuePattern;
         /// <summary>
+        /// If true, a separator parameter can be further defined.
+        /// </summary>
+        public readonly bool ParseNested;
+        /// <summary>
         /// Type of fluent parser.
         /// </summary>
         public readonly string ParserType;
@@ -98,9 +102,17 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult> Patterns;
         /// <summary>
+        /// record section of openmetrics parser.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputResult> RecordInputs;
+        /// <summary>
         /// RFC 5424 time format.
         /// </summary>
         public readonly string Rfc5424timeFormat;
+        /// <summary>
+        /// Keys of adjacent levels are joined by the separator.
+        /// </summary>
+        public readonly string Separator;
         /// <summary>
         /// Syslog parser type.
         /// </summary>
@@ -162,11 +174,17 @@ namespace Pulumi.Oci.Logging.Outputs
 
             string nullValuePattern,
 
+            bool parseNested,
+
             string parserType,
 
             ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult> patterns,
 
+            ImmutableArray<Outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputResult> recordInputs,
+
             string rfc5424timeFormat,
+
+            string separator,
 
             string syslogParserType,
 
@@ -197,9 +215,12 @@ namespace Pulumi.Oci.Logging.Outputs
             MultiLineStartRegexp = multiLineStartRegexp;
             NestedParsers = nestedParsers;
             NullValuePattern = nullValuePattern;
+            ParseNested = parseNested;
             ParserType = parserType;
             Patterns = patterns;
+            RecordInputs = recordInputs;
             Rfc5424timeFormat = rfc5424timeFormat;
+            Separator = separator;
             SyslogParserType = syslogParserType;
             TimeFormat = timeFormat;
             TimeType = timeType;

@@ -85,17 +85,17 @@ class BackendSetBackend(dict):
                  weight: Optional[int] = None):
         """
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-        :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
-        :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
-        :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
+        :param bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
                Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
                
                Example: `example_backend_set`
-        :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         pulumi.set(__self__, "port", port)
         if ip_address is not None:
@@ -125,7 +125,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
         """
-        The IP address of the backend server. Example: `10.0.0.3`
+        (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -133,7 +133,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="isBackup")
     def is_backup(self) -> Optional[bool]:
         """
-        Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         """
         return pulumi.get(self, "is_backup")
 
@@ -141,7 +141,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[bool]:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -149,7 +149,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="isOffline")
     def is_offline(self) -> Optional[bool]:
         """
-        Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_offline")
 
@@ -169,7 +169,7 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[str]:
         """
-        The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
+        (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         """
         return pulumi.get(self, "target_id")
 
@@ -177,7 +177,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def weight(self) -> Optional[int]:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -368,8 +368,8 @@ class NetworkLoadBalancerIpAddress(dict):
                  is_public: Optional[bool] = None,
                  reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None):
         """
-        :param str ip_address: An IP address.  Example: `192.168.0.3`
-        :param str ip_version: IP version associated with this IP address.
+        :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
+        :param str ip_version: IP version associated with the backend set.
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['NetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
@@ -386,7 +386,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
         """
-        An IP address.  Example: `192.168.0.3`
+        The IP address of the backend server. Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -394,7 +394,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[str]:
         """
-        IP version associated with this IP address.
+        IP version associated with the backend set.
         """
         return pulumi.get(self, "ip_version")
 
@@ -525,7 +525,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -533,7 +533,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
                
                Example: `example_backend_set`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         pulumi.set(__self__, "port", port)
         if ip_address is not None:
@@ -579,7 +579,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> Optional[bool]:
         """
-        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -615,7 +615,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter
     def weight(self) -> Optional[int]:
         """
-        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -818,12 +818,12 @@ class GetBackendSetBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_backup", is_backup)
@@ -854,7 +854,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -894,7 +894,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter
     def weight(self) -> int:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -1041,7 +1041,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
                  policy: str):
         """
         :param Sequence['GetBackendSetsBackendSetCollectionItemBackendArgs'] backends: Array of backends.
-        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         :param str ip_version: IP version associated with the backend set.
         :param bool is_preserve_source: If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -1069,7 +1069,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter(name="healthCheckers")
     def health_checkers(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult']:
         """
-        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         """
         return pulumi.get(self, "health_checkers")
 
@@ -1133,12 +1133,12 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_backup", is_backup)
@@ -1169,7 +1169,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1209,7 +1209,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter
     def weight(self) -> int:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -1400,7 +1400,7 @@ class GetBackendsBackendCollectionItemResult(dict):
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param int port: The communication port for the backend server.  Example: `8080`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         pulumi.set(__self__, "backend_set_name", backend_set_name)
         pulumi.set(__self__, "id", id)
@@ -1495,7 +1495,7 @@ class GetBackendsBackendCollectionItemResult(dict):
     @pulumi.getter
     def weight(self) -> int:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -1594,7 +1594,7 @@ class GetListenersListenerCollectionItemResult(dict):
         :param str name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param int port: The communication port for the listener.  Example: `80`
-        :param str protocol: The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
+        :param str protocol: The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
         pulumi.set(__self__, "id", id)
@@ -1653,7 +1653,7 @@ class GetListenersListenerCollectionItemResult(dict):
     @pulumi.getter
     def protocol(self) -> str:
         """
-        The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
+        The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
         """
         return pulumi.get(self, "protocol")
 
@@ -1795,6 +1795,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
                  ip_addresses: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult'],
                  is_preserve_source_destination: bool,
                  is_private: bool,
+                 is_symmetric_hash_enabled: bool,
                  lifecycle_details: str,
                  network_security_group_ids: Sequence[str],
                  nlb_ip_version: str,
@@ -1830,6 +1831,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         pulumi.set(__self__, "ip_addresses", ip_addresses)
         pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
         pulumi.set(__self__, "is_private", is_private)
+        pulumi.set(__self__, "is_symmetric_hash_enabled", is_symmetric_hash_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
@@ -1903,6 +1905,11 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         Whether the network load balancer has a virtual cloud network-local (private) IP address.
         """
         return pulumi.get(self, "is_private")
+
+    @property
+    @pulumi.getter(name="isSymmetricHashEnabled")
+    def is_symmetric_hash_enabled(self) -> bool:
+        return pulumi.get(self, "is_symmetric_hash_enabled")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

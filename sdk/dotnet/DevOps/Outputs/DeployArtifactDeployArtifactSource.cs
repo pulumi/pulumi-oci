@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeployArtifactDeployArtifactSource
     {
         /// <summary>
-        /// (Updatable) Specifies content for the inline artifact.
+        /// (Updatable) The Helm commands to be executed, base 64 encoded
         /// </summary>
         public readonly string? Base64encodedContent;
         /// <summary>
@@ -33,6 +33,10 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// (Updatable) Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
         /// </summary>
         public readonly string? DeployArtifactVersion;
+        /// <summary>
+        /// (Updatable) Specifies types of artifact sources.
+        /// </summary>
+        public readonly string? HelmArtifactSourceType;
         /// <summary>
         /// (Updatable) The source of the verification material.
         /// </summary>
@@ -62,6 +66,8 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string? deployArtifactVersion,
 
+            string? helmArtifactSourceType,
+
             Outputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySource? helmVerificationKeySource,
 
             string? imageDigest,
@@ -75,6 +81,7 @@ namespace Pulumi.Oci.DevOps.Outputs
             DeployArtifactPath = deployArtifactPath;
             DeployArtifactSourceType = deployArtifactSourceType;
             DeployArtifactVersion = deployArtifactVersion;
+            HelmArtifactSourceType = helmArtifactSourceType;
             HelmVerificationKeySource = helmVerificationKeySource;
             ImageDigest = imageDigest;
             ImageUri = imageUri;

@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  *                 .chartUrl(var_.deploy_artifact_deploy_artifact_source_chart_url())
  *                 .deployArtifactPath(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_path())
  *                 .deployArtifactVersion(var_.deploy_artifact_deploy_artifact_source_deploy_artifact_version())
+ *                 .helmArtifactSourceType(var_.deploy_artifact_deploy_artifact_source_helm_artifact_source_type())
  *                 .helmVerificationKeySource(DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs.builder()
  *                     .verificationKeySourceType(var_.deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type())
  *                     .currentPublicKey(var_.deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key())

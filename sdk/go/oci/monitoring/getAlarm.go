@@ -95,6 +95,10 @@ type LookupAlarmResult struct {
 	MetricCompartmentIdInSubtree bool `pulumi:"metricCompartmentIdInSubtree"`
 	// The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
+	// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+	NotificationVersion string `pulumi:"notificationVersion"`
+	// A set of overrides that control evaluations of the alarm.
+	Overrides []GetAlarmOverride `pulumi:"overrides"`
 	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 	PendingDuration string `pulumi:"pendingDuration"`
 	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
@@ -105,6 +109,8 @@ type LookupAlarmResult struct {
 	Resolution string `pulumi:"resolution"`
 	// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+	RuleName string `pulumi:"ruleName"`
 	// The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
 	Severity string `pulumi:"severity"`
 	// The current lifecycle state of the alarm.  Example: `DELETED`
@@ -224,6 +230,16 @@ func (o LookupAlarmResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+func (o LookupAlarmResultOutput) NotificationVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlarmResult) string { return v.NotificationVersion }).(pulumi.StringOutput)
+}
+
+// A set of overrides that control evaluations of the alarm.
+func (o LookupAlarmResultOutput) Overrides() GetAlarmOverrideArrayOutput {
+	return o.ApplyT(func(v LookupAlarmResult) []GetAlarmOverride { return v.Overrides }).(GetAlarmOverrideArrayOutput)
+}
+
 // The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
 func (o LookupAlarmResultOutput) PendingDuration() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.PendingDuration }).(pulumi.StringOutput)
@@ -247,6 +263,11 @@ func (o LookupAlarmResultOutput) Resolution() pulumi.StringOutput {
 // Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
 func (o LookupAlarmResultOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlarmResult) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+func (o LookupAlarmResultOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlarmResult) string { return v.RuleName }).(pulumi.StringOutput)
 }
 
 // The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`

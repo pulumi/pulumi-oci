@@ -59,10 +59,24 @@ func GetManagedMySqlDatabaseSqlData(ctx *pulumi.Context, args *GetManagedMySqlDa
 type GetManagedMySqlDatabaseSqlDataArgs struct {
 	// The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
 	EndTime string `pulumi:"endTime"`
-	// The parameter to filter results by key criteria.
+	// The parameter to filter results by key criteria which include :
+	// * AVG_TIMER_WAIT
+	// * SUM_TIMER_WAIT
+	// * COUNT_STAR
+	// * SUM_ERRORS
+	// * SUM_ROWS_AFFECTED
+	// * SUM_ROWS_SENT
+	// * SUM_ROWS_EXAMINED
+	// * SUM_CREATED_TMP_TABLES
+	// * SUM_NO_INDEX_USED
+	// * SUM_NO_GOOD_INDEX_USED
+	// * FIRST_SEEN
+	// * LAST_SEEN
+	// * HEATWAVE_OFFLOADED
+	// * HEATWAVE_OUT_OF_MEMORY
 	FilterColumn *string                                `pulumi:"filterColumn"`
 	Filters      []GetManagedMySqlDatabaseSqlDataFilter `pulumi:"filters"`
-	// The OCID of ManagedMySqlDatabase.
+	// The OCID of the Managed MySQL Database.
 	ManagedMySqlDatabaseId string `pulumi:"managedMySqlDatabaseId"`
 	// The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
 	StartTime string `pulumi:"startTime"`
@@ -98,10 +112,24 @@ func GetManagedMySqlDatabaseSqlDataOutput(ctx *pulumi.Context, args GetManagedMy
 type GetManagedMySqlDatabaseSqlDataOutputArgs struct {
 	// The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
 	EndTime pulumi.StringInput `pulumi:"endTime"`
-	// The parameter to filter results by key criteria.
+	// The parameter to filter results by key criteria which include :
+	// * AVG_TIMER_WAIT
+	// * SUM_TIMER_WAIT
+	// * COUNT_STAR
+	// * SUM_ERRORS
+	// * SUM_ROWS_AFFECTED
+	// * SUM_ROWS_SENT
+	// * SUM_ROWS_EXAMINED
+	// * SUM_CREATED_TMP_TABLES
+	// * SUM_NO_INDEX_USED
+	// * SUM_NO_GOOD_INDEX_USED
+	// * FIRST_SEEN
+	// * LAST_SEEN
+	// * HEATWAVE_OFFLOADED
+	// * HEATWAVE_OUT_OF_MEMORY
 	FilterColumn pulumi.StringPtrInput                          `pulumi:"filterColumn"`
 	Filters      GetManagedMySqlDatabaseSqlDataFilterArrayInput `pulumi:"filters"`
-	// The OCID of ManagedMySqlDatabase.
+	// The OCID of the Managed MySQL Database.
 	ManagedMySqlDatabaseId pulumi.StringInput `pulumi:"managedMySqlDatabaseId"`
 	// The start time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
 	StartTime pulumi.StringInput `pulumi:"startTime"`

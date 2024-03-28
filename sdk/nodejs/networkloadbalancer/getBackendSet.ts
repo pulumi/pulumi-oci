@@ -44,7 +44,7 @@ export interface GetBackendSetResult {
      */
     readonly backends: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
     /**
-     * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+     * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
      */
     readonly healthCheckers: outputs.NetworkLoadBalancer.GetBackendSetHealthChecker[];
     readonly id: string;

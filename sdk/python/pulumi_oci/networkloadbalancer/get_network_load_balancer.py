@@ -22,7 +22,7 @@ class GetNetworkLoadBalancerResult:
     """
     A collection of values returned by getNetworkLoadBalancer.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, is_symmetric_hash_enabled=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetNetworkLoadBalancerResult:
         if is_private and not isinstance(is_private, bool):
             raise TypeError("Expected argument 'is_private' to be a bool")
         pulumi.set(__self__, "is_private", is_private)
+        if is_symmetric_hash_enabled and not isinstance(is_symmetric_hash_enabled, bool):
+            raise TypeError("Expected argument 'is_symmetric_hash_enabled' to be a bool")
+        pulumi.set(__self__, "is_symmetric_hash_enabled", is_symmetric_hash_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -143,6 +146,14 @@ class GetNetworkLoadBalancerResult:
         return pulumi.get(self, "is_private")
 
     @property
+    @pulumi.getter(name="isSymmetricHashEnabled")
+    def is_symmetric_hash_enabled(self) -> bool:
+        """
+        This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        """
+        return pulumi.get(self, "is_symmetric_hash_enabled")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -231,6 +242,7 @@ class AwaitableGetNetworkLoadBalancerResult(GetNetworkLoadBalancerResult):
             ip_addresses=self.ip_addresses,
             is_preserve_source_destination=self.is_preserve_source_destination,
             is_private=self.is_private,
+            is_symmetric_hash_enabled=self.is_symmetric_hash_enabled,
             lifecycle_details=self.lifecycle_details,
             network_load_balancer_id=self.network_load_balancer_id,
             network_security_group_ids=self.network_security_group_ids,
@@ -278,6 +290,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
         ip_addresses=pulumi.get(__ret__, 'ip_addresses'),
         is_preserve_source_destination=pulumi.get(__ret__, 'is_preserve_source_destination'),
         is_private=pulumi.get(__ret__, 'is_private'),
+        is_symmetric_hash_enabled=pulumi.get(__ret__, 'is_symmetric_hash_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),

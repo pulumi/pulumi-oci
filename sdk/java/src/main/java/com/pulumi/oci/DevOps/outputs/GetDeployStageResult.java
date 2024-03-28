@@ -188,6 +188,11 @@ public final class GetDeployStageResult {
      */
     private String helmChartDeployArtifactId;
     /**
+     * @return List of Helm command artifact OCIDs.
+     * 
+     */
+    private List<String> helmCommandArtifactIds;
+    /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
@@ -207,6 +212,11 @@ public final class GetDeployStageResult {
      * 
      */
     private Boolean isForceEnabled;
+    /**
+     * @return Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    private Boolean isUninstallOnStageDelete;
     /**
      * @return A boolean flag specifies whether the invoked function must be validated.
      * 
@@ -272,6 +282,11 @@ public final class GetDeployStageResult {
      * 
      */
     private String projectId;
+    /**
+     * @return The purpose of running this Helm stage
+     * 
+     */
+    private String purpose;
     /**
      * @return Release name of the Helm chart.
      * 
@@ -595,6 +610,13 @@ public final class GetDeployStageResult {
         return this.helmChartDeployArtifactId;
     }
     /**
+     * @return List of Helm command artifact OCIDs.
+     * 
+     */
+    public List<String> helmCommandArtifactIds() {
+        return this.helmCommandArtifactIds;
+    }
+    /**
      * @return Unique identifier that is immutable on creation.
      * 
      */
@@ -621,6 +643,13 @@ public final class GetDeployStageResult {
      */
     public Boolean isForceEnabled() {
         return this.isForceEnabled;
+    }
+    /**
+     * @return Uninstall the Helm chart release on deleting the stage.
+     * 
+     */
+    public Boolean isUninstallOnStageDelete() {
+        return this.isUninstallOnStageDelete;
     }
     /**
      * @return A boolean flag specifies whether the invoked function must be validated.
@@ -712,6 +741,13 @@ public final class GetDeployStageResult {
      */
     public String projectId() {
         return this.projectId;
+    }
+    /**
+     * @return The purpose of running this Helm stage
+     * 
+     */
+    public String purpose() {
+        return this.purpose;
     }
     /**
      * @return Release name of the Helm chart.
@@ -895,10 +931,12 @@ public final class GetDeployStageResult {
         private Integer functionTimeoutInSeconds;
         private List<GetDeployStageGreenBackendIp> greenBackendIps;
         private String helmChartDeployArtifactId;
+        private List<String> helmCommandArtifactIds;
         private String id;
         private Boolean isAsync;
         private Boolean isDebugEnabled;
         private Boolean isForceEnabled;
+        private Boolean isUninstallOnStageDelete;
         private Boolean isValidationEnabled;
         private List<String> kubernetesManifestDeployArtifactIds;
         private String lifecycleDetails;
@@ -912,6 +950,7 @@ public final class GetDeployStageResult {
         private String okeClusterDeployEnvironmentId;
         private List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs;
         private String projectId;
+        private String purpose;
         private String releaseName;
         private List<GetDeployStageRollbackPolicy> rollbackPolicies;
         private List<GetDeployStageRolloutPolicy> rolloutPolicies;
@@ -967,10 +1006,12 @@ public final class GetDeployStageResult {
     	      this.functionTimeoutInSeconds = defaults.functionTimeoutInSeconds;
     	      this.greenBackendIps = defaults.greenBackendIps;
     	      this.helmChartDeployArtifactId = defaults.helmChartDeployArtifactId;
+    	      this.helmCommandArtifactIds = defaults.helmCommandArtifactIds;
     	      this.id = defaults.id;
     	      this.isAsync = defaults.isAsync;
     	      this.isDebugEnabled = defaults.isDebugEnabled;
     	      this.isForceEnabled = defaults.isForceEnabled;
+    	      this.isUninstallOnStageDelete = defaults.isUninstallOnStageDelete;
     	      this.isValidationEnabled = defaults.isValidationEnabled;
     	      this.kubernetesManifestDeployArtifactIds = defaults.kubernetesManifestDeployArtifactIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -984,6 +1025,7 @@ public final class GetDeployStageResult {
     	      this.okeClusterDeployEnvironmentId = defaults.okeClusterDeployEnvironmentId;
     	      this.productionLoadBalancerConfigs = defaults.productionLoadBalancerConfigs;
     	      this.projectId = defaults.projectId;
+    	      this.purpose = defaults.purpose;
     	      this.releaseName = defaults.releaseName;
     	      this.rollbackPolicies = defaults.rollbackPolicies;
     	      this.rolloutPolicies = defaults.rolloutPolicies;
@@ -1290,6 +1332,17 @@ public final class GetDeployStageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder helmCommandArtifactIds(List<String> helmCommandArtifactIds) {
+            if (helmCommandArtifactIds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "helmCommandArtifactIds");
+            }
+            this.helmCommandArtifactIds = helmCommandArtifactIds;
+            return this;
+        }
+        public Builder helmCommandArtifactIds(String... helmCommandArtifactIds) {
+            return helmCommandArtifactIds(List.of(helmCommandArtifactIds));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetDeployStageResult", "id");
@@ -1319,6 +1372,14 @@ public final class GetDeployStageResult {
               throw new MissingRequiredPropertyException("GetDeployStageResult", "isForceEnabled");
             }
             this.isForceEnabled = isForceEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isUninstallOnStageDelete(Boolean isUninstallOnStageDelete) {
+            if (isUninstallOnStageDelete == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "isUninstallOnStageDelete");
+            }
+            this.isUninstallOnStageDelete = isUninstallOnStageDelete;
             return this;
         }
         @CustomType.Setter
@@ -1432,6 +1493,14 @@ public final class GetDeployStageResult {
               throw new MissingRequiredPropertyException("GetDeployStageResult", "projectId");
             }
             this.projectId = projectId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder purpose(String purpose) {
+            if (purpose == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "purpose");
+            }
+            this.purpose = purpose;
             return this;
         }
         @CustomType.Setter
@@ -1649,10 +1718,12 @@ public final class GetDeployStageResult {
             _resultValue.functionTimeoutInSeconds = functionTimeoutInSeconds;
             _resultValue.greenBackendIps = greenBackendIps;
             _resultValue.helmChartDeployArtifactId = helmChartDeployArtifactId;
+            _resultValue.helmCommandArtifactIds = helmCommandArtifactIds;
             _resultValue.id = id;
             _resultValue.isAsync = isAsync;
             _resultValue.isDebugEnabled = isDebugEnabled;
             _resultValue.isForceEnabled = isForceEnabled;
+            _resultValue.isUninstallOnStageDelete = isUninstallOnStageDelete;
             _resultValue.isValidationEnabled = isValidationEnabled;
             _resultValue.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -1666,6 +1737,7 @@ public final class GetDeployStageResult {
             _resultValue.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             _resultValue.productionLoadBalancerConfigs = productionLoadBalancerConfigs;
             _resultValue.projectId = projectId;
+            _resultValue.purpose = purpose;
             _resultValue.releaseName = releaseName;
             _resultValue.rollbackPolicies = rollbackPolicies;
             _resultValue.rolloutPolicies = rolloutPolicies;

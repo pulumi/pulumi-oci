@@ -103,7 +103,7 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
      * 
      * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
      * 
-     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
      * 
      * Example: `true`
      * 
@@ -118,13 +118,28 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
      * 
      * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
      * 
-     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+     * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
      * 
      * Example: `true`
      * 
      */
     public Optional<Output<Boolean>> isPrivate() {
         return Optional.ofNullable(this.isPrivate);
+    }
+
+    /**
+     * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    @Import(name="isSymmetricHashEnabled")
+    private @Nullable Output<Boolean> isSymmetricHashEnabled;
+
+    /**
+     * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     */
+    public Optional<Output<Boolean>> isSymmetricHashEnabled() {
+        return Optional.ofNullable(this.isSymmetricHashEnabled);
     }
 
     /**
@@ -218,6 +233,7 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
         this.freeformTags = $.freeformTags;
         this.isPreserveSourceDestination = $.isPreserveSourceDestination;
         this.isPrivate = $.isPrivate;
+        this.isSymmetricHashEnabled = $.isSymmetricHashEnabled;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.nlbIpVersion = $.nlbIpVersion;
         this.reservedIps = $.reservedIps;
@@ -354,7 +370,7 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          * 
          * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
          * 
-         * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+         * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
          * 
          * Example: `true`
          * 
@@ -373,7 +389,7 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          * 
          * If &#34;false&#34;, then the service assigns a public IP address to the network load balancer.
          * 
-         * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works). This value is true by default.
+         * A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
          * 
          * Example: `true`
          * 
@@ -382,6 +398,27 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
          */
         public Builder isPrivate(Boolean isPrivate) {
             return isPrivate(Output.of(isPrivate));
+        }
+
+        /**
+         * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSymmetricHashEnabled(@Nullable Output<Boolean> isSymmetricHashEnabled) {
+            $.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            return this;
+        }
+
+        /**
+         * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            return isSymmetricHashEnabled(Output.of(isSymmetricHashEnabled));
         }
 
         /**

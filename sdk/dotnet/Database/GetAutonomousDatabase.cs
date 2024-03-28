@@ -121,7 +121,15 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool ArePrimaryWhitelistedIpsUsed;
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+        /// </summary>
+        public readonly int AutoRefreshFrequencyInSeconds;
+        /// <summary>
+        /// The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+        /// </summary>
+        public readonly int AutoRefreshPointLagInSeconds;
+        /// <summary>
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         public readonly string AutonomousDatabaseBackupId;
@@ -519,6 +527,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeMaintenanceEnd;
         /// <summary>
+        /// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        /// </summary>
+        public readonly string TimeOfAutoRefreshStart;
+        /// <summary>
         /// The time the member joined the resource pool.
         /// </summary>
         public readonly string TimeOfJoiningResourcePool;
@@ -584,6 +596,10 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetAutonomousDatabaseApexDetailResult> apexDetails,
 
             bool arePrimaryWhitelistedIpsUsed,
+
+            int autoRefreshFrequencyInSeconds,
+
+            int autoRefreshPointLagInSeconds,
 
             string autonomousContainerDatabaseId,
 
@@ -801,6 +817,8 @@ namespace Pulumi.Oci.Database
 
             string timeMaintenanceEnd,
 
+            string timeOfAutoRefreshStart,
+
             string timeOfJoiningResourcePool,
 
             string timeOfLastFailover,
@@ -836,6 +854,8 @@ namespace Pulumi.Oci.Database
             AllocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             ApexDetails = apexDetails;
             ArePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
+            AutoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+            AutoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousDatabaseBackupId = autonomousDatabaseBackupId;
             AutonomousDatabaseId = autonomousDatabaseId;
@@ -944,6 +964,7 @@ namespace Pulumi.Oci.Database
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
+            TimeOfAutoRefreshStart = timeOfAutoRefreshStart;
             TimeOfJoiningResourcePool = timeOfJoiningResourcePool;
             TimeOfLastFailover = timeOfLastFailover;
             TimeOfLastRefresh = timeOfLastRefresh;

@@ -76,6 +76,8 @@ type LookupNetworkLoadBalancerResult struct {
 	IsPreserveSourceDestination bool `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
 	IsPrivate bool `pulumi:"isPrivate"`
+	// This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	IsSymmetricHashEnabled bool `pulumi:"isSymmetricHashEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails      string `pulumi:"lifecycleDetails"`
 	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
@@ -172,6 +174,11 @@ func (o LookupNetworkLoadBalancerResultOutput) IsPreserveSourceDestination() pul
 // Whether the network load balancer has a virtual cloud network-local (private) IP address.
 func (o LookupNetworkLoadBalancerResultOutput) IsPrivate() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+}
+
+// This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+func (o LookupNetworkLoadBalancerResultOutput) IsSymmetricHashEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) bool { return v.IsSymmetricHashEnabled }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

@@ -62,13 +62,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public partial class BackendSet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Array of backends.
+        /// (Updatable) An array of backends to be associated with the backend set.
         /// </summary>
         [Output("backends")]
         public Output<ImmutableArray<Outputs.BackendSetBackend>> Backends { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Output("healthChecker")]
         public Output<Outputs.BackendSetHealthChecker> HealthChecker { get; private set; } = null!;
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Input("healthChecker", required: true)]
         public Input<Inputs.BackendSetHealthCheckerArgs> HealthChecker { get; set; } = null!;
@@ -213,7 +213,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         private InputList<Inputs.BackendSetBackendGetArgs>? _backends;
 
         /// <summary>
-        /// Array of backends.
+        /// (Updatable) An array of backends to be associated with the backend set.
         /// </summary>
         public InputList<Inputs.BackendSetBackendGetArgs> Backends
         {
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         [Input("healthChecker")]
         public Input<Inputs.BackendSetHealthCheckerGetArgs>? HealthChecker { get; set; }

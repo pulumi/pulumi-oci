@@ -14,29 +14,43 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfiguration
     {
         /// <summary>
+        /// (Updatable) Unified Agent monitoring application configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> ApplicationConfigurations;
+        /// <summary>
         /// (Updatable) Type of Unified Agent service configuration.
         /// </summary>
         public readonly string ConfigurationType;
         /// <summary>
         /// (Updatable) Unified monitoring agent operational metrics destination object.
         /// </summary>
-        public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationDestination Destination;
+        public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationDestination? Destination;
         /// <summary>
         /// (Updatable) Logging source object.
         /// </summary>
         public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSource> Sources;
+        /// <summary>
+        /// (Updatable) Logging filter object.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> UnifiedAgentConfigurationFilters;
 
         [OutputConstructor]
         private UnifiedAgentConfigurationServiceConfiguration(
+            ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration> applicationConfigurations,
+
             string configurationType,
 
-            Outputs.UnifiedAgentConfigurationServiceConfigurationDestination destination,
+            Outputs.UnifiedAgentConfigurationServiceConfigurationDestination? destination,
 
-            ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSource> sources)
+            ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationSource> sources,
+
+            ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilters)
         {
+            ApplicationConfigurations = applicationConfigurations;
             ConfigurationType = configurationType;
             Destination = destination;
             Sources = sources;
+            UnifiedAgentConfigurationFilters = unifiedAgentConfigurationFilters;
         }
     }
 }

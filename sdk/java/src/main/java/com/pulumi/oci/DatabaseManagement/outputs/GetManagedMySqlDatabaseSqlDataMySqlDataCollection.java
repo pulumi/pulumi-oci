@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollection {
     /**
-     * @return List of SQLDataSummary.
+     * @return The list of SQLDataSummary records.
      * 
      */
     private List<GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem> items;
 
     private GetManagedMySqlDatabaseSqlDataMySqlDataCollection() {}
     /**
-     * @return List of SQLDataSummary.
+     * @return The list of SQLDataSummary records.
      * 
      */
     public List<GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem> items() {

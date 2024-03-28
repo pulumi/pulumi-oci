@@ -22,7 +22,7 @@ class GetAlarmResult:
     """
     A collection of values returned by getAlarm.
     """
-    def __init__(__self__, alarm_id=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, is_notifications_per_metric_dimension_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
+    def __init__(__self__, alarm_id=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, is_notifications_per_metric_dimension_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, notification_version=None, overrides=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, rule_name=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
         if alarm_id and not isinstance(alarm_id, str):
             raise TypeError("Expected argument 'alarm_id' to be a str")
         pulumi.set(__self__, "alarm_id", alarm_id)
@@ -65,6 +65,12 @@ class GetAlarmResult:
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
+        if notification_version and not isinstance(notification_version, str):
+            raise TypeError("Expected argument 'notification_version' to be a str")
+        pulumi.set(__self__, "notification_version", notification_version)
+        if overrides and not isinstance(overrides, list):
+            raise TypeError("Expected argument 'overrides' to be a list")
+        pulumi.set(__self__, "overrides", overrides)
         if pending_duration and not isinstance(pending_duration, str):
             raise TypeError("Expected argument 'pending_duration' to be a str")
         pulumi.set(__self__, "pending_duration", pending_duration)
@@ -80,6 +86,9 @@ class GetAlarmResult:
         if resource_group and not isinstance(resource_group, str):
             raise TypeError("Expected argument 'resource_group' to be a str")
         pulumi.set(__self__, "resource_group", resource_group)
+        if rule_name and not isinstance(rule_name, str):
+            raise TypeError("Expected argument 'rule_name' to be a str")
+        pulumi.set(__self__, "rule_name", rule_name)
         if severity and not isinstance(severity, str):
             raise TypeError("Expected argument 'severity' to be a str")
         pulumi.set(__self__, "severity", severity)
@@ -206,6 +215,22 @@ class GetAlarmResult:
         return pulumi.get(self, "namespace")
 
     @property
+    @pulumi.getter(name="notificationVersion")
+    def notification_version(self) -> str:
+        """
+        The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
+        """
+        return pulumi.get(self, "notification_version")
+
+    @property
+    @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetAlarmOverrideResult']:
+        """
+        A set of overrides that control evaluations of the alarm.
+        """
+        return pulumi.get(self, "overrides")
+
+    @property
     @pulumi.getter(name="pendingDuration")
     def pending_duration(self) -> str:
         """
@@ -244,6 +269,14 @@ class GetAlarmResult:
         Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         """
         return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> str:
+        """
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        """
+        return pulumi.get(self, "rule_name")
 
     @property
     @pulumi.getter
@@ -306,11 +339,14 @@ class AwaitableGetAlarmResult(GetAlarmResult):
             metric_compartment_id=self.metric_compartment_id,
             metric_compartment_id_in_subtree=self.metric_compartment_id_in_subtree,
             namespace=self.namespace,
+            notification_version=self.notification_version,
+            overrides=self.overrides,
             pending_duration=self.pending_duration,
             query=self.query,
             repeat_notification_duration=self.repeat_notification_duration,
             resolution=self.resolution,
             resource_group=self.resource_group,
+            rule_name=self.rule_name,
             severity=self.severity,
             state=self.state,
             suppressions=self.suppressions,
@@ -367,11 +403,14 @@ def get_alarm(alarm_id: Optional[str] = None,
         metric_compartment_id=pulumi.get(__ret__, 'metric_compartment_id'),
         metric_compartment_id_in_subtree=pulumi.get(__ret__, 'metric_compartment_id_in_subtree'),
         namespace=pulumi.get(__ret__, 'namespace'),
+        notification_version=pulumi.get(__ret__, 'notification_version'),
+        overrides=pulumi.get(__ret__, 'overrides'),
         pending_duration=pulumi.get(__ret__, 'pending_duration'),
         query=pulumi.get(__ret__, 'query'),
         repeat_notification_duration=pulumi.get(__ret__, 'repeat_notification_duration'),
         resolution=pulumi.get(__ret__, 'resolution'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
+        rule_name=pulumi.get(__ret__, 'rule_name'),
         severity=pulumi.get(__ret__, 'severity'),
         state=pulumi.get(__ret__, 'state'),
         suppressions=pulumi.get(__ret__, 'suppressions'),

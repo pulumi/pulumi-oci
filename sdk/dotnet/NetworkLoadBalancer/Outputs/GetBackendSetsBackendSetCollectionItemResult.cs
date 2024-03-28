@@ -18,7 +18,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendSetCollectionItemBackendResult> Backends;
         /// <summary>
-        /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
+        /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult> HealthCheckers;
         public readonly string Id;

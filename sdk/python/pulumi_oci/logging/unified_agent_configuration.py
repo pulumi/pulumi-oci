@@ -17,33 +17,31 @@ __all__ = ['UnifiedAgentConfigurationArgs', 'UnifiedAgentConfiguration']
 class UnifiedAgentConfigurationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 description: pulumi.Input[str],
+                 display_name: pulumi.Input[str],
                  is_enabled: pulumi.Input[bool],
                  service_configuration: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 description: Optional[pulumi.Input[str]] = None,
-                 display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None):
         """
         The set of arguments for constructing a UnifiedAgentConfiguration resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
+        :param pulumi.Input[str] description: (Updatable) Description for this resource.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[bool] is_enabled: (Updatable) Whether or not this resource is currently enabled.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'] service_configuration: (Updatable) Top level Unified Agent service configuration object.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] description: (Updatable) Description for this resource.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs'] group_association: (Updatable) Groups using the configuration.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "service_configuration", service_configuration)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if group_association is not None:
@@ -60,6 +58,30 @@ class UnifiedAgentConfigurationArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Description for this resource.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -96,30 +118,6 @@ class UnifiedAgentConfigurationArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "defined_tags", value)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Description for this resource.
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
-        """
-        return pulumi.get(self, "display_name")
-
-    @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "display_name", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -365,94 +363,6 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
 
         Create unified agent configuration registration.
 
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unified_agent_configuration = oci.logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["unified_agent_configuration_is_enabled"],
-            description=var["unified_agent_configuration_description"],
-            display_name=var["unified_agent_configuration_display_name"],
-            service_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationArgs(
-                configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
-                destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
-                    log_object_id=oci_objectstorage_object["test_object"]["id"],
-                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
-                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
-                            compartment_id=var["compartment_id"],
-                        ),
-                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
-                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
-                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
-                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
-                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
-                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
-                            ),
-                        ),
-                    ),
-                ),
-                sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
-                    source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],
-                    channels=var["unified_agent_configuration_service_configuration_sources_channels"],
-                    name=var["unified_agent_configuration_service_configuration_sources_name"],
-                    parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs(
-                        parser_type=var["unified_agent_configuration_service_configuration_sources_parser_parser_type"],
-                        delimiter=var["unified_agent_configuration_service_configuration_sources_parser_delimiter"],
-                        expression=var["unified_agent_configuration_service_configuration_sources_parser_expression"],
-                        field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_field_time_key"],
-                        formats=var["unified_agent_configuration_service_configuration_sources_parser_format"],
-                        format_firstline=var["unified_agent_configuration_service_configuration_sources_parser_format_firstline"],
-                        grok_failure_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_failure_key"],
-                        grok_name_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_name_key"],
-                        is_estimate_current_event=var["unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event"],
-                        is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key"],
-                        is_merge_cri_fields=var["unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields"],
-                        is_null_empty_string=var["unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string"],
-                        is_support_colonless_ident=var["unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident"],
-                        is_with_priority=var["unified_agent_configuration_service_configuration_sources_parser_is_with_priority"],
-                        keys=var["unified_agent_configuration_service_configuration_sources_parser_keys"],
-                        message_format=var["unified_agent_configuration_service_configuration_sources_parser_message_format"],
-                        message_key=var["unified_agent_configuration_service_configuration_sources_parser_message_key"],
-                        multi_line_start_regexp=var["unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp"],
-                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
-                            time_format=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key"],
-                            is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key"],
-                        ),
-                        null_value_pattern=var["unified_agent_configuration_service_configuration_sources_parser_null_value_pattern"],
-                        patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
-                            field_time_format=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key"],
-                            field_time_zone=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone"],
-                            name=var["unified_agent_configuration_service_configuration_sources_parser_patterns_name"],
-                            pattern=var["unified_agent_configuration_service_configuration_sources_parser_patterns_pattern"],
-                        )],
-                        rfc5424time_format=var["unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format"],
-                        syslog_parser_type=var["unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type"],
-                        time_format=var["unified_agent_configuration_service_configuration_sources_parser_time_format"],
-                        time_type=var["unified_agent_configuration_service_configuration_sources_parser_time_type"],
-                        timeout_in_milliseconds=var["unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds"],
-                        types=var["unified_agent_configuration_service_configuration_sources_parser_types"],
-                    ),
-                    paths=var["unified_agent_configuration_service_configuration_sources_paths"],
-                )],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            group_association=oci.logging.UnifiedAgentConfigurationGroupAssociationArgs(
-                group_lists=var["unified_agent_configuration_group_association_group_list"],
-            ))
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Import
 
         UnifiedAgentConfigurations can be imported using the `id`, e.g.
@@ -482,94 +392,6 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
 
         Create unified agent configuration registration.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_unified_agent_configuration = oci.logging.UnifiedAgentConfiguration("testUnifiedAgentConfiguration",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["unified_agent_configuration_is_enabled"],
-            description=var["unified_agent_configuration_description"],
-            display_name=var["unified_agent_configuration_display_name"],
-            service_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationArgs(
-                configuration_type=var["unified_agent_configuration_service_configuration_configuration_type"],
-                destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationArgs(
-                    log_object_id=oci_objectstorage_object["test_object"]["id"],
-                    operational_metrics_configuration=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs(
-                        destination=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationArgs(
-                            compartment_id=var["compartment_id"],
-                        ),
-                        source=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceArgs(
-                            type=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_type"],
-                            metrics=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_metrics"],
-                            record_input=oci.logging.UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs(
-                                namespace=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_namespace"],
-                                resource_group=var["unified_agent_configuration_service_configuration_destination_operational_metrics_configuration_source_record_input_resource_group"],
-                            ),
-                        ),
-                    ),
-                ),
-                sources=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceArgs(
-                    source_type=var["unified_agent_configuration_service_configuration_sources_source_type"],
-                    channels=var["unified_agent_configuration_service_configuration_sources_channels"],
-                    name=var["unified_agent_configuration_service_configuration_sources_name"],
-                    parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserArgs(
-                        parser_type=var["unified_agent_configuration_service_configuration_sources_parser_parser_type"],
-                        delimiter=var["unified_agent_configuration_service_configuration_sources_parser_delimiter"],
-                        expression=var["unified_agent_configuration_service_configuration_sources_parser_expression"],
-                        field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_field_time_key"],
-                        formats=var["unified_agent_configuration_service_configuration_sources_parser_format"],
-                        format_firstline=var["unified_agent_configuration_service_configuration_sources_parser_format_firstline"],
-                        grok_failure_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_failure_key"],
-                        grok_name_key=var["unified_agent_configuration_service_configuration_sources_parser_grok_name_key"],
-                        is_estimate_current_event=var["unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event"],
-                        is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key"],
-                        is_merge_cri_fields=var["unified_agent_configuration_service_configuration_sources_parser_is_merge_cri_fields"],
-                        is_null_empty_string=var["unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string"],
-                        is_support_colonless_ident=var["unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident"],
-                        is_with_priority=var["unified_agent_configuration_service_configuration_sources_parser_is_with_priority"],
-                        keys=var["unified_agent_configuration_service_configuration_sources_parser_keys"],
-                        message_format=var["unified_agent_configuration_service_configuration_sources_parser_message_format"],
-                        message_key=var["unified_agent_configuration_service_configuration_sources_parser_message_key"],
-                        multi_line_start_regexp=var["unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp"],
-                        nested_parser=oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs(
-                            time_format=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_field_time_key"],
-                            is_keep_time_key=var["unified_agent_configuration_service_configuration_sources_parser_nested_parser_is_keep_time_key"],
-                        ),
-                        null_value_pattern=var["unified_agent_configuration_service_configuration_sources_parser_null_value_pattern"],
-                        patterns=[oci.logging.UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs(
-                            field_time_format=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format"],
-                            field_time_key=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key"],
-                            field_time_zone=var["unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone"],
-                            name=var["unified_agent_configuration_service_configuration_sources_parser_patterns_name"],
-                            pattern=var["unified_agent_configuration_service_configuration_sources_parser_patterns_pattern"],
-                        )],
-                        rfc5424time_format=var["unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format"],
-                        syslog_parser_type=var["unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type"],
-                        time_format=var["unified_agent_configuration_service_configuration_sources_parser_time_format"],
-                        time_type=var["unified_agent_configuration_service_configuration_sources_parser_time_type"],
-                        timeout_in_milliseconds=var["unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds"],
-                        types=var["unified_agent_configuration_service_configuration_sources_parser_types"],
-                    ),
-                    paths=var["unified_agent_configuration_service_configuration_sources_paths"],
-                )],
-            ),
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            group_association=oci.logging.UnifiedAgentConfigurationGroupAssociationArgs(
-                group_lists=var["unified_agent_configuration_group_association_group_list"],
-            ))
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -615,7 +437,11 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            if description is None and not opts.urn:
+                raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            if display_name is None and not opts.urn:
+                raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["group_association"] = group_association

@@ -32,12 +32,12 @@ namespace Pulumi.Oci.Core
     ///         ImageId = oci_core_image.Test_image.Id,
     ///         SchemaData = new[]
     ///         {
-    ///             
+    ///             new Dictionary&lt;string, object?&gt;
     ///             {
-    ///                 { "descriptorType", @var.Compute_image_capability_schema_schema_data_descriptor_type },
-    ///                 { "source", @var.Compute_image_capability_schema_schema_data_source },
-    ///                 { "defaultValue", @var.Compute_image_capability_schema_schema_data_default_value },
-    ///                 { "values", @var.Compute_image_capability_schema_schema_data_values },
+    ///                 ["descriptorType"] = @var.Compute_image_capability_schema_schema_data_descriptor_type,
+    ///                 ["source"] = @var.Compute_image_capability_schema_schema_data_source,
+    ///                 ["defaultValue"] = @var.Compute_image_capability_schema_schema_data_default_value,
+    ///                 ["values"] = @var.Compute_image_capability_schema_schema_data_values,
     ///             },
     ///         },
     ///         DefinedTags = 

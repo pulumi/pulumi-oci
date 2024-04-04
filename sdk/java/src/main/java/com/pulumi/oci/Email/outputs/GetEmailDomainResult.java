@@ -29,7 +29,7 @@ public final class GetEmailDomainResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The description of a email domain.
+     * @return The description of an email domain.
      * 
      */
     private String description;
@@ -50,7 +50,7 @@ public final class GetEmailDomainResult {
      */
     private Boolean isSpf;
     /**
-     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      * 
      */
     private String name;
@@ -93,7 +93,7 @@ public final class GetEmailDomainResult {
         return this.definedTags;
     }
     /**
-     * @return The description of a email domain.
+     * @return The description of an email domain.
      * 
      */
     public String description() {
@@ -124,7 +124,7 @@ public final class GetEmailDomainResult {
         return this.isSpf;
     }
     /**
-     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      * 
      */
     public String name() {

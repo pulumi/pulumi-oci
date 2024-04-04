@@ -78,7 +78,9 @@ type Sender struct {
 	IsSpf pulumi.BoolOutput `pulumi:"isSpf"`
 	// The current status of the approved sender.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
 
@@ -135,7 +137,9 @@ type senderState struct {
 	IsSpf *bool `pulumi:"isSpf"`
 	// The current status of the approved sender.
 	State *string `pulumi:"state"`
-	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 }
 
@@ -157,7 +161,9 @@ type SenderState struct {
 	IsSpf pulumi.BoolPtrInput
 	// The current status of the approved sender.
 	State pulumi.StringPtrInput
-	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 }
 
@@ -319,7 +325,12 @@ func (o SenderOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o SenderOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *Sender) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o SenderOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sender) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

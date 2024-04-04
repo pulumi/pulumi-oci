@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The description of a email domain.
+        /// The description of an email domain.
         /// </summary>
         public readonly string Description;
         /// <summary>

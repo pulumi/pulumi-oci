@@ -76,7 +76,7 @@ class GetEmailDomainsResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+        The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
         """
         return pulumi.get(self, "name")
 

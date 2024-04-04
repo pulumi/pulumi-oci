@@ -232,14 +232,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="members", refs={List.class,DrProtectionGroupMember.class}, tree="[0,1]")
-    private Output<List<DrProtectionGroupMember>> members;
+    private Output</* @Nullable */ List<DrProtectionGroupMember>> members;
 
     /**
      * @return (Updatable) A list of DR protection group members.
      * 
      */
-    public Output<List<DrProtectionGroupMember>> members() {
-        return this.members;
+    public Output<Optional<List<DrProtectionGroupMember>>> members() {
+        return Codegen.optional(this.members);
     }
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`

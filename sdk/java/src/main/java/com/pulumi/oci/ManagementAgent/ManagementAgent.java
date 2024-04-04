@@ -57,7 +57,10 @@ import javax.annotation.Nullable;
  * }
  * ```
  * &lt;!--End PulumiCodeChooser --&gt;
+ * ***
+ * Add plugin to Management Agent created via OCI Compute instance.
  * 
+ * Compute instance must have OCA Plugin &#34;Management Agent&#34; enabled
  * ## Import
  * 
  * ManagementAgents can be imported using the `id`, e.g.
@@ -69,45 +72,21 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:ManagementAgent/managementAgent:ManagementAgent")
 public class ManagementAgent extends com.pulumi.resources.CustomResource {
-    /**
-     * The current availability status of managementAgent
-     * 
-     */
     @Export(name="availabilityStatus", refs={String.class}, tree="[0]")
     private Output<String> availabilityStatus;
 
-    /**
-     * @return The current availability status of managementAgent
-     * 
-     */
     public Output<String> availabilityStatus() {
         return this.availabilityStatus;
     }
-    /**
-     * Compartment owning this DataSource.
-     * 
-     */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
-    /**
-     * @return Compartment owning this DataSource.
-     * 
-     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * list of dataSources associated with the agent
-     * 
-     */
     @Export(name="dataSourceLists", refs={List.class,ManagementAgentDataSourceList.class}, tree="[0,1]")
     private Output<List<ManagementAgentDataSourceList>> dataSourceLists;
 
-    /**
-     * @return list of dataSources associated with the agent
-     * 
-     */
     public Output<List<ManagementAgentDataSourceList>> dataSourceLists() {
         return this.dataSourceLists;
     }
@@ -118,62 +97,48 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
         return this.dataSourceSummaryLists;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    /**
-     * (Updatable) Plugin Id list
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Export(name="deployPluginsIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> deployPluginsIds;
 
-    /**
-     * @return (Updatable) Plugin Id list
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Output<Optional<List<String>>> deployPluginsIds() {
         return Codegen.optional(this.deployPluginsIds);
     }
     /**
-     * (Updatable) New displayName of Agent.
+     * Management Agent Name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) New displayName of Agent.
+     * @return Management Agent Name
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

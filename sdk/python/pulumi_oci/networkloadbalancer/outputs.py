@@ -368,8 +368,8 @@ class NetworkLoadBalancerIpAddress(dict):
                  is_public: Optional[bool] = None,
                  reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None):
         """
-        :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
-        :param str ip_version: IP version associated with the backend set.
+        :param str ip_address: An IP address.  Example: `192.168.0.3`
+        :param str ip_version: IP version associated with this IP address.
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['NetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
@@ -386,7 +386,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
         """
-        The IP address of the backend server. Example: `10.0.0.3`
+        An IP address.  Example: `192.168.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -394,7 +394,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[str]:
         """
-        IP version associated with the backend set.
+        IP version associated with this IP address.
         """
         return pulumi.get(self, "ip_version")
 
@@ -1787,6 +1787,8 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult(dict):
 @pulumi.output_type
 class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
     def __init__(__self__, *,
+                 assigned_ipv6: str,
+                 assigned_private_ipv4: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
@@ -1802,6 +1804,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
                  reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult'],
                  state: str,
                  subnet_id: str,
+                 subnet_ipv6cidr: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
@@ -1823,6 +1826,8 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         :param str time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param str time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         """
+        pulumi.set(__self__, "assigned_ipv6", assigned_ipv6)
+        pulumi.set(__self__, "assigned_private_ipv4", assigned_private_ipv4)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -1838,9 +1843,20 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         pulumi.set(__self__, "reserved_ips", reserved_ips)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="assignedIpv6")
+    def assigned_ipv6(self) -> str:
+        return pulumi.get(self, "assigned_ipv6")
+
+    @property
+    @pulumi.getter(name="assignedPrivateIpv4")
+    def assigned_private_ipv4(self) -> str:
+        return pulumi.get(self, "assigned_private_ipv4")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1955,6 +1971,11 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subnetIpv6cidr")
+    def subnet_ipv6cidr(self) -> str:
+        return pulumi.get(self, "subnet_ipv6cidr")
 
     @property
     @pulumi.getter(name="systemTags")

@@ -80,7 +80,7 @@ export interface GetEmailDomainsResult {
      */
     readonly id?: string;
     /**
-     * The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      */
     readonly name?: string;
     /**

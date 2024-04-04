@@ -12,42 +12,23 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
 
     public sealed class ManagementAgentDataSourceListGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-        /// </summary>
         [Input("allowMetrics")]
         public Input<string>? AllowMetrics { get; set; }
 
-        /// <summary>
-        /// Compartment owning this DataSource.
-        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
-        /// <summary>
-        /// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-        /// </summary>
         [Input("connectionTimeout")]
         public Input<int>? ConnectionTimeout { get; set; }
 
-        /// <summary>
-        /// If the Kubernetes cluster type is Daemon set then this will be set to true.
-        /// </summary>
         [Input("isDaemonSet")]
         public Input<bool>? IsDaemonSet { get; set; }
 
-        /// <summary>
-        /// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         [Input("metricDimensions")]
         private InputList<Inputs.ManagementAgentDataSourceListMetricDimensionGetArgs>? _metricDimensions;
-
-        /// <summary>
-        /// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-        /// </summary>
         public InputList<Inputs.ManagementAgentDataSourceListMetricDimensionGetArgs> MetricDimensions
         {
             get => _metricDimensions ?? (_metricDimensions = new InputList<Inputs.ManagementAgentDataSourceListMetricDimensionGetArgs>());
@@ -60,15 +41,9 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-        /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
-        /// <summary>
-        /// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-        /// </summary>
         [Input("proxyUrl")]
         public Input<string>? ProxyUrl { get; set; }
 

@@ -60,6 +60,8 @@ type LookupNetworkLoadBalancerArgs struct {
 
 // A collection of values returned by getNetworkLoadBalancer.
 type LookupNetworkLoadBalancerResult struct {
+	AssignedIpv6        string `pulumi:"assignedIpv6"`
+	AssignedPrivateIpv4 string `pulumi:"assignedPrivateIpv4"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -89,7 +91,8 @@ type LookupNetworkLoadBalancerResult struct {
 	// The current state of the network load balancer.
 	State string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId       string `pulumi:"subnetId"`
+	SubnetIpv6cidr string `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
@@ -134,6 +137,14 @@ func (o LookupNetworkLoadBalancerResultOutput) ToLookupNetworkLoadBalancerResult
 
 func (o LookupNetworkLoadBalancerResultOutput) ToLookupNetworkLoadBalancerResultOutputWithContext(ctx context.Context) LookupNetworkLoadBalancerResultOutput {
 	return o
+}
+
+func (o LookupNetworkLoadBalancerResultOutput) AssignedIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.AssignedIpv6 }).(pulumi.StringOutput)
+}
+
+func (o LookupNetworkLoadBalancerResultOutput) AssignedPrivateIpv4() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.AssignedPrivateIpv4 }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
@@ -212,6 +223,10 @@ func (o LookupNetworkLoadBalancerResultOutput) State() pulumi.StringOutput {
 // The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
 func (o LookupNetworkLoadBalancerResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o LookupNetworkLoadBalancerResultOutput) SubnetIpv6cidr() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.SubnetIpv6cidr }).(pulumi.StringOutput)
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`

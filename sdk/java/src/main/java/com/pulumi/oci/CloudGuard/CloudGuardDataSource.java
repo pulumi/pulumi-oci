@@ -75,6 +75,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .status(var_.data_source_status())
  *             .build());
  * 
  *     }
@@ -182,9 +183,6 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * 
      * Avoid entering confidential information.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
@@ -193,9 +191,6 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      * Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -230,14 +225,20 @@ public class CloudGuardDataSource extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * Status of data Source
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Status of data Source
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> status() {

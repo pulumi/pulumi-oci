@@ -32,9 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkLoadBalancer.NewNetworkLoadBalancer(ctx, "testNetworkLoadBalancer", &NetworkLoadBalancer.NetworkLoadBalancerArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Network_load_balancer_display_name),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				CompartmentId:       pulumi.Any(_var.Compartment_id),
+//				DisplayName:         pulumi.Any(_var.Network_load_balancer_display_name),
+//				SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//				AssignedIpv6:        pulumi.Any(_var.Network_load_balancer_assigned_ipv6),
+//				AssignedPrivateIpv4: pulumi.Any(_var.Network_load_balancer_assigned_private_ipv4),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -51,6 +53,7 @@ import (
 //						Id: pulumi.Any(_var.Network_load_balancer_reserved_ips_id),
 //					},
 //				},
+//				SubnetIpv6cidr: pulumi.Any(_var.Network_load_balancer_subnet_ipv6cidr),
 //			})
 //			if err != nil {
 //				return err
@@ -72,6 +75,10 @@ import (
 type NetworkLoadBalancer struct {
 	pulumi.CustomResourceState
 
+	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+	AssignedIpv6 pulumi.StringPtrOutput `pulumi:"assignedIpv6"`
+	// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+	AssignedPrivateIpv4 pulumi.StringPtrOutput `pulumi:"assignedPrivateIpv4"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -95,6 +102,8 @@ type NetworkLoadBalancer struct {
 	// Example: `true`
 	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	//
+	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolOutput `pulumi:"isSymmetricHashEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -115,10 +124,12 @@ type NetworkLoadBalancer struct {
 	// The current state of the network load balancer.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetIpv6cidr pulumi.StringPtrOutput `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
@@ -166,6 +177,10 @@ func GetNetworkLoadBalancer(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkLoadBalancer resources.
 type networkLoadBalancerState struct {
+	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+	AssignedIpv6 *string `pulumi:"assignedIpv6"`
+	// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+	AssignedPrivateIpv4 *string `pulumi:"assignedPrivateIpv4"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -189,6 +204,8 @@ type networkLoadBalancerState struct {
 	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	//
+	// Example: `true`
 	IsSymmetricHashEnabled *bool `pulumi:"isSymmetricHashEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -209,10 +226,12 @@ type networkLoadBalancerState struct {
 	// The current state of the network load balancer.
 	State *string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetId *string `pulumi:"subnetId"`
+	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetIpv6cidr *string `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
@@ -222,6 +241,10 @@ type networkLoadBalancerState struct {
 }
 
 type NetworkLoadBalancerState struct {
+	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+	AssignedIpv6 pulumi.StringPtrInput
+	// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+	AssignedPrivateIpv4 pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -245,6 +268,8 @@ type NetworkLoadBalancerState struct {
 	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	//
+	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -265,10 +290,12 @@ type NetworkLoadBalancerState struct {
 	// The current state of the network load balancer.
 	State pulumi.StringPtrInput
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetId pulumi.StringPtrInput
+	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId pulumi.StringPtrInput
+	SubnetIpv6cidr pulumi.StringPtrInput
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags pulumi.MapInput
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
@@ -282,6 +309,10 @@ func (NetworkLoadBalancerState) ElementType() reflect.Type {
 }
 
 type networkLoadBalancerArgs struct {
+	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+	AssignedIpv6 *string `pulumi:"assignedIpv6"`
+	// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+	AssignedPrivateIpv4 *string `pulumi:"assignedPrivateIpv4"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -303,6 +334,8 @@ type networkLoadBalancerArgs struct {
 	// Example: `true`
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	//
+	// Example: `true`
 	IsSymmetricHashEnabled *bool `pulumi:"isSymmetricHashEnabled"`
 	// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	//
@@ -319,14 +352,20 @@ type networkLoadBalancerArgs struct {
 	// An array of reserved Ips.
 	ReservedIps []NetworkLoadBalancerReservedIp `pulumi:"reservedIps"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetId string `pulumi:"subnetId"`
+	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId string `pulumi:"subnetId"`
+	SubnetIpv6cidr *string `pulumi:"subnetIpv6cidr"`
 }
 
 // The set of arguments for constructing a NetworkLoadBalancer resource.
 type NetworkLoadBalancerArgs struct {
+	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+	AssignedIpv6 pulumi.StringPtrInput
+	// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+	AssignedPrivateIpv4 pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -348,6 +387,8 @@ type NetworkLoadBalancerArgs struct {
 	// Example: `true`
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+	//
+	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolPtrInput
 	// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	//
@@ -364,10 +405,12 @@ type NetworkLoadBalancerArgs struct {
 	// An array of reserved Ips.
 	ReservedIps NetworkLoadBalancerReservedIpArrayInput
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SubnetId pulumi.StringInput
+	// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId pulumi.StringInput
+	SubnetIpv6cidr pulumi.StringPtrInput
 }
 
 func (NetworkLoadBalancerArgs) ElementType() reflect.Type {
@@ -457,6 +500,16 @@ func (o NetworkLoadBalancerOutput) ToNetworkLoadBalancerOutputWithContext(ctx co
 	return o
 }
 
+// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+func (o NetworkLoadBalancerOutput) AssignedIpv6() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.AssignedIpv6 }).(pulumi.StringPtrOutput)
+}
+
+// Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+func (o NetworkLoadBalancerOutput) AssignedPrivateIpv4() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.AssignedPrivateIpv4 }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 func (o NetworkLoadBalancerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -501,6 +554,8 @@ func (o NetworkLoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 }
 
 // (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+//
+// Example: `true`
 func (o NetworkLoadBalancerOutput) IsSymmetricHashEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolOutput { return v.IsSymmetricHashEnabled }).(pulumi.BoolOutput)
 }
@@ -539,11 +594,16 @@ func (o NetworkLoadBalancerOutput) State() pulumi.StringOutput {
 }
 
 // The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o NetworkLoadBalancerOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o NetworkLoadBalancerOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+func (o NetworkLoadBalancerOutput) SubnetIpv6cidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringPtrOutput { return v.SubnetIpv6cidr }).(pulumi.StringPtrOutput)
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`

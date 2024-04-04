@@ -118,7 +118,7 @@ class GetSuppressionResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -126,7 +126,7 @@ class GetSuppressionResult:
     @pulumi.getter(name="timeLastSuppressed")
     def time_last_suppressed(self) -> str:
         """
-        The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_suppressed")
 

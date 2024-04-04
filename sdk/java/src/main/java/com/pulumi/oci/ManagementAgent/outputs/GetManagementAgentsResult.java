@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsFilter;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgent;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -82,6 +83,7 @@ public final class GetManagementAgentsResult {
      * 
      */
     private @Nullable List<String> versions;
+    private @Nullable Integer waitForHostId;
 
     private GetManagementAgentsResult() {}
     public Optional<String> accessLevel() {
@@ -186,6 +188,9 @@ public final class GetManagementAgentsResult {
     public List<String> versions() {
         return this.versions == null ? List.of() : this.versions;
     }
+    public Optional<Integer> waitForHostId() {
+        return Optional.ofNullable(this.waitForHostId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -214,6 +219,7 @@ public final class GetManagementAgentsResult {
         private @Nullable List<String> pluginNames;
         private @Nullable String state;
         private @Nullable List<String> versions;
+        private @Nullable Integer waitForHostId;
         public Builder() {}
         public Builder(GetManagementAgentsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -235,6 +241,7 @@ public final class GetManagementAgentsResult {
     	      this.pluginNames = defaults.pluginNames;
     	      this.state = defaults.state;
     	      this.versions = defaults.versions;
+    	      this.waitForHostId = defaults.waitForHostId;
         }
 
         @CustomType.Setter
@@ -372,6 +379,12 @@ public final class GetManagementAgentsResult {
         public Builder versions(String... versions) {
             return versions(List.of(versions));
         }
+        @CustomType.Setter
+        public Builder waitForHostId(@Nullable Integer waitForHostId) {
+
+            this.waitForHostId = waitForHostId;
+            return this;
+        }
         public GetManagementAgentsResult build() {
             final var _resultValue = new GetManagementAgentsResult();
             _resultValue.accessLevel = accessLevel;
@@ -392,6 +405,7 @@ public final class GetManagementAgentsResult {
             _resultValue.pluginNames = pluginNames;
             _resultValue.state = state;
             _resultValue.versions = versions;
+            _resultValue.waitForHostId = waitForHostId;
             return _resultValue;
         }
     }

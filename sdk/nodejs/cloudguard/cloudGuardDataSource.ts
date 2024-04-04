@@ -46,6 +46,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     status: _var.data_source_status,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,10 +115,6 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -129,9 +126,13 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * Status of data Source
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    public readonly status!: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
@@ -188,10 +189,10 @@ export class CloudGuardDataSource extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["dataSourceDetectorMappingInfos"] = undefined /*out*/;
             resourceInputs["regionStatusDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["status"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -233,10 +234,6 @@ export interface CloudGuardDataSourceState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -248,7 +245,11 @@ export interface CloudGuardDataSourceState {
      */
     state?: pulumi.Input<string>;
     /**
-     * Status of data Source
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     status?: pulumi.Input<string>;
     /**
@@ -293,10 +294,14 @@ export interface CloudGuardDataSourceArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Status of DataSource. Default value is DISABLED.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    status?: pulumi.Input<string>;
 }

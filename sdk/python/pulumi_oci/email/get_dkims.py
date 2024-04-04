@@ -112,7 +112,7 @@ def get_dkims(email_domain_id: Optional[str] = None,
     """
     This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
 
-    Lists DKIMs for a email domain.
+    Lists DKIMs for an email domain.
 
     ## Example Usage
 
@@ -162,7 +162,7 @@ def get_dkims_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
 
-    Lists DKIMs for a email domain.
+    Lists DKIMs for an email domain.
 
     ## Example Usage
 

@@ -41,6 +41,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         DisplayName = @var.Management_agent_display_name,
         ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
+        ///         WaitForHostId = 10,
         ///         InstallType = @var.Management_agent_install_type,
         ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
         ///         PlatformTypes = @var.Management_agent_platform_type,
@@ -86,6 +87,7 @@ namespace Pulumi.Oci.ManagementAgent
         ///         DisplayName = @var.Management_agent_display_name,
         ///         GatewayIds = oci_apigateway_gateway.Test_gateway.Id,
         ///         HostId = oci_management_agent_host.Test_host.Id,
+        ///         WaitForHostId = 10,
         ///         InstallType = @var.Management_agent_install_type,
         ///         IsCustomerDeployed = @var.Management_agent_is_customer_deployed,
         ///         PlatformTypes = @var.Management_agent_platform_type,
@@ -233,6 +235,12 @@ namespace Pulumi.Oci.ManagementAgent
             set => _versions = value;
         }
 
+        /// <summary>
+        /// When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+        /// </summary>
+        [Input("waitForHostId")]
+        public int? WaitForHostId { get; set; }
+
         public GetManagementAgentsArgs()
         {
         }
@@ -369,6 +377,12 @@ namespace Pulumi.Oci.ManagementAgent
             set => _versions = value;
         }
 
+        /// <summary>
+        /// When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+        /// </summary>
+        [Input("waitForHostId")]
+        public Input<int>? WaitForHostId { get; set; }
+
         public GetManagementAgentsInvokeArgs()
         {
         }
@@ -433,6 +447,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// Management Agent Version
         /// </summary>
         public readonly ImmutableArray<string> Versions;
+        public readonly int? WaitForHostId;
 
         [OutputConstructor]
         private GetManagementAgentsResult(
@@ -470,7 +485,9 @@ namespace Pulumi.Oci.ManagementAgent
 
             string? state,
 
-            ImmutableArray<string> versions)
+            ImmutableArray<string> versions,
+
+            int? waitForHostId)
         {
             AccessLevel = accessLevel;
             AvailabilityStatus = availabilityStatus;
@@ -490,6 +507,7 @@ namespace Pulumi.Oci.ManagementAgent
             PluginNames = pluginNames;
             State = state;
             Versions = versions;
+            WaitForHostId = waitForHostId;
         }
     }
 }

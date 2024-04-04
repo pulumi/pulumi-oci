@@ -59,6 +59,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Status: pulumi.Any(_var.Data_source_status),
 //			})
 //			if err != nil {
 //				return err
@@ -95,15 +96,15 @@ type CloudGuardDataSource struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayOutput `pulumi:"regionStatusDetails"`
 	// The current state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
-	// Status of data Source
+	// (Updatable) Status of DataSource. Default value is DISABLED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -167,15 +168,15 @@ type cloudGuardDataSourceState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []CloudGuardDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
-	// Status of data Source
+	// (Updatable) Status of DataSource. Default value is DISABLED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -201,15 +202,15 @@ type CloudGuardDataSourceState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayInput
 	// The current state of the resource.
 	State pulumi.StringPtrInput
-	// Status of data Source
+	// (Updatable) Status of DataSource. Default value is DISABLED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -237,10 +238,12 @@ type cloudGuardDataSourceArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Status of DataSource. Default value is DISABLED.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	Status *string `pulumi:"status"`
 }
 
 // The set of arguments for constructing a CloudGuardDataSource resource.
@@ -258,10 +261,12 @@ type CloudGuardDataSourceArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
+	FreeformTags pulumi.MapInput
+	// (Updatable) Status of DataSource. Default value is DISABLED.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	Status pulumi.StringPtrInput
 }
 
 func (CloudGuardDataSourceArgs) ElementType() reflect.Type {
@@ -386,9 +391,6 @@ func (o CloudGuardDataSourceOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudGuardDataSourceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -405,7 +407,10 @@ func (o CloudGuardDataSourceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Status of data Source
+// (Updatable) Status of DataSource. Default value is DISABLED.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudGuardDataSourceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

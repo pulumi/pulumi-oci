@@ -75,11 +75,11 @@ export interface GetSuppressionResult {
     readonly reason: string;
     readonly suppressionId: string;
     /**
-     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeCreated: string;
     /**
-     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeLastSuppressed: string;
 }

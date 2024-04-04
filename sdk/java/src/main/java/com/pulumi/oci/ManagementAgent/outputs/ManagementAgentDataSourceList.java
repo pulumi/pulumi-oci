@@ -15,50 +15,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ManagementAgentDataSourceList {
-    /**
-     * @return Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-     * 
-     */
     private @Nullable String allowMetrics;
-    /**
-     * @return Compartment owning this DataSource.
-     * 
-     */
     private @Nullable String compartmentId;
-    /**
-     * @return Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     private @Nullable Integer connectionTimeout;
-    /**
-     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
-     * 
-     */
     private @Nullable Boolean isDaemonSet;
-    /**
-     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-     * 
-     */
     private @Nullable String key;
-    /**
-     * @return The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-     * 
-     */
     private @Nullable List<ManagementAgentDataSourceListMetricDimension> metricDimensions;
     /**
      * @return Name of the property
      * 
      */
     private @Nullable String name;
-    /**
-     * @return The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-     * 
-     */
     private @Nullable String namespace;
-    /**
-     * @return The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-     * 
-     */
     private @Nullable String proxyUrl;
     /**
      * @return Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
@@ -107,45 +75,21 @@ public final class ManagementAgentDataSourceList {
     private @Nullable String url;
 
     private ManagementAgentDataSourceList() {}
-    /**
-     * @return Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-     * 
-     */
     public Optional<String> allowMetrics() {
         return Optional.ofNullable(this.allowMetrics);
     }
-    /**
-     * @return Compartment owning this DataSource.
-     * 
-     */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
-    /**
-     * @return Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     public Optional<Integer> connectionTimeout() {
         return Optional.ofNullable(this.connectionTimeout);
     }
-    /**
-     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
-     * 
-     */
     public Optional<Boolean> isDaemonSet() {
         return Optional.ofNullable(this.isDaemonSet);
     }
-    /**
-     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-     * 
-     */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
-    /**
-     * @return The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-     * 
-     */
     public List<ManagementAgentDataSourceListMetricDimension> metricDimensions() {
         return this.metricDimensions == null ? List.of() : this.metricDimensions;
     }
@@ -156,17 +100,9 @@ public final class ManagementAgentDataSourceList {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-     * 
-     */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
-    /**
-     * @return The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-     * 
-     */
     public Optional<String> proxyUrl() {
         return Optional.ofNullable(this.proxyUrl);
     }

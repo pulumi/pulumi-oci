@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a new ManagedList.
+ * Creates a new ManagedList object.
  * 
  * ## Import
  * 

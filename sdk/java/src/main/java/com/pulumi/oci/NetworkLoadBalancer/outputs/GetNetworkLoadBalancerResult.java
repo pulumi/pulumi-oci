@@ -16,6 +16,8 @@ import java.util.Objects;
 
 @CustomType
 public final class GetNetworkLoadBalancerResult {
+    private String assignedIpv6;
+    private String assignedPrivateIpv4;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
@@ -88,6 +90,7 @@ public final class GetNetworkLoadBalancerResult {
      * 
      */
     private String subnetId;
+    private String subnetIpv6cidr;
     /**
      * @return Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -105,6 +108,12 @@ public final class GetNetworkLoadBalancerResult {
     private String timeUpdated;
 
     private GetNetworkLoadBalancerResult() {}
+    public String assignedIpv6() {
+        return this.assignedIpv6;
+    }
+    public String assignedPrivateIpv4() {
+        return this.assignedPrivateIpv4;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
@@ -209,6 +218,9 @@ public final class GetNetworkLoadBalancerResult {
     public String subnetId() {
         return this.subnetId;
     }
+    public String subnetIpv6cidr() {
+        return this.subnetIpv6cidr;
+    }
     /**
      * @return Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -240,6 +252,8 @@ public final class GetNetworkLoadBalancerResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String assignedIpv6;
+        private String assignedPrivateIpv4;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -256,12 +270,15 @@ public final class GetNetworkLoadBalancerResult {
         private List<GetNetworkLoadBalancerReservedIp> reservedIps;
         private String state;
         private String subnetId;
+        private String subnetIpv6cidr;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetNetworkLoadBalancerResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.assignedIpv6 = defaults.assignedIpv6;
+    	      this.assignedPrivateIpv4 = defaults.assignedPrivateIpv4;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -278,11 +295,28 @@ public final class GetNetworkLoadBalancerResult {
     	      this.reservedIps = defaults.reservedIps;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.subnetIpv6cidr = defaults.subnetIpv6cidr;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder assignedIpv6(String assignedIpv6) {
+            if (assignedIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "assignedIpv6");
+            }
+            this.assignedIpv6 = assignedIpv6;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder assignedPrivateIpv4(String assignedPrivateIpv4) {
+            if (assignedPrivateIpv4 == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "assignedPrivateIpv4");
+            }
+            this.assignedPrivateIpv4 = assignedPrivateIpv4;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -421,6 +455,14 @@ public final class GetNetworkLoadBalancerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetIpv6cidr(String subnetIpv6cidr) {
+            if (subnetIpv6cidr == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "subnetIpv6cidr");
+            }
+            this.subnetIpv6cidr = subnetIpv6cidr;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetNetworkLoadBalancerResult", "systemTags");
@@ -446,6 +488,8 @@ public final class GetNetworkLoadBalancerResult {
         }
         public GetNetworkLoadBalancerResult build() {
             final var _resultValue = new GetNetworkLoadBalancerResult();
+            _resultValue.assignedIpv6 = assignedIpv6;
+            _resultValue.assignedPrivateIpv4 = assignedPrivateIpv4;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
@@ -462,6 +506,7 @@ public final class GetNetworkLoadBalancerResult {
             _resultValue.reservedIps = reservedIps;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.subnetIpv6cidr = subnetIpv6cidr;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

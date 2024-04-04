@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetLoadBalancersFilterResult
     {
         /// <summary>
-        /// A unique name for the routing policy rule. Avoid entering confidential information.
+        /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

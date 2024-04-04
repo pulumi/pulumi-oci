@@ -66,6 +66,12 @@ type SslCipherSuite struct {
 	// * oci-compatible-ssl-cipher-suite-v1
 	// * oci-wider-compatible-ssl-cipher-suite-v1
 	// * oci-customized-ssl-cipher-suite
+	// * oci-default-http2-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+	// * oci-tls-13-recommended-ssl-cipher-suite-v1
+	// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+	// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 	//
 	// example: `exampleCipherSuite`
 	//
@@ -122,6 +128,12 @@ type sslCipherSuiteState struct {
 	// * oci-compatible-ssl-cipher-suite-v1
 	// * oci-wider-compatible-ssl-cipher-suite-v1
 	// * oci-customized-ssl-cipher-suite
+	// * oci-default-http2-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+	// * oci-tls-13-recommended-ssl-cipher-suite-v1
+	// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+	// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 	//
 	// example: `exampleCipherSuite`
 	//
@@ -143,6 +155,12 @@ type SslCipherSuiteState struct {
 	// * oci-compatible-ssl-cipher-suite-v1
 	// * oci-wider-compatible-ssl-cipher-suite-v1
 	// * oci-customized-ssl-cipher-suite
+	// * oci-default-http2-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+	// * oci-tls-13-recommended-ssl-cipher-suite-v1
+	// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+	// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 	//
 	// example: `exampleCipherSuite`
 	//
@@ -168,6 +186,12 @@ type sslCipherSuiteArgs struct {
 	// * oci-compatible-ssl-cipher-suite-v1
 	// * oci-wider-compatible-ssl-cipher-suite-v1
 	// * oci-customized-ssl-cipher-suite
+	// * oci-default-http2-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+	// * oci-tls-13-recommended-ssl-cipher-suite-v1
+	// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+	// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 	//
 	// example: `exampleCipherSuite`
 	//
@@ -189,6 +213,12 @@ type SslCipherSuiteArgs struct {
 	// * oci-compatible-ssl-cipher-suite-v1
 	// * oci-wider-compatible-ssl-cipher-suite-v1
 	// * oci-customized-ssl-cipher-suite
+	// * oci-default-http2-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+	// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+	// * oci-tls-13-recommended-ssl-cipher-suite-v1
+	// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+	// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 	//
 	// example: `exampleCipherSuite`
 	//
@@ -301,6 +331,12 @@ func (o SslCipherSuiteOutput) LoadBalancerId() pulumi.StringOutput {
 // * oci-compatible-ssl-cipher-suite-v1
 // * oci-wider-compatible-ssl-cipher-suite-v1
 // * oci-customized-ssl-cipher-suite
+// * oci-default-http2-ssl-cipher-suite-v1
+// * oci-default-http2-tls-13-ssl-cipher-suite-v1
+// * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+// * oci-tls-13-recommended-ssl-cipher-suite-v1
+// * oci-tls-12-13-wider-ssl-cipher-suite-v1
+// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 //
 // example: `exampleCipherSuite`
 //

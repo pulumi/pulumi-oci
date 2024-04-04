@@ -78,7 +78,11 @@ export interface GetSenderResult {
      */
     readonly state: string;
     /**
-     * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: any};
+    /**
+     * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     readonly timeCreated: string;
 }

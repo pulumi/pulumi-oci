@@ -112,7 +112,7 @@ class GetDkimResult:
     @pulumi.getter(name="dnsSubdomainName")
     def dns_subdomain_name(self) -> str:
         """
-        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+        The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
         """
         return pulumi.get(self, "dns_subdomain_name")
 
@@ -192,7 +192,7 @@ class GetDkimResult:
     @pulumi.getter(name="txtRecordValue")
     def txt_record_value(self) -> str:
         """
-        The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+        The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
         """
         return pulumi.get(self, "txt_record_value")
 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+ * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
  *
  * ## Example Usage
  *
@@ -126,7 +126,7 @@ export interface GetDataMaskRulesResult {
 /**
  * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+ * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
  *
  * ## Example Usage
  *

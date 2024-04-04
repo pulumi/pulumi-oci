@@ -22,6 +22,36 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
     public static final NetworkLoadBalancerArgs Empty = new NetworkLoadBalancerArgs();
 
     /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+     * 
+     */
+    @Import(name="assignedIpv6")
+    private @Nullable Output<String> assignedIpv6;
+
+    /**
+     * @return IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+     * 
+     */
+    public Optional<Output<String>> assignedIpv6() {
+        return Optional.ofNullable(this.assignedIpv6);
+    }
+
+    /**
+     * Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+     * 
+     */
+    @Import(name="assignedPrivateIpv4")
+    private @Nullable Output<String> assignedPrivateIpv4;
+
+    /**
+     * @return Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+     * 
+     */
+    public Optional<Output<String>> assignedPrivateIpv4() {
+        return Optional.ofNullable(this.assignedPrivateIpv4);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
      */
@@ -130,12 +160,16 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
+     * Example: `true`
+     * 
      */
     @Import(name="isSymmetricHashEnabled")
     private @Nullable Output<Boolean> isSymmetricHashEnabled;
 
     /**
      * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     * Example: `true`
      * 
      */
     public Optional<Output<Boolean>> isSymmetricHashEnabled() {
@@ -206,9 +240,6 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
@@ -216,17 +247,37 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
     /**
      * @return The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
 
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="subnetIpv6cidr")
+    private @Nullable Output<String> subnetIpv6cidr;
+
+    /**
+     * @return IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> subnetIpv6cidr() {
+        return Optional.ofNullable(this.subnetIpv6cidr);
+    }
+
     private NetworkLoadBalancerArgs() {}
 
     private NetworkLoadBalancerArgs(NetworkLoadBalancerArgs $) {
+        this.assignedIpv6 = $.assignedIpv6;
+        this.assignedPrivateIpv4 = $.assignedPrivateIpv4;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -238,6 +289,7 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
         this.nlbIpVersion = $.nlbIpVersion;
         this.reservedIps = $.reservedIps;
         this.subnetId = $.subnetId;
+        this.subnetIpv6cidr = $.subnetIpv6cidr;
     }
 
     public static Builder builder() {
@@ -256,6 +308,48 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
 
         public Builder(NetworkLoadBalancerArgs defaults) {
             $ = new NetworkLoadBalancerArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param assignedIpv6 IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedIpv6(@Nullable Output<String> assignedIpv6) {
+            $.assignedIpv6 = assignedIpv6;
+            return this;
+        }
+
+        /**
+         * @param assignedIpv6 IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedIpv6(String assignedIpv6) {
+            return assignedIpv6(Output.of(assignedIpv6));
+        }
+
+        /**
+         * @param assignedPrivateIpv4 Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedPrivateIpv4(@Nullable Output<String> assignedPrivateIpv4) {
+            $.assignedPrivateIpv4 = assignedPrivateIpv4;
+            return this;
+        }
+
+        /**
+         * @param assignedPrivateIpv4 Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedPrivateIpv4(String assignedPrivateIpv4) {
+            return assignedPrivateIpv4(Output.of(assignedPrivateIpv4));
         }
 
         /**
@@ -403,6 +497,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
         /**
          * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
          * 
+         * Example: `true`
+         * 
          * @return builder
          * 
          */
@@ -413,6 +509,8 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
 
         /**
          * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         * 
+         * Example: `true`
          * 
          * @return builder
          * 
@@ -531,9 +629,6 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
         /**
          * @param subnetId The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -545,14 +640,38 @@ public final class NetworkLoadBalancerArgs extends com.pulumi.resources.Resource
         /**
          * @param subnetId The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subnetIpv6cidr IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder subnetId(String subnetId) {
-            return subnetId(Output.of(subnetId));
+        public Builder subnetIpv6cidr(@Nullable Output<String> subnetIpv6cidr) {
+            $.subnetIpv6cidr = subnetIpv6cidr;
+            return this;
+        }
+
+        /**
+         * @param subnetIpv6cidr IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetIpv6cidr(String subnetIpv6cidr) {
+            return subnetIpv6cidr(Output.of(subnetIpv6cidr));
         }
 
         public NetworkLoadBalancerArgs build() {

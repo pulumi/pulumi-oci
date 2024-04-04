@@ -2219,7 +2219,7 @@ class GetLoadBalancersFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
+        :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -2230,7 +2230,7 @@ class GetLoadBalancersFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        A unique name for the routing policy rule. Avoid entering confidential information.
+        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         return pulumi.get(self, "name")
 

@@ -22,7 +22,13 @@ class GetNetworkLoadBalancerResult:
     """
     A collection of values returned by getNetworkLoadBalancer.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, is_symmetric_hash_enabled=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, assigned_ipv6=None, assigned_private_ipv4=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_addresses=None, is_preserve_source_destination=None, is_private=None, is_symmetric_hash_enabled=None, lifecycle_details=None, network_load_balancer_id=None, network_security_group_ids=None, nlb_ip_version=None, reserved_ips=None, state=None, subnet_id=None, subnet_ipv6cidr=None, system_tags=None, time_created=None, time_updated=None):
+        if assigned_ipv6 and not isinstance(assigned_ipv6, str):
+            raise TypeError("Expected argument 'assigned_ipv6' to be a str")
+        pulumi.set(__self__, "assigned_ipv6", assigned_ipv6)
+        if assigned_private_ipv4 and not isinstance(assigned_private_ipv4, str):
+            raise TypeError("Expected argument 'assigned_private_ipv4' to be a str")
+        pulumi.set(__self__, "assigned_private_ipv4", assigned_private_ipv4)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -71,6 +77,9 @@ class GetNetworkLoadBalancerResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnet_ipv6cidr and not isinstance(subnet_ipv6cidr, str):
+            raise TypeError("Expected argument 'subnet_ipv6cidr' to be a str")
+        pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -80,6 +89,16 @@ class GetNetworkLoadBalancerResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="assignedIpv6")
+    def assigned_ipv6(self) -> str:
+        return pulumi.get(self, "assigned_ipv6")
+
+    @property
+    @pulumi.getter(name="assignedPrivateIpv4")
+    def assigned_private_ipv4(self) -> str:
+        return pulumi.get(self, "assigned_private_ipv4")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -204,6 +223,11 @@ class GetNetworkLoadBalancerResult:
         return pulumi.get(self, "subnet_id")
 
     @property
+    @pulumi.getter(name="subnetIpv6cidr")
+    def subnet_ipv6cidr(self) -> str:
+        return pulumi.get(self, "subnet_ipv6cidr")
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
@@ -234,6 +258,8 @@ class AwaitableGetNetworkLoadBalancerResult(GetNetworkLoadBalancerResult):
         if False:
             yield self
         return GetNetworkLoadBalancerResult(
+            assigned_ipv6=self.assigned_ipv6,
+            assigned_private_ipv4=self.assigned_private_ipv4,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -250,6 +276,7 @@ class AwaitableGetNetworkLoadBalancerResult(GetNetworkLoadBalancerResult):
             reserved_ips=self.reserved_ips,
             state=self.state,
             subnet_id=self.subnet_id,
+            subnet_ipv6cidr=self.subnet_ipv6cidr,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -282,6 +309,8 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer', __args__, opts=opts, typ=GetNetworkLoadBalancerResult).value
 
     return AwaitableGetNetworkLoadBalancerResult(
+        assigned_ipv6=pulumi.get(__ret__, 'assigned_ipv6'),
+        assigned_private_ipv4=pulumi.get(__ret__, 'assigned_private_ipv4'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -298,6 +327,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[str] = None,
         reserved_ips=pulumi.get(__ret__, 'reserved_ips'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        subnet_ipv6cidr=pulumi.get(__ret__, 'subnet_ipv6cidr'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))

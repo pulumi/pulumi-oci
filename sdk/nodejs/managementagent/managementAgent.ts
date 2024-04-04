@@ -19,7 +19,10 @@ import * as utilities from "../utilities";
  * const testManagementAgent = new oci.managementagent.ManagementAgent("testManagementAgent", {managedAgentId: oci_management_agent_managed_agent.test_managed_agent.id});
  * ```
  * <!--End PulumiCodeChooser -->
+ * ***
+ * Add plugin to Management Agent created via OCI Compute instance.
  *
+ * Compute instance must have OCA Plugin "Management Agent" enabled
  * ## Import
  *
  * ManagementAgents can be imported using the `id`, e.g.
@@ -56,36 +59,21 @@ export class ManagementAgent extends pulumi.CustomResource {
         return obj['__pulumiType'] === ManagementAgent.__pulumiType;
     }
 
-    /**
-     * The current availability status of managementAgent
-     */
     public /*out*/ readonly availabilityStatus!: pulumi.Output<string>;
-    /**
-     * Compartment owning this DataSource.
-     */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
-    /**
-     * list of dataSources associated with the agent
-     */
     public /*out*/ readonly dataSourceLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceList[]>;
     public /*out*/ readonly dataSourceSummaryLists!: pulumi.Output<outputs.ManagementAgent.ManagementAgentDataSourceSummaryList[]>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
-    /**
-     * (Updatable) Plugin Id list
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     public readonly deployPluginsIds!: pulumi.Output<string[] | undefined>;
     /**
-     * (Updatable) New displayName of Agent.
+     * Management Agent Name
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -253,36 +241,21 @@ export class ManagementAgent extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ManagementAgent resources.
  */
 export interface ManagementAgentState {
-    /**
-     * The current availability status of managementAgent
-     */
     availabilityStatus?: pulumi.Input<string>;
-    /**
-     * Compartment owning this DataSource.
-     */
     compartmentId?: pulumi.Input<string>;
-    /**
-     * list of dataSources associated with the agent
-     */
     dataSourceLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceList>[]>;
     dataSourceSummaryLists?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceSummaryList>[]>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
-    /**
-     * (Updatable) Plugin Id list
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) New displayName of Agent.
+     * Management Agent Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -372,22 +345,16 @@ export interface ManagementAgentState {
  */
 export interface ManagementAgentArgs {
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
-    /**
-     * (Updatable) Plugin Id list
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
     deployPluginsIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) New displayName of Agent.
+     * Management Agent Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**

@@ -99,9 +99,6 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
      * 
      * Avoid entering confidential information.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
@@ -111,12 +108,30 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
      * 
      * Avoid entering confidential information.
      * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
-        return Optional.ofNullable(this.freeformTags);
+    @Import(name="status")
+    private @Nullable Output<String> status;
+
+    /**
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
     }
 
     private CloudGuardDataSourceArgs() {}
@@ -128,6 +143,7 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.status = $.status;
     }
 
     public static Builder builder() {
@@ -258,9 +274,6 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
          * 
          * Avoid entering confidential information.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -274,14 +287,38 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
          * 
          * Avoid entering confidential information.
          * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            return freeformTags(Output.of(freeformTags));
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        /**
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(String status) {
+            return status(Output.of(status));
         }
 
         public CloudGuardDataSourceArgs build() {

@@ -18,9 +18,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Value of the metric dimension
-        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

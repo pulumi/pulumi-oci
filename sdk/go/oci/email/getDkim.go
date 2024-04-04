@@ -69,7 +69,7 @@ type LookupDkimResult struct {
 	// The description of the DKIM. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	DkimId      string `pulumi:"dkimId"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain that this DKIM belongs to.
 	EmailDomainId string `pulumi:"emailDomainId"`
@@ -89,7 +89,7 @@ type LookupDkimResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue string `pulumi:"txtRecordValue"`
 }
 
@@ -155,7 +155,7 @@ func (o LookupDkimResultOutput) DkimId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.DkimId }).(pulumi.StringOutput)
 }
 
-// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 func (o LookupDkimResultOutput) DnsSubdomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.DnsSubdomainName }).(pulumi.StringOutput)
 }
@@ -205,7 +205,7 @@ func (o LookupDkimResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 func (o LookupDkimResultOutput) TxtRecordValue() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDkimResult) string { return v.TxtRecordValue }).(pulumi.StringOutput)
 }

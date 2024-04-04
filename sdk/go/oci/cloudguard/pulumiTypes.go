@@ -746,7 +746,10 @@ func (o CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput) Index(i pu
 type CloudGuardDataSourceRegionStatusDetail struct {
 	// Data Source replication region.
 	Region *string `pulumi:"region"`
-	// Status of data Source
+	// (Updatable) Status of DataSource. Default value is DISABLED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 }
 
@@ -764,7 +767,10 @@ type CloudGuardDataSourceRegionStatusDetailInput interface {
 type CloudGuardDataSourceRegionStatusDetailArgs struct {
 	// Data Source replication region.
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// Status of data Source
+	// (Updatable) Status of DataSource. Default value is DISABLED.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
@@ -824,7 +830,10 @@ func (o CloudGuardDataSourceRegionStatusDetailOutput) Region() pulumi.StringPtrO
 	return o.ApplyT(func(v CloudGuardDataSourceRegionStatusDetail) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// Status of data Source
+// (Updatable) Status of DataSource. Default value is DISABLED.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudGuardDataSourceRegionStatusDetailOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceRegionStatusDetail) *string { return v.Status }).(pulumi.StringPtrOutput)
 }

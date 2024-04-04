@@ -450,7 +450,7 @@ class ManagedList(pulumi.CustomResource):
         """
         This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new ManagedList.
+        Creates a new ManagedList object.
 
         ## Import
 
@@ -490,7 +490,7 @@ class ManagedList(pulumi.CustomResource):
         """
         This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new ManagedList.
+        Creates a new ManagedList object.
 
         ## Import
 

@@ -173,14 +173,28 @@ public class Sender extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
-     * The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
+    }
+    /**
+     * The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Output<String> timeCreated() {

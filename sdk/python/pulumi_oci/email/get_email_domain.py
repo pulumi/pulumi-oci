@@ -87,7 +87,7 @@ class GetEmailDomainResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        The description of a email domain.
+        The description of an email domain.
         """
         return pulumi.get(self, "description")
 
@@ -124,7 +124,7 @@ class GetEmailDomainResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+        The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
         """
         return pulumi.get(self, "name")
 

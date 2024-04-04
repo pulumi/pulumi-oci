@@ -83,7 +83,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -125,7 +125,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -167,7 +167,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -209,7 +209,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * 
      * ## Example Usage
      * 
@@ -251,7 +251,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule object, identified by DataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -293,7 +293,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule object, identified by DataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -335,7 +335,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule object, identified by DataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -377,7 +377,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule object, identified by DataMaskRuleId.
      * 
      * ## Example Usage
      * 
@@ -419,7 +419,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
+     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -468,7 +468,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
+     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -517,7 +517,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
+     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -566,7 +566,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
+     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
      * 
      * ## Example Usage
      * 
@@ -1375,7 +1375,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1417,7 +1417,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1459,7 +1459,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1501,7 +1501,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      * 
      * ## Example Usage
      * 
@@ -1543,7 +1543,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1604,7 +1604,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1665,7 +1665,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1726,7 +1726,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Detector Recipes in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
      * 
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -2195,7 +2195,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      * 
      * ## Example Usage
      * 
@@ -2237,7 +2237,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      * 
      * ## Example Usage
      * 
@@ -2279,7 +2279,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      * 
      * ## Example Usage
      * 
@@ -2321,7 +2321,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      * 
      * ## Example Usage
      * 
@@ -2363,7 +2363,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of ListManagedLists.
+     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2424,7 +2424,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of ListManagedLists.
+     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2485,7 +2485,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of ListManagedLists.
+     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 
@@ -2546,7 +2546,7 @@ public final class CloudGuardFunctions {
     /**
      * This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
      * 
-     * Returns a list of ListManagedLists.
+     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * 

@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+        /// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
         /// </summary>
         public readonly string? Name;
         /// <summary>

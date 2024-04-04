@@ -91,11 +91,11 @@ export class Suppression extends pulumi.CustomResource {
      */
     public /*out*/ readonly reason!: pulumi.Output<string>;
     /**
-     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeLastSuppressed!: pulumi.Output<string>;
 
@@ -175,11 +175,11 @@ export interface SuppressionState {
      */
     reason?: pulumi.Input<string>;
     /**
-     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     timeLastSuppressed?: pulumi.Input<string>;
 }

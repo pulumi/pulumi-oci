@@ -59,6 +59,7 @@ namespace Pulumi.Oci.CloudGuard
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Status = @var.Data_source_status,
     ///     });
     /// 
     /// });
@@ -116,10 +117,6 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// 
         /// Avoid entering confidential information.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -137,7 +134,11 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Status of data Source
+        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -249,16 +250,22 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// 
         /// Avoid entering confidential information.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<object> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
 
         public CloudGuardDataSourceArgs()
         {
@@ -323,10 +330,6 @@ namespace Pulumi.Oci.CloudGuard
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// 
         /// Avoid entering confidential information.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -353,7 +356,11 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Status of data Source
+        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

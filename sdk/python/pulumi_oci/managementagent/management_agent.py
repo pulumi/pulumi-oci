@@ -24,13 +24,9 @@ class ManagementAgentArgs:
         """
         The set of arguments for constructing a ManagementAgent resource.
         :param pulumi.Input[str] managed_agent_id: Unique Management Agent identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) New displayName of Agent.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: Management Agent Name
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "managed_agent_id", managed_agent_id)
         if defined_tags is not None:
@@ -58,7 +54,7 @@ class ManagementAgentArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -69,12 +65,6 @@ class ManagementAgentArgs:
     @property
     @pulumi.getter(name="deployPluginsIds")
     def deploy_plugins_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Plugin Id list
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deploy_plugins_ids")
 
     @deploy_plugins_ids.setter
@@ -85,7 +75,7 @@ class ManagementAgentArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) New displayName of Agent.
+        Management Agent Name
         """
         return pulumi.get(self, "display_name")
 
@@ -97,7 +87,7 @@ class ManagementAgentArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -139,16 +129,9 @@ class _ManagementAgentState:
                  version: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ManagementAgent resources.
-        :param pulumi.Input[str] availability_status: The current availability status of managementAgent
-        :param pulumi.Input[str] compartment_id: Compartment owning this DataSource.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]] data_source_lists: list of dataSources associated with the agent
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) New displayName of Agent.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: Management Agent Name
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: Management Agent host machine name
         :param pulumi.Input[str] host_id: Host resource ocid
         :param pulumi.Input[str] install_key_id: agent install key identifier
@@ -230,9 +213,6 @@ class _ManagementAgentState:
     @property
     @pulumi.getter(name="availabilityStatus")
     def availability_status(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current availability status of managementAgent
-        """
         return pulumi.get(self, "availability_status")
 
     @availability_status.setter
@@ -242,9 +222,6 @@ class _ManagementAgentState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment owning this DataSource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -254,9 +231,6 @@ class _ManagementAgentState:
     @property
     @pulumi.getter(name="dataSourceLists")
     def data_source_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListArgs']]]]:
-        """
-        list of dataSources associated with the agent
-        """
         return pulumi.get(self, "data_source_lists")
 
     @data_source_lists.setter
@@ -276,7 +250,7 @@ class _ManagementAgentState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -287,12 +261,6 @@ class _ManagementAgentState:
     @property
     @pulumi.getter(name="deployPluginsIds")
     def deploy_plugins_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Plugin Id list
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deploy_plugins_ids")
 
     @deploy_plugins_ids.setter
@@ -303,7 +271,7 @@ class _ManagementAgentState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) New displayName of Agent.
+        Management Agent Name
         """
         return pulumi.get(self, "display_name")
 
@@ -315,7 +283,7 @@ class _ManagementAgentState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -588,7 +556,10 @@ class ManagementAgent(pulumi.CustomResource):
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
         <!--End PulumiCodeChooser -->
+        ***
+        Add plugin to Management Agent created via OCI Compute instance.
 
+        Compute instance must have OCA Plugin "Management Agent" enabled
         ## Import
 
         ManagementAgents can be imported using the `id`, e.g.
@@ -599,13 +570,9 @@ class ManagementAgent(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) New displayName of Agent.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: Management Agent Name
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] managed_agent_id: Unique Management Agent identifier
         """
         ...
@@ -627,7 +594,10 @@ class ManagementAgent(pulumi.CustomResource):
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
         <!--End PulumiCodeChooser -->
+        ***
+        Add plugin to Management Agent created via OCI Compute instance.
 
+        Compute instance must have OCA Plugin "Management Agent" enabled
         ## Import
 
         ManagementAgents can be imported using the `id`, e.g.
@@ -740,16 +710,9 @@ class ManagementAgent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_status: The current availability status of managementAgent
-        :param pulumi.Input[str] compartment_id: Compartment owning this DataSource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementAgentDataSourceListArgs']]]] data_source_lists: list of dataSources associated with the agent
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_plugins_ids: (Updatable) Plugin Id list
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] display_name: (Updatable) New displayName of Agent.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] display_name: Management Agent Name
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host: Management Agent host machine name
         :param pulumi.Input[str] host_id: Host resource ocid
         :param pulumi.Input[str] install_key_id: agent install key identifier
@@ -808,25 +771,16 @@ class ManagementAgent(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityStatus")
     def availability_status(self) -> pulumi.Output[str]:
-        """
-        The current availability status of managementAgent
-        """
         return pulumi.get(self, "availability_status")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        Compartment owning this DataSource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="dataSourceLists")
     def data_source_lists(self) -> pulumi.Output[Sequence['outputs.ManagementAgentDataSourceList']]:
-        """
-        list of dataSources associated with the agent
-        """
         return pulumi.get(self, "data_source_lists")
 
     @property
@@ -838,26 +792,20 @@ class ManagementAgent(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="deployPluginsIds")
     def deploy_plugins_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) Plugin Id list
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "deploy_plugins_ids")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) New displayName of Agent.
+        Management Agent Name
         """
         return pulumi.get(self, "display_name")
 
@@ -865,7 +813,7 @@ class ManagementAgent(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 

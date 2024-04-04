@@ -116,9 +116,6 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
      * 
      * Avoid entering confidential information.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
@@ -127,9 +124,6 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      * Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -167,14 +161,20 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * Status of data Source
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Status of data Source
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> status() {
@@ -403,9 +403,6 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
          * 
          * Avoid entering confidential information.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -418,9 +415,6 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * Avoid entering confidential information.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -482,7 +476,10 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status Status of data Source
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -493,7 +490,10 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status Status of data Source
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -46,12 +46,12 @@ public final class GetSuppressionsSuppression {
      */
     private String reason;
     /**
-     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeCreated;
     /**
-     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeLastSuppressed;
@@ -107,14 +107,14 @@ public final class GetSuppressionsSuppression {
         return this.reason;
     }
     /**
-     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeLastSuppressed() {

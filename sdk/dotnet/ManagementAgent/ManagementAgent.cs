@@ -31,7 +31,10 @@ namespace Pulumi.Oci.ManagementAgent
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
+    /// ***
+    /// Add plugin to Management Agent created via OCI Compute instance.
     /// 
+    /// Compute instance must have OCA Plugin "Management Agent" enabled
     /// ## Import
     /// 
     /// ManagementAgents can be imported using the `id`, e.g.
@@ -43,21 +46,12 @@ namespace Pulumi.Oci.ManagementAgent
     [OciResourceType("oci:ManagementAgent/managementAgent:ManagementAgent")]
     public partial class ManagementAgent : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// The current availability status of managementAgent
-        /// </summary>
         [Output("availabilityStatus")]
         public Output<string> AvailabilityStatus { get; private set; } = null!;
 
-        /// <summary>
-        /// Compartment owning this DataSource.
-        /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
-        /// <summary>
-        /// list of dataSources associated with the agent
-        /// </summary>
         [Output("dataSourceLists")]
         public Output<ImmutableArray<Outputs.ManagementAgentDataSourceList>> DataSourceLists { get; private set; } = null!;
 
@@ -65,28 +59,22 @@ namespace Pulumi.Oci.ManagementAgent
         public Output<ImmutableArray<Outputs.ManagementAgentDataSourceSummaryList>> DataSourceSummaryLists { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
-        /// <summary>
-        /// (Updatable) Plugin Id list
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         [Output("deployPluginsIds")]
         public Output<ImmutableArray<string>> DeployPluginsIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) New displayName of Agent.
+        /// Management Agent Name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -261,7 +249,7 @@ namespace Pulumi.Oci.ManagementAgent
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -271,13 +259,6 @@ namespace Pulumi.Oci.ManagementAgent
 
         [Input("deployPluginsIds")]
         private InputList<string>? _deployPluginsIds;
-
-        /// <summary>
-        /// (Updatable) Plugin Id list
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         public InputList<string> DeployPluginsIds
         {
             get => _deployPluginsIds ?? (_deployPluginsIds = new InputList<string>());
@@ -285,7 +266,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
 
         /// <summary>
-        /// (Updatable) New displayName of Agent.
+        /// Management Agent Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -294,7 +275,7 @@ namespace Pulumi.Oci.ManagementAgent
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -316,24 +297,14 @@ namespace Pulumi.Oci.ManagementAgent
 
     public sealed class ManagementAgentState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The current availability status of managementAgent
-        /// </summary>
         [Input("availabilityStatus")]
         public Input<string>? AvailabilityStatus { get; set; }
 
-        /// <summary>
-        /// Compartment owning this DataSource.
-        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         [Input("dataSourceLists")]
         private InputList<Inputs.ManagementAgentDataSourceListGetArgs>? _dataSourceLists;
-
-        /// <summary>
-        /// list of dataSources associated with the agent
-        /// </summary>
         public InputList<Inputs.ManagementAgentDataSourceListGetArgs> DataSourceLists
         {
             get => _dataSourceLists ?? (_dataSourceLists = new InputList<Inputs.ManagementAgentDataSourceListGetArgs>());
@@ -352,7 +323,7 @@ namespace Pulumi.Oci.ManagementAgent
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -362,13 +333,6 @@ namespace Pulumi.Oci.ManagementAgent
 
         [Input("deployPluginsIds")]
         private InputList<string>? _deployPluginsIds;
-
-        /// <summary>
-        /// (Updatable) Plugin Id list
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         public InputList<string> DeployPluginsIds
         {
             get => _deployPluginsIds ?? (_deployPluginsIds = new InputList<string>());
@@ -376,7 +340,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
 
         /// <summary>
-        /// (Updatable) New displayName of Agent.
+        /// Management Agent Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -385,7 +349,7 @@ namespace Pulumi.Oci.ManagementAgent
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {

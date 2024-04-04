@@ -73,9 +73,9 @@ type Suppression struct {
 	MessageId pulumi.StringOutput `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason pulumi.StringOutput `pulumi:"reason"`
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed pulumi.StringOutput `pulumi:"timeLastSuppressed"`
 }
 
@@ -130,9 +130,9 @@ type suppressionState struct {
 	MessageId *string `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason *string `pulumi:"reason"`
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed *string `pulumi:"timeLastSuppressed"`
 }
 
@@ -152,9 +152,9 @@ type SuppressionState struct {
 	MessageId pulumi.StringPtrInput
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason pulumi.StringPtrInput
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed pulumi.StringPtrInput
 }
 
@@ -303,12 +303,12 @@ func (o SuppressionOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.Reason }).(pulumi.StringOutput)
 }
 
-// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o SuppressionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o SuppressionOutput) TimeLastSuppressed() pulumi.StringOutput {
 	return o.ApplyT(func(v *Suppression) pulumi.StringOutput { return v.TimeLastSuppressed }).(pulumi.StringOutput)
 }

@@ -19,6 +19,8 @@ class NetworkLoadBalancerArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
+                 assigned_ipv6: Optional[pulumi.Input[str]] = None,
+                 assigned_private_ipv4: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
@@ -26,16 +28,15 @@ class NetworkLoadBalancerArgs:
                  is_symmetric_hash_enabled: Optional[pulumi.Input[bool]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
-                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None):
+                 reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
+                 subnet_ipv6cidr: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NetworkLoadBalancer resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        :param pulumi.Input[str] assigned_private_ipv4: Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_preserve_source_destination: (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
@@ -48,7 +49,9 @@ class NetworkLoadBalancerArgs:
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -60,10 +63,19 @@ class NetworkLoadBalancerArgs:
                Example: ["ocid1.nsg.oc1.phx.unique_ID"]
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
+        :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if assigned_ipv6 is not None:
+            pulumi.set(__self__, "assigned_ipv6", assigned_ipv6)
+        if assigned_private_ipv4 is not None:
+            pulumi.set(__self__, "assigned_private_ipv4", assigned_private_ipv4)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -80,6 +92,8 @@ class NetworkLoadBalancerArgs:
             pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
         if reserved_ips is not None:
             pulumi.set(__self__, "reserved_ips", reserved_ips)
+        if subnet_ipv6cidr is not None:
+            pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -110,16 +124,36 @@ class NetworkLoadBalancerArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="assignedIpv6")
+    def assigned_ipv6(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        """
+        return pulumi.get(self, "assigned_ipv6")
+
+    @assigned_ipv6.setter
+    def assigned_ipv6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "assigned_ipv6", value)
+
+    @property
+    @pulumi.getter(name="assignedPrivateIpv4")
+    def assigned_private_ipv4(self) -> Optional[pulumi.Input[str]]:
+        """
+        Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+        """
+        return pulumi.get(self, "assigned_private_ipv4")
+
+    @assigned_private_ipv4.setter
+    def assigned_private_ipv4(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "assigned_private_ipv4", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -181,7 +215,9 @@ class NetworkLoadBalancerArgs:
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+
+        Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")
 
@@ -233,10 +269,28 @@ class NetworkLoadBalancerArgs:
     def reserved_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]]):
         pulumi.set(self, "reserved_ips", value)
 
+    @property
+    @pulumi.getter(name="subnetIpv6cidr")
+    def subnet_ipv6cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subnet_ipv6cidr")
+
+    @subnet_ipv6cidr.setter
+    def subnet_ipv6cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_ipv6cidr", value)
+
 
 @pulumi.input_type
 class _NetworkLoadBalancerState:
     def __init__(__self__, *,
+                 assigned_ipv6: Optional[pulumi.Input[str]] = None,
+                 assigned_private_ipv4: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -251,11 +305,14 @@ class _NetworkLoadBalancerState:
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NetworkLoadBalancer resources.
+        :param pulumi.Input[str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        :param pulumi.Input[str] assigned_private_ipv4: Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
@@ -271,7 +328,9 @@ class _NetworkLoadBalancerState:
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+               
+               Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
@@ -286,6 +345,7 @@ class _NetworkLoadBalancerState:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
                
                ** IMPORTANT **
@@ -294,6 +354,10 @@ class _NetworkLoadBalancerState:
         :param pulumi.Input[str] time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         """
+        if assigned_ipv6 is not None:
+            pulumi.set(__self__, "assigned_ipv6", assigned_ipv6)
+        if assigned_private_ipv4 is not None:
+            pulumi.set(__self__, "assigned_private_ipv4", assigned_private_ipv4)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -322,12 +386,38 @@ class _NetworkLoadBalancerState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnet_ipv6cidr is not None:
+            pulumi.set(__self__, "subnet_ipv6cidr", subnet_ipv6cidr)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="assignedIpv6")
+    def assigned_ipv6(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        """
+        return pulumi.get(self, "assigned_ipv6")
+
+    @assigned_ipv6.setter
+    def assigned_ipv6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "assigned_ipv6", value)
+
+    @property
+    @pulumi.getter(name="assignedPrivateIpv4")
+    def assigned_private_ipv4(self) -> Optional[pulumi.Input[str]]:
+        """
+        Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+        """
+        return pulumi.get(self, "assigned_private_ipv4")
+
+    @assigned_private_ipv4.setter
+    def assigned_private_ipv4(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "assigned_private_ipv4", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -425,7 +515,9 @@ class _NetworkLoadBalancerState:
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+
+        Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")
 
@@ -506,16 +598,28 @@ class _NetworkLoadBalancerState:
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="subnetIpv6cidr")
+    def subnet_ipv6cidr(self) -> Optional[pulumi.Input[str]]:
+        """
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "subnet_ipv6cidr")
+
+    @subnet_ipv6cidr.setter
+    def subnet_ipv6cidr(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_ipv6cidr", value)
 
     @property
     @pulumi.getter(name="systemTags")
@@ -559,6 +663,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 assigned_ipv6: Optional[pulumi.Input[str]] = None,
+                 assigned_private_ipv4: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -570,6 +676,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -587,6 +694,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["network_load_balancer_display_name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
+            assigned_ipv6=var["network_load_balancer_assigned_ipv6"],
+            assigned_private_ipv4=var["network_load_balancer_assigned_private_ipv4"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -600,7 +709,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
                 id=var["network_load_balancer_reserved_ips_id"],
-            )])
+            )],
+            subnet_ipv6cidr=var["network_load_balancer_subnet_ipv6cidr"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -614,6 +724,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        :param pulumi.Input[str] assigned_private_ipv4: Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
@@ -628,7 +740,9 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+               
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -641,6 +755,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
                
                ** IMPORTANT **
@@ -668,6 +783,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             compartment_id=var["compartment_id"],
             display_name=var["network_load_balancer_display_name"],
             subnet_id=oci_core_subnet["test_subnet"]["id"],
+            assigned_ipv6=var["network_load_balancer_assigned_ipv6"],
+            assigned_private_ipv4=var["network_load_balancer_assigned_private_ipv4"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -681,7 +798,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
             reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
                 id=var["network_load_balancer_reserved_ips_id"],
-            )])
+            )],
+            subnet_ipv6cidr=var["network_load_balancer_subnet_ipv6cidr"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -708,6 +826,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 assigned_ipv6: Optional[pulumi.Input[str]] = None,
+                 assigned_private_ipv4: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -719,6 +839,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                  nlb_ip_version: Optional[pulumi.Input[str]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -728,6 +849,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkLoadBalancerArgs.__new__(NetworkLoadBalancerArgs)
 
+            __props__.__dict__["assigned_ipv6"] = assigned_ipv6
+            __props__.__dict__["assigned_private_ipv4"] = assigned_private_ipv4
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -745,6 +868,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subnet_ipv6cidr"] = subnet_ipv6cidr
             __props__.__dict__["ip_addresses"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -761,6 +885,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            assigned_ipv6: Optional[pulumi.Input[str]] = None,
+            assigned_private_ipv4: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -775,6 +901,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            subnet_ipv6cidr: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'NetworkLoadBalancer':
@@ -785,6 +912,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] assigned_ipv6: IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        :param pulumi.Input[str] assigned_private_ipv4: Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Network load balancer identifier, which can be renamed.
@@ -800,7 +929,9 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                A public network load balancer is accessible from the internet, depending on the [security list rules](https://docs.cloud.oracle.com/iaas/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and private network load balancers, see [How Network Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/overview.htm). This value is true by default.
                
                Example: `true`
-        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+               
+               Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
@@ -815,6 +946,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkLoadBalancerReservedIpArgs']]]] reserved_ips: An array of reserved Ips.
         :param pulumi.Input[str] state: The current state of the network load balancer.
         :param pulumi.Input[str] subnet_id: The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] subnet_ipv6cidr: IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
                
                
                ** IMPORTANT **
@@ -827,6 +959,8 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         __props__ = _NetworkLoadBalancerState.__new__(_NetworkLoadBalancerState)
 
+        __props__.__dict__["assigned_ipv6"] = assigned_ipv6
+        __props__.__dict__["assigned_private_ipv4"] = assigned_private_ipv4
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -841,10 +975,27 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["reserved_ips"] = reserved_ips
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subnet_ipv6cidr"] = subnet_ipv6cidr
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return NetworkLoadBalancer(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="assignedIpv6")
+    def assigned_ipv6(self) -> pulumi.Output[Optional[str]]:
+        """
+        IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+        """
+        return pulumi.get(self, "assigned_ipv6")
+
+    @property
+    @pulumi.getter(name="assignedPrivateIpv4")
+    def assigned_private_ipv4(self) -> pulumi.Output[Optional[str]]:
+        """
+        Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: "10.0.0.1"
+        """
+        return pulumi.get(self, "assigned_private_ipv4")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -914,7 +1065,9 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="isSymmetricHashEnabled")
     def is_symmetric_hash_enabled(self) -> pulumi.Output[bool]:
         """
-        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+        (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
+
+        Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")
 
@@ -971,12 +1124,20 @@ class NetworkLoadBalancer(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[str]:
         """
         The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subnetIpv6cidr")
+    def subnet_ipv6cidr(self) -> pulumi.Output[Optional[str]]:
+        """
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "subnet_id")
+        return pulumi.get(self, "subnet_ipv6cidr")
 
     @property
     @pulumi.getter(name="systemTags")

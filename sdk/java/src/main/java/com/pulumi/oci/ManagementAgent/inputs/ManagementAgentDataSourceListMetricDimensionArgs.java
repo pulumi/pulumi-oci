@@ -30,17 +30,9 @@ public final class ManagementAgentDataSourceListMetricDimensionArgs extends com.
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * Value of the metric dimension
-     * 
-     */
     @Import(name="value")
     private @Nullable Output<String> value;
 
-    /**
-     * @return Value of the metric dimension
-     * 
-     */
     public Optional<Output<String>> value() {
         return Optional.ofNullable(this.value);
     }
@@ -91,23 +83,11 @@ public final class ManagementAgentDataSourceListMetricDimensionArgs extends com.
             return name(Output.of(name));
         }
 
-        /**
-         * @param value Value of the metric dimension
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(@Nullable Output<String> value) {
             $.value = value;
             return this;
         }
 
-        /**
-         * @param value Value of the metric dimension
-         * 
-         * @return builder
-         * 
-         */
         public Builder value(String value) {
             return value(Output.of(value));
         }

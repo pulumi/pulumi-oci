@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of ListManagedLists.
+        /// Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
         /// The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
         /// The list does not include any subcompartments of the compartmentId passed.
         /// 
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of ListManagedLists.
+        /// Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
         /// The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
         /// The list does not include any subcompartments of the compartmentId passed.
         /// 

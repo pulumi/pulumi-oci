@@ -13,41 +13,17 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     [OutputType]
     public sealed class ManagementAgentDataSourceList
     {
-        /// <summary>
-        /// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-        /// </summary>
         public readonly string? AllowMetrics;
-        /// <summary>
-        /// Compartment owning this DataSource.
-        /// </summary>
         public readonly string? CompartmentId;
-        /// <summary>
-        /// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-        /// </summary>
         public readonly int? ConnectionTimeout;
-        /// <summary>
-        /// If the Kubernetes cluster type is Daemon set then this will be set to true.
-        /// </summary>
         public readonly bool? IsDaemonSet;
-        /// <summary>
-        /// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        /// </summary>
         public readonly string? Key;
-        /// <summary>
-        /// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementAgentDataSourceListMetricDimension> MetricDimensions;
         /// <summary>
         /// Name of the property
         /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-        /// </summary>
         public readonly string? Namespace;
-        /// <summary>
-        /// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-        /// </summary>
         public readonly string? ProxyUrl;
         /// <summary>
         /// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).

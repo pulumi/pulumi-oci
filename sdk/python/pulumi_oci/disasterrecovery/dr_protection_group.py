@@ -755,7 +755,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def members(self) -> pulumi.Output[Sequence['outputs.DrProtectionGroupMember']]:
+    def members(self) -> pulumi.Output[Optional[Sequence['outputs.DrProtectionGroupMember']]]:
         """
         (Updatable) A list of DR protection group members.
         """

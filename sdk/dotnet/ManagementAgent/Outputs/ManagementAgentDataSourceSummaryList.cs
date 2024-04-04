@@ -13,13 +13,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     [OutputType]
     public sealed class ManagementAgentDataSourceSummaryList
     {
-        /// <summary>
-        /// If the Kubernetes cluster type is Daemon set then this will be set to true.
-        /// </summary>
         public readonly bool? IsDaemonSet;
-        /// <summary>
-        /// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        /// </summary>
         public readonly string? Key;
         /// <summary>
         /// Name of the property

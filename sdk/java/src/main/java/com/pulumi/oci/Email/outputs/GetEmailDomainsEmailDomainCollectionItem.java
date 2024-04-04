@@ -29,7 +29,7 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The description of a email domain.
+     * @return The description of an email domain.
      * 
      */
     private String description;
@@ -92,7 +92,7 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return The description of a email domain.
+     * @return The description of an email domain.
      * 
      */
     public String description() {

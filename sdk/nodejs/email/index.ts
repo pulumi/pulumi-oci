@@ -15,6 +15,11 @@ export type EmailDomain = import("./emailDomain").EmailDomain;
 export const EmailDomain: typeof import("./emailDomain").EmailDomain = null as any;
 utilities.lazyLoad(exports, ["EmailDomain"], () => require("./emailDomain"));
 
+export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
+export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
+export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getConfiguration","getConfigurationOutput"], () => require("./getConfiguration"));
+
 export { GetDkimArgs, GetDkimResult, GetDkimOutputArgs } from "./getDkim";
 export const getDkim: typeof import("./getDkim").getDkim = null as any;
 export const getDkimOutput: typeof import("./getDkim").getDkimOutput = null as any;

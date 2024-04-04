@@ -18,10 +18,10 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
  * 
- * Creates a new DKIM for a email domain.
- * This DKIM will sign all approved senders in the tenancy that are in this email domain.
+ * Creates a new DKIM for an email domain.
+ * This DKIM signs all approved senders in the tenancy that are in this email domain.
  * Best security practices indicate to periodically rotate the DKIM that is doing the signing.
- * When a second DKIM is applied, all senders will seamlessly pick up the new key
+ * When a second DKIM is applied, all senders seamlessly pick up the new key
  * without interruption in signing.
  * 
  * ## Example Usage
@@ -128,14 +128,14 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     @Export(name="dnsSubdomainName", refs={String.class}, tree="[0]")
     private Output<String> dnsSubdomainName;
 
     /**
-     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * @return The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      * 
      */
     public Output<String> dnsSubdomainName() {
@@ -184,7 +184,7 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * 
      * Avoid entering confidential information.
      * 
@@ -198,7 +198,7 @@ public class Dkim extends com.pulumi.resources.CustomResource {
     private Output<String> name;
 
     /**
-     * @return The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * @return The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * 
      * Avoid entering confidential information.
      * 
@@ -268,14 +268,14 @@ public class Dkim extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+     * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
      * 
      */
     @Export(name="txtRecordValue", refs={String.class}, tree="[0]")
     private Output<String> txtRecordValue;
 
     /**
-     * @return The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+     * @return The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
      * 
      */
     public Output<String> txtRecordValue() {

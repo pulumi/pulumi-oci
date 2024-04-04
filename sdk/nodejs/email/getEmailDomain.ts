@@ -57,7 +57,7 @@ export interface GetEmailDomainResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * The description of a email domain.
+     * The description of an email domain.
      */
     readonly description: string;
     readonly emailDomainId: string;
@@ -74,7 +74,7 @@ export interface GetEmailDomainResult {
      */
     readonly isSpf: boolean;
     /**
-     * The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      */
     readonly name: string;
     /**

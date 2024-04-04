@@ -17,7 +17,10 @@ public final class CloudGuardDataSourceRegionStatusDetail {
      */
     private @Nullable String region;
     /**
-     * @return Status of data Source
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String status;
@@ -31,7 +34,10 @@ public final class CloudGuardDataSourceRegionStatusDetail {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return Status of data Source
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> status() {

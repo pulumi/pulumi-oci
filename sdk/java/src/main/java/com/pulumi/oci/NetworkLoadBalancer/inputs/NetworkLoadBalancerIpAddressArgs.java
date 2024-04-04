@@ -19,14 +19,14 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
     public static final NetworkLoadBalancerIpAddressArgs Empty = new NetworkLoadBalancerIpAddressArgs();
 
     /**
-     * The IP address of the backend server. Example: `10.0.0.3`
+     * An IP address.  Example: `192.168.0.3`
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return The IP address of the backend server. Example: `10.0.0.3`
+     * @return An IP address.  Example: `192.168.0.3`
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -34,14 +34,14 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
     }
 
     /**
-     * IP version associated with the backend set.
+     * IP version associated with this IP address.
      * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
-     * @return IP version associated with the backend set.
+     * @return IP version associated with this IP address.
      * 
      */
     public Optional<Output<String>> ipVersion() {
@@ -106,7 +106,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipAddress The IP address of the backend server. Example: `10.0.0.3`
+         * @param ipAddress An IP address.  Example: `192.168.0.3`
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipAddress The IP address of the backend server. Example: `10.0.0.3`
+         * @param ipAddress An IP address.  Example: `192.168.0.3`
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipVersion IP version associated with the backend set.
+         * @param ipVersion IP version associated with this IP address.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class NetworkLoadBalancerIpAddressArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ipVersion IP version associated with the backend set.
+         * @param ipVersion IP version associated with this IP address.
          * 
          * @return builder
          * 

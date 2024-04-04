@@ -46,15 +46,7 @@ class ManagementAgentDataSourceListArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] allow_metrics: Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-        :param pulumi.Input[str] compartment_id: Compartment owning this DataSource.
-        :param pulumi.Input[int] connection_timeout: Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-        :param pulumi.Input[bool] is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
-        :param pulumi.Input[str] key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        :param pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]] metric_dimensions: The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
         :param pulumi.Input[str] name: Name of the property
-        :param pulumi.Input[str] namespace: The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-        :param pulumi.Input[str] proxy_url: The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
         :param pulumi.Input[int] read_data_limit: Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
         :param pulumi.Input[int] read_timeout: Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
         :param pulumi.Input[str] resource_group: Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
@@ -105,9 +97,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="allowMetrics")
     def allow_metrics(self) -> Optional[pulumi.Input[str]]:
-        """
-        Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-        """
         return pulumi.get(self, "allow_metrics")
 
     @allow_metrics.setter
@@ -117,9 +106,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Compartment owning this DataSource.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -129,9 +115,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="connectionTimeout")
     def connection_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-        """
         return pulumi.get(self, "connection_timeout")
 
     @connection_timeout.setter
@@ -141,9 +124,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="isDaemonSet")
     def is_daemon_set(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If the Kubernetes cluster type is Daemon set then this will be set to true.
-        """
         return pulumi.get(self, "is_daemon_set")
 
     @is_daemon_set.setter
@@ -153,9 +133,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -165,9 +142,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="metricDimensions")
     def metric_dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]:
-        """
-        The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-        """
         return pulumi.get(self, "metric_dimensions")
 
     @metric_dimensions.setter
@@ -189,9 +163,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -201,9 +172,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="proxyUrl")
     def proxy_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-        """
         return pulumi.get(self, "proxy_url")
 
     @proxy_url.setter
@@ -326,7 +294,6 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: Name of the property
-        :param pulumi.Input[str] value: Value of the metric dimension
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -348,9 +315,6 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
-        """
-        Value of the metric dimension
-        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -403,8 +367,6 @@ class ManagementAgentDataSourceSummaryListArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
-        :param pulumi.Input[str] key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
         :param pulumi.Input[str] name: Name of the property
         :param pulumi.Input[str] type: The type of the DataSource.
         """
@@ -420,9 +382,6 @@ class ManagementAgentDataSourceSummaryListArgs:
     @property
     @pulumi.getter(name="isDaemonSet")
     def is_daemon_set(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If the Kubernetes cluster type is Daemon set then this will be set to true.
-        """
         return pulumi.get(self, "is_daemon_set")
 
     @is_daemon_set.setter
@@ -432,9 +391,6 @@ class ManagementAgentDataSourceSummaryListArgs:
     @property
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
-        """
-        Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-        """
         return pulumi.get(self, "key")
 
     @key.setter

@@ -7313,7 +7313,11 @@ export namespace CloudGuard {
          */
         region?: pulumi.Input<string>;
         /**
-         * Status of data Source
+         * (Updatable) Status of DataSource. Default value is DISABLED.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         status?: pulumi.Input<string>;
     }
@@ -63067,7 +63071,7 @@ export namespace LoadBalancer {
 
     export interface GetLoadBalancersFilter {
         /**
-         * A unique name for the routing policy rule. Avoid entering confidential information.
+         * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
          */
         name: string;
         regex?: boolean;
@@ -63076,7 +63080,7 @@ export namespace LoadBalancer {
 
     export interface GetLoadBalancersFilterArgs {
         /**
-         * A unique name for the routing policy rule. Avoid entering confidential information.
+         * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -65119,41 +65123,17 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceList {
-        /**
-         * Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-         */
         allowMetrics?: pulumi.Input<string>;
-        /**
-         * Compartment owning this DataSource.
-         */
         compartmentId?: pulumi.Input<string>;
-        /**
-         * Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-         */
         connectionTimeout?: pulumi.Input<number>;
-        /**
-         * If the Kubernetes cluster type is Daemon set then this will be set to true.
-         */
         isDaemonSet?: pulumi.Input<boolean>;
-        /**
-         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-         */
         key?: pulumi.Input<string>;
-        /**
-         * The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-         */
         metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceListMetricDimension>[]>;
         /**
          * Name of the property
          */
         name?: pulumi.Input<string>;
-        /**
-         * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-         */
         namespace?: pulumi.Input<string>;
-        /**
-         * The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-         */
         proxyUrl?: pulumi.Input<string>;
         /**
          * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
@@ -65198,9 +65178,6 @@ export namespace ManagementAgent {
          * Name of the property
          */
         name?: pulumi.Input<string>;
-        /**
-         * Value of the metric dimension
-         */
         value?: pulumi.Input<string>;
     }
 
@@ -65216,13 +65193,7 @@ export namespace ManagementAgent {
     }
 
     export interface ManagementAgentDataSourceSummaryList {
-        /**
-         * If the Kubernetes cluster type is Daemon set then this will be set to true.
-         */
         isDaemonSet?: pulumi.Input<boolean>;
-        /**
-         * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-         */
         key?: pulumi.Input<string>;
         /**
          * Name of the property
@@ -68561,11 +68532,11 @@ export namespace NetworkLoadBalancer {
 
     export interface NetworkLoadBalancerIpAddress {
         /**
-         * The IP address of the backend server. Example: `10.0.0.3`
+         * An IP address.  Example: `192.168.0.3`
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * IP version associated with the backend set.
+         * IP version associated with this IP address.
          */
         ipVersion?: pulumi.Input<string>;
         /**

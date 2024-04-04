@@ -227,7 +227,7 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
     """
     This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataMaskRule identified by DataMaskRuleId
+    Returns a DataMaskRule object, identified by DataMaskRuleId.
 
     ## Example Usage
 
@@ -273,7 +273,7 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
     """
     This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataMaskRule identified by DataMaskRuleId
+    Returns a DataMaskRule object, identified by DataMaskRuleId.
 
     ## Example Usage
 

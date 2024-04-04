@@ -13,6 +13,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     [OutputType]
     public sealed class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult
     {
+        public readonly string AssignedIpv6;
+        public readonly string AssignedPrivateIpv4;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
         /// </summary>
@@ -67,6 +69,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         /// </summary>
         public readonly string SubnetId;
+        public readonly string SubnetIpv6cidr;
         /// <summary>
         /// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -82,6 +85,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
         [OutputConstructor]
         private GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(
+            string assignedIpv6,
+
+            string assignedPrivateIpv4,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -112,12 +119,16 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             string subnetId,
 
+            string subnetIpv6cidr,
+
             ImmutableDictionary<string, object> systemTags,
 
             string timeCreated,
 
             string timeUpdated)
         {
+            AssignedIpv6 = assignedIpv6;
+            AssignedPrivateIpv4 = assignedPrivateIpv4;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
@@ -133,6 +144,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
             ReservedIps = reservedIps;
             State = state;
             SubnetId = subnetId;
+            SubnetIpv6cidr = subnetIpv6cidr;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

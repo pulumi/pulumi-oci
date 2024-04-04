@@ -110,7 +110,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
     /**
      * (Updatable) A list of DR protection group members.
      */
-    public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[]>;
+    public readonly members!: pulumi.Output<outputs.DisasterRecovery.DrProtectionGroupMember[] | undefined>;
     /**
      * The OCID of the peer DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */

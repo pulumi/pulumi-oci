@@ -42,6 +42,7 @@ import (
 //				DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
 //				GatewayIds:             oci_apigateway_gateway.Test_gateway.Id,
 //				HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
+//				WaitForHostId:          pulumi.IntRef(10),
 //				InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
 //				IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
 //				PlatformTypes:          _var.Management_agent_platform_type,
@@ -101,6 +102,8 @@ type GetManagementAgentsArgs struct {
 	State *string `pulumi:"state"`
 	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Versions []string `pulumi:"versions"`
+	// When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
+	WaitForHostId *int `pulumi:"waitForHostId"`
 }
 
 // A collection of values returned by getManagementAgents.
@@ -134,7 +137,8 @@ type GetManagementAgentsResult struct {
 	// The current state of managementAgent
 	State *string `pulumi:"state"`
 	// Management Agent Version
-	Versions []string `pulumi:"versions"`
+	Versions      []string `pulumi:"versions"`
+	WaitForHostId *int     `pulumi:"waitForHostId"`
 }
 
 func GetManagementAgentsOutput(ctx *pulumi.Context, args GetManagementAgentsOutputArgs, opts ...pulumi.InvokeOption) GetManagementAgentsResultOutput {
@@ -183,6 +187,8 @@ type GetManagementAgentsOutputArgs struct {
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
+	// When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
+	WaitForHostId pulumi.IntPtrInput `pulumi:"waitForHostId"`
 }
 
 func (GetManagementAgentsOutputArgs) ElementType() reflect.Type {
@@ -286,6 +292,10 @@ func (o GetManagementAgentsResultOutput) State() pulumi.StringPtrOutput {
 // Management Agent Version
 func (o GetManagementAgentsResultOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetManagementAgentsResult) []string { return v.Versions }).(pulumi.StringArrayOutput)
+}
+
+func (o GetManagementAgentsResultOutput) WaitForHostId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetManagementAgentsResult) *int { return v.WaitForHostId }).(pulumi.IntPtrOutput)
 }
 
 func init() {

@@ -18,14 +18,14 @@ public final class GetLoadBalancersFilter extends com.pulumi.resources.InvokeArg
     public static final GetLoadBalancersFilter Empty = new GetLoadBalancersFilter();
 
     /**
-     * A unique name for the routing policy rule. Avoid entering confidential information.
+     * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return A unique name for the routing policy rule. Avoid entering confidential information.
+     * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetLoadBalancersFilter extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param name A unique name for the routing policy rule. Avoid entering confidential information.
+         * @param name A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
          * 
          * @return builder
          * 

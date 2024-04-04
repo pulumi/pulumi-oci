@@ -54,6 +54,8 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.network_load_balancer_display_name())
  *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .assignedIpv6(var_.network_load_balancer_assigned_ipv6())
+ *             .assignedPrivateIpv4(var_.network_load_balancer_assigned_private_ipv4())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isPreserveSourceDestination(var_.network_load_balancer_is_preserve_source_destination())
@@ -64,6 +66,7 @@ import javax.annotation.Nullable;
  *             .reservedIps(NetworkLoadBalancerReservedIpArgs.builder()
  *                 .id(var_.network_load_balancer_reserved_ips_id())
  *                 .build())
+ *             .subnetIpv6cidr(var_.network_load_balancer_subnet_ipv6cidr())
  *             .build());
  * 
  *     }
@@ -82,6 +85,34 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer")
 public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
+    /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+     * 
+     */
+    @Export(name="assignedIpv6", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> assignedIpv6;
+
+    /**
+     * @return IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: &#34;2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789&#34;
+     * 
+     */
+    public Output<Optional<String>> assignedIpv6() {
+        return Codegen.optional(this.assignedIpv6);
+    }
+    /**
+     * Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+     * 
+     */
+    @Export(name="assignedPrivateIpv4", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> assignedPrivateIpv4;
+
+    /**
+     * @return Private IP address to be assigned to the network load balancer being created. This IP address has to be in the CIDR range of the subnet where network load balancer is being created Example: &#34;10.0.0.1&#34;
+     * 
+     */
+    public Output<Optional<String>> assignedPrivateIpv4() {
+        return Codegen.optional(this.assignedPrivateIpv4);
+    }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      * 
@@ -199,12 +230,16 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
+     * Example: `true`
+     * 
      */
     @Export(name="isSymmetricHashEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSymmetricHashEnabled;
 
     /**
      * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     * 
+     * Example: `true`
      * 
      */
     public Output<Boolean> isSymmetricHashEnabled() {
@@ -299,9 +334,6 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
@@ -309,12 +341,29 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * @return The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
+     */
+    public Output<String> subnetId() {
+        return this.subnetId;
+    }
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> subnetId() {
-        return this.subnetId;
+    @Export(name="subnetIpv6cidr", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> subnetIpv6cidr;
+
+    /**
+     * @return IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<String>> subnetIpv6cidr() {
+        return Codegen.optional(this.subnetIpv6cidr);
     }
     /**
      * Key-value pair representing system tags&#39; keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`

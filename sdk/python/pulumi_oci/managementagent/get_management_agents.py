@@ -23,7 +23,7 @@ class GetManagementAgentsResult:
     """
     A collection of values returned by getManagementAgents.
     """
-    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, data_source_names=None, data_source_type=None, display_name=None, filters=None, gateway_ids=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None):
+    def __init__(__self__, access_level=None, availability_status=None, compartment_id=None, compartment_id_in_subtree=None, data_source_names=None, data_source_type=None, display_name=None, filters=None, gateway_ids=None, host_id=None, id=None, install_type=None, is_customer_deployed=None, management_agents=None, platform_types=None, plugin_names=None, state=None, versions=None, wait_for_host_id=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -78,6 +78,9 @@ class GetManagementAgentsResult:
         if versions and not isinstance(versions, list):
             raise TypeError("Expected argument 'versions' to be a list")
         pulumi.set(__self__, "versions", versions)
+        if wait_for_host_id and not isinstance(wait_for_host_id, int):
+            raise TypeError("Expected argument 'wait_for_host_id' to be a int")
+        pulumi.set(__self__, "wait_for_host_id", wait_for_host_id)
 
     @property
     @pulumi.getter(name="accessLevel")
@@ -205,6 +208,11 @@ class GetManagementAgentsResult:
         """
         return pulumi.get(self, "versions")
 
+    @property
+    @pulumi.getter(name="waitForHostId")
+    def wait_for_host_id(self) -> Optional[int]:
+        return pulumi.get(self, "wait_for_host_id")
+
 
 class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
     # pylint: disable=using-constant-test
@@ -229,7 +237,8 @@ class AwaitableGetManagementAgentsResult(GetManagementAgentsResult):
             platform_types=self.platform_types,
             plugin_names=self.plugin_names,
             state=self.state,
-            versions=self.versions)
+            versions=self.versions,
+            wait_for_host_id=self.wait_for_host_id)
 
 
 def get_management_agents(access_level: Optional[str] = None,
@@ -248,6 +257,7 @@ def get_management_agents(access_level: Optional[str] = None,
                           plugin_names: Optional[Sequence[str]] = None,
                           state: Optional[str] = None,
                           versions: Optional[Sequence[str]] = None,
+                          wait_for_host_id: Optional[int] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentsResult:
     """
     This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -272,6 +282,7 @@ def get_management_agents(access_level: Optional[str] = None,
         display_name=var["management_agent_display_name"],
         gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
+        wait_for_host_id=10,
         install_type=var["management_agent_install_type"],
         is_customer_deployed=var["management_agent_is_customer_deployed"],
         platform_types=var["management_agent_platform_type"],
@@ -297,6 +308,7 @@ def get_management_agents(access_level: Optional[str] = None,
     :param Sequence[str] plugin_names: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     :param Sequence[str] versions: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
+    :param int wait_for_host_id: When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -315,6 +327,7 @@ def get_management_agents(access_level: Optional[str] = None,
     __args__['pluginNames'] = plugin_names
     __args__['state'] = state
     __args__['versions'] = versions
+    __args__['waitForHostId'] = wait_for_host_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ManagementAgent/getManagementAgents:getManagementAgents', __args__, opts=opts, typ=GetManagementAgentsResult).value
 
@@ -336,7 +349,8 @@ def get_management_agents(access_level: Optional[str] = None,
         platform_types=pulumi.get(__ret__, 'platform_types'),
         plugin_names=pulumi.get(__ret__, 'plugin_names'),
         state=pulumi.get(__ret__, 'state'),
-        versions=pulumi.get(__ret__, 'versions'))
+        versions=pulumi.get(__ret__, 'versions'),
+        wait_for_host_id=pulumi.get(__ret__, 'wait_for_host_id'))
 
 
 @_utilities.lift_output_func(get_management_agents)
@@ -356,6 +370,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
                                  plugin_names: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  versions: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
+                                 wait_for_host_id: Optional[pulumi.Input[Optional[int]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentsResult]:
     """
     This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -380,6 +395,7 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
         display_name=var["management_agent_display_name"],
         gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
         host_id=oci_management_agent_host["test_host"]["id"],
+        wait_for_host_id=10,
         install_type=var["management_agent_install_type"],
         is_customer_deployed=var["management_agent_is_customer_deployed"],
         platform_types=var["management_agent_platform_type"],
@@ -405,5 +421,6 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     :param Sequence[str] plugin_names: Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
     :param str state: Filter to return only Management Agents in the particular lifecycle state.
     :param Sequence[str] versions: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
+    :param int wait_for_host_id: When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
     """
     ...

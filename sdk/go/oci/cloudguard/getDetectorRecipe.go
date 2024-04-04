@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Returns a DetectorRecipe identified by detectorRecipeId
+// Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 //
 // ## Example Usage
 //

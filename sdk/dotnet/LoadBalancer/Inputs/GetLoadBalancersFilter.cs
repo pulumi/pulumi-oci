@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class GetLoadBalancersFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A unique name for the routing policy rule. Avoid entering confidential information.
+        /// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

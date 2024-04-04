@@ -21,7 +21,8 @@ class CloudGuardDataSourceArgs:
                  display_name: pulumi.Input[str],
                  data_source_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 status: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudGuardDataSource resource.
         :param pulumi.Input[str] compartment_id: (Updatable) CompartmentId of Data Source.
@@ -32,6 +33,7 @@ class CloudGuardDataSourceArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
                
                
                ** IMPORTANT **
@@ -46,6 +48,8 @@ class CloudGuardDataSourceArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -114,16 +118,28 @@ class CloudGuardDataSourceArgs:
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
         Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Status of DataSource. Default value is DISABLED.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
@@ -153,13 +169,13 @@ class _CloudGuardDataSourceState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]] region_status_details: Information about the region and status of query replication
+        :param pulumi.Input[str] state: The current state of the resource.
+        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]] region_status_details: Information about the region and status of query replication
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] status: Status of data Source
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Data source was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the Data source was updated. Format defined by RFC3339.
@@ -270,10 +286,6 @@ class _CloudGuardDataSourceState:
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
         Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -309,7 +321,11 @@ class _CloudGuardDataSourceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        Status of data Source
+        (Updatable) Status of DataSource. Default value is DISABLED.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 
@@ -365,6 +381,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -405,7 +422,8 @@ class CloudGuardDataSource(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            status=var["data_source_status"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -427,6 +445,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
                
                
                ** IMPORTANT **
@@ -477,7 +496,8 @@ class CloudGuardDataSource(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            status=var["data_source_status"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -510,6 +530,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -531,10 +552,10 @@ class CloudGuardDataSource(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["status"] = status
             __props__.__dict__["data_source_detector_mapping_infos"] = None
             __props__.__dict__["region_status_details"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["status"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -577,13 +598,13 @@ class CloudGuardDataSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]] region_status_details: Information about the region and status of query replication
+        :param pulumi.Input[str] state: The current state of the resource.
+        :param pulumi.Input[str] status: (Updatable) Status of DataSource. Default value is DISABLED.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudGuardDataSourceRegionStatusDetailArgs']]]] region_status_details: Information about the region and status of query replication
-        :param pulumi.Input[str] state: The current state of the resource.
-        :param pulumi.Input[str] status: Status of data Source
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Data source was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the Data source was updated. Format defined by RFC3339.
@@ -662,10 +683,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 
         Avoid entering confidential information.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -689,7 +706,11 @@ class CloudGuardDataSource(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        Status of data Source
+        (Updatable) Status of DataSource. Default value is DISABLED.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 

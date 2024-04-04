@@ -91,7 +91,7 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
     """
     This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    GET Cloud Guard Configuration Details for a Tenancy.
+    Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
 
     ## Example Usage
 
@@ -126,7 +126,7 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    GET Cloud Guard Configuration Details for a Tenancy.
+    Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
 
     ## Example Usage
 

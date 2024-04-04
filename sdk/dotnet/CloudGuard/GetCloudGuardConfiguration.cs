@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// GET Cloud Guard Configuration Details for a Tenancy.
+        /// Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
         /// 
         /// ## Example Usage
         /// 
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// GET Cloud Guard Configuration Details for a Tenancy.
+        /// Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
         /// 
         /// ## Example Usage
         /// 

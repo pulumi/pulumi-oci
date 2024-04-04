@@ -46,6 +46,8 @@ export interface GetNetworkLoadBalancerArgs {
  * A collection of values returned by getNetworkLoadBalancer.
  */
 export interface GetNetworkLoadBalancerResult {
+    readonly assignedIpv6: string;
+    readonly assignedPrivateIpv4: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
      */
@@ -104,6 +106,7 @@ export interface GetNetworkLoadBalancerResult {
      * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
      */
     readonly subnetId: string;
+    readonly subnetIpv6cidr: string;
     /**
      * Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
      */

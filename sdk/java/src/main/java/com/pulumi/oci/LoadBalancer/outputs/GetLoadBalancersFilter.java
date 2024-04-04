@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetLoadBalancersFilter {
     /**
-     * @return A unique name for the routing policy rule. Avoid entering confidential information.
+     * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetLoadBalancersFilter {
 
     private GetLoadBalancersFilter() {}
     /**
-     * @return A unique name for the routing policy rule. Avoid entering confidential information.
+     * @return A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      * 
      */
     public String name() {

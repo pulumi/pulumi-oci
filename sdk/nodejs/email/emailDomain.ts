@@ -90,7 +90,7 @@ export class EmailDomain extends pulumi.CustomResource {
      */
     public /*out*/ readonly isSpf!: pulumi.Output<boolean>;
     /**
-     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      *
      *
      * ** IMPORTANT **
@@ -183,7 +183,7 @@ export interface EmailDomainState {
      */
     isSpf?: pulumi.Input<boolean>;
     /**
-     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      *
      *
      * ** IMPORTANT **
@@ -225,7 +225,7 @@ export interface EmailDomainArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, please see: https://tools.ietf.org/html/rfc5321#section-4.1.2 Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
+     * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      *
      *
      * ** IMPORTANT **

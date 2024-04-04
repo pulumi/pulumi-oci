@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a managed list identified by managedListId
+ * Returns a managed list identified by managedListId.
  *
  * ## Example Usage
  *
@@ -113,7 +113,7 @@ export interface GetManagedListResult {
 /**
  * This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a managed list identified by managedListId
+ * Returns a managed list identified by managedListId.
  *
  * ## Example Usage
  *

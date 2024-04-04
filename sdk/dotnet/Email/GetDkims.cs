@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
         /// 
-        /// Lists DKIMs for a email domain.
+        /// Lists DKIMs for an email domain.
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Email
         /// <summary>
         /// This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
         /// 
-        /// Lists DKIMs for a email domain.
+        /// Lists DKIMs for an email domain.
         /// 
         /// ## Example Usage
         /// 

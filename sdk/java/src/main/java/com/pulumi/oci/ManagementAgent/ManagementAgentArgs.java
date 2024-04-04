@@ -20,50 +20,36 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
     public static final ManagementAgentArgs Empty = new ManagementAgentArgs();
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
-    /**
-     * (Updatable) Plugin Id list
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Import(name="deployPluginsIds")
     private @Nullable Output<List<String>> deployPluginsIds;
 
-    /**
-     * @return (Updatable) Plugin Id list
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Optional<Output<List<String>>> deployPluginsIds() {
         return Optional.ofNullable(this.deployPluginsIds);
     }
 
     /**
-     * (Updatable) New displayName of Agent.
+     * Management Agent Name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) New displayName of Agent.
+     * @return Management Agent Name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -71,14 +57,14 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -129,7 +115,7 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -140,7 +126,7 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -149,48 +135,21 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
             return definedTags(Output.of(definedTags));
         }
 
-        /**
-         * @param deployPluginsIds (Updatable) Plugin Id list
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder deployPluginsIds(@Nullable Output<List<String>> deployPluginsIds) {
             $.deployPluginsIds = deployPluginsIds;
             return this;
         }
 
-        /**
-         * @param deployPluginsIds (Updatable) Plugin Id list
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder deployPluginsIds(List<String> deployPluginsIds) {
             return deployPluginsIds(Output.of(deployPluginsIds));
         }
 
-        /**
-         * @param deployPluginsIds (Updatable) Plugin Id list
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder deployPluginsIds(String... deployPluginsIds) {
             return deployPluginsIds(List.of(deployPluginsIds));
         }
 
         /**
-         * @param displayName (Updatable) New displayName of Agent.
+         * @param displayName Management Agent Name
          * 
          * @return builder
          * 
@@ -201,7 +160,7 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) New displayName of Agent.
+         * @param displayName Management Agent Name
          * 
          * @return builder
          * 
@@ -211,7 +170,7 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -222,7 +181,7 @@ public final class ManagementAgentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 

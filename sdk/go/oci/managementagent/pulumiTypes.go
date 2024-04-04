@@ -14,24 +14,16 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ManagementAgentDataSourceList struct {
-	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-	AllowMetrics *string `pulumi:"allowMetrics"`
-	// Compartment owning this DataSource.
-	CompartmentId *string `pulumi:"compartmentId"`
-	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-	ConnectionTimeout *int `pulumi:"connectionTimeout"`
-	// If the Kubernetes cluster type is Daemon set then this will be set to true.
-	IsDaemonSet *bool `pulumi:"isDaemonSet"`
-	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-	Key *string `pulumi:"key"`
-	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-	MetricDimensions []ManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
+	AllowMetrics      *string                                        `pulumi:"allowMetrics"`
+	CompartmentId     *string                                        `pulumi:"compartmentId"`
+	ConnectionTimeout *int                                           `pulumi:"connectionTimeout"`
+	IsDaemonSet       *bool                                          `pulumi:"isDaemonSet"`
+	Key               *string                                        `pulumi:"key"`
+	MetricDimensions  []ManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
 	// Name of the property
-	Name *string `pulumi:"name"`
-	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Name      *string `pulumi:"name"`
 	Namespace *string `pulumi:"namespace"`
-	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-	ProxyUrl *string `pulumi:"proxyUrl"`
+	ProxyUrl  *string `pulumi:"proxyUrl"`
 	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
 	ReadDataLimit *int `pulumi:"readDataLimit"`
 	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
@@ -64,24 +56,16 @@ type ManagementAgentDataSourceListInput interface {
 }
 
 type ManagementAgentDataSourceListArgs struct {
-	// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-	AllowMetrics pulumi.StringPtrInput `pulumi:"allowMetrics"`
-	// Compartment owning this DataSource.
-	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
-	ConnectionTimeout pulumi.IntPtrInput `pulumi:"connectionTimeout"`
-	// If the Kubernetes cluster type is Daemon set then this will be set to true.
-	IsDaemonSet pulumi.BoolPtrInput `pulumi:"isDaemonSet"`
-	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-	Key pulumi.StringPtrInput `pulumi:"key"`
-	// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-	MetricDimensions ManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
+	AllowMetrics      pulumi.StringPtrInput                                  `pulumi:"allowMetrics"`
+	CompartmentId     pulumi.StringPtrInput                                  `pulumi:"compartmentId"`
+	ConnectionTimeout pulumi.IntPtrInput                                     `pulumi:"connectionTimeout"`
+	IsDaemonSet       pulumi.BoolPtrInput                                    `pulumi:"isDaemonSet"`
+	Key               pulumi.StringPtrInput                                  `pulumi:"key"`
+	MetricDimensions  ManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
 	// Name of the property
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
+	Name      pulumi.StringPtrInput `pulumi:"name"`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
-	ProxyUrl pulumi.StringPtrInput `pulumi:"proxyUrl"`
+	ProxyUrl  pulumi.StringPtrInput `pulumi:"proxyUrl"`
 	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
 	ReadDataLimit pulumi.IntPtrInput `pulumi:"readDataLimit"`
 	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
@@ -153,32 +137,26 @@ func (o ManagementAgentDataSourceListOutput) ToManagementAgentDataSourceListOutp
 	return o
 }
 
-// Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
 func (o ManagementAgentDataSourceListOutput) AllowMetrics() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.AllowMetrics }).(pulumi.StringPtrOutput)
 }
 
-// Compartment owning this DataSource.
 func (o ManagementAgentDataSourceListOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
 func (o ManagementAgentDataSourceListOutput) ConnectionTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ConnectionTimeout }).(pulumi.IntPtrOutput)
 }
 
-// If the Kubernetes cluster type is Daemon set then this will be set to true.
 func (o ManagementAgentDataSourceListOutput) IsDaemonSet() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *bool { return v.IsDaemonSet }).(pulumi.BoolPtrOutput)
 }
 
-// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
 func (o ManagementAgentDataSourceListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
 func (o ManagementAgentDataSourceListOutput) MetricDimensions() ManagementAgentDataSourceListMetricDimensionArrayOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) []ManagementAgentDataSourceListMetricDimension {
 		return v.MetricDimensions
@@ -190,12 +168,10 @@ func (o ManagementAgentDataSourceListOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
 func (o ManagementAgentDataSourceListOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
 func (o ManagementAgentDataSourceListOutput) ProxyUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.ProxyUrl }).(pulumi.StringPtrOutput)
 }
@@ -267,8 +243,7 @@ func (o ManagementAgentDataSourceListArrayOutput) Index(i pulumi.IntInput) Manag
 
 type ManagementAgentDataSourceListMetricDimension struct {
 	// Name of the property
-	Name *string `pulumi:"name"`
-	// Value of the metric dimension
+	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
 
@@ -285,8 +260,7 @@ type ManagementAgentDataSourceListMetricDimensionInput interface {
 
 type ManagementAgentDataSourceListMetricDimensionArgs struct {
 	// Name of the property
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Value of the metric dimension
+	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -346,7 +320,6 @@ func (o ManagementAgentDataSourceListMetricDimensionOutput) Name() pulumi.String
 	return o.ApplyT(func(v ManagementAgentDataSourceListMetricDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Value of the metric dimension
 func (o ManagementAgentDataSourceListMetricDimensionOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceListMetricDimension) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -478,10 +451,8 @@ func (o ManagementAgentDataSourceMetricDimensionArrayOutput) Index(i pulumi.IntI
 }
 
 type ManagementAgentDataSourceSummaryList struct {
-	// If the Kubernetes cluster type is Daemon set then this will be set to true.
-	IsDaemonSet *bool `pulumi:"isDaemonSet"`
-	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-	Key *string `pulumi:"key"`
+	IsDaemonSet *bool   `pulumi:"isDaemonSet"`
+	Key         *string `pulumi:"key"`
 	// Name of the property
 	Name *string `pulumi:"name"`
 	// The type of the DataSource.
@@ -500,10 +471,8 @@ type ManagementAgentDataSourceSummaryListInput interface {
 }
 
 type ManagementAgentDataSourceSummaryListArgs struct {
-	// If the Kubernetes cluster type is Daemon set then this will be set to true.
-	IsDaemonSet pulumi.BoolPtrInput `pulumi:"isDaemonSet"`
-	// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-	Key pulumi.StringPtrInput `pulumi:"key"`
+	IsDaemonSet pulumi.BoolPtrInput   `pulumi:"isDaemonSet"`
+	Key         pulumi.StringPtrInput `pulumi:"key"`
 	// Name of the property
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The type of the DataSource.
@@ -561,12 +530,10 @@ func (o ManagementAgentDataSourceSummaryListOutput) ToManagementAgentDataSourceS
 	return o
 }
 
-// If the Kubernetes cluster type is Daemon set then this will be set to true.
 func (o ManagementAgentDataSourceSummaryListOutput) IsDaemonSet() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *bool { return v.IsDaemonSet }).(pulumi.BoolPtrOutput)
 }
 
-// Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
 func (o ManagementAgentDataSourceSummaryListOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }

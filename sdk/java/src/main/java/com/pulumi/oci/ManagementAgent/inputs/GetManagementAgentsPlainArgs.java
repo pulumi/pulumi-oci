@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsFilter;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -250,6 +251,21 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
         return Optional.ofNullable(this.versions);
     }
 
+    /**
+     * When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+     * 
+     */
+    @Import(name="waitForHostId")
+    private @Nullable Integer waitForHostId;
+
+    /**
+     * @return When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+     * 
+     */
+    public Optional<Integer> waitForHostId() {
+        return Optional.ofNullable(this.waitForHostId);
+    }
+
     private GetManagementAgentsPlainArgs() {}
 
     private GetManagementAgentsPlainArgs(GetManagementAgentsPlainArgs $) {
@@ -269,6 +285,7 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
         this.pluginNames = $.pluginNames;
         this.state = $.state;
         this.versions = $.versions;
+        this.waitForHostId = $.waitForHostId;
     }
 
     public static Builder builder() {
@@ -511,6 +528,17 @@ public final class GetManagementAgentsPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder versions(String... versions) {
             return versions(List.of(versions));
+        }
+
+        /**
+         * @param waitForHostId When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder waitForHostId(@Nullable Integer waitForHostId) {
+            $.waitForHostId = waitForHostId;
+            return this;
         }
 
         public GetManagementAgentsPlainArgs build() {

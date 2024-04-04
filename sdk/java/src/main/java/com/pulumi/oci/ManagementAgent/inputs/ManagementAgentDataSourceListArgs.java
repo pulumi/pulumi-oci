@@ -19,92 +19,44 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
 
     public static final ManagementAgentDataSourceListArgs Empty = new ManagementAgentDataSourceListArgs();
 
-    /**
-     * Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-     * 
-     */
     @Import(name="allowMetrics")
     private @Nullable Output<String> allowMetrics;
 
-    /**
-     * @return Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-     * 
-     */
     public Optional<Output<String>> allowMetrics() {
         return Optional.ofNullable(this.allowMetrics);
     }
 
-    /**
-     * Compartment owning this DataSource.
-     * 
-     */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
-    /**
-     * @return Compartment owning this DataSource.
-     * 
-     */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
-    /**
-     * Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     @Import(name="connectionTimeout")
     private @Nullable Output<Integer> connectionTimeout;
 
-    /**
-     * @return Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     public Optional<Output<Integer>> connectionTimeout() {
         return Optional.ofNullable(this.connectionTimeout);
     }
 
-    /**
-     * If the Kubernetes cluster type is Daemon set then this will be set to true.
-     * 
-     */
     @Import(name="isDaemonSet")
     private @Nullable Output<Boolean> isDaemonSet;
 
-    /**
-     * @return If the Kubernetes cluster type is Daemon set then this will be set to true.
-     * 
-     */
     public Optional<Output<Boolean>> isDaemonSet() {
         return Optional.ofNullable(this.isDaemonSet);
     }
 
-    /**
-     * Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-     * 
-     */
     @Import(name="key")
     private @Nullable Output<String> key;
 
-    /**
-     * @return Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-     * 
-     */
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
     }
 
-    /**
-     * The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-     * 
-     */
     @Import(name="metricDimensions")
     private @Nullable Output<List<ManagementAgentDataSourceListMetricDimensionArgs>> metricDimensions;
 
-    /**
-     * @return The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-     * 
-     */
     public Optional<Output<List<ManagementAgentDataSourceListMetricDimensionArgs>>> metricDimensions() {
         return Optional.ofNullable(this.metricDimensions);
     }
@@ -124,32 +76,16 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-     * 
-     */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
-    /**
-     * @return The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-     * 
-     */
     public Optional<Output<String>> namespace() {
         return Optional.ofNullable(this.namespace);
     }
 
-    /**
-     * The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-     * 
-     */
     @Import(name="proxyUrl")
     private @Nullable Output<String> proxyUrl;
 
-    /**
-     * @return The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-     * 
-     */
     public Optional<Output<String>> proxyUrl() {
         return Optional.ofNullable(this.proxyUrl);
     }
@@ -330,138 +266,60 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
             $ = new ManagementAgentDataSourceListArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param allowMetrics Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-         * 
-         * @return builder
-         * 
-         */
         public Builder allowMetrics(@Nullable Output<String> allowMetrics) {
             $.allowMetrics = allowMetrics;
             return this;
         }
 
-        /**
-         * @param allowMetrics Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
-         * 
-         * @return builder
-         * 
-         */
         public Builder allowMetrics(String allowMetrics) {
             return allowMetrics(Output.of(allowMetrics));
         }
 
-        /**
-         * @param compartmentId Compartment owning this DataSource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
-        /**
-         * @param compartmentId Compartment owning this DataSource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
-        /**
-         * @param connectionTimeout Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectionTimeout(@Nullable Output<Integer> connectionTimeout) {
             $.connectionTimeout = connectionTimeout;
             return this;
         }
 
-        /**
-         * @param connectionTimeout Number in milliseconds. The timeout for connecting to the Prometheus Exporter&#39;s endpoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder connectionTimeout(Integer connectionTimeout) {
             return connectionTimeout(Output.of(connectionTimeout));
         }
 
-        /**
-         * @param isDaemonSet If the Kubernetes cluster type is Daemon set then this will be set to true.
-         * 
-         * @return builder
-         * 
-         */
         public Builder isDaemonSet(@Nullable Output<Boolean> isDaemonSet) {
             $.isDaemonSet = isDaemonSet;
             return this;
         }
 
-        /**
-         * @param isDaemonSet If the Kubernetes cluster type is Daemon set then this will be set to true.
-         * 
-         * @return builder
-         * 
-         */
         public Builder isDaemonSet(Boolean isDaemonSet) {
             return isDaemonSet(Output.of(isDaemonSet));
         }
 
-        /**
-         * @param key Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(@Nullable Output<String> key) {
             $.key = key;
             return this;
         }
 
-        /**
-         * @param key Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
-         * 
-         * @return builder
-         * 
-         */
         public Builder key(String key) {
             return key(Output.of(key));
         }
 
-        /**
-         * @param metricDimensions The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder metricDimensions(@Nullable Output<List<ManagementAgentDataSourceListMetricDimensionArgs>> metricDimensions) {
             $.metricDimensions = metricDimensions;
             return this;
         }
 
-        /**
-         * @param metricDimensions The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder metricDimensions(List<ManagementAgentDataSourceListMetricDimensionArgs> metricDimensions) {
             return metricDimensions(Output.of(metricDimensions));
         }
 
-        /**
-         * @param metricDimensions The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder metricDimensions(ManagementAgentDataSourceListMetricDimensionArgs... metricDimensions) {
             return metricDimensions(List.of(metricDimensions));
         }
@@ -487,44 +345,20 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
             return name(Output.of(name));
         }
 
-        /**
-         * @param namespace The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-         * 
-         * @return builder
-         * 
-         */
         public Builder namespace(@Nullable Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
 
-        /**
-         * @param namespace The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
-         * 
-         * @return builder
-         * 
-         */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
         }
 
-        /**
-         * @param proxyUrl The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-         * 
-         * @return builder
-         * 
-         */
         public Builder proxyUrl(@Nullable Output<String> proxyUrl) {
             $.proxyUrl = proxyUrl;
             return this;
         }
 
-        /**
-         * @param proxyUrl The url of the network proxy that provides access to the Prometheus Exporter&#39;s endpoint (url required property).
-         * 
-         * @return builder
-         * 
-         */
         public Builder proxyUrl(String proxyUrl) {
             return proxyUrl(Output.of(proxyUrl));
         }

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a DetectorRecipe
+ * Creates a new DetectorRecipe object.
  *
  * ## Import
  *

@@ -7,6 +7,7 @@ import typing
 # Export this package's modules as members:
 from .dkim import *
 from .email_domain import *
+from .get_configuration import *
 from .get_dkim import *
 from .get_dkims import *
 from .get_email_domain import *

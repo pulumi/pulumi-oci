@@ -77,7 +77,7 @@ type GetEmailDomainsResult struct {
 	Filters                []GetEmailDomainsFilter                `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain.
 	Id *string `pulumi:"id"`
-	// The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+	// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
 	Name *string `pulumi:"name"`
 	// The current state of the email domain.
 	State *string `pulumi:"state"`
@@ -147,7 +147,7 @@ func (o GetEmailDomainsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEmailDomainsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
 func (o GetEmailDomainsResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEmailDomainsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

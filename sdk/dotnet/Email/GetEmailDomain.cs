@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The description of a email domain.
+        /// The description of an email domain.
         /// </summary>
         public readonly string Description;
         public readonly string EmailDomainId;
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly bool IsSpf;
         /// <summary>
-        /// The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+        /// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
         /// </summary>
         public readonly string Name;
         /// <summary>

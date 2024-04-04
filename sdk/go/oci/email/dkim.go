@@ -14,10 +14,10 @@ import (
 
 // This resource provides the Dkim resource in Oracle Cloud Infrastructure Email service.
 //
-// Creates a new DKIM for a email domain.
-// This DKIM will sign all approved senders in the tenancy that are in this email domain.
+// Creates a new DKIM for an email domain.
+// This DKIM signs all approved senders in the tenancy that are in this email domain.
 // Best security practices indicate to periodically rotate the DKIM that is doing the signing.
-// When a second DKIM is applied, all senders will seamlessly pick up the new key
+// When a second DKIM is applied, all senders seamlessly pick up the new key
 // without interruption in signing.
 //
 // ## Example Usage
@@ -73,7 +73,7 @@ type Dkim struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName pulumi.StringOutput `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringOutput `pulumi:"emailDomainId"`
@@ -81,7 +81,7 @@ type Dkim struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// Avoid entering confidential information.
 	//
@@ -98,7 +98,7 @@ type Dkim struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue pulumi.StringOutput `pulumi:"txtRecordValue"`
 }
 
@@ -143,7 +143,7 @@ type dkimState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName *string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId *string `pulumi:"emailDomainId"`
@@ -151,7 +151,7 @@ type dkimState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// Avoid entering confidential information.
 	//
@@ -168,7 +168,7 @@ type dkimState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue *string `pulumi:"txtRecordValue"`
 }
 
@@ -181,7 +181,7 @@ type DkimState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A string that describes the details about the DKIM. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain for this DKIM.
 	EmailDomainId pulumi.StringPtrInput
@@ -189,7 +189,7 @@ type DkimState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource.
 	LifecycleDetails pulumi.StringPtrInput
-	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// Avoid entering confidential information.
 	//
@@ -206,7 +206,7 @@ type DkimState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated pulumi.StringPtrInput
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue pulumi.StringPtrInput
 }
 
@@ -223,7 +223,7 @@ type dkimArgs struct {
 	EmailDomainId string `pulumi:"emailDomainId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// Avoid entering confidential information.
 	//
@@ -244,7 +244,7 @@ type DkimArgs struct {
 	EmailDomainId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+	// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// Avoid entering confidential information.
 	//
@@ -362,7 +362,7 @@ func (o DkimOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 func (o DkimOutput) DnsSubdomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.DnsSubdomainName }).(pulumi.StringOutput)
 }
@@ -382,7 +382,7 @@ func (o DkimOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you may be subscribed to. Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
+// The DKIM selector. This selector is required to be globally unique for this email domain. If you do not provide the selector, we will generate one for you. If you do provide the selector, we suggest adding a short region indicator to differentiate from your signing of emails in other regions you might be subscribed to. Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
 //
 // Avoid entering confidential information.
 //
@@ -414,7 +414,7 @@ func (o DkimOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 func (o DkimOutput) TxtRecordValue() pulumi.StringOutput {
 	return o.ApplyT(func(v *Dkim) pulumi.StringOutput { return v.TxtRecordValue }).(pulumi.StringOutput)
 }

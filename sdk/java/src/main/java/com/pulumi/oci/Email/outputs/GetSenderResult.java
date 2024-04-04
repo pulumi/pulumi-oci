@@ -55,7 +55,12 @@ public final class GetSenderResult {
      */
     private String state;
     /**
-     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
+     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     private String timeCreated;
@@ -121,7 +126,14 @@ public final class GetSenderResult {
         return this.state;
     }
     /**
-     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
+     * @return The date and time the approved sender was added in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public String timeCreated() {
@@ -146,6 +158,7 @@ public final class GetSenderResult {
         private Boolean isSpf;
         private String senderId;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetSenderResult defaults) {
@@ -159,6 +172,7 @@ public final class GetSenderResult {
     	      this.isSpf = defaults.isSpf;
     	      this.senderId = defaults.senderId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -235,6 +249,14 @@ public final class GetSenderResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetSenderResult", "timeCreated");
@@ -253,6 +275,7 @@ public final class GetSenderResult {
             _resultValue.isSpf = isSpf;
             _resultValue.senderId = senderId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

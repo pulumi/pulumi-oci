@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *     displayName: _var.management_agent_display_name,
  *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
+ *     waitForHostId: 10,
  *     installType: _var.management_agent_install_type,
  *     isCustomerDeployed: _var.management_agent_is_customer_deployed,
  *     platformTypes: _var.management_agent_platform_type,
@@ -60,6 +61,7 @@ export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi
         "pluginNames": args.pluginNames,
         "state": args.state,
         "versions": args.versions,
+        "waitForHostId": args.waitForHostId,
     }, opts);
 }
 
@@ -128,6 +130,10 @@ export interface GetManagementAgentsArgs {
      * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
      */
     versions?: string[];
+    /**
+     * When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
+     */
+    waitForHostId?: number;
 }
 
 /**
@@ -188,6 +194,7 @@ export interface GetManagementAgentsResult {
      * Management Agent Version
      */
     readonly versions?: string[];
+    readonly waitForHostId?: number;
 }
 /**
  * This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -213,6 +220,7 @@ export interface GetManagementAgentsResult {
  *     displayName: _var.management_agent_display_name,
  *     gatewayIds: oci_apigateway_gateway.test_gateway.id,
  *     hostId: oci_management_agent_host.test_host.id,
+ *     waitForHostId: 10,
  *     installType: _var.management_agent_install_type,
  *     isCustomerDeployed: _var.management_agent_is_customer_deployed,
  *     platformTypes: _var.management_agent_platform_type,
@@ -292,4 +300,8 @@ export interface GetManagementAgentsOutputArgs {
      * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
      */
     versions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
+     */
+    waitForHostId?: pulumi.Input<number>;
 }

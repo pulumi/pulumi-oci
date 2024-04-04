@@ -31,14 +31,20 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
     }
 
     /**
-     * Status of data Source
+     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Status of data Source
+     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> status() {
@@ -92,7 +98,10 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param status Status of data Source
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -103,7 +112,10 @@ public final class CloudGuardDataSourceRegionStatusDetailArgs extends com.pulumi
         }
 
         /**
-         * @param status Status of data Source
+         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

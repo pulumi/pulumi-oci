@@ -3458,7 +3458,7 @@ class GetLoadBalancersFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
+        :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -3469,7 +3469,7 @@ class GetLoadBalancersFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        A unique name for the routing policy rule. Avoid entering confidential information.
+        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
         return pulumi.get(self, "name")
 
@@ -3756,7 +3756,7 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
                  minimum_bandwidth_in_mbps: int):
         """
         :param int maximum_bandwidth_in_mbps: Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
-        :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
+        :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
         """
         pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
         pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
@@ -3773,7 +3773,7 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
     @pulumi.getter(name="minimumBandwidthInMbps")
     def minimum_bandwidth_in_mbps(self) -> int:
         """
-        Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
+        Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
         """
         return pulumi.get(self, "minimum_bandwidth_in_mbps")
 

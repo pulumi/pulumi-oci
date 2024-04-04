@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
+import com.pulumi.oci.Email.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.Email.inputs.GetDkimArgs;
 import com.pulumi.oci.Email.inputs.GetDkimPlainArgs;
 import com.pulumi.oci.Email.inputs.GetDkimsArgs;
@@ -23,6 +25,7 @@ import com.pulumi.oci.Email.inputs.GetSuppressionArgs;
 import com.pulumi.oci.Email.inputs.GetSuppressionPlainArgs;
 import com.pulumi.oci.Email.inputs.GetSuppressionsArgs;
 import com.pulumi.oci.Email.inputs.GetSuppressionsPlainArgs;
+import com.pulumi.oci.Email.outputs.GetConfigurationResult;
 import com.pulumi.oci.Email.outputs.GetDkimResult;
 import com.pulumi.oci.Email.outputs.GetDkimsResult;
 import com.pulumi.oci.Email.outputs.GetEmailDomainResult;
@@ -35,6 +38,174 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class EmailFunctions {
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns  email configuration associated with the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
+        return getConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns  email configuration associated with the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
+        return getConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns  email configuration associated with the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Email/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Email service.
+     * 
+     * Returns  email configuration associated with the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Email.EmailFunctions;
+     * import com.pulumi.oci.Email.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Email/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
      * 
@@ -206,7 +377,7 @@ public final class EmailFunctions {
     /**
      * This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
      * 
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      * 
      * ## Example Usage
      * 
@@ -251,7 +422,7 @@ public final class EmailFunctions {
     /**
      * This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
      * 
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      * 
      * ## Example Usage
      * 
@@ -296,7 +467,7 @@ public final class EmailFunctions {
     /**
      * This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
      * 
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      * 
      * ## Example Usage
      * 
@@ -341,7 +512,7 @@ public final class EmailFunctions {
     /**
      * This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
      * 
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      * 
      * ## Example Usage
      * 

@@ -101,7 +101,13 @@ namespace Pulumi.Oci.Email
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -258,8 +264,20 @@ namespace Pulumi.Oci.Email
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
         /// <summary>
-        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
+
+        /// <summary>
+        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

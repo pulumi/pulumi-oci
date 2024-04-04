@@ -76,9 +76,9 @@ type LookupSuppressionResult struct {
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason        string `pulumi:"reason"`
 	SuppressionId string `pulumi:"suppressionId"`
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed string `pulumi:"timeLastSuppressed"`
 }
 
@@ -159,12 +159,12 @@ func (o LookupSuppressionResultOutput) SuppressionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSuppressionResult) string { return v.SuppressionId }).(pulumi.StringOutput)
 }
 
-// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o LookupSuppressionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSuppressionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o LookupSuppressionResultOutput) TimeLastSuppressed() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSuppressionResult) string { return v.TimeLastSuppressed }).(pulumi.StringOutput)
 }

@@ -239,7 +239,7 @@ def get_detector_recipe(detector_recipe_id: Optional[str] = None,
     """
     This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DetectorRecipe identified by detectorRecipeId
+    Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 
     ## Example Usage
 
@@ -286,7 +286,7 @@ def get_detector_recipe_output(detector_recipe_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DetectorRecipe identified by detectorRecipeId
+    Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 
     ## Example Usage
 

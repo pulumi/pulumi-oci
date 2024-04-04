@@ -341,8 +341,8 @@ class NetworkLoadBalancerIpAddressArgs:
                  is_public: Optional[pulumi.Input[bool]] = None,
                  reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgs']]]] = None):
         """
-        :param pulumi.Input[str] ip_address: The IP address of the backend server. Example: `10.0.0.3`
-        :param pulumi.Input[str] ip_version: IP version associated with the backend set.
+        :param pulumi.Input[str] ip_address: An IP address.  Example: `192.168.0.3`
+        :param pulumi.Input[str] ip_version: IP version associated with this IP address.
         :param pulumi.Input[bool] is_public: Whether the IP address is public or private.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressReservedIpArgs']]] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
@@ -359,7 +359,7 @@ class NetworkLoadBalancerIpAddressArgs:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The IP address of the backend server. Example: `10.0.0.3`
+        An IP address.  Example: `192.168.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -371,7 +371,7 @@ class NetworkLoadBalancerIpAddressArgs:
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[pulumi.Input[str]]:
         """
-        IP version associated with the backend set.
+        IP version associated with this IP address.
         """
         return pulumi.get(self, "ip_version")
 

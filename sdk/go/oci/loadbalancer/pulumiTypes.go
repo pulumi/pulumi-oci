@@ -7173,7 +7173,7 @@ func (o GetLoadBalancerRoutingPolicyRuleActionArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetLoadBalancersFilter struct {
-	// A unique name for the routing policy rule. Avoid entering confidential information.
+	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -7191,7 +7191,7 @@ type GetLoadBalancersFilterInput interface {
 }
 
 type GetLoadBalancersFilterArgs struct {
-	// A unique name for the routing policy rule. Avoid entering confidential information.
+	// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -7248,7 +7248,7 @@ func (o GetLoadBalancersFilterOutput) ToGetLoadBalancersFilterOutputWithContext(
 	return o
 }
 
-// A unique name for the routing policy rule. Avoid entering confidential information.
+// A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
 func (o GetLoadBalancersFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -7838,7 +7838,7 @@ func (o GetLoadBalancersLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInp
 type GetLoadBalancersLoadBalancerShapeDetail struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
 	MaximumBandwidthInMbps int `pulumi:"maximumBandwidthInMbps"`
-	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
+	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
 	MinimumBandwidthInMbps int `pulumi:"minimumBandwidthInMbps"`
 }
 
@@ -7856,7 +7856,7 @@ type GetLoadBalancersLoadBalancerShapeDetailInput interface {
 type GetLoadBalancersLoadBalancerShapeDetailArgs struct {
 	// Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
 	MaximumBandwidthInMbps pulumi.IntInput `pulumi:"maximumBandwidthInMbps"`
-	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
+	// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
 	MinimumBandwidthInMbps pulumi.IntInput `pulumi:"minimumBandwidthInMbps"`
 }
 
@@ -7916,7 +7916,7 @@ func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MaximumBandwidthInMbps() 
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MaximumBandwidthInMbps }).(pulumi.IntOutput)
 }
 
-// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
+// Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
 func (o GetLoadBalancersLoadBalancerShapeDetailOutput) MinimumBandwidthInMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancerShapeDetail) int { return v.MinimumBandwidthInMbps }).(pulumi.IntOutput)
 }

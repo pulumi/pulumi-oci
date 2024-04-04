@@ -1277,6 +1277,7 @@
         "dns/zone.ts",
         "email/dkim.ts",
         "email/emailDomain.ts",
+        "email/getConfiguration.ts",
         "email/getDkim.ts",
         "email/getDkims.ts",
         "email/getEmailDomain.ts",

@@ -112,14 +112,14 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -127,14 +127,14 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeLastSuppressed")
     private @Nullable Output<String> timeLastSuppressed;
 
     /**
-     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * @return The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeLastSuppressed() {
@@ -305,7 +305,7 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * @param timeCreated The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * @param timeCreated The date and time a recipient&#39;s email address was added to the suppression list, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeLastSuppressed The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * @param timeLastSuppressed The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class SuppressionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeLastSuppressed The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * @param timeLastSuppressed The last date and time the suppression prevented submission in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 

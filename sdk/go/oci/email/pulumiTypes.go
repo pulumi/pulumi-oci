@@ -116,7 +116,7 @@ type GetDkimsDkimCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The description of the DKIM. Avoid entering confidential information.
 	Description string `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName string `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
 	EmailDomainId string `pulumi:"emailDomainId"`
@@ -136,7 +136,7 @@ type GetDkimsDkimCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue string `pulumi:"txtRecordValue"`
 }
 
@@ -160,7 +160,7 @@ type GetDkimsDkimCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The description of the DKIM. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName pulumi.StringInput `pulumi:"dnsSubdomainName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
 	EmailDomainId pulumi.StringInput `pulumi:"emailDomainId"`
@@ -180,7 +180,7 @@ type GetDkimsDkimCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+	// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 	TxtRecordValue pulumi.StringInput `pulumi:"txtRecordValue"`
 }
 
@@ -255,7 +255,7 @@ func (o GetDkimsDkimCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+// The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
 func (o GetDkimsDkimCollectionItemOutput) DnsSubdomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.DnsSubdomainName }).(pulumi.StringOutput)
 }
@@ -305,7 +305,7 @@ func (o GetDkimsDkimCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+// The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this if you have an existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 func (o GetDkimsDkimCollectionItemOutput) TxtRecordValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDkimsDkimCollectionItem) string { return v.TxtRecordValue }).(pulumi.StringOutput)
 }
@@ -542,7 +542,7 @@ type GetEmailDomainsEmailDomainCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The description of a email domain.
+	// The description of an email domain.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -578,7 +578,7 @@ type GetEmailDomainsEmailDomainCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// The description of a email domain.
+	// The description of an email domain.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -662,7 +662,7 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) DefinedTags() pulumi.Map
 	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// The description of a email domain.
+// The description of an email domain.
 func (o GetEmailDomainsEmailDomainCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -954,7 +954,9 @@ type GetSendersSender struct {
 	IsSpf bool `pulumi:"isSpf"`
 	// The current state of a sender.
 	State string `pulumi:"state"`
-	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 }
 
@@ -986,7 +988,9 @@ type GetSendersSenderArgs struct {
 	IsSpf pulumi.BoolInput `pulumi:"isSpf"`
 	// The current state of a sender.
 	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
 
@@ -1081,7 +1085,12 @@ func (o GetSendersSenderOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSendersSender) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetSendersSenderOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetSendersSender) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSendersSenderOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSendersSender) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -1227,9 +1236,9 @@ type GetSuppressionsSuppression struct {
 	MessageId string `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason string `pulumi:"reason"`
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed string `pulumi:"timeLastSuppressed"`
 }
 
@@ -1259,9 +1268,9 @@ type GetSuppressionsSuppressionArgs struct {
 	MessageId pulumi.StringInput `pulumi:"messageId"`
 	// The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	Reason pulumi.StringInput `pulumi:"reason"`
-	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeLastSuppressed pulumi.StringInput `pulumi:"timeLastSuppressed"`
 }
 
@@ -1351,12 +1360,12 @@ func (o GetSuppressionsSuppressionOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.Reason }).(pulumi.StringOutput)
 }
 
-// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSuppressionsSuppressionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+// The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 func (o GetSuppressionsSuppressionOutput) TimeLastSuppressed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSuppressionsSuppression) string { return v.TimeLastSuppressed }).(pulumi.StringOutput)
 }

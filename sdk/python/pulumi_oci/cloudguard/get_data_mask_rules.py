@@ -167,7 +167,7 @@ def get_data_mask_rules(access_level: Optional[str] = None,
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+    Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
 
     ## Example Usage
 
@@ -238,7 +238,7 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
     """
     This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+    Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
 
     ## Example Usage
 

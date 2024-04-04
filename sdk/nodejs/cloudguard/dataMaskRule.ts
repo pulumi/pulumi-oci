@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a new Data Mask Rule Definition
+ * Creates a new DataMaskRule object definition.
  *
  * ## Example Usage
  *

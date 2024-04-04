@@ -46,7 +46,11 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
+        /// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
 
@@ -68,6 +72,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated)
         {
             CompartmentId = compartmentId;
@@ -78,6 +84,7 @@ namespace Pulumi.Oci.Email.Outputs
             Id = id;
             IsSpf = isSpf;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
         }
     }

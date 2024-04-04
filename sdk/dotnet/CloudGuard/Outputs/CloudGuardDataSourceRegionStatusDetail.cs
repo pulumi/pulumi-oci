@@ -18,7 +18,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Region;
         /// <summary>
-        /// Status of data Source
+        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? Status;
 

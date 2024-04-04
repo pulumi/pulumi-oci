@@ -238,7 +238,7 @@ def get_managed_list(managed_list_id: Optional[str] = None,
     """
     This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a managed list identified by managedListId
+    Returns a managed list identified by managedListId.
 
     ## Example Usage
 
@@ -285,7 +285,7 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a managed list identified by managedListId
+    Returns a managed list identified by managedListId.
 
     ## Example Usage
 

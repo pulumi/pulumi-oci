@@ -501,7 +501,11 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
                  status: Optional[str] = None):
         """
         :param str region: Data Source replication region.
-        :param str status: Status of data Source
+        :param str status: (Updatable) Status of DataSource. Default value is DISABLED.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -520,7 +524,11 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
     @pulumi.getter
     def status(self) -> Optional[str]:
         """
-        Status of data Source
+        (Updatable) Status of DataSource. Default value is DISABLED.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "status")
 

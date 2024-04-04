@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Returns a DataMaskRule identified by DataMaskRuleId
+// Returns a DataMaskRule object, identified by DataMaskRuleId.
 //
 // ## Example Usage
 //

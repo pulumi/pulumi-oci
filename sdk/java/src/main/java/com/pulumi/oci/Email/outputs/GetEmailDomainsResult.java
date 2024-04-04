@@ -32,7 +32,7 @@ public final class GetEmailDomainsResult {
      */
     private @Nullable String id;
     /**
-     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      * 
      */
     private @Nullable String name;
@@ -68,7 +68,7 @@ public final class GetEmailDomainsResult {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `example.net`
+     * @return The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      * 
      */
     public Optional<String> name() {

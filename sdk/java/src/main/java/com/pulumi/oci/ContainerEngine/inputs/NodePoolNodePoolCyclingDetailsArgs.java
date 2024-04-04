@@ -32,16 +32,14 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     @Import(name="maximumSurge")
     private @Nullable Output<String> maximumSurge;
 
     /**
-     * @return (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     public Optional<Output<String>> maximumSurge() {
@@ -49,16 +47,14 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     @Import(name="maximumUnavailable")
     private @Nullable Output<String> maximumUnavailable;
 
     /**
-     * @return (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     public Optional<Output<String>> maximumUnavailable() {
@@ -113,8 +109,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maximumSurge (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-         * (MISSING)
+         * @param maximumSurge (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
          * 
          * @return builder
          * 
@@ -125,8 +120,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maximumSurge (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-         * (MISSING)
+         * @param maximumSurge (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
          * 
          * @return builder
          * 
@@ -136,8 +130,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maximumUnavailable (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-         * (MISSING)
+         * @param maximumUnavailable (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
          * 
          * @return builder
          * 
@@ -148,8 +141,7 @@ public final class NodePoolNodePoolCyclingDetailsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maximumUnavailable (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-         * (MISSING)
+         * @param maximumUnavailable (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
          * 
          * @return builder
          * 

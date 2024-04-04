@@ -100,7 +100,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
      */
     private @Nullable String schemaName;
     /**
-     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
      * 
      */
     private @Nullable String sqlExpression;
@@ -258,7 +258,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         return Optional.ofNullable(this.schemaName);
     }
     /**
-     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+     * @return (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
      * 
      */
     public Optional<String> sqlExpression() {

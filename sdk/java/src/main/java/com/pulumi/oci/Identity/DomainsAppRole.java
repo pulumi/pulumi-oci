@@ -722,7 +722,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
         return this.localizedDisplayName;
     }
     /**
-     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]
@@ -741,7 +741,7 @@ public class DomainsAppRole extends com.pulumi.resources.CustomResource {
     private Output<List<DomainsAppRoleMember>> members;
 
     /**
-     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]

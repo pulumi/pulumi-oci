@@ -118,7 +118,7 @@ type LookupDomainsAppRoleResult struct {
 	LimitedToOneOrMoreGroups bool `pulumi:"limitedToOneOrMoreGroups"`
 	// AppRole localization name
 	LocalizedDisplayName string `pulumi:"localizedDisplayName"`
-	// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+	// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
 	Members []GetDomainsAppRoleMember `pulumi:"members"`
 	// A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	Metas []GetDomainsAppRoleMeta `pulumi:"metas"`
@@ -297,7 +297,7 @@ func (o LookupDomainsAppRoleResultOutput) LocalizedDisplayName() pulumi.StringOu
 	return o.ApplyT(func(v LookupDomainsAppRoleResult) string { return v.LocalizedDisplayName }).(pulumi.StringOutput)
 }
 
-// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
 func (o LookupDomainsAppRoleResultOutput) Members() GetDomainsAppRoleMemberArrayOutput {
 	return o.ApplyT(func(v LookupDomainsAppRoleResult) []GetDomainsAppRoleMember { return v.Members }).(GetDomainsAppRoleMemberArrayOutput)
 }

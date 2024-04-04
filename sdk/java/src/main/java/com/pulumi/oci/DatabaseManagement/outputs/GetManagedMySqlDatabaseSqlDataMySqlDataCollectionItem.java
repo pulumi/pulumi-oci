@@ -62,7 +62,7 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      */
     private Double minTimerWait;
     /**
-     * @return The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+     * @return The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
      * 
      */
     private Double quantile95;
@@ -254,7 +254,7 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         return this.minTimerWait;
     }
     /**
-     * @return The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+     * @return The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
      * 
      */
     public Double quantile95() {

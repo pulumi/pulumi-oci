@@ -116,7 +116,7 @@ public final class GetDomainsAppRoleResult {
      */
     private String localizedDisplayName;
     /**
-     * @return AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * @return AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      */
     private List<GetDomainsAppRoleMember> members;
@@ -300,7 +300,7 @@ public final class GetDomainsAppRoleResult {
         return this.localizedDisplayName;
     }
     /**
-     * @return AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * @return AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      */
     public List<GetDomainsAppRoleMember> members() {

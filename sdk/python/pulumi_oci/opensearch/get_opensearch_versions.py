@@ -89,11 +89,6 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    ```
-    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
@@ -139,11 +134,6 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
     The below policies must be created in compartment before creating OpensearchCluster
 
     ##### {Compartment-Name} - Name of  your compartment
-    <!--Start PulumiCodeChooser -->
-    ```python
-    import pulumi
-    ```
-    <!--End PulumiCodeChooser -->
 
     For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
     Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm

@@ -29,30 +29,12 @@ import javax.annotation.Nullable;
  * Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
  * 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
  * 	To avoid a force new create of the db_home on the next apply, add the following to the resource
- * 	&lt;!--Start PulumiCodeChooser --&gt;
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *     }
- * }
- * ```
- * &lt;!--End PulumiCodeChooser --&gt;
+ * 	```	lifecycle {
+ * 	   	ignore_changes = [
+ * 	   		db_home.0.db_version,
+ * 	   	]
+ * 	}
+ * 	```
  * 
  * ## Example Usage
  * 

@@ -52,7 +52,7 @@ type GetManagedDatabaseSqlPlanBaselinesArgs struct {
 	PlanName *string `pulumi:"planName"`
 	// A filter to return all the SQL plan baselines for the specified SQL handle.
 	SqlHandle *string `pulumi:"sqlHandle"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText *string `pulumi:"sqlText"`
 }
 
@@ -124,7 +124,7 @@ type GetManagedDatabaseSqlPlanBaselinesOutputArgs struct {
 	PlanName pulumi.StringPtrInput `pulumi:"planName"`
 	// A filter to return all the SQL plan baselines for the specified SQL handle.
 	SqlHandle pulumi.StringPtrInput `pulumi:"sqlHandle"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText pulumi.StringPtrInput `pulumi:"sqlText"`
 }
 

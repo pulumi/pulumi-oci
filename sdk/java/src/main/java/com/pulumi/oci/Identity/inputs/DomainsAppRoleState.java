@@ -671,7 +671,7 @@ public final class DomainsAppRoleState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]
@@ -690,7 +690,7 @@ public final class DomainsAppRoleState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<DomainsAppRoleMemberArgs>> members;
 
     /**
-     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+     * @return (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      * 
      * **SCIM++ Properties:**
      * * idcsCompositeKey: [value, type]
@@ -1863,7 +1863,7 @@ public final class DomainsAppRoleState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value, type]
@@ -1886,7 +1886,7 @@ public final class DomainsAppRoleState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value, type]
@@ -1908,7 +1908,7 @@ public final class DomainsAppRoleState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+         * @param members (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
          * 
          * **SCIM++ Properties:**
          * * idcsCompositeKey: [value, type]

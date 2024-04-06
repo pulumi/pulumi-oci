@@ -65,7 +65,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
      */
     private String numaNodesPerSocket;
     /**
-     * @return The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     private Integer percentageOfCoresEnabled;
@@ -147,7 +147,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
         return this.numaNodesPerSocket;
     }
     /**
-     * @return The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+     * @return The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
      * 
      */
     public Integer percentageOfCoresEnabled() {

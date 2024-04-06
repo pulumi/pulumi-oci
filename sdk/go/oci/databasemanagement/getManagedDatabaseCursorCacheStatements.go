@@ -62,7 +62,7 @@ type GetManagedDatabaseCursorCacheStatementsArgs struct {
 	ManagedDatabaseId string `pulumi:"managedDatabaseId"`
 	// The OCID of the Named Credential.
 	OpcNamedCredentialId *string `pulumi:"opcNamedCredentialId"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText *string `pulumi:"sqlText"`
 }
 
@@ -101,7 +101,7 @@ type GetManagedDatabaseCursorCacheStatementsOutputArgs struct {
 	ManagedDatabaseId pulumi.StringInput `pulumi:"managedDatabaseId"`
 	// The OCID of the Named Credential.
 	OpcNamedCredentialId pulumi.StringPtrInput `pulumi:"opcNamedCredentialId"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText pulumi.StringPtrInput `pulumi:"sqlText"`
 }
 

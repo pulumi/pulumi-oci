@@ -87,7 +87,7 @@ class GetQueueResult:
     @pulumi.getter(name="channelConsumptionLimit")
     def channel_consumption_limit(self) -> int:
         """
-        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 

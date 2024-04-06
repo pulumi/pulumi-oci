@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         public readonly string LocalizedDisplayName;
         /// <summary>
-        /// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+        /// AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainsAppRoleMemberResult> Members;
         /// <summary>

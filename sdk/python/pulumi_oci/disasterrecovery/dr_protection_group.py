@@ -465,21 +465,9 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
 
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Delete
 
         Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -519,21 +507,9 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
 
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Delete
 
         Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

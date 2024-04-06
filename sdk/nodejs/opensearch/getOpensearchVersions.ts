@@ -16,11 +16,6 @@ import * as utilities from "../utilities";
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
@@ -83,11 +78,6 @@ export interface GetOpensearchVersionsResult {
  * The below policies must be created in compartment before creating OpensearchCluster
  *
  * ##### {Compartment-Name} - Name of  your compartment
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * <!--End PulumiCodeChooser -->
  *
  * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm

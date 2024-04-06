@@ -6232,7 +6232,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
@@ -6398,7 +6398,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
 
         If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
@@ -8386,7 +8386,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
@@ -8538,7 +8538,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs:
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
 
         If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
@@ -10192,7 +10192,7 @@ class InstancePlatformConfigArgs:
                Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple independent threads of execution, to better use the resources and increase the efficiency of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which can provide higher or more predictable performance for some workloads.
         :param pulumi.Input[bool] is_trusted_platform_module_enabled: Whether the Trusted Platform Module (TPM) is enabled on the instance.
         :param pulumi.Input[str] numa_nodes_per_socket: The number of NUMA nodes per socket (NPS).
-        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        :param pulumi.Input[int] percentage_of_cores_enabled: The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
                
                If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """
@@ -10358,7 +10358,7 @@ class InstancePlatformConfigArgs:
     @pulumi.getter(name="percentageOfCoresEnabled")
     def percentage_of_cores_enabled(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of cores enabled. Value must be a multiple of 25%! (MISSING)If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
 
         If the applications that you run on the instance use a core-based licensing model and need fewer cores than the full size of the shape, you can disable cores to reduce your licensing costs. The instance itself is billed for the full shape, regardless of whether all cores are enabled.
         """

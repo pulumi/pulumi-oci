@@ -187,7 +187,7 @@ export class DomainsGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly idcsPreventedOperations!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -546,7 +546,7 @@ export interface DomainsGroupState {
      */
     idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -729,7 +729,7 @@ export interface DomainsGroupArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%!c(MISSING)ount=10]. This REST API is SCIM compliant.
+     * (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      *
      * **SCIM++ Properties:**
      * * caseExact: false

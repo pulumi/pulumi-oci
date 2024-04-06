@@ -14,11 +14,12 @@ import * as utilities from "../utilities";
  * Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
  * 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
  * 	To avoid a force new create of the dbHome on the next apply, add the following to the resource
- * 	<!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * ```
- * <!--End PulumiCodeChooser -->
+ * 	```	lifecycle {
+ * 	   	ignore_changes = [
+ * 	   		db_home.0.db_version,
+ * 	   	]
+ * 	}
+ * 	```
  */
 export class DatabaseUpgrade extends pulumi.CustomResource {
     /**

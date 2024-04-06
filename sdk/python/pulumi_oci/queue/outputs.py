@@ -78,7 +78,7 @@ class GetQueuesQueueCollectionItemResult(dict):
                  timeout_in_seconds: int,
                  visibility_in_seconds: int):
         """
-        :param int channel_consumption_limit: The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
+        :param int channel_consumption_limit: The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param str custom_encryption_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param int dead_letter_queue_delivery_count: The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
@@ -120,7 +120,7 @@ class GetQueuesQueueCollectionItemResult(dict):
     @pulumi.getter(name="channelConsumptionLimit")
     def channel_consumption_limit(self) -> int:
         """
-        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue's resources.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         """
         return pulumi.get(self, "channel_consumption_limit")
 

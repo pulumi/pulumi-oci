@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly double MinTimerWait;
         /// <summary>
-        /// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+        /// The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
         /// </summary>
         public readonly double Quantile95;
         /// <summary>

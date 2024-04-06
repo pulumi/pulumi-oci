@@ -18616,7 +18616,7 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemR
         """
         :param str schema: The name of the parsing schema.
         :param str sql_id: The SQL statement identifier. Identifies a SQL statement in the cursor cache.
-        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         """
         pulumi.set(__self__, "schema", schema)
         pulumi.set(__self__, "sql_id", sql_id)
@@ -18642,7 +18642,7 @@ class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemR
     @pulumi.getter(name="sqlText")
     def sql_text(self) -> str:
         """
-        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         """
         return pulumi.get(self, "sql_text")
 
@@ -20971,7 +20971,7 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult(dict
         :param str plan_name: A filter to return only SQL plan baselines that match the plan name.
         :param str reproduced: Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`). The value is set to `YES` when a plan is initially added to the plan baseline.
         :param str sql_handle: A filter to return all the SQL plan baselines for the specified SQL handle.
-        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+        :param str sql_text: A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         :param str time_created: The date and time when the plan baseline was created.
         :param str time_last_executed: The date and time when the plan baseline was last executed.
         :param str time_last_modified: The date and time when the plan baseline was last modified.
@@ -21093,7 +21093,7 @@ class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemResult(dict
     @pulumi.getter(name="sqlText")
     def sql_text(self) -> str:
         """
-        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+        A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
         """
         return pulumi.get(self, "sql_text")
 
@@ -26211,7 +26211,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
         :param str last_seen: The date and time the query was last seen.
         :param float max_timer_wait: The slowest the query has been executed.
         :param float min_timer_wait: The fastest the query has been executed.
-        :param float quantile95: The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+        :param float quantile95: The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
         :param float quantile99: The 99th percentile of the query latency.
         :param float quantile999: The 99.9th percentile of the query latency.
         :param str schema_name: The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
@@ -26355,7 +26355,7 @@ class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemResult(dict):
     @pulumi.getter
     def quantile95(self) -> float:
         """
-        The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+        The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
         """
         return pulumi.get(self, "quantile95")
 

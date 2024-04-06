@@ -1738,7 +1738,7 @@ class LibraryMasingFormatFormatEntry(dict):
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: (Updatable) The name of the schema that contains the substitution column.
-        :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -1938,7 +1938,7 @@ class LibraryMasingFormatFormatEntry(dict):
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> Optional[str]:
         """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
@@ -2154,7 +2154,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
                If a regular expression is provided, the column values in all the rows must match  the regular expression. Deterministic Encryption supports a subset of the regular  expression language. It supports encryption of fixed-length strings, and does not  support * or + syntax of regular expressions. The encrypted values also match the  regular expression, which helps to ensure that the original format is preserved.  If an original value does not match the regular expression, Deterministic Encryption  might not produce a one-to-one mapping. All non-confirming values are mapped to a  single encrypted value, thereby producing a many-to-one mapping.
         :param str replace_with: (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
-        :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: (Updatable) The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: (Updatable) The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: (Updatable) The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -2354,7 +2354,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> Optional[str]:
         """
-        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
@@ -10439,7 +10439,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
         :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: The name of the schema that contains the substitution column.
-        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -10605,7 +10605,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> str:
         """
-        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
@@ -10888,7 +10888,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
         :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: The name of the schema that contains the substitution column.
-        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -11054,7 +11054,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> str:
         """
-        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
@@ -11498,7 +11498,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
         :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: The name of the schema that contains the database column.
-        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -11664,7 +11664,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> str:
         """
-        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 
@@ -12031,7 +12031,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
         :param str replace_with: The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
         :param str schema_name: A filter to return only items related to specific schema name.
-        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        :param str sql_expression: The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         :param str start_date: The lower bound of the range within which all the original column values fall. The start date must be less than or equal to the end date.
         :param int start_length: The minimum number of characters the generated strings should have. It can  be any integer greater than zero, but it must be less than or equal to the  end length.
         :param int start_position: The starting position in the original string from where the substring should be extracted. It can be either a positive or a negative integer. If It's negative, the counting starts from the end of the string.
@@ -12197,7 +12197,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
     @pulumi.getter(name="sqlExpression")
     def sql_expression(self) -> str:
         """
-        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%!)(MISSING)  symbols.
+        The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
         """
         return pulumi.get(self, "sql_expression")
 

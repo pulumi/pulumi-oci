@@ -200,7 +200,7 @@ type Config struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntOutput `pulumi:"vantagePointCount"`
@@ -296,7 +296,7 @@ type configState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount *int `pulumi:"vantagePointCount"`
@@ -348,7 +348,7 @@ type ConfigState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntPtrInput
@@ -400,7 +400,7 @@ type configArgs struct {
 	Status *string `pulumi:"status"`
 	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target *string `pulumi:"target"`
-	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 	//
@@ -447,7 +447,7 @@ type ConfigArgs struct {
 	Status pulumi.StringPtrInput
 	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 	Target pulumi.StringPtrInput
-	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 	//
@@ -643,7 +643,7 @@ func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30%!o(MISSING)f repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50%!o(MISSING)f repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o ConfigOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Config) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }

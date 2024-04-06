@@ -77,14 +77,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Queue/queue:Queue")
 public class Queue extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
      */
     @Export(name="channelConsumptionLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> channelConsumptionLimit;
 
     /**
-     * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%!)(MISSING), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100%!((MISSING)default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
      */
     public Output<Integer> channelConsumptionLimit() {

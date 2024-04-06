@@ -35191,7 +35191,7 @@ type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem s
 	Schema string `pulumi:"schema"`
 	// The SQL statement identifier. Identifies a SQL statement in the cursor cache.
 	SqlId string `pulumi:"sqlId"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText string `pulumi:"sqlText"`
 }
 
@@ -35211,7 +35211,7 @@ type GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemAr
 	Schema pulumi.StringInput `pulumi:"schema"`
 	// The SQL statement identifier. Identifies a SQL statement in the cursor cache.
 	SqlId pulumi.StringInput `pulumi:"sqlId"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText pulumi.StringInput `pulumi:"sqlText"`
 }
 
@@ -35280,7 +35280,7 @@ func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionIte
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 func (o GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItemOutput) SqlText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem) string {
 		return v.SqlText
@@ -41331,7 +41331,7 @@ type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem struct {
 	Reproduced string `pulumi:"reproduced"`
 	// A filter to return all the SQL plan baselines for the specified SQL handle.
 	SqlHandle string `pulumi:"sqlHandle"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText string `pulumi:"sqlText"`
 	// The date and time when the plan baseline was created.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -41377,7 +41377,7 @@ type GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemArgs struct 
 	Reproduced pulumi.StringInput `pulumi:"reproduced"`
 	// A filter to return all the SQL plan baselines for the specified SQL handle.
 	SqlHandle pulumi.StringInput `pulumi:"sqlHandle"`
-	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+	// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 	SqlText pulumi.StringInput `pulumi:"sqlText"`
 	// The date and time when the plan baseline was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -41498,7 +41498,7 @@ func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) S
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.SqlHandle }).(pulumi.StringOutput)
 }
 
-// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%!'(MISSING) symbol as a wildcard.
+// A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
 func (o GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemOutput) SqlText() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItem) string { return v.SqlText }).(pulumi.StringOutput)
 }
@@ -52576,7 +52576,7 @@ type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem struct {
 	MaxTimerWait float64 `pulumi:"maxTimerWait"`
 	// The fastest the query has been executed.
 	MinTimerWait float64 `pulumi:"minTimerWait"`
-	// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+	// The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
 	Quantile95 float64 `pulumi:"quantile95"`
 	// The 99th percentile of the query latency.
 	Quantile99 float64 `pulumi:"quantile99"`
@@ -52658,7 +52658,7 @@ type GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemArgs struct {
 	MaxTimerWait pulumi.Float64Input `pulumi:"maxTimerWait"`
 	// The fastest the query has been executed.
 	MinTimerWait pulumi.Float64Input `pulumi:"minTimerWait"`
-	// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+	// The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
 	Quantile95 pulumi.Float64Input `pulumi:"quantile95"`
 	// The 99th percentile of the query latency.
 	Quantile99 pulumi.Float64Input `pulumi:"quantile99"`
@@ -52809,7 +52809,7 @@ func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) MinTimerWai
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.MinTimerWait }).(pulumi.Float64Output)
 }
 
-// The 95th percentile of the query latency. That is, 95%!o(MISSING)f the queries complete in the time given or in less time.
+// The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
 func (o GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItemOutput) Quantile95() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem) float64 { return v.Quantile95 }).(pulumi.Float64Output)
 }

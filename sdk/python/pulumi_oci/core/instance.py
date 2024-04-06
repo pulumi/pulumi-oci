@@ -106,6 +106,26 @@ class InstanceArgs:
                **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
                
                **Metadata Example**
+               
+               ```
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+               ```
+               
+               **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               ```
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               ```
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -509,6 +529,26 @@ class InstanceArgs:
         **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
 
         **Metadata Example**
+
+        ```
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+        ```
+
+        **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        ```
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+        ```
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
 
@@ -756,6 +796,26 @@ class _InstanceState:
                **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
                
                **Metadata Example**
+               
+               ```
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+               ```
+               
+               **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               ```
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               ```
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -1225,6 +1285,26 @@ class _InstanceState:
         **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
 
         **Metadata Example**
+
+        ```
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+        ```
+
+        **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        ```
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+        ```
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
 
@@ -1594,6 +1674,26 @@ class Instance(pulumi.CustomResource):
                **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
                
                **Metadata Example**
+               
+               ```
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+               ```
+               
+               **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               ```
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               ```
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -1901,6 +2001,26 @@ class Instance(pulumi.CustomResource):
                **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
                
                **Metadata Example**
+               
+               ```
+               "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+               ```
+               
+               **Getting Metadata on the Instance**
+               
+               To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+               
+               ```
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+               curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+               ```
+               
+               You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         :param pulumi.Input[pulumi.InputType['InstancePlatformConfigArgs']] platform_config: (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -2224,6 +2344,26 @@ class Instance(pulumi.CustomResource):
         **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
 
         **Metadata Example**
+
+        ```
+        "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa <your_public_SSH_key>== rsa-key-20160227", "user_data" : "<your_public_SSH_key>==" }
+        ```
+
+        **Getting Metadata on the Instance**
+
+        To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
+
+        ```
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/
+        curl -H "Authorization: Bearer Oracle" http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+        ```
+
+        You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        **Note:** Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that already exist on the instance.
         """
         return pulumi.get(self, "metadata")
 

@@ -745,7 +745,7 @@ class _DomainsAppRoleState:
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value, type]
@@ -1322,7 +1322,7 @@ class _DomainsAppRoleState:
     @pulumi.getter
     def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppRoleMemberArgs']]]]:
         """
-        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [value, type]
@@ -2016,7 +2016,7 @@ class DomainsAppRole(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleMemberArgs']]]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppRoleMemberArgs']]]] members: (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
                
                **SCIM++ Properties:**
                * idcsCompositeKey: [value, type]
@@ -2484,7 +2484,7 @@ class DomainsAppRole(pulumi.CustomResource):
     @pulumi.getter
     def members(self) -> pulumi.Output[Sequence['outputs.DomainsAppRoleMember']]:
         """
-        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%!c(MISSING)ount=10]
+        (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
 
         **SCIM++ Properties:**
         * idcsCompositeKey: [value, type]

@@ -17,14 +17,12 @@ public final class GetNodePoolsNodePoolNodePoolCyclingDetail {
      */
     private Boolean isNodeCyclingEnabled;
     /**
-     * @return Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     private String maximumSurge;
     /**
-     * @return Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     private String maximumUnavailable;
@@ -38,16 +36,14 @@ public final class GetNodePoolsNodePoolNodePoolCyclingDetail {
         return this.isNodeCyclingEnabled;
     }
     /**
-     * @return Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     public String maximumSurge() {
         return this.maximumSurge;
     }
     /**
-     * @return Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0%!t(MISSING)o 100%!
-     * (MISSING)
+     * @return Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
      * 
      */
     public String maximumUnavailable() {

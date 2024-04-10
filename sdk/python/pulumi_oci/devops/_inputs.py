@@ -95,6 +95,11 @@ __all__ = [
     'DeploymentDeploymentArgumentsArgs',
     'DeploymentDeploymentArgumentsItemArgs',
     'DeploymentDeploymentExecutionProgressArgs',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs',
     'ProjectNotificationConfigArgs',
     'RepositoryMirrorRepositoryConfigArgs',
     'RepositoryMirrorRepositoryConfigTriggerScheduleArgs',
@@ -3880,32 +3885,32 @@ class DeploymentDeploymentArgumentsItemArgs:
 @pulumi.input_type
 class DeploymentDeploymentExecutionProgressArgs:
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deploy_stage_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs']]]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs']]] deploy_stage_execution_progresses: Map of stage OCIDs to deploy stage execution progress model.
         :param pulumi.Input[str] time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
-        if deploy_stage_execution_progress is not None:
-            pulumi.set(__self__, "deploy_stage_execution_progress", deploy_stage_execution_progress)
+        if deploy_stage_execution_progresses is not None:
+            pulumi.set(__self__, "deploy_stage_execution_progresses", deploy_stage_execution_progresses)
         if time_finished is not None:
             pulumi.set(__self__, "time_finished", time_finished)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
 
     @property
-    @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    @pulumi.getter(name="deployStageExecutionProgresses")
+    def deploy_stage_execution_progresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs']]]]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
-        return pulumi.get(self, "deploy_stage_execution_progress")
+        return pulumi.get(self, "deploy_stage_execution_progresses")
 
-    @deploy_stage_execution_progress.setter
-    def deploy_stage_execution_progress(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
-        pulumi.set(self, "deploy_stage_execution_progress", value)
+    @deploy_stage_execution_progresses.setter
+    def deploy_stage_execution_progresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs']]]]):
+        pulumi.set(self, "deploy_stage_execution_progresses", value)
 
     @property
     @pulumi.getter(name="timeFinished")
@@ -3930,6 +3935,371 @@ class DeploymentDeploymentExecutionProgressArgs:
     @time_started.setter
     def time_started(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_started", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs:
+    def __init__(__self__, *,
+                 deploy_stage_display_name: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_execution_progress_details: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs']]]] = None,
+                 deploy_stage_id: Optional[pulumi.Input[str]] = None,
+                 deploy_stage_predecessors: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs']]]] = None,
+                 deploy_stage_type: Optional[pulumi.Input[str]] = None,
+                 status: Optional[pulumi.Input[str]] = None,
+                 time_finished: Optional[pulumi.Input[str]] = None,
+                 time_started: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] deploy_stage_display_name: Stage display name. Avoid entering confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs']]] deploy_stage_execution_progress_details: Details about stage execution for all the target environments.
+        :param pulumi.Input[str] deploy_stage_id: The OCID of the stage.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs']]] deploy_stage_predecessors: Collection containing the predecessors of a stage.
+        :param pulumi.Input[str] deploy_stage_type: Deployment stage type.
+        :param pulumi.Input[str] status: The current state of the stage.
+        :param pulumi.Input[str] time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[str] time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if deploy_stage_display_name is not None:
+            pulumi.set(__self__, "deploy_stage_display_name", deploy_stage_display_name)
+        if deploy_stage_execution_progress_details is not None:
+            pulumi.set(__self__, "deploy_stage_execution_progress_details", deploy_stage_execution_progress_details)
+        if deploy_stage_id is not None:
+            pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if deploy_stage_predecessors is not None:
+            pulumi.set(__self__, "deploy_stage_predecessors", deploy_stage_predecessors)
+        if deploy_stage_type is not None:
+            pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="deployStageDisplayName")
+    def deploy_stage_display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Stage display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "deploy_stage_display_name")
+
+    @deploy_stage_display_name.setter
+    def deploy_stage_display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deploy_stage_display_name", value)
+
+    @property
+    @pulumi.getter(name="deployStageExecutionProgressDetails")
+    def deploy_stage_execution_progress_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs']]]]:
+        """
+        Details about stage execution for all the target environments.
+        """
+        return pulumi.get(self, "deploy_stage_execution_progress_details")
+
+    @deploy_stage_execution_progress_details.setter
+    def deploy_stage_execution_progress_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs']]]]):
+        pulumi.set(self, "deploy_stage_execution_progress_details", value)
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @deploy_stage_id.setter
+    def deploy_stage_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deploy_stage_id", value)
+
+    @property
+    @pulumi.getter(name="deployStagePredecessors")
+    def deploy_stage_predecessors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs']]]]:
+        """
+        Collection containing the predecessors of a stage.
+        """
+        return pulumi.get(self, "deploy_stage_predecessors")
+
+    @deploy_stage_predecessors.setter
+    def deploy_stage_predecessors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs']]]]):
+        pulumi.set(self, "deploy_stage_predecessors", value)
+
+    @property
+    @pulumi.getter(name="deployStageType")
+    def deploy_stage_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Deployment stage type.
+        """
+        return pulumi.get(self, "deploy_stage_type")
+
+    @deploy_stage_type.setter
+    def deploy_stage_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deploy_stage_type", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the stage.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @time_finished.setter
+    def time_finished(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_finished", value)
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+    @time_started.setter
+    def time_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_started", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs:
+    def __init__(__self__, *,
+                 rollback_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs']]]] = None,
+                 steps: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs']]]] = None,
+                 target_group: Optional[pulumi.Input[str]] = None,
+                 target_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs']]] rollback_steps: Details about all the rollback steps for one target environment.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs']]] steps: Details about all the steps for one target environment.
+        :param pulumi.Input[str] target_group: Group for the target environment for example, the batch number for an Instance Group deployment.
+        :param pulumi.Input[str] target_id: The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        if rollback_steps is not None:
+            pulumi.set(__self__, "rollback_steps", rollback_steps)
+        if steps is not None:
+            pulumi.set(__self__, "steps", steps)
+        if target_group is not None:
+            pulumi.set(__self__, "target_group", target_group)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="rollbackSteps")
+    def rollback_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs']]]]:
+        """
+        Details about all the rollback steps for one target environment.
+        """
+        return pulumi.get(self, "rollback_steps")
+
+    @rollback_steps.setter
+    def rollback_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs']]]]):
+        pulumi.set(self, "rollback_steps", value)
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs']]]]:
+        """
+        Details about all the steps for one target environment.
+        """
+        return pulumi.get(self, "steps")
+
+    @steps.setter
+    def steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs']]]]):
+        pulumi.set(self, "steps", value)
+
+    @property
+    @pulumi.getter(name="targetGroup")
+    def target_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Group for the target environment for example, the batch number for an Instance Group deployment.
+        """
+        return pulumi.get(self, "target_group")
+
+    @target_group.setter
+    def target_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_group", value)
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_id", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_finished: Optional[pulumi.Input[str]] = None,
+                 time_started: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
+        :param pulumi.Input[str] state: The current state of the deployment.
+        :param pulumi.Input[str] time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[str] time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @time_finished.setter
+    def time_finished(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_finished", value)
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+    @time_started.setter
+    def time_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_started", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
+                 time_finished: Optional[pulumi.Input[str]] = None,
+                 time_started: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the parameter (case-sensitive).
+        :param pulumi.Input[str] state: The current state of the deployment.
+        :param pulumi.Input[str] time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param pulumi.Input[str] time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @time_finished.setter
+    def time_finished(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_finished", value)
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+    @time_started.setter
+    def time_started(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_started", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs:
+    def __init__(__self__, *,
+                 deploy_stage_predecessor: Optional[pulumi.Input[str]] = None):
+        if deploy_stage_predecessor is not None:
+            pulumi.set(__self__, "deploy_stage_predecessor", deploy_stage_predecessor)
+
+    @property
+    @pulumi.getter(name="deployStagePredecessor")
+    def deploy_stage_predecessor(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "deploy_stage_predecessor")
+
+    @deploy_stage_predecessor.setter
+    def deploy_stage_predecessor(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deploy_stage_predecessor", value)
 
 
 @pulumi.input_type

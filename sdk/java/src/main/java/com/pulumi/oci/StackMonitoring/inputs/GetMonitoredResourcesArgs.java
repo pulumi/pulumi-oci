@@ -56,6 +56,21 @@ public final class GetMonitoredResourcesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
+     * A filter to return only resources with matching lifecycleState.
+     * 
+     */
+    @Import(name="status")
+    private @Nullable Output<String> status;
+
+    /**
+     * @return A filter to return only resources with matching lifecycleState.
+     * 
+     */
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
+    }
+
+    /**
      * A filter to return resources which were impacted as part of this work request identifier.
      * 
      */
@@ -76,6 +91,7 @@ public final class GetMonitoredResourcesArgs extends com.pulumi.resources.Invoke
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.name = $.name;
+        this.status = $.status;
         this.workRequestId = $.workRequestId;
     }
 
@@ -150,6 +166,27 @@ public final class GetMonitoredResourcesArgs extends com.pulumi.resources.Invoke
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param status A filter to return only resources with matching lifecycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        /**
+         * @param status A filter to return only resources with matching lifecycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(String status) {
+            return status(Output.of(status));
         }
 
         /**

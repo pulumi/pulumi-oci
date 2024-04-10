@@ -196,9 +196,17 @@ export class MonitoredResource extends pulumi.CustomResource {
      */
     public readonly properties!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceProperty[] | undefined>;
     /**
+     * Resource Category to indicate the kind of resource type.
+     */
+    public /*out*/ readonly resourceCategory!: pulumi.Output<string>;
+    /**
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     public readonly resourceTimeZone!: pulumi.Output<string | undefined>;
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     */
+    public /*out*/ readonly sourceType!: pulumi.Output<string>;
     /**
      * Lifecycle state of the monitored resource.
      */
@@ -257,7 +265,9 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["properties"] = state ? state.properties : undefined;
+            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
             resourceInputs["resourceTimeZone"] = state ? state.resourceTimeZone : undefined;
+            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["tenantId"] = state ? state.tenantId : undefined;
@@ -290,6 +300,8 @@ export class MonitoredResource extends pulumi.CustomResource {
             resourceInputs["properties"] = args ? args.properties : undefined;
             resourceInputs["resourceTimeZone"] = args ? args.resourceTimeZone : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["resourceCategory"] = undefined /*out*/;
+            resourceInputs["sourceType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
@@ -370,9 +382,17 @@ export interface MonitoredResourceState {
      */
     properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceProperty>[]>;
     /**
+     * Resource Category to indicate the kind of resource type.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     resourceTimeZone?: pulumi.Input<string>;
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * Lifecycle state of the monitored resource.
      */

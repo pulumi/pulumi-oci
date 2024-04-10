@@ -22,7 +22,7 @@ class GetMonitoredResourceTypeResult:
     """
     A collection of values returned by getMonitoredResourceType.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, metadatas=None, metric_namespace=None, monitored_resource_type_id=None, name=None, resource_category=None, source_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,12 @@ class GetMonitoredResourceTypeResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if resource_category and not isinstance(resource_category, str):
+            raise TypeError("Expected argument 'resource_category' to be a str")
+        pulumi.set(__self__, "resource_category", resource_category)
+        if source_type and not isinstance(source_type, str):
+            raise TypeError("Expected argument 'source_type' to be a str")
+        pulumi.set(__self__, "source_type", source_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -144,6 +150,22 @@ class GetMonitoredResourceTypeResult:
         return pulumi.get(self, "name")
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> str:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -192,6 +214,8 @@ class AwaitableGetMonitoredResourceTypeResult(GetMonitoredResourceTypeResult):
             metric_namespace=self.metric_namespace,
             monitored_resource_type_id=self.monitored_resource_type_id,
             name=self.name,
+            resource_category=self.resource_category,
+            source_type=self.source_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -235,6 +259,8 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
         metric_namespace=pulumi.get(__ret__, 'metric_namespace'),
         monitored_resource_type_id=pulumi.get(__ret__, 'monitored_resource_type_id'),
         name=pulumi.get(__ret__, 'name'),
+        resource_category=pulumi.get(__ret__, 'resource_category'),
+        source_type=pulumi.get(__ret__, 'source_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),

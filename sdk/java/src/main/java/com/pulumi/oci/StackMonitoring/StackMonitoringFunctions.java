@@ -2861,6 +2861,7 @@ public final class StackMonitoringFunctions {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .name(var_.monitored_resource_name())
+     *             .status(var_.monitored_resource_status())
      *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
      *             .build());
      * 
@@ -2905,6 +2906,7 @@ public final class StackMonitoringFunctions {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .name(var_.monitored_resource_name())
+     *             .status(var_.monitored_resource_status())
      *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
      *             .build());
      * 
@@ -2949,6 +2951,7 @@ public final class StackMonitoringFunctions {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .name(var_.monitored_resource_name())
+     *             .status(var_.monitored_resource_status())
      *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
      *             .build());
      * 
@@ -2993,6 +2996,7 @@ public final class StackMonitoringFunctions {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .name(var_.monitored_resource_name())
+     *             .status(var_.monitored_resource_status())
      *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
      *             .build());
      * 

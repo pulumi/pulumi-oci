@@ -265,6 +265,21 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Resource Category to indicate the kind of resource type.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
@@ -277,6 +292,21 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> resourceTimeZone() {
         return Optional.ofNullable(this.resourceTimeZone);
+    }
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     /**
@@ -394,7 +424,9 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.properties = $.properties;
+        this.resourceCategory = $.resourceCategory;
         this.resourceTimeZone = $.resourceTimeZone;
+        this.sourceType = $.sourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.tenantId = $.tenantId;
@@ -788,6 +820,27 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param resourceCategory Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
          * @param resourceTimeZone (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
@@ -806,6 +859,27 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
          */
         public Builder resourceTimeZone(String resourceTimeZone) {
             return resourceTimeZone(Output.of(resourceTimeZone));
+        }
+
+        /**
+         * @param sourceType Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         /**

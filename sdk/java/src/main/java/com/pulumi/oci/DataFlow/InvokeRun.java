@@ -85,6 +85,7 @@ import javax.annotation.Nullable;
  *             .maxDurationInMinutes(var_.invoke_run_max_duration_in_minutes())
  *             .metastoreId(var_.metastore_id())
  *             .numExecutors(var_.invoke_run_num_executors())
+ *             .opcParentRptUrl(var_.invoke_run_opc_parent_rpt_url())
  *             .parameters(InvokeRunParameterArgs.builder()
  *                 .name(var_.invoke_run_parameters_name())
  *                 .value(var_.invoke_run_parameters_value())
@@ -470,6 +471,20 @@ public class InvokeRun extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> numExecutors() {
         return this.numExecutors;
+    }
+    /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    @Export(name="opcParentRptUrl", refs={String.class}, tree="[0]")
+    private Output<String> opcParentRptUrl;
+
+    /**
+     * @return (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    public Output<String> opcParentRptUrl() {
+        return this.opcParentRptUrl;
     }
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

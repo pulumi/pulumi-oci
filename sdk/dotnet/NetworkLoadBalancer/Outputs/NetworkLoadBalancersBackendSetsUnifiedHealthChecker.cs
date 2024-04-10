@@ -14,6 +14,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class NetworkLoadBalancersBackendSetsUnifiedHealthChecker
     {
         /// <summary>
+        /// (Updatable) DNS healthcheck configurations.
+        /// </summary>
+        public readonly Outputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns? Dns;
+        /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         public readonly int? IntervalInMillis;
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
         [OutputConstructor]
         private NetworkLoadBalancersBackendSetsUnifiedHealthChecker(
+            Outputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns? dns,
+
             int? intervalInMillis,
 
             int? port,
@@ -76,6 +82,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             string? urlPath)
         {
+            Dns = dns;
             IntervalInMillis = intervalInMillis;
             Port = port;
             Protocol = protocol;

@@ -167,8 +167,12 @@ type MonitoredResource struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayOutput `pulumi:"properties"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringOutput `pulumi:"resourceCategory"`
 	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrOutput `pulumi:"resourceTimeZone"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType pulumi.StringOutput `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -254,8 +258,12 @@ type monitoredResourceState struct {
 	Name *string `pulumi:"name"`
 	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory *string `pulumi:"resourceCategory"`
 	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType *string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -306,8 +314,12 @@ type MonitoredResourceState struct {
 	Name pulumi.StringPtrInput
 	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayInput
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringPtrInput
 	// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType pulumi.StringPtrInput
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -585,9 +597,19 @@ func (o MonitoredResourceOutput) Properties() MonitoredResourcePropertyArrayOutp
 	return o.ApplyT(func(v *MonitoredResource) MonitoredResourcePropertyArrayOutput { return v.Properties }).(MonitoredResourcePropertyArrayOutput)
 }
 
+// Resource Category to indicate the kind of resource type.
+func (o MonitoredResourceOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.ResourceCategory }).(pulumi.StringOutput)
+}
+
 // (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 func (o MonitoredResourceOutput) ResourceTimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.ResourceTimeZone }).(pulumi.StringPtrOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o MonitoredResourceOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource.

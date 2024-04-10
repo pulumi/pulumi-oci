@@ -31,6 +31,30 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
+        /// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+        /// </summary>
+        [Input("consolePathPrefix")]
+        public Input<string>? ConsolePathPrefix { get; set; }
+
+        /// <summary>
+        /// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        /// </summary>
+        [Input("externalIdMapping")]
+        public Input<string>? ExternalIdMapping { get; set; }
+
+        [Input("lifecycleStatusMappingsForUpStatuses")]
+        private InputList<string>? _lifecycleStatusMappingsForUpStatuses;
+
+        /// <summary>
+        /// Lifecycle states of the external resource which reflects the status of the resource being up.
+        /// </summary>
+        public InputList<string> LifecycleStatusMappingsForUpStatuses
+        {
+            get => _lifecycleStatusMappingsForUpStatuses ?? (_lifecycleStatusMappingsForUpStatuses = new InputList<string>());
+            set => _lifecycleStatusMappingsForUpStatuses = value;
+        }
+
+        /// <summary>
         /// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
         /// </summary>
         [Input("namespace", required: true)]
@@ -41,6 +65,42 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }
+
+        /// <summary>
+        /// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+        /// </summary>
+        [Input("resourceNameFilter")]
+        public Input<string>? ResourceNameFilter { get; set; }
+
+        /// <summary>
+        /// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+        /// </summary>
+        [Input("resourceNameMapping")]
+        public Input<string>? ResourceNameMapping { get; set; }
+
+        /// <summary>
+        /// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+        /// </summary>
+        [Input("resourceTypeFilter")]
+        public Input<string>? ResourceTypeFilter { get; set; }
+
+        /// <summary>
+        /// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        /// </summary>
+        [Input("resourceTypeMapping")]
+        public Input<string>? ResourceTypeMapping { get; set; }
+
+        /// <summary>
+        /// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+        /// </summary>
+        [Input("serviceBaseUrl")]
+        public Input<string>? ServiceBaseUrl { get; set; }
+
+        /// <summary>
+        /// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+        /// </summary>
+        [Input("shouldUseMetricsFlowForStatus")]
+        public Input<bool>? ShouldUseMetricsFlowForStatus { get; set; }
 
         /// <summary>
         /// Source from where the metrics pushed to telemetry. Possible values:

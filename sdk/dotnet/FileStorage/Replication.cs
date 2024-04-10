@@ -54,8 +54,8 @@ namespace Pulumi.Oci.FileStorage
     ///     var testReplication = new Oci.FileStorage.Replication("testReplication", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         SourceId = oci_file_storage_source.Test_source.Id,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         SourceId = oci_file_storage_file_system.Test_source.Id,
+    ///         TargetId = oci_file_storage_file_system.Test_target.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

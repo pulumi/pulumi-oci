@@ -36,6 +36,7 @@ public final class GetMonitoredResourcesResult {
      * 
      */
     private @Nullable String name;
+    private @Nullable String status;
     private @Nullable String workRequestId;
 
     private GetMonitoredResourcesResult() {}
@@ -70,6 +71,9 @@ public final class GetMonitoredResourcesResult {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
+    }
     public Optional<String> workRequestId() {
         return Optional.ofNullable(this.workRequestId);
     }
@@ -88,6 +92,7 @@ public final class GetMonitoredResourcesResult {
         private String id;
         private List<GetMonitoredResourcesMonitoredResourceCollection> monitoredResourceCollections;
         private @Nullable String name;
+        private @Nullable String status;
         private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetMonitoredResourcesResult defaults) {
@@ -97,6 +102,7 @@ public final class GetMonitoredResourcesResult {
     	      this.id = defaults.id;
     	      this.monitoredResourceCollections = defaults.monitoredResourceCollections;
     	      this.name = defaults.name;
+    	      this.status = defaults.status;
     	      this.workRequestId = defaults.workRequestId;
         }
 
@@ -143,6 +149,12 @@ public final class GetMonitoredResourcesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder status(@Nullable String status) {
+
+            this.status = status;
+            return this;
+        }
+        @CustomType.Setter
         public Builder workRequestId(@Nullable String workRequestId) {
 
             this.workRequestId = workRequestId;
@@ -155,6 +167,7 @@ public final class GetMonitoredResourcesResult {
             _resultValue.id = id;
             _resultValue.monitoredResourceCollections = monitoredResourceCollections;
             _resultValue.name = name;
+            _resultValue.status = status;
             _resultValue.workRequestId = workRequestId;
             return _resultValue;
         }

@@ -96,6 +96,11 @@ __all__ = [
     'DeploymentDeploymentArguments',
     'DeploymentDeploymentArgumentsItem',
     'DeploymentDeploymentExecutionProgress',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgress',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep',
+    'DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor',
     'ProjectNotificationConfig',
     'RepositoryMirrorRepositoryConfig',
     'RepositoryMirrorRepositoryConfigTriggerSchedule',
@@ -272,6 +277,11 @@ __all__ = [
     'GetDeploymentDeploymentArgumentResult',
     'GetDeploymentDeploymentArgumentItemResult',
     'GetDeploymentDeploymentExecutionProgressResult',
+    'GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressResult',
+    'GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult',
+    'GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult',
+    'GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult',
+    'GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult',
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
     'GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult',
@@ -289,6 +299,11 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionItemDeploymentArgumentResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult',
     'GetDeploymentsFilterResult',
     'GetProjectNotificationConfigResult',
     'GetProjectsFilterResult',
@@ -4318,8 +4333,8 @@ class DeploymentDeploymentExecutionProgress(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "deployStageExecutionProgress":
-            suggest = "deploy_stage_execution_progress"
+        if key == "deployStageExecutionProgresses":
+            suggest = "deploy_stage_execution_progresses"
         elif key == "timeFinished":
             suggest = "time_finished"
         elif key == "timeStarted":
@@ -4337,28 +4352,28 @@ class DeploymentDeploymentExecutionProgress(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
+                 deploy_stage_execution_progresses: Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress']] = None,
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs'] deploy_stage_execution_progresses: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
-        if deploy_stage_execution_progress is not None:
-            pulumi.set(__self__, "deploy_stage_execution_progress", deploy_stage_execution_progress)
+        if deploy_stage_execution_progresses is not None:
+            pulumi.set(__self__, "deploy_stage_execution_progresses", deploy_stage_execution_progresses)
         if time_finished is not None:
             pulumi.set(__self__, "time_finished", time_finished)
         if time_started is not None:
             pulumi.set(__self__, "time_started", time_started)
 
     @property
-    @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Optional[Mapping[str, Any]]:
+    @pulumi.getter(name="deployStageExecutionProgresses")
+    def deploy_stage_execution_progresses(self) -> Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress']]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
-        return pulumi.get(self, "deploy_stage_execution_progress")
+        return pulumi.get(self, "deploy_stage_execution_progresses")
 
     @property
     @pulumi.getter(name="timeFinished")
@@ -4375,6 +4390,392 @@ class DeploymentDeploymentExecutionProgress(dict):
         Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgress(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deployStageDisplayName":
+            suggest = "deploy_stage_display_name"
+        elif key == "deployStageExecutionProgressDetails":
+            suggest = "deploy_stage_execution_progress_details"
+        elif key == "deployStageId":
+            suggest = "deploy_stage_id"
+        elif key == "deployStagePredecessors":
+            suggest = "deploy_stage_predecessors"
+        elif key == "deployStageType":
+            suggest = "deploy_stage_type"
+        elif key == "timeFinished":
+            suggest = "time_finished"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentExecutionProgressDeployStageExecutionProgress. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgress.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgress.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 deploy_stage_display_name: Optional[str] = None,
+                 deploy_stage_execution_progress_details: Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail']] = None,
+                 deploy_stage_id: Optional[str] = None,
+                 deploy_stage_predecessors: Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor']] = None,
+                 deploy_stage_type: Optional[str] = None,
+                 status: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        """
+        :param str deploy_stage_display_name: Stage display name. Avoid entering confidential information.
+        :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs'] deploy_stage_execution_progress_details: Details about stage execution for all the target environments.
+        :param str deploy_stage_id: The OCID of the stage.
+        :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs'] deploy_stage_predecessors: Collection containing the predecessors of a stage.
+        :param str deploy_stage_type: Deployment stage type.
+        :param str status: The current state of the stage.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if deploy_stage_display_name is not None:
+            pulumi.set(__self__, "deploy_stage_display_name", deploy_stage_display_name)
+        if deploy_stage_execution_progress_details is not None:
+            pulumi.set(__self__, "deploy_stage_execution_progress_details", deploy_stage_execution_progress_details)
+        if deploy_stage_id is not None:
+            pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        if deploy_stage_predecessors is not None:
+            pulumi.set(__self__, "deploy_stage_predecessors", deploy_stage_predecessors)
+        if deploy_stage_type is not None:
+            pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="deployStageDisplayName")
+    def deploy_stage_display_name(self) -> Optional[str]:
+        """
+        Stage display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "deploy_stage_display_name")
+
+    @property
+    @pulumi.getter(name="deployStageExecutionProgressDetails")
+    def deploy_stage_execution_progress_details(self) -> Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail']]:
+        """
+        Details about stage execution for all the target environments.
+        """
+        return pulumi.get(self, "deploy_stage_execution_progress_details")
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> Optional[str]:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStagePredecessors")
+    def deploy_stage_predecessors(self) -> Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor']]:
+        """
+        Collection containing the predecessors of a stage.
+        """
+        return pulumi.get(self, "deploy_stage_predecessors")
+
+    @property
+    @pulumi.getter(name="deployStageType")
+    def deploy_stage_type(self) -> Optional[str]:
+        """
+        Deployment stage type.
+        """
+        return pulumi.get(self, "deploy_stage_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[str]:
+        """
+        The current state of the stage.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[str]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "rollbackSteps":
+            suggest = "rollback_steps"
+        elif key == "targetGroup":
+            suggest = "target_group"
+        elif key == "targetId":
+            suggest = "target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rollback_steps: Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep']] = None,
+                 steps: Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep']] = None,
+                 target_group: Optional[str] = None,
+                 target_id: Optional[str] = None):
+        """
+        :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs'] rollback_steps: Details about all the rollback steps for one target environment.
+        :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs'] steps: Details about all the steps for one target environment.
+        :param str target_group: Group for the target environment for example, the batch number for an Instance Group deployment.
+        :param str target_id: The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        if rollback_steps is not None:
+            pulumi.set(__self__, "rollback_steps", rollback_steps)
+        if steps is not None:
+            pulumi.set(__self__, "steps", steps)
+        if target_group is not None:
+            pulumi.set(__self__, "target_group", target_group)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="rollbackSteps")
+    def rollback_steps(self) -> Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep']]:
+        """
+        Details about all the rollback steps for one target environment.
+        """
+        return pulumi.get(self, "rollback_steps")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Optional[Sequence['outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep']]:
+        """
+        Details about all the steps for one target environment.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter(name="targetGroup")
+    def target_group(self) -> Optional[str]:
+        """
+        Group for the target environment for example, the batch number for an Instance Group deployment.
+        """
+        return pulumi.get(self, "target_group")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[str]:
+        """
+        The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeFinished":
+            suggest = "time_finished"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str state: The current state of the deployment.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[str]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeFinished":
+            suggest = "time_finished"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_finished: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        """
+        :param str name: Name of the parameter (case-sensitive).
+        :param str state: The current state of the deployment.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the parameter (case-sensitive).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> Optional[str]:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deployStagePredecessor":
+            suggest = "deploy_stage_predecessor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 deploy_stage_predecessor: Optional[str] = None):
+        if deploy_stage_predecessor is not None:
+            pulumi.set(__self__, "deploy_stage_predecessor", deploy_stage_predecessor)
+
+    @property
+    @pulumi.getter(name="deployStagePredecessor")
+    def deploy_stage_predecessor(self) -> Optional[str]:
+        return pulumi.get(self, "deploy_stage_predecessor")
 
 
 @pulumi.output_type
@@ -12164,25 +12565,25 @@ class GetDeploymentDeploymentArgumentItemResult(dict):
 @pulumi.output_type
 class GetDeploymentDeploymentExecutionProgressResult(dict):
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Mapping[str, Any],
+                 deploy_stage_execution_progresses: Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressResult'],
                  time_finished: str,
                  time_started: str):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Sequence['GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs'] deploy_stage_execution_progresses: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
-        pulumi.set(__self__, "deploy_stage_execution_progress", deploy_stage_execution_progress)
+        pulumi.set(__self__, "deploy_stage_execution_progresses", deploy_stage_execution_progresses)
         pulumi.set(__self__, "time_finished", time_finished)
         pulumi.set(__self__, "time_started", time_started)
 
     @property
-    @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Mapping[str, Any]:
+    @pulumi.getter(name="deployStageExecutionProgresses")
+    def deploy_stage_execution_progresses(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressResult']:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
-        return pulumi.get(self, "deploy_stage_execution_progress")
+        return pulumi.get(self, "deploy_stage_execution_progresses")
 
     @property
     @pulumi.getter(name="timeFinished")
@@ -12199,6 +12600,266 @@ class GetDeploymentDeploymentExecutionProgressResult(dict):
         Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_display_name: str,
+                 deploy_stage_execution_progress_details: Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult'],
+                 deploy_stage_id: str,
+                 deploy_stage_predecessors: Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult'],
+                 deploy_stage_type: str,
+                 status: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str deploy_stage_display_name: Stage display name. Avoid entering confidential information.
+        :param Sequence['GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs'] deploy_stage_execution_progress_details: Details about stage execution for all the target environments.
+        :param str deploy_stage_id: The OCID of the stage.
+        :param Sequence['GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs'] deploy_stage_predecessors: Collection containing the predecessors of a stage.
+        :param str deploy_stage_type: Deployment stage type.
+        :param str status: The current state of the stage.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "deploy_stage_display_name", deploy_stage_display_name)
+        pulumi.set(__self__, "deploy_stage_execution_progress_details", deploy_stage_execution_progress_details)
+        pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        pulumi.set(__self__, "deploy_stage_predecessors", deploy_stage_predecessors)
+        pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="deployStageDisplayName")
+    def deploy_stage_display_name(self) -> str:
+        """
+        Stage display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "deploy_stage_display_name")
+
+    @property
+    @pulumi.getter(name="deployStageExecutionProgressDetails")
+    def deploy_stage_execution_progress_details(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult']:
+        """
+        Details about stage execution for all the target environments.
+        """
+        return pulumi.get(self, "deploy_stage_execution_progress_details")
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> str:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStagePredecessors")
+    def deploy_stage_predecessors(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult']:
+        """
+        Collection containing the predecessors of a stage.
+        """
+        return pulumi.get(self, "deploy_stage_predecessors")
+
+    @property
+    @pulumi.getter(name="deployStageType")
+    def deploy_stage_type(self) -> str:
+        """
+        Deployment stage type.
+        """
+        return pulumi.get(self, "deploy_stage_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current state of the stage.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult(dict):
+    def __init__(__self__, *,
+                 rollback_steps: Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult'],
+                 steps: Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult'],
+                 target_group: str,
+                 target_id: str):
+        """
+        :param Sequence['GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs'] rollback_steps: Details about all the rollback steps for one target environment.
+        :param Sequence['GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs'] steps: Details about all the steps for one target environment.
+        :param str target_group: Group for the target environment for example, the batch number for an Instance Group deployment.
+        :param str target_id: The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        pulumi.set(__self__, "rollback_steps", rollback_steps)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "target_group", target_group)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="rollbackSteps")
+    def rollback_steps(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult']:
+        """
+        Details about all the rollback steps for one target environment.
+        """
+        return pulumi.get(self, "rollback_steps")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult']:
+        """
+        Details about all the steps for one target environment.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter(name="targetGroup")
+    def target_group(self) -> str:
+        """
+        Group for the target environment for example, the batch number for an Instance Group deployment.
+        """
+        return pulumi.get(self, "target_group")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 state: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str name: Name of the step.
+        :param str state: The current state of the deployment.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 state: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str name: Name of the step.
+        :param str state: The current state of the deployment.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_predecessor: str):
+        pulumi.set(__self__, "deploy_stage_predecessor", deploy_stage_predecessor)
+
+    @property
+    @pulumi.getter(name="deployStagePredecessor")
+    def deploy_stage_predecessor(self) -> str:
+        return pulumi.get(self, "deploy_stage_predecessor")
 
 
 @pulumi.output_type
@@ -12840,25 +13501,25 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(dict):
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Mapping[str, Any],
+                 deploy_stage_execution_progresses: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressResult'],
                  time_finished: str,
                  time_started: str):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs'] deploy_stage_execution_progresses: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
-        pulumi.set(__self__, "deploy_stage_execution_progress", deploy_stage_execution_progress)
+        pulumi.set(__self__, "deploy_stage_execution_progresses", deploy_stage_execution_progresses)
         pulumi.set(__self__, "time_finished", time_finished)
         pulumi.set(__self__, "time_started", time_started)
 
     @property
-    @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Mapping[str, Any]:
+    @pulumi.getter(name="deployStageExecutionProgresses")
+    def deploy_stage_execution_progresses(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressResult']:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
-        return pulumi.get(self, "deploy_stage_execution_progress")
+        return pulumi.get(self, "deploy_stage_execution_progresses")
 
     @property
     @pulumi.getter(name="timeFinished")
@@ -12875,6 +13536,266 @@ class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(di
         Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_display_name: str,
+                 deploy_stage_execution_progress_details: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult'],
+                 deploy_stage_id: str,
+                 deploy_stage_predecessors: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult'],
+                 deploy_stage_type: str,
+                 status: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str deploy_stage_display_name: Stage display name. Avoid entering confidential information.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs'] deploy_stage_execution_progress_details: Details about stage execution for all the target environments.
+        :param str deploy_stage_id: The OCID of the stage.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs'] deploy_stage_predecessors: Collection containing the predecessors of a stage.
+        :param str deploy_stage_type: Deployment stage type.
+        :param str status: The current state of the stage.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "deploy_stage_display_name", deploy_stage_display_name)
+        pulumi.set(__self__, "deploy_stage_execution_progress_details", deploy_stage_execution_progress_details)
+        pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
+        pulumi.set(__self__, "deploy_stage_predecessors", deploy_stage_predecessors)
+        pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="deployStageDisplayName")
+    def deploy_stage_display_name(self) -> str:
+        """
+        Stage display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "deploy_stage_display_name")
+
+    @property
+    @pulumi.getter(name="deployStageExecutionProgressDetails")
+    def deploy_stage_execution_progress_details(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult']:
+        """
+        Details about stage execution for all the target environments.
+        """
+        return pulumi.get(self, "deploy_stage_execution_progress_details")
+
+    @property
+    @pulumi.getter(name="deployStageId")
+    def deploy_stage_id(self) -> str:
+        """
+        The OCID of the stage.
+        """
+        return pulumi.get(self, "deploy_stage_id")
+
+    @property
+    @pulumi.getter(name="deployStagePredecessors")
+    def deploy_stage_predecessors(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult']:
+        """
+        Collection containing the predecessors of a stage.
+        """
+        return pulumi.get(self, "deploy_stage_predecessors")
+
+    @property
+    @pulumi.getter(name="deployStageType")
+    def deploy_stage_type(self) -> str:
+        """
+        Deployment stage type.
+        """
+        return pulumi.get(self, "deploy_stage_type")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The current state of the stage.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailResult(dict):
+    def __init__(__self__, *,
+                 rollback_steps: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult'],
+                 steps: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult'],
+                 target_group: str,
+                 target_id: str):
+        """
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs'] rollback_steps: Details about all the rollback steps for one target environment.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs'] steps: Details about all the steps for one target environment.
+        :param str target_group: Group for the target environment for example, the batch number for an Instance Group deployment.
+        :param str target_id: The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        pulumi.set(__self__, "rollback_steps", rollback_steps)
+        pulumi.set(__self__, "steps", steps)
+        pulumi.set(__self__, "target_group", target_group)
+        pulumi.set(__self__, "target_id", target_id)
+
+    @property
+    @pulumi.getter(name="rollbackSteps")
+    def rollback_steps(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult']:
+        """
+        Details about all the rollback steps for one target environment.
+        """
+        return pulumi.get(self, "rollback_steps")
+
+    @property
+    @pulumi.getter
+    def steps(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult']:
+        """
+        Details about all the steps for one target environment.
+        """
+        return pulumi.get(self, "steps")
+
+    @property
+    @pulumi.getter(name="targetGroup")
+    def target_group(self) -> str:
+        """
+        Group for the target environment for example, the batch number for an Instance Group deployment.
+        """
+        return pulumi.get(self, "target_group")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+        """
+        return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 state: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str name: Name of the step.
+        :param str state: A filter to return only Deployments that matches the given lifecycleState.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Deployments that matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 state: str,
+                 time_finished: str,
+                 time_started: str):
+        """
+        :param str name: Name of the step.
+        :param str state: A filter to return only Deployments that matches the given lifecycleState.
+        :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the step.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Deployments that matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> str:
+        """
+        Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorResult(dict):
+    def __init__(__self__, *,
+                 deploy_stage_predecessor: str):
+        pulumi.set(__self__, "deploy_stage_predecessor", deploy_stage_predecessor)
+
+    @property
+    @pulumi.getter(name="deployStagePredecessor")
+    def deploy_stage_predecessor(self) -> str:
+        return pulumi.get(self, "deploy_stage_predecessor")
 
 
 @pulumi.output_type

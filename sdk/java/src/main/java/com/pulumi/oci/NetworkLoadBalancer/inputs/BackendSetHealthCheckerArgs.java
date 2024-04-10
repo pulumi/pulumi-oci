@@ -6,6 +6,7 @@ package com.pulumi.oci.NetworkLoadBalancer.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkLoadBalancer.inputs.BackendSetHealthCheckerDnsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BackendSetHealthCheckerArgs Empty = new BackendSetHealthCheckerArgs();
+
+    /**
+     * (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    @Import(name="dns")
+    private @Nullable Output<BackendSetHealthCheckerDnsArgs> dns;
+
+    /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    public Optional<Output<BackendSetHealthCheckerDnsArgs>> dns() {
+        return Optional.ofNullable(this.dns);
+    }
 
     /**
      * (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -48,14 +64,14 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
-     * @return (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * @return (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     public Output<String> protocol() {
@@ -170,6 +186,7 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
     private BackendSetHealthCheckerArgs() {}
 
     private BackendSetHealthCheckerArgs(BackendSetHealthCheckerArgs $) {
+        this.dns = $.dns;
         this.intervalInMillis = $.intervalInMillis;
         this.port = $.port;
         this.protocol = $.protocol;
@@ -198,6 +215,27 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
 
         public Builder(BackendSetHealthCheckerArgs defaults) {
             $ = new BackendSetHealthCheckerArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dns (Updatable) DNS healthcheck configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dns(@Nullable Output<BackendSetHealthCheckerDnsArgs> dns) {
+            $.dns = dns;
+            return this;
+        }
+
+        /**
+         * @param dns (Updatable) DNS healthcheck configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dns(BackendSetHealthCheckerDnsArgs dns) {
+            return dns(Output.of(dns));
         }
 
         /**
@@ -243,7 +281,7 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param protocol (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+         * @param protocol (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
          * 
          * @return builder
          * 
@@ -254,7 +292,7 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param protocol (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+         * @param protocol (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
          * 
          * @return builder
          * 

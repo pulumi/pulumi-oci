@@ -3645,10 +3645,28 @@ type MonitoredResourceTaskTaskDetails struct {
 	AvailabilityProxyMetricCollectionInterval *int `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix *string `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping *string `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace string `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup *string `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter *string `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping *string `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter *string `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping *string `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl *string `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus *bool `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -3676,10 +3694,28 @@ type MonitoredResourceTaskTaskDetailsArgs struct {
 	AvailabilityProxyMetricCollectionInterval pulumi.IntPtrInput `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix pulumi.StringPtrInput `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping pulumi.StringPtrInput `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter pulumi.StringPtrInput `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping pulumi.StringPtrInput `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter pulumi.StringPtrInput `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping pulumi.StringPtrInput `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl pulumi.StringPtrInput `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus pulumi.BoolPtrInput `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -3778,6 +3814,21 @@ func (o MonitoredResourceTaskTaskDetailsOutput) AvailabilityProxyMetrics() pulum
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
 
+// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+func (o MonitoredResourceTaskTaskDetailsOutput) ConsolePathPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ConsolePathPrefix }).(pulumi.StringPtrOutput)
+}
+
+// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+func (o MonitoredResourceTaskTaskDetailsOutput) ExternalIdMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ExternalIdMapping }).(pulumi.StringPtrOutput)
+}
+
+// Lifecycle states of the external resource which reflects the status of the resource being up.
+func (o MonitoredResourceTaskTaskDetailsOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) []string { return v.LifecycleStatusMappingsForUpStatuses }).(pulumi.StringArrayOutput)
+}
+
 // Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 func (o MonitoredResourceTaskTaskDetailsOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) string { return v.Namespace }).(pulumi.StringOutput)
@@ -3786,6 +3837,36 @@ func (o MonitoredResourceTaskTaskDetailsOutput) Namespace() pulumi.StringOutput 
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 func (o MonitoredResourceTaskTaskDetailsOutput) ResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceNameFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceNameFilter }).(pulumi.StringPtrOutput)
+}
+
+// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceNameMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceNameMapping }).(pulumi.StringPtrOutput)
+}
+
+// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceTypeFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceTypeFilter }).(pulumi.StringPtrOutput)
+}
+
+// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+func (o MonitoredResourceTaskTaskDetailsOutput) ResourceTypeMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ResourceTypeMapping }).(pulumi.StringPtrOutput)
+}
+
+// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+func (o MonitoredResourceTaskTaskDetailsOutput) ServiceBaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *string { return v.ServiceBaseUrl }).(pulumi.StringPtrOutput)
+}
+
+// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+func (o MonitoredResourceTaskTaskDetailsOutput) ShouldUseMetricsFlowForStatus() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MonitoredResourceTaskTaskDetails) *bool { return v.ShouldUseMetricsFlowForStatus }).(pulumi.BoolPtrOutput)
 }
 
 // Source from where the metrics pushed to telemetry. Possible values:
@@ -3847,6 +3928,36 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) AvailabilityProxyMetrics() pu
 	}).(pulumi.StringArrayOutput)
 }
 
+// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ConsolePathPrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConsolePathPrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ExternalIdMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExternalIdMapping
+	}).(pulumi.StringPtrOutput)
+}
+
+// Lifecycle states of the external resource which reflects the status of the resource being up.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.LifecycleStatusMappingsForUpStatuses
+	}).(pulumi.StringArrayOutput)
+}
+
 // Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
@@ -3865,6 +3976,66 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceGroup() pulumi.String
 		}
 		return v.ResourceGroup
 	}).(pulumi.StringPtrOutput)
+}
+
+// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceNameFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceNameFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceNameMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceNameMapping
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceTypeFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTypeFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ResourceTypeMapping() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTypeMapping
+	}).(pulumi.StringPtrOutput)
+}
+
+// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ServiceBaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceBaseUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+func (o MonitoredResourceTaskTaskDetailsPtrOutput) ShouldUseMetricsFlowForStatus() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourceTaskTaskDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldUseMetricsFlowForStatus
+	}).(pulumi.BoolPtrOutput)
 }
 
 // Source from where the metrics pushed to telemetry. Possible values:
@@ -4495,6 +4666,8 @@ type MonitoredResourcesListMemberItem struct {
 	License *string `pulumi:"license"`
 	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId *string `pulumi:"parentId"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory *string `pulumi:"resourceCategory"`
 	// Monitored resource display name.
 	ResourceDisplayName *string `pulumi:"resourceDisplayName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -4503,6 +4676,8 @@ type MonitoredResourcesListMemberItem struct {
 	ResourceName *string `pulumi:"resourceName"`
 	// Monitored Resource Type.
 	ResourceType *string `pulumi:"resourceType"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType *string `pulumi:"sourceType"`
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4535,6 +4710,8 @@ type MonitoredResourcesListMemberItemArgs struct {
 	License pulumi.StringPtrInput `pulumi:"license"`
 	// Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ParentId pulumi.StringPtrInput `pulumi:"parentId"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringPtrInput `pulumi:"resourceCategory"`
 	// Monitored resource display name.
 	ResourceDisplayName pulumi.StringPtrInput `pulumi:"resourceDisplayName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -4543,6 +4720,8 @@ type MonitoredResourcesListMemberItemArgs struct {
 	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
 	// Monitored Resource Type.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The current state of the Resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4635,6 +4814,11 @@ func (o MonitoredResourcesListMemberItemOutput) ParentId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ParentId }).(pulumi.StringPtrOutput)
 }
 
+// Resource Category to indicate the kind of resource type.
+func (o MonitoredResourcesListMemberItemOutput) ResourceCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceCategory }).(pulumi.StringPtrOutput)
+}
+
 // Monitored resource display name.
 func (o MonitoredResourcesListMemberItemOutput) ResourceDisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceDisplayName }).(pulumi.StringPtrOutput)
@@ -4653,6 +4837,11 @@ func (o MonitoredResourcesListMemberItemOutput) ResourceName() pulumi.StringPtrO
 // Monitored Resource Type.
 func (o MonitoredResourcesListMemberItemOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o MonitoredResourcesListMemberItemOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Resource.
@@ -5086,6 +5275,10 @@ type MonitoredResourcesSearchItem struct {
 	Name *string `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties []MonitoredResourcesSearchItemProperty `pulumi:"properties"`
+	// Resource category filter.
+	ResourceCategory *string `pulumi:"resourceCategory"`
+	// Source type filter.
+	SourceType *string `pulumi:"sourceType"`
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5135,6 +5328,10 @@ type MonitoredResourcesSearchItemArgs struct {
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties MonitoredResourcesSearchItemPropertyArrayInput `pulumi:"properties"`
+	// Resource category filter.
+	ResourceCategory pulumi.StringPtrInput `pulumi:"resourceCategory"`
+	// Source type filter.
+	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5254,6 +5451,16 @@ func (o MonitoredResourcesSearchItemOutput) Name() pulumi.StringPtrOutput {
 // List of monitored resource properties.
 func (o MonitoredResourcesSearchItemOutput) Properties() MonitoredResourcesSearchItemPropertyArrayOutput {
 	return o.ApplyT(func(v MonitoredResourcesSearchItem) []MonitoredResourcesSearchItemProperty { return v.Properties }).(MonitoredResourcesSearchItemPropertyArrayOutput)
+}
+
+// Resource category filter.
+func (o MonitoredResourcesSearchItemOutput) ResourceCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.ResourceCategory }).(pulumi.StringPtrOutput)
+}
+
+// Source type filter.
+func (o MonitoredResourcesSearchItemOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources with matching lifecycle state.
@@ -7904,6 +8111,8 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollectionItem struct {
 	LogMessage string `pulumi:"logMessage"`
 	// The log type like INFO, WARNING, ERROR, SUCCESS
 	LogType string `pulumi:"logType"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Time the Job log was created
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -7926,6 +8135,8 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs struct {
 	LogMessage pulumi.StringInput `pulumi:"logMessage"`
 	// The log type like INFO, WARNING, ERROR, SUCCESS
 	LogType pulumi.StringInput `pulumi:"logType"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Time the Job log was created
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -7994,6 +8205,11 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) LogMessage() pul
 // The log type like INFO, WARNING, ERROR, SUCCESS
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) LogType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobLogsDiscoveryJobLogCollectionItem) string { return v.LogType }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobLogsDiscoveryJobLogCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Time the Job log was created
@@ -12138,10 +12354,28 @@ type GetMonitoredResourceTaskTaskDetail struct {
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping string `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 	Namespace string `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter string `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping string `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter string `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping string `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl string `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus bool `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -12166,10 +12400,28 @@ type GetMonitoredResourceTaskTaskDetailArgs struct {
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping pulumi.StringInput `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter pulumi.StringInput `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping pulumi.StringInput `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter pulumi.StringInput `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping pulumi.StringInput `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl pulumi.StringInput `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus pulumi.BoolInput `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -12239,6 +12491,21 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) AvailabilityProxyMetrics() pul
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.AvailabilityProxyMetrics }).(pulumi.StringArrayOutput)
 }
 
+// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ConsolePathPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ConsolePathPrefix }).(pulumi.StringOutput)
+}
+
+// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ExternalIdMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ExternalIdMapping }).(pulumi.StringOutput)
+}
+
+// Lifecycle states of the external resource which reflects the status of the resource being up.
+func (o GetMonitoredResourceTaskTaskDetailOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) []string { return v.LifecycleStatusMappingsForUpStatuses }).(pulumi.StringArrayOutput)
+}
+
 // Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
 func (o GetMonitoredResourceTaskTaskDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.Namespace }).(pulumi.StringOutput)
@@ -12247,6 +12514,36 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) Namespace() pulumi.StringOutpu
 // The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceNameFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceNameFilter }).(pulumi.StringOutput)
+}
+
+// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceNameMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceNameMapping }).(pulumi.StringOutput)
+}
+
+// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceTypeFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceTypeFilter }).(pulumi.StringOutput)
+}
+
+// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ResourceTypeMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ResourceTypeMapping }).(pulumi.StringOutput)
+}
+
+// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ServiceBaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) string { return v.ServiceBaseUrl }).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+func (o GetMonitoredResourceTaskTaskDetailOutput) ShouldUseMetricsFlowForStatus() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTaskTaskDetail) bool { return v.ShouldUseMetricsFlowForStatus }).(pulumi.BoolOutput)
 }
 
 // Source from where the metrics pushed to telemetry. Possible values:
@@ -12697,10 +12994,28 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail str
 	AvailabilityProxyMetricCollectionInterval int `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics []string `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix string `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping string `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses []string `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace string `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup string `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter string `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping string `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter string `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping string `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl string `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus bool `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -12725,10 +13040,28 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs
 	AvailabilityProxyMetricCollectionInterval pulumi.IntInput `pulumi:"availabilityProxyMetricCollectionInterval"`
 	// List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
 	AvailabilityProxyMetrics pulumi.StringArrayInput `pulumi:"availabilityProxyMetrics"`
+	// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+	ConsolePathPrefix pulumi.StringInput `pulumi:"consolePathPrefix"`
+	// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+	ExternalIdMapping pulumi.StringInput `pulumi:"externalIdMapping"`
+	// Lifecycle states of the external resource which reflects the status of the resource being up.
+	LifecycleStatusMappingsForUpStatuses pulumi.StringArrayInput `pulumi:"lifecycleStatusMappingsForUpStatuses"`
 	// Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
 	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+	ResourceNameFilter pulumi.StringInput `pulumi:"resourceNameFilter"`
+	// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+	ResourceNameMapping pulumi.StringInput `pulumi:"resourceNameMapping"`
+	// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+	ResourceTypeFilter pulumi.StringInput `pulumi:"resourceTypeFilter"`
+	// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+	ResourceTypeMapping pulumi.StringInput `pulumi:"resourceTypeMapping"`
+	// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+	ServiceBaseUrl pulumi.StringInput `pulumi:"serviceBaseUrl"`
+	// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+	ShouldUseMetricsFlowForStatus pulumi.BoolInput `pulumi:"shouldUseMetricsFlowForStatus"`
 	// Source from where the metrics pushed to telemetry. Possible values:
 	// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
 	// * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
@@ -12802,6 +13135,27 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	}).(pulumi.StringArrayOutput)
 }
 
+// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ConsolePathPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ConsolePathPrefix
+	}).(pulumi.StringOutput)
+}
+
+// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ExternalIdMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ExternalIdMapping
+	}).(pulumi.StringOutput)
+}
+
+// Lifecycle states of the external resource which reflects the status of the resource being up.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) LifecycleStatusMappingsForUpStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) []string {
+		return v.LifecycleStatusMappingsForUpStatuses
+	}).(pulumi.StringArrayOutput)
+}
+
 // Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
@@ -12814,6 +13168,48 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
 		return v.ResourceGroup
 	}).(pulumi.StringOutput)
+}
+
+// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceNameFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ResourceNameFilter
+	}).(pulumi.StringOutput)
+}
+
+// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceNameMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ResourceNameMapping
+	}).(pulumi.StringOutput)
+}
+
+// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceTypeFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ResourceTypeFilter
+	}).(pulumi.StringOutput)
+}
+
+// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ResourceTypeMapping() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ResourceTypeMapping
+	}).(pulumi.StringOutput)
+}
+
+// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ServiceBaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) string {
+		return v.ServiceBaseUrl
+	}).(pulumi.StringOutput)
+}
+
+// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ShouldUseMetricsFlowForStatus() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail) bool {
+		return v.ShouldUseMetricsFlowForStatus
+	}).(pulumi.BoolOutput)
 }
 
 // Source from where the metrics pushed to telemetry. Possible values:
@@ -13327,6 +13723,10 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
 	MetricNamespace string `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name string `pulumi:"name"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory string `pulumi:"resourceCategory"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -13367,6 +13767,10 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
 	MetricNamespace pulumi.StringInput `pulumi:"metricNamespace"`
 	// A filter to return monitored resource types that match exactly with the resource type name given.
 	Name pulumi.StringInput `pulumi:"name"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringInput `pulumi:"resourceCategory"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -13477,6 +13881,18 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Met
 // A filter to return monitored resource types that match exactly with the resource type name given.
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Resource Category to indicate the kind of resource type.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string {
+		return v.ResourceCategory
+	}).(pulumi.StringOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource type.
@@ -14022,8 +14438,12 @@ type GetMonitoredResourcesMonitoredResourceCollectionItem struct {
 	Name string `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties []GetMonitoredResourcesMonitoredResourceCollectionItemProperty `pulumi:"properties"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID.
 	ResourceTimeZone string `pulumi:"resourceTimeZone"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14080,8 +14500,12 @@ type GetMonitoredResourcesMonitoredResourceCollectionItemArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput `pulumi:"properties"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringInput `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID.
 	ResourceTimeZone pulumi.StringInput `pulumi:"resourceTimeZone"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14244,9 +14668,19 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) Properties()
 	}).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
 }
 
+// Resource Category to indicate the kind of resource type.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ResourceCategory }).(pulumi.StringOutput)
+}
+
 // Time zone in the form of tz database canonical zone ID.
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ResourceTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.ResourceTimeZone }).(pulumi.StringOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource.

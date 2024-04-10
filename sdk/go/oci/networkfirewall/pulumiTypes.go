@@ -3351,9 +3351,9 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 
 type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition struct {
 	// Identifier for rule after which this rule lies.
-	AfterRule *string `pulumi:"afterRule"`
+	AfterRule string `pulumi:"afterRule"`
 	// Identifier for rule before which this rule lies.
-	BeforeRule *string `pulumi:"beforeRule"`
+	BeforeRule string `pulumi:"beforeRule"`
 }
 
 // GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionInput is an input type that accepts GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionArgs and GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionOutput values.
@@ -3369,9 +3369,9 @@ type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemP
 
 type GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionArgs struct {
 	// Identifier for rule after which this rule lies.
-	AfterRule pulumi.StringPtrInput `pulumi:"afterRule"`
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
 	// Identifier for rule before which this rule lies.
-	BeforeRule pulumi.StringPtrInput `pulumi:"beforeRule"`
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
 }
 
 func (GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionArgs) ElementType() reflect.Type {
@@ -3401,17 +3401,17 @@ func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionIt
 }
 
 // Identifier for rule after which this rule lies.
-func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionOutput) AfterRule() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition) *string {
+func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition) string {
 		return v.AfterRule
-	}).(pulumi.StringPtrOutput)
+	}).(pulumi.StringOutput)
 }
 
 // Identifier for rule before which this rule lies.
-func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionOutput) BeforeRule() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition) *string {
+func (o GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition) string {
 		return v.BeforeRule
-	}).(pulumi.StringPtrOutput)
+	}).(pulumi.StringOutput)
 }
 
 type GetNetworkFirewallPolicyDecryptionRulesFilter struct {
@@ -4509,9 +4509,9 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCo
 
 type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition struct {
 	// Identifier for rule after which this rule lies.
-	AfterRule *string `pulumi:"afterRule"`
+	AfterRule string `pulumi:"afterRule"`
 	// Identifier for rule before which this rule lies.
-	BeforeRule *string `pulumi:"beforeRule"`
+	BeforeRule string `pulumi:"beforeRule"`
 }
 
 // GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionInput is an input type that accepts GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionArgs and GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionOutput values.
@@ -4527,9 +4527,9 @@ type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosit
 
 type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionArgs struct {
 	// Identifier for rule after which this rule lies.
-	AfterRule pulumi.StringPtrInput `pulumi:"afterRule"`
+	AfterRule pulumi.StringInput `pulumi:"afterRule"`
 	// Identifier for rule before which this rule lies.
-	BeforeRule pulumi.StringPtrInput `pulumi:"beforeRule"`
+	BeforeRule pulumi.StringInput `pulumi:"beforeRule"`
 }
 
 func (GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionArgs) ElementType() reflect.Type {
@@ -4584,17 +4584,17 @@ func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPo
 }
 
 // Identifier for rule after which this rule lies.
-func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionOutput) AfterRule() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition) *string {
+func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionOutput) AfterRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition) string {
 		return v.AfterRule
-	}).(pulumi.StringPtrOutput)
+	}).(pulumi.StringOutput)
 }
 
 // Identifier for rule before which this rule lies.
-func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionOutput) BeforeRule() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition) *string {
+func (o GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionOutput) BeforeRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition) string {
 		return v.BeforeRule
-	}).(pulumi.StringPtrOutput)
+	}).(pulumi.StringOutput)
 }
 
 type GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionArrayOutput struct{ *pulumi.OutputState }

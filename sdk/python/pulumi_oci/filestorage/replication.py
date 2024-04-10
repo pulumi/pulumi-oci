@@ -461,8 +461,8 @@ class Replication(pulumi.CustomResource):
 
         test_replication = oci.file_storage.Replication("testReplication",
             compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_source["test_source"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+            source_id=oci_file_storage_file_system["test_source"]["id"],
+            target_id=oci_file_storage_file_system["test_target"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -542,8 +542,8 @@ class Replication(pulumi.CustomResource):
 
         test_replication = oci.file_storage.Replication("testReplication",
             compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_source["test_source"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+            source_id=oci_file_storage_file_system["test_source"]["id"],
+            target_id=oci_file_storage_file_system["test_target"]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },

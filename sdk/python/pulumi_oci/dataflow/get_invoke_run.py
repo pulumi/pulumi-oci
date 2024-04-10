@@ -22,7 +22,7 @@ class GetInvokeRunResult:
     """
     A collection of values returned by getInvokeRun.
     """
-    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, lifecycle_details=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, pool_id=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, lifecycle_details=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, opc_parent_rpt_url=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, pool_id=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -104,6 +104,9 @@ class GetInvokeRunResult:
         if num_executors and not isinstance(num_executors, int):
             raise TypeError("Expected argument 'num_executors' to be a int")
         pulumi.set(__self__, "num_executors", num_executors)
+        if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
+            raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if opc_request_id and not isinstance(opc_request_id, str):
             raise TypeError("Expected argument 'opc_request_id' to be a str")
         pulumi.set(__self__, "opc_request_id", opc_request_id)
@@ -376,6 +379,11 @@ class GetInvokeRunResult:
         return pulumi.get(self, "num_executors")
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @property
     @pulumi.getter(name="opcRequestId")
     def opc_request_id(self) -> str:
         """
@@ -558,6 +566,7 @@ class AwaitableGetInvokeRunResult(GetInvokeRunResult):
             max_duration_in_minutes=self.max_duration_in_minutes,
             metastore_id=self.metastore_id,
             num_executors=self.num_executors,
+            opc_parent_rpt_url=self.opc_parent_rpt_url,
             opc_request_id=self.opc_request_id,
             owner_principal_id=self.owner_principal_id,
             owner_user_name=self.owner_user_name,
@@ -633,6 +642,7 @@ def get_invoke_run(run_id: Optional[str] = None,
         max_duration_in_minutes=pulumi.get(__ret__, 'max_duration_in_minutes'),
         metastore_id=pulumi.get(__ret__, 'metastore_id'),
         num_executors=pulumi.get(__ret__, 'num_executors'),
+        opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
         opc_request_id=pulumi.get(__ret__, 'opc_request_id'),
         owner_principal_id=pulumi.get(__ret__, 'owner_principal_id'),
         owner_user_name=pulumi.get(__ret__, 'owner_user_name'),

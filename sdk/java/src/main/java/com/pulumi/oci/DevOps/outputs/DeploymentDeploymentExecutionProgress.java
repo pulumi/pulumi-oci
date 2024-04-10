@@ -4,9 +4,9 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
+import com.pulumi.oci.DevOps.outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress;
 import java.lang.String;
-import java.util.Map;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,7 +17,7 @@ public final class DeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private @Nullable Map<String,Object> deployStageExecutionProgress;
+    private @Nullable List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -34,8 +34,8 @@ public final class DeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public Map<String,Object> deployStageExecutionProgress() {
-        return this.deployStageExecutionProgress == null ? Map.of() : this.deployStageExecutionProgress;
+    public List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses() {
+        return this.deployStageExecutionProgresses == null ? List.of() : this.deployStageExecutionProgresses;
     }
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -61,22 +61,25 @@ public final class DeploymentDeploymentExecutionProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> deployStageExecutionProgress;
+        private @Nullable List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
         private @Nullable String timeFinished;
         private @Nullable String timeStarted;
         public Builder() {}
         public Builder(DeploymentDeploymentExecutionProgress defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.deployStageExecutionProgress = defaults.deployStageExecutionProgress;
+    	      this.deployStageExecutionProgresses = defaults.deployStageExecutionProgresses;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgress(@Nullable Map<String,Object> deployStageExecutionProgress) {
+        public Builder deployStageExecutionProgresses(@Nullable List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses) {
 
-            this.deployStageExecutionProgress = deployStageExecutionProgress;
+            this.deployStageExecutionProgresses = deployStageExecutionProgresses;
             return this;
+        }
+        public Builder deployStageExecutionProgresses(DeploymentDeploymentExecutionProgressDeployStageExecutionProgress... deployStageExecutionProgresses) {
+            return deployStageExecutionProgresses(List.of(deployStageExecutionProgresses));
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
@@ -92,7 +95,7 @@ public final class DeploymentDeploymentExecutionProgress {
         }
         public DeploymentDeploymentExecutionProgress build() {
             final var _resultValue = new DeploymentDeploymentExecutionProgress();
-            _resultValue.deployStageExecutionProgress = deployStageExecutionProgress;
+            _resultValue.deployStageExecutionProgresses = deployStageExecutionProgresses;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;
             return _resultValue;

@@ -97,6 +97,18 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         /// <summary>
+        /// Resource category filter.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
+        /// Source type filter.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
+
+        /// <summary>
         /// A filter to return resources with matching lifecycle state.
         /// </summary>
         [Input("state")]

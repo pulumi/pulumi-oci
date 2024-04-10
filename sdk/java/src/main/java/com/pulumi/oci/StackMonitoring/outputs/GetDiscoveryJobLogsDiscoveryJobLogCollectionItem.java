@@ -5,7 +5,9 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -25,6 +27,11 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
      * 
      */
     private String logType;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
     /**
      * @return Time the Job log was created
      * 
@@ -54,6 +61,13 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
         return this.logType;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return Time the Job log was created
      * 
      */
@@ -73,6 +87,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
         private String id;
         private String logMessage;
         private String logType;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem defaults) {
@@ -80,6 +95,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
     	      this.id = defaults.id;
     	      this.logMessage = defaults.logMessage;
     	      this.logType = defaults.logType;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -108,6 +124,14 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "timeCreated");
@@ -120,6 +144,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
             _resultValue.id = id;
             _resultValue.logMessage = logMessage;
             _resultValue.logType = logType;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class BackendSetHealthChecker
     {
         /// <summary>
+        /// (Updatable) DNS healthcheck configurations.
+        /// </summary>
+        public readonly Outputs.BackendSetHealthCheckerDns? Dns;
+        /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         public readonly int? IntervalInMillis;
@@ -22,7 +26,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        /// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         /// </summary>
         public readonly string Protocol;
         /// <summary>
@@ -56,6 +60,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
         [OutputConstructor]
         private BackendSetHealthChecker(
+            Outputs.BackendSetHealthCheckerDns? dns,
+
             int? intervalInMillis,
 
             int? port,
@@ -76,6 +82,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             string? urlPath)
         {
+            Dns = dns;
             IntervalInMillis = intervalInMillis;
             Port = port;
             Protocol = protocol;

@@ -44,7 +44,7 @@ export interface GetBackendSetResult {
      */
     readonly backends: outputs.NetworkLoadBalancer.GetBackendSetBackend[];
     /**
-     * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
     readonly healthCheckers: outputs.NetworkLoadBalancer.GetBackendSetHealthChecker[];
     readonly id: string;
@@ -52,6 +52,10 @@ export interface GetBackendSetResult {
      * IP version associated with the backend set.
      */
     readonly ipVersion: string;
+    /**
+     * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     */
+    readonly isFailOpen: boolean;
     /**
      * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */

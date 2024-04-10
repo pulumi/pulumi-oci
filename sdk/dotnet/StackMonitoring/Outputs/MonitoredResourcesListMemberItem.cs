@@ -42,6 +42,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly string? ParentId;
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        public readonly string? ResourceCategory;
+        /// <summary>
         /// Monitored resource display name.
         /// </summary>
         public readonly string? ResourceDisplayName;
@@ -57,6 +61,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// Monitored Resource Type.
         /// </summary>
         public readonly string? ResourceType;
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        public readonly string? SourceType;
         /// <summary>
         /// The current state of the Resource.
         /// </summary>
@@ -82,6 +90,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string? parentId,
 
+            string? resourceCategory,
+
             string? resourceDisplayName,
 
             string? resourceId,
@@ -89,6 +99,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             string? resourceName,
 
             string? resourceType,
+
+            string? sourceType,
 
             string? state,
 
@@ -101,10 +113,12 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             HostName = hostName;
             License = license;
             ParentId = parentId;
+            ResourceCategory = resourceCategory;
             ResourceDisplayName = resourceDisplayName;
             ResourceId = resourceId;
             ResourceName = resourceName;
             ResourceType = resourceType;
+            SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
         }

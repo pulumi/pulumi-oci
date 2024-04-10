@@ -55,6 +55,21 @@ public final class GetMonitoredResourcesPlainArgs extends com.pulumi.resources.I
     }
 
     /**
+     * A filter to return only resources with matching lifecycleState.
+     * 
+     */
+    @Import(name="status")
+    private @Nullable String status;
+
+    /**
+     * @return A filter to return only resources with matching lifecycleState.
+     * 
+     */
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
+    }
+
+    /**
      * A filter to return resources which were impacted as part of this work request identifier.
      * 
      */
@@ -75,6 +90,7 @@ public final class GetMonitoredResourcesPlainArgs extends com.pulumi.resources.I
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.name = $.name;
+        this.status = $.status;
         this.workRequestId = $.workRequestId;
     }
 
@@ -124,6 +140,17 @@ public final class GetMonitoredResourcesPlainArgs extends com.pulumi.resources.I
          */
         public Builder name(@Nullable String name) {
             $.name = name;
+            return this;
+        }
+
+        /**
+         * @param status A filter to return only resources with matching lifecycleState.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(@Nullable String status) {
+            $.status = status;
             return this;
         }
 

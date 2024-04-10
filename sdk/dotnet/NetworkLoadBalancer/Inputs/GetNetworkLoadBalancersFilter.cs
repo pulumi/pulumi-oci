@@ -12,6 +12,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 
     public sealed class GetNetworkLoadBalancersFilterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 

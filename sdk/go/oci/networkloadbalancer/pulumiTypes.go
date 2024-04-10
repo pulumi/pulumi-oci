@@ -32,7 +32,7 @@ type BackendSetBackend struct {
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight *int `pulumi:"weight"`
 }
 
@@ -66,7 +66,7 @@ type BackendSetBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -160,7 +160,7 @@ func (o BackendSetBackendOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 func (o BackendSetBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -186,11 +186,13 @@ func (o BackendSetBackendArrayOutput) Index(i pulumi.IntInput) BackendSetBackend
 }
 
 type BackendSetHealthChecker struct {
+	// (Updatable) DNS healthcheck configurations.
+	Dns *BackendSetHealthCheckerDns `pulumi:"dns"`
 	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis *int `pulumi:"intervalInMillis"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port *int `pulumi:"port"`
-	// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol string `pulumi:"protocol"`
 	// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData *string `pulumi:"requestData"`
@@ -220,11 +222,13 @@ type BackendSetHealthCheckerInput interface {
 }
 
 type BackendSetHealthCheckerArgs struct {
+	// (Updatable) DNS healthcheck configurations.
+	Dns BackendSetHealthCheckerDnsPtrInput `pulumi:"dns"`
 	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis pulumi.IntPtrInput `pulumi:"intervalInMillis"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData pulumi.StringPtrInput `pulumi:"requestData"`
@@ -319,6 +323,11 @@ func (o BackendSetHealthCheckerOutput) ToBackendSetHealthCheckerPtrOutputWithCon
 	}).(BackendSetHealthCheckerPtrOutput)
 }
 
+// (Updatable) DNS healthcheck configurations.
+func (o BackendSetHealthCheckerOutput) Dns() BackendSetHealthCheckerDnsPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthChecker) *BackendSetHealthCheckerDns { return v.Dns }).(BackendSetHealthCheckerDnsPtrOutput)
+}
+
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 func (o BackendSetHealthCheckerOutput) IntervalInMillis() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.IntervalInMillis }).(pulumi.IntPtrOutput)
@@ -329,7 +338,7 @@ func (o BackendSetHealthCheckerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 func (o BackendSetHealthCheckerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v BackendSetHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -393,6 +402,16 @@ func (o BackendSetHealthCheckerPtrOutput) Elem() BackendSetHealthCheckerOutput {
 	}).(BackendSetHealthCheckerOutput)
 }
 
+// (Updatable) DNS healthcheck configurations.
+func (o BackendSetHealthCheckerPtrOutput) Dns() BackendSetHealthCheckerDnsPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthChecker) *BackendSetHealthCheckerDns {
+		if v == nil {
+			return nil
+		}
+		return v.Dns
+	}).(BackendSetHealthCheckerDnsPtrOutput)
+}
+
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 func (o BackendSetHealthCheckerPtrOutput) IntervalInMillis() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BackendSetHealthChecker) *int {
@@ -413,7 +432,7 @@ func (o BackendSetHealthCheckerPtrOutput) Port() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 func (o BackendSetHealthCheckerPtrOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BackendSetHealthChecker) *string {
 		if v == nil {
@@ -493,10 +512,223 @@ func (o BackendSetHealthCheckerPtrOutput) UrlPath() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type BackendSetHealthCheckerDns struct {
+	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName string `pulumi:"domainName"`
+	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass *string `pulumi:"queryClass"`
+	// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType *string `pulumi:"queryType"`
+	// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes []string `pulumi:"rcodes"`
+	// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol *string `pulumi:"transportProtocol"`
+}
+
+// BackendSetHealthCheckerDnsInput is an input type that accepts BackendSetHealthCheckerDnsArgs and BackendSetHealthCheckerDnsOutput values.
+// You can construct a concrete instance of `BackendSetHealthCheckerDnsInput` via:
+//
+//	BackendSetHealthCheckerDnsArgs{...}
+type BackendSetHealthCheckerDnsInput interface {
+	pulumi.Input
+
+	ToBackendSetHealthCheckerDnsOutput() BackendSetHealthCheckerDnsOutput
+	ToBackendSetHealthCheckerDnsOutputWithContext(context.Context) BackendSetHealthCheckerDnsOutput
+}
+
+type BackendSetHealthCheckerDnsArgs struct {
+	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass pulumi.StringPtrInput `pulumi:"queryClass"`
+	// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
+	// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes pulumi.StringArrayInput `pulumi:"rcodes"`
+	// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol pulumi.StringPtrInput `pulumi:"transportProtocol"`
+}
+
+func (BackendSetHealthCheckerDnsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackendSetHealthCheckerDns)(nil)).Elem()
+}
+
+func (i BackendSetHealthCheckerDnsArgs) ToBackendSetHealthCheckerDnsOutput() BackendSetHealthCheckerDnsOutput {
+	return i.ToBackendSetHealthCheckerDnsOutputWithContext(context.Background())
+}
+
+func (i BackendSetHealthCheckerDnsArgs) ToBackendSetHealthCheckerDnsOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerDnsOutput)
+}
+
+func (i BackendSetHealthCheckerDnsArgs) ToBackendSetHealthCheckerDnsPtrOutput() BackendSetHealthCheckerDnsPtrOutput {
+	return i.ToBackendSetHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (i BackendSetHealthCheckerDnsArgs) ToBackendSetHealthCheckerDnsPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerDnsOutput).ToBackendSetHealthCheckerDnsPtrOutputWithContext(ctx)
+}
+
+// BackendSetHealthCheckerDnsPtrInput is an input type that accepts BackendSetHealthCheckerDnsArgs, BackendSetHealthCheckerDnsPtr and BackendSetHealthCheckerDnsPtrOutput values.
+// You can construct a concrete instance of `BackendSetHealthCheckerDnsPtrInput` via:
+//
+//	        BackendSetHealthCheckerDnsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BackendSetHealthCheckerDnsPtrInput interface {
+	pulumi.Input
+
+	ToBackendSetHealthCheckerDnsPtrOutput() BackendSetHealthCheckerDnsPtrOutput
+	ToBackendSetHealthCheckerDnsPtrOutputWithContext(context.Context) BackendSetHealthCheckerDnsPtrOutput
+}
+
+type backendSetHealthCheckerDnsPtrType BackendSetHealthCheckerDnsArgs
+
+func BackendSetHealthCheckerDnsPtr(v *BackendSetHealthCheckerDnsArgs) BackendSetHealthCheckerDnsPtrInput {
+	return (*backendSetHealthCheckerDnsPtrType)(v)
+}
+
+func (*backendSetHealthCheckerDnsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackendSetHealthCheckerDns)(nil)).Elem()
+}
+
+func (i *backendSetHealthCheckerDnsPtrType) ToBackendSetHealthCheckerDnsPtrOutput() BackendSetHealthCheckerDnsPtrOutput {
+	return i.ToBackendSetHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (i *backendSetHealthCheckerDnsPtrType) ToBackendSetHealthCheckerDnsPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BackendSetHealthCheckerDnsPtrOutput)
+}
+
+type BackendSetHealthCheckerDnsOutput struct{ *pulumi.OutputState }
+
+func (BackendSetHealthCheckerDnsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BackendSetHealthCheckerDns)(nil)).Elem()
+}
+
+func (o BackendSetHealthCheckerDnsOutput) ToBackendSetHealthCheckerDnsOutput() BackendSetHealthCheckerDnsOutput {
+	return o
+}
+
+func (o BackendSetHealthCheckerDnsOutput) ToBackendSetHealthCheckerDnsOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsOutput {
+	return o
+}
+
+func (o BackendSetHealthCheckerDnsOutput) ToBackendSetHealthCheckerDnsPtrOutput() BackendSetHealthCheckerDnsPtrOutput {
+	return o.ToBackendSetHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (o BackendSetHealthCheckerDnsOutput) ToBackendSetHealthCheckerDnsPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BackendSetHealthCheckerDns) *BackendSetHealthCheckerDns {
+		return &v
+	}).(BackendSetHealthCheckerDnsPtrOutput)
+}
+
+// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o BackendSetHealthCheckerDnsOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v BackendSetHealthCheckerDns) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o BackendSetHealthCheckerDnsOutput) QueryClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthCheckerDns) *string { return v.QueryClass }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o BackendSetHealthCheckerDnsOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthCheckerDns) *string { return v.QueryType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o BackendSetHealthCheckerDnsOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BackendSetHealthCheckerDns) []string { return v.Rcodes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o BackendSetHealthCheckerDnsOutput) TransportProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackendSetHealthCheckerDns) *string { return v.TransportProtocol }).(pulumi.StringPtrOutput)
+}
+
+type BackendSetHealthCheckerDnsPtrOutput struct{ *pulumi.OutputState }
+
+func (BackendSetHealthCheckerDnsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BackendSetHealthCheckerDns)(nil)).Elem()
+}
+
+func (o BackendSetHealthCheckerDnsPtrOutput) ToBackendSetHealthCheckerDnsPtrOutput() BackendSetHealthCheckerDnsPtrOutput {
+	return o
+}
+
+func (o BackendSetHealthCheckerDnsPtrOutput) ToBackendSetHealthCheckerDnsPtrOutputWithContext(ctx context.Context) BackendSetHealthCheckerDnsPtrOutput {
+	return o
+}
+
+func (o BackendSetHealthCheckerDnsPtrOutput) Elem() BackendSetHealthCheckerDnsOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) BackendSetHealthCheckerDns {
+		if v != nil {
+			return *v
+		}
+		var ret BackendSetHealthCheckerDns
+		return ret
+	}).(BackendSetHealthCheckerDnsOutput)
+}
+
+// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o BackendSetHealthCheckerDnsPtrOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DomainName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o BackendSetHealthCheckerDnsPtrOutput) QueryClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryClass
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o BackendSetHealthCheckerDnsPtrOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o BackendSetHealthCheckerDnsPtrOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Rcodes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o BackendSetHealthCheckerDnsPtrOutput) TransportProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BackendSetHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TransportProtocol
+	}).(pulumi.StringPtrOutput)
+}
+
 type NetworkLoadBalancerIpAddress struct {
-	// An IP address.  Example: `192.168.0.3`
+	// The IP address of the backend server. Example: `10.0.0.3`
 	IpAddress *string `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion *string `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	IsPublic *bool `pulumi:"isPublic"`
@@ -516,9 +748,9 @@ type NetworkLoadBalancerIpAddressInput interface {
 }
 
 type NetworkLoadBalancerIpAddressArgs struct {
-	// An IP address.  Example: `192.168.0.3`
+	// The IP address of the backend server. Example: `10.0.0.3`
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
@@ -577,12 +809,12 @@ func (o NetworkLoadBalancerIpAddressOutput) ToNetworkLoadBalancerIpAddressOutput
 	return o
 }
 
-// An IP address.  Example: `192.168.0.3`
+// The IP address of the backend server. Example: `10.0.0.3`
 func (o NetworkLoadBalancerIpAddressOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerIpAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// IP version associated with this IP address.
+// IP version associated with the listener.
 func (o NetworkLoadBalancerIpAddressOutput) IpVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerIpAddress) *string { return v.IpVersion }).(pulumi.StringPtrOutput)
 }
@@ -878,7 +1110,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight *int `pulumi:"weight"`
 }
 
@@ -912,7 +1144,7 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
-	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -1006,7 +1238,7 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) TargetId() pulumi.S
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1032,6 +1264,8 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput) Index(i pulumi
 }
 
 type NetworkLoadBalancersBackendSetsUnifiedHealthChecker struct {
+	// (Updatable) DNS healthcheck configurations.
+	Dns *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns `pulumi:"dns"`
 	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis *int `pulumi:"intervalInMillis"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1066,6 +1300,8 @@ type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput interface {
 }
 
 type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs struct {
+	// (Updatable) DNS healthcheck configurations.
+	Dns NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput `pulumi:"dns"`
 	// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis pulumi.IntPtrInput `pulumi:"intervalInMillis"`
 	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
@@ -1165,6 +1401,13 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) ToNetworkLoad
 	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput)
 }
 
+// (Updatable) DNS healthcheck configurations.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) Dns() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns {
+		return v.Dns
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput)
+}
+
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput) IntervalInMillis() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *int { return v.IntervalInMillis }).(pulumi.IntPtrOutput)
@@ -1237,6 +1480,16 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Elem() Net
 		var ret NetworkLoadBalancersBackendSetsUnifiedHealthChecker
 		return ret
 	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput)
+}
+
+// (Updatable) DNS healthcheck configurations.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) Dns() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthChecker) *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns {
+		if v == nil {
+			return nil
+		}
+		return v.Dns
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput)
 }
 
 // (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -1336,6 +1589,219 @@ func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput) UrlPath() 
 			return nil
 		}
 		return v.UrlPath
+	}).(pulumi.StringPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns struct {
+	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName string `pulumi:"domainName"`
+	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass *string `pulumi:"queryClass"`
+	// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType *string `pulumi:"queryType"`
+	// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes []string `pulumi:"rcodes"`
+	// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol *string `pulumi:"transportProtocol"`
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsInput` via:
+//
+//	NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs{...}
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs struct {
+	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass pulumi.StringPtrInput `pulumi:"queryClass"`
+	// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
+	// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes pulumi.StringArrayInput `pulumi:"rcodes"`
+	// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol pulumi.StringPtrInput `pulumi:"transportProtocol"`
+}
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns)(nil)).Elem()
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput)
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (i NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput).ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(ctx)
+}
+
+// NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput is an input type that accepts NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs, NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtr and NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput values.
+// You can construct a concrete instance of `NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput` via:
+//
+//	        NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs{...}
+//
+//	or:
+//
+//	        nil
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput interface {
+	pulumi.Input
+
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput
+	ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput
+}
+
+type networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrType NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs
+
+func NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtr(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput {
+	return (*networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrType)(v)
+}
+
+func (*networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns)(nil)).Elem()
+}
+
+func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrType) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return i.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (i *networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrType) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o.ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(context.Background())
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns {
+		return &v
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput)
+}
+
+// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) QueryClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string { return v.QueryClass }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string { return v.QueryType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) []string { return v.Rcodes }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput) TransportProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string { return v.TransportProtocol }).(pulumi.StringPtrOutput)
+}
+
+type NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput struct{ *pulumi.OutputState }
+
+func (NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns)(nil)).Elem()
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) ToNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutputWithContext(ctx context.Context) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput {
+	return o
+}
+
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) Elem() NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns {
+		if v != nil {
+			return *v
+		}
+		var ret NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns
+		return ret
+	}).(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput)
+}
+
+// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DomainName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) QueryClass() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryClass
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) QueryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.QueryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Rcodes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput) TransportProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TransportProtocol
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1450,7 +1916,7 @@ type GetBackendSetBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -1460,7 +1926,7 @@ type GetBackendSetBackend struct {
 	Port int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId string `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight int `pulumi:"weight"`
 }
 
@@ -1480,7 +1946,7 @@ type GetBackendSetBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -1490,7 +1956,7 @@ type GetBackendSetBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -1555,7 +2021,7 @@ func (o GetBackendSetBackendOutput) IsBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 func (o GetBackendSetBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -1580,7 +2046,7 @@ func (o GetBackendSetBackendOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 func (o GetBackendSetBackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetBackend) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -1606,11 +2072,13 @@ func (o GetBackendSetBackendArrayOutput) Index(i pulumi.IntInput) GetBackendSetB
 }
 
 type GetBackendSetHealthChecker struct {
+	// DNS healthcheck configurations.
+	Dns []GetBackendSetHealthCheckerDn `pulumi:"dns"`
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis int `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port int `pulumi:"port"`
-	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol string `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData string `pulumi:"requestData"`
@@ -1640,11 +2108,13 @@ type GetBackendSetHealthCheckerInput interface {
 }
 
 type GetBackendSetHealthCheckerArgs struct {
+	// DNS healthcheck configurations.
+	Dns GetBackendSetHealthCheckerDnArrayInput `pulumi:"dns"`
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis pulumi.IntInput `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
-	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData pulumi.StringInput `pulumi:"requestData"`
@@ -1713,6 +2183,11 @@ func (o GetBackendSetHealthCheckerOutput) ToGetBackendSetHealthCheckerOutputWith
 	return o
 }
 
+// DNS healthcheck configurations.
+func (o GetBackendSetHealthCheckerOutput) Dns() GetBackendSetHealthCheckerDnArrayOutput {
+	return o.ApplyT(func(v GetBackendSetHealthChecker) []GetBackendSetHealthCheckerDn { return v.Dns }).(GetBackendSetHealthCheckerDnArrayOutput)
+}
+
 // The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 func (o GetBackendSetHealthCheckerOutput) IntervalInMillis() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.IntervalInMillis }).(pulumi.IntOutput)
@@ -1723,7 +2198,7 @@ func (o GetBackendSetHealthCheckerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetHealthChecker) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 func (o GetBackendSetHealthCheckerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -1781,6 +2256,139 @@ func (o GetBackendSetHealthCheckerArrayOutput) Index(i pulumi.IntInput) GetBacke
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetHealthChecker {
 		return vs[0].([]GetBackendSetHealthChecker)[vs[1].(int)]
 	}).(GetBackendSetHealthCheckerOutput)
+}
+
+type GetBackendSetHealthCheckerDn struct {
+	// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName string `pulumi:"domainName"`
+	// The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass string `pulumi:"queryClass"`
+	// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType string `pulumi:"queryType"`
+	// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes []string `pulumi:"rcodes"`
+	// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol string `pulumi:"transportProtocol"`
+}
+
+// GetBackendSetHealthCheckerDnInput is an input type that accepts GetBackendSetHealthCheckerDnArgs and GetBackendSetHealthCheckerDnOutput values.
+// You can construct a concrete instance of `GetBackendSetHealthCheckerDnInput` via:
+//
+//	GetBackendSetHealthCheckerDnArgs{...}
+type GetBackendSetHealthCheckerDnInput interface {
+	pulumi.Input
+
+	ToGetBackendSetHealthCheckerDnOutput() GetBackendSetHealthCheckerDnOutput
+	ToGetBackendSetHealthCheckerDnOutputWithContext(context.Context) GetBackendSetHealthCheckerDnOutput
+}
+
+type GetBackendSetHealthCheckerDnArgs struct {
+	// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass pulumi.StringInput `pulumi:"queryClass"`
+	// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType pulumi.StringInput `pulumi:"queryType"`
+	// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes pulumi.StringArrayInput `pulumi:"rcodes"`
+	// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol pulumi.StringInput `pulumi:"transportProtocol"`
+}
+
+func (GetBackendSetHealthCheckerDnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackendSetHealthCheckerDn)(nil)).Elem()
+}
+
+func (i GetBackendSetHealthCheckerDnArgs) ToGetBackendSetHealthCheckerDnOutput() GetBackendSetHealthCheckerDnOutput {
+	return i.ToGetBackendSetHealthCheckerDnOutputWithContext(context.Background())
+}
+
+func (i GetBackendSetHealthCheckerDnArgs) ToGetBackendSetHealthCheckerDnOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerDnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetHealthCheckerDnOutput)
+}
+
+// GetBackendSetHealthCheckerDnArrayInput is an input type that accepts GetBackendSetHealthCheckerDnArray and GetBackendSetHealthCheckerDnArrayOutput values.
+// You can construct a concrete instance of `GetBackendSetHealthCheckerDnArrayInput` via:
+//
+//	GetBackendSetHealthCheckerDnArray{ GetBackendSetHealthCheckerDnArgs{...} }
+type GetBackendSetHealthCheckerDnArrayInput interface {
+	pulumi.Input
+
+	ToGetBackendSetHealthCheckerDnArrayOutput() GetBackendSetHealthCheckerDnArrayOutput
+	ToGetBackendSetHealthCheckerDnArrayOutputWithContext(context.Context) GetBackendSetHealthCheckerDnArrayOutput
+}
+
+type GetBackendSetHealthCheckerDnArray []GetBackendSetHealthCheckerDnInput
+
+func (GetBackendSetHealthCheckerDnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackendSetHealthCheckerDn)(nil)).Elem()
+}
+
+func (i GetBackendSetHealthCheckerDnArray) ToGetBackendSetHealthCheckerDnArrayOutput() GetBackendSetHealthCheckerDnArrayOutput {
+	return i.ToGetBackendSetHealthCheckerDnArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackendSetHealthCheckerDnArray) ToGetBackendSetHealthCheckerDnArrayOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerDnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetHealthCheckerDnArrayOutput)
+}
+
+type GetBackendSetHealthCheckerDnOutput struct{ *pulumi.OutputState }
+
+func (GetBackendSetHealthCheckerDnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackendSetHealthCheckerDn)(nil)).Elem()
+}
+
+func (o GetBackendSetHealthCheckerDnOutput) ToGetBackendSetHealthCheckerDnOutput() GetBackendSetHealthCheckerDnOutput {
+	return o
+}
+
+func (o GetBackendSetHealthCheckerDnOutput) ToGetBackendSetHealthCheckerDnOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerDnOutput {
+	return o
+}
+
+// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o GetBackendSetHealthCheckerDnOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetHealthCheckerDn) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o GetBackendSetHealthCheckerDnOutput) QueryClass() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetHealthCheckerDn) string { return v.QueryClass }).(pulumi.StringOutput)
+}
+
+// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o GetBackendSetHealthCheckerDnOutput) QueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetHealthCheckerDn) string { return v.QueryType }).(pulumi.StringOutput)
+}
+
+// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o GetBackendSetHealthCheckerDnOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackendSetHealthCheckerDn) []string { return v.Rcodes }).(pulumi.StringArrayOutput)
+}
+
+// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o GetBackendSetHealthCheckerDnOutput) TransportProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetHealthCheckerDn) string { return v.TransportProtocol }).(pulumi.StringOutput)
+}
+
+type GetBackendSetHealthCheckerDnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackendSetHealthCheckerDnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackendSetHealthCheckerDn)(nil)).Elem()
+}
+
+func (o GetBackendSetHealthCheckerDnArrayOutput) ToGetBackendSetHealthCheckerDnArrayOutput() GetBackendSetHealthCheckerDnArrayOutput {
+	return o
+}
+
+func (o GetBackendSetHealthCheckerDnArrayOutput) ToGetBackendSetHealthCheckerDnArrayOutputWithContext(ctx context.Context) GetBackendSetHealthCheckerDnArrayOutput {
+	return o
+}
+
+func (o GetBackendSetHealthCheckerDnArrayOutput) Index(i pulumi.IntInput) GetBackendSetHealthCheckerDnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetHealthCheckerDn {
+		return vs[0].([]GetBackendSetHealthCheckerDn)[vs[1].(int)]
+	}).(GetBackendSetHealthCheckerDnOutput)
 }
 
 type GetBackendSetsBackendSetCollection struct {
@@ -1880,11 +2488,13 @@ func (o GetBackendSetsBackendSetCollectionArrayOutput) Index(i pulumi.IntInput) 
 type GetBackendSetsBackendSetCollectionItem struct {
 	// Array of backends.
 	Backends []GetBackendSetsBackendSetCollectionItemBackend `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers []GetBackendSetsBackendSetCollectionItemHealthChecker `pulumi:"healthCheckers"`
 	Id             string                                                `pulumi:"id"`
 	// IP version associated with the backend set.
 	IpVersion string `pulumi:"ipVersion"`
+	// If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+	IsFailOpen bool `pulumi:"isFailOpen"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -1909,11 +2519,13 @@ type GetBackendSetsBackendSetCollectionItemInput interface {
 type GetBackendSetsBackendSetCollectionItemArgs struct {
 	// Array of backends.
 	Backends GetBackendSetsBackendSetCollectionItemBackendArrayInput `pulumi:"backends"`
-	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 	HealthCheckers GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput `pulumi:"healthCheckers"`
 	Id             pulumi.StringInput                                            `pulumi:"id"`
 	// IP version associated with the backend set.
 	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
+	// If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+	IsFailOpen pulumi.BoolInput `pulumi:"isFailOpen"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource pulumi.BoolInput `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -1982,7 +2594,7 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) Backends() GetBackendSetsB
 	}).(GetBackendSetsBackendSetCollectionItemBackendArrayOutput)
 }
 
-// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
 func (o GetBackendSetsBackendSetCollectionItemOutput) HealthCheckers() GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) []GetBackendSetsBackendSetCollectionItemHealthChecker {
 		return v.HealthCheckers
@@ -1996,6 +2608,11 @@ func (o GetBackendSetsBackendSetCollectionItemOutput) Id() pulumi.StringOutput {
 // IP version associated with the backend set.
 func (o GetBackendSetsBackendSetCollectionItemOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) string { return v.IpVersion }).(pulumi.StringOutput)
+}
+
+// If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+func (o GetBackendSetsBackendSetCollectionItemOutput) IsFailOpen() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItem) bool { return v.IsFailOpen }).(pulumi.BoolOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -2043,7 +2660,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup bool `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 	IsDrain bool `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline bool `pulumi:"isOffline"`
@@ -2053,7 +2670,7 @@ type GetBackendSetsBackendSetCollectionItemBackend struct {
 	Port int `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId string `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight int `pulumi:"weight"`
 }
 
@@ -2073,7 +2690,7 @@ type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
 	IsBackup pulumi.BoolInput `pulumi:"isBackup"`
-	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+	// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 	IsDrain pulumi.BoolInput `pulumi:"isDrain"`
 	// Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolInput `pulumi:"isOffline"`
@@ -2083,7 +2700,7 @@ type GetBackendSetsBackendSetCollectionItemBackendArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringInput `pulumi:"targetId"`
-	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+	// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -2148,7 +2765,7 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsBackup() pulumi.B
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsBackup }).(pulumi.BoolOutput)
 }
 
-// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+// Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
 func (o GetBackendSetsBackendSetCollectionItemBackendOutput) IsDrain() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) bool { return v.IsDrain }).(pulumi.BoolOutput)
 }
@@ -2173,7 +2790,7 @@ func (o GetBackendSetsBackendSetCollectionItemBackendOutput) TargetId() pulumi.S
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+// The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
 func (o GetBackendSetsBackendSetCollectionItemBackendOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemBackend) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -2199,11 +2816,13 @@ func (o GetBackendSetsBackendSetCollectionItemBackendArrayOutput) Index(i pulumi
 }
 
 type GetBackendSetsBackendSetCollectionItemHealthChecker struct {
+	// DNS healthcheck configurations.
+	Dns []GetBackendSetsBackendSetCollectionItemHealthCheckerDn `pulumi:"dns"`
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis int `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port int `pulumi:"port"`
-	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol string `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData string `pulumi:"requestData"`
@@ -2233,11 +2852,13 @@ type GetBackendSetsBackendSetCollectionItemHealthCheckerInput interface {
 }
 
 type GetBackendSetsBackendSetCollectionItemHealthCheckerArgs struct {
+	// DNS healthcheck configurations.
+	Dns GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayInput `pulumi:"dns"`
 	// The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 	IntervalInMillis pulumi.IntInput `pulumi:"intervalInMillis"`
 	// The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
-	// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+	// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 	// Base64 encoded pattern to be sent as UDP or TCP health check probe.
 	RequestData pulumi.StringInput `pulumi:"requestData"`
@@ -2306,6 +2927,13 @@ func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) ToGetBackendS
 	return o
 }
 
+// DNS healthcheck configurations.
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Dns() GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) []GetBackendSetsBackendSetCollectionItemHealthCheckerDn {
+		return v.Dns
+	}).(GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput)
+}
+
 // The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
 func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) IntervalInMillis() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.IntervalInMillis }).(pulumi.IntOutput)
@@ -2316,7 +2944,7 @@ func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Port() pulumi
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+// The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
 func (o GetBackendSetsBackendSetCollectionItemHealthCheckerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthChecker) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -2374,6 +3002,139 @@ func (o GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput) Index(i 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendSetCollectionItemHealthChecker {
 		return vs[0].([]GetBackendSetsBackendSetCollectionItemHealthChecker)[vs[1].(int)]
 	}).(GetBackendSetsBackendSetCollectionItemHealthCheckerOutput)
+}
+
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDn struct {
+	// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName string `pulumi:"domainName"`
+	// The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass string `pulumi:"queryClass"`
+	// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType string `pulumi:"queryType"`
+	// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes []string `pulumi:"rcodes"`
+	// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol string `pulumi:"transportProtocol"`
+}
+
+// GetBackendSetsBackendSetCollectionItemHealthCheckerDnInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs and GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput values.
+// You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemHealthCheckerDnInput` via:
+//
+//	GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs{...}
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnInput interface {
+	pulumi.Input
+
+	ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput
+	ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutputWithContext(context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput
+}
+
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs struct {
+	// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	DomainName pulumi.StringInput `pulumi:"domainName"`
+	// The class the dns health check query to use; either IN or CH.  Example: `IN`
+	QueryClass pulumi.StringInput `pulumi:"queryClass"`
+	// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+	QueryType pulumi.StringInput `pulumi:"queryType"`
+	// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+	Rcodes pulumi.StringArrayInput `pulumi:"rcodes"`
+	// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+	TransportProtocol pulumi.StringInput `pulumi:"transportProtocol"`
+}
+
+func (GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerDn)(nil)).Elem()
+}
+
+func (i GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput {
+	return i.ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutputWithContext(context.Background())
+}
+
+func (i GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput)
+}
+
+// GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayInput is an input type that accepts GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray and GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput values.
+// You can construct a concrete instance of `GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayInput` via:
+//
+//	GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray{ GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs{...} }
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayInput interface {
+	pulumi.Input
+
+	ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput
+	ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutputWithContext(context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput
+}
+
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray []GetBackendSetsBackendSetCollectionItemHealthCheckerDnInput
+
+func (GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackendSetsBackendSetCollectionItemHealthCheckerDn)(nil)).Elem()
+}
+
+func (i GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput {
+	return i.ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutputWithContext(context.Background())
+}
+
+func (i GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput)
+}
+
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput struct{ *pulumi.OutputState }
+
+func (GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerDn)(nil)).Elem()
+}
+
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput {
+	return o
+}
+
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput {
+	return o
+}
+
+// The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) DomainName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthCheckerDn) string { return v.DomainName }).(pulumi.StringOutput)
+}
+
+// The class the dns health check query to use; either IN or CH.  Example: `IN`
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) QueryClass() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthCheckerDn) string { return v.QueryClass }).(pulumi.StringOutput)
+}
+
+// The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) QueryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthCheckerDn) string { return v.QueryType }).(pulumi.StringOutput)
+}
+
+// An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) Rcodes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthCheckerDn) []string { return v.Rcodes }).(pulumi.StringArrayOutput)
+}
+
+// DNS transport protocol; either UDP or TCP.  Example: `UDP`
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput) TransportProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackendSetsBackendSetCollectionItemHealthCheckerDn) string { return v.TransportProtocol }).(pulumi.StringOutput)
+}
+
+type GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBackendSetsBackendSetCollectionItemHealthCheckerDn)(nil)).Elem()
+}
+
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput() GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput {
+	return o
+}
+
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput) ToGetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutputWithContext(ctx context.Context) GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput {
+	return o
+}
+
+func (o GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput) Index(i pulumi.IntInput) GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBackendSetsBackendSetCollectionItemHealthCheckerDn {
+		return vs[0].([]GetBackendSetsBackendSetCollectionItemHealthCheckerDn)[vs[1].(int)]
+	}).(GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput)
 }
 
 type GetBackendSetsFilter struct {
@@ -3226,7 +3987,7 @@ func (o GetListenersListenerCollectionItemArrayOutput) Index(i pulumi.IntInput) 
 type GetNetworkLoadBalancerIpAddress struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress string `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion string `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	IsPublic bool `pulumi:"isPublic"`
@@ -3248,7 +4009,7 @@ type GetNetworkLoadBalancerIpAddressInput interface {
 type GetNetworkLoadBalancerIpAddressArgs struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
@@ -3312,7 +4073,7 @@ func (o GetNetworkLoadBalancerIpAddressOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// IP version associated with this IP address.
+// IP version associated with the listener.
 func (o GetNetworkLoadBalancerIpAddressOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancerIpAddress) string { return v.IpVersion }).(pulumi.StringOutput)
 }
@@ -3544,6 +4305,7 @@ func (o GetNetworkLoadBalancerReservedIpArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetNetworkLoadBalancersFilter struct {
+	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -3561,6 +4323,7 @@ type GetNetworkLoadBalancersFilterInput interface {
 }
 
 type GetNetworkLoadBalancersFilterArgs struct {
+	// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -3617,6 +4380,7 @@ func (o GetNetworkLoadBalancersFilterOutput) ToGetNetworkLoadBalancersFilterOutp
 	return o
 }
 
+// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
 func (o GetNetworkLoadBalancersFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4024,7 +4788,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArrayOutput) Ind
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress string `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion string `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	// If "true", then the IP address is public and accessible from the internet.
@@ -4047,7 +4811,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressInput inte
 type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressArgs struct {
 	// An IP address.  Example: `192.168.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// IP version associated with this IP address.
+	// IP version associated with the listener.
 	IpVersion pulumi.StringInput `pulumi:"ipVersion"`
 	// Whether the IP address is public or private.
 	// If "true", then the IP address is public and accessible from the internet.
@@ -4112,7 +4876,7 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput)
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// IP version associated with this IP address.
+// IP version associated with the listener.
 func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress) string { return v.IpVersion }).(pulumi.StringOutput)
 }
@@ -4759,6 +5523,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BackendSetBackendArrayInput)(nil)).Elem(), BackendSetBackendArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackendSetHealthCheckerInput)(nil)).Elem(), BackendSetHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BackendSetHealthCheckerPtrInput)(nil)).Elem(), BackendSetHealthCheckerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackendSetHealthCheckerDnsInput)(nil)).Elem(), BackendSetHealthCheckerDnsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BackendSetHealthCheckerDnsPtrInput)(nil)).Elem(), BackendSetHealthCheckerDnsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerIpAddressInput)(nil)).Elem(), NetworkLoadBalancerIpAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerIpAddressArrayInput)(nil)).Elem(), NetworkLoadBalancerIpAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancerIpAddressReservedIpInput)(nil)).Elem(), NetworkLoadBalancerIpAddressReservedIpArgs{})
@@ -4769,12 +5535,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedBackendArrayInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedBackendArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrInput)(nil)).Elem(), NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendHealthHealthCheckResultInput)(nil)).Elem(), GetBackendHealthHealthCheckResultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendHealthHealthCheckResultArrayInput)(nil)).Elem(), GetBackendHealthHealthCheckResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetBackendInput)(nil)).Elem(), GetBackendSetBackendArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetBackendArrayInput)(nil)).Elem(), GetBackendSetBackendArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetHealthCheckerInput)(nil)).Elem(), GetBackendSetHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetHealthCheckerArrayInput)(nil)).Elem(), GetBackendSetHealthCheckerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetHealthCheckerDnInput)(nil)).Elem(), GetBackendSetHealthCheckerDnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetHealthCheckerDnArrayInput)(nil)).Elem(), GetBackendSetHealthCheckerDnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionArrayInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemArgs{})
@@ -4783,6 +5553,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemBackendArrayInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemBackendArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemHealthCheckerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerArrayInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemHealthCheckerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerDnInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayInput)(nil)).Elem(), GetBackendSetsBackendSetCollectionItemHealthCheckerDnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsFilterInput)(nil)).Elem(), GetBackendSetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendSetsFilterArrayInput)(nil)).Elem(), GetBackendSetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackendsBackendCollectionInput)(nil)).Elem(), GetBackendsBackendCollectionArgs{})
@@ -4827,6 +5599,8 @@ func init() {
 	pulumi.RegisterOutputType(BackendSetBackendArrayOutput{})
 	pulumi.RegisterOutputType(BackendSetHealthCheckerOutput{})
 	pulumi.RegisterOutputType(BackendSetHealthCheckerPtrOutput{})
+	pulumi.RegisterOutputType(BackendSetHealthCheckerDnsOutput{})
+	pulumi.RegisterOutputType(BackendSetHealthCheckerDnsPtrOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancerIpAddressOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancerIpAddressArrayOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancerIpAddressReservedIpOutput{})
@@ -4837,12 +5611,16 @@ func init() {
 	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedBackendArrayOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutput{})
 	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerPtrOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutput{})
+	pulumi.RegisterOutputType(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsPtrOutput{})
 	pulumi.RegisterOutputType(GetBackendHealthHealthCheckResultOutput{})
 	pulumi.RegisterOutputType(GetBackendHealthHealthCheckResultArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetBackendOutput{})
 	pulumi.RegisterOutputType(GetBackendSetBackendArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetHealthCheckerOutput{})
 	pulumi.RegisterOutputType(GetBackendSetHealthCheckerArrayOutput{})
+	pulumi.RegisterOutputType(GetBackendSetHealthCheckerDnOutput{})
+	pulumi.RegisterOutputType(GetBackendSetHealthCheckerDnArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemOutput{})
@@ -4851,6 +5629,8 @@ func init() {
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemBackendArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemHealthCheckerOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemHealthCheckerArrayOutput{})
+	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemHealthCheckerDnOutput{})
+	pulumi.RegisterOutputType(GetBackendSetsBackendSetCollectionItemHealthCheckerDnArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsFilterOutput{})
 	pulumi.RegisterOutputType(GetBackendSetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBackendsBackendCollectionOutput{})

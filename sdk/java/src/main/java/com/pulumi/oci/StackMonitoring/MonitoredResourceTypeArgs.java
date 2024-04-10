@@ -127,9 +127,6 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
@@ -137,12 +134,45 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
     /**
      * @return A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * (Updatable) Resource Category to indicate the kind of resource type.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return (Updatable) Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> name() {
-        return Optional.ofNullable(this.name);
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     private MonitoredResourceTypeArgs() {}
@@ -156,6 +186,8 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
         this.metadata = $.metadata;
         this.metricNamespace = $.metricNamespace;
         this.name = $.name;
+        this.resourceCategory = $.resourceCategory;
+        this.sourceType = $.sourceType;
     }
 
     public static Builder builder() {
@@ -326,9 +358,6 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
         /**
          * @param name A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -340,14 +369,59 @@ public final class MonitoredResourceTypeArgs extends com.pulumi.resources.Resour
         /**
          * @param name A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
          * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        /**
+         * @param resourceCategory (Updatable) Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory (Updatable) Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
+         * @param sourceType (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder name(String name) {
-            return name(Output.of(name));
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         public MonitoredResourceTypeArgs build() {

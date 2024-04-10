@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkLoadBalancersFilter {
+    /**
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetNetworkLoadBalancersFilter() {}
+    /**
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * 
+     */
     public String name() {
         return this.name;
     }

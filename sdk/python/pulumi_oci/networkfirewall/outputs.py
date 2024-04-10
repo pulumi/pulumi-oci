@@ -1324,20 +1324,18 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
 @pulumi.output_type
 class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult(dict):
     def __init__(__self__, *,
-                 after_rule: Optional[str] = None,
-                 before_rule: Optional[str] = None):
+                 after_rule: str,
+                 before_rule: str):
         """
         :param str after_rule: Identifier for rule after which this rule lies.
         :param str before_rule: Identifier for rule before which this rule lies.
         """
-        if after_rule is not None:
-            pulumi.set(__self__, "after_rule", after_rule)
-        if before_rule is not None:
-            pulumi.set(__self__, "before_rule", before_rule)
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
 
     @property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[str]:
+    def after_rule(self) -> str:
         """
         Identifier for rule after which this rule lies.
         """
@@ -1345,7 +1343,7 @@ class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem
 
     @property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[str]:
+    def before_rule(self) -> str:
         """
         Identifier for rule before which this rule lies.
         """
@@ -1792,20 +1790,18 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCond
 @pulumi.output_type
 class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionResult(dict):
     def __init__(__self__, *,
-                 after_rule: Optional[str] = None,
-                 before_rule: Optional[str] = None):
+                 after_rule: str,
+                 before_rule: str):
         """
         :param str after_rule: Identifier for rule after which this rule lies.
         :param str before_rule: Identifier for rule before which this rule lies.
         """
-        if after_rule is not None:
-            pulumi.set(__self__, "after_rule", after_rule)
-        if before_rule is not None:
-            pulumi.set(__self__, "before_rule", before_rule)
+        pulumi.set(__self__, "after_rule", after_rule)
+        pulumi.set(__self__, "before_rule", before_rule)
 
     @property
     @pulumi.getter(name="afterRule")
-    def after_rule(self) -> Optional[str]:
+    def after_rule(self) -> str:
         """
         Identifier for rule after which this rule lies.
         """
@@ -1813,7 +1809,7 @@ class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosi
 
     @property
     @pulumi.getter(name="beforeRule")
-    def before_rule(self) -> Optional[str]:
+    def before_rule(self) -> str:
         """
         Identifier for rule before which this rule lies.
         """

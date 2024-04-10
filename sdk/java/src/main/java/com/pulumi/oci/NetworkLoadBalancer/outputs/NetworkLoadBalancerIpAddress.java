@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NetworkLoadBalancerIpAddress {
     /**
-     * @return An IP address.  Example: `192.168.0.3`
+     * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
     private @Nullable String ipAddress;
     /**
-     * @return IP version associated with this IP address.
+     * @return IP version associated with the listener.
      * 
      */
     private @Nullable String ipVersion;
@@ -37,14 +37,14 @@ public final class NetworkLoadBalancerIpAddress {
 
     private NetworkLoadBalancerIpAddress() {}
     /**
-     * @return An IP address.  Example: `192.168.0.3`
+     * @return The IP address of the backend server. Example: `10.0.0.3`
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return IP version associated with this IP address.
+     * @return IP version associated with the listener.
      * 
      */
     public Optional<String> ipVersion() {

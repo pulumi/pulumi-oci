@@ -4772,7 +4772,8 @@ type GetInvokeRunsRun struct {
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors int `pulumi:"numExecutors"`
+	NumExecutors    int    `pulumi:"numExecutors"`
+	OpcParentRptUrl string `pulumi:"opcParentRptUrl"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId string `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
@@ -4875,7 +4876,8 @@ type GetInvokeRunsRunArgs struct {
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors pulumi.IntInput `pulumi:"numExecutors"`
+	NumExecutors    pulumi.IntInput    `pulumi:"numExecutors"`
+	OpcParentRptUrl pulumi.StringInput `pulumi:"opcParentRptUrl"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId pulumi.StringInput `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
@@ -5097,6 +5099,10 @@ func (o GetInvokeRunsRunOutput) MetastoreId() pulumi.StringOutput {
 // The number of executor VMs requested.
 func (o GetInvokeRunsRunOutput) NumExecutors() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+func (o GetInvokeRunsRunOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

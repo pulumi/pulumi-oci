@@ -65,6 +65,8 @@ import javax.annotation.Nullable;
  *                 .validPropertyValues(var_.monitored_resource_type_metadata_valid_property_values())
  *                 .build())
  *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
+ *             .resourceCategory(var_.monitored_resource_type_resource_category())
+ *             .sourceType(var_.monitored_resource_type_source_type())
  *             .build());
  * 
  *     }
@@ -184,9 +186,6 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
@@ -194,12 +193,43 @@ public class MonitoredResourceType extends com.pulumi.resources.CustomResource {
     /**
      * @return A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      * 
+     */
+    public Output<String> name() {
+        return this.name;
+    }
+    /**
+     * (Updatable) Resource Category to indicate the kind of resource type.
+     * 
+     */
+    @Export(name="resourceCategory", refs={String.class}, tree="[0]")
+    private Output<String> resourceCategory;
+
+    /**
+     * @return (Updatable) Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Output<String> resourceCategory() {
+        return this.resourceCategory;
+    }
+    /**
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> name() {
-        return this.name;
+    @Export(name="sourceType", refs={String.class}, tree="[0]")
+    private Output<String> sourceType;
+
+    /**
+     * @return (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> sourceType() {
+        return this.sourceType;
     }
     /**
      * Lifecycle state of the monitored resource type.

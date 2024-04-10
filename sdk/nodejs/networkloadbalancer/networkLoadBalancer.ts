@@ -11,38 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a network load balancer.
  *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testNetworkLoadBalancer = new oci.networkloadbalancer.NetworkLoadBalancer("testNetworkLoadBalancer", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_load_balancer_display_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     assignedIpv6: _var.network_load_balancer_assigned_ipv6,
- *     assignedPrivateIpv4: _var.network_load_balancer_assigned_private_ipv4,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     isPreserveSourceDestination: _var.network_load_balancer_is_preserve_source_destination,
- *     isPrivate: _var.network_load_balancer_is_private,
- *     isSymmetricHashEnabled: _var.network_load_balancer_is_symmetric_hash_enabled,
- *     networkSecurityGroupIds: _var.network_load_balancer_network_security_group_ids,
- *     nlbIpVersion: _var.network_load_balancer_nlb_ip_version,
- *     reservedIps: [{
- *         id: _var.network_load_balancer_reserved_ips_id,
- *     }],
- *     subnetIpv6cidr: _var.network_load_balancer_subnet_ipv6cidr,
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
  * ## Import
  *
  * NetworkLoadBalancers can be imported using the `id`, e.g.
@@ -126,6 +94,7 @@ export class NetworkLoadBalancer extends pulumi.CustomResource {
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
+     * Example: `true`
      * Example: `true`
      */
     public readonly isSymmetricHashEnabled!: pulumi.Output<boolean>;
@@ -304,6 +273,7 @@ export interface NetworkLoadBalancerState {
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
      * Example: `true`
+     * Example: `true`
      */
     isSymmetricHashEnabled?: pulumi.Input<boolean>;
     /**
@@ -407,6 +377,7 @@ export interface NetworkLoadBalancerArgs {
     /**
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
      *
+     * Example: `true`
      * Example: `true`
      */
     isSymmetricHashEnabled?: pulumi.Input<boolean>;

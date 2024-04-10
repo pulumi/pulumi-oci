@@ -67,6 +67,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? ParentId { get; set; }
 
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
         /// Monitored resource display name.
         /// </summary>
         [Input("resourceDisplayName")]
@@ -89,6 +95,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
+
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// The current state of the Resource.

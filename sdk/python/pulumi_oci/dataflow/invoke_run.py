@@ -36,6 +36,7 @@ class InvokeRunArgs:
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
@@ -62,6 +63,7 @@ class InvokeRunArgs:
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
+        :param pulumi.Input[str] opc_parent_rpt_url: (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         :param pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
@@ -111,6 +113,8 @@ class InvokeRunArgs:
             pulumi.set(__self__, "metastore_id", metastore_id)
         if num_executors is not None:
             pulumi.set(__self__, "num_executors", num_executors)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if parameters is not None:
             pulumi.set(__self__, "parameters", parameters)
         if pool_id is not None:
@@ -360,6 +364,18 @@ class InvokeRunArgs:
         pulumi.set(self, "num_executors", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InvokeRunParameterArgs']]]]:
         """
@@ -453,6 +469,7 @@ class _InvokeRunState:
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  opc_request_id: Optional[pulumi.Input[str]] = None,
                  owner_principal_id: Optional[pulumi.Input[str]] = None,
                  owner_user_name: Optional[pulumi.Input[str]] = None,
@@ -498,6 +515,7 @@ class _InvokeRunState:
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
+        :param pulumi.Input[str] opc_parent_rpt_url: (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         :param pulumi.Input[str] opc_request_id: Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
@@ -573,6 +591,8 @@ class _InvokeRunState:
             pulumi.set(__self__, "metastore_id", metastore_id)
         if num_executors is not None:
             pulumi.set(__self__, "num_executors", num_executors)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if opc_request_id is not None:
             pulumi.set(__self__, "opc_request_id", opc_request_id)
         if owner_principal_id is not None:
@@ -920,6 +940,18 @@ class _InvokeRunState:
         pulumi.set(self, "num_executors", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter(name="opcRequestId")
     def opc_request_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1165,6 +1197,7 @@ class InvokeRun(pulumi.CustomResource):
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
@@ -1216,6 +1249,7 @@ class InvokeRun(pulumi.CustomResource):
             max_duration_in_minutes=var["invoke_run_max_duration_in_minutes"],
             metastore_id=var["metastore_id"],
             num_executors=var["invoke_run_num_executors"],
+            opc_parent_rpt_url=var["invoke_run_opc_parent_rpt_url"],
             parameters=[oci.data_flow.InvokeRunParameterArgs(
                 name=var["invoke_run_parameters_name"],
                 value=var["invoke_run_parameters_value"],
@@ -1260,6 +1294,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
+        :param pulumi.Input[str] opc_parent_rpt_url: (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]] parameters: An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
         :param pulumi.Input[str] pool_id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param pulumi.Input[str] spark_version: The Spark version utilized to run the application. This value may be set if applicationId is not since the Spark version will be taken from the associated application.
@@ -1321,6 +1356,7 @@ class InvokeRun(pulumi.CustomResource):
             max_duration_in_minutes=var["invoke_run_max_duration_in_minutes"],
             metastore_id=var["metastore_id"],
             num_executors=var["invoke_run_num_executors"],
+            opc_parent_rpt_url=var["invoke_run_opc_parent_rpt_url"],
             parameters=[oci.data_flow.InvokeRunParameterArgs(
                 name=var["invoke_run_parameters_name"],
                 value=var["invoke_run_parameters_value"],
@@ -1379,6 +1415,7 @@ class InvokeRun(pulumi.CustomResource):
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
                  metastore_id: Optional[pulumi.Input[str]] = None,
                  num_executors: Optional[pulumi.Input[int]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['InvokeRunParameterArgs']]]]] = None,
                  pool_id: Optional[pulumi.Input[str]] = None,
                  spark_version: Optional[pulumi.Input[str]] = None,
@@ -1415,6 +1452,7 @@ class InvokeRun(pulumi.CustomResource):
             __props__.__dict__["max_duration_in_minutes"] = max_duration_in_minutes
             __props__.__dict__["metastore_id"] = metastore_id
             __props__.__dict__["num_executors"] = num_executors
+            __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             __props__.__dict__["parameters"] = parameters
             __props__.__dict__["pool_id"] = pool_id
             __props__.__dict__["spark_version"] = spark_version
@@ -1475,6 +1513,7 @@ class InvokeRun(pulumi.CustomResource):
             max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
             metastore_id: Optional[pulumi.Input[str]] = None,
             num_executors: Optional[pulumi.Input[int]] = None,
+            opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
             opc_request_id: Optional[pulumi.Input[str]] = None,
             owner_principal_id: Optional[pulumi.Input[str]] = None,
             owner_user_name: Optional[pulumi.Input[str]] = None,
@@ -1525,6 +1564,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
         :param pulumi.Input[str] metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param pulumi.Input[int] num_executors: The number of executor VMs requested.
+        :param pulumi.Input[str] opc_parent_rpt_url: (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
         :param pulumi.Input[str] opc_request_id: Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         :param pulumi.Input[str] owner_principal_id: The OCID of the user who created the resource.
         :param pulumi.Input[str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
@@ -1578,6 +1618,7 @@ class InvokeRun(pulumi.CustomResource):
         __props__.__dict__["max_duration_in_minutes"] = max_duration_in_minutes
         __props__.__dict__["metastore_id"] = metastore_id
         __props__.__dict__["num_executors"] = num_executors
+        __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
         __props__.__dict__["opc_request_id"] = opc_request_id
         __props__.__dict__["owner_principal_id"] = owner_principal_id
         __props__.__dict__["owner_user_name"] = owner_user_name
@@ -1802,6 +1843,14 @@ class InvokeRun(pulumi.CustomResource):
         The number of executor VMs requested.
         """
         return pulumi.get(self, "num_executors")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> pulumi.Output[str]:
+        """
+        (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="opcRequestId")

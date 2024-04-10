@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnified;
  * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedArgs;
  * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs;
+ * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs;
  * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedBackendArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -51,6 +52,13 @@ import javax.annotation.Nullable;
  *         var testNetworkLoadBalancersBackendSetsUnified = new NetworkLoadBalancersBackendSetsUnified(&#34;testNetworkLoadBalancersBackendSetsUnified&#34;, NetworkLoadBalancersBackendSetsUnifiedArgs.builder()        
  *             .healthChecker(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs.builder()
  *                 .protocol(var_.network_load_balancers_backend_sets_unified_health_checker_protocol())
+ *                 .dns(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs.builder()
+ *                     .domainName(oci_identity_domain.test_domain().name())
+ *                     .queryClass(var_.network_load_balancers_backend_sets_unified_health_checker_dns_query_class())
+ *                     .queryType(var_.network_load_balancers_backend_sets_unified_health_checker_dns_query_type())
+ *                     .rcodes(var_.network_load_balancers_backend_sets_unified_health_checker_dns_rcodes())
+ *                     .transportProtocol(var_.network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol())
+ *                     .build())
  *                 .intervalInMillis(var_.network_load_balancers_backend_sets_unified_health_checker_interval_in_millis())
  *                 .port(var_.network_load_balancers_backend_sets_unified_health_checker_port())
  *                 .requestData(var_.network_load_balancers_backend_sets_unified_health_checker_request_data())
@@ -74,6 +82,7 @@ import javax.annotation.Nullable;
  *                 .weight(var_.network_load_balancers_backend_sets_unified_backends_weight())
  *                 .build())
  *             .ipVersion(var_.network_load_balancers_backend_sets_unified_ip_version())
+ *             .isFailOpen(var_.network_load_balancers_backend_sets_unified_is_fail_open())
  *             .isPreserveSource(var_.network_load_balancers_backend_sets_unified_is_preserve_source())
  *             .build());
  * 
@@ -108,14 +117,14 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
         return this.backends;
     }
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     @Export(name="healthChecker", refs={NetworkLoadBalancersBackendSetsUnifiedHealthChecker.class}, tree="[0]")
     private Output<NetworkLoadBalancersBackendSetsUnifiedHealthChecker> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     public Output<NetworkLoadBalancersBackendSetsUnifiedHealthChecker> healthChecker() {
@@ -134,6 +143,20 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
+    }
+    /**
+     * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    @Export(name="isFailOpen", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isFailOpen;
+
+    /**
+     * @return (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    public Output<Boolean> isFailOpen() {
+        return this.isFailOpen;
     }
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

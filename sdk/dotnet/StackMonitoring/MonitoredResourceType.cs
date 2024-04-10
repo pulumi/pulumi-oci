@@ -55,6 +55,8 @@ namespace Pulumi.Oci.StackMonitoring
     ///             ValidPropertyValues = @var.Monitored_resource_type_metadata_valid_property_values,
     ///         },
     ///         MetricNamespace = @var.Monitored_resource_type_metric_namespace,
+    ///         ResourceCategory = @var.Monitored_resource_type_resource_category,
+    ///         SourceType = @var.Monitored_resource_type_source_type,
     ///     });
     /// 
     /// });
@@ -115,14 +117,26 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> MetricNamespace { get; private set; } = null!;
 
         /// <summary>
-        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        /// </summary>
+        [Output("name")]
+        public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Output("resourceCategory")]
+        public Output<string> ResourceCategory { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("name")]
-        public Output<string> Name { get; private set; } = null!;
+        [Output("sourceType")]
+        public Output<string> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// Lifecycle state of the monitored resource type.
@@ -249,14 +263,26 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? MetricNamespace { get; set; }
 
         /// <summary>
-        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// (Updatable) Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         public MonitoredResourceTypeArgs()
         {
@@ -321,14 +347,26 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? MetricNamespace { get; set; }
 
         /// <summary>
-        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+        /// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// (Updatable) Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
+        /// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Lifecycle state of the monitored resource type.

@@ -92,8 +92,12 @@ type LookupMonitoredResourceResult struct {
 	Name string `pulumi:"name"`
 	// List of monitored resource properties.
 	Properties []GetMonitoredResourceProperty `pulumi:"properties"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID.
 	ResourceTimeZone string `pulumi:"resourceTimeZone"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -238,9 +242,19 @@ func (o LookupMonitoredResourceResultOutput) Properties() GetMonitoredResourcePr
 	return o.ApplyT(func(v LookupMonitoredResourceResult) []GetMonitoredResourceProperty { return v.Properties }).(GetMonitoredResourcePropertyArrayOutput)
 }
 
+// Resource Category to indicate the kind of resource type.
+func (o LookupMonitoredResourceResultOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ResourceCategory }).(pulumi.StringOutput)
+}
+
 // Time zone in the form of tz database canonical zone ID.
 func (o LookupMonitoredResourceResultOutput) ResourceTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ResourceTimeZone }).(pulumi.StringOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o LookupMonitoredResourceResultOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource.

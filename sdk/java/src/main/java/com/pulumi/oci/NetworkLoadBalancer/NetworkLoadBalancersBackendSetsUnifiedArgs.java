@@ -36,14 +36,14 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     @Import(name="healthChecker", required=true)
     private Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> healthChecker;
 
     /**
-     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * @return (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     public Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs> healthChecker() {
@@ -63,6 +63,21 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
      */
     public Optional<Output<String>> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
+    }
+
+    /**
+     * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    @Import(name="isFailOpen")
+    private @Nullable Output<Boolean> isFailOpen;
+
+    /**
+     * @return (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    public Optional<Output<Boolean>> isFailOpen() {
+        return Optional.ofNullable(this.isFailOpen);
     }
 
     /**
@@ -145,6 +160,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         this.backends = $.backends;
         this.healthChecker = $.healthChecker;
         this.ipVersion = $.ipVersion;
+        this.isFailOpen = $.isFailOpen;
         this.isPreserveSource = $.isPreserveSource;
         this.name = $.name;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
@@ -201,7 +217,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
          * 
          * @return builder
          * 
@@ -212,7 +228,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         }
 
         /**
-         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+         * @param healthChecker (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
          * 
          * @return builder
          * 
@@ -240,6 +256,27 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
          */
         public Builder ipVersion(String ipVersion) {
             return ipVersion(Output.of(ipVersion));
+        }
+
+        /**
+         * @param isFailOpen (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFailOpen(@Nullable Output<Boolean> isFailOpen) {
+            $.isFailOpen = isFailOpen;
+            return this;
+        }
+
+        /**
+         * @param isFailOpen (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isFailOpen(Boolean isFailOpen) {
+            return isFailOpen(Output.of(isFailOpen));
         }
 
         /**

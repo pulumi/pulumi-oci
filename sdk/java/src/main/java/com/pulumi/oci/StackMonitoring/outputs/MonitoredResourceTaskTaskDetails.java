@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -25,6 +26,21 @@ public final class MonitoredResourceTaskTaskDetails {
      */
     private @Nullable List<String> availabilityProxyMetrics;
     /**
+     * @return The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+     * 
+     */
+    private @Nullable String consolePathPrefix;
+    /**
+     * @return The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+     * 
+     */
+    private @Nullable String externalIdMapping;
+    /**
+     * @return Lifecycle states of the external resource which reflects the status of the resource being up.
+     * 
+     */
+    private @Nullable List<String> lifecycleStatusMappingsForUpStatuses;
+    /**
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
@@ -34,6 +50,36 @@ public final class MonitoredResourceTaskTaskDetails {
      * 
      */
     private @Nullable String resourceGroup;
+    /**
+     * @return The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    private @Nullable String resourceNameFilter;
+    /**
+     * @return The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+     * 
+     */
+    private @Nullable String resourceNameMapping;
+    /**
+     * @return The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    private @Nullable String resourceTypeFilter;
+    /**
+     * @return The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+     * 
+     */
+    private @Nullable String resourceTypeMapping;
+    /**
+     * @return The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+     * 
+     */
+    private @Nullable String serviceBaseUrl;
+    /**
+     * @return Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+     * 
+     */
+    private @Nullable Boolean shouldUseMetricsFlowForStatus;
     /**
      * @return Source from where the metrics pushed to telemetry. Possible values:
      * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
@@ -66,6 +112,27 @@ public final class MonitoredResourceTaskTaskDetails {
         return this.availabilityProxyMetrics == null ? List.of() : this.availabilityProxyMetrics;
     }
     /**
+     * @return The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+     * 
+     */
+    public Optional<String> consolePathPrefix() {
+        return Optional.ofNullable(this.consolePathPrefix);
+    }
+    /**
+     * @return The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+     * 
+     */
+    public Optional<String> externalIdMapping() {
+        return Optional.ofNullable(this.externalIdMapping);
+    }
+    /**
+     * @return Lifecycle states of the external resource which reflects the status of the resource being up.
+     * 
+     */
+    public List<String> lifecycleStatusMappingsForUpStatuses() {
+        return this.lifecycleStatusMappingsForUpStatuses == null ? List.of() : this.lifecycleStatusMappingsForUpStatuses;
+    }
+    /**
      * @return Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
@@ -78,6 +145,48 @@ public final class MonitoredResourceTaskTaskDetails {
      */
     public Optional<String> resourceGroup() {
         return Optional.ofNullable(this.resourceGroup);
+    }
+    /**
+     * @return The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    public Optional<String> resourceNameFilter() {
+        return Optional.ofNullable(this.resourceNameFilter);
+    }
+    /**
+     * @return The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+     * 
+     */
+    public Optional<String> resourceNameMapping() {
+        return Optional.ofNullable(this.resourceNameMapping);
+    }
+    /**
+     * @return The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    public Optional<String> resourceTypeFilter() {
+        return Optional.ofNullable(this.resourceTypeFilter);
+    }
+    /**
+     * @return The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+     * 
+     */
+    public Optional<String> resourceTypeMapping() {
+        return Optional.ofNullable(this.resourceTypeMapping);
+    }
+    /**
+     * @return The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+     * 
+     */
+    public Optional<String> serviceBaseUrl() {
+        return Optional.ofNullable(this.serviceBaseUrl);
+    }
+    /**
+     * @return Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+     * 
+     */
+    public Optional<Boolean> shouldUseMetricsFlowForStatus() {
+        return Optional.ofNullable(this.shouldUseMetricsFlowForStatus);
     }
     /**
      * @return Source from where the metrics pushed to telemetry. Possible values:
@@ -110,8 +219,17 @@ public final class MonitoredResourceTaskTaskDetails {
     public static final class Builder {
         private @Nullable Integer availabilityProxyMetricCollectionInterval;
         private @Nullable List<String> availabilityProxyMetrics;
+        private @Nullable String consolePathPrefix;
+        private @Nullable String externalIdMapping;
+        private @Nullable List<String> lifecycleStatusMappingsForUpStatuses;
         private String namespace;
         private @Nullable String resourceGroup;
+        private @Nullable String resourceNameFilter;
+        private @Nullable String resourceNameMapping;
+        private @Nullable String resourceTypeFilter;
+        private @Nullable String resourceTypeMapping;
+        private @Nullable String serviceBaseUrl;
+        private @Nullable Boolean shouldUseMetricsFlowForStatus;
         private String source;
         private String type;
         public Builder() {}
@@ -119,8 +237,17 @@ public final class MonitoredResourceTaskTaskDetails {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityProxyMetricCollectionInterval = defaults.availabilityProxyMetricCollectionInterval;
     	      this.availabilityProxyMetrics = defaults.availabilityProxyMetrics;
+    	      this.consolePathPrefix = defaults.consolePathPrefix;
+    	      this.externalIdMapping = defaults.externalIdMapping;
+    	      this.lifecycleStatusMappingsForUpStatuses = defaults.lifecycleStatusMappingsForUpStatuses;
     	      this.namespace = defaults.namespace;
     	      this.resourceGroup = defaults.resourceGroup;
+    	      this.resourceNameFilter = defaults.resourceNameFilter;
+    	      this.resourceNameMapping = defaults.resourceNameMapping;
+    	      this.resourceTypeFilter = defaults.resourceTypeFilter;
+    	      this.resourceTypeMapping = defaults.resourceTypeMapping;
+    	      this.serviceBaseUrl = defaults.serviceBaseUrl;
+    	      this.shouldUseMetricsFlowForStatus = defaults.shouldUseMetricsFlowForStatus;
     	      this.source = defaults.source;
     	      this.type = defaults.type;
         }
@@ -141,6 +268,27 @@ public final class MonitoredResourceTaskTaskDetails {
             return availabilityProxyMetrics(List.of(availabilityProxyMetrics));
         }
         @CustomType.Setter
+        public Builder consolePathPrefix(@Nullable String consolePathPrefix) {
+
+            this.consolePathPrefix = consolePathPrefix;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalIdMapping(@Nullable String externalIdMapping) {
+
+            this.externalIdMapping = externalIdMapping;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lifecycleStatusMappingsForUpStatuses(@Nullable List<String> lifecycleStatusMappingsForUpStatuses) {
+
+            this.lifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
+            return this;
+        }
+        public Builder lifecycleStatusMappingsForUpStatuses(String... lifecycleStatusMappingsForUpStatuses) {
+            return lifecycleStatusMappingsForUpStatuses(List.of(lifecycleStatusMappingsForUpStatuses));
+        }
+        @CustomType.Setter
         public Builder namespace(String namespace) {
             if (namespace == null) {
               throw new MissingRequiredPropertyException("MonitoredResourceTaskTaskDetails", "namespace");
@@ -152,6 +300,42 @@ public final class MonitoredResourceTaskTaskDetails {
         public Builder resourceGroup(@Nullable String resourceGroup) {
 
             this.resourceGroup = resourceGroup;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceNameFilter(@Nullable String resourceNameFilter) {
+
+            this.resourceNameFilter = resourceNameFilter;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceNameMapping(@Nullable String resourceNameMapping) {
+
+            this.resourceNameMapping = resourceNameMapping;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceTypeFilter(@Nullable String resourceTypeFilter) {
+
+            this.resourceTypeFilter = resourceTypeFilter;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceTypeMapping(@Nullable String resourceTypeMapping) {
+
+            this.resourceTypeMapping = resourceTypeMapping;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceBaseUrl(@Nullable String serviceBaseUrl) {
+
+            this.serviceBaseUrl = serviceBaseUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldUseMetricsFlowForStatus(@Nullable Boolean shouldUseMetricsFlowForStatus) {
+
+            this.shouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             return this;
         }
         @CustomType.Setter
@@ -174,8 +358,17 @@ public final class MonitoredResourceTaskTaskDetails {
             final var _resultValue = new MonitoredResourceTaskTaskDetails();
             _resultValue.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             _resultValue.availabilityProxyMetrics = availabilityProxyMetrics;
+            _resultValue.consolePathPrefix = consolePathPrefix;
+            _resultValue.externalIdMapping = externalIdMapping;
+            _resultValue.lifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
             _resultValue.namespace = namespace;
             _resultValue.resourceGroup = resourceGroup;
+            _resultValue.resourceNameFilter = resourceNameFilter;
+            _resultValue.resourceNameMapping = resourceNameMapping;
+            _resultValue.resourceTypeFilter = resourceTypeFilter;
+            _resultValue.resourceTypeMapping = resourceTypeMapping;
+            _resultValue.serviceBaseUrl = serviceBaseUrl;
+            _resultValue.shouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             _resultValue.source = source;
             _resultValue.type = type;
             return _resultValue;

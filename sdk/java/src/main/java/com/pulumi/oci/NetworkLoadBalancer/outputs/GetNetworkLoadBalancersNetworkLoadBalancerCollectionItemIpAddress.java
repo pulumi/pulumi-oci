@@ -19,7 +19,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
      */
     private String ipAddress;
     /**
-     * @return IP version associated with this IP address.
+     * @return IP version associated with the listener.
      * 
      */
     private String ipVersion;
@@ -44,7 +44,7 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
         return this.ipAddress;
     }
     /**
-     * @return IP version associated with this IP address.
+     * @return IP version associated with the listener.
      * 
      */
     public String ipVersion() {

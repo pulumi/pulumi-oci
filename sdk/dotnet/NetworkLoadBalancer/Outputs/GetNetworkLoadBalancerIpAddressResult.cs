@@ -18,7 +18,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// IP version associated with this IP address.
+        /// IP version associated with the listener.
         /// </summary>
         public readonly string IpVersion;
         /// <summary>

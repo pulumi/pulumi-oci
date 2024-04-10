@@ -22,6 +22,18 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AvailabilityProxyMetrics;
         /// <summary>
+        /// The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+        /// </summary>
+        public readonly string ConsolePathPrefix;
+        /// <summary>
+        /// The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        /// </summary>
+        public readonly string ExternalIdMapping;
+        /// <summary>
+        /// Lifecycle states of the external resource which reflects the status of the resource being up.
+        /// </summary>
+        public readonly ImmutableArray<string> LifecycleStatusMappingsForUpStatuses;
+        /// <summary>
         /// Name space to be used for Oracle Cloud Infrastructure Native service resources' import.
         /// </summary>
         public readonly string Namespace;
@@ -29,6 +41,30 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
         /// </summary>
         public readonly string ResourceGroup;
+        /// <summary>
+        /// The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+        /// </summary>
+        public readonly string ResourceNameFilter;
+        /// <summary>
+        /// The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+        /// </summary>
+        public readonly string ResourceNameMapping;
+        /// <summary>
+        /// The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+        /// </summary>
+        public readonly string ResourceTypeFilter;
+        /// <summary>
+        /// The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        /// </summary>
+        public readonly string ResourceTypeMapping;
+        /// <summary>
+        /// The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+        /// </summary>
+        public readonly string ServiceBaseUrl;
+        /// <summary>
+        /// Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+        /// </summary>
+        public readonly bool ShouldUseMetricsFlowForStatus;
         /// <summary>
         /// Source from where the metrics pushed to telemetry. Possible values:
         /// * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
@@ -46,9 +82,27 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<string> availabilityProxyMetrics,
 
+            string consolePathPrefix,
+
+            string externalIdMapping,
+
+            ImmutableArray<string> lifecycleStatusMappingsForUpStatuses,
+
             string @namespace,
 
             string resourceGroup,
+
+            string resourceNameFilter,
+
+            string resourceNameMapping,
+
+            string resourceTypeFilter,
+
+            string resourceTypeMapping,
+
+            string serviceBaseUrl,
+
+            bool shouldUseMetricsFlowForStatus,
 
             string source,
 
@@ -56,8 +110,17 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         {
             AvailabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
             AvailabilityProxyMetrics = availabilityProxyMetrics;
+            ConsolePathPrefix = consolePathPrefix;
+            ExternalIdMapping = externalIdMapping;
+            LifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
             Namespace = @namespace;
             ResourceGroup = resourceGroup;
+            ResourceNameFilter = resourceNameFilter;
+            ResourceNameMapping = resourceNameMapping;
+            ResourceTypeFilter = resourceTypeFilter;
+            ResourceTypeMapping = resourceTypeMapping;
+            ServiceBaseUrl = serviceBaseUrl;
+            ShouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             Source = source;
             Type = type;
         }

@@ -20,7 +20,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
      */
     private List<GetBackendSetsBackendSetCollectionItemBackend> backends;
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     private List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers;
@@ -30,6 +30,11 @@ public final class GetBackendSetsBackendSetCollectionItem {
      * 
      */
     private String ipVersion;
+    /**
+     * @return If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    private Boolean isFailOpen;
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
@@ -60,7 +65,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
         return this.backends;
     }
     /**
-     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * @return The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      * 
      */
     public List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers() {
@@ -75,6 +80,13 @@ public final class GetBackendSetsBackendSetCollectionItem {
      */
     public String ipVersion() {
         return this.ipVersion;
+    }
+    /**
+     * @return If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     * 
+     */
+    public Boolean isFailOpen() {
+        return this.isFailOpen;
     }
     /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
@@ -118,6 +130,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
         private List<GetBackendSetsBackendSetCollectionItemHealthChecker> healthCheckers;
         private String id;
         private String ipVersion;
+        private Boolean isFailOpen;
         private Boolean isPreserveSource;
         private String name;
         private String networkLoadBalancerId;
@@ -129,6 +142,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
     	      this.healthCheckers = defaults.healthCheckers;
     	      this.id = defaults.id;
     	      this.ipVersion = defaults.ipVersion;
+    	      this.isFailOpen = defaults.isFailOpen;
     	      this.isPreserveSource = defaults.isPreserveSource;
     	      this.name = defaults.name;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
@@ -174,6 +188,14 @@ public final class GetBackendSetsBackendSetCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isFailOpen(Boolean isFailOpen) {
+            if (isFailOpen == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "isFailOpen");
+            }
+            this.isFailOpen = isFailOpen;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPreserveSource(Boolean isPreserveSource) {
             if (isPreserveSource == null) {
               throw new MissingRequiredPropertyException("GetBackendSetsBackendSetCollectionItem", "isPreserveSource");
@@ -211,6 +233,7 @@ public final class GetBackendSetsBackendSetCollectionItem {
             _resultValue.healthCheckers = healthCheckers;
             _resultValue.id = id;
             _resultValue.ipVersion = ipVersion;
+            _resultValue.isFailOpen = isFailOpen;
             _resultValue.isPreserveSource = isPreserveSource;
             _resultValue.name = name;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;

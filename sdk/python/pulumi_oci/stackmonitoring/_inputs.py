@@ -1585,7 +1585,16 @@ class MonitoredResourceTaskTaskDetailsArgs:
                  type: pulumi.Input[str],
                  availability_proxy_metric_collection_interval: Optional[pulumi.Input[int]] = None,
                  availability_proxy_metrics: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 resource_group: Optional[pulumi.Input[str]] = None):
+                 console_path_prefix: Optional[pulumi.Input[str]] = None,
+                 external_id_mapping: Optional[pulumi.Input[str]] = None,
+                 lifecycle_status_mappings_for_up_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 resource_group: Optional[pulumi.Input[str]] = None,
+                 resource_name_filter: Optional[pulumi.Input[str]] = None,
+                 resource_name_mapping: Optional[pulumi.Input[str]] = None,
+                 resource_type_filter: Optional[pulumi.Input[str]] = None,
+                 resource_type_mapping: Optional[pulumi.Input[str]] = None,
+                 service_base_url: Optional[pulumi.Input[str]] = None,
+                 should_use_metrics_flow_for_status: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] namespace: Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
         :param pulumi.Input[str] source: Source from where the metrics pushed to telemetry. Possible values:
@@ -1598,7 +1607,16 @@ class MonitoredResourceTaskTaskDetailsArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] availability_proxy_metric_collection_interval: Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] availability_proxy_metrics: List of metrics to be used to calculate the availability of the resource. Resource is considered to be up if at least one of the specified metrics is available for  the resource during the specified interval using the property  'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified, availability will not be calculated for the resource.
+        :param pulumi.Input[str] console_path_prefix: The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+        :param pulumi.Input[str] external_id_mapping: The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_status_mappings_for_up_statuses: Lifecycle states of the external resource which reflects the status of the resource being up.
         :param pulumi.Input[str] resource_group: The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
+        :param pulumi.Input[str] resource_name_filter: The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+        :param pulumi.Input[str] resource_name_mapping: The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+        :param pulumi.Input[str] resource_type_filter: The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+        :param pulumi.Input[str] resource_type_mapping: The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        :param pulumi.Input[str] service_base_url: The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+        :param pulumi.Input[bool] should_use_metrics_flow_for_status: Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
         """
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "source", source)
@@ -1607,8 +1625,26 @@ class MonitoredResourceTaskTaskDetailsArgs:
             pulumi.set(__self__, "availability_proxy_metric_collection_interval", availability_proxy_metric_collection_interval)
         if availability_proxy_metrics is not None:
             pulumi.set(__self__, "availability_proxy_metrics", availability_proxy_metrics)
+        if console_path_prefix is not None:
+            pulumi.set(__self__, "console_path_prefix", console_path_prefix)
+        if external_id_mapping is not None:
+            pulumi.set(__self__, "external_id_mapping", external_id_mapping)
+        if lifecycle_status_mappings_for_up_statuses is not None:
+            pulumi.set(__self__, "lifecycle_status_mappings_for_up_statuses", lifecycle_status_mappings_for_up_statuses)
         if resource_group is not None:
             pulumi.set(__self__, "resource_group", resource_group)
+        if resource_name_filter is not None:
+            pulumi.set(__self__, "resource_name_filter", resource_name_filter)
+        if resource_name_mapping is not None:
+            pulumi.set(__self__, "resource_name_mapping", resource_name_mapping)
+        if resource_type_filter is not None:
+            pulumi.set(__self__, "resource_type_filter", resource_type_filter)
+        if resource_type_mapping is not None:
+            pulumi.set(__self__, "resource_type_mapping", resource_type_mapping)
+        if service_base_url is not None:
+            pulumi.set(__self__, "service_base_url", service_base_url)
+        if should_use_metrics_flow_for_status is not None:
+            pulumi.set(__self__, "should_use_metrics_flow_for_status", should_use_metrics_flow_for_status)
 
     @property
     @pulumi.getter
@@ -1677,6 +1713,42 @@ class MonitoredResourceTaskTaskDetailsArgs:
         pulumi.set(self, "availability_proxy_metrics", value)
 
     @property
+    @pulumi.getter(name="consolePathPrefix")
+    def console_path_prefix(self) -> Optional[pulumi.Input[str]]:
+        """
+        The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+        """
+        return pulumi.get(self, "console_path_prefix")
+
+    @console_path_prefix.setter
+    def console_path_prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "console_path_prefix", value)
+
+    @property
+    @pulumi.getter(name="externalIdMapping")
+    def external_id_mapping(self) -> Optional[pulumi.Input[str]]:
+        """
+        The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+        """
+        return pulumi.get(self, "external_id_mapping")
+
+    @external_id_mapping.setter
+    def external_id_mapping(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id_mapping", value)
+
+    @property
+    @pulumi.getter(name="lifecycleStatusMappingsForUpStatuses")
+    def lifecycle_status_mappings_for_up_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Lifecycle states of the external resource which reflects the status of the resource being up.
+        """
+        return pulumi.get(self, "lifecycle_status_mappings_for_up_statuses")
+
+    @lifecycle_status_mappings_for_up_statuses.setter
+    def lifecycle_status_mappings_for_up_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "lifecycle_status_mappings_for_up_statuses", value)
+
+    @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1687,6 +1759,78 @@ class MonitoredResourceTaskTaskDetailsArgs:
     @resource_group.setter
     def resource_group(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_group", value)
+
+    @property
+    @pulumi.getter(name="resourceNameFilter")
+    def resource_name_filter(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+        """
+        return pulumi.get(self, "resource_name_filter")
+
+    @resource_name_filter.setter
+    def resource_name_filter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_name_filter", value)
+
+    @property
+    @pulumi.getter(name="resourceNameMapping")
+    def resource_name_mapping(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+        """
+        return pulumi.get(self, "resource_name_mapping")
+
+    @resource_name_mapping.setter
+    def resource_name_mapping(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_name_mapping", value)
+
+    @property
+    @pulumi.getter(name="resourceTypeFilter")
+    def resource_type_filter(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+        """
+        return pulumi.get(self, "resource_type_filter")
+
+    @resource_type_filter.setter
+    def resource_type_filter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type_filter", value)
+
+    @property
+    @pulumi.getter(name="resourceTypeMapping")
+    def resource_type_mapping(self) -> Optional[pulumi.Input[str]]:
+        """
+        The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+        """
+        return pulumi.get(self, "resource_type_mapping")
+
+    @resource_type_mapping.setter
+    def resource_type_mapping(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_type_mapping", value)
+
+    @property
+    @pulumi.getter(name="serviceBaseUrl")
+    def service_base_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+        """
+        return pulumi.get(self, "service_base_url")
+
+    @service_base_url.setter
+    def service_base_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_base_url", value)
+
+    @property
+    @pulumi.getter(name="shouldUseMetricsFlowForStatus")
+    def should_use_metrics_flow_for_status(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+        """
+        return pulumi.get(self, "should_use_metrics_flow_for_status")
+
+    @should_use_metrics_flow_for_status.setter
+    def should_use_metrics_flow_for_status(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_use_metrics_flow_for_status", value)
 
 
 @pulumi.input_type
@@ -1951,10 +2095,12 @@ class MonitoredResourcesListMemberItemArgs:
                  host_name: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_display_name: Optional[pulumi.Input[str]] = None,
                  resource_id: Optional[pulumi.Input[str]] = None,
                  resource_name: Optional[pulumi.Input[str]] = None,
                  resource_type: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
@@ -1965,10 +2111,12 @@ class MonitoredResourcesListMemberItemArgs:
         :param pulumi.Input[str] host_name: Monitored Resource Host Name.
         :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] parent_id: Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[str] resource_display_name: Monitored resource display name.
         :param pulumi.Input[str] resource_id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] resource_name: Monitored Resource Name.
         :param pulumi.Input[str] resource_type: Monitored Resource Type.
+        :param pulumi.Input[str] source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param pulumi.Input[str] state: The current state of the Resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1986,6 +2134,8 @@ class MonitoredResourcesListMemberItemArgs:
             pulumi.set(__self__, "license", license)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
+        if resource_category is not None:
+            pulumi.set(__self__, "resource_category", resource_category)
         if resource_display_name is not None:
             pulumi.set(__self__, "resource_display_name", resource_display_name)
         if resource_id is not None:
@@ -1994,6 +2144,8 @@ class MonitoredResourcesListMemberItemArgs:
             pulumi.set(__self__, "resource_name", resource_name)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -2084,6 +2236,18 @@ class MonitoredResourcesListMemberItemArgs:
         pulumi.set(self, "parent_id", value)
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @resource_category.setter
+    def resource_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_category", value)
+
+    @property
     @pulumi.getter(name="resourceDisplayName")
     def resource_display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2130,6 +2294,18 @@ class MonitoredResourcesListMemberItemArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_type", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_type", value)
 
     @property
     @pulumi.getter
@@ -2383,6 +2559,8 @@ class MonitoredResourcesSearchItemArgs:
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -2400,6 +2578,8 @@ class MonitoredResourcesSearchItemArgs:
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]] properties: List of monitored resource properties.
+        :param pulumi.Input[str] resource_category: Resource category filter.
+        :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
@@ -2432,6 +2612,10 @@ class MonitoredResourcesSearchItemArgs:
             pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if resource_category is not None:
+            pulumi.set(__self__, "resource_category", resource_category)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -2574,6 +2758,30 @@ class MonitoredResourcesSearchItemArgs:
     @properties.setter
     def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
+
+    @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource category filter.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @resource_category.setter
+    def resource_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_category", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Source type filter.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_type", value)
 
     @property
     @pulumi.getter

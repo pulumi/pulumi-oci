@@ -31,6 +31,7 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         Name = @var.Monitored_resource_name,
+        ///         Status = @var.Monitored_resource_status,
         ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
         ///     });
         /// 
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.StackMonitoring
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         Name = @var.Monitored_resource_name,
+        ///         Status = @var.Monitored_resource_status,
         ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
         ///     });
         /// 
@@ -94,6 +96,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources with matching lifecycleState.
+        /// </summary>
+        [Input("status")]
+        public string? Status { get; set; }
 
         /// <summary>
         /// A filter to return resources which were impacted as part of this work request identifier.
@@ -130,6 +138,12 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// A filter to return only resources with matching lifecycleState.
+        /// </summary>
+        [Input("status")]
+        public Input<string>? Status { get; set; }
+
+        /// <summary>
         /// A filter to return resources which were impacted as part of this work request identifier.
         /// </summary>
         [Input("workRequestId")]
@@ -162,6 +176,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// Property Name.
         /// </summary>
         public readonly string? Name;
+        public readonly string? Status;
         public readonly string? WorkRequestId;
 
         [OutputConstructor]
@@ -176,6 +191,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string? name,
 
+            string? status,
+
             string? workRequestId)
         {
             CompartmentId = compartmentId;
@@ -183,6 +200,7 @@ namespace Pulumi.Oci.StackMonitoring
             Id = id;
             MonitoredResourceCollections = monitoredResourceCollections;
             Name = name;
+            Status = status;
             WorkRequestId = workRequestId;
         }
     }

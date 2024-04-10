@@ -49,16 +49,20 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMonitoredResourcesSearch = new MonitoredResourcesSearch(&#34;testMonitoredResourcesSearch&#34;, MonitoredResourcesSearchArgs.builder()        
  *             .compartmentId(var_.compartment_id())
+ *             .compartmentIds(var_.monitored_resources_search_compartment_ids())
  *             .excludeFields(var_.monitored_resources_search_exclude_fields())
  *             .externalId(oci_stack_monitoring_external.test_external().id())
  *             .fields(var_.monitored_resources_search_fields())
  *             .hostName(var_.monitored_resources_search_host_name())
  *             .hostNameContains(var_.monitored_resources_search_host_name_contains())
  *             .license(var_.monitored_resources_search_license())
+ *             .lifecycleStates(var_.monitored_resources_search_lifecycle_states())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
  *             .nameContains(var_.monitored_resources_search_name_contains())
  *             .propertyEquals(var_.monitored_resources_search_property_equals())
+ *             .resourceCategory(var_.monitored_resources_search_resource_category())
  *             .resourceTimeZone(var_.monitored_resources_search_resource_time_zone())
+ *             .sourceType(var_.monitored_resources_search_source_type())
  *             .state(var_.monitored_resources_search_state())
  *             .timeCreatedGreaterThanOrEqualTo(var_.monitored_resources_search_time_created_greater_than_or_equal_to())
  *             .timeCreatedLessThan(var_.monitored_resources_search_time_created_less_than())
@@ -96,6 +100,20 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Export(name="compartmentIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> compartmentIds;
+
+    /**
+     * @return Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Output<Optional<List<String>>> compartmentIds() {
+        return Codegen.optional(this.compartmentIds);
     }
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called &#34;excludeFields&#34; of an array type, provide the values as enums, and use collectionFormat.
@@ -186,14 +204,28 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="license", refs={String.class}, tree="[0]")
-    private Output<String> license;
+    private Output</* @Nullable */ String> license;
 
     /**
      * @return License edition of the monitored resource.
      * 
      */
-    public Output<String> license() {
-        return this.license;
+    public Output<Optional<String>> license() {
+        return Codegen.optional(this.license);
+    }
+    /**
+     * Multiple lifecycle states filter.
+     * 
+     */
+    @Export(name="lifecycleStates", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> lifecycleStates;
+
+    /**
+     * @return Multiple lifecycle states filter.
+     * 
+     */
+    public Output<Optional<List<String>>> lifecycleStates() {
+        return Codegen.optional(this.lifecycleStates);
     }
     /**
      * A filter to return resources with matching management agent id.
@@ -252,6 +284,20 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.propertyEquals);
     }
     /**
+     * Resource category filter.
+     * 
+     */
+    @Export(name="resourceCategory", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> resourceCategory;
+
+    /**
+     * @return Resource category filter.
+     * 
+     */
+    public Output<Optional<String>> resourceCategory() {
+        return Codegen.optional(this.resourceCategory);
+    }
+    /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
@@ -264,6 +310,20 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      */
     public Output<Optional<String>> resourceTimeZone() {
         return Codegen.optional(this.resourceTimeZone);
+    }
+    /**
+     * Source type filter.
+     * 
+     */
+    @Export(name="sourceType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> sourceType;
+
+    /**
+     * @return Source type filter.
+     * 
+     */
+    public Output<Optional<String>> sourceType() {
+        return Codegen.optional(this.sourceType);
     }
     /**
      * A filter to return resources with matching lifecycle state.

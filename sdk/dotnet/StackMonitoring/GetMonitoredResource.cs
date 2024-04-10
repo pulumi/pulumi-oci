@@ -164,9 +164,17 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitoredResourcePropertyResult> Properties;
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        public readonly string ResourceCategory;
+        /// <summary>
         /// Time zone in the form of tz database canonical zone ID.
         /// </summary>
         public readonly string ResourceTimeZone;
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        public readonly string SourceType;
         /// <summary>
         /// Lifecycle state of the monitored resource.
         /// </summary>
@@ -230,7 +238,11 @@ namespace Pulumi.Oci.StackMonitoring
 
             ImmutableArray<Outputs.GetMonitoredResourcePropertyResult> properties,
 
+            string resourceCategory,
+
             string resourceTimeZone,
+
+            string sourceType,
 
             string state,
 
@@ -262,7 +274,9 @@ namespace Pulumi.Oci.StackMonitoring
             MonitoredResourceId = monitoredResourceId;
             Name = name;
             Properties = properties;
+            ResourceCategory = resourceCategory;
             ResourceTimeZone = resourceTimeZone;
+            SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
             TenantId = tenantId;

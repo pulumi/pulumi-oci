@@ -71,6 +71,16 @@ public final class MonitoredResourcesSearchItem {
      */
     private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
     /**
+     * @return Resource category filter.
+     * 
+     */
+    private @Nullable String resourceCategory;
+    /**
+     * @return Source type filter.
+     * 
+     */
+    private @Nullable String sourceType;
+    /**
      * @return A filter to return resources with matching lifecycle state.
      * 
      */
@@ -178,6 +188,20 @@ public final class MonitoredResourcesSearchItem {
         return this.properties == null ? List.of() : this.properties;
     }
     /**
+     * @return Resource category filter.
+     * 
+     */
+    public Optional<String> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+    /**
+     * @return Source type filter.
+     * 
+     */
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
+    /**
      * @return A filter to return resources with matching lifecycle state.
      * 
      */
@@ -236,6 +260,8 @@ public final class MonitoredResourcesSearchItem {
         private @Nullable String managementAgentId;
         private @Nullable String name;
         private @Nullable List<MonitoredResourcesSearchItemProperty> properties;
+        private @Nullable String resourceCategory;
+        private @Nullable String sourceType;
         private @Nullable String state;
         private @Nullable Map<String,Object> systemTags;
         private @Nullable String timeCreated;
@@ -255,6 +281,8 @@ public final class MonitoredResourcesSearchItem {
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.name = defaults.name;
     	      this.properties = defaults.properties;
+    	      this.resourceCategory = defaults.resourceCategory;
+    	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -332,6 +360,18 @@ public final class MonitoredResourcesSearchItem {
             return properties(List.of(properties));
         }
         @CustomType.Setter
+        public Builder resourceCategory(@Nullable String resourceCategory) {
+
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceType(@Nullable String sourceType) {
+
+            this.sourceType = sourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -374,6 +414,8 @@ public final class MonitoredResourcesSearchItem {
             _resultValue.managementAgentId = managementAgentId;
             _resultValue.name = name;
             _resultValue.properties = properties;
+            _resultValue.resourceCategory = resourceCategory;
+            _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

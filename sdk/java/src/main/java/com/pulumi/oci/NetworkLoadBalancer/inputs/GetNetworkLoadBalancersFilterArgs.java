@@ -18,9 +18,17 @@ public final class GetNetworkLoadBalancersFilterArgs extends com.pulumi.resource
 
     public static final GetNetworkLoadBalancersFilterArgs Empty = new GetNetworkLoadBalancersFilterArgs();
 
+    /**
+     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetNetworkLoadBalancersFilterArgs extends com.pulumi.resource
             $ = new GetNetworkLoadBalancersFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

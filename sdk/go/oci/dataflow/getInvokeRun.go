@@ -112,7 +112,8 @@ type LookupInvokeRunResult struct {
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
-	NumExecutors int `pulumi:"numExecutors"`
+	NumExecutors    int    `pulumi:"numExecutors"`
+	OpcParentRptUrl string `pulumi:"opcParentRptUrl"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId string `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
@@ -322,6 +323,10 @@ func (o LookupInvokeRunResultOutput) MetastoreId() pulumi.StringOutput {
 // The number of executor VMs requested.
 func (o LookupInvokeRunResultOutput) NumExecutors() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInvokeRunResult) int { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+func (o LookupInvokeRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

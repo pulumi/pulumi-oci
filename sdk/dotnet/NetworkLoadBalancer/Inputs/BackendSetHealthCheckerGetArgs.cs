@@ -13,6 +13,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
     public sealed class BackendSetHealthCheckerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) DNS healthcheck configurations.
+        /// </summary>
+        [Input("dns")]
+        public Input<Inputs.BackendSetHealthCheckerDnsGetArgs>? Dns { get; set; }
+
+        /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         [Input("intervalInMillis")]
@@ -25,7 +31,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        /// (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;

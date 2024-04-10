@@ -40,6 +40,8 @@ import * as utilities from "../utilities";
  *         validPropertyValues: _var.monitored_resource_type_metadata_valid_property_values,
  *     },
  *     metricNamespace: _var.monitored_resource_type_metric_namespace,
+ *     resourceCategory: _var.monitored_resource_type_resource_category,
+ *     sourceType: _var.monitored_resource_type_source_type,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,13 +111,21 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      */
     public readonly metricNamespace!: pulumi.Output<string>;
     /**
-     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+     */
+    public readonly name!: pulumi.Output<string>;
+    /**
+     * (Updatable) Resource Category to indicate the kind of resource type.
+     */
+    public readonly resourceCategory!: pulumi.Output<string>;
+    /**
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly name!: pulumi.Output<string>;
+    public readonly sourceType!: pulumi.Output<string>;
     /**
      * Lifecycle state of the monitored resource type.
      */
@@ -154,6 +164,8 @@ export class MonitoredResourceType extends pulumi.CustomResource {
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["metricNamespace"] = state ? state.metricNamespace : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
+            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -171,6 +183,8 @@ export class MonitoredResourceType extends pulumi.CustomResource {
             resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["metricNamespace"] = args ? args.metricNamespace : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
+            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -214,13 +228,21 @@ export interface MonitoredResourceTypeState {
      */
     metricNamespace?: pulumi.Input<string>;
     /**
-     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Updatable) Resource Category to indicate the kind of resource type.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string>;
     /**
      * Lifecycle state of the monitored resource type.
      */
@@ -272,11 +294,19 @@ export interface MonitoredResourceTypeArgs {
      */
     metricNamespace?: pulumi.Input<string>;
     /**
-     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
+     * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Updatable) Resource Category to indicate the kind of resource type.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string>;
 }

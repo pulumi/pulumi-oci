@@ -12,16 +12,16 @@ namespace Pulumi.Oci.DevOps.Inputs
 
     public sealed class DeploymentDeploymentExecutionProgressGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("deployStageExecutionProgress")]
-        private InputMap<object>? _deployStageExecutionProgress;
+        [Input("deployStageExecutionProgresses")]
+        private InputList<Inputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressGetArgs>? _deployStageExecutionProgresses;
 
         /// <summary>
         /// Map of stage OCIDs to deploy stage execution progress model.
         /// </summary>
-        public InputMap<object> DeployStageExecutionProgress
+        public InputList<Inputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressGetArgs> DeployStageExecutionProgresses
         {
-            get => _deployStageExecutionProgress ?? (_deployStageExecutionProgress = new InputMap<object>());
-            set => _deployStageExecutionProgress = value;
+            get => _deployStageExecutionProgresses ?? (_deployStageExecutionProgresses = new InputList<Inputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressGetArgs>());
+            set => _deployStageExecutionProgresses = value;
         }
 
         /// <summary>

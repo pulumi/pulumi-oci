@@ -64,6 +64,7 @@ import (
 //				MaxDurationInMinutes: pulumi.Any(_var.Invoke_run_max_duration_in_minutes),
 //				MetastoreId:          pulumi.Any(_var.Metastore_id),
 //				NumExecutors:         pulumi.Any(_var.Invoke_run_num_executors),
+//				OpcParentRptUrl:      pulumi.Any(_var.Invoke_run_opc_parent_rpt_url),
 //				Parameters: dataflow.InvokeRunParameterArray{
 //					&dataflow.InvokeRunParameterArgs{
 //						Name:  pulumi.Any(_var.Invoke_run_parameters_name),
@@ -150,6 +151,8 @@ type InvokeRun struct {
 	MetastoreId pulumi.StringOutput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
 	NumExecutors pulumi.IntOutput `pulumi:"numExecutors"`
+	// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+	OpcParentRptUrl pulumi.StringOutput `pulumi:"opcParentRptUrl"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId pulumi.StringOutput `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
@@ -275,6 +278,8 @@ type invokeRunState struct {
 	MetastoreId *string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
 	NumExecutors *int `pulumi:"numExecutors"`
+	// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId *string `pulumi:"opcRequestId"`
 	// The OCID of the user who created the resource.
@@ -368,6 +373,8 @@ type InvokeRunState struct {
 	MetastoreId pulumi.StringPtrInput
 	// The number of executor VMs requested.
 	NumExecutors pulumi.IntPtrInput
+	// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 	OpcRequestId pulumi.StringPtrInput
 	// The OCID of the user who created the resource.
@@ -453,6 +460,8 @@ type invokeRunArgs struct {
 	MetastoreId *string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
 	NumExecutors *int `pulumi:"numExecutors"`
+	// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters []InvokeRunParameter `pulumi:"parameters"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
@@ -509,6 +518,8 @@ type InvokeRunArgs struct {
 	MetastoreId pulumi.StringPtrInput
 	// The number of executor VMs requested.
 	NumExecutors pulumi.IntPtrInput
+	// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
 	Parameters InvokeRunParameterArrayInput
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
@@ -738,6 +749,11 @@ func (o InvokeRunOutput) MetastoreId() pulumi.StringOutput {
 // The number of executor VMs requested.
 func (o InvokeRunOutput) NumExecutors() pulumi.IntOutput {
 	return o.ApplyT(func(v *InvokeRun) pulumi.IntOutput { return v.NumExecutors }).(pulumi.IntOutput)
+}
+
+// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+func (o InvokeRunOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v *InvokeRun) pulumi.StringOutput { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

@@ -58,6 +58,14 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.MonitoredResourcesSearchItemProperty> Properties;
         /// <summary>
+        /// Resource category filter.
+        /// </summary>
+        public readonly string? ResourceCategory;
+        /// <summary>
+        /// Source type filter.
+        /// </summary>
+        public readonly string? SourceType;
+        /// <summary>
         /// A filter to return resources with matching lifecycle state.
         /// </summary>
         public readonly string? State;
@@ -106,6 +114,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<Outputs.MonitoredResourcesSearchItemProperty> properties,
 
+            string? resourceCategory,
+
+            string? sourceType,
+
             string? state,
 
             ImmutableDictionary<string, object>? systemTags,
@@ -127,6 +139,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             ManagementAgentId = managementAgentId;
             Name = name;
             Properties = properties;
+            ResourceCategory = resourceCategory;
+            SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

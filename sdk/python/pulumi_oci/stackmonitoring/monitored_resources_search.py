@@ -17,17 +17,21 @@ __all__ = ['MonitoredResourcesSearchArgs', 'MonitoredResourcesSearch']
 class MonitoredResourcesSearchArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
+                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
                  property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
                  time_created_less_than: Optional[pulumi.Input[str]] = None,
@@ -37,17 +41,21 @@ class MonitoredResourcesSearchArgs:
         """
         The set of arguments for constructing a MonitoredResourcesSearch resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[str] license: License edition of the monitored resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
@@ -68,6 +76,8 @@ class MonitoredResourcesSearchArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_ids is not None:
+            pulumi.set(__self__, "compartment_ids", compartment_ids)
         if exclude_fields is not None:
             pulumi.set(__self__, "exclude_fields", exclude_fields)
         if external_id is not None:
@@ -80,6 +90,8 @@ class MonitoredResourcesSearchArgs:
             pulumi.set(__self__, "host_name_contains", host_name_contains)
         if license is not None:
             pulumi.set(__self__, "license", license)
+        if lifecycle_states is not None:
+            pulumi.set(__self__, "lifecycle_states", lifecycle_states)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -88,8 +100,12 @@ class MonitoredResourcesSearchArgs:
             pulumi.set(__self__, "name_contains", name_contains)
         if property_equals is not None:
             pulumi.set(__self__, "property_equals", property_equals)
+        if resource_category is not None:
+            pulumi.set(__self__, "resource_category", resource_category)
         if resource_time_zone is not None:
             pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created_greater_than_or_equal_to is not None:
@@ -114,6 +130,18 @@ class MonitoredResourcesSearchArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentIds")
+    def compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_ids")
+
+    @compartment_ids.setter
+    def compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "compartment_ids", value)
 
     @property
     @pulumi.getter(name="excludeFields")
@@ -188,6 +216,18 @@ class MonitoredResourcesSearchArgs:
         pulumi.set(self, "license", value)
 
     @property
+    @pulumi.getter(name="lifecycleStates")
+    def lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Multiple lifecycle states filter.
+        """
+        return pulumi.get(self, "lifecycle_states")
+
+    @lifecycle_states.setter
+    def lifecycle_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "lifecycle_states", value)
+
+    @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -236,6 +276,18 @@ class MonitoredResourcesSearchArgs:
         pulumi.set(self, "property_equals", value)
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource category filter.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @resource_category.setter
+    def resource_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_category", value)
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
         """
@@ -246,6 +298,18 @@ class MonitoredResourcesSearchArgs:
     @resource_time_zone.setter
     def resource_time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_time_zone", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Source type filter.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_type", value)
 
     @property
     @pulumi.getter
@@ -336,6 +400,7 @@ class MonitoredResourcesSearchArgs:
 class _MonitoredResourcesSearchState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -343,11 +408,14 @@ class _MonitoredResourcesSearchState:
                  host_name_contains: Optional[pulumi.Input[str]] = None,
                  items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
                  property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
                  time_created_less_than: Optional[pulumi.Input[str]] = None,
@@ -357,6 +425,7 @@ class _MonitoredResourcesSearchState:
         """
         Input properties used for looking up and filtering MonitoredResourcesSearch resources.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
@@ -364,11 +433,14 @@ class _MonitoredResourcesSearchState:
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]] items: List of monitored resources.
         :param pulumi.Input[str] license: License edition of the monitored resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
@@ -390,6 +462,8 @@ class _MonitoredResourcesSearchState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_ids is not None:
+            pulumi.set(__self__, "compartment_ids", compartment_ids)
         if exclude_fields is not None:
             pulumi.set(__self__, "exclude_fields", exclude_fields)
         if external_id is not None:
@@ -404,6 +478,8 @@ class _MonitoredResourcesSearchState:
             pulumi.set(__self__, "items", items)
         if license is not None:
             pulumi.set(__self__, "license", license)
+        if lifecycle_states is not None:
+            pulumi.set(__self__, "lifecycle_states", lifecycle_states)
         if management_agent_id is not None:
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
@@ -412,8 +488,12 @@ class _MonitoredResourcesSearchState:
             pulumi.set(__self__, "name_contains", name_contains)
         if property_equals is not None:
             pulumi.set(__self__, "property_equals", property_equals)
+        if resource_category is not None:
+            pulumi.set(__self__, "resource_category", resource_category)
         if resource_time_zone is not None:
             pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created_greater_than_or_equal_to is not None:
@@ -438,6 +518,18 @@ class _MonitoredResourcesSearchState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentIds")
+    def compartment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_ids")
+
+    @compartment_ids.setter
+    def compartment_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "compartment_ids", value)
 
     @property
     @pulumi.getter(name="excludeFields")
@@ -524,6 +616,18 @@ class _MonitoredResourcesSearchState:
         pulumi.set(self, "license", value)
 
     @property
+    @pulumi.getter(name="lifecycleStates")
+    def lifecycle_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Multiple lifecycle states filter.
+        """
+        return pulumi.get(self, "lifecycle_states")
+
+    @lifecycle_states.setter
+    def lifecycle_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "lifecycle_states", value)
+
+    @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -572,6 +676,18 @@ class _MonitoredResourcesSearchState:
         pulumi.set(self, "property_equals", value)
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource category filter.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @resource_category.setter
+    def resource_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_category", value)
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
         """
@@ -582,6 +698,18 @@ class _MonitoredResourcesSearchState:
     @resource_time_zone.setter
     def resource_time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_time_zone", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Source type filter.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_type", value)
 
     @property
     @pulumi.getter
@@ -674,17 +802,21 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
                  property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
                  time_created_less_than: Optional[pulumi.Input[str]] = None,
@@ -706,16 +838,20 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         test_monitored_resources_search = oci.stack_monitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch",
             compartment_id=var["compartment_id"],
+            compartment_ids=var["monitored_resources_search_compartment_ids"],
             exclude_fields=var["monitored_resources_search_exclude_fields"],
             external_id=oci_stack_monitoring_external["test_external"]["id"],
             fields=var["monitored_resources_search_fields"],
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
             license=var["monitored_resources_search_license"],
+            lifecycle_states=var["monitored_resources_search_lifecycle_states"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
+            resource_category=var["monitored_resources_search_resource_category"],
             resource_time_zone=var["monitored_resources_search_resource_time_zone"],
+            source_type=var["monitored_resources_search_source_type"],
             state=var["monitored_resources_search_state"],
             time_created_greater_than_or_equal_to=var["monitored_resources_search_time_created_greater_than_or_equal_to"],
             time_created_less_than=var["monitored_resources_search_time_created_less_than"],
@@ -736,17 +872,21 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[str] license: License edition of the monitored resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
@@ -786,16 +926,20 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         test_monitored_resources_search = oci.stack_monitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch",
             compartment_id=var["compartment_id"],
+            compartment_ids=var["monitored_resources_search_compartment_ids"],
             exclude_fields=var["monitored_resources_search_exclude_fields"],
             external_id=oci_stack_monitoring_external["test_external"]["id"],
             fields=var["monitored_resources_search_fields"],
             host_name=var["monitored_resources_search_host_name"],
             host_name_contains=var["monitored_resources_search_host_name_contains"],
             license=var["monitored_resources_search_license"],
+            lifecycle_states=var["monitored_resources_search_lifecycle_states"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             name_contains=var["monitored_resources_search_name_contains"],
             property_equals=var["monitored_resources_search_property_equals"],
+            resource_category=var["monitored_resources_search_resource_category"],
             resource_time_zone=var["monitored_resources_search_resource_time_zone"],
+            source_type=var["monitored_resources_search_source_type"],
             state=var["monitored_resources_search_state"],
             time_created_greater_than_or_equal_to=var["monitored_resources_search_time_created_greater_than_or_equal_to"],
             time_created_less_than=var["monitored_resources_search_time_created_less_than"],
@@ -829,17 +973,21 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
                  fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  host_name_contains: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
+                 lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
                  property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
                  time_created_less_than: Optional[pulumi.Input[str]] = None,
@@ -858,17 +1006,21 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compartment_ids"] = compartment_ids
             __props__.__dict__["exclude_fields"] = exclude_fields
             __props__.__dict__["external_id"] = external_id
             __props__.__dict__["fields"] = fields
             __props__.__dict__["host_name"] = host_name
             __props__.__dict__["host_name_contains"] = host_name_contains
             __props__.__dict__["license"] = license
+            __props__.__dict__["lifecycle_states"] = lifecycle_states
             __props__.__dict__["management_agent_id"] = management_agent_id
             __props__.__dict__["name"] = name
             __props__.__dict__["name_contains"] = name_contains
             __props__.__dict__["property_equals"] = property_equals
+            __props__.__dict__["resource_category"] = resource_category
             __props__.__dict__["resource_time_zone"] = resource_time_zone
+            __props__.__dict__["source_type"] = source_type
             __props__.__dict__["state"] = state
             __props__.__dict__["time_created_greater_than_or_equal_to"] = time_created_greater_than_or_equal_to
             __props__.__dict__["time_created_less_than"] = time_created_less_than
@@ -887,6 +1039,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            compartment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             external_id: Optional[pulumi.Input[str]] = None,
             fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -894,11 +1047,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             host_name_contains: Optional[pulumi.Input[str]] = None,
             items: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]]] = None,
             license: Optional[pulumi.Input[str]] = None,
+            lifecycle_states: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             management_agent_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             name_contains: Optional[pulumi.Input[str]] = None,
             property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            resource_category: Optional[pulumi.Input[str]] = None,
             resource_time_zone: Optional[pulumi.Input[str]] = None,
+            source_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
             time_created_less_than: Optional[pulumi.Input[str]] = None,
@@ -913,6 +1069,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] compartment_ids: Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclude_fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fields: Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
@@ -920,11 +1077,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] host_name_contains: A filter to return resources with host name pattern.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcesSearchItemArgs']]]] items: List of monitored resources.
         :param pulumi.Input[str] license: License edition of the monitored resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] lifecycle_states: Multiple lifecycle states filter.
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
         :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
         :param pulumi.Input[str] time_created_greater_than_or_equal_to: Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
@@ -949,6 +1109,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         __props__ = _MonitoredResourcesSearchState.__new__(_MonitoredResourcesSearchState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compartment_ids"] = compartment_ids
         __props__.__dict__["exclude_fields"] = exclude_fields
         __props__.__dict__["external_id"] = external_id
         __props__.__dict__["fields"] = fields
@@ -956,11 +1117,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         __props__.__dict__["host_name_contains"] = host_name_contains
         __props__.__dict__["items"] = items
         __props__.__dict__["license"] = license
+        __props__.__dict__["lifecycle_states"] = lifecycle_states
         __props__.__dict__["management_agent_id"] = management_agent_id
         __props__.__dict__["name"] = name
         __props__.__dict__["name_contains"] = name_contains
         __props__.__dict__["property_equals"] = property_equals
+        __props__.__dict__["resource_category"] = resource_category
         __props__.__dict__["resource_time_zone"] = resource_time_zone
+        __props__.__dict__["source_type"] = source_type
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created_greater_than_or_equal_to"] = time_created_greater_than_or_equal_to
         __props__.__dict__["time_created_less_than"] = time_created_less_than
@@ -976,6 +1140,14 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentIds")
+    def compartment_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_ids")
 
     @property
     @pulumi.getter(name="excludeFields")
@@ -1027,11 +1199,19 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def license(self) -> pulumi.Output[str]:
+    def license(self) -> pulumi.Output[Optional[str]]:
         """
         License edition of the monitored resource.
         """
         return pulumi.get(self, "license")
+
+    @property
+    @pulumi.getter(name="lifecycleStates")
+    def lifecycle_states(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        Multiple lifecycle states filter.
+        """
+        return pulumi.get(self, "lifecycle_states")
 
     @property
     @pulumi.getter(name="managementAgentId")
@@ -1066,12 +1246,28 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         return pulumi.get(self, "property_equals")
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> pulumi.Output[Optional[str]]:
+        """
+        Resource category filter.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> pulumi.Output[Optional[str]]:
         """
         Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        Source type filter.
+        """
+        return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter

@@ -16,55 +16,6 @@ import (
 //
 // Creates a network load balancer.
 //
-// ## Example Usage
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/NetworkLoadBalancer"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.NewNetworkLoadBalancer(ctx, "testNetworkLoadBalancer", &NetworkLoadBalancer.NetworkLoadBalancerArgs{
-//				CompartmentId:       pulumi.Any(_var.Compartment_id),
-//				DisplayName:         pulumi.Any(_var.Network_load_balancer_display_name),
-//				SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				AssignedIpv6:        pulumi.Any(_var.Network_load_balancer_assigned_ipv6),
-//				AssignedPrivateIpv4: pulumi.Any(_var.Network_load_balancer_assigned_private_ipv4),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//				IsPreserveSourceDestination: pulumi.Any(_var.Network_load_balancer_is_preserve_source_destination),
-//				IsPrivate:                   pulumi.Any(_var.Network_load_balancer_is_private),
-//				IsSymmetricHashEnabled:      pulumi.Any(_var.Network_load_balancer_is_symmetric_hash_enabled),
-//				NetworkSecurityGroupIds:     pulumi.Any(_var.Network_load_balancer_network_security_group_ids),
-//				NlbIpVersion:                pulumi.Any(_var.Network_load_balancer_nlb_ip_version),
-//				ReservedIps: networkloadbalancer.NetworkLoadBalancerReservedIpArray{
-//					&networkloadbalancer.NetworkLoadBalancerReservedIpArgs{
-//						Id: pulumi.Any(_var.Network_load_balancer_reserved_ips_id),
-//					},
-//				},
-//				SubnetIpv6cidr: pulumi.Any(_var.Network_load_balancer_subnet_ipv6cidr),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
-//
 // ## Import
 //
 // NetworkLoadBalancers can be imported using the `id`, e.g.
@@ -103,6 +54,7 @@ type NetworkLoadBalancer struct {
 	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 	//
+	// Example: `true`
 	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolOutput `pulumi:"isSymmetricHashEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -206,6 +158,7 @@ type networkLoadBalancerState struct {
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 	//
 	// Example: `true`
+	// Example: `true`
 	IsSymmetricHashEnabled *bool `pulumi:"isSymmetricHashEnabled"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -269,6 +222,7 @@ type NetworkLoadBalancerState struct {
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 	//
+	// Example: `true`
 	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -336,6 +290,7 @@ type networkLoadBalancerArgs struct {
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 	//
 	// Example: `true`
+	// Example: `true`
 	IsSymmetricHashEnabled *bool `pulumi:"isSymmetricHashEnabled"`
 	// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	//
@@ -388,6 +343,7 @@ type NetworkLoadBalancerArgs struct {
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 	//
+	// Example: `true`
 	// Example: `true`
 	IsSymmetricHashEnabled pulumi.BoolPtrInput
 	// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -555,6 +511,7 @@ func (o NetworkLoadBalancerOutput) IsPrivate() pulumi.BoolOutput {
 
 // (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
 //
+// Example: `true`
 // Example: `true`
 func (o NetworkLoadBalancerOutput) IsSymmetricHashEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.BoolOutput { return v.IsSymmetricHashEnabled }).(pulumi.BoolOutput)

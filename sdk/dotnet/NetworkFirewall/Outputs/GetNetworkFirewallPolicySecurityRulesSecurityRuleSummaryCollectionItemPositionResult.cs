@@ -16,17 +16,17 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// Identifier for rule after which this rule lies.
         /// </summary>
-        public readonly string? AfterRule;
+        public readonly string AfterRule;
         /// <summary>
         /// Identifier for rule before which this rule lies.
         /// </summary>
-        public readonly string? BeforeRule;
+        public readonly string BeforeRule;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPositionResult(
-            string? afterRule,
+            string afterRule,
 
-            string? beforeRule)
+            string beforeRule)
         {
             AfterRule = afterRule;
             BeforeRule = beforeRule;

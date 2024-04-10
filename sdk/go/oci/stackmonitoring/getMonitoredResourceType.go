@@ -79,6 +79,10 @@ type LookupMonitoredResourceTypeResult struct {
 	MonitoredResourceTypeId string `pulumi:"monitoredResourceTypeId"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
 	Name string `pulumi:"name"`
+	// Resource Category to indicate the kind of resource type.
+	ResourceCategory string `pulumi:"resourceCategory"`
+	// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+	SourceType string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -174,6 +178,16 @@ func (o LookupMonitoredResourceTypeResultOutput) MonitoredResourceTypeId() pulum
 // A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
 func (o LookupMonitoredResourceTypeResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Resource Category to indicate the kind of resource type.
+func (o LookupMonitoredResourceTypeResultOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.ResourceCategory }).(pulumi.StringOutput)
+}
+
+// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+func (o LookupMonitoredResourceTypeResultOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource type.

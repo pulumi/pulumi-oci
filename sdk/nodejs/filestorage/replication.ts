@@ -44,8 +44,8 @@ import * as utilities from "../utilities";
  *
  * const testReplication = new oci.filestorage.Replication("testReplication", {
  *     compartmentId: _var.compartment_id,
- *     sourceId: oci_file_storage_source.test_source.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     sourceId: oci_file_storage_file_system.test_source.id,
+ *     targetId: oci_file_storage_file_system.test_target.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

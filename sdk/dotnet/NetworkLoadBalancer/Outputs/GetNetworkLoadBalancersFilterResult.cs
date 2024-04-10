@@ -13,6 +13,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     [OutputType]
     public sealed class GetNetworkLoadBalancersFilterResult
     {
+        /// <summary>
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

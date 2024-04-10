@@ -11266,7 +11266,7 @@ func (o DeploymentDeploymentArgumentsItemArrayOutput) Index(i pulumi.IntInput) D
 
 type DeploymentDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses []DeploymentDeploymentExecutionProgressDeployStageExecutionProgress `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished *string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11286,7 +11286,7 @@ type DeploymentDeploymentExecutionProgressInput interface {
 
 type DeploymentDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11345,10 +11345,10 @@ func (o DeploymentDeploymentExecutionProgressOutput) ToDeploymentDeploymentExecu
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o DeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v DeploymentDeploymentExecutionProgress) map[string]interface{} {
-		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+func (o DeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgresses() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgress) []DeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
+		return v.DeployStageExecutionProgresses
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11379,6 +11379,672 @@ func (o DeploymentDeploymentExecutionProgressArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgress {
 		return vs[0].([]DeploymentDeploymentExecutionProgress)[vs[1].(int)]
 	}).(DeploymentDeploymentExecutionProgressOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgress struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName *string `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId *string `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType *string `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status *string `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished *string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted *string `pulumi:"timeStarted"`
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{...}
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName pulumi.StringPtrInput `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType pulumi.StringPtrInput `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
+}
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray{ DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{...} }
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+// Stage display name. Avoid entering confidential information.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
+		return v.DeployStageDisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Details about stage execution for all the target environments.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageExecutionProgressDetails() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return v.DeployStageExecutionProgressDetails
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+// The OCID of the stage.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
+		return v.DeployStageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Collection containing the predecessors of a stage.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStagePredecessors() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return v.DeployStagePredecessors
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+// Deployment stage type.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
+		return v.DeployStageType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current state of the stage.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
+		return v.TimeFinished
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
+		return v.TimeStarted
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
+		return vs[0].([]DeploymentDeploymentExecutionProgressDeployStageExecutionProgress)[vs[1].(int)]
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup *string `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId *string `pulumi:"targetId"`
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...}
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup pulumi.StringPtrInput `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+}
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{ DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...} }
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+// Details about all the rollback steps for one target environment.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) RollbackSteps() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return v.RollbackSteps
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+// Details about all the steps for one target environment.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) Steps() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return v.Steps
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+// Group for the target environment for example, the batch number for an Instance Group deployment.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) *string {
+		return v.TargetGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) *string {
+		return v.TargetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return vs[0].([]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)[vs[1].(int)]
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep struct {
+	// Name of the parameter (case-sensitive).
+	Name *string `pulumi:"name"`
+	// The current state of the deployment.
+	State *string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished *string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted *string `pulumi:"timeStarted"`
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...}
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The current state of the deployment.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
+}
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{ DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...} }
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current state of the deployment.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) *string {
+		return v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) *string {
+		return v.TimeFinished
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) *string {
+		return v.TimeStarted
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return vs[0].([]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)[vs[1].(int)]
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep struct {
+	// Name of the parameter (case-sensitive).
+	Name *string `pulumi:"name"`
+	// The current state of the deployment.
+	State *string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished *string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted *string `pulumi:"timeStarted"`
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...}
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs struct {
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The current state of the deployment.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringPtrInput `pulumi:"timeStarted"`
+}
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{ DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...} }
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+// Name of the parameter (case-sensitive).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The current state of the deployment.
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) *string {
+		return v.State
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) *string {
+		return v.TimeFinished
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) *string {
+		return v.TimeStarted
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return vs[0].([]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)[vs[1].(int)]
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor struct {
+	DeployStagePredecessor *string `pulumi:"deployStagePredecessor"`
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...}
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs struct {
+	DeployStagePredecessor pulumi.StringPtrInput `pulumi:"deployStagePredecessor"`
+}
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
+}
+
+// DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput is an input type that accepts DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray and DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput` via:
+//
+//	DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{ DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...} }
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+	ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return i.ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) DeployStagePredecessor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor) *string {
+		return v.DeployStagePredecessor
+	}).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return vs[0].([]DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)[vs[1].(int)]
+	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
 }
 
 type ProjectNotificationConfig struct {
@@ -32486,7 +33152,7 @@ func (o GetDeploymentDeploymentArgumentItemArrayOutput) Index(i pulumi.IntInput)
 
 type GetDeploymentDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -32506,7 +33172,7 @@ type GetDeploymentDeploymentExecutionProgressInput interface {
 
 type GetDeploymentDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -32565,10 +33231,10 @@ func (o GetDeploymentDeploymentExecutionProgressOutput) ToGetDeploymentDeploymen
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o GetDeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgress) map[string]interface{} {
-		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+func (o GetDeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgresses() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgress) []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
+		return v.DeployStageExecutionProgresses
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -32599,6 +33265,672 @@ func (o GetDeploymentDeploymentExecutionProgressArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgress {
 		return vs[0].([]GetDeploymentDeploymentExecutionProgress)[vs[1].(int)]
 	}).(GetDeploymentDeploymentExecutionProgressOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName string `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId string `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType string `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status string `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{...}
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName pulumi.StringInput `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId pulumi.StringInput `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType pulumi.StringInput `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray{ GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{...} }
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+// Stage display name. Avoid entering confidential information.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Details about stage execution for all the target environments.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageExecutionProgressDetails() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return v.DeployStageExecutionProgressDetails
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+// The OCID of the stage.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageId
+	}).(pulumi.StringOutput)
+}
+
+// Collection containing the predecessors of a stage.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStagePredecessors() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return v.DeployStagePredecessors
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+// Deployment stage type.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageType
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the stage.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
+		return vs[0].([]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress)[vs[1].(int)]
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup string `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...}
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup pulumi.StringInput `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{ GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...} }
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+// Details about all the rollback steps for one target environment.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) RollbackSteps() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return v.RollbackSteps
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+// Details about all the steps for one target environment.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) Steps() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return v.Steps
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+// Group for the target environment for example, the batch number for an Instance Group deployment.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) string {
+		return v.TargetGroup
+	}).(pulumi.StringOutput)
+}
+
+// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return vs[0].([]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)[vs[1].(int)]
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep struct {
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// The current state of the deployment.
+	State string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...}
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs struct {
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the deployment.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{ GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...} }
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+// Name of the step.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the deployment.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return vs[0].([]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)[vs[1].(int)]
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep struct {
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// The current state of the deployment.
+	State string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...}
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs struct {
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the deployment.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{ GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...} }
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+// Name of the step.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the deployment.
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return vs[0].([]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)[vs[1].(int)]
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor struct {
+	DeployStagePredecessor string `pulumi:"deployStagePredecessor"`
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...}
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs struct {
+	DeployStagePredecessor pulumi.StringInput `pulumi:"deployStagePredecessor"`
+}
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
+}
+
+// GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput is an input type that accepts GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray and GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput` via:
+//
+//	GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{ GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...} }
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+	ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray []GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return i.ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) DeployStagePredecessor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor) string {
+		return v.DeployStagePredecessor
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToGetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return vs[0].([]GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)[vs[1].(int)]
+	}).(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
 }
 
 type GetDeploymentsDeploymentCollection struct {
@@ -34490,7 +35822,7 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayOutput)
 
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -34510,7 +35842,7 @@ type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput inte
 
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgresses GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayInput `pulumi:"deployStageExecutionProgresses"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -34569,10 +35901,10 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput)
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress) map[string]interface{} {
-		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput) DeployStageExecutionProgresses() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress) []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress {
+		return v.DeployStageExecutionProgresses
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -34605,6 +35937,674 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName string `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId string `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType string `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status string `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs struct {
+	// Stage display name. Avoid entering confidential information.
+	DeployStageDisplayName pulumi.StringInput `pulumi:"deployStageDisplayName"`
+	// Details about stage execution for all the target environments.
+	DeployStageExecutionProgressDetails GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput `pulumi:"deployStageExecutionProgressDetails"`
+	// The OCID of the stage.
+	DeployStageId pulumi.StringInput `pulumi:"deployStageId"`
+	// Collection containing the predecessors of a stage.
+	DeployStagePredecessors GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput `pulumi:"deployStagePredecessors"`
+	// Deployment stage type.
+	DeployStageType pulumi.StringInput `pulumi:"deployStageType"`
+	// The current state of the stage.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return o
+}
+
+// Stage display name. Avoid entering confidential information.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Details about stage execution for all the target environments.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageExecutionProgressDetails() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return v.DeployStageExecutionProgressDetails
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+// The OCID of the stage.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageId
+	}).(pulumi.StringOutput)
+}
+
+// Collection containing the predecessors of a stage.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStagePredecessors() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return v.DeployStagePredecessors
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+// Deployment stage type.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.DeployStageType
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the stage.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup string `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId string `pulumi:"targetId"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs struct {
+	// Details about all the rollback steps for one target environment.
+	RollbackSteps GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput `pulumi:"rollbackSteps"`
+	// Details about all the steps for one target environment.
+	Steps GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput `pulumi:"steps"`
+	// Group for the target environment for example, the batch number for an Instance Group deployment.
+	TargetGroup pulumi.StringInput `pulumi:"targetGroup"`
+	// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return o
+}
+
+// Details about all the rollback steps for one target environment.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) RollbackSteps() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return v.RollbackSteps
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+// Details about all the steps for one target environment.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) Steps() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return v.Steps
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+// Group for the target environment for example, the batch number for an Instance Group deployment.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) string {
+		return v.TargetGroup
+	}).(pulumi.StringOutput)
+}
+
+// The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail) string {
+		return v.TargetId
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep struct {
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// A filter to return only Deployments that matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs struct {
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only Deployments that matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return o
+}
+
+// Name of the step.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only Deployments that matches the given lifecycleState.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep struct {
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// A filter to return only Deployments that matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs struct {
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only Deployments that matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return o
+}
+
+// Name of the step.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only Deployments that matches the given lifecycleState.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor struct {
+	DeployStagePredecessor string `pulumi:"deployStagePredecessor"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs struct {
+	DeployStagePredecessor pulumi.StringInput `pulumi:"deployStagePredecessor"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray and GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{ GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray []GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput) DeployStagePredecessor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor) string {
+		return v.DeployStagePredecessor
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput)
 }
 
 type GetDeploymentsFilter struct {
@@ -41811,6 +43811,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentArgumentsItemArrayInput)(nil)).Elem(), DeploymentDeploymentArgumentsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput)(nil)).Elem(), DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectNotificationConfigInput)(nil)).Elem(), ProjectNotificationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectNotificationConfigPtrInput)(nil)).Elem(), ProjectNotificationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RepositoryMirrorRepositoryConfigInput)(nil)).Elem(), RepositoryMirrorRepositoryConfigArgs{})
@@ -42156,6 +44166,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentArgumentItemArrayInput)(nil)).Elem(), GetDeploymentDeploymentArgumentItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput)(nil)).Elem(), GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArgs{})
@@ -42190,6 +44210,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterInput)(nil)).Elem(), GetDeploymentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterArrayInput)(nil)).Elem(), GetDeploymentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectNotificationConfigInput)(nil)).Elem(), GetProjectNotificationConfigArgs{})
@@ -42476,6 +44506,16 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentDeploymentArgumentsItemArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput{})
 	pulumi.RegisterOutputType(ProjectNotificationConfigOutput{})
 	pulumi.RegisterOutputType(ProjectNotificationConfigPtrOutput{})
 	pulumi.RegisterOutputType(RepositoryMirrorRepositoryConfigOutput{})
@@ -42821,6 +44861,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentDeploymentArgumentItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOutput{})
@@ -42855,6 +44905,16 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectNotificationConfigOutput{})

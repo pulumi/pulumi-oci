@@ -14,51 +14,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// Creates a network load balancer.
     /// 
-    /// ## Example Usage
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testNetworkLoadBalancer = new Oci.NetworkLoadBalancer.NetworkLoadBalancer("testNetworkLoadBalancer", new()
-    ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Network_load_balancer_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         AssignedIpv6 = @var.Network_load_balancer_assigned_ipv6,
-    ///         AssignedPrivateIpv4 = @var.Network_load_balancer_assigned_private_ipv4,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         IsPreserveSourceDestination = @var.Network_load_balancer_is_preserve_source_destination,
-    ///         IsPrivate = @var.Network_load_balancer_is_private,
-    ///         IsSymmetricHashEnabled = @var.Network_load_balancer_is_symmetric_hash_enabled,
-    ///         NetworkSecurityGroupIds = @var.Network_load_balancer_network_security_group_ids,
-    ///         NlbIpVersion = @var.Network_load_balancer_nlb_ip_version,
-    ///         ReservedIps = new[]
-    ///         {
-    ///             new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancerReservedIpArgs
-    ///             {
-    ///                 Id = @var.Network_load_balancer_reserved_ips_id,
-    ///             },
-    ///         },
-    ///         SubnetIpv6cidr = @var.Network_load_balancer_subnet_ipv6cidr,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
-    /// 
     /// ## Import
     /// 
     /// NetworkLoadBalancers can be imported using the `id`, e.g.
@@ -135,6 +90,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
         /// 
+        /// Example: `true`
         /// Example: `true`
         /// </summary>
         [Output("isSymmetricHashEnabled")]
@@ -330,6 +286,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
         /// 
         /// Example: `true`
+        /// Example: `true`
         /// </summary>
         [Input("isSymmetricHashEnabled")]
         public Input<bool>? IsSymmetricHashEnabled { get; set; }
@@ -479,6 +436,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
         /// 
+        /// Example: `true`
         /// Example: `true`
         /// </summary>
         [Input("isSymmetricHashEnabled")]

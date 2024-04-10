@@ -31282,7 +31282,7 @@ export namespace DevOps {
         /**
          * Map of stage OCIDs to deploy stage execution progress model.
          */
-        deployStageExecutionProgress?: pulumi.Input<{[key: string]: any}>;
+        deployStageExecutionProgresses?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress>[]>;
         /**
          * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
@@ -31291,6 +31291,102 @@ export namespace DevOps {
          * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
         timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgress {
+        /**
+         * Stage display name. Avoid entering confidential information.
+         */
+        deployStageDisplayName?: pulumi.Input<string>;
+        /**
+         * Details about stage execution for all the target environments.
+         */
+        deployStageExecutionProgressDetails?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail>[]>;
+        /**
+         * The OCID of the stage.
+         */
+        deployStageId?: pulumi.Input<string>;
+        /**
+         * Collection containing the predecessors of a stage.
+         */
+        deployStagePredecessors?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor>[]>;
+        /**
+         * Deployment stage type.
+         */
+        deployStageType?: pulumi.Input<string>;
+        /**
+         * The current state of the stage.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail {
+        /**
+         * Details about all the rollback steps for one target environment.
+         */
+        rollbackSteps?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep>[]>;
+        /**
+         * Details about all the steps for one target environment.
+         */
+        steps?: pulumi.Input<pulumi.Input<inputs.DevOps.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep>[]>;
+        /**
+         * Group for the target environment for example, the batch number for an Instance Group deployment.
+         */
+        targetGroup?: pulumi.Input<string>;
+        /**
+         * The function ID, instance ID or the cluster ID. For Wait stage it will be the stage ID.
+         */
+        targetId?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep {
+        /**
+         * Name of the parameter (case-sensitive).
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The current state of the deployment.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep {
+        /**
+         * Name of the parameter (case-sensitive).
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The current state of the deployment.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeFinished?: pulumi.Input<string>;
+        /**
+         * Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         */
+        timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor {
+        deployStagePredecessor?: pulumi.Input<string>;
     }
 
     export interface GetBuildPipelineStagesFilter {
@@ -68390,12 +68486,16 @@ export namespace NetworkLoadBalancer {
          */
         targetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface BackendSetHealthChecker {
+        /**
+         * (Updatable) DNS healthcheck configurations.
+         */
+        dns?: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthCheckerDns>;
         /**
          * (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
          */
@@ -68405,7 +68505,7 @@ export namespace NetworkLoadBalancer {
          */
         port?: pulumi.Input<number>;
         /**
-         * (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+         * (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
          */
         protocol: pulumi.Input<string>;
         /**
@@ -68436,6 +68536,29 @@ export namespace NetworkLoadBalancer {
          * (Updatable) The path against which to run the health check.  Example: `/healthcheck`
          */
         urlPath?: pulumi.Input<string>;
+    }
+
+    export interface BackendSetHealthCheckerDns {
+        /**
+         * (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+         */
+        domainName: pulumi.Input<string>;
+        /**
+         * (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+         */
+        queryClass?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+         */
+        queryType?: pulumi.Input<string>;
+        /**
+         * (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+         */
+        rcodes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+         */
+        transportProtocol?: pulumi.Input<string>;
     }
 
     export interface GetBackendSetsFilter {
@@ -68493,12 +68616,18 @@ export namespace NetworkLoadBalancer {
     }
 
     export interface GetNetworkLoadBalancersFilter {
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
+         */
         name: string;
         regex?: boolean;
         values: string[];
     }
 
     export interface GetNetworkLoadBalancersFilterArgs {
+        /**
+         * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -68530,11 +68659,11 @@ export namespace NetworkLoadBalancer {
 
     export interface NetworkLoadBalancerIpAddress {
         /**
-         * An IP address.  Example: `192.168.0.3`
+         * The IP address of the backend server. Example: `10.0.0.3`
          */
         ipAddress?: pulumi.Input<string>;
         /**
-         * IP version associated with this IP address.
+         * IP version associated with the listener.
          */
         ipVersion?: pulumi.Input<string>;
         /**
@@ -68611,12 +68740,16 @@ export namespace NetworkLoadBalancer {
          */
         targetId?: pulumi.Input<string>;
         /**
-         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+         * (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
          */
         weight?: pulumi.Input<number>;
     }
 
     export interface NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
+        /**
+         * (Updatable) DNS healthcheck configurations.
+         */
+        dns?: pulumi.Input<inputs.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns>;
         /**
          * (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
          */
@@ -68657,6 +68790,29 @@ export namespace NetworkLoadBalancer {
          * (Updatable) The path against which to run the health check.  Example: `/healthcheck`
          */
         urlPath?: pulumi.Input<string>;
+    }
+
+    export interface NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns {
+        /**
+         * (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+         */
+        domainName: pulumi.Input<string>;
+        /**
+         * (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+         */
+        queryClass?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+         */
+        queryType?: pulumi.Input<string>;
+        /**
+         * (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+         */
+        rcodes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+         */
+        transportProtocol?: pulumi.Input<string>;
     }
 }
 
@@ -74222,6 +74378,18 @@ export namespace StackMonitoring {
          */
         availabilityProxyMetrics?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link  will not be shown in the stack monitoring home page.
+         */
+        consolePathPrefix?: pulumi.Input<string>;
+        /**
+         * The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+         */
+        externalIdMapping?: pulumi.Input<string>;
+        /**
+         * Lifecycle states of the external resource which reflects the status of the resource being up.
+         */
+        lifecycleStatusMappingsForUpStatuses?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
          */
         namespace: pulumi.Input<string>;
@@ -74229,6 +74397,30 @@ export namespace StackMonitoring {
          * The resource group to use while fetching metrics from telemetry. If not specified, resource group will be skipped in the list metrics request.
          */
         resourceGroup?: pulumi.Input<string>;
+        /**
+         * The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+         */
+        resourceNameFilter?: pulumi.Input<string>;
+        /**
+         * The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+         */
+        resourceNameMapping?: pulumi.Input<string>;
+        /**
+         * The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+         */
+        resourceTypeFilter?: pulumi.Input<string>;
+        /**
+         * The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+         */
+        resourceTypeMapping?: pulumi.Input<string>;
+        /**
+         * The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+         */
+        serviceBaseUrl?: pulumi.Input<string>;
+        /**
+         * Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+         */
+        shouldUseMetricsFlowForStatus?: pulumi.Input<boolean>;
         /**
          * Source from where the metrics pushed to telemetry. Possible values:
          * * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from Oracle Cloud Infrastructure Native Services.
@@ -74344,6 +74536,10 @@ export namespace StackMonitoring {
          */
         parentId?: pulumi.Input<string>;
         /**
+         * Resource Category to indicate the kind of resource type.
+         */
+        resourceCategory?: pulumi.Input<string>;
+        /**
          * Monitored resource display name.
          */
         resourceDisplayName?: pulumi.Input<string>;
@@ -74359,6 +74555,10 @@ export namespace StackMonitoring {
          * Monitored Resource Type.
          */
         resourceType?: pulumi.Input<string>;
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         */
+        sourceType?: pulumi.Input<string>;
         /**
          * The current state of the Resource.
          */
@@ -74471,6 +74671,14 @@ export namespace StackMonitoring {
          * List of monitored resource properties.
          */
         properties?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchItemProperty>[]>;
+        /**
+         * Resource category filter.
+         */
+        resourceCategory?: pulumi.Input<string>;
+        /**
+         * Source type filter.
+         */
+        sourceType?: pulumi.Input<string>;
         /**
          * A filter to return resources with matching lifecycle state.
          */

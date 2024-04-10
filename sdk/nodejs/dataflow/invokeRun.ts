@@ -51,6 +51,7 @@ import * as utilities from "../utilities";
  *     maxDurationInMinutes: _var.invoke_run_max_duration_in_minutes,
  *     metastoreId: _var.metastore_id,
  *     numExecutors: _var.invoke_run_num_executors,
+ *     opcParentRptUrl: _var.invoke_run_opc_parent_rpt_url,
  *     parameters: [{
  *         name: _var.invoke_run_parameters_name,
  *         value: _var.invoke_run_parameters_value,
@@ -205,6 +206,10 @@ export class InvokeRun extends pulumi.CustomResource {
      */
     public readonly numExecutors!: pulumi.Output<number>;
     /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     */
+    public readonly opcParentRptUrl!: pulumi.Output<string>;
+    /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public /*out*/ readonly opcRequestId!: pulumi.Output<string>;
@@ -320,6 +325,7 @@ export class InvokeRun extends pulumi.CustomResource {
             resourceInputs["maxDurationInMinutes"] = state ? state.maxDurationInMinutes : undefined;
             resourceInputs["metastoreId"] = state ? state.metastoreId : undefined;
             resourceInputs["numExecutors"] = state ? state.numExecutors : undefined;
+            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
             resourceInputs["opcRequestId"] = state ? state.opcRequestId : undefined;
             resourceInputs["ownerPrincipalId"] = state ? state.ownerPrincipalId : undefined;
             resourceInputs["ownerUserName"] = state ? state.ownerUserName : undefined;
@@ -363,6 +369,7 @@ export class InvokeRun extends pulumi.CustomResource {
             resourceInputs["maxDurationInMinutes"] = args ? args.maxDurationInMinutes : undefined;
             resourceInputs["metastoreId"] = args ? args.metastoreId : undefined;
             resourceInputs["numExecutors"] = args ? args.numExecutors : undefined;
+            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["parameters"] = args ? args.parameters : undefined;
             resourceInputs["poolId"] = args ? args.poolId : undefined;
             resourceInputs["sparkVersion"] = args ? args.sparkVersion : undefined;
@@ -498,6 +505,10 @@ export interface InvokeRunState {
      * The number of executor VMs requested.
      */
     numExecutors?: pulumi.Input<number>;
+    /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
@@ -657,6 +668,10 @@ export interface InvokeRunArgs {
      * The number of executor VMs requested.
      */
     numExecutors?: pulumi.Input<number>;
+    /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
      */

@@ -35,7 +35,16 @@ namespace Pulumi.Oci.StackMonitoring
     ///             Type = @var.Monitored_resource_task_task_details_type,
     ///             AvailabilityProxyMetricCollectionInterval = @var.Monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
     ///             AvailabilityProxyMetrics = @var.Monitored_resource_task_task_details_availability_proxy_metrics,
+    ///             ConsolePathPrefix = @var.Monitored_resource_task_task_details_console_path_prefix,
+    ///             ExternalIdMapping = @var.Monitored_resource_task_task_details_external_id_mapping,
+    ///             LifecycleStatusMappingsForUpStatuses = @var.Monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
     ///             ResourceGroup = @var.Monitored_resource_task_task_details_resource_group,
+    ///             ResourceNameFilter = @var.Monitored_resource_task_task_details_resource_name_filter,
+    ///             ResourceNameMapping = @var.Monitored_resource_task_task_details_resource_name_mapping,
+    ///             ResourceTypeFilter = @var.Monitored_resource_task_task_details_resource_type_filter,
+    ///             ResourceTypeMapping = @var.Monitored_resource_task_task_details_resource_type_mapping,
+    ///             ServiceBaseUrl = @var.Monitored_resource_task_task_details_service_base_url,
+    ///             ShouldUseMetricsFlowForStatus = @var.Monitored_resource_task_task_details_should_use_metrics_flow_for_status,
     ///         },
     ///         DefinedTags = 
     ///         {

@@ -79,7 +79,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetBackendResult> Backends;
         /// <summary>
-        /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        /// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBackendSetHealthCheckerResult> HealthCheckers;
         public readonly string Id;
@@ -87,6 +87,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// IP version associated with the backend set.
         /// </summary>
         public readonly string IpVersion;
+        /// <summary>
+        /// If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        /// </summary>
+        public readonly bool IsFailOpen;
         /// <summary>
         /// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         /// </summary>
@@ -113,6 +117,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             string ipVersion,
 
+            bool isFailOpen,
+
             bool isPreserveSource,
 
             string name,
@@ -126,6 +132,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
             HealthCheckers = healthCheckers;
             Id = id;
             IpVersion = ipVersion;
+            IsFailOpen = isFailOpen;
             IsPreserveSource = isPreserveSource;
             Name = name;
             NetworkLoadBalancerId = networkLoadBalancerId;

@@ -2027,6 +2027,7 @@ class GetInvokeRunsRunResult(dict):
                  max_duration_in_minutes: str,
                  metastore_id: str,
                  num_executors: int,
+                 opc_parent_rpt_url: str,
                  opc_request_id: str,
                  owner_principal_id: str,
                  owner_user_name: str,
@@ -2118,6 +2119,7 @@ class GetInvokeRunsRunResult(dict):
         pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
         pulumi.set(__self__, "metastore_id", metastore_id)
         pulumi.set(__self__, "num_executors", num_executors)
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "opc_request_id", opc_request_id)
         pulumi.set(__self__, "owner_principal_id", owner_principal_id)
         pulumi.set(__self__, "owner_user_name", owner_user_name)
@@ -2349,6 +2351,11 @@ class GetInvokeRunsRunResult(dict):
         The number of executor VMs requested.
         """
         return pulumi.get(self, "num_executors")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="opcRequestId")

@@ -150,6 +150,7 @@ public final class GetInvokeRunsRun {
      * 
      */
     private Integer numExecutors;
+    private String opcParentRptUrl;
     /**
      * @return Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
@@ -427,6 +428,9 @@ public final class GetInvokeRunsRun {
     public Integer numExecutors() {
         return this.numExecutors;
     }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
+    }
     /**
      * @return Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
@@ -590,6 +594,7 @@ public final class GetInvokeRunsRun {
         private String maxDurationInMinutes;
         private String metastoreId;
         private Integer numExecutors;
+        private String opcParentRptUrl;
         private String opcRequestId;
         private String ownerPrincipalId;
         private String ownerUserName;
@@ -638,6 +643,7 @@ public final class GetInvokeRunsRun {
     	      this.maxDurationInMinutes = defaults.maxDurationInMinutes;
     	      this.metastoreId = defaults.metastoreId;
     	      this.numExecutors = defaults.numExecutors;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.opcRequestId = defaults.opcRequestId;
     	      this.ownerPrincipalId = defaults.ownerPrincipalId;
     	      this.ownerUserName = defaults.ownerUserName;
@@ -887,6 +893,14 @@ public final class GetInvokeRunsRun {
             return this;
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsRun", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder opcRequestId(String opcRequestId) {
             if (opcRequestId == null) {
               throw new MissingRequiredPropertyException("GetInvokeRunsRun", "opcRequestId");
@@ -1068,6 +1082,7 @@ public final class GetInvokeRunsRun {
             _resultValue.maxDurationInMinutes = maxDurationInMinutes;
             _resultValue.metastoreId = metastoreId;
             _resultValue.numExecutors = numExecutors;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.opcRequestId = opcRequestId;
             _resultValue.ownerPrincipalId = ownerPrincipalId;
             _resultValue.ownerUserName = ownerUserName;

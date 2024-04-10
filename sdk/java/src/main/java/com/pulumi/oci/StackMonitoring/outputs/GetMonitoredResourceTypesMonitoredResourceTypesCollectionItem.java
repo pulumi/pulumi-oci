@@ -60,6 +60,16 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
      */
     private String name;
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    private String resourceCategory;
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    private String sourceType;
+    /**
      * @return Lifecycle state of the monitored resource type.
      * 
      */
@@ -145,6 +155,20 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         return this.name;
     }
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public String resourceCategory() {
+        return this.resourceCategory;
+    }
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public String sourceType() {
+        return this.sourceType;
+    }
+    /**
      * @return Lifecycle state of the monitored resource type.
      * 
      */
@@ -191,6 +215,8 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
         private List<GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata> metadatas;
         private String metricNamespace;
         private String name;
+        private String resourceCategory;
+        private String sourceType;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -207,6 +233,8 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
     	      this.metadatas = defaults.metadatas;
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.name = defaults.name;
+    	      this.resourceCategory = defaults.resourceCategory;
+    	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -289,6 +317,22 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
             return this;
         }
         @CustomType.Setter
+        public Builder resourceCategory(String resourceCategory) {
+            if (resourceCategory == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem", "resourceCategory");
+            }
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceType(String sourceType) {
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem", "sourceType");
+            }
+            this.sourceType = sourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem", "state");
@@ -331,6 +375,8 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
             _resultValue.metadatas = metadatas;
             _resultValue.metricNamespace = metricNamespace;
             _resultValue.name = name;
+            _resultValue.resourceCategory = resourceCategory;
+            _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

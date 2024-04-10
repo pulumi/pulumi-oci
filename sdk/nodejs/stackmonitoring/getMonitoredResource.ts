@@ -107,9 +107,17 @@ export interface GetMonitoredResourceResult {
      */
     readonly properties: outputs.StackMonitoring.GetMonitoredResourceProperty[];
     /**
+     * Resource Category to indicate the kind of resource type.
+     */
+    readonly resourceCategory: string;
+    /**
      * Time zone in the form of tz database canonical zone ID.
      */
     readonly resourceTimeZone: string;
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     */
+    readonly sourceType: string;
     /**
      * Lifecycle state of the monitored resource.
      */

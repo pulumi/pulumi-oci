@@ -54,7 +54,9 @@ import (
 //					ValidPropertiesForUpdates: pulumi.Any(_var.Monitored_resource_type_metadata_valid_properties_for_update),
 //					ValidPropertyValues:       pulumi.Any(_var.Monitored_resource_type_metadata_valid_property_values),
 //				},
-//				MetricNamespace: pulumi.Any(_var.Monitored_resource_type_metric_namespace),
+//				MetricNamespace:  pulumi.Any(_var.Monitored_resource_type_metric_namespace),
+//				ResourceCategory: pulumi.Any(_var.Monitored_resource_type_resource_category),
+//				SourceType:       pulumi.Any(_var.Monitored_resource_type_source_type),
 //			})
 //			if err != nil {
 //				return err
@@ -91,10 +93,14 @@ type MonitoredResourceType struct {
 	// (Updatable) Metric namespace for resource type.
 	MetricNamespace pulumi.StringOutput `pulumi:"metricNamespace"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// (Updatable) Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringOutput `pulumi:"resourceCategory"`
+	// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringOutput `pulumi:"name"`
+	SourceType pulumi.StringOutput `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -153,10 +159,14 @@ type monitoredResourceTypeState struct {
 	// (Updatable) Metric namespace for resource type.
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name *string `pulumi:"name"`
+	// (Updatable) Resource Category to indicate the kind of resource type.
+	ResourceCategory *string `pulumi:"resourceCategory"`
+	// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name *string `pulumi:"name"`
+	SourceType *string `pulumi:"sourceType"`
 	// Lifecycle state of the monitored resource type.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -183,10 +193,14 @@ type MonitoredResourceTypeState struct {
 	// (Updatable) Metric namespace for resource type.
 	MetricNamespace pulumi.StringPtrInput
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name pulumi.StringPtrInput
+	// (Updatable) Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringPtrInput
+	// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringPtrInput
+	SourceType pulumi.StringPtrInput
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -217,10 +231,14 @@ type monitoredResourceTypeArgs struct {
 	// (Updatable) Metric namespace for resource type.
 	MetricNamespace *string `pulumi:"metricNamespace"`
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name *string `pulumi:"name"`
+	// (Updatable) Resource Category to indicate the kind of resource type.
+	ResourceCategory *string `pulumi:"resourceCategory"`
+	// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name *string `pulumi:"name"`
+	SourceType *string `pulumi:"sourceType"`
 }
 
 // The set of arguments for constructing a MonitoredResourceType resource.
@@ -240,10 +258,14 @@ type MonitoredResourceTypeArgs struct {
 	// (Updatable) Metric namespace for resource type.
 	MetricNamespace pulumi.StringPtrInput
 	// A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+	Name pulumi.StringPtrInput
+	// (Updatable) Resource Category to indicate the kind of resource type.
+	ResourceCategory pulumi.StringPtrInput
+	// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Name pulumi.StringPtrInput
+	SourceType pulumi.StringPtrInput
 }
 
 func (MonitoredResourceTypeArgs) ElementType() reflect.Type {
@@ -369,11 +391,21 @@ func (o MonitoredResourceTypeOutput) MetricNamespace() pulumi.StringOutput {
 }
 
 // A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
+func (o MonitoredResourceTypeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Resource Category to indicate the kind of resource type.
+func (o MonitoredResourceTypeOutput) ResourceCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.ResourceCategory }).(pulumi.StringOutput)
+}
+
+// (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o MonitoredResourceTypeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o MonitoredResourceTypeOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }
 
 // Lifecycle state of the monitored resource type.

@@ -20,11 +20,12 @@ class BackendSetArgs:
                  network_load_balancer_id: pulumi.Input[str],
                  policy: pulumi.Input[str],
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BackendSet resource.
-        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param pulumi.Input[str] policy: (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
                
@@ -32,6 +33,7 @@ class BackendSetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
+        :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -44,6 +46,8 @@ class BackendSetArgs:
         pulumi.set(__self__, "policy", policy)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
+        if is_fail_open is not None:
+            pulumi.set(__self__, "is_fail_open", is_fail_open)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -53,7 +57,7 @@ class BackendSetArgs:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Input['BackendSetHealthCheckerArgs']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -102,6 +106,18 @@ class BackendSetArgs:
         pulumi.set(self, "ip_version", value)
 
     @property
+    @pulumi.getter(name="isFailOpen")
+    def is_fail_open(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        """
+        return pulumi.get(self, "is_fail_open")
+
+    @is_fail_open.setter
+    def is_fail_open(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_fail_open", value)
+
+    @property
     @pulumi.getter(name="isPreserveSource")
     def is_preserve_source(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -136,6 +152,7 @@ class _BackendSetState:
                  backends: Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]] = None,
                  health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -143,8 +160,9 @@ class _BackendSetState:
         """
         Input properties used for looking up and filtering BackendSet resources.
         :param pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
+        :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -164,6 +182,8 @@ class _BackendSetState:
             pulumi.set(__self__, "health_checker", health_checker)
         if ip_version is not None:
             pulumi.set(__self__, "ip_version", ip_version)
+        if is_fail_open is not None:
+            pulumi.set(__self__, "is_fail_open", is_fail_open)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -189,7 +209,7 @@ class _BackendSetState:
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> Optional[pulumi.Input['BackendSetHealthCheckerArgs']]:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -208,6 +228,18 @@ class _BackendSetState:
     @ip_version.setter
     def ip_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_version", value)
+
+    @property
+    @pulumi.getter(name="isFailOpen")
+    def is_fail_open(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        """
+        return pulumi.get(self, "is_fail_open")
+
+    @is_fail_open.setter
+    def is_fail_open(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_fail_open", value)
 
     @property
     @pulumi.getter(name="isPreserveSource")
@@ -273,6 +305,7 @@ class BackendSet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -293,6 +326,13 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
                 protocol=var["backend_set_health_checker_protocol"],
+                dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
+                    domain_name=oci_identity_domain["test_domain"]["name"],
+                    query_class=var["backend_set_health_checker_dns_query_class"],
+                    query_type=var["backend_set_health_checker_dns_query_type"],
+                    rcodes=var["backend_set_health_checker_dns_rcodes"],
+                    transport_protocol=var["backend_set_health_checker_dns_transport_protocol"],
+                ),
                 interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
                 port=var["backend_set_health_checker_port"],
                 request_data=var["backend_set_health_checker_request_data"],
@@ -306,6 +346,7 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             policy=var["backend_set_policy"],
             ip_version=var["backend_set_ip_version"],
+            is_fail_open=var["backend_set_is_fail_open"],
             is_preserve_source=var["backend_set_is_preserve_source"])
         ```
         <!--End PulumiCodeChooser -->
@@ -320,8 +361,9 @@ class BackendSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
+        :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -356,6 +398,13 @@ class BackendSet(pulumi.CustomResource):
         test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
                 protocol=var["backend_set_health_checker_protocol"],
+                dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
+                    domain_name=oci_identity_domain["test_domain"]["name"],
+                    query_class=var["backend_set_health_checker_dns_query_class"],
+                    query_type=var["backend_set_health_checker_dns_query_type"],
+                    rcodes=var["backend_set_health_checker_dns_rcodes"],
+                    transport_protocol=var["backend_set_health_checker_dns_transport_protocol"],
+                ),
                 interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
                 port=var["backend_set_health_checker_port"],
                 request_data=var["backend_set_health_checker_request_data"],
@@ -369,6 +418,7 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
             policy=var["backend_set_policy"],
             ip_version=var["backend_set_ip_version"],
+            is_fail_open=var["backend_set_is_fail_open"],
             is_preserve_source=var["backend_set_is_preserve_source"])
         ```
         <!--End PulumiCodeChooser -->
@@ -398,6 +448,7 @@ class BackendSet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
+                 is_fail_open: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -415,6 +466,7 @@ class BackendSet(pulumi.CustomResource):
                 raise TypeError("Missing required property 'health_checker'")
             __props__.__dict__["health_checker"] = health_checker
             __props__.__dict__["ip_version"] = ip_version
+            __props__.__dict__["is_fail_open"] = is_fail_open
             __props__.__dict__["is_preserve_source"] = is_preserve_source
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
@@ -437,6 +489,7 @@ class BackendSet(pulumi.CustomResource):
             backends: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackendSetBackendArgs']]]]] = None,
             health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
+            is_fail_open: Optional[pulumi.Input[bool]] = None,
             is_preserve_source: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -449,8 +502,9 @@ class BackendSet(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BackendSetBackendArgs']]]] backends: (Updatable) An array of backends to be associated with the backend set.
-        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
+        :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -471,6 +525,7 @@ class BackendSet(pulumi.CustomResource):
         __props__.__dict__["backends"] = backends
         __props__.__dict__["health_checker"] = health_checker
         __props__.__dict__["ip_version"] = ip_version
+        __props__.__dict__["is_fail_open"] = is_fail_open
         __props__.__dict__["is_preserve_source"] = is_preserve_source
         __props__.__dict__["name"] = name
         __props__.__dict__["network_load_balancer_id"] = network_load_balancer_id
@@ -489,7 +544,7 @@ class BackendSet(pulumi.CustomResource):
     @pulumi.getter(name="healthChecker")
     def health_checker(self) -> pulumi.Output['outputs.BackendSetHealthChecker']:
         """
-        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         """
         return pulumi.get(self, "health_checker")
 
@@ -500,6 +555,14 @@ class BackendSet(pulumi.CustomResource):
         (Updatable) IP version associated with the backend set.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isFailOpen")
+    def is_fail_open(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        """
+        return pulumi.get(self, "is_fail_open")
 
     @property
     @pulumi.getter(name="isPreserveSource")

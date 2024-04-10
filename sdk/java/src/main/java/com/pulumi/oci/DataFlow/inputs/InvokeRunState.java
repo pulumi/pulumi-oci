@@ -407,6 +407,21 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    @Import(name="opcParentRptUrl")
+    private @Nullable Output<String> opcParentRptUrl;
+
+    /**
+     * @return (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    public Optional<Output<String>> opcParentRptUrl() {
+        return Optional.ofNullable(this.opcParentRptUrl);
+    }
+
+    /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * 
      */
@@ -711,6 +726,7 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
         this.maxDurationInMinutes = $.maxDurationInMinutes;
         this.metastoreId = $.metastoreId;
         this.numExecutors = $.numExecutors;
+        this.opcParentRptUrl = $.opcParentRptUrl;
         this.opcRequestId = $.opcRequestId;
         this.ownerPrincipalId = $.ownerPrincipalId;
         this.ownerUserName = $.ownerUserName;
@@ -1291,6 +1307,27 @@ public final class InvokeRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder numExecutors(Integer numExecutors) {
             return numExecutors(Output.of(numExecutors));
+        }
+
+        /**
+         * @param opcParentRptUrl (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(@Nullable Output<String> opcParentRptUrl) {
+            $.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
+         * @param opcParentRptUrl (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            return opcParentRptUrl(Output.of(opcParentRptUrl));
         }
 
         /**

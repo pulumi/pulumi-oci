@@ -64,6 +64,7 @@ namespace Pulumi.Oci.DataFlow
     ///         MaxDurationInMinutes = @var.Invoke_run_max_duration_in_minutes,
     ///         MetastoreId = @var.Metastore_id,
     ///         NumExecutors = @var.Invoke_run_num_executors,
+    ///         OpcParentRptUrl = @var.Invoke_run_opc_parent_rpt_url,
     ///         Parameters = new[]
     ///         {
     ///             new Oci.DataFlow.Inputs.InvokeRunParameterArgs
@@ -249,6 +250,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Output("numExecutors")]
         public Output<int> NumExecutors { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        /// </summary>
+        [Output("opcParentRptUrl")]
+        public Output<string> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
         /// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -549,6 +556,12 @@ namespace Pulumi.Oci.DataFlow
         [Input("numExecutors")]
         public Input<int>? NumExecutors { get; set; }
 
+        /// <summary>
+        /// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
+
         [Input("parameters")]
         private InputList<Inputs.InvokeRunParameterArgs>? _parameters;
 
@@ -773,6 +786,12 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         [Input("numExecutors")]
         public Input<int>? NumExecutors { get; set; }
+
+        /// <summary>
+        /// (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
         /// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

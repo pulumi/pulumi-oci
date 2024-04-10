@@ -89,10 +89,20 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
      */
     private List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    private String resourceCategory;
+    /**
      * @return Time zone in the form of tz database canonical zone ID.
      * 
      */
     private String resourceTimeZone;
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    private String sourceType;
     /**
      * @return Lifecycle state of the monitored resource.
      * 
@@ -229,11 +239,25 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
         return this.properties;
     }
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public String resourceCategory() {
+        return this.resourceCategory;
+    }
+    /**
      * @return Time zone in the form of tz database canonical zone ID.
      * 
      */
     public String resourceTimeZone() {
         return this.resourceTimeZone;
+    }
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public String sourceType() {
+        return this.sourceType;
     }
     /**
      * @return Lifecycle state of the monitored resource.
@@ -304,7 +328,9 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
         private String managementAgentId;
         private String name;
         private List<GetMonitoredResourcesMonitoredResourceCollectionItemProperty> properties;
+        private String resourceCategory;
         private String resourceTimeZone;
+        private String sourceType;
         private String state;
         private Map<String,Object> systemTags;
         private String tenantId;
@@ -331,7 +357,9 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
     	      this.managementAgentId = defaults.managementAgentId;
     	      this.name = defaults.name;
     	      this.properties = defaults.properties;
+    	      this.resourceCategory = defaults.resourceCategory;
     	      this.resourceTimeZone = defaults.resourceTimeZone;
+    	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.tenantId = defaults.tenantId;
@@ -495,11 +523,27 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
             return properties(List.of(properties));
         }
         @CustomType.Setter
+        public Builder resourceCategory(String resourceCategory) {
+            if (resourceCategory == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItem", "resourceCategory");
+            }
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceTimeZone(String resourceTimeZone) {
             if (resourceTimeZone == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItem", "resourceTimeZone");
             }
             this.resourceTimeZone = resourceTimeZone;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceType(String sourceType) {
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourcesMonitoredResourceCollectionItem", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
@@ -569,7 +613,9 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItem {
             _resultValue.managementAgentId = managementAgentId;
             _resultValue.name = name;
             _resultValue.properties = properties;
+            _resultValue.resourceCategory = resourceCategory;
             _resultValue.resourceTimeZone = resourceTimeZone;
+            _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.tenantId = tenantId;

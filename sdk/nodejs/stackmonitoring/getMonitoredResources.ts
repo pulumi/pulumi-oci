@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
  *     compartmentId: _var.compartment_id,
  *     name: _var.monitored_resource_name,
+ *     status: _var.monitored_resource_status,
  *     workRequestId: oci_containerengine_work_request.test_work_request.id,
  * });
  * ```
@@ -33,6 +34,7 @@ export function getMonitoredResources(args: GetMonitoredResourcesArgs, opts?: pu
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "name": args.name,
+        "status": args.status,
         "workRequestId": args.workRequestId,
     }, opts);
 }
@@ -50,6 +52,10 @@ export interface GetMonitoredResourcesArgs {
      * A filter to return resources that match exact resource name.
      */
     name?: string;
+    /**
+     * A filter to return only resources with matching lifecycleState.
+     */
+    status?: string;
     /**
      * A filter to return resources which were impacted as part of this work request identifier.
      */
@@ -77,6 +83,7 @@ export interface GetMonitoredResourcesResult {
      * Property Name.
      */
     readonly name?: string;
+    readonly status?: string;
     readonly workRequestId?: string;
 }
 /**
@@ -94,6 +101,7 @@ export interface GetMonitoredResourcesResult {
  * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
  *     compartmentId: _var.compartment_id,
  *     name: _var.monitored_resource_name,
+ *     status: _var.monitored_resource_status,
  *     workRequestId: oci_containerengine_work_request.test_work_request.id,
  * });
  * ```
@@ -116,6 +124,10 @@ export interface GetMonitoredResourcesOutputArgs {
      * A filter to return resources that match exact resource name.
      */
     name?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources with matching lifecycleState.
+     */
+    status?: pulumi.Input<string>;
     /**
      * A filter to return resources which were impacted as part of this work request identifier.
      */

@@ -20,16 +20,20 @@ import * as utilities from "../utilities";
  *
  * const testMonitoredResourcesSearch = new oci.stackmonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", {
  *     compartmentId: _var.compartment_id,
+ *     compartmentIds: _var.monitored_resources_search_compartment_ids,
  *     excludeFields: _var.monitored_resources_search_exclude_fields,
  *     externalId: oci_stack_monitoring_external.test_external.id,
  *     fields: _var.monitored_resources_search_fields,
  *     hostName: _var.monitored_resources_search_host_name,
  *     hostNameContains: _var.monitored_resources_search_host_name_contains,
  *     license: _var.monitored_resources_search_license,
+ *     lifecycleStates: _var.monitored_resources_search_lifecycle_states,
  *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
  *     nameContains: _var.monitored_resources_search_name_contains,
  *     propertyEquals: _var.monitored_resources_search_property_equals,
+ *     resourceCategory: _var.monitored_resources_search_resource_category,
  *     resourceTimeZone: _var.monitored_resources_search_resource_time_zone,
+ *     sourceType: _var.monitored_resources_search_source_type,
  *     state: _var.monitored_resources_search_state,
  *     timeCreatedGreaterThanOrEqualTo: _var.monitored_resources_search_time_created_greater_than_or_equal_to,
  *     timeCreatedLessThan: _var.monitored_resources_search_time_created_less_than,
@@ -81,6 +85,10 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public readonly compartmentIds!: pulumi.Output<string[] | undefined>;
+    /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
     public readonly excludeFields!: pulumi.Output<string[] | undefined>;
@@ -107,7 +115,11 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     /**
      * License edition of the monitored resource.
      */
-    public readonly license!: pulumi.Output<string>;
+    public readonly license!: pulumi.Output<string | undefined>;
+    /**
+     * Multiple lifecycle states filter.
+     */
+    public readonly lifecycleStates!: pulumi.Output<string[] | undefined>;
     /**
      * A filter to return resources with matching management agent id.
      */
@@ -125,9 +137,17 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     public readonly propertyEquals!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
+     * Resource category filter.
+     */
+    public readonly resourceCategory!: pulumi.Output<string | undefined>;
+    /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     public readonly resourceTimeZone!: pulumi.Output<string | undefined>;
+    /**
+     * Source type filter.
+     */
+    public readonly sourceType!: pulumi.Output<string | undefined>;
     /**
      * A filter to return resources with matching lifecycle state.
      */
@@ -179,6 +199,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as MonitoredResourcesSearchState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["compartmentIds"] = state ? state.compartmentIds : undefined;
             resourceInputs["excludeFields"] = state ? state.excludeFields : undefined;
             resourceInputs["externalId"] = state ? state.externalId : undefined;
             resourceInputs["fields"] = state ? state.fields : undefined;
@@ -186,11 +207,14 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
             resourceInputs["hostNameContains"] = state ? state.hostNameContains : undefined;
             resourceInputs["items"] = state ? state.items : undefined;
             resourceInputs["license"] = state ? state.license : undefined;
+            resourceInputs["lifecycleStates"] = state ? state.lifecycleStates : undefined;
             resourceInputs["managementAgentId"] = state ? state.managementAgentId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["nameContains"] = state ? state.nameContains : undefined;
             resourceInputs["propertyEquals"] = state ? state.propertyEquals : undefined;
+            resourceInputs["resourceCategory"] = state ? state.resourceCategory : undefined;
             resourceInputs["resourceTimeZone"] = state ? state.resourceTimeZone : undefined;
+            resourceInputs["sourceType"] = state ? state.sourceType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreatedGreaterThanOrEqualTo"] = state ? state.timeCreatedGreaterThanOrEqualTo : undefined;
             resourceInputs["timeCreatedLessThan"] = state ? state.timeCreatedLessThan : undefined;
@@ -203,17 +227,21 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
                 throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["compartmentIds"] = args ? args.compartmentIds : undefined;
             resourceInputs["excludeFields"] = args ? args.excludeFields : undefined;
             resourceInputs["externalId"] = args ? args.externalId : undefined;
             resourceInputs["fields"] = args ? args.fields : undefined;
             resourceInputs["hostName"] = args ? args.hostName : undefined;
             resourceInputs["hostNameContains"] = args ? args.hostNameContains : undefined;
             resourceInputs["license"] = args ? args.license : undefined;
+            resourceInputs["lifecycleStates"] = args ? args.lifecycleStates : undefined;
             resourceInputs["managementAgentId"] = args ? args.managementAgentId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["nameContains"] = args ? args.nameContains : undefined;
             resourceInputs["propertyEquals"] = args ? args.propertyEquals : undefined;
+            resourceInputs["resourceCategory"] = args ? args.resourceCategory : undefined;
             resourceInputs["resourceTimeZone"] = args ? args.resourceTimeZone : undefined;
+            resourceInputs["sourceType"] = args ? args.sourceType : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["timeCreatedGreaterThanOrEqualTo"] = args ? args.timeCreatedGreaterThanOrEqualTo : undefined;
             resourceInputs["timeCreatedLessThan"] = args ? args.timeCreatedLessThan : undefined;
@@ -235,6 +263,10 @@ export interface MonitoredResourcesSearchState {
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    compartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
@@ -264,6 +296,10 @@ export interface MonitoredResourcesSearchState {
      */
     license?: pulumi.Input<string>;
     /**
+     * Multiple lifecycle states filter.
+     */
+    lifecycleStates?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * A filter to return resources with matching management agent id.
      */
     managementAgentId?: pulumi.Input<string>;
@@ -280,9 +316,17 @@ export interface MonitoredResourcesSearchState {
      */
     propertyEquals?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Resource category filter.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     resourceTimeZone?: pulumi.Input<string>;
+    /**
+     * Source type filter.
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * A filter to return resources with matching lifecycle state.
      */
@@ -330,6 +374,10 @@ export interface MonitoredResourcesSearchArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    compartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
     excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
@@ -354,6 +402,10 @@ export interface MonitoredResourcesSearchArgs {
      */
     license?: pulumi.Input<string>;
     /**
+     * Multiple lifecycle states filter.
+     */
+    lifecycleStates?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * A filter to return resources with matching management agent id.
      */
     managementAgentId?: pulumi.Input<string>;
@@ -370,9 +422,17 @@ export interface MonitoredResourcesSearchArgs {
      */
     propertyEquals?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Resource category filter.
+     */
+    resourceCategory?: pulumi.Input<string>;
+    /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
     resourceTimeZone?: pulumi.Input<string>;
+    /**
+     * Source type filter.
+     */
+    sourceType?: pulumi.Input<string>;
     /**
      * A filter to return resources with matching lifecycle state.
      */

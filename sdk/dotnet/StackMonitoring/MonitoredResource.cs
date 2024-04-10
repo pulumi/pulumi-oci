@@ -240,10 +240,22 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableArray<Outputs.MonitoredResourceProperty>> Properties { get; private set; } = null!;
 
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Output("resourceCategory")]
+        public Output<string> ResourceCategory { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Output("resourceTimeZone")]
         public Output<string?> ResourceTimeZone { get; private set; } = null!;
+
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        [Output("sourceType")]
+        public Output<string> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// Lifecycle state of the monitored resource.
@@ -608,10 +620,22 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
         /// (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Input("resourceTimeZone")]
         public Input<string>? ResourceTimeZone { get; set; }
+
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// Lifecycle state of the monitored resource.

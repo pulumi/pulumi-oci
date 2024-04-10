@@ -21,6 +21,13 @@ import * as utilities from "../utilities";
  * const testBackendSet = new oci.networkloadbalancer.BackendSet("testBackendSet", {
  *     healthChecker: {
  *         protocol: _var.backend_set_health_checker_protocol,
+ *         dns: {
+ *             domainName: oci_identity_domain.test_domain.name,
+ *             queryClass: _var.backend_set_health_checker_dns_query_class,
+ *             queryType: _var.backend_set_health_checker_dns_query_type,
+ *             rcodes: _var.backend_set_health_checker_dns_rcodes,
+ *             transportProtocol: _var.backend_set_health_checker_dns_transport_protocol,
+ *         },
  *         intervalInMillis: _var.backend_set_health_checker_interval_in_millis,
  *         port: _var.backend_set_health_checker_port,
  *         requestData: _var.backend_set_health_checker_request_data,
@@ -34,6 +41,7 @@ import * as utilities from "../utilities";
  *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
  *     policy: _var.backend_set_policy,
  *     ipVersion: _var.backend_set_ip_version,
+ *     isFailOpen: _var.backend_set_is_fail_open,
  *     isPreserveSource: _var.backend_set_is_preserve_source,
  * });
  * ```
@@ -80,13 +88,17 @@ export class BackendSet extends pulumi.CustomResource {
      */
     public /*out*/ readonly backends!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetBackend[]>;
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
     public readonly healthChecker!: pulumi.Output<outputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
      * (Updatable) IP version associated with the backend set.
      */
     public readonly ipVersion!: pulumi.Output<string>;
+    /**
+     * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     */
+    public readonly isFailOpen!: pulumi.Output<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
@@ -128,6 +140,7 @@ export class BackendSet extends pulumi.CustomResource {
             resourceInputs["backends"] = state ? state.backends : undefined;
             resourceInputs["healthChecker"] = state ? state.healthChecker : undefined;
             resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
+            resourceInputs["isFailOpen"] = state ? state.isFailOpen : undefined;
             resourceInputs["isPreserveSource"] = state ? state.isPreserveSource : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
@@ -145,6 +158,7 @@ export class BackendSet extends pulumi.CustomResource {
             }
             resourceInputs["healthChecker"] = args ? args.healthChecker : undefined;
             resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
+            resourceInputs["isFailOpen"] = args ? args.isFailOpen : undefined;
             resourceInputs["isPreserveSource"] = args ? args.isPreserveSource : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
@@ -165,13 +179,17 @@ export interface BackendSetState {
      */
     backends?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.BackendSetBackend>[]>;
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
     healthChecker?: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
      * (Updatable) IP version associated with the backend set.
      */
     ipVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     */
+    isFailOpen?: pulumi.Input<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
@@ -203,13 +221,17 @@ export interface BackendSetState {
  */
 export interface BackendSetArgs {
     /**
-     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+     * (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
      */
     healthChecker: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker>;
     /**
      * (Updatable) IP version associated with the backend set.
      */
     ipVersion?: pulumi.Input<string>;
+    /**
+     * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+     */
+    isFailOpen?: pulumi.Input<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */

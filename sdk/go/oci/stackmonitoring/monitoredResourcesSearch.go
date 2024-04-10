@@ -33,16 +33,20 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.NewMonitoredResourcesSearch(ctx, "testMonitoredResourcesSearch", &StackMonitoring.MonitoredResourcesSearchArgs{
 //				CompartmentId:                   pulumi.Any(_var.Compartment_id),
+//				CompartmentIds:                  pulumi.Any(_var.Monitored_resources_search_compartment_ids),
 //				ExcludeFields:                   pulumi.Any(_var.Monitored_resources_search_exclude_fields),
 //				ExternalId:                      pulumi.Any(oci_stack_monitoring_external.Test_external.Id),
 //				Fields:                          pulumi.Any(_var.Monitored_resources_search_fields),
 //				HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
 //				HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
 //				License:                         pulumi.Any(_var.Monitored_resources_search_license),
+//				LifecycleStates:                 pulumi.Any(_var.Monitored_resources_search_lifecycle_states),
 //				ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
 //				NameContains:                    pulumi.Any(_var.Monitored_resources_search_name_contains),
 //				PropertyEquals:                  pulumi.Any(_var.Monitored_resources_search_property_equals),
+//				ResourceCategory:                pulumi.Any(_var.Monitored_resources_search_resource_category),
 //				ResourceTimeZone:                pulumi.Any(_var.Monitored_resources_search_resource_time_zone),
+//				SourceType:                      pulumi.Any(_var.Monitored_resources_search_source_type),
 //				State:                           pulumi.Any(_var.Monitored_resources_search_state),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.Any(_var.Monitored_resources_search_time_created_greater_than_or_equal_to),
 //				TimeCreatedLessThan:             pulumi.Any(_var.Monitored_resources_search_time_created_less_than),
@@ -72,6 +76,8 @@ type MonitoredResourcesSearch struct {
 
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentIds pulumi.StringArrayOutput `pulumi:"compartmentIds"`
 	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 	ExcludeFields pulumi.StringArrayOutput `pulumi:"excludeFields"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -85,7 +91,9 @@ type MonitoredResourcesSearch struct {
 	// List of monitored resources.
 	Items MonitoredResourcesSearchItemArrayOutput `pulumi:"items"`
 	// License edition of the monitored resource.
-	License pulumi.StringOutput `pulumi:"license"`
+	License pulumi.StringPtrOutput `pulumi:"license"`
+	// Multiple lifecycle states filter.
+	LifecycleStates pulumi.StringArrayOutput `pulumi:"lifecycleStates"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -94,8 +102,12 @@ type MonitoredResourcesSearch struct {
 	NameContains pulumi.StringPtrOutput `pulumi:"nameContains"`
 	// Criteria based on resource property.
 	PropertyEquals pulumi.MapOutput `pulumi:"propertyEquals"`
+	// Resource category filter.
+	ResourceCategory pulumi.StringPtrOutput `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrOutput `pulumi:"resourceTimeZone"`
+	// Source type filter.
+	SourceType pulumi.StringPtrOutput `pulumi:"sourceType"`
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -156,6 +168,8 @@ func GetMonitoredResourcesSearch(ctx *pulumi.Context,
 type monitoredResourcesSearchState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentIds []string `pulumi:"compartmentIds"`
 	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 	ExcludeFields []string `pulumi:"excludeFields"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -170,6 +184,8 @@ type monitoredResourcesSearchState struct {
 	Items []MonitoredResourcesSearchItem `pulumi:"items"`
 	// License edition of the monitored resource.
 	License *string `pulumi:"license"`
+	// Multiple lifecycle states filter.
+	LifecycleStates []string `pulumi:"lifecycleStates"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -178,8 +194,12 @@ type monitoredResourcesSearchState struct {
 	NameContains *string `pulumi:"nameContains"`
 	// Criteria based on resource property.
 	PropertyEquals map[string]interface{} `pulumi:"propertyEquals"`
+	// Resource category filter.
+	ResourceCategory *string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
+	// Source type filter.
+	SourceType *string `pulumi:"sourceType"`
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -208,6 +228,8 @@ type monitoredResourcesSearchState struct {
 type MonitoredResourcesSearchState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
+	// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentIds pulumi.StringArrayInput
 	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 	ExcludeFields pulumi.StringArrayInput
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -222,6 +244,8 @@ type MonitoredResourcesSearchState struct {
 	Items MonitoredResourcesSearchItemArrayInput
 	// License edition of the monitored resource.
 	License pulumi.StringPtrInput
+	// Multiple lifecycle states filter.
+	LifecycleStates pulumi.StringArrayInput
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput
 	// A filter to return resources that match exact resource name.
@@ -230,8 +254,12 @@ type MonitoredResourcesSearchState struct {
 	NameContains pulumi.StringPtrInput
 	// Criteria based on resource property.
 	PropertyEquals pulumi.MapInput
+	// Resource category filter.
+	ResourceCategory pulumi.StringPtrInput
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
+	// Source type filter.
+	SourceType pulumi.StringPtrInput
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput
 	// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -264,6 +292,8 @@ func (MonitoredResourcesSearchState) ElementType() reflect.Type {
 type monitoredResourcesSearchArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentIds []string `pulumi:"compartmentIds"`
 	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 	ExcludeFields []string `pulumi:"excludeFields"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -276,6 +306,8 @@ type monitoredResourcesSearchArgs struct {
 	HostNameContains *string `pulumi:"hostNameContains"`
 	// License edition of the monitored resource.
 	License *string `pulumi:"license"`
+	// Multiple lifecycle states filter.
+	LifecycleStates []string `pulumi:"lifecycleStates"`
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// A filter to return resources that match exact resource name.
@@ -284,8 +316,12 @@ type monitoredResourcesSearchArgs struct {
 	NameContains *string `pulumi:"nameContains"`
 	// Criteria based on resource property.
 	PropertyEquals map[string]interface{} `pulumi:"propertyEquals"`
+	// Resource category filter.
+	ResourceCategory *string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone *string `pulumi:"resourceTimeZone"`
+	// Source type filter.
+	SourceType *string `pulumi:"sourceType"`
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -315,6 +351,8 @@ type monitoredResourcesSearchArgs struct {
 type MonitoredResourcesSearchArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
+	// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentIds pulumi.StringArrayInput
 	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 	ExcludeFields pulumi.StringArrayInput
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -327,6 +365,8 @@ type MonitoredResourcesSearchArgs struct {
 	HostNameContains pulumi.StringPtrInput
 	// License edition of the monitored resource.
 	License pulumi.StringPtrInput
+	// Multiple lifecycle states filter.
+	LifecycleStates pulumi.StringArrayInput
 	// A filter to return resources with matching management agent id.
 	ManagementAgentId pulumi.StringPtrInput
 	// A filter to return resources that match exact resource name.
@@ -335,8 +375,12 @@ type MonitoredResourcesSearchArgs struct {
 	NameContains pulumi.StringPtrInput
 	// Criteria based on resource property.
 	PropertyEquals pulumi.MapInput
+	// Resource category filter.
+	ResourceCategory pulumi.StringPtrInput
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 	ResourceTimeZone pulumi.StringPtrInput
+	// Source type filter.
+	SourceType pulumi.StringPtrInput
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput
 	// Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -454,6 +498,11 @@ func (o MonitoredResourcesSearchOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o MonitoredResourcesSearchOutput) CompartmentIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringArrayOutput { return v.CompartmentIds }).(pulumi.StringArrayOutput)
+}
+
 // Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
 func (o MonitoredResourcesSearchOutput) ExcludeFields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringArrayOutput { return v.ExcludeFields }).(pulumi.StringArrayOutput)
@@ -485,8 +534,13 @@ func (o MonitoredResourcesSearchOutput) Items() MonitoredResourcesSearchItemArra
 }
 
 // License edition of the monitored resource.
-func (o MonitoredResourcesSearchOutput) License() pulumi.StringOutput {
-	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringOutput { return v.License }).(pulumi.StringOutput)
+func (o MonitoredResourcesSearchOutput) License() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.License }).(pulumi.StringPtrOutput)
+}
+
+// Multiple lifecycle states filter.
+func (o MonitoredResourcesSearchOutput) LifecycleStates() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringArrayOutput { return v.LifecycleStates }).(pulumi.StringArrayOutput)
 }
 
 // A filter to return resources with matching management agent id.
@@ -509,9 +563,19 @@ func (o MonitoredResourcesSearchOutput) PropertyEquals() pulumi.MapOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.MapOutput { return v.PropertyEquals }).(pulumi.MapOutput)
 }
 
+// Resource category filter.
+func (o MonitoredResourcesSearchOutput) ResourceCategory() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.ResourceCategory }).(pulumi.StringPtrOutput)
+}
+
 // Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 func (o MonitoredResourcesSearchOutput) ResourceTimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.ResourceTimeZone }).(pulumi.StringPtrOutput)
+}
+
+// Source type filter.
+func (o MonitoredResourcesSearchOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.SourceType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources with matching lifecycle state.

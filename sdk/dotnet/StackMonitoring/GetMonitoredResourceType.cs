@@ -139,6 +139,14 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Resource Category to indicate the kind of resource type.
+        /// </summary>
+        public readonly string ResourceCategory;
+        /// <summary>
+        /// Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        /// </summary>
+        public readonly string SourceType;
+        /// <summary>
         /// Lifecycle state of the monitored resource type.
         /// </summary>
         public readonly string State;
@@ -177,6 +185,10 @@ namespace Pulumi.Oci.StackMonitoring
 
             string name,
 
+            string resourceCategory,
+
+            string sourceType,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -195,6 +207,8 @@ namespace Pulumi.Oci.StackMonitoring
             MetricNamespace = metricNamespace;
             MonitoredResourceTypeId = monitoredResourceTypeId;
             Name = name;
+            ResourceCategory = resourceCategory;
+            SourceType = sourceType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

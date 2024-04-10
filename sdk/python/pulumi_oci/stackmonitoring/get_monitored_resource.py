@@ -22,7 +22,7 @@ class GetMonitoredResourceResult:
     """
     A collection of values returned by getMonitoredResource.
     """
-    def __init__(__self__, additional_aliases=None, additional_credentials=None, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, license=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, additional_aliases=None, additional_credentials=None, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, license=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_category=None, resource_time_zone=None, source_type=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
         if additional_aliases and not isinstance(additional_aliases, list):
             raise TypeError("Expected argument 'additional_aliases' to be a list")
         pulumi.set(__self__, "additional_aliases", additional_aliases)
@@ -77,9 +77,15 @@ class GetMonitoredResourceResult:
         if properties and not isinstance(properties, list):
             raise TypeError("Expected argument 'properties' to be a list")
         pulumi.set(__self__, "properties", properties)
+        if resource_category and not isinstance(resource_category, str):
+            raise TypeError("Expected argument 'resource_category' to be a str")
+        pulumi.set(__self__, "resource_category", resource_category)
         if resource_time_zone and not isinstance(resource_time_zone, str):
             raise TypeError("Expected argument 'resource_time_zone' to be a str")
         pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+        if source_type and not isinstance(source_type, str):
+            raise TypeError("Expected argument 'source_type' to be a str")
+        pulumi.set(__self__, "source_type", source_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -232,12 +238,28 @@ class GetMonitoredResourceResult:
         return pulumi.get(self, "properties")
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> str:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> str:
         """
         Time zone in the form of tz database canonical zone ID.
         """
         return pulumi.get(self, "resource_time_zone")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter
@@ -312,7 +334,9 @@ class AwaitableGetMonitoredResourceResult(GetMonitoredResourceResult):
             monitored_resource_id=self.monitored_resource_id,
             name=self.name,
             properties=self.properties,
+            resource_category=self.resource_category,
             resource_time_zone=self.resource_time_zone,
+            source_type=self.source_type,
             state=self.state,
             system_tags=self.system_tags,
             tenant_id=self.tenant_id,
@@ -366,7 +390,9 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
         monitored_resource_id=pulumi.get(__ret__, 'monitored_resource_id'),
         name=pulumi.get(__ret__, 'name'),
         properties=pulumi.get(__ret__, 'properties'),
+        resource_category=pulumi.get(__ret__, 'resource_category'),
         resource_time_zone=pulumi.get(__ret__, 'resource_time_zone'),
+        source_type=pulumi.get(__ret__, 'source_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),

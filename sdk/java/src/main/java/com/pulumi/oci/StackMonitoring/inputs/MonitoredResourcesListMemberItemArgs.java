@@ -123,6 +123,21 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
+     * Resource Category to indicate the kind of resource type.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
      * Monitored resource display name.
      * 
      */
@@ -183,6 +198,21 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
     }
 
     /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
+
+    /**
      * The current state of the Resource.
      * 
      */
@@ -222,10 +252,12 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         this.hostName = $.hostName;
         this.license = $.license;
         this.parentId = $.parentId;
+        this.resourceCategory = $.resourceCategory;
         this.resourceDisplayName = $.resourceDisplayName;
         this.resourceId = $.resourceId;
         this.resourceName = $.resourceName;
         this.resourceType = $.resourceType;
+        this.sourceType = $.sourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
     }
@@ -396,6 +428,27 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
         }
 
         /**
+         * @param resourceCategory Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory Resource Category to indicate the kind of resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
          * @param resourceDisplayName Monitored resource display name.
          * 
          * @return builder
@@ -477,6 +530,27 @@ public final class MonitoredResourcesListMemberItemArgs extends com.pulumi.resou
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param sourceType Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         /**

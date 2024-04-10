@@ -84,6 +84,14 @@ export interface GetMonitoredResourceTypeResult {
      */
     readonly name: string;
     /**
+     * Resource Category to indicate the kind of resource type.
+     */
+    readonly resourceCategory: string;
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     */
+    readonly sourceType: string;
+    /**
      * Lifecycle state of the monitored resource type.
      */
     readonly state: string;

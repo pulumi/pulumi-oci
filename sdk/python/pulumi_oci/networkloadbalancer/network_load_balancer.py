@@ -52,6 +52,7 @@ class NetworkLoadBalancerArgs:
         :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
                
                Example: `true`
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -218,6 +219,7 @@ class NetworkLoadBalancerArgs:
         (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
 
         Example: `true`
+        Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")
 
@@ -330,6 +332,7 @@ class _NetworkLoadBalancerState:
                Example: `true`
         :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
                
+               Example: `true`
                Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -518,6 +521,7 @@ class _NetworkLoadBalancerState:
         (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
 
         Example: `true`
+        Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")
 
@@ -683,37 +687,6 @@ class NetworkLoadBalancer(pulumi.CustomResource):
 
         Creates a network load balancer.
 
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_load_balancer = oci.network_load_balancer.NetworkLoadBalancer("testNetworkLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["network_load_balancer_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            assigned_ipv6=var["network_load_balancer_assigned_ipv6"],
-            assigned_private_ipv4=var["network_load_balancer_assigned_private_ipv4"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_preserve_source_destination=var["network_load_balancer_is_preserve_source_destination"],
-            is_private=var["network_load_balancer_is_private"],
-            is_symmetric_hash_enabled=var["network_load_balancer_is_symmetric_hash_enabled"],
-            network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
-            nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
-            reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
-                id=var["network_load_balancer_reserved_ips_id"],
-            )],
-            subnet_ipv6cidr=var["network_load_balancer_subnet_ipv6cidr"])
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Import
 
         NetworkLoadBalancers can be imported using the `id`, e.g.
@@ -743,6 +716,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
                
                Example: `true`
+               Example: `true`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
                
                During the creation of the network load balancer, the service adds the new load balancer to the specified network security groups.
@@ -771,37 +745,6 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
         Creates a network load balancer.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_network_load_balancer = oci.network_load_balancer.NetworkLoadBalancer("testNetworkLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["network_load_balancer_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            assigned_ipv6=var["network_load_balancer_assigned_ipv6"],
-            assigned_private_ipv4=var["network_load_balancer_assigned_private_ipv4"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_preserve_source_destination=var["network_load_balancer_is_preserve_source_destination"],
-            is_private=var["network_load_balancer_is_private"],
-            is_symmetric_hash_enabled=var["network_load_balancer_is_symmetric_hash_enabled"],
-            network_security_group_ids=var["network_load_balancer_network_security_group_ids"],
-            nlb_ip_version=var["network_load_balancer_nlb_ip_version"],
-            reserved_ips=[oci.network_load_balancer.NetworkLoadBalancerReservedIpArgs(
-                id=var["network_load_balancer_reserved_ips_id"],
-            )],
-            subnet_ipv6cidr=var["network_load_balancer_subnet_ipv6cidr"])
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -931,6 +874,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
                Example: `true`
         :param pulumi.Input[bool] is_symmetric_hash_enabled: (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
                
+               Example: `true`
                Example: `true`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] network_security_group_ids: (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -1067,6 +1011,7 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         """
         (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT. 
 
+        Example: `true`
         Example: `true`
         """
         return pulumi.get(self, "is_symmetric_hash_enabled")

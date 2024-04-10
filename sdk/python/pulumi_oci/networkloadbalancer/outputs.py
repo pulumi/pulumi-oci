@@ -13,18 +13,22 @@ from . import outputs
 __all__ = [
     'BackendSetBackend',
     'BackendSetHealthChecker',
+    'BackendSetHealthCheckerDns',
     'NetworkLoadBalancerIpAddress',
     'NetworkLoadBalancerIpAddressReservedIp',
     'NetworkLoadBalancerReservedIp',
     'NetworkLoadBalancersBackendSetsUnifiedBackend',
     'NetworkLoadBalancersBackendSetsUnifiedHealthChecker',
+    'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns',
     'GetBackendHealthHealthCheckResultResult',
     'GetBackendSetBackendResult',
     'GetBackendSetHealthCheckerResult',
+    'GetBackendSetHealthCheckerDnResult',
     'GetBackendSetsBackendSetCollectionResult',
     'GetBackendSetsBackendSetCollectionItemResult',
     'GetBackendSetsBackendSetCollectionItemBackendResult',
     'GetBackendSetsBackendSetCollectionItemHealthCheckerResult',
+    'GetBackendSetsBackendSetCollectionItemHealthCheckerDnResult',
     'GetBackendSetsFilterResult',
     'GetBackendsBackendCollectionResult',
     'GetBackendsBackendCollectionItemResult',
@@ -95,7 +99,7 @@ class BackendSetBackend(dict):
                
                Example: `example_backend_set`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         pulumi.set(__self__, "port", port)
         if ip_address is not None:
@@ -177,7 +181,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def weight(self) -> Optional[int]:
         """
-        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -215,6 +219,7 @@ class BackendSetHealthChecker(dict):
 
     def __init__(__self__, *,
                  protocol: str,
+                 dns: Optional['outputs.BackendSetHealthCheckerDns'] = None,
                  interval_in_millis: Optional[int] = None,
                  port: Optional[int] = None,
                  request_data: Optional[str] = None,
@@ -225,7 +230,8 @@ class BackendSetHealthChecker(dict):
                  timeout_in_millis: Optional[int] = None,
                  url_path: Optional[str] = None):
         """
-        :param str protocol: (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        :param str protocol: (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
+        :param 'BackendSetHealthCheckerDnsArgs' dns: (Updatable) DNS healthcheck configurations.
         :param int interval_in_millis: (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str request_data: (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
@@ -237,6 +243,8 @@ class BackendSetHealthChecker(dict):
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
         pulumi.set(__self__, "protocol", protocol)
+        if dns is not None:
+            pulumi.set(__self__, "dns", dns)
         if interval_in_millis is not None:
             pulumi.set(__self__, "interval_in_millis", interval_in_millis)
         if port is not None:
@@ -260,9 +268,17 @@ class BackendSetHealthChecker(dict):
     @pulumi.getter
     def protocol(self) -> str:
         """
-        (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         """
         return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter
+    def dns(self) -> Optional['outputs.BackendSetHealthCheckerDns']:
+        """
+        (Updatable) DNS healthcheck configurations.
+        """
+        return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -338,6 +354,95 @@ class BackendSetHealthChecker(dict):
 
 
 @pulumi.output_type
+class BackendSetHealthCheckerDns(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainName":
+            suggest = "domain_name"
+        elif key == "queryClass":
+            suggest = "query_class"
+        elif key == "queryType":
+            suggest = "query_type"
+        elif key == "transportProtocol":
+            suggest = "transport_protocol"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BackendSetHealthCheckerDns. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BackendSetHealthCheckerDns.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BackendSetHealthCheckerDns.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain_name: str,
+                 query_class: Optional[str] = None,
+                 query_type: Optional[str] = None,
+                 rcodes: Optional[Sequence[str]] = None,
+                 transport_protocol: Optional[str] = None):
+        """
+        :param str domain_name: (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        :param str query_class: (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+        :param str query_type: (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        :param Sequence[str] rcodes: (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        :param str transport_protocol: (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        if query_class is not None:
+            pulumi.set(__self__, "query_class", query_class)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
+        if rcodes is not None:
+            pulumi.set(__self__, "rcodes", rcodes)
+        if transport_protocol is not None:
+            pulumi.set(__self__, "transport_protocol", transport_protocol)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @property
+    @pulumi.getter(name="queryClass")
+    def query_class(self) -> Optional[str]:
+        """
+        (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+        """
+        return pulumi.get(self, "query_class")
+
+    @property
+    @pulumi.getter(name="queryType")
+    def query_type(self) -> Optional[str]:
+        """
+        (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        """
+        return pulumi.get(self, "query_type")
+
+    @property
+    @pulumi.getter
+    def rcodes(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        """
+        return pulumi.get(self, "rcodes")
+
+    @property
+    @pulumi.getter(name="transportProtocol")
+    def transport_protocol(self) -> Optional[str]:
+        """
+        (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        return pulumi.get(self, "transport_protocol")
+
+
+@pulumi.output_type
 class NetworkLoadBalancerIpAddress(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -368,8 +473,8 @@ class NetworkLoadBalancerIpAddress(dict):
                  is_public: Optional[bool] = None,
                  reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None):
         """
-        :param str ip_address: An IP address.  Example: `192.168.0.3`
-        :param str ip_version: IP version associated with this IP address.
+        :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
+        :param str ip_version: IP version associated with the listener.
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['NetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
@@ -386,7 +491,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
         """
-        An IP address.  Example: `192.168.0.3`
+        The IP address of the backend server. Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -394,7 +499,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> Optional[str]:
         """
-        IP version associated with this IP address.
+        IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
 
@@ -533,7 +638,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
                
                Example: `example_backend_set`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         pulumi.set(__self__, "port", port)
         if ip_address is not None:
@@ -615,7 +720,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter
     def weight(self) -> Optional[int]:
         """
-        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -653,6 +758,7 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
 
     def __init__(__self__, *,
                  protocol: str,
+                 dns: Optional['outputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns'] = None,
                  interval_in_millis: Optional[int] = None,
                  port: Optional[int] = None,
                  request_data: Optional[str] = None,
@@ -664,6 +770,7 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
                  url_path: Optional[str] = None):
         """
         :param str protocol: (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        :param 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs' dns: (Updatable) DNS healthcheck configurations.
         :param int interval_in_millis: (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str request_data: (Updatable) Base64 encoded pattern to be sent as UDP or TCP health check probe.
@@ -675,6 +782,8 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
         pulumi.set(__self__, "protocol", protocol)
+        if dns is not None:
+            pulumi.set(__self__, "dns", dns)
         if interval_in_millis is not None:
             pulumi.set(__self__, "interval_in_millis", interval_in_millis)
         if port is not None:
@@ -701,6 +810,14 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
         (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
         """
         return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter
+    def dns(self) -> Optional['outputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns']:
+        """
+        (Updatable) DNS healthcheck configurations.
+        """
+        return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -776,6 +893,95 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
 
 
 @pulumi.output_type
+class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainName":
+            suggest = "domain_name"
+        elif key == "queryClass":
+            suggest = "query_class"
+        elif key == "queryType":
+            suggest = "query_type"
+        elif key == "transportProtocol":
+            suggest = "transport_protocol"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain_name: str,
+                 query_class: Optional[str] = None,
+                 query_type: Optional[str] = None,
+                 rcodes: Optional[Sequence[str]] = None,
+                 transport_protocol: Optional[str] = None):
+        """
+        :param str domain_name: (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        :param str query_class: (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+        :param str query_type: (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        :param Sequence[str] rcodes: (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        :param str transport_protocol: (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        if query_class is not None:
+            pulumi.set(__self__, "query_class", query_class)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
+        if rcodes is not None:
+            pulumi.set(__self__, "rcodes", rcodes)
+        if transport_protocol is not None:
+            pulumi.set(__self__, "transport_protocol", transport_protocol)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @property
+    @pulumi.getter(name="queryClass")
+    def query_class(self) -> Optional[str]:
+        """
+        (Updatable) The class the dns health check query to use; either IN or CH.  Example: `IN`
+        """
+        return pulumi.get(self, "query_class")
+
+    @property
+    @pulumi.getter(name="queryType")
+    def query_type(self) -> Optional[str]:
+        """
+        (Updatable) The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        """
+        return pulumi.get(self, "query_type")
+
+    @property
+    @pulumi.getter
+    def rcodes(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        """
+        return pulumi.get(self, "rcodes")
+
+    @property
+    @pulumi.getter(name="transportProtocol")
+    def transport_protocol(self) -> Optional[str]:
+        """
+        (Updatable) DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        return pulumi.get(self, "transport_protocol")
+
+
+@pulumi.output_type
 class GetBackendHealthHealthCheckResultResult(dict):
     def __init__(__self__, *,
                  health_check_status: str,
@@ -818,12 +1024,12 @@ class GetBackendSetBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_backup", is_backup)
@@ -854,7 +1060,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -894,7 +1100,7 @@ class GetBackendSetBackendResult(dict):
     @pulumi.getter
     def weight(self) -> int:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -902,6 +1108,7 @@ class GetBackendSetBackendResult(dict):
 @pulumi.output_type
 class GetBackendSetHealthCheckerResult(dict):
     def __init__(__self__, *,
+                 dns: Sequence['outputs.GetBackendSetHealthCheckerDnResult'],
                  interval_in_millis: int,
                  port: int,
                  protocol: str,
@@ -913,9 +1120,10 @@ class GetBackendSetHealthCheckerResult(dict):
                  timeout_in_millis: int,
                  url_path: str):
         """
+        :param Sequence['GetBackendSetHealthCheckerDnArgs'] dns: DNS healthcheck configurations.
         :param int interval_in_millis: The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-        :param str protocol: The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        :param str protocol: The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         :param str request_data: Base64 encoded pattern to be sent as UDP or TCP health check probe.
         :param str response_body_regex: A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
         :param str response_data: Base64 encoded pattern to be validated as UDP or TCP health check probe response.
@@ -924,6 +1132,7 @@ class GetBackendSetHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
+        pulumi.set(__self__, "dns", dns)
         pulumi.set(__self__, "interval_in_millis", interval_in_millis)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
@@ -934,6 +1143,14 @@ class GetBackendSetHealthCheckerResult(dict):
         pulumi.set(__self__, "return_code", return_code)
         pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
         pulumi.set(__self__, "url_path", url_path)
+
+    @property
+    @pulumi.getter
+    def dns(self) -> Sequence['outputs.GetBackendSetHealthCheckerDnResult']:
+        """
+        DNS healthcheck configurations.
+        """
+        return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -955,7 +1172,7 @@ class GetBackendSetHealthCheckerResult(dict):
     @pulumi.getter
     def protocol(self) -> str:
         """
-        The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         """
         return pulumi.get(self, "protocol")
 
@@ -1017,6 +1234,68 @@ class GetBackendSetHealthCheckerResult(dict):
 
 
 @pulumi.output_type
+class GetBackendSetHealthCheckerDnResult(dict):
+    def __init__(__self__, *,
+                 domain_name: str,
+                 query_class: str,
+                 query_type: str,
+                 rcodes: Sequence[str],
+                 transport_protocol: str):
+        """
+        :param str domain_name: The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        :param str query_class: The class the dns health check query to use; either IN or CH.  Example: `IN`
+        :param str query_type: The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        :param Sequence[str] rcodes: An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        :param str transport_protocol: DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "query_class", query_class)
+        pulumi.set(__self__, "query_type", query_type)
+        pulumi.set(__self__, "rcodes", rcodes)
+        pulumi.set(__self__, "transport_protocol", transport_protocol)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @property
+    @pulumi.getter(name="queryClass")
+    def query_class(self) -> str:
+        """
+        The class the dns health check query to use; either IN or CH.  Example: `IN`
+        """
+        return pulumi.get(self, "query_class")
+
+    @property
+    @pulumi.getter(name="queryType")
+    def query_type(self) -> str:
+        """
+        The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        """
+        return pulumi.get(self, "query_type")
+
+    @property
+    @pulumi.getter
+    def rcodes(self) -> Sequence[str]:
+        """
+        An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        """
+        return pulumi.get(self, "rcodes")
+
+    @property
+    @pulumi.getter(name="transportProtocol")
+    def transport_protocol(self) -> str:
+        """
+        DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        return pulumi.get(self, "transport_protocol")
+
+
+@pulumi.output_type
 class GetBackendSetsBackendSetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBackendSetsBackendSetCollectionItemResult']):
@@ -1035,14 +1314,16 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
                  health_checkers: Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult'],
                  id: str,
                  ip_version: str,
+                 is_fail_open: bool,
                  is_preserve_source: bool,
                  name: str,
                  network_load_balancer_id: str,
                  policy: str):
         """
         :param Sequence['GetBackendSetsBackendSetCollectionItemBackendArgs'] backends: Array of backends.
-        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param str ip_version: IP version associated with the backend set.
+        :param bool is_fail_open: If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         :param bool is_preserve_source: If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -1052,6 +1333,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
         pulumi.set(__self__, "health_checkers", health_checkers)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_version", ip_version)
+        pulumi.set(__self__, "is_fail_open", is_fail_open)
         pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
@@ -1069,7 +1351,7 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
     @pulumi.getter(name="healthCheckers")
     def health_checkers(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult']:
         """
-        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         """
         return pulumi.get(self, "health_checkers")
 
@@ -1085,6 +1367,14 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
         IP version associated with the backend set.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isFailOpen")
+    def is_fail_open(self) -> bool:
+        """
+        If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        """
+        return pulumi.get(self, "is_fail_open")
 
     @property
     @pulumi.getter(name="isPreserveSource")
@@ -1133,12 +1423,12 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
         """
         :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
         :param bool is_backup: Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
-        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        :param bool is_drain: Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
         :param bool is_offline: Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
-        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "is_backup", is_backup)
@@ -1169,7 +1459,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter(name="isDrain")
     def is_drain(self) -> bool:
         """
-        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        Whether the network load balancer should drain this server. Servers marked "isDrain" receive no  incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
@@ -1209,7 +1499,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
     @pulumi.getter
     def weight(self) -> int:
         """
-        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introducton.htm#Policies).  Example: `3`
+        The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
         return pulumi.get(self, "weight")
 
@@ -1217,6 +1507,7 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
 @pulumi.output_type
 class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
     def __init__(__self__, *,
+                 dns: Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerDnResult'],
                  interval_in_millis: int,
                  port: int,
                  protocol: str,
@@ -1228,9 +1519,10 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
                  timeout_in_millis: int,
                  url_path: str):
         """
+        :param Sequence['GetBackendSetsBackendSetCollectionItemHealthCheckerDnArgs'] dns: DNS healthcheck configurations.
         :param int interval_in_millis: The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         :param int port: The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
-        :param str protocol: The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        :param str protocol: The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         :param str request_data: Base64 encoded pattern to be sent as UDP or TCP health check probe.
         :param str response_body_regex: A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\\s)*$`
         :param str response_data: Base64 encoded pattern to be validated as UDP or TCP health check probe response.
@@ -1239,6 +1531,7 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
+        pulumi.set(__self__, "dns", dns)
         pulumi.set(__self__, "interval_in_millis", interval_in_millis)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
@@ -1249,6 +1542,14 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
         pulumi.set(__self__, "return_code", return_code)
         pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
         pulumi.set(__self__, "url_path", url_path)
+
+    @property
+    @pulumi.getter
+    def dns(self) -> Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerDnResult']:
+        """
+        DNS healthcheck configurations.
+        """
+        return pulumi.get(self, "dns")
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -1270,7 +1571,7 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
     @pulumi.getter
     def protocol(self) -> str:
         """
-        The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+        The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
         """
         return pulumi.get(self, "protocol")
 
@@ -1329,6 +1630,68 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
         The path against which to run the health check.  Example: `/healthcheck`
         """
         return pulumi.get(self, "url_path")
+
+
+@pulumi.output_type
+class GetBackendSetsBackendSetCollectionItemHealthCheckerDnResult(dict):
+    def __init__(__self__, *,
+                 domain_name: str,
+                 query_class: str,
+                 query_type: str,
+                 rcodes: Sequence[str],
+                 transport_protocol: str):
+        """
+        :param str domain_name: The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        :param str query_class: The class the dns health check query to use; either IN or CH.  Example: `IN`
+        :param str query_type: The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        :param Sequence[str] rcodes: An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        :param str transport_protocol: DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "query_class", query_class)
+        pulumi.set(__self__, "query_type", query_type)
+        pulumi.set(__self__, "rcodes", rcodes)
+        pulumi.set(__self__, "transport_protocol", transport_protocol)
+
+    @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> str:
+        """
+        The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @property
+    @pulumi.getter(name="queryClass")
+    def query_class(self) -> str:
+        """
+        The class the dns health check query to use; either IN or CH.  Example: `IN`
+        """
+        return pulumi.get(self, "query_class")
+
+    @property
+    @pulumi.getter(name="queryType")
+    def query_type(self) -> str:
+        """
+        The type the dns health check query to use; A, AAAA, TXT.  Example: `A`
+        """
+        return pulumi.get(self, "query_type")
+
+    @property
+    @pulumi.getter
+    def rcodes(self) -> Sequence[str]:
+        """
+        An array that represents accepetable RCODE values for DNS query response. Example: ["NOERROR", "NXDOMAIN"]
+        """
+        return pulumi.get(self, "rcodes")
+
+    @property
+    @pulumi.getter(name="transportProtocol")
+    def transport_protocol(self) -> str:
+        """
+        DNS transport protocol; either UDP or TCP.  Example: `UDP`
+        """
+        return pulumi.get(self, "transport_protocol")
 
 
 @pulumi.output_type
@@ -1667,7 +2030,7 @@ class GetNetworkLoadBalancerIpAddressResult(dict):
                  reserved_ips: Sequence['outputs.GetNetworkLoadBalancerIpAddressReservedIpResult']):
         """
         :param str ip_address: An IP address.  Example: `192.168.0.3`
-        :param str ip_version: IP version associated with this IP address.
+        :param str ip_version: IP version associated with the listener.
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['GetNetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
@@ -1688,7 +2051,7 @@ class GetNetworkLoadBalancerIpAddressResult(dict):
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> str:
         """
-        IP version associated with this IP address.
+        IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
 
@@ -1751,6 +2114,9 @@ class GetNetworkLoadBalancersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1759,6 +2125,9 @@ class GetNetworkLoadBalancersFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -2011,7 +2380,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult(di
                  reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpResult']):
         """
         :param str ip_address: An IP address.  Example: `192.168.0.3`
-        :param str ip_version: IP version associated with this IP address.
+        :param str ip_version: IP version associated with the listener.
         :param bool is_public: Whether the IP address is public or private.
                If "true", then the IP address is public and accessible from the internet.
         :param Sequence['GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
@@ -2033,7 +2402,7 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult(di
     @pulumi.getter(name="ipVersion")
     def ip_version(self) -> str:
         """
-        IP version associated with this IP address.
+        IP version associated with the listener.
         """
         return pulumi.get(self, "ip_version")
 

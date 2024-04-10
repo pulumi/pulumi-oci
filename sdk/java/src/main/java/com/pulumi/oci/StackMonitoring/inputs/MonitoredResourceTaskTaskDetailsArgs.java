@@ -6,6 +6,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -49,6 +50,51 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     }
 
     /**
+     * The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+     * 
+     */
+    @Import(name="consolePathPrefix")
+    private @Nullable Output<String> consolePathPrefix;
+
+    /**
+     * @return The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+     * 
+     */
+    public Optional<Output<String>> consolePathPrefix() {
+        return Optional.ofNullable(this.consolePathPrefix);
+    }
+
+    /**
+     * The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+     * 
+     */
+    @Import(name="externalIdMapping")
+    private @Nullable Output<String> externalIdMapping;
+
+    /**
+     * @return The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+     * 
+     */
+    public Optional<Output<String>> externalIdMapping() {
+        return Optional.ofNullable(this.externalIdMapping);
+    }
+
+    /**
+     * Lifecycle states of the external resource which reflects the status of the resource being up.
+     * 
+     */
+    @Import(name="lifecycleStatusMappingsForUpStatuses")
+    private @Nullable Output<List<String>> lifecycleStatusMappingsForUpStatuses;
+
+    /**
+     * @return Lifecycle states of the external resource which reflects the status of the resource being up.
+     * 
+     */
+    public Optional<Output<List<String>>> lifecycleStatusMappingsForUpStatuses() {
+        return Optional.ofNullable(this.lifecycleStatusMappingsForUpStatuses);
+    }
+
+    /**
      * Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
      * 
      */
@@ -76,6 +122,96 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
      */
     public Optional<Output<String>> resourceGroup() {
         return Optional.ofNullable(this.resourceGroup);
+    }
+
+    /**
+     * The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    @Import(name="resourceNameFilter")
+    private @Nullable Output<String> resourceNameFilter;
+
+    /**
+     * @return The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    public Optional<Output<String>> resourceNameFilter() {
+        return Optional.ofNullable(this.resourceNameFilter);
+    }
+
+    /**
+     * The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+     * 
+     */
+    @Import(name="resourceNameMapping")
+    private @Nullable Output<String> resourceNameMapping;
+
+    /**
+     * @return The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+     * 
+     */
+    public Optional<Output<String>> resourceNameMapping() {
+        return Optional.ofNullable(this.resourceNameMapping);
+    }
+
+    /**
+     * The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    @Import(name="resourceTypeFilter")
+    private @Nullable Output<String> resourceTypeFilter;
+
+    /**
+     * @return The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+     * 
+     */
+    public Optional<Output<String>> resourceTypeFilter() {
+        return Optional.ofNullable(this.resourceTypeFilter);
+    }
+
+    /**
+     * The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+     * 
+     */
+    @Import(name="resourceTypeMapping")
+    private @Nullable Output<String> resourceTypeMapping;
+
+    /**
+     * @return The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+     * 
+     */
+    public Optional<Output<String>> resourceTypeMapping() {
+        return Optional.ofNullable(this.resourceTypeMapping);
+    }
+
+    /**
+     * The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+     * 
+     */
+    @Import(name="serviceBaseUrl")
+    private @Nullable Output<String> serviceBaseUrl;
+
+    /**
+     * @return The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+     * 
+     */
+    public Optional<Output<String>> serviceBaseUrl() {
+        return Optional.ofNullable(this.serviceBaseUrl);
+    }
+
+    /**
+     * Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+     * 
+     */
+    @Import(name="shouldUseMetricsFlowForStatus")
+    private @Nullable Output<Boolean> shouldUseMetricsFlowForStatus;
+
+    /**
+     * @return Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldUseMetricsFlowForStatus() {
+        return Optional.ofNullable(this.shouldUseMetricsFlowForStatus);
     }
 
     /**
@@ -123,8 +259,17 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
     private MonitoredResourceTaskTaskDetailsArgs(MonitoredResourceTaskTaskDetailsArgs $) {
         this.availabilityProxyMetricCollectionInterval = $.availabilityProxyMetricCollectionInterval;
         this.availabilityProxyMetrics = $.availabilityProxyMetrics;
+        this.consolePathPrefix = $.consolePathPrefix;
+        this.externalIdMapping = $.externalIdMapping;
+        this.lifecycleStatusMappingsForUpStatuses = $.lifecycleStatusMappingsForUpStatuses;
         this.namespace = $.namespace;
         this.resourceGroup = $.resourceGroup;
+        this.resourceNameFilter = $.resourceNameFilter;
+        this.resourceNameMapping = $.resourceNameMapping;
+        this.resourceTypeFilter = $.resourceTypeFilter;
+        this.resourceTypeMapping = $.resourceTypeMapping;
+        this.serviceBaseUrl = $.serviceBaseUrl;
+        this.shouldUseMetricsFlowForStatus = $.shouldUseMetricsFlowForStatus;
         this.source = $.source;
         this.type = $.type;
     }
@@ -200,6 +345,79 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
         }
 
         /**
+         * @param consolePathPrefix The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder consolePathPrefix(@Nullable Output<String> consolePathPrefix) {
+            $.consolePathPrefix = consolePathPrefix;
+            return this;
+        }
+
+        /**
+         * @param consolePathPrefix The console path prefix to use for providing service home url page navigation.  For example if the prefix provided is &#39;security/bastion/bastions&#39;, the URL used for navigation will be https://&lt;cloudhostname&gt;/security/bastion/bastions/&lt;resourceOcid&gt;. If not provided, service home page link  will not be shown in the stack monitoring home page.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder consolePathPrefix(String consolePathPrefix) {
+            return consolePathPrefix(Output.of(consolePathPrefix));
+        }
+
+        /**
+         * @param externalIdMapping The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalIdMapping(@Nullable Output<String> externalIdMapping) {
+            $.externalIdMapping = externalIdMapping;
+            return this;
+        }
+
+        /**
+         * @param externalIdMapping The external resource identifier property in the metric dimensions.  Resources imported will be using this property value for external id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalIdMapping(String externalIdMapping) {
+            return externalIdMapping(Output.of(externalIdMapping));
+        }
+
+        /**
+         * @param lifecycleStatusMappingsForUpStatuses Lifecycle states of the external resource which reflects the status of the resource being up.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStatusMappingsForUpStatuses(@Nullable Output<List<String>> lifecycleStatusMappingsForUpStatuses) {
+            $.lifecycleStatusMappingsForUpStatuses = lifecycleStatusMappingsForUpStatuses;
+            return this;
+        }
+
+        /**
+         * @param lifecycleStatusMappingsForUpStatuses Lifecycle states of the external resource which reflects the status of the resource being up.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStatusMappingsForUpStatuses(List<String> lifecycleStatusMappingsForUpStatuses) {
+            return lifecycleStatusMappingsForUpStatuses(Output.of(lifecycleStatusMappingsForUpStatuses));
+        }
+
+        /**
+         * @param lifecycleStatusMappingsForUpStatuses Lifecycle states of the external resource which reflects the status of the resource being up.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStatusMappingsForUpStatuses(String... lifecycleStatusMappingsForUpStatuses) {
+            return lifecycleStatusMappingsForUpStatuses(List.of(lifecycleStatusMappingsForUpStatuses));
+        }
+
+        /**
          * @param namespace Name space to be used for Oracle Cloud Infrastructure Native service resources discovery.
          * 
          * @return builder
@@ -239,6 +457,132 @@ public final class MonitoredResourceTaskTaskDetailsArgs extends com.pulumi.resou
          */
         public Builder resourceGroup(String resourceGroup) {
             return resourceGroup(Output.of(resourceGroup));
+        }
+
+        /**
+         * @param resourceNameFilter The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceNameFilter(@Nullable Output<String> resourceNameFilter) {
+            $.resourceNameFilter = resourceNameFilter;
+            return this;
+        }
+
+        /**
+         * @param resourceNameFilter The resource name filter. Resources matching with the resource name filter will be imported. Regular expressions will be accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceNameFilter(String resourceNameFilter) {
+            return resourceNameFilter(Output.of(resourceNameFilter));
+        }
+
+        /**
+         * @param resourceNameMapping The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceNameMapping(@Nullable Output<String> resourceNameMapping) {
+            $.resourceNameMapping = resourceNameMapping;
+            return this;
+        }
+
+        /**
+         * @param resourceNameMapping The resource name property in the metric dimensions.  Resources imported will be using this property value for resource name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceNameMapping(String resourceNameMapping) {
+            return resourceNameMapping(Output.of(resourceNameMapping));
+        }
+
+        /**
+         * @param resourceTypeFilter The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypeFilter(@Nullable Output<String> resourceTypeFilter) {
+            $.resourceTypeFilter = resourceTypeFilter;
+            return this;
+        }
+
+        /**
+         * @param resourceTypeFilter The resource type filter. Resources matching with the resource type filter will be imported. Regular expressions will be accepted.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypeFilter(String resourceTypeFilter) {
+            return resourceTypeFilter(Output.of(resourceTypeFilter));
+        }
+
+        /**
+         * @param resourceTypeMapping The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypeMapping(@Nullable Output<String> resourceTypeMapping) {
+            $.resourceTypeMapping = resourceTypeMapping;
+            return this;
+        }
+
+        /**
+         * @param resourceTypeMapping The resource type property in the metric dimensions.  Resources imported will be using this property value for resource type. If not specified, namespace will be used for resource type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceTypeMapping(String resourceTypeMapping) {
+            return resourceTypeMapping(Output.of(resourceTypeMapping));
+        }
+
+        /**
+         * @param serviceBaseUrl The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceBaseUrl(@Nullable Output<String> serviceBaseUrl) {
+            $.serviceBaseUrl = serviceBaseUrl;
+            return this;
+        }
+
+        /**
+         * @param serviceBaseUrl The base URL of the Oracle Cloud Infrastructure service to which the resource belongs to. Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceBaseUrl(String serviceBaseUrl) {
+            return serviceBaseUrl(Output.of(serviceBaseUrl));
+        }
+
+        /**
+         * @param shouldUseMetricsFlowForStatus Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseMetricsFlowForStatus(@Nullable Output<Boolean> shouldUseMetricsFlowForStatus) {
+            $.shouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
+            return this;
+        }
+
+        /**
+         * @param shouldUseMetricsFlowForStatus Flag to indicate whether status is calculated using metrics or  LifeCycleState attribute of the resource in Oracle Cloud Infrastructure service.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseMetricsFlowForStatus(Boolean shouldUseMetricsFlowForStatus) {
+            return shouldUseMetricsFlowForStatus(Output.of(shouldUseMetricsFlowForStatus));
         }
 
         /**

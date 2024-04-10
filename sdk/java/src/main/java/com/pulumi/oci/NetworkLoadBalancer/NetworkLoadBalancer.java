@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.network_load_balancer_display_name())
  *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .backendSets(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
  *             .assignedIpv6(var_.network_load_balancer_assigned_ipv6())
  *             .assignedPrivateIpv4(var_.network_load_balancer_assigned_private_ipv4())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
@@ -231,6 +232,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
      * Example: `true`
+     * Example: `true`
      * 
      */
     @Export(name="isSymmetricHashEnabled", refs={Boolean.class}, tree="[0]")
@@ -239,6 +241,7 @@ public class NetworkLoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
+     * Example: `true`
      * Example: `true`
      * 
      */

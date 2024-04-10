@@ -185,6 +185,36 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     }
 
     /**
+     * Resource category filter.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return Resource category filter.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
+     * Source type filter.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return Source type filter.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
+    }
+
+    /**
      * A filter to return resources with matching lifecycle state.
      * 
      */
@@ -279,6 +309,8 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.properties = $.properties;
+        this.resourceCategory = $.resourceCategory;
+        this.sourceType = $.sourceType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -543,6 +575,48 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
          */
         public Builder properties(MonitoredResourcesSearchItemPropertyArgs... properties) {
             return properties(List.of(properties));
+        }
+
+        /**
+         * @param resourceCategory Resource category filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory Resource category filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
+         * @param sourceType Source type filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType Source type filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         /**

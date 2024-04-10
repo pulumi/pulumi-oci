@@ -208,6 +208,7 @@ namespace Pulumi.Oci.DataFlow
         /// The number of executor VMs requested.
         /// </summary>
         public readonly int NumExecutors;
+        public readonly string OpcParentRptUrl;
         /// <summary>
         /// Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
         /// </summary>
@@ -338,6 +339,8 @@ namespace Pulumi.Oci.DataFlow
 
             int numExecutors,
 
+            string opcParentRptUrl,
+
             string opcRequestId,
 
             string ownerPrincipalId,
@@ -403,6 +406,7 @@ namespace Pulumi.Oci.DataFlow
             MaxDurationInMinutes = maxDurationInMinutes;
             MetastoreId = metastoreId;
             NumExecutors = numExecutors;
+            OpcParentRptUrl = opcParentRptUrl;
             OpcRequestId = opcRequestId;
             OwnerPrincipalId = ownerPrincipalId;
             OwnerUserName = ownerUserName;

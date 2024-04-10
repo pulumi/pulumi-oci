@@ -5,12 +5,19 @@ package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendSetHealthCheckerDn;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetBackendSetHealthChecker {
+    /**
+     * @return DNS healthcheck configurations.
+     * 
+     */
+    private List<GetBackendSetHealthCheckerDn> dns;
     /**
      * @return The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
@@ -22,7 +29,7 @@ public final class GetBackendSetHealthChecker {
      */
     private Integer port;
     /**
-     * @return The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * @return The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     private String protocol;
@@ -64,6 +71,13 @@ public final class GetBackendSetHealthChecker {
 
     private GetBackendSetHealthChecker() {}
     /**
+     * @return DNS healthcheck configurations.
+     * 
+     */
+    public List<GetBackendSetHealthCheckerDn> dns() {
+        return this.dns;
+    }
+    /**
      * @return The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
      */
@@ -78,7 +92,7 @@ public final class GetBackendSetHealthChecker {
         return this.port;
     }
     /**
-     * @return The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * @return The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     public String protocol() {
@@ -143,6 +157,7 @@ public final class GetBackendSetHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetBackendSetHealthCheckerDn> dns;
         private Integer intervalInMillis;
         private Integer port;
         private String protocol;
@@ -156,6 +171,7 @@ public final class GetBackendSetHealthChecker {
         public Builder() {}
         public Builder(GetBackendSetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dns = defaults.dns;
     	      this.intervalInMillis = defaults.intervalInMillis;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
@@ -168,6 +184,17 @@ public final class GetBackendSetHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
+        public Builder dns(List<GetBackendSetHealthCheckerDn> dns) {
+            if (dns == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetHealthChecker", "dns");
+            }
+            this.dns = dns;
+            return this;
+        }
+        public Builder dns(GetBackendSetHealthCheckerDn... dns) {
+            return dns(List.of(dns));
+        }
         @CustomType.Setter
         public Builder intervalInMillis(Integer intervalInMillis) {
             if (intervalInMillis == null) {
@@ -250,6 +277,7 @@ public final class GetBackendSetHealthChecker {
         }
         public GetBackendSetHealthChecker build() {
             final var _resultValue = new GetBackendSetHealthChecker();
+            _resultValue.dns = dns;
             _resultValue.intervalInMillis = intervalInMillis;
             _resultValue.port = port;
             _resultValue.protocol = protocol;

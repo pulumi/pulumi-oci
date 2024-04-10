@@ -4,10 +4,9 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition {
@@ -15,27 +14,27 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
      * @return Identifier for rule after which this rule lies.
      * 
      */
-    private @Nullable String afterRule;
+    private String afterRule;
     /**
      * @return Identifier for rule before which this rule lies.
      * 
      */
-    private @Nullable String beforeRule;
+    private String beforeRule;
 
     private GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition() {}
     /**
      * @return Identifier for rule after which this rule lies.
      * 
      */
-    public Optional<String> afterRule() {
-        return Optional.ofNullable(this.afterRule);
+    public String afterRule() {
+        return this.afterRule;
     }
     /**
      * @return Identifier for rule before which this rule lies.
      * 
      */
-    public Optional<String> beforeRule() {
-        return Optional.ofNullable(this.beforeRule);
+    public String beforeRule() {
+        return this.beforeRule;
     }
 
     public static Builder builder() {
@@ -47,8 +46,8 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable String afterRule;
-        private @Nullable String beforeRule;
+        private String afterRule;
+        private String beforeRule;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -57,14 +56,18 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
         }
 
         @CustomType.Setter
-        public Builder afterRule(@Nullable String afterRule) {
-
+        public Builder afterRule(String afterRule) {
+            if (afterRule == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition", "afterRule");
+            }
             this.afterRule = afterRule;
             return this;
         }
         @CustomType.Setter
-        public Builder beforeRule(@Nullable String beforeRule) {
-
+        public Builder beforeRule(String beforeRule) {
+            if (beforeRule == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemPosition", "beforeRule");
+            }
             this.beforeRule = beforeRule;
             return this;
         }

@@ -13,6 +13,12 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
     public sealed class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) DNS healthcheck configurations.
+        /// </summary>
+        [Input("dns")]
+        public Input<Inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsGetArgs>? Dns { get; set; }
+
+        /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
         /// </summary>
         [Input("intervalInMillis")]

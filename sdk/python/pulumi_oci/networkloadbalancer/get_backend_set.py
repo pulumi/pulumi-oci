@@ -22,7 +22,7 @@ class GetBackendSetResult:
     """
     A collection of values returned by getBackendSet.
     """
-    def __init__(__self__, backend_set_name=None, backends=None, health_checkers=None, id=None, ip_version=None, is_preserve_source=None, name=None, network_load_balancer_id=None, policy=None):
+    def __init__(__self__, backend_set_name=None, backends=None, health_checkers=None, id=None, ip_version=None, is_fail_open=None, is_preserve_source=None, name=None, network_load_balancer_id=None, policy=None):
         if backend_set_name and not isinstance(backend_set_name, str):
             raise TypeError("Expected argument 'backend_set_name' to be a str")
         pulumi.set(__self__, "backend_set_name", backend_set_name)
@@ -38,6 +38,9 @@ class GetBackendSetResult:
         if ip_version and not isinstance(ip_version, str):
             raise TypeError("Expected argument 'ip_version' to be a str")
         pulumi.set(__self__, "ip_version", ip_version)
+        if is_fail_open and not isinstance(is_fail_open, bool):
+            raise TypeError("Expected argument 'is_fail_open' to be a bool")
+        pulumi.set(__self__, "is_fail_open", is_fail_open)
         if is_preserve_source and not isinstance(is_preserve_source, bool):
             raise TypeError("Expected argument 'is_preserve_source' to be a bool")
         pulumi.set(__self__, "is_preserve_source", is_preserve_source)
@@ -68,7 +71,7 @@ class GetBackendSetResult:
     @pulumi.getter(name="healthCheckers")
     def health_checkers(self) -> Sequence['outputs.GetBackendSetHealthCheckerResult']:
         """
-        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
+        The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         """
         return pulumi.get(self, "health_checkers")
 
@@ -84,6 +87,14 @@ class GetBackendSetResult:
         IP version associated with the backend set.
         """
         return pulumi.get(self, "ip_version")
+
+    @property
+    @pulumi.getter(name="isFailOpen")
+    def is_fail_open(self) -> bool:
+        """
+        If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        """
+        return pulumi.get(self, "is_fail_open")
 
     @property
     @pulumi.getter(name="isPreserveSource")
@@ -126,6 +137,7 @@ class AwaitableGetBackendSetResult(GetBackendSetResult):
             health_checkers=self.health_checkers,
             id=self.id,
             ip_version=self.ip_version,
+            is_fail_open=self.is_fail_open,
             is_preserve_source=self.is_preserve_source,
             name=self.name,
             network_load_balancer_id=self.network_load_balancer_id,
@@ -156,6 +168,7 @@ def get_backend_set(backend_set_name: Optional[str] = None,
         health_checkers=pulumi.get(__ret__, 'health_checkers'),
         id=pulumi.get(__ret__, 'id'),
         ip_version=pulumi.get(__ret__, 'ip_version'),
+        is_fail_open=pulumi.get(__ret__, 'is_fail_open'),
         is_preserve_source=pulumi.get(__ret__, 'is_preserve_source'),
         name=pulumi.get(__ret__, 'name'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),

@@ -6,6 +6,7 @@ package com.pulumi.oci.NetworkLoadBalancer.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs Empty = new NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs();
+
+    /**
+     * (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    @Import(name="dns")
+    private @Nullable Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs> dns;
+
+    /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    public Optional<Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs>> dns() {
+        return Optional.ofNullable(this.dns);
+    }
 
     /**
      * (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -170,6 +186,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
     private NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs() {}
 
     private NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs $) {
+        this.dns = $.dns;
         this.intervalInMillis = $.intervalInMillis;
         this.port = $.port;
         this.protocol = $.protocol;
@@ -198,6 +215,27 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
 
         public Builder(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs defaults) {
             $ = new NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dns (Updatable) DNS healthcheck configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dns(@Nullable Output<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs> dns) {
+            $.dns = dns;
+            return this;
+        }
+
+        /**
+         * @param dns (Updatable) DNS healthcheck configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dns(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs dns) {
+            return dns(Output.of(dns));
         }
 
         /**

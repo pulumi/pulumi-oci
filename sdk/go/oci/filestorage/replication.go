@@ -59,8 +59,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.NewReplication(ctx, "testReplication", &FileStorage.ReplicationArgs{
 //				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				SourceId:      pulumi.Any(oci_file_storage_source.Test_source.Id),
-//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//				SourceId:      pulumi.Any(oci_file_storage_file_system.Test_source.Id),
+//				TargetId:      pulumi.Any(oci_file_storage_file_system.Test_target.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

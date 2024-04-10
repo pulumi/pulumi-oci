@@ -28,16 +28,20 @@ namespace Pulumi.Oci.StackMonitoring
     ///     var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentIds = @var.Monitored_resources_search_compartment_ids,
     ///         ExcludeFields = @var.Monitored_resources_search_exclude_fields,
     ///         ExternalId = oci_stack_monitoring_external.Test_external.Id,
     ///         Fields = @var.Monitored_resources_search_fields,
     ///         HostName = @var.Monitored_resources_search_host_name,
     ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
     ///         License = @var.Monitored_resources_search_license,
+    ///         LifecycleStates = @var.Monitored_resources_search_lifecycle_states,
     ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
     ///         NameContains = @var.Monitored_resources_search_name_contains,
     ///         PropertyEquals = @var.Monitored_resources_search_property_equals,
+    ///         ResourceCategory = @var.Monitored_resources_search_resource_category,
     ///         ResourceTimeZone = @var.Monitored_resources_search_resource_time_zone,
+    ///         SourceType = @var.Monitored_resources_search_source_type,
     ///         State = @var.Monitored_resources_search_state,
     ///         TimeCreatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_created_greater_than_or_equal_to,
     ///         TimeCreatedLessThan = @var.Monitored_resources_search_time_created_less_than,
@@ -66,6 +70,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Output("compartmentIds")]
+        public Output<ImmutableArray<string>> CompartmentIds { get; private set; } = null!;
 
         /// <summary>
         /// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
@@ -107,7 +117,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// License edition of the monitored resource.
         /// </summary>
         [Output("license")]
-        public Output<string> License { get; private set; } = null!;
+        public Output<string?> License { get; private set; } = null!;
+
+        /// <summary>
+        /// Multiple lifecycle states filter.
+        /// </summary>
+        [Output("lifecycleStates")]
+        public Output<ImmutableArray<string>> LifecycleStates { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources with matching management agent id.
@@ -134,10 +150,22 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableDictionary<string, object>?> PropertyEquals { get; private set; } = null!;
 
         /// <summary>
+        /// Resource category filter.
+        /// </summary>
+        [Output("resourceCategory")]
+        public Output<string?> ResourceCategory { get; private set; } = null!;
+
+        /// <summary>
         /// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Output("resourceTimeZone")]
         public Output<string?> ResourceTimeZone { get; private set; } = null!;
+
+        /// <summary>
+        /// Source type filter.
+        /// </summary>
+        [Output("sourceType")]
+        public Output<string?> SourceType { get; private set; } = null!;
 
         /// <summary>
         /// A filter to return resources with matching lifecycle state.
@@ -239,6 +267,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("compartmentIds")]
+        private InputList<string>? _compartmentIds;
+
+        /// <summary>
+        /// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> CompartmentIds
+        {
+            get => _compartmentIds ?? (_compartmentIds = new InputList<string>());
+            set => _compartmentIds = value;
+        }
+
         [Input("excludeFields")]
         private InputList<string>? _excludeFields;
 
@@ -287,6 +327,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("license")]
         public Input<string>? License { get; set; }
 
+        [Input("lifecycleStates")]
+        private InputList<string>? _lifecycleStates;
+
+        /// <summary>
+        /// Multiple lifecycle states filter.
+        /// </summary>
+        public InputList<string> LifecycleStates
+        {
+            get => _lifecycleStates ?? (_lifecycleStates = new InputList<string>());
+            set => _lifecycleStates = value;
+        }
+
         /// <summary>
         /// A filter to return resources with matching management agent id.
         /// </summary>
@@ -318,10 +370,22 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
+        /// Resource category filter.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
         /// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Input("resourceTimeZone")]
         public Input<string>? ResourceTimeZone { get; set; }
+
+        /// <summary>
+        /// Source type filter.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// A filter to return resources with matching lifecycle state.
@@ -385,6 +449,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("compartmentIds")]
+        private InputList<string>? _compartmentIds;
+
+        /// <summary>
+        /// Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public InputList<string> CompartmentIds
+        {
+            get => _compartmentIds ?? (_compartmentIds = new InputList<string>());
+            set => _compartmentIds = value;
+        }
+
         [Input("excludeFields")]
         private InputList<string>? _excludeFields;
 
@@ -445,6 +521,18 @@ namespace Pulumi.Oci.StackMonitoring
         [Input("license")]
         public Input<string>? License { get; set; }
 
+        [Input("lifecycleStates")]
+        private InputList<string>? _lifecycleStates;
+
+        /// <summary>
+        /// Multiple lifecycle states filter.
+        /// </summary>
+        public InputList<string> LifecycleStates
+        {
+            get => _lifecycleStates ?? (_lifecycleStates = new InputList<string>());
+            set => _lifecycleStates = value;
+        }
+
         /// <summary>
         /// A filter to return resources with matching management agent id.
         /// </summary>
@@ -476,10 +564,22 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
+        /// Resource category filter.
+        /// </summary>
+        [Input("resourceCategory")]
+        public Input<string>? ResourceCategory { get; set; }
+
+        /// <summary>
         /// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         /// </summary>
         [Input("resourceTimeZone")]
         public Input<string>? ResourceTimeZone { get; set; }
+
+        /// <summary>
+        /// Source type filter.
+        /// </summary>
+        [Input("sourceType")]
+        public Input<string>? SourceType { get; set; }
 
         /// <summary>
         /// A filter to return resources with matching lifecycle state.

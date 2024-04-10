@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkLoadBalancer.outputs.BackendSetHealthCheckerDns;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BackendSetHealthChecker {
+    /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    private @Nullable BackendSetHealthCheckerDns dns;
     /**
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
@@ -24,7 +30,7 @@ public final class BackendSetHealthChecker {
      */
     private @Nullable Integer port;
     /**
-     * @return (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * @return (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     private String protocol;
@@ -66,6 +72,13 @@ public final class BackendSetHealthChecker {
 
     private BackendSetHealthChecker() {}
     /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    public Optional<BackendSetHealthCheckerDns> dns() {
+        return Optional.ofNullable(this.dns);
+    }
+    /**
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
      */
@@ -80,7 +93,7 @@ public final class BackendSetHealthChecker {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return (Updatable) The protocol the health check must use; either HTTP or HTTPS, or UDP or TCP.  Example: `HTTP`
+     * @return (Updatable) The protocol the health check must use; either HTTP, HTTPS, UDP, TCP or DNS.  Example: `HTTP`
      * 
      */
     public String protocol() {
@@ -145,6 +158,7 @@ public final class BackendSetHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable BackendSetHealthCheckerDns dns;
         private @Nullable Integer intervalInMillis;
         private @Nullable Integer port;
         private String protocol;
@@ -158,6 +172,7 @@ public final class BackendSetHealthChecker {
         public Builder() {}
         public Builder(BackendSetHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dns = defaults.dns;
     	      this.intervalInMillis = defaults.intervalInMillis;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
@@ -170,6 +185,12 @@ public final class BackendSetHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
+        public Builder dns(@Nullable BackendSetHealthCheckerDns dns) {
+
+            this.dns = dns;
+            return this;
+        }
         @CustomType.Setter
         public Builder intervalInMillis(@Nullable Integer intervalInMillis) {
 
@@ -234,6 +255,7 @@ public final class BackendSetHealthChecker {
         }
         public BackendSetHealthChecker build() {
             final var _resultValue = new BackendSetHealthChecker();
+            _resultValue.dns = dns;
             _resultValue.intervalInMillis = intervalInMillis;
             _resultValue.port = port;
             _resultValue.protocol = protocol;

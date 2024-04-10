@@ -49,6 +49,11 @@ public final class MonitoredResourcesListMemberItem {
      */
     private @Nullable String parentId;
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    private @Nullable String resourceCategory;
+    /**
      * @return Monitored resource display name.
      * 
      */
@@ -68,6 +73,11 @@ public final class MonitoredResourcesListMemberItem {
      * 
      */
     private @Nullable String resourceType;
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    private @Nullable String sourceType;
     /**
      * @return The current state of the Resource.
      * 
@@ -130,6 +140,13 @@ public final class MonitoredResourcesListMemberItem {
         return Optional.ofNullable(this.parentId);
     }
     /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Optional<String> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+    /**
      * @return Monitored resource display name.
      * 
      */
@@ -156,6 +173,13 @@ public final class MonitoredResourcesListMemberItem {
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
+    }
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public Optional<String> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
     /**
      * @return The current state of the Resource.
@@ -188,10 +212,12 @@ public final class MonitoredResourcesListMemberItem {
         private @Nullable String hostName;
         private @Nullable String license;
         private @Nullable String parentId;
+        private @Nullable String resourceCategory;
         private @Nullable String resourceDisplayName;
         private @Nullable String resourceId;
         private @Nullable String resourceName;
         private @Nullable String resourceType;
+        private @Nullable String sourceType;
         private @Nullable String state;
         private @Nullable Map<String,Object> systemTags;
         public Builder() {}
@@ -204,10 +230,12 @@ public final class MonitoredResourcesListMemberItem {
     	      this.hostName = defaults.hostName;
     	      this.license = defaults.license;
     	      this.parentId = defaults.parentId;
+    	      this.resourceCategory = defaults.resourceCategory;
     	      this.resourceDisplayName = defaults.resourceDisplayName;
     	      this.resourceId = defaults.resourceId;
     	      this.resourceName = defaults.resourceName;
     	      this.resourceType = defaults.resourceType;
+    	      this.sourceType = defaults.sourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
         }
@@ -255,6 +283,12 @@ public final class MonitoredResourcesListMemberItem {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceCategory(@Nullable String resourceCategory) {
+
+            this.resourceCategory = resourceCategory;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceDisplayName(@Nullable String resourceDisplayName) {
 
             this.resourceDisplayName = resourceDisplayName;
@@ -279,6 +313,12 @@ public final class MonitoredResourcesListMemberItem {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceType(@Nullable String sourceType) {
+
+            this.sourceType = sourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -299,10 +339,12 @@ public final class MonitoredResourcesListMemberItem {
             _resultValue.hostName = hostName;
             _resultValue.license = license;
             _resultValue.parentId = parentId;
+            _resultValue.resourceCategory = resourceCategory;
             _resultValue.resourceDisplayName = resourceDisplayName;
             _resultValue.resourceId = resourceId;
             _resultValue.resourceName = resourceName;
             _resultValue.resourceType = resourceType;
+            _resultValue.sourceType = sourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             return _resultValue;

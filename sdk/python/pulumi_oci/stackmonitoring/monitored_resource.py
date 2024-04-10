@@ -334,7 +334,9 @@ class _MonitoredResourceState:
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]]] = None,
+                 resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
+                 source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  tenant_id: Optional[pulumi.Input[str]] = None,
@@ -359,7 +361,9 @@ class _MonitoredResourceState:
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -403,8 +407,12 @@ class _MonitoredResourceState:
             pulumi.set(__self__, "name", name)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if resource_category is not None:
+            pulumi.set(__self__, "resource_category", resource_category)
         if resource_time_zone is not None:
             pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -611,6 +619,18 @@ class _MonitoredResourceState:
         pulumi.set(self, "properties", value)
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @resource_category.setter
+    def resource_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_category", value)
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> Optional[pulumi.Input[str]]:
         """
@@ -621,6 +641,18 @@ class _MonitoredResourceState:
     @resource_time_zone.setter
     def resource_time_zone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "resource_time_zone", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source_type", value)
 
     @property
     @pulumi.getter
@@ -1010,6 +1042,8 @@ class MonitoredResource(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
+            __props__.__dict__["resource_category"] = None
+            __props__.__dict__["source_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["tenant_id"] = None
@@ -1041,7 +1075,9 @@ class MonitoredResource(pulumi.CustomResource):
             management_agent_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]]] = None,
+            resource_category: Optional[pulumi.Input[str]] = None,
             resource_time_zone: Optional[pulumi.Input[str]] = None,
+            source_type: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             tenant_id: Optional[pulumi.Input[str]] = None,
@@ -1071,7 +1107,9 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] name: (Updatable) Property Name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
+        :param pulumi.Input[str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+        :param pulumi.Input[str] source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param pulumi.Input[str] state: Lifecycle state of the monitored resource.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1103,7 +1141,9 @@ class MonitoredResource(pulumi.CustomResource):
         __props__.__dict__["management_agent_id"] = management_agent_id
         __props__.__dict__["name"] = name
         __props__.__dict__["properties"] = properties
+        __props__.__dict__["resource_category"] = resource_category
         __props__.__dict__["resource_time_zone"] = resource_time_zone
+        __props__.__dict__["source_type"] = source_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["tenant_id"] = tenant_id
@@ -1241,12 +1281,28 @@ class MonitoredResource(pulumi.CustomResource):
         return pulumi.get(self, "properties")
 
     @property
+    @pulumi.getter(name="resourceCategory")
+    def resource_category(self) -> pulumi.Output[str]:
+        """
+        Resource Category to indicate the kind of resource type.
+        """
+        return pulumi.get(self, "resource_category")
+
+    @property
     @pulumi.getter(name="resourceTimeZone")
     def resource_time_zone(self) -> pulumi.Output[Optional[str]]:
         """
         (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
         return pulumi.get(self, "resource_time_zone")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Output[str]:
+        """
+        Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+        """
+        return pulumi.get(self, "source_type")
 
     @property
     @pulumi.getter

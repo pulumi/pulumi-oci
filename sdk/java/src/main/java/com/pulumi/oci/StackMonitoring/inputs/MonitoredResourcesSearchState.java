@@ -35,6 +35,21 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
+     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="compartmentIds")
+    private @Nullable Output<List<String>> compartmentIds;
+
+    /**
+     * @return Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<List<String>>> compartmentIds() {
+        return Optional.ofNullable(this.compartmentIds);
+    }
+
+    /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called &#34;excludeFields&#34; of an array type, provide the values as enums, and use collectionFormat.
      * 
      */
@@ -140,6 +155,21 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
+     * Multiple lifecycle states filter.
+     * 
+     */
+    @Import(name="lifecycleStates")
+    private @Nullable Output<List<String>> lifecycleStates;
+
+    /**
+     * @return Multiple lifecycle states filter.
+     * 
+     */
+    public Optional<Output<List<String>>> lifecycleStates() {
+        return Optional.ofNullable(this.lifecycleStates);
+    }
+
+    /**
      * A filter to return resources with matching management agent id.
      * 
      */
@@ -200,6 +230,21 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
     }
 
     /**
+     * Resource category filter.
+     * 
+     */
+    @Import(name="resourceCategory")
+    private @Nullable Output<String> resourceCategory;
+
+    /**
+     * @return Resource category filter.
+     * 
+     */
+    public Optional<Output<String>> resourceCategory() {
+        return Optional.ofNullable(this.resourceCategory);
+    }
+
+    /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
@@ -212,6 +257,21 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> resourceTimeZone() {
         return Optional.ofNullable(this.resourceTimeZone);
+    }
+
+    /**
+     * Source type filter.
+     * 
+     */
+    @Import(name="sourceType")
+    private @Nullable Output<String> sourceType;
+
+    /**
+     * @return Source type filter.
+     * 
+     */
+    public Optional<Output<String>> sourceType() {
+        return Optional.ofNullable(this.sourceType);
     }
 
     /**
@@ -330,6 +390,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
 
     private MonitoredResourcesSearchState(MonitoredResourcesSearchState $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIds = $.compartmentIds;
         this.excludeFields = $.excludeFields;
         this.externalId = $.externalId;
         this.fields = $.fields;
@@ -337,11 +398,14 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         this.hostNameContains = $.hostNameContains;
         this.items = $.items;
         this.license = $.license;
+        this.lifecycleStates = $.lifecycleStates;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
         this.nameContains = $.nameContains;
         this.propertyEquals = $.propertyEquals;
+        this.resourceCategory = $.resourceCategory;
         this.resourceTimeZone = $.resourceTimeZone;
+        this.sourceType = $.sourceType;
         this.state = $.state;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
@@ -387,6 +451,37 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compartmentIds Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIds(@Nullable Output<List<String>> compartmentIds) {
+            $.compartmentIds = compartmentIds;
+            return this;
+        }
+
+        /**
+         * @param compartmentIds Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIds(List<String> compartmentIds) {
+            return compartmentIds(Output.of(compartmentIds));
+        }
+
+        /**
+         * @param compartmentIds Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIds(String... compartmentIds) {
+            return compartmentIds(List.of(compartmentIds));
         }
 
         /**
@@ -567,6 +662,37 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param lifecycleStates Multiple lifecycle states filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStates(@Nullable Output<List<String>> lifecycleStates) {
+            $.lifecycleStates = lifecycleStates;
+            return this;
+        }
+
+        /**
+         * @param lifecycleStates Multiple lifecycle states filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStates(List<String> lifecycleStates) {
+            return lifecycleStates(Output.of(lifecycleStates));
+        }
+
+        /**
+         * @param lifecycleStates Multiple lifecycle states filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lifecycleStates(String... lifecycleStates) {
+            return lifecycleStates(List.of(lifecycleStates));
+        }
+
+        /**
          * @param managementAgentId A filter to return resources with matching management agent id.
          * 
          * @return builder
@@ -651,6 +777,27 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param resourceCategory Resource category filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(@Nullable Output<String> resourceCategory) {
+            $.resourceCategory = resourceCategory;
+            return this;
+        }
+
+        /**
+         * @param resourceCategory Resource category filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceCategory(String resourceCategory) {
+            return resourceCategory(Output.of(resourceCategory));
+        }
+
+        /**
          * @param resourceTimeZone Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * 
          * @return builder
@@ -669,6 +816,27 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
          */
         public Builder resourceTimeZone(String resourceTimeZone) {
             return resourceTimeZone(Output.of(resourceTimeZone));
+        }
+
+        /**
+         * @param sourceType Source type filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(@Nullable Output<String> sourceType) {
+            $.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * @param sourceType Source type filter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceType(String sourceType) {
+            return sourceType(Output.of(sourceType));
         }
 
         /**

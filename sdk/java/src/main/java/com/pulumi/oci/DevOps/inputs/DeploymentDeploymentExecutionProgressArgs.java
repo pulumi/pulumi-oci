@@ -5,9 +5,9 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
+import com.pulumi.oci.DevOps.inputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs;
 import java.lang.String;
-import java.util.Map;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,15 +21,15 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
      * Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    @Import(name="deployStageExecutionProgress")
-    private @Nullable Output<Map<String,Object>> deployStageExecutionProgress;
+    @Import(name="deployStageExecutionProgresses")
+    private @Nullable Output<List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs>> deployStageExecutionProgresses;
 
     /**
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public Optional<Output<Map<String,Object>>> deployStageExecutionProgress() {
-        return Optional.ofNullable(this.deployStageExecutionProgress);
+    public Optional<Output<List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs>>> deployStageExecutionProgresses() {
+        return Optional.ofNullable(this.deployStageExecutionProgresses);
     }
 
     /**
@@ -65,7 +65,7 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
     private DeploymentDeploymentExecutionProgressArgs() {}
 
     private DeploymentDeploymentExecutionProgressArgs(DeploymentDeploymentExecutionProgressArgs $) {
-        this.deployStageExecutionProgress = $.deployStageExecutionProgress;
+        this.deployStageExecutionProgresses = $.deployStageExecutionProgresses;
         this.timeFinished = $.timeFinished;
         this.timeStarted = $.timeStarted;
     }
@@ -89,24 +89,34 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
         }
 
         /**
-         * @param deployStageExecutionProgress Map of stage OCIDs to deploy stage execution progress model.
+         * @param deployStageExecutionProgresses Map of stage OCIDs to deploy stage execution progress model.
          * 
          * @return builder
          * 
          */
-        public Builder deployStageExecutionProgress(@Nullable Output<Map<String,Object>> deployStageExecutionProgress) {
-            $.deployStageExecutionProgress = deployStageExecutionProgress;
+        public Builder deployStageExecutionProgresses(@Nullable Output<List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs>> deployStageExecutionProgresses) {
+            $.deployStageExecutionProgresses = deployStageExecutionProgresses;
             return this;
         }
 
         /**
-         * @param deployStageExecutionProgress Map of stage OCIDs to deploy stage execution progress model.
+         * @param deployStageExecutionProgresses Map of stage OCIDs to deploy stage execution progress model.
          * 
          * @return builder
          * 
          */
-        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
-            return deployStageExecutionProgress(Output.of(deployStageExecutionProgress));
+        public Builder deployStageExecutionProgresses(List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs> deployStageExecutionProgresses) {
+            return deployStageExecutionProgresses(Output.of(deployStageExecutionProgresses));
+        }
+
+        /**
+         * @param deployStageExecutionProgresses Map of stage OCIDs to deploy stage execution progress model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployStageExecutionProgresses(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs... deployStageExecutionProgresses) {
+            return deployStageExecutionProgresses(List.of(deployStageExecutionProgresses));
         }
 
         /**

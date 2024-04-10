@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.NetworkLoadBalancer.outputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
+    /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    private @Nullable NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns dns;
     /**
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
@@ -65,6 +71,13 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
     private @Nullable String urlPath;
 
     private NetworkLoadBalancersBackendSetsUnifiedHealthChecker() {}
+    /**
+     * @return (Updatable) DNS healthcheck configurations.
+     * 
+     */
+    public Optional<NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns> dns() {
+        return Optional.ofNullable(this.dns);
+    }
     /**
      * @return (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
      * 
@@ -145,6 +158,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns dns;
         private @Nullable Integer intervalInMillis;
         private @Nullable Integer port;
         private String protocol;
@@ -158,6 +172,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
         public Builder() {}
         public Builder(NetworkLoadBalancersBackendSetsUnifiedHealthChecker defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dns = defaults.dns;
     	      this.intervalInMillis = defaults.intervalInMillis;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
@@ -170,6 +185,12 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
     	      this.urlPath = defaults.urlPath;
         }
 
+        @CustomType.Setter
+        public Builder dns(@Nullable NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns dns) {
+
+            this.dns = dns;
+            return this;
+        }
         @CustomType.Setter
         public Builder intervalInMillis(@Nullable Integer intervalInMillis) {
 
@@ -234,6 +255,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
         }
         public NetworkLoadBalancersBackendSetsUnifiedHealthChecker build() {
             final var _resultValue = new NetworkLoadBalancersBackendSetsUnifiedHealthChecker();
+            _resultValue.dns = dns;
             _resultValue.intervalInMillis = intervalInMillis;
             _resultValue.port = port;
             _resultValue.protocol = protocol;

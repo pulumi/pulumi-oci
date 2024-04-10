@@ -372,6 +372,20 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.properties);
     }
     /**
+     * Resource Category to indicate the kind of resource type.
+     * 
+     */
+    @Export(name="resourceCategory", refs={String.class}, tree="[0]")
+    private Output<String> resourceCategory;
+
+    /**
+     * @return Resource Category to indicate the kind of resource type.
+     * 
+     */
+    public Output<String> resourceCategory() {
+        return this.resourceCategory;
+    }
+    /**
      * (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * 
      */
@@ -384,6 +398,20 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> resourceTimeZone() {
         return Codegen.optional(this.resourceTimeZone);
+    }
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    @Export(name="sourceType", refs={String.class}, tree="[0]")
+    private Output<String> sourceType;
+
+    /**
+     * @return Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
+     * 
+     */
+    public Output<String> sourceType() {
+        return this.sourceType;
     }
     /**
      * Lifecycle state of the monitored resource.

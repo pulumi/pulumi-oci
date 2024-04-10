@@ -72,8 +72,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testReplication = new Replication(&#34;testReplication&#34;, ReplicationArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .sourceId(oci_file_storage_source.test_source().id())
- *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .sourceId(oci_file_storage_file_system.test_source().id())
+ *             .targetId(oci_file_storage_file_system.test_target().id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(var_.replication_display_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))

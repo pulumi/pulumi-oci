@@ -318,6 +318,21 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    @Import(name="opcParentRptUrl")
+    private @Nullable Output<String> opcParentRptUrl;
+
+    /**
+     * @return (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+     * 
+     */
+    public Optional<Output<String>> opcParentRptUrl() {
+        return Optional.ofNullable(this.opcParentRptUrl);
+    }
+
+    /**
      * An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
      * 
      */
@@ -421,6 +436,7 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
         this.maxDurationInMinutes = $.maxDurationInMinutes;
         this.metastoreId = $.metastoreId;
         this.numExecutors = $.numExecutors;
+        this.opcParentRptUrl = $.opcParentRptUrl;
         this.parameters = $.parameters;
         this.poolId = $.poolId;
         this.sparkVersion = $.sparkVersion;
@@ -862,6 +878,27 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder numExecutors(Integer numExecutors) {
             return numExecutors(Output.of(numExecutors));
+        }
+
+        /**
+         * @param opcParentRptUrl (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(@Nullable Output<String> opcParentRptUrl) {
+            $.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
+         * @param opcParentRptUrl (Optional header param, required for Resource Principal version 3.0+) Parent resource control plane endpoint used to exchange for upper level resource principal token.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            return opcParentRptUrl(Output.of(opcParentRptUrl));
         }
 
         /**

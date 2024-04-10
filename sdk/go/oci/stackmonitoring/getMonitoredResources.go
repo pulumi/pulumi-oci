@@ -33,6 +33,7 @@ import (
 //			_, err := StackMonitoring.GetMonitoredResources(ctx, &stackmonitoring.GetMonitoredResourcesArgs{
 //				CompartmentId: _var.Compartment_id,
 //				Name:          pulumi.StringRef(_var.Monitored_resource_name),
+//				Status:        pulumi.StringRef(_var.Monitored_resource_status),
 //				WorkRequestId: pulumi.StringRef(oci_containerengine_work_request.Test_work_request.Id),
 //			}, nil)
 //			if err != nil {
@@ -61,6 +62,8 @@ type GetMonitoredResourcesArgs struct {
 	Filters       []GetMonitoredResourcesFilter `pulumi:"filters"`
 	// A filter to return resources that match exact resource name.
 	Name *string `pulumi:"name"`
+	// A filter to return only resources with matching lifecycleState.
+	Status *string `pulumi:"status"`
 	// A filter to return resources which were impacted as part of this work request identifier.
 	WorkRequestId *string `pulumi:"workRequestId"`
 }
@@ -76,6 +79,7 @@ type GetMonitoredResourcesResult struct {
 	MonitoredResourceCollections []GetMonitoredResourcesMonitoredResourceCollection `pulumi:"monitoredResourceCollections"`
 	// Property Name.
 	Name          *string `pulumi:"name"`
+	Status        *string `pulumi:"status"`
 	WorkRequestId *string `pulumi:"workRequestId"`
 }
 
@@ -99,6 +103,8 @@ type GetMonitoredResourcesOutputArgs struct {
 	Filters       GetMonitoredResourcesFilterArrayInput `pulumi:"filters"`
 	// A filter to return resources that match exact resource name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// A filter to return only resources with matching lifecycleState.
+	Status pulumi.StringPtrInput `pulumi:"status"`
 	// A filter to return resources which were impacted as part of this work request identifier.
 	WorkRequestId pulumi.StringPtrInput `pulumi:"workRequestId"`
 }
@@ -146,6 +152,10 @@ func (o GetMonitoredResourcesResultOutput) MonitoredResourceCollections() GetMon
 // Property Name.
 func (o GetMonitoredResourcesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMonitoredResourcesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMonitoredResourcesResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMonitoredResourcesResultOutput) WorkRequestId() pulumi.StringPtrOutput {

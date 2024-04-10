@@ -176,6 +176,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
      * (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
      * Example: `true`
+     * Example: `true`
      * 
      */
     @Import(name="isSymmetricHashEnabled")
@@ -184,6 +185,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
     /**
      * @return (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      * 
+     * Example: `true`
      * Example: `true`
      * 
      */
@@ -625,6 +627,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
          * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
          * 
          * Example: `true`
+         * Example: `true`
          * 
          * @return builder
          * 
@@ -637,6 +640,7 @@ public final class NetworkLoadBalancerState extends com.pulumi.resources.Resourc
         /**
          * @param isSymmetricHashEnabled (Updatable) This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.  This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
          * 
+         * Example: `true`
          * Example: `true`
          * 
          * @return builder

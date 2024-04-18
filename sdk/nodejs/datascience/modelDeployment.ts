@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *                     memoryInGbs: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs,
  *                     ocpus: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus,
  *                 },
+ *                 subnetId: oci_core_subnet.test_subnet.id,
  *             },
  *             modelId: oci_datascience_model.test_model.id,
  *             bandwidthMbps: _var.model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps,

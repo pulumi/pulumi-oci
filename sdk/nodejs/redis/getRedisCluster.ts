@@ -83,6 +83,10 @@ export interface GetRedisClusterResult {
      */
     readonly nodeMemoryInGbs: number;
     /**
+     * OCIDs of the NSGs to control access in the customer network
+     */
+    readonly nsgIds: string[];
+    /**
      * The private IP address of the API endpoint for the Redis cluster's primary node.
      */
     readonly primaryEndpointIpAddress: string;

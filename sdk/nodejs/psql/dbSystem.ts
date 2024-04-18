@@ -198,7 +198,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly patchOperations!: pulumi.Output<outputs.Psql.DbSystemPatchOperation[] | undefined>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -408,7 +408,7 @@ export interface DbSystemState {
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
      */
     shape?: pulumi.Input<string>;
     /**
@@ -514,7 +514,7 @@ export interface DbSystemArgs {
      */
     patchOperations?: pulumi.Input<pulumi.Input<inputs.Psql.DbSystemPatchOperation>[]>;
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
      */
     shape: pulumi.Input<string>;
     /**

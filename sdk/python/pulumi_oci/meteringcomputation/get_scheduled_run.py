@@ -132,7 +132,7 @@ def get_scheduled_run(scheduled_run_id: Optional[str] = None,
     <!--End PulumiCodeChooser -->
 
 
-    :param str scheduled_run_id: The scheduledRun unique OCID.
+    :param str scheduled_run_id: The scheduledRun unique OCID
     """
     __args__ = dict()
     __args__['scheduledRunId'] = scheduled_run_id
@@ -169,6 +169,6 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[str]] = Non
     <!--End PulumiCodeChooser -->
 
 
-    :param str scheduled_run_id: The scheduledRun unique OCID.
+    :param str scheduled_run_id: The scheduledRun unique OCID
     """
     ...

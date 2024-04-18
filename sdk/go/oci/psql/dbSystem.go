@@ -157,7 +157,7 @@ type DbSystem struct {
 	NetworkDetails DbSystemNetworkDetailsOutput `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayOutput `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source DbSystemSourceOutput `pulumi:"source"`
@@ -264,7 +264,7 @@ type dbSystemState struct {
 	NetworkDetails *DbSystemNetworkDetails `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 	Shape *string `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source *DbSystemSource `pulumi:"source"`
@@ -324,7 +324,7 @@ type DbSystemState struct {
 	NetworkDetails DbSystemNetworkDetailsPtrInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 	Shape pulumi.StringPtrInput
 	// The source used to restore the database system.
 	Source DbSystemSourcePtrInput
@@ -382,7 +382,7 @@ type dbSystemArgs struct {
 	NetworkDetails DbSystemNetworkDetails `pulumi:"networkDetails"`
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 	Shape string `pulumi:"shape"`
 	// The source used to restore the database system.
 	Source *DbSystemSource `pulumi:"source"`
@@ -429,7 +429,7 @@ type DbSystemArgs struct {
 	NetworkDetails DbSystemNetworkDetailsInput
 	// (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
 	PatchOperations DbSystemPatchOperationArrayInput
-	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 	Shape pulumi.StringInput
 	// The source used to restore the database system.
 	Source DbSystemSourcePtrInput
@@ -624,7 +624,7 @@ func (o DbSystemOutput) PatchOperations() DbSystemPatchOperationArrayOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemPatchOperationArrayOutput { return v.PatchOperations }).(DbSystemPatchOperationArrayOutput)
 }
 
-// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
 func (o DbSystemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }

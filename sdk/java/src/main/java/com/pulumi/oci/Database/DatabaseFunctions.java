@@ -41,6 +41,10 @@ import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagem
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagePlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
@@ -267,6 +271,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseInstanceWalletManage
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRegionalWalletManagementResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImageResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImagesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseWalletResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesResult;
@@ -3729,6 +3735,354 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", TypeShape.of(GetAutonomousDatabaseRegionalWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database Software Image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
+     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs args) {
+        return getAutonomousDatabaseSoftwareImage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database Software Image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
+     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImagePlain(GetAutonomousDatabaseSoftwareImagePlainArgs args) {
+        return getAutonomousDatabaseSoftwareImagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database Software Image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
+     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", TypeShape.of(GetAutonomousDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Database Software Image.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
+     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseSoftwareImageResult> getAutonomousDatabaseSoftwareImagePlain(GetAutonomousDatabaseSoftwareImagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", TypeShape.of(GetAutonomousDatabaseSoftwareImageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
+     *             .displayName(var_.autonomous_database_software_image_display_name())
+     *             .state(var_.autonomous_database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs args) {
+        return getAutonomousDatabaseSoftwareImages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
+     *             .displayName(var_.autonomous_database_software_image_display_name())
+     *             .state(var_.autonomous_database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImagesPlain(GetAutonomousDatabaseSoftwareImagesPlainArgs args) {
+        return getAutonomousDatabaseSoftwareImagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
+     *             .displayName(var_.autonomous_database_software_image_display_name())
+     *             .state(var_.autonomous_database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", TypeShape.of(GetAutonomousDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
+     *             .displayName(var_.autonomous_database_software_image_display_name())
+     *             .state(var_.autonomous_database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseSoftwareImagesResult> getAutonomousDatabaseSoftwareImagesPlain(GetAutonomousDatabaseSoftwareImagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseSoftwareImages:getAutonomousDatabaseSoftwareImages", TypeShape.of(GetAutonomousDatabaseSoftwareImagesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * **Deprecated. Use oci.Database.AutonomousDatabaseWallet instead.**

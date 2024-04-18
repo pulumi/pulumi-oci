@@ -42,7 +42,7 @@ class DbSystemArgs:
         :param pulumi.Input[str] db_version: Version of database system software.
         :param pulumi.Input[str] display_name: Display name of the database instance node. Avoid entering confidential information.
         :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
@@ -150,7 +150,7 @@ class DbSystemArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[str]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         """
         return pulumi.get(self, "shape")
 
@@ -394,7 +394,7 @@ class _DbSystemState:
         :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
         :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
@@ -694,7 +694,7 @@ class _DbSystemState:
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         """
         return pulumi.get(self, "shape")
 
@@ -921,7 +921,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
         :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
         :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[str] system_type: Type of the database system.
@@ -1168,7 +1168,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DbSystemManagementPolicyArgs']] management_policy: (Updatable) PostgreSQL database system management policy update details.
         :param pulumi.Input[pulumi.InputType['DbSystemNetworkDetailsArgs']] network_details: Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemPatchOperationArgs']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[str] shape: The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         :param pulumi.Input[pulumi.InputType['DbSystemSourceArgs']] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input[pulumi.InputType['DbSystemStorageDetailsArgs']] storage_details: (Updatable) Storage details of the database system.
@@ -1370,7 +1370,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[str]:
         """
-        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         """
         return pulumi.get(self, "shape")
 

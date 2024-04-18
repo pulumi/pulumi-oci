@@ -35,7 +35,7 @@ export function getScheduledRun(args: GetScheduledRunArgs, opts?: pulumi.InvokeO
  */
 export interface GetScheduledRunArgs {
     /**
-     * The scheduledRun unique OCID.
+     * The scheduledRun unique OCID
      */
     scheduledRunId: string;
 }
@@ -97,7 +97,7 @@ export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pu
  */
 export interface GetScheduledRunOutputArgs {
     /**
-     * The scheduledRun unique OCID.
+     * The scheduledRun unique OCID
      */
     scheduledRunId: pulumi.Input<string>;
 }

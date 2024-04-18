@@ -220,6 +220,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  node_collections: Sequence['outputs.GetRedisClustersRedisClusterCollectionItemNodeCollectionResult'],
                  node_count: int,
                  node_memory_in_gbs: float,
+                 nsg_ids: Sequence[str],
                  primary_endpoint_ip_address: str,
                  primary_fqdn: str,
                  replicas_endpoint_ip_address: str,
@@ -240,6 +241,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param Sequence['GetRedisClustersRedisClusterCollectionItemNodeCollectionArgs'] node_collections: The collection of Redis cluster nodes.
         :param int node_count: The number of nodes in the Redis cluster.
         :param float node_memory_in_gbs: The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        :param Sequence[str] nsg_ids: OCIDs of the NSGs to control access in the customer network
         :param str primary_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's primary node.
         :param str primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
         :param str replicas_endpoint_ip_address: The private IP address of the API endpoint for the Redis cluster's replica nodes.
@@ -260,6 +262,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "node_collections", node_collections)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
         pulumi.set(__self__, "primary_fqdn", primary_fqdn)
         pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
@@ -342,6 +345,14 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
         """
         return pulumi.get(self, "node_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        OCIDs of the NSGs to control access in the customer network
+        """
+        return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="primaryEndpointIpAddress")

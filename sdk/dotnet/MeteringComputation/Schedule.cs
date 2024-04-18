@@ -145,7 +145,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<string> SavedReportId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        /// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Output("scheduleRecurrences")]
         public Output<string> ScheduleRecurrences { get; private set; } = null!;
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<string>? SavedReportId { get; set; }
 
         /// <summary>
-        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        /// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Input("scheduleRecurrences", required: true)]
         public Input<string> ScheduleRecurrences { get; set; } = null!;
@@ -387,7 +387,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<string>? SavedReportId { get; set; }
 
         /// <summary>
-        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        /// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         [Input("scheduleRecurrences")]
         public Input<string>? ScheduleRecurrences { get; set; }

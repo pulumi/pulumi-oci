@@ -74,7 +74,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetScheduledRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The scheduledRun unique OCID.
+        /// The scheduledRun unique OCID
         /// </summary>
         [Input("scheduledRunId", required: true)]
         public string ScheduledRunId { get; set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetScheduledRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The scheduledRun unique OCID.
+        /// The scheduledRun unique OCID
         /// </summary>
         [Input("scheduledRunId", required: true)]
         public Input<string> ScheduledRunId { get; set; } = null!;

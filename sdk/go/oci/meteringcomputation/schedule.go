@@ -110,7 +110,7 @@ type Schedule struct {
 	ResultLocation ScheduleResultLocationOutput `pulumi:"resultLocation"`
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringOutput `pulumi:"savedReportId"`
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringOutput `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -187,7 +187,7 @@ type scheduleState struct {
 	ResultLocation *ScheduleResultLocation `pulumi:"resultLocation"`
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId *string `pulumi:"savedReportId"`
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences *string `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
 	State *string `pulumi:"state"`
@@ -223,7 +223,7 @@ type ScheduleState struct {
 	ResultLocation ScheduleResultLocationPtrInput
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringPtrInput
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringPtrInput
 	// The schedule lifecycle state.
 	State pulumi.StringPtrInput
@@ -263,7 +263,7 @@ type scheduleArgs struct {
 	ResultLocation ScheduleResultLocation `pulumi:"resultLocation"`
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId *string `pulumi:"savedReportId"`
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
 	// The date and time of the first time job execution.
 	//
@@ -292,7 +292,7 @@ type ScheduleArgs struct {
 	ResultLocation ScheduleResultLocationInput
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringPtrInput
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput
 	// The date and time of the first time job execution.
 	//
@@ -433,7 +433,7 @@ func (o ScheduleOutput) SavedReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.SavedReportId }).(pulumi.StringOutput)
 }
 
-// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 func (o ScheduleOutput) ScheduleRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.ScheduleRecurrences }).(pulumi.StringOutput)
 }

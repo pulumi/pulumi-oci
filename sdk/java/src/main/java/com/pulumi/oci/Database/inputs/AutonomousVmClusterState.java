@@ -554,14 +554,18 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     @Import(name="reclaimableCpus")
     private @Nullable Output<Integer> reclaimableCpus;
 
     /**
-     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
+     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
      * 
      */
     public Optional<Output<Integer>> reclaimableCpus() {
@@ -1573,7 +1577,9 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
          * 
          * @return builder
          * 
@@ -1584,7 +1590,9 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
+         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
          * 
          * @return builder
          * 

@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     nsgIds: _var.redis_cluster_nsg_ids,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,6 +105,10 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public readonly nodeMemoryInGbs!: pulumi.Output<number>;
     /**
+     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     */
+    public readonly nsgIds!: pulumi.Output<string[]>;
+    /**
      * The private IP address of the API endpoint for the Redis cluster's primary node.
      */
     public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string>;
@@ -169,6 +174,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["nodeCollections"] = state ? state.nodeCollections : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nodeMemoryInGbs"] = state ? state.nodeMemoryInGbs : undefined;
+            resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["primaryEndpointIpAddress"] = state ? state.primaryEndpointIpAddress : undefined;
             resourceInputs["primaryFqdn"] = state ? state.primaryFqdn : undefined;
             resourceInputs["replicasEndpointIpAddress"] = state ? state.replicasEndpointIpAddress : undefined;
@@ -205,6 +211,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nodeMemoryInGbs"] = args ? args.nodeMemoryInGbs : undefined;
+            resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -259,6 +266,10 @@ export interface RedisClusterState {
      * (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
      */
     nodeMemoryInGbs?: pulumi.Input<number>;
+    /**
+     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The private IP address of the API endpoint for the Redis cluster's primary node.
      */
@@ -333,6 +344,10 @@ export interface RedisClusterArgs {
      * (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
      */
     nodeMemoryInGbs: pulumi.Input<number>;
+    /**
+     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     */
+    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The Redis version that the cluster is running.
      */

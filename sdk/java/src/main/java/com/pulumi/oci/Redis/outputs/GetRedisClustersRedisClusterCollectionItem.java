@@ -62,6 +62,11 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private Double nodeMemoryInGbs;
     /**
+     * @return OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    private List<String> nsgIds;
+    /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
@@ -177,6 +182,13 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         return this.nodeMemoryInGbs;
     }
     /**
+     * @return OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * @return The private IP address of the API endpoint for the Redis cluster&#39;s primary node.
      * 
      */
@@ -265,6 +277,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         private List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections;
         private Integer nodeCount;
         private Double nodeMemoryInGbs;
+        private List<String> nsgIds;
         private String primaryEndpointIpAddress;
         private String primaryFqdn;
         private String replicasEndpointIpAddress;
@@ -287,6 +300,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.nodeCollections = defaults.nodeCollections;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nodeMemoryInGbs = defaults.nodeMemoryInGbs;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.primaryEndpointIpAddress = defaults.primaryEndpointIpAddress;
     	      this.primaryFqdn = defaults.primaryFqdn;
     	      this.replicasEndpointIpAddress = defaults.replicasEndpointIpAddress;
@@ -373,6 +387,17 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             }
             this.nodeMemoryInGbs = nodeMemoryInGbs;
             return this;
+        }
+        @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
         public Builder primaryEndpointIpAddress(String primaryEndpointIpAddress) {
@@ -465,6 +490,7 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             _resultValue.nodeCollections = nodeCollections;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nodeMemoryInGbs = nodeMemoryInGbs;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.primaryEndpointIpAddress = primaryEndpointIpAddress;
             _resultValue.primaryFqdn = primaryFqdn;
             _resultValue.replicasEndpointIpAddress = replicasEndpointIpAddress;

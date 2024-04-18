@@ -27,7 +27,7 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContain
      */
     private Double provisionedCpus;
     /**
-     * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * @return Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      * 
      */
     private Double reclaimableCpus;
@@ -65,7 +65,7 @@ public final class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContain
         return this.provisionedCpus;
     }
     /**
-     * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * @return Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      * 
      */
     public Double reclaimableCpus() {

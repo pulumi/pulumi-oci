@@ -135,16 +135,16 @@ export class OpaInstance extends pulumi.CustomResource {
     public readonly meteringType!: pulumi.Output<string>;
     /**
      * Shape of the instance.
+     */
+    public readonly shapeName!: pulumi.Output<string>;
+    /**
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly shapeName!: pulumi.Output<string>;
-    /**
-     * The current state of the OpaInstance.
-     */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
@@ -212,13 +212,13 @@ export class OpaInstance extends pulumi.CustomResource {
             resourceInputs["isBreakglassEnabled"] = args ? args.isBreakglassEnabled : undefined;
             resourceInputs["meteringType"] = args ? args.meteringType : undefined;
             resourceInputs["shapeName"] = args ? args.shapeName : undefined;
+            resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["attachments"] = undefined /*out*/;
             resourceInputs["identityAppDisplayName"] = undefined /*out*/;
             resourceInputs["identityAppGuid"] = undefined /*out*/;
             resourceInputs["identityAppOpcServiceInstanceGuid"] = undefined /*out*/;
             resourceInputs["identityDomainUrl"] = undefined /*out*/;
             resourceInputs["instanceUrl"] = undefined /*out*/;
-            resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -294,14 +294,14 @@ export interface OpaInstanceState {
     meteringType?: pulumi.Input<string>;
     /**
      * Shape of the instance.
+     */
+    shapeName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     */
-    shapeName?: pulumi.Input<string>;
-    /**
-     * The current state of the OpaInstance.
      */
     state?: pulumi.Input<string>;
     /**
@@ -360,10 +360,14 @@ export interface OpaInstanceArgs {
     meteringType?: pulumi.Input<string>;
     /**
      * Shape of the instance.
+     */
+    shapeName: pulumi.Input<string>;
+    /**
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shapeName: pulumi.Input<string>;
+    state?: pulumi.Input<string>;
 }

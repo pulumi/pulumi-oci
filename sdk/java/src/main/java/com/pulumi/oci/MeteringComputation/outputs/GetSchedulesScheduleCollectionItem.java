@@ -66,7 +66,7 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private String savedReportId;
     /**
-     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+     * @return Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     private String scheduleRecurrences;
@@ -168,7 +168,7 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.savedReportId;
     }
     /**
-     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+     * @return Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     public String scheduleRecurrences() {

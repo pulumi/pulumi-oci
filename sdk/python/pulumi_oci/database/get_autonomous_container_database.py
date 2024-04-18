@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -50,6 +50,9 @@ class GetAutonomousContainerDatabaseResult:
         if compute_model and not isinstance(compute_model, str):
             raise TypeError("Expected argument 'compute_model' to be a str")
         pulumi.set(__self__, "compute_model", compute_model)
+        if database_software_image_id and not isinstance(database_software_image_id, str):
+            raise TypeError("Expected argument 'database_software_image_id' to be a str")
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_name and not isinstance(db_name, str):
             raise TypeError("Expected argument 'db_name' to be a str")
         pulumi.set(__self__, "db_name", db_name)
@@ -113,6 +116,9 @@ class GetAutonomousContainerDatabaseResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if list_one_off_patches and not isinstance(list_one_off_patches, list):
+            raise TypeError("Expected argument 'list_one_off_patches' to be a list")
+        pulumi.set(__self__, "list_one_off_patches", list_one_off_patches)
         if maintenance_window_details and not isinstance(maintenance_window_details, list):
             raise TypeError("Expected argument 'maintenance_window_details' to be a list")
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
@@ -277,6 +283,11 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "compute_model")
 
     @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        return pulumi.get(self, "database_software_image_id")
+
+    @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> str:
         """
@@ -436,6 +447,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="listOneOffPatches")
+    def list_one_off_patches(self) -> Sequence[str]:
+        """
+        List of One-Off patches that has been successfully applied to Autonomous Container Database
+        """
+        return pulumi.get(self, "list_one_off_patches")
+
+    @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult']:
         return pulumi.get(self, "maintenance_window_details")
@@ -532,7 +551,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -548,9 +567,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -671,6 +688,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             cloud_autonomous_vm_cluster_id=self.cloud_autonomous_vm_cluster_id,
             compartment_id=self.compartment_id,
             compute_model=self.compute_model,
+            database_software_image_id=self.database_software_image_id,
             db_name=self.db_name,
             db_split_threshold=self.db_split_threshold,
             db_unique_name=self.db_unique_name,
@@ -692,6 +710,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             largest_provisionable_autonomous_database_in_cpus=self.largest_provisionable_autonomous_database_in_cpus,
             last_maintenance_run_id=self.last_maintenance_run_id,
             lifecycle_details=self.lifecycle_details,
+            list_one_off_patches=self.list_one_off_patches,
             maintenance_window_details=self.maintenance_window_details,
             maintenance_windows=self.maintenance_windows,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
@@ -761,6 +780,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         cloud_autonomous_vm_cluster_id=pulumi.get(__ret__, 'cloud_autonomous_vm_cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_model=pulumi.get(__ret__, 'compute_model'),
+        database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
         db_name=pulumi.get(__ret__, 'db_name'),
         db_split_threshold=pulumi.get(__ret__, 'db_split_threshold'),
         db_unique_name=pulumi.get(__ret__, 'db_unique_name'),
@@ -782,6 +802,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         largest_provisionable_autonomous_database_in_cpus=pulumi.get(__ret__, 'largest_provisionable_autonomous_database_in_cpus'),
         last_maintenance_run_id=pulumi.get(__ret__, 'last_maintenance_run_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        list_one_off_patches=pulumi.get(__ret__, 'list_one_off_patches'),
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),

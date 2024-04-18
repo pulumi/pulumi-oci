@@ -19,7 +19,7 @@ public final class DbSystemStorageDetails {
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
      * 
      */
     private @Nullable String iops;
@@ -46,7 +46,7 @@ public final class DbSystemStorageDetails {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
      * 
      */
     public Optional<String> iops() {

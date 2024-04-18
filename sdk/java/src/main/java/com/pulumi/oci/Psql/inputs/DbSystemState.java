@@ -313,14 +313,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
      * 
      */
     public Optional<Output<String>> shape() {
@@ -918,7 +918,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
          * 
          * @return builder
          * 
@@ -929,7 +929,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
          * 
          * @return builder
          * 

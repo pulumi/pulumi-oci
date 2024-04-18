@@ -80,7 +80,7 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -128,7 +128,7 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        Valid list of provisionable CPUs / cores for ADB creation.
+        Valid list of provisionable CPUs for Autonomous Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -144,7 +144,7 @@ class GetAutonomousContainerDatabaseResourceUsageResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 

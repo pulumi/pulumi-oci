@@ -1682,14 +1682,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs:
     def __init__(__self__, *,
                  instance_shape_name: pulumi.Input[str],
-                 model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None):
+                 model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs'] model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
+        :param pulumi.Input[str] subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -1714,6 +1718,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @model_deployment_instance_shape_config_details.setter
     def model_deployment_instance_shape_config_details(self, value: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']]):
         pulumi.set(self, "model_deployment_instance_shape_config_details", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
 
 
 @pulumi.input_type

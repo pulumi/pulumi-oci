@@ -167,6 +167,7 @@ __all__ = [
     'GetAutonomousDatabaseBackupsFilterArgs',
     'GetAutonomousDatabaseDataguardAssociationsFilterArgs',
     'GetAutonomousDatabaseRefreshableClonesFilterArgs',
+    'GetAutonomousDatabaseSoftwareImagesFilterArgs',
     'GetAutonomousDatabasesClonesFilterArgs',
     'GetAutonomousDatabasesFilterArgs',
     'GetAutonomousDbPreviewVersionsFilterArgs',
@@ -574,6 +575,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -588,6 +590,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -608,6 +611,8 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -723,6 +728,18 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -770,6 +787,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -784,6 +802,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -804,6 +823,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -917,6 +938,18 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -2283,6 +2316,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -2317,6 +2351,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2432,6 +2468,15 @@ class AutonomousExadataInfrastructureMaintenanceWindowArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -2479,6 +2524,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -2513,6 +2559,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2628,6 +2676,15 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -2719,6 +2776,7 @@ class AutonomousVmClusterMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
@@ -2750,6 +2808,8 @@ class AutonomousVmClusterMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2856,6 +2916,15 @@ class AutonomousVmClusterMaintenanceWindowArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -2903,6 +2972,7 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
@@ -2934,6 +3004,8 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3038,6 +3110,15 @@ class AutonomousVmClusterMaintenanceWindowDetailArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3240,6 +3321,7 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -3274,6 +3356,8 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3389,6 +3473,15 @@ class CloudAutonomousVmClusterMaintenanceWindowArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -3436,6 +3529,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -3470,6 +3564,8 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3583,6 +3679,15 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3736,6 +3841,7 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -3770,6 +3876,8 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3883,6 +3991,15 @@ class CloudExadataInfrastructureMaintenanceWindowArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -7189,6 +7306,7 @@ class DbSystemMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -7223,6 +7341,8 @@ class DbSystemMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -7338,6 +7458,15 @@ class DbSystemMaintenanceWindowArgs:
         pulumi.set(self, "preference", value)
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
         """
@@ -7385,6 +7514,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -7419,6 +7549,8 @@ class DbSystemMaintenanceWindowDetailsArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -7532,6 +7664,15 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -8313,6 +8454,7 @@ class ExadataInfrastructureMaintenanceWindowArgs:
                  months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureMaintenanceWindowMonthArgs']]]] = None,
                  patching_mode: Optional[pulumi.Input[str]] = None,
                  preference: Optional[pulumi.Input[str]] = None,
+                 skip_rus: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None,
                  weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
         """
         :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -8347,6 +8489,8 @@ class ExadataInfrastructureMaintenanceWindowArgs:
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -8460,6 +8604,15 @@ class ExadataInfrastructureMaintenanceWindowArgs:
     @preference.setter
     def preference(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]:
+        return pulumi.get(self, "skip_rus")
+
+    @skip_rus.setter
+    def skip_rus(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]]):
+        pulumi.set(self, "skip_rus", value)
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -11117,6 +11270,45 @@ class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
 
 @pulumi.input_type
 class GetAutonomousDatabaseRefreshableClonesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetAutonomousDatabaseSoftwareImagesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

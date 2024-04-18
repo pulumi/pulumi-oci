@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .nsgIds(var_.redis_cluster_nsg_ids())
  *             .build());
  * 
  *     }
@@ -186,6 +187,20 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> nodeMemoryInGbs() {
         return this.nodeMemoryInGbs;
+    }
+    /**
+     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    public Output<List<String>> nsgIds() {
+        return this.nsgIds;
     }
     /**
      * The private IP address of the API endpoint for the Redis cluster&#39;s primary node.

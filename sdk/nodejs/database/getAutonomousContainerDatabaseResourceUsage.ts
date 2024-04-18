@@ -52,7 +52,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
      */
     readonly autonomousContainerDatabaseVmUsages: outputs.Database.GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage[];
     /**
-     * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
      */
     readonly availableCpus: number;
     /**
@@ -76,7 +76,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
      */
     readonly largestProvisionableAutonomousDatabaseInCpus: number;
     /**
-     * Valid list of provisionable CPUs / cores for ADB creation.
+     * Valid list of provisionable CPUs for Autonomous Database.
      */
     readonly provisionableCpuses: number[];
     /**
@@ -84,7 +84,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
      */
     readonly provisionedCpus: number;
     /**
-     * CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      */
     readonly reclaimableCpus: number;
     /**

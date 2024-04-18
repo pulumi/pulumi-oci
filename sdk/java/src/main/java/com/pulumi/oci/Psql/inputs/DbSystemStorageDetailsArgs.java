@@ -33,14 +33,14 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
      * 
      */
     @Import(name="iops")
     private @Nullable Output<String> iops;
 
     /**
-     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+     * @return (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
      * 
      */
     public Optional<Output<String>> iops() {
@@ -132,7 +132,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+         * @param iops (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
          * 
          * @return builder
          * 

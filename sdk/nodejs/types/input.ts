@@ -22628,6 +22628,10 @@ export namespace DataScience {
          * (Updatable) Details for the model-deployment instance shape configuration.
          */
         modelDeploymentInstanceShapeConfigDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails>;
+        /**
+         * (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+         */
+        subnetId?: pulumi.Input<string>;
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails {
@@ -23332,6 +23336,10 @@ export namespace Database {
          */
         preference?: pulumi.Input<string>;
         /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
+        /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
         weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
@@ -23384,6 +23392,10 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -23793,6 +23805,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -23846,6 +23859,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -23904,6 +23918,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -23948,6 +23963,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -24045,6 +24061,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -24098,6 +24115,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -24183,6 +24201,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -25073,6 +25092,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -25126,6 +25146,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -25380,6 +25401,7 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
@@ -25718,6 +25740,18 @@ export namespace Database {
     }
 
     export interface GetAutonomousDatabaseRefreshableClonesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabaseSoftwareImagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousDatabaseSoftwareImagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -66181,6 +66215,18 @@ export namespace MeteringComputation {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetUsageStatementEmailRecipientsGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUsageStatementEmailRecipientsGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface QueryQueryDefinition {
         /**
          * (Updatable) The common fields for Cost Analysis UI rendering.
@@ -66744,6 +66790,25 @@ export namespace MeteringComputation {
          * The tag value.
          */
         value?: pulumi.Input<string>;
+    }
+
+    export interface UsageStatementEmailRecipientsGroupRecipientsList {
+        /**
+         * (Updatable) the email of the recipient.
+         */
+        emailId: pulumi.Input<string>;
+        /**
+         * (Updatable) the first name of the recipient.
+         */
+        firstName?: pulumi.Input<string>;
+        /**
+         * (Updatable) the last name of the recipient.
+         */
+        lastName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The email recipient lifecycle state.
+         */
+        state: pulumi.Input<string>;
     }
 }
 
@@ -72550,7 +72615,7 @@ export namespace Psql {
          */
         isHavingRestoreConfigOverrides?: pulumi.Input<boolean>;
         /**
-         * The source descriminator.
+         * The source descriminator. Example: `{"sourceType": "BACKUP"}`.
          */
         sourceType: pulumi.Input<string>;
     }
@@ -72561,7 +72626,7 @@ export namespace Psql {
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
-         * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+         * (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
          */
         iops?: pulumi.Input<string>;
         /**

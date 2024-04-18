@@ -41,6 +41,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AutonomousDatabaseRegionalWalletManagement{}
 	case "oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser":
 		r = &AutonomousDatabaseSaasAdminUser{}
+	case "oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage":
+		r = &AutonomousDatabaseSoftwareImage{}
 	case "oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet":
 		r = &AutonomousDatabaseWallet{}
 	case "oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure":
@@ -202,6 +204,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/autonomousDatabaseSaasAdminUser",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/autonomousDatabaseSoftwareImage",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

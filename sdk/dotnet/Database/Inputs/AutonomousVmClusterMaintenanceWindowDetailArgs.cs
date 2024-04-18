@@ -78,6 +78,14 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("preference")]
         public Input<string>? Preference { get; set; }
 
+        [Input("skipRus")]
+        private InputList<bool>? _skipRus;
+        public InputList<bool> SkipRus
+        {
+            get => _skipRus ?? (_skipRus = new InputList<bool>());
+            set => _skipRus = value;
+        }
+
         [Input("weeksOfMonths")]
         private InputList<int>? _weeksOfMonths;
 

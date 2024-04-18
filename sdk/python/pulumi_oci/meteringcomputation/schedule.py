@@ -31,7 +31,7 @@ class ScheduleArgs:
         The set of arguments for constructing a Schedule resource.
         :param pulumi.Input[str] compartment_id: The customer tenancy.
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
                
                
@@ -92,7 +92,7 @@ class ScheduleArgs:
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> pulumi.Input[str]:
         """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -230,7 +230,7 @@ class _ScheduleState:
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
-        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the schedule was created.
@@ -384,7 +384,7 @@ class _ScheduleState:
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -546,7 +546,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
         :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
-        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
                
                
@@ -719,7 +719,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
         :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
-        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the schedule was created.
@@ -827,7 +827,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> pulumi.Output[str]:
         """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 

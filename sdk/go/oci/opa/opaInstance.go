@@ -98,11 +98,11 @@ type OpaInstance struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringOutput `pulumi:"meteringType"`
 	// Shape of the instance.
+	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
+	// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
-	// The current state of the OpaInstance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -182,11 +182,11 @@ type opaInstanceState struct {
 	// MeteringType Identifier
 	MeteringType *string `pulumi:"meteringType"`
 	// Shape of the instance.
+	ShapeName *string `pulumi:"shapeName"`
+	// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShapeName *string `pulumi:"shapeName"`
-	// The current state of the OpaInstance.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -228,11 +228,11 @@ type OpaInstanceState struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringPtrInput
 	// Shape of the instance.
+	ShapeName pulumi.StringPtrInput
+	// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShapeName pulumi.StringPtrInput
-	// The current state of the OpaInstance.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
@@ -266,10 +266,12 @@ type opaInstanceArgs struct {
 	// MeteringType Identifier
 	MeteringType *string `pulumi:"meteringType"`
 	// Shape of the instance.
+	ShapeName string `pulumi:"shapeName"`
+	// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShapeName string `pulumi:"shapeName"`
+	State *string `pulumi:"state"`
 }
 
 // The set of arguments for constructing a OpaInstance resource.
@@ -293,10 +295,12 @@ type OpaInstanceArgs struct {
 	// MeteringType Identifier
 	MeteringType pulumi.StringPtrInput
 	// Shape of the instance.
+	ShapeName pulumi.StringInput
+	// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ShapeName pulumi.StringInput
+	State pulumi.StringPtrInput
 }
 
 func (OpaInstanceArgs) ElementType() reflect.Type {
@@ -462,14 +466,14 @@ func (o OpaInstanceOutput) MeteringType() pulumi.StringOutput {
 }
 
 // Shape of the instance.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OpaInstanceOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpaInstance) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }
 
-// The current state of the OpaInstance.
+// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o OpaInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpaInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

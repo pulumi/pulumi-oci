@@ -22,7 +22,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      */
     private List<GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage> autonomousContainerDatabaseVmUsages;
     /**
-     * @return CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+     * @return CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
      * 
      */
     private Double availableCpus;
@@ -52,7 +52,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      */
     private Double largestProvisionableAutonomousDatabaseInCpus;
     /**
-     * @return Valid list of provisionable CPUs / cores for ADB creation.
+     * @return Valid list of provisionable CPUs for Autonomous Database.
      * 
      */
     private List<Double> provisionableCpuses;
@@ -62,7 +62,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
      */
     private Double provisionedCpus;
     /**
-     * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * @return Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      * 
      */
     private Double reclaimableCpus;
@@ -89,7 +89,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         return this.autonomousContainerDatabaseVmUsages;
     }
     /**
-     * @return CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+     * @return CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
      * 
      */
     public Double availableCpus() {
@@ -131,7 +131,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         return this.largestProvisionableAutonomousDatabaseInCpus;
     }
     /**
-     * @return Valid list of provisionable CPUs / cores for ADB creation.
+     * @return Valid list of provisionable CPUs for Autonomous Database.
      * 
      */
     public List<Double> provisionableCpuses() {
@@ -145,7 +145,7 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
         return this.provisionedCpus;
     }
     /**
-     * @return CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * @return Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      * 
      */
     public Double reclaimableCpus() {

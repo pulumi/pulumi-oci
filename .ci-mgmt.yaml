@@ -10,6 +10,9 @@ env:
   TF_VAR_region: ${{ secrets.TF_VAR_region }}
 makeTemplate: bridged
 plugins:
+  - name: std
+    version: "1.6.2"
+
   - name: terraform
     version: "1.0.16"
     kind: converter
